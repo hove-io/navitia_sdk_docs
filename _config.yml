@@ -1,0 +1,30 @@
+# Site settings
+title: Navitia SDK Docs
+description: Documentation about SDK modules for Android and iOS
+baseurl: "/navitia_sdk_docs"
+url: "https://canaltp.github.io/navitia_sdk_docs/"
+
+permalink: pretty
+remote_theme: pmarsceill/just-the-docs
+
+# Search
+search_enabled: true
+search:
+  heading_level: 2
+  previews: 2
+  preview_words_before: 3
+  preview_words_after: 3
+  tokenizer_separator: /[\s/]+/
+  rel_url: true
+  button: false
+theme: jekyll-theme-cayman
+
+# Heading anchors
+heading_anchors: true
+
+# Footer
+back_to_top: true
+back_to_top_text: "Back to top"
+footer_content: "Copyright &copy; 2017-2020 Navitia SDK"
+last_edit_timestamp: true
+last_edit_time_format: "%b %e %Y at %I:%M %p"
