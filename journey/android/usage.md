@@ -1,61 +1,17 @@
-# Journeys UI for Android
-[![Download](https://api.bintray.com/packages/navitiasdkteam/NavitiaSDK/navitia-sdk-ui/images/download.svg?version=2.1.0) ](https://bintray.com/navitiasdkteam/NavitiaSDK/navitia-sdk-ui/2.1.0/link)
-[![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
+---
+layout: default
+title: Usage
+parent: Journey Android
+grand_parent: Journey
+nav_order: 2
+permalink: /journey/android/usage
+---
 
-An Android module you can use in your app to offer a ready-to-use searching journeys user interfaces using .
+# Usage
 
-## Installation
-Add the following dependency to your `build.gradle` file:
+---
 
-```ruby
-dependencies {
-    implementation("com.kisio.sdk:navitia-sdk-ui:2.1.0")
-}
-```
-
-For the use of cartography, add your Google Maps API Key to your `AndroidManifest.xml` as well
-```xml
-<meta-data
-    android:name="com.google.android.geo.API_KEY"
-    android:value="YOUR_API_KEY"/>
-```
-
-The activity launching journeyUI must handle the following configuration changes: `orientation|screenSize` declared into your `AndroidManifest.xml`
-```
-<activity
-    android:name=".MainActivity"
-    android:configChanges="orientation|screenSize"
-```
-
-## Set up
-This module is set up by `JourneysUI.getInstance()`. The singleton behave like a builder with each methods allowing you to configure the module.  You need to call at the end `init()` with the current activity as parameter.
-
-| Configuration | Type | Required | Description | Example |
-| --- | --- |:---:| --- | --- |
-| `.token("my-token")` | `String` | ✓ | Navitia token (generate a token on [navitia.io](https://www.navitia.io/))| `0de19ce5-e0eb-4524-a074-bda3c6894c19` |
-| `.mainColor("")` | `String` | ✗ | To set the background and the journey's duration colors  | by default `#40958E` |
-| `.originColor("")` | `String` | ✗ | To set the color of the origin icon and the roadmap departure block | by default `#00BB75` |
-| `.destinationColor("")` | `String` | ✗ | To set the color of the destination icon and the roadmap arrival bloc  | by default `#B00353` |
-| `.maxHistory(1)` | `int` | ✗ | To set up the maximum number of items you can find in autocompletion search history | by default 10 |
-| `.withMultiNetwork()` | ✗ | ✗ | To set the display of the network name in the roadmap  | by default `false`. Calling the method put it to `true` |
-| `.withMaas()` | ✗ | ✗ | Some UI can have a different behaviour for this using in a Maas project | by default `false`. Calling the method put it to `true` |
-
-#### Example
-```java
-JourneysUI.getInstance()
-    .token("my-token")
-    .mainColor("#40958E")
-    .originColor("#00BB75")
-    .destinationColor("#B00353")
-    .maxHistory(10)
-    .withMultiNetwork()
-    .withMaas()
-    .init(this);
-```
-
-## Usage
-
-### Journeys request
+## Journeys request
 | Parameters | Type | Required | Description | Example |
 | --- | --- |:---:| --- | --- |
 | `.setOriginId()` | `String` | ✓ | Origin coordinates, following the format `lon;lat` | `"2.3665844;48.8465337"` |
@@ -75,7 +31,7 @@ JourneysUI.getInstance()
 | `.setDirectPath()` | `String` | ✗ | To indicate if the journey is direct | `"only"` |
 
 
-### Tranport Mode
+## Tranport Mode
 | Parameters | Type | Required | Description | Example |
 | --- | --- |:---:| --- | --- |
 | title | `String` | ✓ | The transport mode label | "Tramway" |
@@ -86,12 +42,11 @@ JourneysUI.getInstance()
 | realTime | `Boolean` | ✗ | To indicate if real time is enabled | false |
 | selected | `Boolean` | ✗ | To indicate if the transport mode is selected | true |
 
+### Setup Transport Modes List
 
 #### Example
 
-##### Setup Transport Modes List
-
-###### Get available Transport Mode List for selected Coverage from Navitia:
+##### Get available Transport Mode List for selected Coverage from Navitia:
 ```ruby
 https://api.navitia.io/v1/coverage/<COVERAGE>/physical_modes?
 ```
@@ -228,17 +183,15 @@ In order to customize the `arrival` icon, rename your resource as `ic_arrival.xm
 ### Transport mode icons
 You have 2 possibilities to customize the transport mode icon:
 
-#### 1. Setup programmatically:
-```java
-    transportModes.add(new TransportModeModel(TransportMode.BIKE)
-        .setFirstSectionMode(SECTION_MODE_BIKE)
-        .setLastSectionMode(SECTION_MODE_BIKE)
-        .setPhysicalModes("physical_mode:Bike")
-        .setResIconId(R.drawable.ic_bike) // <- Set your icon here
-        .setSelected(false));
+Setup programmatically:
+```kotlin
+TransportModeModel(TransportMode.BIKE).apply {
+    ...
+    resIconId = R.drawable.icon_id // <- Set your icon here
+}
 ```
 
-#### 2. Override drawable resources:
+Override drawable resources:
 Rename your customized transport mode icon with the same resource name as the default icon.
 For example, in order to customize the `bus` icon, rename your resource as `ic_transport_mode_bus.xml`
 Here is the list of default icon name:
@@ -257,23 +210,3 @@ Here is the list of default icon name:
 * `ic_transport_mode_train.xml`
 * `ic_transport_mode_tramway.xml`
 * `ic_transport_mode_walking.xml`
-
-## Example
-
-To run the example project, clone the repo, and run the `sample` module.
-
-Add your Google Maps API Key to your `gradle.properties`
-
-```xml
-sdk_journey_google_api = YOUR_API_KEY
-```
-
-Add your Navitia Token to your `gradle.properties`
-
-```xml
-sdk_journey_api_token = YOUR_NAVITIA_TOKEN
-```
-
-## License #
-
-Check out the Journeys UI for Android [License](https://github.com/CanalTP/NavitiaSDKUX_android/blob/master/LICENSE) here.

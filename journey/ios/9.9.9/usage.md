@@ -1,23 +1,17 @@
-# NavitiaSDKUI for iOS
+---
+layout: default
+title: Usage
+parent: Journey iOS
+grand_parent: Journey
+nav_order: 2
+permalink: /journey/ios/usage
+---
 
-[![Version](https://img.shields.io/cocoapods/v/NavitiaSDKUI.svg?style=flat)](http://cocoapods.org/pods/NavitiaSDKUX)
-[![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
-[![Platform](https://img.shields.io/cocoapods/p/NavitiaSDKUI.svg?style=flat)](http://cocoapods.org/pods/NavitiaSDKUX)
+# Usage
 
-An iOS module you can use in your app to offer cool transport stuff to your users.
+---
 
-## Installation
-
-NavitiaSDKUX is available through [CocoaPods](http://cocoapods.org). To install
-it, simply add the following line to your Podfile:
-
-```ruby
-pod "NavitiaSDKUI"
-```
-
-## Usage
-
-### Configuration - AppDelegate
+## Configuration - AppDelegate
 
 | Parameters | Type | Required | Description | Default |
 | --- | --- |:---:| --- | --- |
@@ -30,7 +24,7 @@ pod "NavitiaSDKUI"
 | multiNetwork | Boolean | ✗ | To enable the display of the network name in the roadmap  | false |
 | isEarlierLaterFeatureEnabled | Boolean | ✗ | To use shortcuts for next and previous journeys | false |
 
-#### Color Configuration
+### Color Configuration
 
 The colors can be configured using both `UIColor` instances or hexadecimal color codes. The table below explains the usage of each configuration color:
 
@@ -45,7 +39,7 @@ The colors can be configured using both `UIColor` instances or hexadecimal color
 | destinationIcon | Colors the arrival pin, the `destination` value will be ignored |
 | destinationBackground | Colors the arrival roadmap view background, the `destination` value will be ignored |
 
-#### Example
+### Example
 
 ```swift
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -70,7 +64,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 }
 ```
 
-### Journeys request - ViewController
+## Journeys request - ViewController
 
 | Parameters | Type | Required | Description | Example |
 | --- | --- |:---:| --- | --- |
@@ -94,7 +88,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 | dataFreshness | Enum | ✗ | To indicate if theoretical or realtime data are requested | .baseSchedule |
 | travelerType | Enum | ✗ | To give extra information about the traveler state | .standard |
 
-#### Example (With journey form enabled)
+### Example (With journey form enabled)
 
 ```swift
 class ViewController: UIViewController {
@@ -149,7 +143,7 @@ class ViewController: UIViewController {
 }
 ```
 
-#### Example (With journey form enabled)
+### Example (With journey form enabled)
 
 ```swift
 class ViewController: UIViewController {
@@ -179,7 +173,7 @@ class ViewController: UIViewController {
 }
 ```
 
-##### Public transport 
+#### Public transport 
 
 ```swift
 let journeysRequest = JourneysRequest(coverage: "selected_coverage")
@@ -187,7 +181,7 @@ journeysRequest.originId = "2.3665844;48.8465337"
 journeysRequest.destinationId = "2.2979169;48.8848719"
 ```
 
-##### Bike
+#### Bike
 
 ```swift
 let journeysRequest = JourneysRequest(coverage: "selected_coverage")
@@ -197,7 +191,7 @@ journeysRequest.firstSectionModes = [.bike]
 journeysRequest.lastSectionModes = [.bike]
 ```
 
-##### BSS
+#### BSS
 
 ```swift
 let journeysRequest = JourneysRequest(coverage: "selected_coverage")
@@ -208,7 +202,7 @@ journeysRequest.lastSectionModes = [.bss]
 journeysRequest.addPoiInfos = [.bssStands]
 ```
 
-##### Car
+#### Car
 
 ```swift
 let journeysRequest = JourneysRequest(coverage: "selected_coverage")
@@ -218,7 +212,7 @@ journeysRequest.firstSectionModes = [.car]
 journeysRequest.addPoiInfos = [.car_park]
 ```
 
-##### Ridesharing
+#### Ridesharing
 
 ```swift
 let journeysRequest = JourneysRequest(coverage: "selected_coverage")
@@ -277,7 +271,3 @@ The following resources can be overridden:
 | POI | journey_poi |
 | Stop area | journey_stop_area |
 | Ridesharing pin | journey_ridesharing_pin |
-
-## License #
-
-Check out the NavitiaSDKUI iOS [License](https://github.com/CanalTP/NavitiaSDKUX_ios/blob/master/LICENSE) here.

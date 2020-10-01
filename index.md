@@ -6,12 +6,14 @@ description: "Documentation about SDK modules for Android and iOS"
 permalink: /
 ---
 
-# Navitia SDK Docs
+Navitia SDK Docs
 {: .fs-9 }
+
+{{ site.description }}
 
 ---
 
-## UI 
+## UI
 
 ### [Around Me]()
 
