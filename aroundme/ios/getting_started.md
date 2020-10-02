@@ -3,7 +3,7 @@ layout: default
 title: Getting started
 parent: Around Me iOS
 grand_parent: Around Me
-nav_order: 1
+nav_order: 2
 permalink: /around-me/ios/getting-started
 ---
 
