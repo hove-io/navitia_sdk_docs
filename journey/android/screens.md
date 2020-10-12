@@ -10,6 +10,8 @@ permalink: /journey/android/screen
 # Screens
 {: .no_toc }
 
+FROM JOURNEY REPO
+
 <details open markdown="block">
   <summary>
     Table of contents

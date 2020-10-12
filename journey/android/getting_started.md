@@ -9,6 +9,7 @@ permalink: /journey/android/getting-started
 
 # Getting Started
 
+FROM JOURNEY REPO
 ---
 
 ## Installation

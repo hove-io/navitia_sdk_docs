@@ -8,3 +8,5 @@ permalink: /journey/android
 ---
 
 # Journey Android
+
+FROM JOURNEY REPO

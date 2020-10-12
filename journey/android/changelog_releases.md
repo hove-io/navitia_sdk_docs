@@ -9,6 +9,8 @@ permalink: /journey/android/changelog-releases
 
 # Changelog & Releases
 
+FROM JOURNEY REPO
+
 | Version | Status |
 | --- | --- |
 | 3.1.2 |  |
