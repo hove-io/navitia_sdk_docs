@@ -5,7 +5,7 @@ parent: Journey iOS
 grand_parent: Journey
 nav_order: 4
 nav_exclude: true
-permalink: /journey/ios/3.4.2/communicating-with
+permalink: /journey/ios/3.4.3/communicating-with
 ---
 
 # Communicating with
@@ -13,8 +13,8 @@ permalink: /journey/ios/3.4.2/communicating-with
 Old version: 3.4.3
 {: .label .label-yellow }
 
-[Getting started](/navitia_sdk_docs/journey/ios/3.4.2/getting-started)<br>
-[Screens](/navitia_sdk_docs/journey/ios/3.4.2/screens)  
+[Getting started](/navitia_sdk_docs/journey/ios/3.4.3/getting-started)<br>
+[Screens](/navitia_sdk_docs/journey/ios/3.4.3/screens)  
 
 ---
 

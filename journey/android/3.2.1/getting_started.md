@@ -1,13 +1,19 @@
 ---
 layout: default
 title: Getting started
-parent: Journey Android
 grand_parent: Journey
 nav_order: 2
-permalink: /journey/android/getting-started
+nav_exclude: true
+permalink: /journey/android/3.2.1/getting-started
 ---
 
 # Getting Started
+
+Old version: 3.2.1
+{: .label .label-yellow }
+
+[Screens](/navitia_sdk_docs/journey/android/3.2.1/screens)<br>
+[Communicating with](/navitia_sdk_docs/journey/android/3.2.1/communicating-with)
 
 ---
 

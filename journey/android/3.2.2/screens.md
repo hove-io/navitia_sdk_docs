@@ -4,7 +4,7 @@ title: Screens
 parent: Journey Android
 grand_parent: Journey
 nav_order: 3
-permalink: /journey/android/screen
+permalink: /journey/android/screens
 ---
 
 # Screens
