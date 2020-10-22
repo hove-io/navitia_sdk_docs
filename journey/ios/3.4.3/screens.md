@@ -3,13 +3,19 @@ layout: default
 title: Screens
 parent: Journey iOS
 grand_parent: Journey
-nav_order: 3
+nav_order: 2
 nav_exclude: true
 permalink: /journey/ios/3.4.3/screens
 ---
 
 # Screens
 {: .no_toc }
+
+Old version: 3.4.3
+{: .label .label-yellow }
+
+[Getting started](/navitia_sdk_docs/journey/ios/3.4.3/getting-started)<br>
+[Communicating with](/navitia_sdk_docs/journey/android/3.4.3/communicating-with)
 
 <details open markdown="block">
   <summary>

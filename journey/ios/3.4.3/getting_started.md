@@ -10,7 +10,7 @@ permalink: /journey/ios/3.4.3/getting-started
 
 # Getting Started
 
-Old version: 3.4.2
+Old version: 3.4.3
 {: .label .label-yellow }
 
 [Screens](/navitia_sdk_docs/journey/ios/3.4.3/screens)<br>

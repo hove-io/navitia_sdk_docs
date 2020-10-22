@@ -3,8 +3,7 @@ layout: default
 title: Communicating with
 parent: Journey iOS
 grand_parent: Journey
-nav_order: 4
-nav_exclude: true
+nav_order: 3
 permalink: /journey/ios/communicating-with
 ---
 

@@ -3,8 +3,8 @@ layout: default
 title: Screens
 parent: Journey iOS
 grand_parent: Journey
-nav_order: 3
-permalink: /journey/ios/views
+nav_order: 2
+permalink: /journey/ios/screens
 ---
 
 # Screens
