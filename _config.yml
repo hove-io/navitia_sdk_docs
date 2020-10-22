@@ -19,8 +19,8 @@ title: Navitia SDK
 email: team.sdk@kisio.com
 description: >- # this means to ignore newlines until "baseurl:"
   Documentation about SDK modules for Android and iOS
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://canaltp.github.io/navitia_sdk_docs/" # the base hostname & protocol for your site, e.g. http://example.com
+baseurl: "/navitia_sdk_docs" # the subpath of your site, e.g. /blog
+url: "https://canaltp.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 permalink: pretty
 remote_theme: pmarsceill/just-the-docs
 color_scheme: sdk
