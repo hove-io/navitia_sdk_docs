@@ -3,7 +3,7 @@ layout: default
 title: Journey
 nav_order: 3
 has_children: true
-permalink: /journey
+permalink: journey
 ---
 
 # Journey

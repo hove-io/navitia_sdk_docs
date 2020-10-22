@@ -14,7 +14,7 @@ permalink: /journey/android
 | Version |  |
 | --- | --- |
 | 3.2.2 |  <label class="label label-green">Latest</label>  |
-| 3.2.1 |  [Documentation](/navitia_sdk_docs/journey/android/3.2.1/getting-started) |
+| 3.2.1 |  <label class="label label-yellow">[Documentation](/navitia_sdk_docs/journey/android/3.2.1/getting-started)</label> |
 | < 3.2.1 | <label class="label label-red">Deprecated</label> |
 
 ---
