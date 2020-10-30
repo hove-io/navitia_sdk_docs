@@ -1,9 +1,9 @@
 ---
 layout: default
-title: Address
+title: CoverageApi
 parent: Endpoints
 grand_parent: Expert Android
-permalink: /expert/android/endpoints/address
+permalink: /expert/android/endpoints/CoverageApi
 ---
 
 # CoverageApi
@@ -12,9 +12,9 @@ All URIs are relative to *https://api.navitia.io/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getCoverage**](CoverageApi.md#getCoverage) | **GET** /coverage/ | 
-[**getCoverageLonLat**](CoverageApi.md#getCoverageLonLat) | **GET** /coverage/{lon};{lat}/ | 
-[**getCoverageRegion**](CoverageApi.md#getCoverageRegion) | **GET** /coverage/{region}/ | 
+[**getCoverage**](#getCoverage) | **GET** /coverage/ | 
+[**getCoverageLonLat**](#getCoverageLonLat) | **GET** /coverage/{lon};{lat}/ | 
+[**getCoverageRegion**](#getCoverageRegion) | **GET** /coverage/{region}/ | 
 
 
 <a name="getCoverage"></a>
@@ -53,12 +53,12 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+-| ------------ | ------------- | ------------- | -------------
  **disableGeojson** | **Boolean**| hide the coverage geojson to reduce response size | [optional]
 
 ### Return type
 
-[**Coverages**](Coverages.md)
+[**Coverages**](/navitia_sdk_docs/expert/android/endpoints/coverages)
 
 ### Authorization
 
@@ -107,14 +107,14 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+-| ------------ | ------------- | ------------- | -------------
  **lat** | **BigDecimal**|  The latitude of where the coord you want to query |
  **lon** | **BigDecimal**|  The longitude of where the coord you want to query |
  **disableGeojson** | **Boolean**| hide the coverage geojson to reduce response size | [optional]
 
 ### Return type
 
-[**Coverages**](Coverages.md)
+[**Coverages**](/navitia_sdk_docs/expert/android/endpoints/coverages)
 
 ### Authorization
 
@@ -162,13 +162,13 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+-| ------------ | ------------- | ------------- | -------------
  **region** | **String**|  The region you want to query |
  **disableGeojson** | **Boolean**| hide the coverage geojson to reduce response size | [optional]
 
 ### Return type
 
-[**Coverages**](Coverages.md)
+[**Coverages**](/navitia_sdk_docs/expert/android/endpoints/coverages)
 
 ### Authorization
 

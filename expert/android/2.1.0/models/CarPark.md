@@ -1,16 +1,19 @@
 ---
 layout: default
-title: Address
+title: CarPark
 parent: Endpoints
 grand_parent: Expert Android
-permalink: /expert/android/endpoints/address
+permalink: /expert/android/endpoints/carp_ark
 ---
 
 # CarPark
 
+---
+
 ## Properties
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
+
+| Name | Type | Description | Notes
+| ------------ | ------------- | ------------- | -------------
 **available** | **Integer** |  |  [optional]
 **totalPlaces** | **Integer** |  |  [optional]
 **occupiedPRM** | **Integer** |  |  [optional]

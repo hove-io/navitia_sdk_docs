@@ -1,16 +1,19 @@
 ---
 layout: default
-title: Address
+title: Cause
 parent: Endpoints
 grand_parent: Expert Android
-permalink: /expert/android/endpoints/address
+permalink: /expert/android/endpoints/cause
 ---
 
 # Cause
 
+---
+
 ## Properties
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
+
+| Name | Type | Description | Notes
+| ------------ | ------------- | ------------- | -------------
 **label** | **String** |  |  [optional]
 
 

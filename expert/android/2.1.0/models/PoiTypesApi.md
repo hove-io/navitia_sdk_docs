@@ -1,9 +1,9 @@
 ---
 layout: default
-title: Address
+title: PoiTypesApi
 parent: Endpoints
 grand_parent: Expert Android
-permalink: /expert/android/endpoints/address
+permalink: /expert/android/endpoints/PoiTypesApi
 ---
 
 # PoiTypesApi
@@ -12,14 +12,14 @@ All URIs are relative to *https://api.navitia.io/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getCoverageLonLatPoiTypes**](PoiTypesApi.md#getCoverageLonLatPoiTypes) | **GET** /coverage/{lon};{lat}/poi_types | 
-[**getCoverageLonLatPoiTypesId**](PoiTypesApi.md#getCoverageLonLatPoiTypesId) | **GET** /coverage/{lon};{lat}/poi_types/{id} | 
-[**getCoverageLonLatUriPoiTypes**](PoiTypesApi.md#getCoverageLonLatUriPoiTypes) | **GET** /coverage/{lon};{lat}/{uri}/poi_types | 
-[**getCoverageLonLatUriPoiTypesId**](PoiTypesApi.md#getCoverageLonLatUriPoiTypesId) | **GET** /coverage/{lon};{lat}/{uri}/poi_types/{id} | 
-[**getCoverageRegionPoiTypes**](PoiTypesApi.md#getCoverageRegionPoiTypes) | **GET** /coverage/{region}/poi_types | 
-[**getCoverageRegionPoiTypesId**](PoiTypesApi.md#getCoverageRegionPoiTypesId) | **GET** /coverage/{region}/poi_types/{id} | 
-[**getCoverageRegionUriPoiTypes**](PoiTypesApi.md#getCoverageRegionUriPoiTypes) | **GET** /coverage/{region}/{uri}/poi_types | 
-[**getCoverageRegionUriPoiTypesId**](PoiTypesApi.md#getCoverageRegionUriPoiTypesId) | **GET** /coverage/{region}/{uri}/poi_types/{id} | 
+[**getCoverageLonLatPoiTypes**](#getCoverageLonLatPoiTypes) | **GET** /coverage/{lon};{lat}/poi_types | 
+[**getCoverageLonLatPoiTypesId**](#getCoverageLonLatPoiTypesId) | **GET** /coverage/{lon};{lat}/poi_types/{id} | 
+[**getCoverageLonLatUriPoiTypes**](#getCoverageLonLatUriPoiTypes) | **GET** /coverage/{lon};{lat}/{uri}/poi_types | 
+[**getCoverageLonLatUriPoiTypesId**](#getCoverageLonLatUriPoiTypesId) | **GET** /coverage/{lon};{lat}/{uri}/poi_types/{id} | 
+[**getCoverageRegionPoiTypes**](#getCoverageRegionPoiTypes) | **GET** /coverage/{region}/poi_types | 
+[**getCoverageRegionPoiTypesId**](#getCoverageRegionPoiTypesId) | **GET** /coverage/{region}/poi_types/{id} | 
+[**getCoverageRegionUriPoiTypes**](#getCoverageRegionUriPoiTypes) | **GET** /coverage/{region}/{uri}/poi_types | 
+[**getCoverageRegionUriPoiTypesId**](#getCoverageRegionUriPoiTypesId) | **GET** /coverage/{region}/{uri}/poi_types/{id} | 
 
 
 <a name="getCoverageLonLatPoiTypes"></a>
@@ -76,7 +76,7 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+-| ------------ | ------------- | ------------- | -------------
  **lat** | **BigDecimal**|  The latitude of where the coord you want to query |
  **lon** | **BigDecimal**|  The longitude of where the coord you want to query |
  **startPage** | **Integer**| The page where you want to start | [optional]
@@ -99,7 +99,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PoiTypes**](PoiTypes.md)
+[**PoiTypes**](/navitia_sdk_docs/expert/android/endpoints/poi_types)
 
 ### Authorization
 
@@ -164,7 +164,7 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+-| ------------ | ------------- | ------------- | -------------
  **lat** | **BigDecimal**|  The latitude of where the coord you want to query |
  **lon** | **BigDecimal**|  The longitude of where the coord you want to query |
  **id** | **String**| Id of the object you want to query |
@@ -187,7 +187,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PoiTypes**](PoiTypes.md)
+[**PoiTypes**](/navitia_sdk_docs/expert/android/endpoints/poi_types)
 
 ### Authorization
 
@@ -253,7 +253,7 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+-| ------------ | ------------- | ------------- | -------------
  **lat** | **BigDecimal**|  The latitude of where the coord you want to query |
  **lon** | **BigDecimal**|  The longitude of where the coord you want to query |
  **uri** | **String**| First part of the uri |
@@ -277,7 +277,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PoiTypes**](PoiTypes.md)
+[**PoiTypes**](/navitia_sdk_docs/expert/android/endpoints/poi_types)
 
 ### Authorization
 
@@ -343,7 +343,7 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+-| ------------ | ------------- | ------------- | -------------
  **lat** | **BigDecimal**|  The latitude of where the coord you want to query |
  **lon** | **BigDecimal**|  The longitude of where the coord you want to query |
  **uri** | **String**| First part of the uri |
@@ -367,7 +367,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PoiTypes**](PoiTypes.md)
+[**PoiTypes**](/navitia_sdk_docs/expert/android/endpoints/poi_types)
 
 ### Authorization
 
@@ -431,7 +431,7 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+-| ------------ | ------------- | ------------- | -------------
  **region** | **String**|  The region you want to query |
  **startPage** | **Integer**| The page where you want to start | [optional]
  **count** | **Integer**| Number of objects you want on a page | [optional] [default to 25]
@@ -453,7 +453,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PoiTypes**](PoiTypes.md)
+[**PoiTypes**](/navitia_sdk_docs/expert/android/endpoints/poi_types)
 
 ### Authorization
 
@@ -517,7 +517,7 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+-| ------------ | ------------- | ------------- | -------------
  **region** | **String**|  The region you want to query |
  **id** | **String**| Id of the object you want to query |
  **startPage** | **Integer**| The page where you want to start | [optional]
@@ -539,7 +539,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PoiTypes**](PoiTypes.md)
+[**PoiTypes**](/navitia_sdk_docs/expert/android/endpoints/poi_types)
 
 ### Authorization
 
@@ -604,7 +604,7 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+-| ------------ | ------------- | ------------- | -------------
  **region** | **String**|  The region you want to query |
  **uri** | **String**| First part of the uri |
  **startPage** | **Integer**| The page where you want to start | [optional]
@@ -627,7 +627,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PoiTypes**](PoiTypes.md)
+[**PoiTypes**](/navitia_sdk_docs/expert/android/endpoints/poi_types)
 
 ### Authorization
 
@@ -692,7 +692,7 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+-| ------------ | ------------- | ------------- | -------------
  **region** | **String**|  The region you want to query |
  **uri** | **String**| First part of the uri |
  **id** | **String**| Id of the object you want to query |
@@ -715,7 +715,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PoiTypes**](PoiTypes.md)
+[**PoiTypes**](/navitia_sdk_docs/expert/android/endpoints/poi_types)
 
 ### Authorization
 

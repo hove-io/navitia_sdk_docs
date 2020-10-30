@@ -1,16 +1,19 @@
 ---
 layout: default
-title: Address
+title: FeedPublisher
 parent: Endpoints
 grand_parent: Expert Android
-permalink: /expert/android/endpoints/address
+permalink: /expert/android/endpoints/feed_publisher
 ---
 
 # FeedPublisher
 
+---
+
 ## Properties
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
+
+| Name | Type | Description | Notes
+| ------------ | ------------- | ------------- | -------------
 **url** | **String** |  |  [optional]
 **id** | **String** |  | 
 **license** | **String** |  |  [optional]

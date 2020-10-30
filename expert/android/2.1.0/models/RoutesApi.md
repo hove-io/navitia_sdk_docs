@@ -1,9 +1,9 @@
 ---
 layout: default
-title: Address
+title: RoutesApi
 parent: Endpoints
 grand_parent: Expert Android
-permalink: /expert/android/endpoints/address
+permalink: /expert/android/endpoints/RoutesApi
 ---
 
 # RoutesApi
@@ -12,15 +12,15 @@ All URIs are relative to *https://api.navitia.io/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getCoverageLonLatRoutes**](RoutesApi.md#getCoverageLonLatRoutes) | **GET** /coverage/{lon};{lat}/routes | 
-[**getCoverageLonLatRoutesId**](RoutesApi.md#getCoverageLonLatRoutesId) | **GET** /coverage/{lon};{lat}/routes/{id} | 
-[**getCoverageLonLatUriRoutes**](RoutesApi.md#getCoverageLonLatUriRoutes) | **GET** /coverage/{lon};{lat}/{uri}/routes | 
-[**getCoverageLonLatUriRoutesId**](RoutesApi.md#getCoverageLonLatUriRoutesId) | **GET** /coverage/{lon};{lat}/{uri}/routes/{id} | 
-[**getCoverageRegionRoutes**](RoutesApi.md#getCoverageRegionRoutes) | **GET** /coverage/{region}/routes | 
-[**getCoverageRegionRoutesId**](RoutesApi.md#getCoverageRegionRoutesId) | **GET** /coverage/{region}/routes/{id} | 
-[**getCoverageRegionUriRoutes**](RoutesApi.md#getCoverageRegionUriRoutes) | **GET** /coverage/{region}/{uri}/routes | 
-[**getCoverageRegionUriRoutesId**](RoutesApi.md#getCoverageRegionUriRoutesId) | **GET** /coverage/{region}/{uri}/routes/{id} | 
-[**getRoutes**](RoutesApi.md#getRoutes) | **GET** /routes | 
+[**getCoverageLonLatRoutes**](#getCoverageLonLatRoutes) | **GET** /coverage/{lon};{lat}/routes | 
+[**getCoverageLonLatRoutesId**](#getCoverageLonLatRoutesId) | **GET** /coverage/{lon};{lat}/routes/{id} | 
+[**getCoverageLonLatUriRoutes**](#getCoverageLonLatUriRoutes) | **GET** /coverage/{lon};{lat}/{uri}/routes | 
+[**getCoverageLonLatUriRoutesId**](#getCoverageLonLatUriRoutesId) | **GET** /coverage/{lon};{lat}/{uri}/routes/{id} | 
+[**getCoverageRegionRoutes**](#getCoverageRegionRoutes) | **GET** /coverage/{region}/routes | 
+[**getCoverageRegionRoutesId**](#getCoverageRegionRoutesId) | **GET** /coverage/{region}/routes/{id} | 
+[**getCoverageRegionUriRoutes**](#getCoverageRegionUriRoutes) | **GET** /coverage/{region}/{uri}/routes | 
+[**getCoverageRegionUriRoutesId**](#getCoverageRegionUriRoutesId) | **GET** /coverage/{region}/{uri}/routes/{id} | 
+[**getRoutes**](#getRoutes) | **GET** /routes | 
 
 
 <a name="getCoverageLonLatRoutes"></a>
@@ -78,7 +78,7 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+-| ------------ | ------------- | ------------- | -------------
  **lat** | **BigDecimal**|  The latitude of where the coord you want to query |
  **lon** | **BigDecimal**|  The longitude of where the coord you want to query |
  **startPage** | **Integer**| The page where you want to start | [optional]
@@ -102,7 +102,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Routes**](Routes.md)
+[**Routes**](/navitia_sdk_docs/expert/android/endpoints/routes)
 
 ### Authorization
 
@@ -168,7 +168,7 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+-| ------------ | ------------- | ------------- | -------------
  **lat** | **BigDecimal**|  The latitude of where the coord you want to query |
  **lon** | **BigDecimal**|  The longitude of where the coord you want to query |
  **id** | **String**| Id of the object you want to query |
@@ -192,7 +192,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Routes**](Routes.md)
+[**Routes**](/navitia_sdk_docs/expert/android/endpoints/routes)
 
 ### Authorization
 
@@ -259,7 +259,7 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+-| ------------ | ------------- | ------------- | -------------
  **lat** | **BigDecimal**|  The latitude of where the coord you want to query |
  **lon** | **BigDecimal**|  The longitude of where the coord you want to query |
  **uri** | **String**| First part of the uri |
@@ -284,7 +284,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Routes**](Routes.md)
+[**Routes**](/navitia_sdk_docs/expert/android/endpoints/routes)
 
 ### Authorization
 
@@ -351,7 +351,7 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+-| ------------ | ------------- | ------------- | -------------
  **lat** | **BigDecimal**|  The latitude of where the coord you want to query |
  **lon** | **BigDecimal**|  The longitude of where the coord you want to query |
  **uri** | **String**| First part of the uri |
@@ -376,7 +376,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Routes**](Routes.md)
+[**Routes**](/navitia_sdk_docs/expert/android/endpoints/routes)
 
 ### Authorization
 
@@ -441,7 +441,7 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+-| ------------ | ------------- | ------------- | -------------
  **region** | **String**|  The region you want to query |
  **startPage** | **Integer**| The page where you want to start | [optional]
  **count** | **Integer**| Number of objects you want on a page | [optional] [default to 25]
@@ -464,7 +464,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Routes**](Routes.md)
+[**Routes**](/navitia_sdk_docs/expert/android/endpoints/routes)
 
 ### Authorization
 
@@ -529,7 +529,7 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+-| ------------ | ------------- | ------------- | -------------
  **region** | **String**|  The region you want to query |
  **id** | **String**| Id of the object you want to query |
  **startPage** | **Integer**| The page where you want to start | [optional]
@@ -552,7 +552,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Routes**](Routes.md)
+[**Routes**](/navitia_sdk_docs/expert/android/endpoints/routes)
 
 ### Authorization
 
@@ -618,7 +618,7 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+-| ------------ | ------------- | ------------- | -------------
  **region** | **String**|  The region you want to query |
  **uri** | **String**| First part of the uri |
  **startPage** | **Integer**| The page where you want to start | [optional]
@@ -642,7 +642,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Routes**](Routes.md)
+[**Routes**](/navitia_sdk_docs/expert/android/endpoints/routes)
 
 ### Authorization
 
@@ -708,7 +708,7 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+-| ------------ | ------------- | ------------- | -------------
  **region** | **String**|  The region you want to query |
  **uri** | **String**| First part of the uri |
  **id** | **String**| Id of the object you want to query |
@@ -732,7 +732,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Routes**](Routes.md)
+[**Routes**](/navitia_sdk_docs/expert/android/endpoints/routes)
 
 ### Authorization
 
@@ -796,7 +796,7 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+-| ------------ | ------------- | ------------- | -------------
  **externalCode** | **String**| An external code to query |
  **startPage** | **Integer**| The page where you want to start | [optional]
  **count** | **Integer**| Number of objects you want on a page | [optional] [default to 25]
@@ -818,7 +818,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Routes**](Routes.md)
+[**Routes**](/navitia_sdk_docs/expert/android/endpoints/routes)
 
 ### Authorization
 

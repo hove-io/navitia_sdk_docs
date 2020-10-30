@@ -78,7 +78,7 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+-| ------------ | ------------- | ------------- | -------------
  **lat** | **BigDecimal**|  The latitude of where the coord you want to query |
  **lon** | **BigDecimal**|  The longitude of where the coord you want to query |
  **startPage** | **Integer**| The page where you want to start | [optional]
@@ -102,7 +102,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**LineGroups**](LineGroups.md)
+[**LineGroups**](/navitia_sdk_docs/expert/android/endpoints/line_groups)
 
 ### Authorization
 
@@ -168,7 +168,7 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+-| ------------ | ------------- | ------------- | -------------
  **lat** | **BigDecimal**|  The latitude of where the coord you want to query |
  **lon** | **BigDecimal**|  The longitude of where the coord you want to query |
  **id** | **String**| Id of the object you want to query |
@@ -192,7 +192,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**LineGroups**](LineGroups.md)
+[**LineGroups**](/navitia_sdk_docs/expert/android/endpoints/line_groups)
 
 ### Authorization
 
@@ -259,7 +259,7 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+-| ------------ | ------------- | ------------- | -------------
  **lat** | **BigDecimal**|  The latitude of where the coord you want to query |
  **lon** | **BigDecimal**|  The longitude of where the coord you want to query |
  **uri** | **String**| First part of the uri |
@@ -284,7 +284,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**LineGroups**](LineGroups.md)
+[**LineGroups**](/navitia_sdk_docs/expert/android/endpoints/line_groups)
 
 ### Authorization
 
@@ -351,7 +351,7 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+-| ------------ | ------------- | ------------- | -------------
  **lat** | **BigDecimal**|  The latitude of where the coord you want to query |
  **lon** | **BigDecimal**|  The longitude of where the coord you want to query |
  **uri** | **String**| First part of the uri |
@@ -376,7 +376,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**LineGroups**](LineGroups.md)
+[**LineGroups**](/navitia_sdk_docs/expert/android/endpoints/line_groups)
 
 ### Authorization
 
@@ -441,7 +441,7 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+-| ------------ | ------------- | ------------- | -------------
  **region** | **String**|  The region you want to query |
  **startPage** | **Integer**| The page where you want to start | [optional]
  **count** | **Integer**| Number of objects you want on a page | [optional] [default to 25]
@@ -464,7 +464,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**LineGroups**](LineGroups.md)
+[**LineGroups**](/navitia_sdk_docs/expert/android/endpoints/line_groups)
 
 ### Authorization
 
@@ -529,7 +529,7 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+-| ------------ | ------------- | ------------- | -------------
  **region** | **String**|  The region you want to query |
  **id** | **String**| Id of the object you want to query |
  **startPage** | **Integer**| The page where you want to start | [optional]
@@ -552,7 +552,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**LineGroups**](LineGroups.md)
+[**LineGroups**](/navitia_sdk_docs/expert/android/endpoints/line_groups)
 
 ### Authorization
 
@@ -618,7 +618,7 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+-| ------------ | ------------- | ------------- | -------------
  **region** | **String**|  The region you want to query |
  **uri** | **String**| First part of the uri |
  **startPage** | **Integer**| The page where you want to start | [optional]
@@ -642,7 +642,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**LineGroups**](LineGroups.md)
+[**LineGroups**](/navitia_sdk_docs/expert/android/endpoints/line_groups)
 
 ### Authorization
 
@@ -708,7 +708,7 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+-| ------------ | ------------- | ------------- | -------------
  **region** | **String**|  The region you want to query |
  **uri** | **String**| First part of the uri |
  **id** | **String**| Id of the object you want to query |
@@ -732,7 +732,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**LineGroups**](LineGroups.md)
+[**LineGroups**](/navitia_sdk_docs/expert/android/endpoints/line_groups)
 
 ### Authorization
 
@@ -796,7 +796,7 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+-| ------------ | ------------- | ------------- | -------------
  **externalCode** | **String**| An external code to query |
  **startPage** | **Integer**| The page where you want to start | [optional]
  **count** | **Integer**| Number of objects you want on a page | [optional] [default to 25]
@@ -818,7 +818,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**LineGroups**](LineGroups.md)
+[**LineGroups**](/navitia_sdk_docs/expert/android/endpoints/line_groups)
 
 ### Authorization
 

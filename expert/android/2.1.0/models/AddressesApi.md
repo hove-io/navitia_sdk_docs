@@ -3,7 +3,7 @@ layout: default
 title: AddressesApi
 parent: Endpoints
 grand_parent: Expert Android
-permalink: /expert/android/endpoints/AddressesApi.md
+permalink: /expert/android/endpoints/AddressesApi
 ---
 
 # AddressesApi
@@ -12,14 +12,14 @@ All URIs are relative to *https://api.navitia.io/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getCoverageLonLatAddresses**](AddressesApi.md#getCoverageLonLatAddresses) | **GET** /coverage/{lon};{lat}/addresses | 
-[**getCoverageLonLatAddressesId**](AddressesApi.md#getCoverageLonLatAddressesId) | **GET** /coverage/{lon};{lat}/addresses/{id} | 
-[**getCoverageLonLatUriAddresses**](AddressesApi.md#getCoverageLonLatUriAddresses) | **GET** /coverage/{lon};{lat}/{uri}/addresses | 
-[**getCoverageLonLatUriAddressesId**](AddressesApi.md#getCoverageLonLatUriAddressesId) | **GET** /coverage/{lon};{lat}/{uri}/addresses/{id} | 
-[**getCoverageRegionAddresses**](AddressesApi.md#getCoverageRegionAddresses) | **GET** /coverage/{region}/addresses | 
-[**getCoverageRegionAddressesId**](AddressesApi.md#getCoverageRegionAddressesId) | **GET** /coverage/{region}/addresses/{id} | 
-[**getCoverageRegionUriAddresses**](AddressesApi.md#getCoverageRegionUriAddresses) | **GET** /coverage/{region}/{uri}/addresses | 
-[**getCoverageRegionUriAddressesId**](AddressesApi.md#getCoverageRegionUriAddressesId) | **GET** /coverage/{region}/{uri}/addresses/{id} | 
+[**getCoverageLonLatAddresses**](#getCoverageLonLatAddresses) | **GET** /coverage/{lon};{lat}/addresses | 
+[**getCoverageLonLatAddressesId**](#getCoverageLonLatAddressesId) | **GET** /coverage/{lon};{lat}/addresses/{id} | 
+[**getCoverageLonLatUriAddresses**](#getCoverageLonLatUriAddresses) | **GET** /coverage/{lon};{lat}/{uri}/addresses | 
+[**getCoverageLonLatUriAddressesId**](#getCoverageLonLatUriAddressesId) | **GET** /coverage/{lon};{lat}/{uri}/addresses/{id} | 
+[**getCoverageRegionAddresses**](#getCoverageRegionAddresses) | **GET** /coverage/{region}/addresses | 
+[**getCoverageRegionAddressesId**](#getCoverageRegionAddressesId) | **GET** /coverage/{region}/addresses/{id} | 
+[**getCoverageRegionUriAddresses**](#getCoverageRegionUriAddresses) | **GET** /coverage/{region}/{uri}/addresses | 
+[**getCoverageRegionUriAddressesId**](#getCoverageRegionUriAddressesId) | **GET** /coverage/{region}/{uri}/addresses/{id} | 
 
 
 <a name="getCoverageLonLatAddresses"></a>
@@ -59,13 +59,13 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+-| ------------ | ------------- | ------------- | -------------
  **lat** | **BigDecimal**|  The latitude of where the coord you want to query |
  **lon** | **BigDecimal**|  The longitude of where the coord you want to query |
 
 ### Return type
 
-[**DictAddresses**](DictAddresses.md)
+[**DictAddresses**](/navitia_sdk_docs/expert/android/endpoints/dict_addresses)
 
 ### Authorization
 
@@ -114,14 +114,14 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+-| ------------ | ------------- | ------------- | -------------
  **lat** | **BigDecimal**|  The latitude of where the coord you want to query |
  **lon** | **BigDecimal**|  The longitude of where the coord you want to query |
  **id** | **String**| Id of the object you want to query |
 
 ### Return type
 
-[**DictAddresses**](DictAddresses.md)
+[**DictAddresses**](/navitia_sdk_docs/expert/android/endpoints/dict_addresses)
 
 ### Authorization
 
@@ -170,14 +170,14 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+-| ------------ | ------------- | ------------- | -------------
  **lat** | **BigDecimal**|  The latitude of where the coord you want to query |
  **lon** | **BigDecimal**|  The longitude of where the coord you want to query |
  **uri** | **String**| First part of the uri |
 
 ### Return type
 
-[**DictAddresses**](DictAddresses.md)
+[**DictAddresses**](/navitia_sdk_docs/expert/android/endpoints/dict_addresses)
 
 ### Authorization
 
@@ -227,7 +227,7 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+-| ------------ | ------------- | ------------- | -------------
  **lat** | **BigDecimal**|  The latitude of where the coord you want to query |
  **lon** | **BigDecimal**|  The longitude of where the coord you want to query |
  **uri** | **String**| First part of the uri |
@@ -235,7 +235,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**DictAddresses**](DictAddresses.md)
+[**DictAddresses**](/navitia_sdk_docs/expert/android/endpoints/dict_addresses)
 
 ### Authorization
 
@@ -282,12 +282,12 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+-| ------------ | ------------- | ------------- | -------------
  **region** | **String**|  The region you want to query |
 
 ### Return type
 
-[**DictAddresses**](DictAddresses.md)
+[**DictAddresses**](/navitia_sdk_docs/expert/android/endpoints/dict_addresses)
 
 ### Authorization
 
@@ -335,13 +335,13 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+-| ------------ | ------------- | ------------- | -------------
  **region** | **String**|  The region you want to query |
  **id** | **String**| Id of the object you want to query |
 
 ### Return type
 
-[**DictAddresses**](DictAddresses.md)
+[**DictAddresses**](/navitia_sdk_docs/expert/android/endpoints/dict_addresses)
 
 ### Authorization
 
@@ -389,13 +389,13 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+-| ------------ | ------------- | ------------- | -------------
  **region** | **String**|  The region you want to query |
  **uri** | **String**| First part of the uri |
 
 ### Return type
 
-[**DictAddresses**](DictAddresses.md)
+[**DictAddresses**](/navitia_sdk_docs/expert/android/endpoints/dict_addresses)
 
 ### Authorization
 
@@ -444,14 +444,14 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+-| ------------ | ------------- | ------------- | -------------
  **region** | **String**|  The region you want to query |
  **uri** | **String**| First part of the uri |
  **id** | **String**| Id of the object you want to query |
 
 ### Return type
 
-[**DictAddresses**](DictAddresses.md)
+[**DictAddresses**](/navitia_sdk_docs/expert/android/endpoints/dict_addresses)
 
 ### Authorization
 

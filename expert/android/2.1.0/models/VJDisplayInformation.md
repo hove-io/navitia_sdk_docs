@@ -1,20 +1,23 @@
 ---
 layout: default
-title: Address
+title: VJDisplayInformation
 parent: Endpoints
 grand_parent: Expert Android
-permalink: /expert/android/endpoints/address
+permalink: /expert/android/endpoints/v_j_display_information
 ---
 
 # VJDisplayInformation
 
+---
+
 ## Properties
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
+
+| Name | Type | Description | Notes
+| ------------ | ------------- | ------------- | -------------
 **direction** | **String** |  | 
 **code** | **String** |  |  [optional]
 **network** | **String** |  |  [optional]
-**links** | [**List&lt;LinkSchema&gt;**](LinkSchema.md) |  | 
+**links** | [**List&lt;LinkSchema&gt;**](/navitia_sdk_docs/expert/android/endpoints/link_schema) |  | 
 **color** | **String** |  |  [optional]
 **name** | **String** |  |  [optional]
 **physicalMode** | **String** |  |  [optional]
@@ -29,8 +32,8 @@ Name | Type | Description | Notes
 
 <a name="List<EquipmentsEnum>"></a>
 ## Enum: List&lt;EquipmentsEnum&gt;
-Name | Value
----- | -----
+| Name | Value
+| ---- | -----
 WHEELCHAIR_ACCESSIBILITY | &quot;has_wheelchair_accessibility&quot;
 BIKE_ACCEPTED | &quot;has_bike_accepted&quot;
 AIR_CONDITIONED | &quot;has_air_conditioned&quot;

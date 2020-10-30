@@ -11,13 +11,14 @@ permalink: /expert/android/endpoints/address
 ---
 
 ## Properties
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
+
+| Name | Type | Description | Notes
+| ------------ | ------------- | ------------- | -------------
 **name** | **String** | Name of the object | 
 **houseNumber** | **Integer** |  | 
-**coord** | [**Coord**](Coord.md) |  |  [optional]
+**coord** | [**Coord**](/navitia_sdk_docs/expert/android/endpoints/coord) |  |  [optional]
 **label** | **String** |  |  [optional]
-**administrativeRegions** | [**List&lt;Admin&gt;**](Admin.md) |  |  [optional]
+**administrativeRegions** | [**List&lt;Admin&gt;**](/navitia_sdk_docs/expert/android/endpoints/admin) |  |  [optional]
 **id** | **String** | Identifier of the object | 
 
 

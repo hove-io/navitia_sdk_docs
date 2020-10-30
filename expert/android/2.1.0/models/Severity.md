@@ -1,16 +1,19 @@
 ---
 layout: default
-title: Address
+title: Severity
 parent: Endpoints
 grand_parent: Expert Android
-permalink: /expert/android/endpoints/address
+permalink: /expert/android/endpoints/severity
 ---
 
 # Severity
 
+---
+
 ## Properties
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
+
+| Name | Type | Description | Notes
+| ------------ | ------------- | ------------- | -------------
 **color** | **String** |  |  [optional]
 **priority** | **Integer** |  |  [optional]
 **name** | **String** |  |  [optional]
@@ -19,8 +22,8 @@ Name | Type | Description | Notes
 
 <a name="EffectEnum"></a>
 ## Enum: EffectEnum
-Name | Value
----- | -----
+| Name | Value
+| ---- | -----
 NO_SERVICE | &quot;NO_SERVICE&quot;
 REDUCED_SERVICE | &quot;REDUCED_SERVICE&quot;
 SIGNIFICANT_DELAYS | &quot;SIGNIFICANT_DELAYS&quot;

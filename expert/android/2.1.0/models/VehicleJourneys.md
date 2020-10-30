@@ -1,24 +1,27 @@
 ---
 layout: default
-title: Address
+title: VehicleJourneys
 parent: Endpoints
 grand_parent: Expert Android
-permalink: /expert/android/endpoints/address
+permalink: /expert/android/endpoints/vehicle_journeys
 ---
 
 # VehicleJourneys
 
+---
+
 ## Properties
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**pagination** | [**Pagination**](Pagination.md) |  | 
-**links** | [**List&lt;LinkSchema&gt;**](LinkSchema.md) |  |  [optional]
-**disruptions** | [**List&lt;Disruption&gt;**](Disruption.md) |  | 
-**notes** | [**List&lt;Note&gt;**](Note.md) |  |  [optional]
-**feedPublishers** | [**List&lt;FeedPublisher&gt;**](FeedPublisher.md) |  | 
-**context** | [**Context**](Context.md) |  |  [optional]
-**error** | [**Error**](Error.md) |  |  [optional]
-**vehicleJourneys** | [**List&lt;VehicleJourney&gt;**](VehicleJourney.md) |  |  [optional]
+
+| Name | Type | Description | Notes
+| ------------ | ------------- | ------------- | -------------
+**pagination** | [**Pagination**](/navitia_sdk_docs/expert/android/endpoints/pagination) |  | 
+**links** | [**List&lt;LinkSchema&gt;**](/navitia_sdk_docs/expert/android/endpoints/link_schema) |  |  [optional]
+**disruptions** | [**List&lt;Disruption&gt;**](/navitia_sdk_docs/expert/android/endpoints/disruption) |  | 
+**notes** | [**List&lt;Note&gt;**](/navitia_sdk_docs/expert/android/endpoints/note) |  |  [optional]
+**feedPublishers** | [**List&lt;FeedPublisher&gt;**](/navitia_sdk_docs/expert/android/endpoints/feed_publisher) |  | 
+**context** | [**Context**](/navitia_sdk_docs/expert/android/endpoints/context) |  |  [optional]
+**error** | [**Error**](/navitia_sdk_docs/expert/android/endpoints/error) |  |  [optional]
+**vehicleJourneys** | [**List&lt;VehicleJourney&gt;**](Vehicle/navitia_sdk_docs/expert/android/endpoints/journey) |  |  [optional]
 
 
 

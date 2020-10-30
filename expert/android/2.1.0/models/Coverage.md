@@ -1,23 +1,26 @@
 ---
 layout: default
-title: Address
+title: Coverage
 parent: Endpoints
 grand_parent: Expert Android
-permalink: /expert/android/endpoints/address
+permalink: /expert/android/endpoints/coverage
 ---
 
 # Coverage
 
+---
+
 ## Properties
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
+
+| Name | Type | Description | Notes
+| ------------ | ------------- | ------------- | -------------
 **status** | **String** |  |  [optional]
 **datasetCreatedAt** | **String** | Creation date of the dataset |  [optional]
 **name** | **String** | Name of the coverage | 
 **startProductionDate** | **String** | Beginning of the production period. We only have data on this production period |  [optional]
 **shape** | **String** | GeoJSON of the shape of the coverage | 
 **endProductionDate** | **String** | End of the production period. We only have data on this production period |  [optional]
-**error** | [**CoverageError**](CoverageError.md) |  |  [optional]
+**error** | [**CoverageError**](/navitia_sdk_docs/expert/android/endpoints/coverage_error) |  |  [optional]
 **lastLoadAt** | **String** | Datetime of the last data loading |  [optional]
 **id** | **String** | Identifier of the coverage | 
 

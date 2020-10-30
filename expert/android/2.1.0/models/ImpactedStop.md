@@ -1,18 +1,21 @@
 ---
 layout: default
-title: Address
+title: ImpactedStop
 parent: Endpoints
 grand_parent: Expert Android
-permalink: /expert/android/endpoints/address
+permalink: /expert/android/endpoints/impacted_stop
 ---
 
 # ImpactedStop
 
+---
+
 ## Properties
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
+
+| Name | Type | Description | Notes
+| ------------ | ------------- | ------------- | -------------
 **amendedArrivalTime** | **String** |  |  [optional]
-**stopPoint** | [**StopPoint**](StopPoint.md) |  |  [optional]
+**stopPoint** | [**StopPoint**](/navitia_sdk_docs/expert/android/endpoints/stop_point) |  |  [optional]
 **stopTimeEffect** | [**StopTimeEffectEnum**](#StopTimeEffectEnum) |  |  [optional]
 **departureStatus** | **String** |  |  [optional]
 **isDetour** | **Boolean** |  | 
@@ -25,8 +28,8 @@ Name | Type | Description | Notes
 
 <a name="StopTimeEffectEnum"></a>
 ## Enum: StopTimeEffectEnum
-Name | Value
----- | -----
+| Name | Value
+| ---- | -----
 DELAYED | &quot;delayed&quot;
 ADDED | &quot;added&quot;
 DELETED | &quot;deleted&quot;

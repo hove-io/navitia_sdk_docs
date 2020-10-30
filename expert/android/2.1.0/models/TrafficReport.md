@@ -1,20 +1,23 @@
 ---
 layout: default
-title: Address
+title: TrafficReport
 parent: Endpoints
 grand_parent: Expert Android
-permalink: /expert/android/endpoints/address
+permalink: /expert/android/endpoints/traffic_report
 ---
 
 # TrafficReport
 
+---
+
 ## Properties
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**vehicleJourneys** | [**List&lt;VehicleJourney&gt;**](VehicleJourney.md) |  |  [optional]
-**lines** | [**List&lt;Line&gt;**](Line.md) |  |  [optional]
-**network** | [**Network**](Network.md) |  |  [optional]
-**stopAreas** | [**List&lt;StopArea&gt;**](StopArea.md) |  |  [optional]
+
+| Name | Type | Description | Notes
+| ------------ | ------------- | ------------- | -------------
+**vehicleJourneys** | [**List&lt;VehicleJourney&gt;**](Vehicle/navitia_sdk_docs/expert/android/endpoints/journey) |  |  [optional]
+**lines** | [**List&lt;Line&gt;**](/navitia_sdk_docs/expert/android/endpoints/line) |  |  [optional]
+**network** | [**Network**](/navitia_sdk_docs/expert/android/endpoints/network) |  |  [optional]
+**stopAreas** | [**List&lt;StopArea&gt;**](/navitia_sdk_docs/expert/android/endpoints/stop_area) |  |  [optional]
 
 
 

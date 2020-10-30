@@ -1,9 +1,9 @@
 ---
 layout: default
-title: Address
+title: PlacesNearbyApi
 parent: Endpoints
 grand_parent: Expert Android
-permalink: /expert/android/endpoints/address
+permalink: /expert/android/endpoints/PlacesNearbyApi
 ---
 
 # PlacesNearbyApi
@@ -67,7 +67,7 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+-| ------------ | ------------- | ------------- | -------------
  **lat** | **BigDecimal**|  The latitude of where the coord you want to query |
  **lon** | **BigDecimal**|  The longitude of where the coord you want to query |
  **type** | [**List&lt;String&gt;**](String.md)| Type of the objects to return | [optional] [default to [u&#39;stop_area&#39;, u&#39;stop_point&#39;, u&#39;poi&#39;]] [enum: stop_point, poi, administrative_region, stop_area, address]
@@ -83,7 +83,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PlacesNearby**](PlacesNearby.md)
+[**PlacesNearby**](/navitia_sdk_docs/expert/android/endpoints/places_nearby)
 
 ### Authorization
 
@@ -141,7 +141,7 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+-| ------------ | ------------- | ------------- | -------------
  **lat** | **BigDecimal**|  The latitude of where the coord you want to query |
  **lon** | **BigDecimal**|  The longitude of where the coord you want to query |
  **type** | [**List&lt;String&gt;**](String.md)| Type of the objects to return | [optional] [default to [u&#39;stop_area&#39;, u&#39;stop_point&#39;, u&#39;poi&#39;]] [enum: stop_point, poi, administrative_region, stop_area, address]
@@ -157,7 +157,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PlacesNearby**](PlacesNearby.md)
+[**PlacesNearby**](/navitia_sdk_docs/expert/android/endpoints/places_nearby)
 
 ### Authorization
 
@@ -215,7 +215,7 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+-| ------------ | ------------- | ------------- | -------------
  **lat** | **BigDecimal**|  The latitude of where the coord you want to query |
  **lon** | **BigDecimal**|  The longitude of where the coord you want to query |
  **type** | [**List&lt;String&gt;**](String.md)| Type of the objects to return | [optional] [default to [u&#39;stop_area&#39;, u&#39;stop_point&#39;, u&#39;poi&#39;]] [enum: stop_point, poi, administrative_region, stop_area, address]
@@ -231,7 +231,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PlacesNearby**](PlacesNearby.md)
+[**PlacesNearby**](/navitia_sdk_docs/expert/android/endpoints/places_nearby)
 
 ### Authorization
 
@@ -290,7 +290,7 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+-| ------------ | ------------- | ------------- | -------------
  **lat** | **BigDecimal**|  The latitude of where the coord you want to query |
  **lon** | **BigDecimal**|  The longitude of where the coord you want to query |
  **uri** | **String**| First part of the uri |
@@ -307,7 +307,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PlacesNearby**](PlacesNearby.md)
+[**PlacesNearby**](/navitia_sdk_docs/expert/android/endpoints/places_nearby)
 
 ### Authorization
 
@@ -364,7 +364,7 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+-| ------------ | ------------- | ------------- | -------------
  **region** | **String**|  The region you want to query |
  **type** | [**List&lt;String&gt;**](String.md)| Type of the objects to return | [optional] [default to [u&#39;stop_area&#39;, u&#39;stop_point&#39;, u&#39;poi&#39;]] [enum: stop_point, poi, administrative_region, stop_area, address]
  **filter** | **String**| Filter your objects | [optional]
@@ -379,7 +379,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PlacesNearby**](PlacesNearby.md)
+[**PlacesNearby**](/navitia_sdk_docs/expert/android/endpoints/places_nearby)
 
 ### Authorization
 
@@ -437,7 +437,7 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+-| ------------ | ------------- | ------------- | -------------
  **region** | **String**|  The region you want to query |
  **uri** | **String**| First part of the uri |
  **type** | [**List&lt;String&gt;**](String.md)| Type of the objects to return | [optional] [default to [u&#39;stop_area&#39;, u&#39;stop_point&#39;, u&#39;poi&#39;]] [enum: stop_point, poi, administrative_region, stop_area, address]
@@ -453,7 +453,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PlacesNearby**](PlacesNearby.md)
+[**PlacesNearby**](/navitia_sdk_docs/expert/android/endpoints/places_nearby)
 
 ### Authorization
 

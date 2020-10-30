@@ -1,20 +1,23 @@
 ---
 layout: default
-title: Address
+title: RouteDisplayInformation
 parent: Endpoints
 grand_parent: Expert Android
-permalink: /expert/android/endpoints/address
+permalink: /expert/android/endpoints/route_display_information
 ---
 
 # RouteDisplayInformation
 
+---
+
 ## Properties
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
+
+| Name | Type | Description | Notes
+| ------------ | ------------- | ------------- | -------------
 **direction** | **String** |  | 
 **code** | **String** |  |  [optional]
 **network** | **String** |  |  [optional]
-**links** | [**List&lt;LinkSchema&gt;**](LinkSchema.md) |  | 
+**links** | [**List&lt;LinkSchema&gt;**](/navitia_sdk_docs/expert/android/endpoints/link_schema) |  | 
 **color** | **String** |  |  [optional]
 **label** | **String** |  |  [optional]
 **commercialMode** | **String** |  |  [optional]

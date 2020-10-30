@@ -1,9 +1,9 @@
 ---
 layout: default
-title: Address
+title: VehicleJourneysApi
 parent: Endpoints
 grand_parent: Expert Android
-permalink: /expert/android/endpoints/address
+permalink: /expert/android/endpoints/VehicleJourneysApi
 ---
 
 # VehicleJourneysApi
@@ -12,15 +12,15 @@ All URIs are relative to *https://api.navitia.io/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getCoverageLonLatUriVehicleJourneys**](VehicleJourneysApi.md#getCoverageLonLatUriVehicleJourneys) | **GET** /coverage/{lon};{lat}/{uri}/vehicle_journeys | 
-[**getCoverageLonLatUriVehicleJourneysId**](VehicleJourneysApi.md#getCoverageLonLatUriVehicleJourneysId) | **GET** /coverage/{lon};{lat}/{uri}/vehicle_journeys/{id} | 
-[**getCoverageLonLatVehicleJourneys**](VehicleJourneysApi.md#getCoverageLonLatVehicleJourneys) | **GET** /coverage/{lon};{lat}/vehicle_journeys | 
-[**getCoverageLonLatVehicleJourneysId**](VehicleJourneysApi.md#getCoverageLonLatVehicleJourneysId) | **GET** /coverage/{lon};{lat}/vehicle_journeys/{id} | 
-[**getCoverageRegionUriVehicleJourneys**](VehicleJourneysApi.md#getCoverageRegionUriVehicleJourneys) | **GET** /coverage/{region}/{uri}/vehicle_journeys | 
-[**getCoverageRegionUriVehicleJourneysId**](VehicleJourneysApi.md#getCoverageRegionUriVehicleJourneysId) | **GET** /coverage/{region}/{uri}/vehicle_journeys/{id} | 
-[**getCoverageRegionVehicleJourneys**](VehicleJourneysApi.md#getCoverageRegionVehicleJourneys) | **GET** /coverage/{region}/vehicle_journeys | 
-[**getCoverageRegionVehicleJourneysId**](VehicleJourneysApi.md#getCoverageRegionVehicleJourneysId) | **GET** /coverage/{region}/vehicle_journeys/{id} | 
-[**getVehicleJourneys**](VehicleJourneysApi.md#getVehicleJourneys) | **GET** /vehicle_journeys | 
+[**getCoverageLonLatUriVehicleJourneys**](#getCoverageLonLatUriVehicleJourneys) | **GET** /coverage/{lon};{lat}/{uri}/vehicle_journeys | 
+[**getCoverageLonLatUriVehicleJourneysId**](#getCoverageLonLatUriVehicleJourneysId) | **GET** /coverage/{lon};{lat}/{uri}/vehicle_journeys/{id} | 
+[**getCoverageLonLatVehicleJourneys**](#getCoverageLonLatVehicleJourneys) | **GET** /coverage/{lon};{lat}/vehicle_journeys | 
+[**getCoverageLonLatVehicleJourneysId**](#getCoverageLonLatVehicleJourneysId) | **GET** /coverage/{lon};{lat}/vehicle_journeys/{id} | 
+[**getCoverageRegionUriVehicleJourneys**](#getCoverageRegionUriVehicleJourneys) | **GET** /coverage/{region}/{uri}/vehicle_journeys | 
+[**getCoverageRegionUriVehicleJourneysId**](#getCoverageRegionUriVehicleJourneysId) | **GET** /coverage/{region}/{uri}/vehicle_journeys/{id} | 
+[**getCoverageRegionVehicleJourneys**](#getCoverageRegionVehicleJourneys) | **GET** /coverage/{region}/vehicle_journeys | 
+[**getCoverageRegionVehicleJourneysId**](#getCoverageRegionVehicleJourneysId) | **GET** /coverage/{region}/vehicle_journeys/{id} | 
+[**getVehicleJourneys**](#getVehicleJourneys) | **GET** /vehicle_journeys | 
 
 
 <a name="getCoverageLonLatUriVehicleJourneys"></a>
@@ -78,7 +78,7 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+-| ------------ | ------------- | ------------- | -------------
  **lat** | **BigDecimal**|  The latitude of where the coord you want to query |
  **lon** | **BigDecimal**|  The longitude of where the coord you want to query |
  **uri** | **String**| First part of the uri |
@@ -102,7 +102,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**VehicleJourneys**](VehicleJourneys.md)
+[**VehicleJourneys**](Vehicle/navitia_sdk_docs/expert/android/endpoints/journeys)
 
 ### Authorization
 
@@ -168,7 +168,7 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+-| ------------ | ------------- | ------------- | -------------
  **lat** | **BigDecimal**|  The latitude of where the coord you want to query |
  **lon** | **BigDecimal**|  The longitude of where the coord you want to query |
  **uri** | **String**| First part of the uri |
@@ -192,7 +192,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**VehicleJourneys**](VehicleJourneys.md)
+[**VehicleJourneys**](Vehicle/navitia_sdk_docs/expert/android/endpoints/journeys)
 
 ### Authorization
 
@@ -257,7 +257,7 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+-| ------------ | ------------- | ------------- | -------------
  **lat** | **BigDecimal**|  The latitude of where the coord you want to query |
  **lon** | **BigDecimal**|  The longitude of where the coord you want to query |
  **startPage** | **Integer**| The page where you want to start | [optional]
@@ -280,7 +280,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**VehicleJourneys**](VehicleJourneys.md)
+[**VehicleJourneys**](Vehicle/navitia_sdk_docs/expert/android/endpoints/journeys)
 
 ### Authorization
 
@@ -345,7 +345,7 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+-| ------------ | ------------- | ------------- | -------------
  **lat** | **BigDecimal**|  The latitude of where the coord you want to query |
  **lon** | **BigDecimal**|  The longitude of where the coord you want to query |
  **id** | **String**| Id of the object you want to query |
@@ -368,7 +368,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**VehicleJourneys**](VehicleJourneys.md)
+[**VehicleJourneys**](Vehicle/navitia_sdk_docs/expert/android/endpoints/journeys)
 
 ### Authorization
 
@@ -433,7 +433,7 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+-| ------------ | ------------- | ------------- | -------------
  **region** | **String**|  The region you want to query |
  **uri** | **String**| First part of the uri |
  **startPage** | **Integer**| The page where you want to start | [optional]
@@ -456,7 +456,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**VehicleJourneys**](VehicleJourneys.md)
+[**VehicleJourneys**](Vehicle/navitia_sdk_docs/expert/android/endpoints/journeys)
 
 ### Authorization
 
@@ -521,7 +521,7 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+-| ------------ | ------------- | ------------- | -------------
  **region** | **String**|  The region you want to query |
  **uri** | **String**| First part of the uri |
  **id** | **String**| Id of the object you want to query |
@@ -544,7 +544,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**VehicleJourneys**](VehicleJourneys.md)
+[**VehicleJourneys**](Vehicle/navitia_sdk_docs/expert/android/endpoints/journeys)
 
 ### Authorization
 
@@ -608,7 +608,7 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+-| ------------ | ------------- | ------------- | -------------
  **region** | **String**|  The region you want to query |
  **startPage** | **Integer**| The page where you want to start | [optional]
  **count** | **Integer**| Number of objects you want on a page | [optional] [default to 25]
@@ -630,7 +630,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**VehicleJourneys**](VehicleJourneys.md)
+[**VehicleJourneys**](Vehicle/navitia_sdk_docs/expert/android/endpoints/journeys)
 
 ### Authorization
 
@@ -694,7 +694,7 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+-| ------------ | ------------- | ------------- | -------------
  **region** | **String**|  The region you want to query |
  **id** | **String**| Id of the object you want to query |
  **startPage** | **Integer**| The page where you want to start | [optional]
@@ -716,7 +716,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**VehicleJourneys**](VehicleJourneys.md)
+[**VehicleJourneys**](Vehicle/navitia_sdk_docs/expert/android/endpoints/journeys)
 
 ### Authorization
 
@@ -779,7 +779,7 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+-| ------------ | ------------- | ------------- | -------------
  **externalCode** | **String**| An external code to query |
  **startPage** | **Integer**| The page where you want to start | [optional]
  **count** | **Integer**| Number of objects you want on a page | [optional] [default to 25]
@@ -800,7 +800,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**VehicleJourneys**](VehicleJourneys.md)
+[**VehicleJourneys**](Vehicle/navitia_sdk_docs/expert/android/endpoints/journeys)
 
 ### Authorization
 

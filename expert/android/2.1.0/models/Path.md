@@ -1,16 +1,19 @@
 ---
 layout: default
-title: Address
+title: Path
 parent: Endpoints
 grand_parent: Expert Android
-permalink: /expert/android/endpoints/address
+permalink: /expert/android/endpoints/path
 ---
 
 # Path
 
+---
+
 ## Properties
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
+
+| Name | Type | Description | Notes
+| ------------ | ------------- | ------------- | -------------
 **duration** | **Integer** |  | 
 **direction** | **Integer** |  | 
 **length** | **Integer** |  | 

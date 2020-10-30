@@ -1,9 +1,9 @@
 ---
 layout: default
-title: Address
+title: JourneysApi
 parent: Endpoints
 grand_parent: Expert Android
-permalink: /expert/android/endpoints/address
+permalink: /expert/android/endpoints/JourneysApi
 ---
 
 # JourneysApi
@@ -12,9 +12,9 @@ All URIs are relative to *https://api.navitia.io/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getCoverageLonLatJourneys**](JourneysApi.md#getCoverageLonLatJourneys) | **GET** /coverage/{lon};{lat}/journeys | 
-[**getCoverageRegionJourneys**](JourneysApi.md#getCoverageRegionJourneys) | **GET** /coverage/{region}/journeys | 
-[**getJourneys**](JourneysApi.md#getJourneys) | **GET** /journeys | 
+[**getCoverageLonLatJourneys**](#getCoverageLonLatJourneys) | **GET** /coverage/{lon};{lat}/journeys | 
+[**getCoverageRegionJourneys**](#getCoverageRegionJourneys) | **GET** /coverage/{region}/journeys | 
+[**getJourneys**](#getJourneys) | **GET** /journeys | 
 
 
 <a name="getCoverageLonLatJourneys"></a>
@@ -101,7 +101,7 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+-| ------------ | ------------- | ------------- | -------------
  **lat** | **BigDecimal**|  The latitude of where the coord you want to query |
  **lon** | **BigDecimal**|  The longitude of where the coord you want to query |
  **from** | **String**| The id of the departure of your journey. If not provided an isochrone is computed. | [optional]
@@ -154,7 +154,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Journeys**](Journeys.md)
+[**Journeys**](/navitia_sdk_docs/expert/android/endpoints/journeys)
 
 ### Authorization
 
@@ -248,7 +248,7 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+-| ------------ | ------------- | ------------- | -------------
  **region** | **String**|  The region you want to query |
  **from** | **String**| The id of the departure of your journey. If not provided an isochrone is computed. | [optional]
  **to** | **String**| The id of the arrival of your journey. If not provided an isochrone is computed. | [optional]
@@ -300,7 +300,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Journeys**](Journeys.md)
+[**Journeys**](/navitia_sdk_docs/expert/android/endpoints/journeys)
 
 ### Authorization
 
@@ -393,7 +393,7 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+-| ------------ | ------------- | ------------- | -------------
  **from** | **String**| The id of the departure of your journey. If not provided an isochrone is computed. | [optional]
  **to** | **String**| The id of the arrival of your journey. If not provided an isochrone is computed. | [optional]
  **datetime** | **DateTime**| Date and time to go/arrive (see &#x60;datetime_represents&#x60;). Note: the datetime must be in the coverage’s publication period. | [optional]
@@ -444,7 +444,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Journeys**](Journeys.md)
+[**Journeys**](/navitia_sdk_docs/expert/android/endpoints/journeys)
 
 ### Authorization
 

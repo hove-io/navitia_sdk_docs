@@ -1,33 +1,36 @@
 ---
 layout: default
-title: Address
+title: Line
 parent: Endpoints
 grand_parent: Expert Android
-permalink: /expert/android/endpoints/address
+permalink: /expert/android/endpoints/line
 ---
 
 # Line
 
+---
+
 ## Properties
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
+
+| Name | Type | Description | Notes
+| ------------ | ------------- | ------------- | -------------
 **comment** | **String** |  |  [optional]
-**properties** | [**List&lt;Property&gt;**](Property.md) |  |  [optional]
+**properties** | [**List&lt;Property&gt;**](/navitia_sdk_docs/expert/android/endpoints/property) |  |  [optional]
 **code** | **String** |  | 
-**network** | [**Network**](Network.md) |  |  [optional]
-**links** | [**List&lt;LinkSchema&gt;**](LinkSchema.md) |  | 
+**network** | [**Network**](/navitia_sdk_docs/expert/android/endpoints/network) |  |  [optional]
+**links** | [**List&lt;LinkSchema&gt;**](/navitia_sdk_docs/expert/android/endpoints/link_schema) |  | 
 **color** | **String** |  |  [optional]
-**routes** | [**List&lt;Route&gt;**](Route.md) |  |  [optional]
-**geojson** | [**MultiLineStringSchema**](MultiLineStringSchema.md) |  |  [optional]
+**routes** | [**List&lt;Route&gt;**](/navitia_sdk_docs/expert/android/endpoints/route) |  |  [optional]
+**geojson** | [**MultiLineStringSchema**](/navitia_sdk_docs/expert/android/endpoints/multi_line_string_schema) |  |  [optional]
 **textColor** | **String** |  |  [optional]
-**physicalModes** | [**List&lt;PhysicalMode&gt;**](PhysicalMode.md) |  |  [optional]
-**codes** | [**List&lt;Code&gt;**](Code.md) |  |  [optional]
-**comments** | [**List&lt;Comment&gt;**](Comment.md) |  |  [optional]
+**physicalModes** | [**List&lt;PhysicalMode&gt;**](/navitia_sdk_docs/expert/android/endpoints/physical_mode) |  |  [optional]
+**codes** | [**List&lt;Code&gt;**](/navitia_sdk_docs/expert/android/endpoints/code) |  |  [optional]
+**comments** | [**List&lt;Comment&gt;**](/navitia_sdk_docs/expert/android/endpoints/comment) |  |  [optional]
 **closingTime** | **String** |  |  [optional]
 **openingTime** | **String** |  |  [optional]
-**commercialMode** | [**CommercialMode**](CommercialMode.md) |  |  [optional]
+**commercialMode** | [**CommercialMode**](/navitia_sdk_docs/expert/android/endpoints/commercial_mode) |  |  [optional]
 **id** | **String** | Identifier of the object | 
-**lineGroups** | [**List&lt;LineGroup&gt;**](LineGroup.md) |  |  [optional]
+**lineGroups** | [**List&lt;LineGroup&gt;**](/navitia_sdk_docs/expert/android/endpoints/line_group) |  |  [optional]
 **name** | **String** | Name of the object | 
 
 

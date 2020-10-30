@@ -1,26 +1,29 @@
 ---
 layout: default
-title: Address
+title: EquipmentDetails
 parent: Endpoints
 grand_parent: Expert Android
-permalink: /expert/android/endpoints/address
+permalink: /expert/android/endpoints/equipment_details
 ---
 
 # EquipmentDetails
 
+---
+
 ## Properties
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
+
+| Name | Type | Description | Notes
+| ------------ | ------------- | ------------- | -------------
 **embeddedType** | [**EmbeddedTypeEnum**](#EmbeddedTypeEnum) |  |  [optional]
 **id** | **String** |  |  [optional]
 **name** | **String** |  |  [optional]
-**currentAvailability** | [**CurrentAvailability**](CurrentAvailability.md) |  |  [optional]
+**currentAvailability** | [**CurrentAvailability**](/navitia_sdk_docs/expert/android/endpoints/current_availability) |  |  [optional]
 
 
 <a name="EmbeddedTypeEnum"></a>
 ## Enum: EmbeddedTypeEnum
-Name | Value
----- | -----
+| Name | Value
+| ---- | -----
 ESCALATOR | &quot;escalator&quot;
 ELEVATOR | &quot;elevator&quot;
 

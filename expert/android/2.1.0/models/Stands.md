@@ -1,16 +1,19 @@
 ---
 layout: default
-title: Address
+title: Stands
 parent: Endpoints
 grand_parent: Expert Android
-permalink: /expert/android/endpoints/address
+permalink: /expert/android/endpoints/stands
 ---
 
 # Stands
 
+---
+
 ## Properties
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
+
+| Name | Type | Description | Notes
+| ------------ | ------------- | ------------- | -------------
 **status** | [**StatusEnum**](#StatusEnum) |  |  [optional]
 **availablePlaces** | **Integer** |  |  [optional]
 **availableBikes** | **Integer** |  |  [optional]
@@ -19,8 +22,8 @@ Name | Type | Description | Notes
 
 <a name="StatusEnum"></a>
 ## Enum: StatusEnum
-Name | Value
----- | -----
+| Name | Value
+| ---- | -----
 UNAVAILABLE | &quot;unavailable&quot;
 CLOSED | &quot;closed&quot;
 OPEN | &quot;open&quot;

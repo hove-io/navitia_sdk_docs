@@ -1,16 +1,19 @@
 ---
 layout: default
-title: Address
+title: Durations
 parent: Endpoints
 grand_parent: Expert Android
-permalink: /expert/android/endpoints/address
+permalink: /expert/android/endpoints/durations
 ---
 
 # Durations
 
+---
+
 ## Properties
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
+
+| Name | Type | Description | Notes
+| ------------ | ------------- | ------------- | -------------
 **taxi** | **Integer** | Total duration by taxi of the journey (seconds) | 
 **walking** | **Integer** | Total walking duration of the journey (seconds) | 
 **car** | **Integer** | Total duration by car of the journey (seconds) | 

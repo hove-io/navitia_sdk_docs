@@ -1,9 +1,9 @@
 ---
 layout: default
-title: Address
+title: PlacesApi
 parent: Endpoints
 grand_parent: Expert Android
-permalink: /expert/android/endpoints/address
+permalink: /expert/android/endpoints/PlacesApi
 ---
 
 # PlacesApi
@@ -12,9 +12,9 @@ All URIs are relative to *https://api.navitia.io/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getCoverageLonLatPlaces**](PlacesApi.md#getCoverageLonLatPlaces) | **GET** /coverage/{lon};{lat}/places | 
-[**getCoverageRegionPlaces**](PlacesApi.md#getCoverageRegionPlaces) | **GET** /coverage/{region}/places | 
-[**getPlaces**](PlacesApi.md#getPlaces) | **GET** /places | 
+[**getCoverageLonLatPlaces**](#getCoverageLonLatPlaces) | **GET** /coverage/{lon};{lat}/places | 
+[**getCoverageRegionPlaces**](#getCoverageRegionPlaces) | **GET** /coverage/{region}/places | 
+[**getPlaces**](#getPlaces) | **GET** /places | 
 
 
 <a name="getCoverageLonLatPlaces"></a>
@@ -62,7 +62,7 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+-| ------------ | ------------- | ------------- | -------------
  **q** | **String**| The data to search |
  **lat** | **BigDecimal**|  The latitude of where the coord you want to query |
  **lon** | **BigDecimal**|  The longitude of where the coord you want to query |
@@ -76,7 +76,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Places**](Places.md)
+[**Places**](/navitia_sdk_docs/expert/android/endpoints/places)
 
 ### Authorization
 
@@ -131,7 +131,7 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+-| ------------ | ------------- | ------------- | -------------
  **q** | **String**| The data to search |
  **region** | **String**|  The region you want to query |
  **type** | [**List&lt;String&gt;**](String.md)| The type of data to search | [optional] [default to [u&#39;stop_area&#39;, u&#39;address&#39;, u&#39;poi&#39;, u&#39;administrative_region&#39;]] [enum: stop_point, poi, administrative_region, stop_area, address]
@@ -144,7 +144,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Places**](Places.md)
+[**Places**](/navitia_sdk_docs/expert/android/endpoints/places)
 
 ### Authorization
 
@@ -198,7 +198,7 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+-| ------------ | ------------- | ------------- | -------------
  **q** | **String**| The data to search |
  **type** | [**List&lt;String&gt;**](String.md)| The type of data to search | [optional] [default to [u&#39;stop_area&#39;, u&#39;address&#39;, u&#39;poi&#39;, u&#39;administrative_region&#39;]] [enum: stop_point, poi, administrative_region, stop_area, address]
  **count** | **Integer**| The maximum number of places returned | [optional] [default to 10]
@@ -210,7 +210,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Places**](Places.md)
+[**Places**](/navitia_sdk_docs/expert/android/endpoints/places)
 
 ### Authorization
 

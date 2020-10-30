@@ -1,9 +1,9 @@
 ---
 layout: default
-title: Address
+title: GeoStatusApi
 parent: Endpoints
 grand_parent: Expert Android
-permalink: /expert/android/endpoints/address
+permalink: /expert/android/endpoints/GeoStatusApi
 ---
 
 # GeoStatusApi
@@ -12,8 +12,8 @@ All URIs are relative to *https://api.navitia.io/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getCoverageLonLatGeoStatus**](GeoStatusApi.md#getCoverageLonLatGeoStatus) | **GET** /coverage/{lon};{lat}/_geo_status | 
-[**getCoverageRegionGeoStatus**](GeoStatusApi.md#getCoverageRegionGeoStatus) | **GET** /coverage/{region}/_geo_status | 
+[**getCoverageLonLatGeoStatus**](#getCoverageLonLatGeoStatus) | **GET** /coverage/{lon};{lat}/_geo_status | 
+[**getCoverageRegionGeoStatus**](#getCoverageRegionGeoStatus) | **GET** /coverage/{region}/_geo_status | 
 
 
 <a name="getCoverageLonLatGeoStatus"></a>
@@ -53,13 +53,13 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+-| ------------ | ------------- | ------------- | -------------
  **lat** | **BigDecimal**|  The latitude of where the coord you want to query |
  **lon** | **BigDecimal**|  The longitude of where the coord you want to query |
 
 ### Return type
 
-[**GeoStatus1**](GeoStatus1.md)
+[**GeoStatus1**](/navitia_sdk_docs/expert/android/endpoints/geo_status1)
 
 ### Authorization
 
@@ -106,12 +106,12 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+-| ------------ | ------------- | ------------- | -------------
  **region** | **String**|  The region you want to query |
 
 ### Return type
 
-[**GeoStatus1**](GeoStatus1.md)
+[**GeoStatus1**](/navitia_sdk_docs/expert/android/endpoints/geo_status1)
 
 ### Authorization
 

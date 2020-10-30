@@ -1,9 +1,9 @@
 ---
 layout: default
-title: Address
+title: TerminusSchedulesApi
 parent: Endpoints
 grand_parent: Expert Android
-permalink: /expert/android/endpoints/address
+permalink: /expert/android/endpoints/TerminusSchedulesApi
 ---
 
 # TerminusSchedulesApi
@@ -12,9 +12,9 @@ All URIs are relative to *https://api.navitia.io/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getCoverageLonLatUriTerminusSchedules**](TerminusSchedulesApi.md#getCoverageLonLatUriTerminusSchedules) | **GET** /coverage/{lon};{lat}/{uri}/terminus_schedules | 
-[**getCoverageRegionUriTerminusSchedules**](TerminusSchedulesApi.md#getCoverageRegionUriTerminusSchedules) | **GET** /coverage/{region}/{uri}/terminus_schedules | 
-[**getTerminusSchedules**](TerminusSchedulesApi.md#getTerminusSchedules) | **GET** /terminus_schedules | 
+[**getCoverageLonLatUriTerminusSchedules**](#getCoverageLonLatUriTerminusSchedules) | **GET** /coverage/{lon};{lat}/{uri}/terminus_schedules | 
+[**getCoverageRegionUriTerminusSchedules**](#getCoverageRegionUriTerminusSchedules) | **GET** /coverage/{region}/{uri}/terminus_schedules | 
+[**getTerminusSchedules**](#getTerminusSchedules) | **GET** /terminus_schedules | 
 
 
 <a name="getCoverageLonLatUriTerminusSchedules"></a>
@@ -72,7 +72,7 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+-| ------------ | ------------- | ------------- | -------------
  **lat** | **BigDecimal**|  The latitude of where the coord you want to query |
  **lon** | **BigDecimal**|  The longitude of where the coord you want to query |
  **uri** | **String**| First part of the uri |
@@ -96,7 +96,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**TerminusSchedules**](TerminusSchedules.md)
+[**TerminusSchedules**](/navitia_sdk_docs/expert/android/endpoints/terminus_schedules)
 
 ### Authorization
 
@@ -161,7 +161,7 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+-| ------------ | ------------- | ------------- | -------------
  **region** | **String**|  The region you want to query |
  **uri** | **String**| First part of the uri |
  **filter** | **String**| use to filter PT objects | [optional]
@@ -184,7 +184,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**TerminusSchedules**](TerminusSchedules.md)
+[**TerminusSchedules**](/navitia_sdk_docs/expert/android/endpoints/terminus_schedules)
 
 ### Authorization
 
@@ -247,7 +247,7 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+-| ------------ | ------------- | ------------- | -------------
  **filter** | **String**| use to filter PT objects | [optional]
  **fromDatetime** | **DateTime**| The datetime from which you want the schedules | [optional]
  **untilDatetime** | **DateTime**| The datetime until which you want the schedules | [optional]
@@ -268,7 +268,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**TerminusSchedules**](TerminusSchedules.md)
+[**TerminusSchedules**](/navitia_sdk_docs/expert/android/endpoints/terminus_schedules)
 
 ### Authorization
 

@@ -1,20 +1,23 @@
 ---
 layout: default
-title: Address
+title: RidesharingInformation
 parent: Endpoints
 grand_parent: Expert Android
-permalink: /expert/android/endpoints/address
+permalink: /expert/android/endpoints/ridesharing_information
 ---
 
 # RidesharingInformation
 
+---
+
 ## Properties
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
+
+| Name | Type | Description | Notes
+| ------------ | ------------- | ------------- | -------------
 **operator** | **String** |  | 
-**driver** | [**IndividualInformation**](IndividualInformation.md) |  |  [optional]
+**driver** | [**IndividualInformation**](/navitia_sdk_docs/expert/android/endpoints/individual_information) |  |  [optional]
 **network** | **String** |  | 
-**seats** | [**SeatsDescription**](SeatsDescription.md) |  |  [optional]
+**seats** | [**SeatsDescription**](/navitia_sdk_docs/expert/android/endpoints/seats_description) |  |  [optional]
 
 
 

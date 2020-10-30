@@ -1,9 +1,9 @@
 ---
 layout: default
-title: Address
+title: StopSchedulesApi
 parent: Endpoints
 grand_parent: Expert Android
-permalink: /expert/android/endpoints/address
+permalink: /expert/android/endpoints/StopSchedulesApi
 ---
 
 # StopSchedulesApi
@@ -12,9 +12,9 @@ All URIs are relative to *https://api.navitia.io/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getCoverageLonLatUriStopSchedules**](StopSchedulesApi.md#getCoverageLonLatUriStopSchedules) | **GET** /coverage/{lon};{lat}/{uri}/stop_schedules | 
-[**getCoverageRegionUriStopSchedules**](StopSchedulesApi.md#getCoverageRegionUriStopSchedules) | **GET** /coverage/{region}/{uri}/stop_schedules | 
-[**getStopSchedules**](StopSchedulesApi.md#getStopSchedules) | **GET** /stop_schedules | 
+[**getCoverageLonLatUriStopSchedules**](#getCoverageLonLatUriStopSchedules) | **GET** /coverage/{lon};{lat}/{uri}/stop_schedules | 
+[**getCoverageRegionUriStopSchedules**](#getCoverageRegionUriStopSchedules) | **GET** /coverage/{region}/{uri}/stop_schedules | 
+[**getStopSchedules**](#getStopSchedules) | **GET** /stop_schedules | 
 
 
 <a name="getCoverageLonLatUriStopSchedules"></a>
@@ -72,7 +72,7 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+-| ------------ | ------------- | ------------- | -------------
  **lat** | **BigDecimal**|  The latitude of where the coord you want to query |
  **lon** | **BigDecimal**|  The longitude of where the coord you want to query |
  **uri** | **String**| First part of the uri |
@@ -96,7 +96,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**StopSchedules**](StopSchedules.md)
+[**StopSchedules**](/navitia_sdk_docs/expert/android/endpoints/stop_schedules)
 
 ### Authorization
 
@@ -161,7 +161,7 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+-| ------------ | ------------- | ------------- | -------------
  **region** | **String**|  The region you want to query |
  **uri** | **String**| First part of the uri |
  **filter** | **String**| use to filter PT objects | [optional]
@@ -184,7 +184,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**StopSchedules**](StopSchedules.md)
+[**StopSchedules**](/navitia_sdk_docs/expert/android/endpoints/stop_schedules)
 
 ### Authorization
 
@@ -247,7 +247,7 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+-| ------------ | ------------- | ------------- | -------------
  **filter** | **String**| use to filter PT objects | [optional]
  **fromDatetime** | **DateTime**| The datetime from which you want the schedules | [optional]
  **untilDatetime** | **DateTime**| The datetime until which you want the schedules | [optional]
@@ -268,7 +268,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**StopSchedules**](StopSchedules.md)
+[**StopSchedules**](/navitia_sdk_docs/expert/android/endpoints/stop_schedules)
 
 ### Authorization
 

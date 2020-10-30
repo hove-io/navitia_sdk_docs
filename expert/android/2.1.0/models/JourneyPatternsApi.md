@@ -1,9 +1,9 @@
 ---
 layout: default
-title: Address
+title: JourneyPatternsApi
 parent: Endpoints
 grand_parent: Expert Android
-permalink: /expert/android/endpoints/address
+permalink: /expert/android/endpoints/JourneyPatternsApi
 ---
 
 # JourneyPatternsApi
@@ -12,14 +12,14 @@ All URIs are relative to *https://api.navitia.io/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getCoverageLonLatJourneyPatterns**](JourneyPatternsApi.md#getCoverageLonLatJourneyPatterns) | **GET** /coverage/{lon};{lat}/journey_patterns | 
-[**getCoverageLonLatJourneyPatternsId**](JourneyPatternsApi.md#getCoverageLonLatJourneyPatternsId) | **GET** /coverage/{lon};{lat}/journey_patterns/{id} | 
-[**getCoverageLonLatUriJourneyPatterns**](JourneyPatternsApi.md#getCoverageLonLatUriJourneyPatterns) | **GET** /coverage/{lon};{lat}/{uri}/journey_patterns | 
-[**getCoverageLonLatUriJourneyPatternsId**](JourneyPatternsApi.md#getCoverageLonLatUriJourneyPatternsId) | **GET** /coverage/{lon};{lat}/{uri}/journey_patterns/{id} | 
-[**getCoverageRegionJourneyPatterns**](JourneyPatternsApi.md#getCoverageRegionJourneyPatterns) | **GET** /coverage/{region}/journey_patterns | 
-[**getCoverageRegionJourneyPatternsId**](JourneyPatternsApi.md#getCoverageRegionJourneyPatternsId) | **GET** /coverage/{region}/journey_patterns/{id} | 
-[**getCoverageRegionUriJourneyPatterns**](JourneyPatternsApi.md#getCoverageRegionUriJourneyPatterns) | **GET** /coverage/{region}/{uri}/journey_patterns | 
-[**getCoverageRegionUriJourneyPatternsId**](JourneyPatternsApi.md#getCoverageRegionUriJourneyPatternsId) | **GET** /coverage/{region}/{uri}/journey_patterns/{id} | 
+[**getCoverageLonLatJourneyPatterns**](#getCoverageLonLatJourneyPatterns) | **GET** /coverage/{lon};{lat}/journey_patterns | 
+[**getCoverageLonLatJourneyPatternsId**](#getCoverageLonLatJourneyPatternsId) | **GET** /coverage/{lon};{lat}/journey_patterns/{id} | 
+[**getCoverageLonLatUriJourneyPatterns**](#getCoverageLonLatUriJourneyPatterns) | **GET** /coverage/{lon};{lat}/{uri}/journey_patterns | 
+[**getCoverageLonLatUriJourneyPatternsId**](#getCoverageLonLatUriJourneyPatternsId) | **GET** /coverage/{lon};{lat}/{uri}/journey_patterns/{id} | 
+[**getCoverageRegionJourneyPatterns**](#getCoverageRegionJourneyPatterns) | **GET** /coverage/{region}/journey_patterns | 
+[**getCoverageRegionJourneyPatternsId**](#getCoverageRegionJourneyPatternsId) | **GET** /coverage/{region}/journey_patterns/{id} | 
+[**getCoverageRegionUriJourneyPatterns**](#getCoverageRegionUriJourneyPatterns) | **GET** /coverage/{region}/{uri}/journey_patterns | 
+[**getCoverageRegionUriJourneyPatternsId**](#getCoverageRegionUriJourneyPatternsId) | **GET** /coverage/{region}/{uri}/journey_patterns/{id} | 
 
 
 <a name="getCoverageLonLatJourneyPatterns"></a>
@@ -76,7 +76,7 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+-| ------------ | ------------- | ------------- | -------------
  **lat** | **BigDecimal**|  The latitude of where the coord you want to query |
  **lon** | **BigDecimal**|  The longitude of where the coord you want to query |
  **startPage** | **Integer**| The page where you want to start | [optional]
@@ -99,7 +99,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**JourneyPatterns**](JourneyPatterns.md)
+[**JourneyPatterns**](/navitia_sdk_docs/expert/android/endpoints/journey_patterns)
 
 ### Authorization
 
@@ -164,7 +164,7 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+-| ------------ | ------------- | ------------- | -------------
  **lat** | **BigDecimal**|  The latitude of where the coord you want to query |
  **lon** | **BigDecimal**|  The longitude of where the coord you want to query |
  **id** | **String**| Id of the object you want to query |
@@ -187,7 +187,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**JourneyPatterns**](JourneyPatterns.md)
+[**JourneyPatterns**](/navitia_sdk_docs/expert/android/endpoints/journey_patterns)
 
 ### Authorization
 
@@ -253,7 +253,7 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+-| ------------ | ------------- | ------------- | -------------
  **lat** | **BigDecimal**|  The latitude of where the coord you want to query |
  **lon** | **BigDecimal**|  The longitude of where the coord you want to query |
  **uri** | **String**| First part of the uri |
@@ -277,7 +277,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**JourneyPatterns**](JourneyPatterns.md)
+[**JourneyPatterns**](/navitia_sdk_docs/expert/android/endpoints/journey_patterns)
 
 ### Authorization
 
@@ -343,7 +343,7 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+-| ------------ | ------------- | ------------- | -------------
  **lat** | **BigDecimal**|  The latitude of where the coord you want to query |
  **lon** | **BigDecimal**|  The longitude of where the coord you want to query |
  **uri** | **String**| First part of the uri |
@@ -367,7 +367,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**JourneyPatterns**](JourneyPatterns.md)
+[**JourneyPatterns**](/navitia_sdk_docs/expert/android/endpoints/journey_patterns)
 
 ### Authorization
 
@@ -431,7 +431,7 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+-| ------------ | ------------- | ------------- | -------------
  **region** | **String**|  The region you want to query |
  **startPage** | **Integer**| The page where you want to start | [optional]
  **count** | **Integer**| Number of objects you want on a page | [optional] [default to 25]
@@ -453,7 +453,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**JourneyPatterns**](JourneyPatterns.md)
+[**JourneyPatterns**](/navitia_sdk_docs/expert/android/endpoints/journey_patterns)
 
 ### Authorization
 
@@ -517,7 +517,7 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+-| ------------ | ------------- | ------------- | -------------
  **region** | **String**|  The region you want to query |
  **id** | **String**| Id of the object you want to query |
  **startPage** | **Integer**| The page where you want to start | [optional]
@@ -539,7 +539,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**JourneyPatterns**](JourneyPatterns.md)
+[**JourneyPatterns**](/navitia_sdk_docs/expert/android/endpoints/journey_patterns)
 
 ### Authorization
 
@@ -604,7 +604,7 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+-| ------------ | ------------- | ------------- | -------------
  **region** | **String**|  The region you want to query |
  **uri** | **String**| First part of the uri |
  **startPage** | **Integer**| The page where you want to start | [optional]
@@ -627,7 +627,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**JourneyPatterns**](JourneyPatterns.md)
+[**JourneyPatterns**](/navitia_sdk_docs/expert/android/endpoints/journey_patterns)
 
 ### Authorization
 
@@ -692,7 +692,7 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+-| ------------ | ------------- | ------------- | -------------
  **region** | **String**|  The region you want to query |
  **uri** | **String**| First part of the uri |
  **id** | **String**| Id of the object you want to query |
@@ -715,7 +715,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**JourneyPatterns**](JourneyPatterns.md)
+[**JourneyPatterns**](/navitia_sdk_docs/expert/android/endpoints/journey_patterns)
 
 ### Authorization
 

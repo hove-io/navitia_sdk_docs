@@ -1,9 +1,9 @@
 ---
 layout: default
-title: Address
+title: RouteSchedulesApi
 parent: Endpoints
 grand_parent: Expert Android
-permalink: /expert/android/endpoints/address
+permalink: /expert/android/endpoints/RouteSchedulesApi
 ---
 
 # RouteSchedulesApi
@@ -12,9 +12,9 @@ All URIs are relative to *https://api.navitia.io/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getCoverageLonLatUriRouteSchedules**](RouteSchedulesApi.md#getCoverageLonLatUriRouteSchedules) | **GET** /coverage/{lon};{lat}/{uri}/route_schedules | 
-[**getCoverageRegionUriRouteSchedules**](RouteSchedulesApi.md#getCoverageRegionUriRouteSchedules) | **GET** /coverage/{region}/{uri}/route_schedules | 
-[**getRouteSchedules**](RouteSchedulesApi.md#getRouteSchedules) | **GET** /route_schedules | 
+[**getCoverageLonLatUriRouteSchedules**](#getCoverageLonLatUriRouteSchedules) | **GET** /coverage/{lon};{lat}/{uri}/route_schedules | 
+[**getCoverageRegionUriRouteSchedules**](#getCoverageRegionUriRouteSchedules) | **GET** /coverage/{region}/{uri}/route_schedules | 
+[**getRouteSchedules**](#getRouteSchedules) | **GET** /route_schedules | 
 
 
 <a name="getCoverageLonLatUriRouteSchedules"></a>
@@ -72,7 +72,7 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+-| ------------ | ------------- | ------------- | -------------
  **lat** | **BigDecimal**|  The latitude of where the coord you want to query |
  **lon** | **BigDecimal**|  The longitude of where the coord you want to query |
  **uri** | **String**| First part of the uri |
@@ -96,7 +96,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**RouteSchedules**](RouteSchedules.md)
+[**RouteSchedules**](/navitia_sdk_docs/expert/android/endpoints/route_schedules)
 
 ### Authorization
 
@@ -161,7 +161,7 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+-| ------------ | ------------- | ------------- | -------------
  **region** | **String**|  The region you want to query |
  **uri** | **String**| First part of the uri |
  **filter** | **String**| use to filter PT objects | [optional]
@@ -184,7 +184,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**RouteSchedules**](RouteSchedules.md)
+[**RouteSchedules**](/navitia_sdk_docs/expert/android/endpoints/route_schedules)
 
 ### Authorization
 
@@ -247,7 +247,7 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+-| ------------ | ------------- | ------------- | -------------
  **filter** | **String**| use to filter PT objects | [optional]
  **fromDatetime** | **DateTime**| The datetime from which you want the schedules | [optional]
  **untilDatetime** | **DateTime**| The datetime until which you want the schedules | [optional]
@@ -268,7 +268,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**RouteSchedules**](RouteSchedules.md)
+[**RouteSchedules**](/navitia_sdk_docs/expert/android/endpoints/route_schedules)
 
 ### Authorization
 

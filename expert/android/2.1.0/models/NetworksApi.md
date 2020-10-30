@@ -1,9 +1,9 @@
 ---
 layout: default
-title: Address
+title: NetworksApi
 parent: Endpoints
 grand_parent: Expert Android
-permalink: /expert/android/endpoints/address
+permalink: /expert/android/endpoints/NetworksApi
 ---
 
 # NetworksApi
@@ -12,15 +12,15 @@ All URIs are relative to *https://api.navitia.io/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getCoverageLonLatNetworks**](NetworksApi.md#getCoverageLonLatNetworks) | **GET** /coverage/{lon};{lat}/networks | 
-[**getCoverageLonLatNetworksId**](NetworksApi.md#getCoverageLonLatNetworksId) | **GET** /coverage/{lon};{lat}/networks/{id} | 
-[**getCoverageLonLatUriNetworks**](NetworksApi.md#getCoverageLonLatUriNetworks) | **GET** /coverage/{lon};{lat}/{uri}/networks | 
-[**getCoverageLonLatUriNetworksId**](NetworksApi.md#getCoverageLonLatUriNetworksId) | **GET** /coverage/{lon};{lat}/{uri}/networks/{id} | 
-[**getCoverageRegionNetworks**](NetworksApi.md#getCoverageRegionNetworks) | **GET** /coverage/{region}/networks | 
-[**getCoverageRegionNetworksId**](NetworksApi.md#getCoverageRegionNetworksId) | **GET** /coverage/{region}/networks/{id} | 
-[**getCoverageRegionUriNetworks**](NetworksApi.md#getCoverageRegionUriNetworks) | **GET** /coverage/{region}/{uri}/networks | 
-[**getCoverageRegionUriNetworksId**](NetworksApi.md#getCoverageRegionUriNetworksId) | **GET** /coverage/{region}/{uri}/networks/{id} | 
-[**getNetworks**](NetworksApi.md#getNetworks) | **GET** /networks | 
+[**getCoverageLonLatNetworks**](#getCoverageLonLatNetworks) | **GET** /coverage/{lon};{lat}/networks | 
+[**getCoverageLonLatNetworksId**](#getCoverageLonLatNetworksId) | **GET** /coverage/{lon};{lat}/networks/{id} | 
+[**getCoverageLonLatUriNetworks**](#getCoverageLonLatUriNetworks) | **GET** /coverage/{lon};{lat}/{uri}/networks | 
+[**getCoverageLonLatUriNetworksId**](#getCoverageLonLatUriNetworksId) | **GET** /coverage/{lon};{lat}/{uri}/networks/{id} | 
+[**getCoverageRegionNetworks**](#getCoverageRegionNetworks) | **GET** /coverage/{region}/networks | 
+[**getCoverageRegionNetworksId**](#getCoverageRegionNetworksId) | **GET** /coverage/{region}/networks/{id} | 
+[**getCoverageRegionUriNetworks**](#getCoverageRegionUriNetworks) | **GET** /coverage/{region}/{uri}/networks | 
+[**getCoverageRegionUriNetworksId**](#getCoverageRegionUriNetworksId) | **GET** /coverage/{region}/{uri}/networks/{id} | 
+[**getNetworks**](#getNetworks) | **GET** /networks | 
 
 
 <a name="getCoverageLonLatNetworks"></a>
@@ -78,7 +78,7 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+-| ------------ | ------------- | ------------- | -------------
  **lat** | **BigDecimal**|  The latitude of where the coord you want to query |
  **lon** | **BigDecimal**|  The longitude of where the coord you want to query |
  **startPage** | **Integer**| The page where you want to start | [optional]
@@ -102,7 +102,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Networks**](Networks.md)
+[**Networks**](/navitia_sdk_docs/expert/android/endpoints/networks)
 
 ### Authorization
 
@@ -168,7 +168,7 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+-| ------------ | ------------- | ------------- | -------------
  **lat** | **BigDecimal**|  The latitude of where the coord you want to query |
  **lon** | **BigDecimal**|  The longitude of where the coord you want to query |
  **id** | **String**| Id of the object you want to query |
@@ -192,7 +192,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Networks**](Networks.md)
+[**Networks**](/navitia_sdk_docs/expert/android/endpoints/networks)
 
 ### Authorization
 
@@ -259,7 +259,7 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+-| ------------ | ------------- | ------------- | -------------
  **lat** | **BigDecimal**|  The latitude of where the coord you want to query |
  **lon** | **BigDecimal**|  The longitude of where the coord you want to query |
  **uri** | **String**| First part of the uri |
@@ -284,7 +284,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Networks**](Networks.md)
+[**Networks**](/navitia_sdk_docs/expert/android/endpoints/networks)
 
 ### Authorization
 
@@ -351,7 +351,7 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+-| ------------ | ------------- | ------------- | -------------
  **lat** | **BigDecimal**|  The latitude of where the coord you want to query |
  **lon** | **BigDecimal**|  The longitude of where the coord you want to query |
  **uri** | **String**| First part of the uri |
@@ -376,7 +376,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Networks**](Networks.md)
+[**Networks**](/navitia_sdk_docs/expert/android/endpoints/networks)
 
 ### Authorization
 
@@ -441,7 +441,7 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+-| ------------ | ------------- | ------------- | -------------
  **region** | **String**|  The region you want to query |
  **startPage** | **Integer**| The page where you want to start | [optional]
  **count** | **Integer**| Number of objects you want on a page | [optional] [default to 25]
@@ -464,7 +464,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Networks**](Networks.md)
+[**Networks**](/navitia_sdk_docs/expert/android/endpoints/networks)
 
 ### Authorization
 
@@ -529,7 +529,7 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+-| ------------ | ------------- | ------------- | -------------
  **region** | **String**|  The region you want to query |
  **id** | **String**| Id of the object you want to query |
  **startPage** | **Integer**| The page where you want to start | [optional]
@@ -552,7 +552,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Networks**](Networks.md)
+[**Networks**](/navitia_sdk_docs/expert/android/endpoints/networks)
 
 ### Authorization
 
@@ -618,7 +618,7 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+-| ------------ | ------------- | ------------- | -------------
  **region** | **String**|  The region you want to query |
  **uri** | **String**| First part of the uri |
  **startPage** | **Integer**| The page where you want to start | [optional]
@@ -642,7 +642,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Networks**](Networks.md)
+[**Networks**](/navitia_sdk_docs/expert/android/endpoints/networks)
 
 ### Authorization
 
@@ -708,7 +708,7 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+-| ------------ | ------------- | ------------- | -------------
  **region** | **String**|  The region you want to query |
  **uri** | **String**| First part of the uri |
  **id** | **String**| Id of the object you want to query |
@@ -732,7 +732,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Networks**](Networks.md)
+[**Networks**](/navitia_sdk_docs/expert/android/endpoints/networks)
 
 ### Authorization
 
@@ -796,7 +796,7 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+-| ------------ | ------------- | ------------- | -------------
  **externalCode** | **String**| An external code to query |
  **startPage** | **Integer**| The page where you want to start | [optional]
  **count** | **Integer**| Number of objects you want on a page | [optional] [default to 25]
@@ -818,7 +818,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Networks**](Networks.md)
+[**Networks**](/navitia_sdk_docs/expert/android/endpoints/networks)
 
 ### Authorization
 

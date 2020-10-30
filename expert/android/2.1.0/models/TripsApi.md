@@ -1,9 +1,9 @@
 ---
 layout: default
-title: Address
+title: TripsApi
 parent: Endpoints
 grand_parent: Expert Android
-permalink: /expert/android/endpoints/address
+permalink: /expert/android/endpoints/TripsApi
 ---
 # TripsApi
 
@@ -11,14 +11,14 @@ All URIs are relative to *https://api.navitia.io/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getCoverageLonLatTrips**](TripsApi.md#getCoverageLonLatTrips) | **GET** /coverage/{lon};{lat}/trips | 
-[**getCoverageLonLatTripsId**](TripsApi.md#getCoverageLonLatTripsId) | **GET** /coverage/{lon};{lat}/trips/{id} | 
-[**getCoverageLonLatUriTrips**](TripsApi.md#getCoverageLonLatUriTrips) | **GET** /coverage/{lon};{lat}/{uri}/trips | 
-[**getCoverageLonLatUriTripsId**](TripsApi.md#getCoverageLonLatUriTripsId) | **GET** /coverage/{lon};{lat}/{uri}/trips/{id} | 
-[**getCoverageRegionTrips**](TripsApi.md#getCoverageRegionTrips) | **GET** /coverage/{region}/trips | 
-[**getCoverageRegionTripsId**](TripsApi.md#getCoverageRegionTripsId) | **GET** /coverage/{region}/trips/{id} | 
-[**getCoverageRegionUriTrips**](TripsApi.md#getCoverageRegionUriTrips) | **GET** /coverage/{region}/{uri}/trips | 
-[**getCoverageRegionUriTripsId**](TripsApi.md#getCoverageRegionUriTripsId) | **GET** /coverage/{region}/{uri}/trips/{id} | 
+[**getCoverageLonLatTrips**](#getCoverageLonLatTrips) | **GET** /coverage/{lon};{lat}/trips | 
+[**getCoverageLonLatTripsId**](#getCoverageLonLatTripsId) | **GET** /coverage/{lon};{lat}/trips/{id} | 
+[**getCoverageLonLatUriTrips**](#getCoverageLonLatUriTrips) | **GET** /coverage/{lon};{lat}/{uri}/trips | 
+[**getCoverageLonLatUriTripsId**](#getCoverageLonLatUriTripsId) | **GET** /coverage/{lon};{lat}/{uri}/trips/{id} | 
+[**getCoverageRegionTrips**](#getCoverageRegionTrips) | **GET** /coverage/{region}/trips | 
+[**getCoverageRegionTripsId**](#getCoverageRegionTripsId) | **GET** /coverage/{region}/trips/{id} | 
+[**getCoverageRegionUriTrips**](#getCoverageRegionUriTrips) | **GET** /coverage/{region}/{uri}/trips | 
+[**getCoverageRegionUriTripsId**](#getCoverageRegionUriTripsId) | **GET** /coverage/{region}/{uri}/trips/{id} | 
 
 
 <a name="getCoverageLonLatTrips"></a>
@@ -75,7 +75,7 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+-| ------------ | ------------- | ------------- | -------------
  **lat** | **BigDecimal**|  The latitude of where the coord you want to query |
  **lon** | **BigDecimal**|  The longitude of where the coord you want to query |
  **startPage** | **Integer**| The page where you want to start | [optional]
@@ -98,7 +98,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Trips**](Trips.md)
+[**Trips**](/navitia_sdk_docs/expert/android/endpoints/trips)
 
 ### Authorization
 
@@ -163,7 +163,7 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+-| ------------ | ------------- | ------------- | -------------
  **lat** | **BigDecimal**|  The latitude of where the coord you want to query |
  **lon** | **BigDecimal**|  The longitude of where the coord you want to query |
  **id** | **String**| Id of the object you want to query |
@@ -186,7 +186,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Trips**](Trips.md)
+[**Trips**](/navitia_sdk_docs/expert/android/endpoints/trips)
 
 ### Authorization
 
@@ -252,7 +252,7 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+-| ------------ | ------------- | ------------- | -------------
  **lat** | **BigDecimal**|  The latitude of where the coord you want to query |
  **lon** | **BigDecimal**|  The longitude of where the coord you want to query |
  **uri** | **String**| First part of the uri |
@@ -276,7 +276,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Trips**](Trips.md)
+[**Trips**](/navitia_sdk_docs/expert/android/endpoints/trips)
 
 ### Authorization
 
@@ -342,7 +342,7 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+-| ------------ | ------------- | ------------- | -------------
  **lat** | **BigDecimal**|  The latitude of where the coord you want to query |
  **lon** | **BigDecimal**|  The longitude of where the coord you want to query |
  **uri** | **String**| First part of the uri |
@@ -366,7 +366,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Trips**](Trips.md)
+[**Trips**](/navitia_sdk_docs/expert/android/endpoints/trips)
 
 ### Authorization
 
@@ -430,7 +430,7 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+-| ------------ | ------------- | ------------- | -------------
  **region** | **String**|  The region you want to query |
  **startPage** | **Integer**| The page where you want to start | [optional]
  **count** | **Integer**| Number of objects you want on a page | [optional] [default to 25]
@@ -452,7 +452,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Trips**](Trips.md)
+[**Trips**](/navitia_sdk_docs/expert/android/endpoints/trips)
 
 ### Authorization
 
@@ -516,7 +516,7 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+-| ------------ | ------------- | ------------- | -------------
  **region** | **String**|  The region you want to query |
  **id** | **String**| Id of the object you want to query |
  **startPage** | **Integer**| The page where you want to start | [optional]
@@ -538,7 +538,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Trips**](Trips.md)
+[**Trips**](/navitia_sdk_docs/expert/android/endpoints/trips)
 
 ### Authorization
 
@@ -603,7 +603,7 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+-| ------------ | ------------- | ------------- | -------------
  **region** | **String**|  The region you want to query |
  **uri** | **String**| First part of the uri |
  **startPage** | **Integer**| The page where you want to start | [optional]
@@ -626,7 +626,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Trips**](Trips.md)
+[**Trips**](/navitia_sdk_docs/expert/android/endpoints/trips)
 
 ### Authorization
 
@@ -691,7 +691,7 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+-| ------------ | ------------- | ------------- | -------------
  **region** | **String**|  The region you want to query |
  **uri** | **String**| First part of the uri |
  **id** | **String**| Id of the object you want to query |
@@ -714,7 +714,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Trips**](Trips.md)
+[**Trips**](/navitia_sdk_docs/expert/android/endpoints/trips)
 
 ### Authorization
 

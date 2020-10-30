@@ -12,8 +12,8 @@ All URIs are relative to *https://api.navitia.io/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getCoverageLonLatHeatMaps**](HeatMapApi.md#getCoverageLonLatHeatMaps) | **GET** /coverage/{lon};{lat}/heat_maps | 
-[**getCoverageRegionHeatMaps**](HeatMapApi.md#getCoverageRegionHeatMaps) | **GET** /coverage/{region}/heat_maps | 
+[**getCoverageLonLatHeatMaps**](#getCoverageLonLatHeatMaps) | **GET** /coverage/{lon};{lat}/heat_maps | 
+[**getCoverageRegionHeatMaps**](#getCoverageRegionHeatMaps) | **GET** /coverage/{region}/heat_maps | 
 
 
 <a name="getCoverageLonLatHeatMaps"></a>
@@ -86,7 +86,7 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+-| ------------ | ------------- | ------------- | -------------
  **lat** | **BigDecimal**|  The latitude of where the coord you want to query |
  **lon** | **BigDecimal**|  The longitude of where the coord you want to query |
  **from** | **String**| The id of the departure of your journey. If not provided an isochrone is computed. | [optional]
@@ -125,7 +125,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**HeatMap1**](HeatMap1.md)
+[**HeatMap1**](/navitia_sdk_docs/expert/android/endpoints/heat_map1)
 
 ### Authorization
 
@@ -205,7 +205,7 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+-| ------------ | ------------- | ------------- | -------------
  **region** | **String**|  The region you want to query |
  **from** | **String**| The id of the departure of your journey. If not provided an isochrone is computed. | [optional]
  **to** | **String**| The id of the arrival of your journey. If not provided an isochrone is computed. | [optional]
@@ -243,7 +243,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**HeatMap1**](HeatMap1.md)
+[**HeatMap1**](/navitia_sdk_docs/expert/android/endpoints/heat_map1)
 
 ### Authorization
 

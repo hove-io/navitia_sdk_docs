@@ -1,9 +1,9 @@
 ---
 layout: default
-title: Address
+title: LinesApi
 parent: Endpoints
 grand_parent: Expert Android
-permalink: /expert/android/endpoints/address
+permalink: /expert/android/endpoints/LinesApi
 ---
 
 # LinesApi
@@ -12,15 +12,15 @@ All URIs are relative to *https://api.navitia.io/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getCoverageLonLatLines**](LinesApi.md#getCoverageLonLatLines) | **GET** /coverage/{lon};{lat}/lines | 
-[**getCoverageLonLatLinesId**](LinesApi.md#getCoverageLonLatLinesId) | **GET** /coverage/{lon};{lat}/lines/{id} | 
-[**getCoverageLonLatUriLines**](LinesApi.md#getCoverageLonLatUriLines) | **GET** /coverage/{lon};{lat}/{uri}/lines | 
-[**getCoverageLonLatUriLinesId**](LinesApi.md#getCoverageLonLatUriLinesId) | **GET** /coverage/{lon};{lat}/{uri}/lines/{id} | 
-[**getCoverageRegionLines**](LinesApi.md#getCoverageRegionLines) | **GET** /coverage/{region}/lines | 
-[**getCoverageRegionLinesId**](LinesApi.md#getCoverageRegionLinesId) | **GET** /coverage/{region}/lines/{id} | 
-[**getCoverageRegionUriLines**](LinesApi.md#getCoverageRegionUriLines) | **GET** /coverage/{region}/{uri}/lines | 
-[**getCoverageRegionUriLinesId**](LinesApi.md#getCoverageRegionUriLinesId) | **GET** /coverage/{region}/{uri}/lines/{id} | 
-[**getLines**](LinesApi.md#getLines) | **GET** /lines | 
+[**getCoverageLonLatLines**](#getCoverageLonLatLines) | **GET** /coverage/{lon};{lat}/lines | 
+[**getCoverageLonLatLinesId**](#getCoverageLonLatLinesId) | **GET** /coverage/{lon};{lat}/lines/{id} | 
+[**getCoverageLonLatUriLines**](#getCoverageLonLatUriLines) | **GET** /coverage/{lon};{lat}/{uri}/lines | 
+[**getCoverageLonLatUriLinesId**](#getCoverageLonLatUriLinesId) | **GET** /coverage/{lon};{lat}/{uri}/lines/{id} | 
+[**getCoverageRegionLines**](#getCoverageRegionLines) | **GET** /coverage/{region}/lines | 
+[**getCoverageRegionLinesId**](#getCoverageRegionLinesId) | **GET** /coverage/{region}/lines/{id} | 
+[**getCoverageRegionUriLines**](#getCoverageRegionUriLines) | **GET** /coverage/{region}/{uri}/lines | 
+[**getCoverageRegionUriLinesId**](#getCoverageRegionUriLinesId) | **GET** /coverage/{region}/{uri}/lines/{id} | 
+[**getLines**](#getLines) | **GET** /lines | 
 
 
 <a name="getCoverageLonLatLines"></a>
@@ -78,7 +78,7 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+-| ------------ | ------------- | ------------- | -------------
  **lat** | **BigDecimal**|  The latitude of where the coord you want to query |
  **lon** | **BigDecimal**|  The longitude of where the coord you want to query |
  **startPage** | **Integer**| The page where you want to start | [optional]
@@ -102,7 +102,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Lines**](Lines.md)
+[**Lines**](/navitia_sdk_docs/expert/android/endpoints/lines)
 
 ### Authorization
 
@@ -168,7 +168,7 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+-| ------------ | ------------- | ------------- | -------------
  **lat** | **BigDecimal**|  The latitude of where the coord you want to query |
  **lon** | **BigDecimal**|  The longitude of where the coord you want to query |
  **id** | **String**| Id of the object you want to query |
@@ -192,7 +192,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Lines**](Lines.md)
+[**Lines**](/navitia_sdk_docs/expert/android/endpoints/lines)
 
 ### Authorization
 
@@ -259,7 +259,7 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+-| ------------ | ------------- | ------------- | -------------
  **lat** | **BigDecimal**|  The latitude of where the coord you want to query |
  **lon** | **BigDecimal**|  The longitude of where the coord you want to query |
  **uri** | **String**| First part of the uri |
@@ -284,7 +284,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Lines**](Lines.md)
+[**Lines**](/navitia_sdk_docs/expert/android/endpoints/lines)
 
 ### Authorization
 
@@ -351,7 +351,7 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+-| ------------ | ------------- | ------------- | -------------
  **lat** | **BigDecimal**|  The latitude of where the coord you want to query |
  **lon** | **BigDecimal**|  The longitude of where the coord you want to query |
  **uri** | **String**| First part of the uri |
@@ -376,7 +376,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Lines**](Lines.md)
+[**Lines**](/navitia_sdk_docs/expert/android/endpoints/lines)
 
 ### Authorization
 
@@ -441,7 +441,7 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+-| ------------ | ------------- | ------------- | -------------
  **region** | **String**|  The region you want to query |
  **startPage** | **Integer**| The page where you want to start | [optional]
  **count** | **Integer**| Number of objects you want on a page | [optional] [default to 25]
@@ -464,7 +464,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Lines**](Lines.md)
+[**Lines**](/navitia_sdk_docs/expert/android/endpoints/lines)
 
 ### Authorization
 
@@ -529,7 +529,7 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+-| ------------ | ------------- | ------------- | -------------
  **region** | **String**|  The region you want to query |
  **id** | **String**| Id of the object you want to query |
  **startPage** | **Integer**| The page where you want to start | [optional]
@@ -552,7 +552,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Lines**](Lines.md)
+[**Lines**](/navitia_sdk_docs/expert/android/endpoints/lines)
 
 ### Authorization
 
@@ -618,7 +618,7 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+-| ------------ | ------------- | ------------- | -------------
  **region** | **String**|  The region you want to query |
  **uri** | **String**| First part of the uri |
  **startPage** | **Integer**| The page where you want to start | [optional]
@@ -642,7 +642,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Lines**](Lines.md)
+[**Lines**](/navitia_sdk_docs/expert/android/endpoints/lines)
 
 ### Authorization
 
@@ -708,7 +708,7 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+-| ------------ | ------------- | ------------- | -------------
  **region** | **String**|  The region you want to query |
  **uri** | **String**| First part of the uri |
  **id** | **String**| Id of the object you want to query |
@@ -732,7 +732,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Lines**](Lines.md)
+[**Lines**](/navitia_sdk_docs/expert/android/endpoints/lines)
 
 ### Authorization
 
@@ -796,7 +796,7 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+-| ------------ | ------------- | ------------- | -------------
  **externalCode** | **String**| An external code to query |
  **startPage** | **Integer**| The page where you want to start | [optional]
  **count** | **Integer**| Number of objects you want on a page | [optional] [default to 25]
@@ -818,7 +818,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Lines**](Lines.md)
+[**Lines**](/navitia_sdk_docs/expert/android/endpoints/lines)
 
 ### Authorization
 

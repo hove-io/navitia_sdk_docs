@@ -1,9 +1,9 @@
 ---
 layout: default
-title: Address
+title: CommercialModesApi
 parent: Endpoints
 grand_parent: Expert Android
-permalink: /expert/android/endpoints/address
+permalink: /expert/android/endpoints/CommercialModesApi
 ---
 
 # CommercialModesApi
@@ -12,14 +12,14 @@ All URIs are relative to *https://api.navitia.io/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getCoverageLonLatCommercialModes**](CommercialModesApi.md#getCoverageLonLatCommercialModes) | **GET** /coverage/{lon};{lat}/commercial_modes | 
-[**getCoverageLonLatCommercialModesId**](CommercialModesApi.md#getCoverageLonLatCommercialModesId) | **GET** /coverage/{lon};{lat}/commercial_modes/{id} | 
-[**getCoverageLonLatUriCommercialModes**](CommercialModesApi.md#getCoverageLonLatUriCommercialModes) | **GET** /coverage/{lon};{lat}/{uri}/commercial_modes | 
-[**getCoverageLonLatUriCommercialModesId**](CommercialModesApi.md#getCoverageLonLatUriCommercialModesId) | **GET** /coverage/{lon};{lat}/{uri}/commercial_modes/{id} | 
-[**getCoverageRegionCommercialModes**](CommercialModesApi.md#getCoverageRegionCommercialModes) | **GET** /coverage/{region}/commercial_modes | 
-[**getCoverageRegionCommercialModesId**](CommercialModesApi.md#getCoverageRegionCommercialModesId) | **GET** /coverage/{region}/commercial_modes/{id} | 
-[**getCoverageRegionUriCommercialModes**](CommercialModesApi.md#getCoverageRegionUriCommercialModes) | **GET** /coverage/{region}/{uri}/commercial_modes | 
-[**getCoverageRegionUriCommercialModesId**](CommercialModesApi.md#getCoverageRegionUriCommercialModesId) | **GET** /coverage/{region}/{uri}/commercial_modes/{id} | 
+[**getCoverageLonLatCommercialModes**](#getCoverageLonLatCommercialModes) | **GET** /coverage/{lon};{lat}/commercial_modes | 
+[**getCoverageLonLatCommercialModesId**](#getCoverageLonLatCommercialModesId) | **GET** /coverage/{lon};{lat}/commercial_modes/{id} | 
+[**getCoverageLonLatUriCommercialModes**](#getCoverageLonLatUriCommercialModes) | **GET** /coverage/{lon};{lat}/{uri}/commercial_modes | 
+[**getCoverageLonLatUriCommercialModesId**](#getCoverageLonLatUriCommercialModesId) | **GET** /coverage/{lon};{lat}/{uri}/commercial_modes/{id} | 
+[**getCoverageRegionCommercialModes**](#getCoverageRegionCommercialModes) | **GET** /coverage/{region}/commercial_modes | 
+[**getCoverageRegionCommercialModesId**](#getCoverageRegionCommercialModesId) | **GET** /coverage/{region}/commercial_modes/{id} | 
+[**getCoverageRegionUriCommercialModes**](#getCoverageRegionUriCommercialModes) | **GET** /coverage/{region}/{uri}/commercial_modes | 
+[**getCoverageRegionUriCommercialModesId**](#getCoverageRegionUriCommercialModesId) | **GET** /coverage/{region}/{uri}/commercial_modes/{id} | 
 
 
 <a name="getCoverageLonLatCommercialModes"></a>
@@ -76,7 +76,7 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+-| ------------ | ------------- | ------------- | -------------
  **lat** | **BigDecimal**|  The latitude of where the coord you want to query |
  **lon** | **BigDecimal**|  The longitude of where the coord you want to query |
  **startPage** | **Integer**| The page where you want to start | [optional]
@@ -99,7 +99,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CommercialModes**](CommercialModes.md)
+[**CommercialModes**](/navitia_sdk_docs/expert/android/endpoints/commercial_modes)
 
 ### Authorization
 
@@ -164,7 +164,7 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+-| ------------ | ------------- | ------------- | -------------
  **lat** | **BigDecimal**|  The latitude of where the coord you want to query |
  **lon** | **BigDecimal**|  The longitude of where the coord you want to query |
  **id** | **String**| Id of the object you want to query |
@@ -187,7 +187,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CommercialModes**](CommercialModes.md)
+[**CommercialModes**](/navitia_sdk_docs/expert/android/endpoints/commercial_modes)
 
 ### Authorization
 
@@ -253,7 +253,7 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+-| ------------ | ------------- | ------------- | -------------
  **lat** | **BigDecimal**|  The latitude of where the coord you want to query |
  **lon** | **BigDecimal**|  The longitude of where the coord you want to query |
  **uri** | **String**| First part of the uri |
@@ -277,7 +277,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CommercialModes**](CommercialModes.md)
+[**CommercialModes**](/navitia_sdk_docs/expert/android/endpoints/commercial_modes)
 
 ### Authorization
 
@@ -343,7 +343,7 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+-| ------------ | ------------- | ------------- | -------------
  **lat** | **BigDecimal**|  The latitude of where the coord you want to query |
  **lon** | **BigDecimal**|  The longitude of where the coord you want to query |
  **uri** | **String**| First part of the uri |
@@ -367,7 +367,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CommercialModes**](CommercialModes.md)
+[**CommercialModes**](/navitia_sdk_docs/expert/android/endpoints/commercial_modes)
 
 ### Authorization
 
@@ -431,7 +431,7 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+-| ------------ | ------------- | ------------- | -------------
  **region** | **String**|  The region you want to query |
  **startPage** | **Integer**| The page where you want to start | [optional]
  **count** | **Integer**| Number of objects you want on a page | [optional] [default to 25]
@@ -453,7 +453,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CommercialModes**](CommercialModes.md)
+[**CommercialModes**](/navitia_sdk_docs/expert/android/endpoints/commercial_modes)
 
 ### Authorization
 
@@ -517,7 +517,7 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+-| ------------ | ------------- | ------------- | -------------
  **region** | **String**|  The region you want to query |
  **id** | **String**| Id of the object you want to query |
  **startPage** | **Integer**| The page where you want to start | [optional]
@@ -539,7 +539,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CommercialModes**](CommercialModes.md)
+[**CommercialModes**](/navitia_sdk_docs/expert/android/endpoints/commercial_modes)
 
 ### Authorization
 
@@ -604,7 +604,7 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+-| ------------ | ------------- | ------------- | -------------
  **region** | **String**|  The region you want to query |
  **uri** | **String**| First part of the uri |
  **startPage** | **Integer**| The page where you want to start | [optional]
@@ -627,7 +627,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CommercialModes**](CommercialModes.md)
+[**CommercialModes**](/navitia_sdk_docs/expert/android/endpoints/commercial_modes)
 
 ### Authorization
 
@@ -692,7 +692,7 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+-| ------------ | ------------- | ------------- | -------------
  **region** | **String**|  The region you want to query |
  **uri** | **String**| First part of the uri |
  **id** | **String**| Id of the object you want to query |
@@ -715,7 +715,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CommercialModes**](CommercialModes.md)
+[**CommercialModes**](/navitia_sdk_docs/expert/android/endpoints/commercial_modes)
 
 ### Authorization
 

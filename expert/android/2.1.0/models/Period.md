@@ -1,16 +1,19 @@
 ---
 layout: default
-title: Address
+title: Period
 parent: Endpoints
 grand_parent: Expert Android
-permalink: /expert/android/endpoints/address
+permalink: /expert/android/endpoints/period
 ---
 
 # Period
 
+---
+
 ## Properties
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
+
+| Name | Type | Description | Notes
+| ------------ | ------------- | ------------- | -------------
 **begin** | **String** |  |  [optional]
 **end** | **String** |  |  [optional]
 

@@ -1,17 +1,20 @@
 ---
 layout: default
-title: Address
+title: CO2
 parent: Endpoints
 grand_parent: Expert Android
-permalink: /expert/android/endpoints/address
+permalink: /expert/android/endpoints/co2
 ---
 
 # CO2
 
+---
+
 ## Properties
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**co2Emission** | [**Amount**](Amount.md) |  |  [optional]
+
+| Name | Type | Description | Notes
+| ------------ | ------------- | ------------- | -------------
+**co2Emission** | [**Amount**](/navitia_sdk_docs/expert/android/endpoints/amount) |  |  [optional]
 
 
 

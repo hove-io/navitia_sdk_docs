@@ -1,9 +1,9 @@
 ---
 layout: default
-title: Address
+title: GraphicalIsochroneApi
 parent: Endpoints
 grand_parent: Expert Android
-permalink: /expert/android/endpoints/address
+permalink: /expert/android/endpoints/GraphicalIsochroneApi
 ---
 
 # GraphicalIsochroneApi
@@ -12,8 +12,8 @@ All URIs are relative to *https://api.navitia.io/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getCoverageLonLatIsochrones**](GraphicalIsochroneApi.md#getCoverageLonLatIsochrones) | **GET** /coverage/{lon};{lat}/isochrones | 
-[**getCoverageRegionIsochrones**](GraphicalIsochroneApi.md#getCoverageRegionIsochrones) | **GET** /coverage/{region}/isochrones | 
+[**getCoverageLonLatIsochrones**](#getCoverageLonLatIsochrones) | **GET** /coverage/{lon};{lat}/isochrones | 
+[**getCoverageRegionIsochrones**](#getCoverageRegionIsochrones) | **GET** /coverage/{region}/isochrones | 
 
 
 <a name="getCoverageLonLatIsochrones"></a>
@@ -87,7 +87,7 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+-| ------------ | ------------- | ------------- | -------------
  **lat** | **BigDecimal**|  The latitude of where the coord you want to query |
  **lon** | **BigDecimal**|  The longitude of where the coord you want to query |
  **from** | **String**| The id of the departure of your journey. If not provided an isochrone is computed. | [optional]
@@ -127,7 +127,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GraphicalIsrochone1**](GraphicalIsrochone1.md)
+[**GraphicalIsrochone1**](/navitia_sdk_docs/expert/android/endpoints/graphical_isrochone1)
 
 ### Authorization
 
@@ -208,7 +208,7 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+-| ------------ | ------------- | ------------- | -------------
  **region** | **String**|  The region you want to query |
  **from** | **String**| The id of the departure of your journey. If not provided an isochrone is computed. | [optional]
  **to** | **String**| The id of the arrival of your journey. If not provided an isochrone is computed. | [optional]
@@ -247,7 +247,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GraphicalIsrochone1**](GraphicalIsrochone1.md)
+[**GraphicalIsrochone1**](/navitia_sdk_docs/expert/android/endpoints/graphical_isrochone1)
 
 ### Authorization
 

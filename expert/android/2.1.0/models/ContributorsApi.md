@@ -1,9 +1,9 @@
 ---
 layout: default
-title: Address
+title: ContributorsApi
 parent: Endpoints
 grand_parent: Expert Android
-permalink: /expert/android/endpoints/address
+permalink: /expert/android/endpoints/ContributorsApi
 ---
 
 # ContributorsApi
@@ -12,14 +12,14 @@ All URIs are relative to *https://api.navitia.io/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getCoverageLonLatContributors**](ContributorsApi.md#getCoverageLonLatContributors) | **GET** /coverage/{lon};{lat}/contributors | 
-[**getCoverageLonLatContributorsId**](ContributorsApi.md#getCoverageLonLatContributorsId) | **GET** /coverage/{lon};{lat}/contributors/{id} | 
-[**getCoverageLonLatUriContributors**](ContributorsApi.md#getCoverageLonLatUriContributors) | **GET** /coverage/{lon};{lat}/{uri}/contributors | 
-[**getCoverageLonLatUriContributorsId**](ContributorsApi.md#getCoverageLonLatUriContributorsId) | **GET** /coverage/{lon};{lat}/{uri}/contributors/{id} | 
-[**getCoverageRegionContributors**](ContributorsApi.md#getCoverageRegionContributors) | **GET** /coverage/{region}/contributors | 
-[**getCoverageRegionContributorsId**](ContributorsApi.md#getCoverageRegionContributorsId) | **GET** /coverage/{region}/contributors/{id} | 
-[**getCoverageRegionUriContributors**](ContributorsApi.md#getCoverageRegionUriContributors) | **GET** /coverage/{region}/{uri}/contributors | 
-[**getCoverageRegionUriContributorsId**](ContributorsApi.md#getCoverageRegionUriContributorsId) | **GET** /coverage/{region}/{uri}/contributors/{id} | 
+[**getCoverageLonLatContributors**](#getCoverageLonLatContributors) | **GET** /coverage/{lon};{lat}/contributors | 
+[**getCoverageLonLatContributorsId**](#getCoverageLonLatContributorsId) | **GET** /coverage/{lon};{lat}/contributors/{id} | 
+[**getCoverageLonLatUriContributors**](#getCoverageLonLatUriContributors) | **GET** /coverage/{lon};{lat}/{uri}/contributors | 
+[**getCoverageLonLatUriContributorsId**](#getCoverageLonLatUriContributorsId) | **GET** /coverage/{lon};{lat}/{uri}/contributors/{id} | 
+[**getCoverageRegionContributors**](#getCoverageRegionContributors) | **GET** /coverage/{region}/contributors | 
+[**getCoverageRegionContributorsId**](#getCoverageRegionContributorsId) | **GET** /coverage/{region}/contributors/{id} | 
+[**getCoverageRegionUriContributors**](#getCoverageRegionUriContributors) | **GET** /coverage/{region}/{uri}/contributors | 
+[**getCoverageRegionUriContributorsId**](#getCoverageRegionUriContributorsId) | **GET** /coverage/{region}/{uri}/contributors/{id} | 
 
 
 <a name="getCoverageLonLatContributors"></a>
@@ -76,7 +76,7 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+-| ------------ | ------------- | ------------- | -------------
  **lat** | **BigDecimal**|  The latitude of where the coord you want to query |
  **lon** | **BigDecimal**|  The longitude of where the coord you want to query |
  **startPage** | **Integer**| The page where you want to start | [optional]
@@ -99,7 +99,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Contributors**](Contributors.md)
+[**Contributors**](/navitia_sdk_docs/expert/android/endpoints/contributors)
 
 ### Authorization
 
@@ -164,7 +164,7 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+-| ------------ | ------------- | ------------- | -------------
  **lat** | **BigDecimal**|  The latitude of where the coord you want to query |
  **lon** | **BigDecimal**|  The longitude of where the coord you want to query |
  **id** | **String**| Id of the object you want to query |
@@ -187,7 +187,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Contributors**](Contributors.md)
+[**Contributors**](/navitia_sdk_docs/expert/android/endpoints/contributors)
 
 ### Authorization
 
@@ -253,7 +253,7 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+-| ------------ | ------------- | ------------- | -------------
  **lat** | **BigDecimal**|  The latitude of where the coord you want to query |
  **lon** | **BigDecimal**|  The longitude of where the coord you want to query |
  **uri** | **String**| First part of the uri |
@@ -277,7 +277,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Contributors**](Contributors.md)
+[**Contributors**](/navitia_sdk_docs/expert/android/endpoints/contributors)
 
 ### Authorization
 
@@ -343,7 +343,7 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+-| ------------ | ------------- | ------------- | -------------
  **lat** | **BigDecimal**|  The latitude of where the coord you want to query |
  **lon** | **BigDecimal**|  The longitude of where the coord you want to query |
  **uri** | **String**| First part of the uri |
@@ -367,7 +367,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Contributors**](Contributors.md)
+[**Contributors**](/navitia_sdk_docs/expert/android/endpoints/contributors)
 
 ### Authorization
 
@@ -431,7 +431,7 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+-| ------------ | ------------- | ------------- | -------------
  **region** | **String**|  The region you want to query |
  **startPage** | **Integer**| The page where you want to start | [optional]
  **count** | **Integer**| Number of objects you want on a page | [optional] [default to 25]
@@ -453,7 +453,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Contributors**](Contributors.md)
+[**Contributors**](/navitia_sdk_docs/expert/android/endpoints/contributors)
 
 ### Authorization
 
@@ -517,7 +517,7 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+-| ------------ | ------------- | ------------- | -------------
  **region** | **String**|  The region you want to query |
  **id** | **String**| Id of the object you want to query |
  **startPage** | **Integer**| The page where you want to start | [optional]
@@ -539,7 +539,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Contributors**](Contributors.md)
+[**Contributors**](/navitia_sdk_docs/expert/android/endpoints/contributors)
 
 ### Authorization
 
@@ -604,7 +604,7 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+-| ------------ | ------------- | ------------- | -------------
  **region** | **String**|  The region you want to query |
  **uri** | **String**| First part of the uri |
  **startPage** | **Integer**| The page where you want to start | [optional]
@@ -627,7 +627,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Contributors**](Contributors.md)
+[**Contributors**](/navitia_sdk_docs/expert/android/endpoints/contributors)
 
 ### Authorization
 
@@ -692,7 +692,7 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+-| ------------ | ------------- | ------------- | -------------
  **region** | **String**|  The region you want to query |
  **uri** | **String**| First part of the uri |
  **id** | **String**| Id of the object you want to query |
@@ -715,7 +715,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Contributors**](Contributors.md)
+[**Contributors**](/navitia_sdk_docs/expert/android/endpoints/contributors)
 
 ### Authorization
 

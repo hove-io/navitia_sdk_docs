@@ -12,12 +12,12 @@ All URIs are relative to *https://api.navitia.io/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getCoverageLonLatCalendars**](CalendarsApi.md#getCoverageLonLatCalendars) | **GET** /coverage/{lon};{lat}/calendars | 
-[**getCoverageLonLatCalendarsId**](CalendarsApi.md#getCoverageLonLatCalendarsId) | **GET** /coverage/{lon};{lat}/calendars/{id} | 
-[**getCoverageLonLatUriCalendars**](CalendarsApi.md#getCoverageLonLatUriCalendars) | **GET** /coverage/{lon};{lat}/{uri}/calendars | 
-[**getCoverageRegionCalendars**](CalendarsApi.md#getCoverageRegionCalendars) | **GET** /coverage/{region}/calendars | 
-[**getCoverageRegionCalendarsId**](CalendarsApi.md#getCoverageRegionCalendarsId) | **GET** /coverage/{region}/calendars/{id} | 
-[**getCoverageRegionUriCalendars**](CalendarsApi.md#getCoverageRegionUriCalendars) | **GET** /coverage/{region}/{uri}/calendars | 
+[**getCoverageLonLatCalendars**](#getCoverageLonLatCalendars) | **GET** /coverage/{lon};{lat}/calendars | 
+[**getCoverageLonLatCalendarsId**](#getCoverageLonLatCalendarsId) | **GET** /coverage/{lon};{lat}/calendars/{id} | 
+[**getCoverageLonLatUriCalendars**](#getCoverageLonLatUriCalendars) | **GET** /coverage/{lon};{lat}/{uri}/calendars | 
+[**getCoverageRegionCalendars**](#getCoverageRegionCalendars) | **GET** /coverage/{region}/calendars | 
+[**getCoverageRegionCalendarsId**](#getCoverageRegionCalendarsId) | **GET** /coverage/{region}/calendars/{id} | 
+[**getCoverageRegionUriCalendars**](#getCoverageRegionUriCalendars) | **GET** /coverage/{region}/{uri}/calendars | 
 
 
 <a name="getCoverageLonLatCalendars"></a>
@@ -65,7 +65,7 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+-| ------------ | ------------- | ------------- | -------------
  **lat** | **BigDecimal**|  The latitude of where the coord you want to query |
  **lon** | **BigDecimal**|  The longitude of where the coord you want to query |
  **depth** | **Integer**| The depth of your object | [optional] [default to 1]
@@ -79,7 +79,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Calendars**](Calendars.md)
+[**Calendars**](/navitia_sdk_docs/expert/android/endpoints/calendars)
 
 ### Authorization
 
@@ -136,7 +136,7 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+-| ------------ | ------------- | ------------- | -------------
  **lat** | **BigDecimal**|  The latitude of where the coord you want to query |
  **lon** | **BigDecimal**|  The longitude of where the coord you want to query |
  **id** | **String**| Id of the object you want to query |
@@ -151,7 +151,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Calendars**](Calendars.md)
+[**Calendars**](/navitia_sdk_docs/expert/android/endpoints/calendars)
 
 ### Authorization
 
@@ -208,7 +208,7 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+-| ------------ | ------------- | ------------- | -------------
  **lat** | **BigDecimal**|  The latitude of where the coord you want to query |
  **lon** | **BigDecimal**|  The longitude of where the coord you want to query |
  **uri** | **String**| First part of the uri |
@@ -223,7 +223,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Calendars**](Calendars.md)
+[**Calendars**](/navitia_sdk_docs/expert/android/endpoints/calendars)
 
 ### Authorization
 
@@ -278,7 +278,7 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+-| ------------ | ------------- | ------------- | -------------
  **region** | **String**|  The region you want to query |
  **depth** | **Integer**| The depth of your object | [optional] [default to 1]
  **count** | **Integer**| Number of calendars per page | [optional] [default to 10]
@@ -291,7 +291,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Calendars**](Calendars.md)
+[**Calendars**](/navitia_sdk_docs/expert/android/endpoints/calendars)
 
 ### Authorization
 
@@ -347,7 +347,7 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+-| ------------ | ------------- | ------------- | -------------
  **region** | **String**|  The region you want to query |
  **id** | **String**| Id of the object you want to query |
  **depth** | **Integer**| The depth of your object | [optional] [default to 1]
@@ -361,7 +361,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Calendars**](Calendars.md)
+[**Calendars**](/navitia_sdk_docs/expert/android/endpoints/calendars)
 
 ### Authorization
 
@@ -417,7 +417,7 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+-| ------------ | ------------- | ------------- | -------------
  **region** | **String**|  The region you want to query |
  **uri** | **String**| First part of the uri |
  **depth** | **Integer**| The depth of your object | [optional] [default to 1]
@@ -431,7 +431,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Calendars**](Calendars.md)
+[**Calendars**](/navitia_sdk_docs/expert/android/endpoints/calendars)
 
 ### Authorization
 

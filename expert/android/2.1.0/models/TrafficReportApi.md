@@ -1,9 +1,9 @@
 ---
 layout: default
-title: Address
+title: TrafficReportApi
 parent: Endpoints
 grand_parent: Expert Android
-permalink: /expert/android/endpoints/address
+permalink: /expert/android/endpoints/TrafficReportApi
 ---
 
 # TrafficReportApi
@@ -12,10 +12,10 @@ All URIs are relative to *https://api.navitia.io/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getCoverageLonLatTrafficReports**](TrafficReportApi.md#getCoverageLonLatTrafficReports) | **GET** /coverage/{lon};{lat}/traffic_reports | 
-[**getCoverageLonLatUriTrafficReports**](TrafficReportApi.md#getCoverageLonLatUriTrafficReports) | **GET** /coverage/{lon};{lat}/{uri}/traffic_reports | 
-[**getCoverageRegionTrafficReports**](TrafficReportApi.md#getCoverageRegionTrafficReports) | **GET** /coverage/{region}/traffic_reports | 
-[**getCoverageRegionUriTrafficReports**](TrafficReportApi.md#getCoverageRegionUriTrafficReports) | **GET** /coverage/{region}/{uri}/traffic_reports | 
+[**getCoverageLonLatTrafficReports**](#getCoverageLonLatTrafficReports) | **GET** /coverage/{lon};{lat}/traffic_reports | 
+[**getCoverageLonLatUriTrafficReports**](#getCoverageLonLatUriTrafficReports) | **GET** /coverage/{lon};{lat}/{uri}/traffic_reports | 
+[**getCoverageRegionTrafficReports**](#getCoverageRegionTrafficReports) | **GET** /coverage/{region}/traffic_reports | 
+[**getCoverageRegionUriTrafficReports**](#getCoverageRegionUriTrafficReports) | **GET** /coverage/{region}/{uri}/traffic_reports | 
 
 
 <a name="getCoverageLonLatTrafficReports"></a>
@@ -62,7 +62,7 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+-| ------------ | ------------- | ------------- | -------------
  **lat** | **BigDecimal**|  The latitude of where the coord you want to query |
  **lon** | **BigDecimal**|  The longitude of where the coord you want to query |
  **depth** | **Integer**| The depth of your object | [optional] [default to 1]
@@ -75,7 +75,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**TrafficReports**](TrafficReports.md)
+[**TrafficReports**](/navitia_sdk_docs/expert/android/endpoints/traffic_reports)
 
 ### Authorization
 
@@ -131,7 +131,7 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+-| ------------ | ------------- | ------------- | -------------
  **lat** | **BigDecimal**|  The latitude of where the coord you want to query |
  **lon** | **BigDecimal**|  The longitude of where the coord you want to query |
  **uri** | **String**| First part of the uri |
@@ -145,7 +145,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**TrafficReports**](TrafficReports.md)
+[**TrafficReports**](/navitia_sdk_docs/expert/android/endpoints/traffic_reports)
 
 ### Authorization
 
@@ -199,7 +199,7 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+-| ------------ | ------------- | ------------- | -------------
  **region** | **String**|  The region you want to query |
  **depth** | **Integer**| The depth of your object | [optional] [default to 1]
  **count** | **Integer**| Number of objects per page | [optional] [default to 10]
@@ -211,7 +211,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**TrafficReports**](TrafficReports.md)
+[**TrafficReports**](/navitia_sdk_docs/expert/android/endpoints/traffic_reports)
 
 ### Authorization
 
@@ -266,7 +266,7 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+-| ------------ | ------------- | ------------- | -------------
  **region** | **String**|  The region you want to query |
  **uri** | **String**| First part of the uri |
  **depth** | **Integer**| The depth of your object | [optional] [default to 1]
@@ -279,7 +279,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**TrafficReports**](TrafficReports.md)
+[**TrafficReports**](/navitia_sdk_docs/expert/android/endpoints/traffic_reports)
 
 ### Authorization
 

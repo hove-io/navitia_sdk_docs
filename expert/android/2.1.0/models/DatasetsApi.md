@@ -1,9 +1,9 @@
 ---
 layout: default
-title: Address
+title: DatasetsApi
 parent: Endpoints
 grand_parent: Expert Android
-permalink: /expert/android/endpoints/address
+permalink: /expert/android/endpoints/DatasetsApi
 ---
 
 # DatasetsApi
@@ -12,14 +12,14 @@ All URIs are relative to *https://api.navitia.io/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getCoverageLonLatDatasets**](DatasetsApi.md#getCoverageLonLatDatasets) | **GET** /coverage/{lon};{lat}/datasets | 
-[**getCoverageLonLatDatasetsId**](DatasetsApi.md#getCoverageLonLatDatasetsId) | **GET** /coverage/{lon};{lat}/datasets/{id} | 
-[**getCoverageLonLatUriDatasets**](DatasetsApi.md#getCoverageLonLatUriDatasets) | **GET** /coverage/{lon};{lat}/{uri}/datasets | 
-[**getCoverageLonLatUriDatasetsId**](DatasetsApi.md#getCoverageLonLatUriDatasetsId) | **GET** /coverage/{lon};{lat}/{uri}/datasets/{id} | 
-[**getCoverageRegionDatasets**](DatasetsApi.md#getCoverageRegionDatasets) | **GET** /coverage/{region}/datasets | 
-[**getCoverageRegionDatasetsId**](DatasetsApi.md#getCoverageRegionDatasetsId) | **GET** /coverage/{region}/datasets/{id} | 
-[**getCoverageRegionUriDatasets**](DatasetsApi.md#getCoverageRegionUriDatasets) | **GET** /coverage/{region}/{uri}/datasets | 
-[**getCoverageRegionUriDatasetsId**](DatasetsApi.md#getCoverageRegionUriDatasetsId) | **GET** /coverage/{region}/{uri}/datasets/{id} | 
+[**getCoverageLonLatDatasets**](#getCoverageLonLatDatasets) | **GET** /coverage/{lon};{lat}/datasets | 
+[**getCoverageLonLatDatasetsId**](#getCoverageLonLatDatasetsId) | **GET** /coverage/{lon};{lat}/datasets/{id} | 
+[**getCoverageLonLatUriDatasets**](#getCoverageLonLatUriDatasets) | **GET** /coverage/{lon};{lat}/{uri}/datasets | 
+[**getCoverageLonLatUriDatasetsId**](#getCoverageLonLatUriDatasetsId) | **GET** /coverage/{lon};{lat}/{uri}/datasets/{id} | 
+[**getCoverageRegionDatasets**](#getCoverageRegionDatasets) | **GET** /coverage/{region}/datasets | 
+[**getCoverageRegionDatasetsId**](#getCoverageRegionDatasetsId) | **GET** /coverage/{region}/datasets/{id} | 
+[**getCoverageRegionUriDatasets**](#getCoverageRegionUriDatasets) | **GET** /coverage/{region}/{uri}/datasets | 
+[**getCoverageRegionUriDatasetsId**](#getCoverageRegionUriDatasetsId) | **GET** /coverage/{region}/{uri}/datasets/{id} | 
 
 
 <a name="getCoverageLonLatDatasets"></a>
@@ -76,7 +76,7 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+-| ------------ | ------------- | ------------- | -------------
  **lat** | **BigDecimal**|  The latitude of where the coord you want to query |
  **lon** | **BigDecimal**|  The longitude of where the coord you want to query |
  **startPage** | **Integer**| The page where you want to start | [optional]
@@ -99,7 +99,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Datasets**](Datasets.md)
+[**Datasets**](/navitia_sdk_docs/expert/android/endpoints/datasets)
 
 ### Authorization
 
@@ -164,7 +164,7 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+-| ------------ | ------------- | ------------- | -------------
  **lat** | **BigDecimal**|  The latitude of where the coord you want to query |
  **lon** | **BigDecimal**|  The longitude of where the coord you want to query |
  **id** | **String**| Id of the object you want to query |
@@ -187,7 +187,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Datasets**](Datasets.md)
+[**Datasets**](/navitia_sdk_docs/expert/android/endpoints/datasets)
 
 ### Authorization
 
@@ -253,7 +253,7 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+-| ------------ | ------------- | ------------- | -------------
  **lat** | **BigDecimal**|  The latitude of where the coord you want to query |
  **lon** | **BigDecimal**|  The longitude of where the coord you want to query |
  **uri** | **String**| First part of the uri |
@@ -277,7 +277,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Datasets**](Datasets.md)
+[**Datasets**](/navitia_sdk_docs/expert/android/endpoints/datasets)
 
 ### Authorization
 
@@ -343,7 +343,7 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+-| ------------ | ------------- | ------------- | -------------
  **lat** | **BigDecimal**|  The latitude of where the coord you want to query |
  **lon** | **BigDecimal**|  The longitude of where the coord you want to query |
  **uri** | **String**| First part of the uri |
@@ -367,7 +367,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Datasets**](Datasets.md)
+[**Datasets**](/navitia_sdk_docs/expert/android/endpoints/datasets)
 
 ### Authorization
 
@@ -431,7 +431,7 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+-| ------------ | ------------- | ------------- | -------------
  **region** | **String**|  The region you want to query |
  **startPage** | **Integer**| The page where you want to start | [optional]
  **count** | **Integer**| Number of objects you want on a page | [optional] [default to 25]
@@ -453,7 +453,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Datasets**](Datasets.md)
+[**Datasets**](/navitia_sdk_docs/expert/android/endpoints/datasets)
 
 ### Authorization
 
@@ -517,7 +517,7 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+-| ------------ | ------------- | ------------- | -------------
  **region** | **String**|  The region you want to query |
  **id** | **String**| Id of the object you want to query |
  **startPage** | **Integer**| The page where you want to start | [optional]
@@ -539,7 +539,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Datasets**](Datasets.md)
+[**Datasets**](/navitia_sdk_docs/expert/android/endpoints/datasets)
 
 ### Authorization
 
@@ -604,7 +604,7 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+-| ------------ | ------------- | ------------- | -------------
  **region** | **String**|  The region you want to query |
  **uri** | **String**| First part of the uri |
  **startPage** | **Integer**| The page where you want to start | [optional]
@@ -627,7 +627,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Datasets**](Datasets.md)
+[**Datasets**](/navitia_sdk_docs/expert/android/endpoints/datasets)
 
 ### Authorization
 
@@ -692,7 +692,7 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+-| ------------ | ------------- | ------------- | -------------
  **region** | **String**|  The region you want to query |
  **uri** | **String**| First part of the uri |
  **id** | **String**| Id of the object you want to query |
@@ -715,7 +715,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Datasets**](Datasets.md)
+[**Datasets**](/navitia_sdk_docs/expert/android/endpoints/datasets)
 
 ### Authorization
 

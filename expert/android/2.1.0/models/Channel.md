@@ -1,16 +1,19 @@
 ---
 layout: default
-title: Address
+title: Channel
 parent: Endpoints
 grand_parent: Expert Android
-permalink: /expert/android/endpoints/address
+permalink: /expert/android/endpoints/channel
 ---
 
 # Channel
 
+---
+
 ## Properties
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
+
+| Name | Type | Description | Notes
+| ------------ | ------------- | ------------- | -------------
 **contentType** | **String** |  | 
 **id** | **String** |  | 
 **types** | [**List&lt;TypesEnum&gt;**](#List&lt;TypesEnum&gt;) |  |  [optional]
@@ -19,8 +22,8 @@ Name | Type | Description | Notes
 
 <a name="List<TypesEnum>"></a>
 ## Enum: List&lt;TypesEnum&gt;
-Name | Value
----- | -----
+| Name | Value
+| ---- | -----
 WEB | &quot;web&quot;
 SMS | &quot;sms&quot;
 EMAIL | &quot;email&quot;

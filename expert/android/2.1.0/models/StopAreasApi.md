@@ -1,9 +1,9 @@
 ---
 layout: default
-title: Address
+title: StopAreasApi
 parent: Endpoints
 grand_parent: Expert Android
-permalink: /expert/android/endpoints/address
+permalink: /expert/android/endpoints/StopAreasApi
 ---
 
 # StopAreasApi
@@ -12,15 +12,15 @@ All URIs are relative to *https://api.navitia.io/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getCoverageLonLatStopAreas**](StopAreasApi.md#getCoverageLonLatStopAreas) | **GET** /coverage/{lon};{lat}/stop_areas | 
-[**getCoverageLonLatStopAreasId**](StopAreasApi.md#getCoverageLonLatStopAreasId) | **GET** /coverage/{lon};{lat}/stop_areas/{id} | 
-[**getCoverageLonLatUriStopAreas**](StopAreasApi.md#getCoverageLonLatUriStopAreas) | **GET** /coverage/{lon};{lat}/{uri}/stop_areas | 
-[**getCoverageLonLatUriStopAreasId**](StopAreasApi.md#getCoverageLonLatUriStopAreasId) | **GET** /coverage/{lon};{lat}/{uri}/stop_areas/{id} | 
-[**getCoverageRegionStopAreas**](StopAreasApi.md#getCoverageRegionStopAreas) | **GET** /coverage/{region}/stop_areas | 
-[**getCoverageRegionStopAreasId**](StopAreasApi.md#getCoverageRegionStopAreasId) | **GET** /coverage/{region}/stop_areas/{id} | 
-[**getCoverageRegionUriStopAreas**](StopAreasApi.md#getCoverageRegionUriStopAreas) | **GET** /coverage/{region}/{uri}/stop_areas | 
-[**getCoverageRegionUriStopAreasId**](StopAreasApi.md#getCoverageRegionUriStopAreasId) | **GET** /coverage/{region}/{uri}/stop_areas/{id} | 
-[**getStopAreas**](StopAreasApi.md#getStopAreas) | **GET** /stop_areas | 
+[**getCoverageLonLatStopAreas**](#getCoverageLonLatStopAreas) | **GET** /coverage/{lon};{lat}/stop_areas | 
+[**getCoverageLonLatStopAreasId**](#getCoverageLonLatStopAreasId) | **GET** /coverage/{lon};{lat}/stop_areas/{id} | 
+[**getCoverageLonLatUriStopAreas**](#getCoverageLonLatUriStopAreas) | **GET** /coverage/{lon};{lat}/{uri}/stop_areas | 
+[**getCoverageLonLatUriStopAreasId**](#getCoverageLonLatUriStopAreasId) | **GET** /coverage/{lon};{lat}/{uri}/stop_areas/{id} | 
+[**getCoverageRegionStopAreas**](#getCoverageRegionStopAreas) | **GET** /coverage/{region}/stop_areas | 
+[**getCoverageRegionStopAreasId**](#getCoverageRegionStopAreasId) | **GET** /coverage/{region}/stop_areas/{id} | 
+[**getCoverageRegionUriStopAreas**](#getCoverageRegionUriStopAreas) | **GET** /coverage/{region}/{uri}/stop_areas | 
+[**getCoverageRegionUriStopAreasId**](#getCoverageRegionUriStopAreasId) | **GET** /coverage/{region}/{uri}/stop_areas/{id} | 
+[**getStopAreas**](#getStopAreas) | **GET** /stop_areas | 
 
 
 <a name="getCoverageLonLatStopAreas"></a>
@@ -78,7 +78,7 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+-| ------------ | ------------- | ------------- | -------------
  **lat** | **BigDecimal**|  The latitude of where the coord you want to query |
  **lon** | **BigDecimal**|  The longitude of where the coord you want to query |
  **startPage** | **Integer**| The page where you want to start | [optional]
@@ -102,7 +102,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**StopAreas**](StopAreas.md)
+[**StopAreas**](/navitia_sdk_docs/expert/android/endpoints/stop_areas)
 
 ### Authorization
 
@@ -168,7 +168,7 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+-| ------------ | ------------- | ------------- | -------------
  **lat** | **BigDecimal**|  The latitude of where the coord you want to query |
  **lon** | **BigDecimal**|  The longitude of where the coord you want to query |
  **id** | **String**| Id of the object you want to query |
@@ -192,7 +192,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**StopAreas**](StopAreas.md)
+[**StopAreas**](/navitia_sdk_docs/expert/android/endpoints/stop_areas)
 
 ### Authorization
 
@@ -259,7 +259,7 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+-| ------------ | ------------- | ------------- | -------------
  **lat** | **BigDecimal**|  The latitude of where the coord you want to query |
  **lon** | **BigDecimal**|  The longitude of where the coord you want to query |
  **uri** | **String**| First part of the uri |
@@ -284,7 +284,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**StopAreas**](StopAreas.md)
+[**StopAreas**](/navitia_sdk_docs/expert/android/endpoints/stop_areas)
 
 ### Authorization
 
@@ -351,7 +351,7 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+-| ------------ | ------------- | ------------- | -------------
  **lat** | **BigDecimal**|  The latitude of where the coord you want to query |
  **lon** | **BigDecimal**|  The longitude of where the coord you want to query |
  **uri** | **String**| First part of the uri |
@@ -376,7 +376,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**StopAreas**](StopAreas.md)
+[**StopAreas**](/navitia_sdk_docs/expert/android/endpoints/stop_areas)
 
 ### Authorization
 
@@ -441,7 +441,7 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+-| ------------ | ------------- | ------------- | -------------
  **region** | **String**|  The region you want to query |
  **startPage** | **Integer**| The page where you want to start | [optional]
  **count** | **Integer**| Number of objects you want on a page | [optional] [default to 25]
@@ -464,7 +464,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**StopAreas**](StopAreas.md)
+[**StopAreas**](/navitia_sdk_docs/expert/android/endpoints/stop_areas)
 
 ### Authorization
 
@@ -529,7 +529,7 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+-| ------------ | ------------- | ------------- | -------------
  **region** | **String**|  The region you want to query |
  **id** | **String**| Id of the object you want to query |
  **startPage** | **Integer**| The page where you want to start | [optional]
@@ -552,7 +552,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**StopAreas**](StopAreas.md)
+[**StopAreas**](/navitia_sdk_docs/expert/android/endpoints/stop_areas)
 
 ### Authorization
 
@@ -618,7 +618,7 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+-| ------------ | ------------- | ------------- | -------------
  **region** | **String**|  The region you want to query |
  **uri** | **String**| First part of the uri |
  **startPage** | **Integer**| The page where you want to start | [optional]
@@ -642,7 +642,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**StopAreas**](StopAreas.md)
+[**StopAreas**](/navitia_sdk_docs/expert/android/endpoints/stop_areas)
 
 ### Authorization
 
@@ -708,7 +708,7 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+-| ------------ | ------------- | ------------- | -------------
  **region** | **String**|  The region you want to query |
  **uri** | **String**| First part of the uri |
  **id** | **String**| Id of the object you want to query |
@@ -732,7 +732,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**StopAreas**](StopAreas.md)
+[**StopAreas**](/navitia_sdk_docs/expert/android/endpoints/stop_areas)
 
 ### Authorization
 
@@ -796,7 +796,7 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+-| ------------ | ------------- | ------------- | -------------
  **externalCode** | **String**| An external code to query |
  **startPage** | **Integer**| The page where you want to start | [optional]
  **count** | **Integer**| Number of objects you want on a page | [optional] [default to 25]
@@ -818,7 +818,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**StopAreas**](StopAreas.md)
+[**StopAreas**](/navitia_sdk_docs/expert/android/endpoints/stop_areas)
 
 ### Authorization
 

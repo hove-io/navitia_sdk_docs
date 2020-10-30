@@ -1,9 +1,9 @@
 ---
 layout: default
-title: Address
+title: DisruptionsApi
 parent: Endpoints
 grand_parent: Expert Android
-permalink: /expert/android/endpoints/address
+permalink: /expert/android/endpoints/DisruptionsApi
 ---
 
 # DisruptionsApi
@@ -12,14 +12,14 @@ All URIs are relative to *https://api.navitia.io/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getCoverageLonLatDisruptions**](DisruptionsApi.md#getCoverageLonLatDisruptions) | **GET** /coverage/{lon};{lat}/disruptions | 
-[**getCoverageLonLatDisruptionsId**](DisruptionsApi.md#getCoverageLonLatDisruptionsId) | **GET** /coverage/{lon};{lat}/disruptions/{id} | 
-[**getCoverageLonLatUriDisruptions**](DisruptionsApi.md#getCoverageLonLatUriDisruptions) | **GET** /coverage/{lon};{lat}/{uri}/disruptions | 
-[**getCoverageLonLatUriDisruptionsId**](DisruptionsApi.md#getCoverageLonLatUriDisruptionsId) | **GET** /coverage/{lon};{lat}/{uri}/disruptions/{id} | 
-[**getCoverageRegionDisruptions**](DisruptionsApi.md#getCoverageRegionDisruptions) | **GET** /coverage/{region}/disruptions | 
-[**getCoverageRegionDisruptionsId**](DisruptionsApi.md#getCoverageRegionDisruptionsId) | **GET** /coverage/{region}/disruptions/{id} | 
-[**getCoverageRegionUriDisruptions**](DisruptionsApi.md#getCoverageRegionUriDisruptions) | **GET** /coverage/{region}/{uri}/disruptions | 
-[**getCoverageRegionUriDisruptionsId**](DisruptionsApi.md#getCoverageRegionUriDisruptionsId) | **GET** /coverage/{region}/{uri}/disruptions/{id} | 
+[**getCoverageLonLatDisruptions**](#getCoverageLonLatDisruptions) | **GET** /coverage/{lon};{lat}/disruptions | 
+[**getCoverageLonLatDisruptionsId**](#getCoverageLonLatDisruptionsId) | **GET** /coverage/{lon};{lat}/disruptions/{id} | 
+[**getCoverageLonLatUriDisruptions**](#getCoverageLonLatUriDisruptions) | **GET** /coverage/{lon};{lat}/{uri}/disruptions | 
+[**getCoverageLonLatUriDisruptionsId**](#getCoverageLonLatUriDisruptionsId) | **GET** /coverage/{lon};{lat}/{uri}/disruptions/{id} | 
+[**getCoverageRegionDisruptions**](#getCoverageRegionDisruptions) | **GET** /coverage/{region}/disruptions | 
+[**getCoverageRegionDisruptionsId**](#getCoverageRegionDisruptionsId) | **GET** /coverage/{region}/disruptions/{id} | 
+[**getCoverageRegionUriDisruptions**](#getCoverageRegionUriDisruptions) | **GET** /coverage/{region}/{uri}/disruptions | 
+[**getCoverageRegionUriDisruptionsId**](#getCoverageRegionUriDisruptionsId) | **GET** /coverage/{region}/{uri}/disruptions/{id} | 
 
 
 <a name="getCoverageLonLatDisruptions"></a>
@@ -77,7 +77,7 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+-| ------------ | ------------- | ------------- | -------------
  **lat** | **BigDecimal**|  The latitude of where the coord you want to query |
  **lon** | **BigDecimal**|  The longitude of where the coord you want to query |
  **startPage** | **Integer**| The page where you want to start | [optional]
@@ -101,7 +101,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Disruptions**](Disruptions.md)
+[**Disruptions**](/navitia_sdk_docs/expert/android/endpoints/disruptions)
 
 ### Authorization
 
@@ -167,7 +167,7 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+-| ------------ | ------------- | ------------- | -------------
  **lat** | **BigDecimal**|  The latitude of where the coord you want to query |
  **lon** | **BigDecimal**|  The longitude of where the coord you want to query |
  **id** | **String**| Id of the object you want to query |
@@ -191,7 +191,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Disruptions**](Disruptions.md)
+[**Disruptions**](/navitia_sdk_docs/expert/android/endpoints/disruptions)
 
 ### Authorization
 
@@ -258,7 +258,7 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+-| ------------ | ------------- | ------------- | -------------
  **lat** | **BigDecimal**|  The latitude of where the coord you want to query |
  **lon** | **BigDecimal**|  The longitude of where the coord you want to query |
  **uri** | **String**| First part of the uri |
@@ -283,7 +283,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Disruptions**](Disruptions.md)
+[**Disruptions**](/navitia_sdk_docs/expert/android/endpoints/disruptions)
 
 ### Authorization
 
@@ -350,7 +350,7 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+-| ------------ | ------------- | ------------- | -------------
  **lat** | **BigDecimal**|  The latitude of where the coord you want to query |
  **lon** | **BigDecimal**|  The longitude of where the coord you want to query |
  **uri** | **String**| First part of the uri |
@@ -375,7 +375,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Disruptions**](Disruptions.md)
+[**Disruptions**](/navitia_sdk_docs/expert/android/endpoints/disruptions)
 
 ### Authorization
 
@@ -440,7 +440,7 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+-| ------------ | ------------- | ------------- | -------------
  **region** | **String**|  The region you want to query |
  **startPage** | **Integer**| The page where you want to start | [optional]
  **count** | **Integer**| Number of objects you want on a page | [optional] [default to 25]
@@ -463,7 +463,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Disruptions**](Disruptions.md)
+[**Disruptions**](/navitia_sdk_docs/expert/android/endpoints/disruptions)
 
 ### Authorization
 
@@ -528,7 +528,7 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+-| ------------ | ------------- | ------------- | -------------
  **region** | **String**|  The region you want to query |
  **id** | **String**| Id of the object you want to query |
  **startPage** | **Integer**| The page where you want to start | [optional]
@@ -551,7 +551,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Disruptions**](Disruptions.md)
+[**Disruptions**](/navitia_sdk_docs/expert/android/endpoints/disruptions)
 
 ### Authorization
 
@@ -617,7 +617,7 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+-| ------------ | ------------- | ------------- | -------------
  **region** | **String**|  The region you want to query |
  **uri** | **String**| First part of the uri |
  **startPage** | **Integer**| The page where you want to start | [optional]
@@ -641,7 +641,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Disruptions**](Disruptions.md)
+[**Disruptions**](/navitia_sdk_docs/expert/android/endpoints/disruptions)
 
 ### Authorization
 
@@ -707,7 +707,7 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+-| ------------ | ------------- | ------------- | -------------
  **region** | **String**|  The region you want to query |
  **uri** | **String**| First part of the uri |
  **id** | **String**| Id of the object you want to query |
@@ -731,7 +731,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Disruptions**](Disruptions.md)
+[**Disruptions**](/navitia_sdk_docs/expert/android/endpoints/disruptions)
 
 ### Authorization
 

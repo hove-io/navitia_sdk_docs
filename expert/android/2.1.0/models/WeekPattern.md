@@ -1,16 +1,19 @@
 ---
 layout: default
-title: Address
+title: WeekPattern
 parent: Endpoints
 grand_parent: Expert Android
-permalink: /expert/android/endpoints/address
+permalink: /expert/android/endpoints/week_pattern
 ---
 
 # WeekPattern
 
+---
+
 ## Properties
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
+
+| Name | Type | Description | Notes
+| ------------ | ------------- | ------------- | -------------
 **monday** | **Boolean** |  |  [optional]
 **tuesday** | **Boolean** |  |  [optional]
 **friday** | **Boolean** |  |  [optional]

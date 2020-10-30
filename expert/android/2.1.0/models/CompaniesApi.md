@@ -1,9 +1,9 @@
 ---
 layout: default
-title: Address
+title: CompaniesApi
 parent: Endpoints
 grand_parent: Expert Android
-permalink: /expert/android/endpoints/address
+permalink: /expert/android/endpoints/CompaniesApi
 ---
 
 # CompaniesApi
@@ -12,14 +12,14 @@ All URIs are relative to *https://api.navitia.io/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getCoverageLonLatCompanies**](CompaniesApi.md#getCoverageLonLatCompanies) | **GET** /coverage/{lon};{lat}/companies | 
-[**getCoverageLonLatCompaniesId**](CompaniesApi.md#getCoverageLonLatCompaniesId) | **GET** /coverage/{lon};{lat}/companies/{id} | 
-[**getCoverageLonLatUriCompanies**](CompaniesApi.md#getCoverageLonLatUriCompanies) | **GET** /coverage/{lon};{lat}/{uri}/companies | 
-[**getCoverageLonLatUriCompaniesId**](CompaniesApi.md#getCoverageLonLatUriCompaniesId) | **GET** /coverage/{lon};{lat}/{uri}/companies/{id} | 
-[**getCoverageRegionCompanies**](CompaniesApi.md#getCoverageRegionCompanies) | **GET** /coverage/{region}/companies | 
-[**getCoverageRegionCompaniesId**](CompaniesApi.md#getCoverageRegionCompaniesId) | **GET** /coverage/{region}/companies/{id} | 
-[**getCoverageRegionUriCompanies**](CompaniesApi.md#getCoverageRegionUriCompanies) | **GET** /coverage/{region}/{uri}/companies | 
-[**getCoverageRegionUriCompaniesId**](CompaniesApi.md#getCoverageRegionUriCompaniesId) | **GET** /coverage/{region}/{uri}/companies/{id} | 
+[**getCoverageLonLatCompanies**](#getCoverageLonLatCompanies) | **GET** /coverage/{lon};{lat}/companies | 
+[**getCoverageLonLatCompaniesId**](#getCoverageLonLatCompaniesId) | **GET** /coverage/{lon};{lat}/companies/{id} | 
+[**getCoverageLonLatUriCompanies**](#getCoverageLonLatUriCompanies) | **GET** /coverage/{lon};{lat}/{uri}/companies | 
+[**getCoverageLonLatUriCompaniesId**](#getCoverageLonLatUriCompaniesId) | **GET** /coverage/{lon};{lat}/{uri}/companies/{id} | 
+[**getCoverageRegionCompanies**](#getCoverageRegionCompanies) | **GET** /coverage/{region}/companies | 
+[**getCoverageRegionCompaniesId**](#getCoverageRegionCompaniesId) | **GET** /coverage/{region}/companies/{id} | 
+[**getCoverageRegionUriCompanies**](#getCoverageRegionUriCompanies) | **GET** /coverage/{region}/{uri}/companies | 
+[**getCoverageRegionUriCompaniesId**](#getCoverageRegionUriCompaniesId) | **GET** /coverage/{region}/{uri}/companies/{id} | 
 
 
 <a name="getCoverageLonLatCompanies"></a>
@@ -76,7 +76,7 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+-| ------------ | ------------- | ------------- | -------------
  **lat** | **BigDecimal**|  The latitude of where the coord you want to query |
  **lon** | **BigDecimal**|  The longitude of where the coord you want to query |
  **startPage** | **Integer**| The page where you want to start | [optional]
@@ -99,7 +99,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Companies**](Companies.md)
+[**Companies**](/navitia_sdk_docs/expert/android/endpoints/companies)
 
 ### Authorization
 
@@ -164,7 +164,7 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+-| ------------ | ------------- | ------------- | -------------
  **lat** | **BigDecimal**|  The latitude of where the coord you want to query |
  **lon** | **BigDecimal**|  The longitude of where the coord you want to query |
  **id** | **String**| Id of the object you want to query |
@@ -187,7 +187,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Companies**](Companies.md)
+[**Companies**](/navitia_sdk_docs/expert/android/endpoints/companies)
 
 ### Authorization
 
@@ -253,7 +253,7 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+-| ------------ | ------------- | ------------- | -------------
  **lat** | **BigDecimal**|  The latitude of where the coord you want to query |
  **lon** | **BigDecimal**|  The longitude of where the coord you want to query |
  **uri** | **String**| First part of the uri |
@@ -277,7 +277,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Companies**](Companies.md)
+[**Companies**](/navitia_sdk_docs/expert/android/endpoints/companies)
 
 ### Authorization
 
@@ -343,7 +343,7 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+-| ------------ | ------------- | ------------- | -------------
  **lat** | **BigDecimal**|  The latitude of where the coord you want to query |
  **lon** | **BigDecimal**|  The longitude of where the coord you want to query |
  **uri** | **String**| First part of the uri |
@@ -367,7 +367,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Companies**](Companies.md)
+[**Companies**](/navitia_sdk_docs/expert/android/endpoints/companies)
 
 ### Authorization
 
@@ -431,7 +431,7 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+-| ------------ | ------------- | ------------- | -------------
  **region** | **String**|  The region you want to query |
  **startPage** | **Integer**| The page where you want to start | [optional]
  **count** | **Integer**| Number of objects you want on a page | [optional] [default to 25]
@@ -453,7 +453,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Companies**](Companies.md)
+[**Companies**](/navitia_sdk_docs/expert/android/endpoints/companies)
 
 ### Authorization
 
@@ -517,7 +517,7 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+-| ------------ | ------------- | ------------- | -------------
  **region** | **String**|  The region you want to query |
  **id** | **String**| Id of the object you want to query |
  **startPage** | **Integer**| The page where you want to start | [optional]
@@ -539,7 +539,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Companies**](Companies.md)
+[**Companies**](/navitia_sdk_docs/expert/android/endpoints/companies)
 
 ### Authorization
 
@@ -604,7 +604,7 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+-| ------------ | ------------- | ------------- | -------------
  **region** | **String**|  The region you want to query |
  **uri** | **String**| First part of the uri |
  **startPage** | **Integer**| The page where you want to start | [optional]
@@ -627,7 +627,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Companies**](Companies.md)
+[**Companies**](/navitia_sdk_docs/expert/android/endpoints/companies)
 
 ### Authorization
 
@@ -692,7 +692,7 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+-| ------------ | ------------- | ------------- | -------------
  **region** | **String**|  The region you want to query |
  **uri** | **String**| First part of the uri |
  **id** | **String**| Id of the object you want to query |
@@ -715,7 +715,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Companies**](Companies.md)
+[**Companies**](/navitia_sdk_docs/expert/android/endpoints/companies)
 
 ### Authorization
 

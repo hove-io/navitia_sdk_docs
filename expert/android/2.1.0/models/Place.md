@@ -1,32 +1,35 @@
 ---
 layout: default
-title: Address
+title: Place
 parent: Endpoints
 grand_parent: Expert Android
-permalink: /expert/android/endpoints/address
+permalink: /expert/android/endpoints/place
 ---
 
 # Place
 
+---
+
 ## Properties
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
+
+| Name | Type | Description | Notes
+| ------------ | ------------- | ------------- | -------------
 **embeddedType** | [**EmbeddedTypeEnum**](#EmbeddedTypeEnum) |  | 
-**stopPoint** | [**StopPoint**](StopPoint.md) |  |  [optional]
-**administrativeRegion** | [**Admin**](Admin.md) |  |  [optional]
+**stopPoint** | [**StopPoint**](/navitia_sdk_docs/expert/android/endpoints/stop_point) |  |  [optional]
+**administrativeRegion** | [**Admin**](/navitia_sdk_docs/expert/android/endpoints/admin) |  |  [optional]
 **name** | **String** | Name of the object | 
 **distance** | **String** | Distance to the object in meters |  [optional]
-**address** | [**Address**](Address.md) |  |  [optional]
-**poi** | [**Poi**](Poi.md) |  |  [optional]
+**address** | [**Address**](/navitia_sdk_docs/expert/android/endpoints/address) |  |  [optional]
+**poi** | [**Poi**](/navitia_sdk_docs/expert/android/endpoints/poi) |  |  [optional]
 **quality** | **Integer** |  |  [optional]
 **id** | **String** | Identifier of the object | 
-**stopArea** | [**StopArea**](StopArea.md) |  |  [optional]
+**stopArea** | [**StopArea**](/navitia_sdk_docs/expert/android/endpoints/stop_area) |  |  [optional]
 
 
 <a name="EmbeddedTypeEnum"></a>
 ## Enum: EmbeddedTypeEnum
-Name | Value
----- | -----
+| Name | Value
+| ---- | -----
 LINE | &quot;line&quot;
 JOURNEY_PATTERN | &quot;journey_pattern&quot;
 VEHICLE_JOURNEY | &quot;vehicle_journey&quot;

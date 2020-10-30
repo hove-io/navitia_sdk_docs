@@ -1,33 +1,36 @@
 ---
 layout: default
-title: Address
+title: PtObject
 parent: Endpoints
 grand_parent: Expert Android
-permalink: /expert/android/endpoints/address
+permalink: /expert/android/endpoints/pt_object
 ---
 
 # PtObject
 
+---
+
 ## Properties
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
+
+| Name | Type | Description | Notes
+| ------------ | ------------- | ------------- | -------------
 **embeddedType** | [**EmbeddedTypeEnum**](#EmbeddedTypeEnum) |  | 
-**stopPoint** | [**StopPoint**](StopPoint.md) |  |  [optional]
+**stopPoint** | [**StopPoint**](/navitia_sdk_docs/expert/android/endpoints/stop_point) |  |  [optional]
 **name** | **String** | Name of the object | 
-**route** | [**Route**](Route.md) |  |  [optional]
-**stopArea** | [**StopArea**](StopArea.md) |  |  [optional]
-**commercialMode** | [**CommercialMode**](CommercialMode.md) |  |  [optional]
+**route** | [**Route**](/navitia_sdk_docs/expert/android/endpoints/route) |  |  [optional]
+**stopArea** | [**StopArea**](/navitia_sdk_docs/expert/android/endpoints/stop_area) |  |  [optional]
+**commercialMode** | [**CommercialMode**](/navitia_sdk_docs/expert/android/endpoints/commercial_mode) |  |  [optional]
 **id** | **String** | Identifier of the object | 
-**line** | [**Line**](Line.md) |  |  [optional]
+**line** | [**Line**](/navitia_sdk_docs/expert/android/endpoints/line) |  |  [optional]
 **quality** | **Integer** |  |  [optional]
-**trip** | [**Trip**](Trip.md) |  |  [optional]
-**network** | [**Network**](Network.md) |  |  [optional]
+**trip** | [**Trip**](/navitia_sdk_docs/expert/android/endpoints/trip) |  |  [optional]
+**network** | [**Network**](/navitia_sdk_docs/expert/android/endpoints/network) |  |  [optional]
 
 
 <a name="EmbeddedTypeEnum"></a>
 ## Enum: EmbeddedTypeEnum
-Name | Value
----- | -----
+| Name | Value
+| ---- | -----
 LINE | &quot;line&quot;
 JOURNEY_PATTERN | &quot;journey_pattern&quot;
 VEHICLE_JOURNEY | &quot;vehicle_journey&quot;

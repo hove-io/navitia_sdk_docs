@@ -1,9 +1,9 @@
 ---
 layout: default
-title: Address
+title: LineReportsApi
 parent: Endpoints
 grand_parent: Expert Android
-permalink: /expert/android/endpoints/address
+permalink: /expert/android/endpoints/LineReportsApi
 ---
 
 # LineReportsApi
@@ -12,10 +12,10 @@ All URIs are relative to *https://api.navitia.io/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getCoverageLonLatLineReports**](LineReportsApi.md#getCoverageLonLatLineReports) | **GET** /coverage/{lon};{lat}/line_reports | 
-[**getCoverageLonLatUriLineReports**](LineReportsApi.md#getCoverageLonLatUriLineReports) | **GET** /coverage/{lon};{lat}/{uri}/line_reports | 
-[**getCoverageRegionLineReports**](LineReportsApi.md#getCoverageRegionLineReports) | **GET** /coverage/{region}/line_reports | 
-[**getCoverageRegionUriLineReports**](LineReportsApi.md#getCoverageRegionUriLineReports) | **GET** /coverage/{region}/{uri}/line_reports | 
+[**getCoverageLonLatLineReports**](#getCoverageLonLatLineReports) | **GET** /coverage/{lon};{lat}/line_reports | 
+[**getCoverageLonLatUriLineReports**](#getCoverageLonLatUriLineReports) | **GET** /coverage/{lon};{lat}/{uri}/line_reports | 
+[**getCoverageRegionLineReports**](#getCoverageRegionLineReports) | **GET** /coverage/{region}/line_reports | 
+[**getCoverageRegionUriLineReports**](#getCoverageRegionUriLineReports) | **GET** /coverage/{region}/{uri}/line_reports | 
 
 
 <a name="getCoverageLonLatLineReports"></a>
@@ -62,7 +62,7 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+-| ------------ | ------------- | ------------- | -------------
  **lat** | **BigDecimal**|  The latitude of where the coord you want to query |
  **lon** | **BigDecimal**|  The longitude of where the coord you want to query |
  **depth** | **Integer**| The depth of your object | [optional] [default to 1]
@@ -75,7 +75,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**LineReports**](LineReports.md)
+[**LineReports**](/navitia_sdk_docs/expert/android/endpoints/line_reports)
 
 ### Authorization
 
@@ -131,7 +131,7 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+-| ------------ | ------------- | ------------- | -------------
  **lat** | **BigDecimal**|  The latitude of where the coord you want to query |
  **lon** | **BigDecimal**|  The longitude of where the coord you want to query |
  **uri** | **String**| First part of the uri |
@@ -145,7 +145,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**LineReports**](LineReports.md)
+[**LineReports**](/navitia_sdk_docs/expert/android/endpoints/line_reports)
 
 ### Authorization
 
@@ -199,7 +199,7 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+-| ------------ | ------------- | ------------- | -------------
  **region** | **String**|  The region you want to query |
  **depth** | **Integer**| The depth of your object | [optional] [default to 1]
  **count** | **Integer**| Number of objects per page | [optional] [default to 25]
@@ -211,7 +211,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**LineReports**](LineReports.md)
+[**LineReports**](/navitia_sdk_docs/expert/android/endpoints/line_reports)
 
 ### Authorization
 
@@ -266,7 +266,7 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+-| ------------ | ------------- | ------------- | -------------
  **region** | **String**|  The region you want to query |
  **uri** | **String**| First part of the uri |
  **depth** | **Integer**| The depth of your object | [optional] [default to 1]
@@ -279,7 +279,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**LineReports**](LineReports.md)
+[**LineReports**](/navitia_sdk_docs/expert/android/endpoints/line_reports)
 
 ### Authorization
 

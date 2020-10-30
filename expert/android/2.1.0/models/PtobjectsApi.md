@@ -1,9 +1,9 @@
 ---
 layout: default
-title: Address
+title: PtobjectsApi
 parent: Endpoints
 grand_parent: Expert Android
-permalink: /expert/android/endpoints/address
+permalink: /expert/android/endpoints/PtobjectsApi
 ---
 
 # PtobjectsApi
@@ -12,8 +12,8 @@ All URIs are relative to *https://api.navitia.io/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getCoverageLonLatPtObjects**](PtobjectsApi.md#getCoverageLonLatPtObjects) | **GET** /coverage/{lon};{lat}/pt_objects | 
-[**getCoverageRegionPtObjects**](PtobjectsApi.md#getCoverageRegionPtObjects) | **GET** /coverage/{region}/pt_objects | 
+[**getCoverageLonLatPtObjects**](#getCoverageLonLatPtObjects) | **GET** /coverage/{lon};{lat}/pt_objects | 
+[**getCoverageRegionPtObjects**](#getCoverageRegionPtObjects) | **GET** /coverage/{region}/pt_objects | 
 
 
 <a name="getCoverageLonLatPtObjects"></a>
@@ -60,7 +60,7 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+-| ------------ | ------------- | ------------- | -------------
  **q** | **String**| The data to search |
  **lat** | **BigDecimal**|  The latitude of where the coord you want to query |
  **lon** | **BigDecimal**|  The longitude of where the coord you want to query |
@@ -73,7 +73,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PtObjects**](PtObjects.md)
+[**PtObjects**](/navitia_sdk_docs/expert/android/endpoints/pt_objects)
 
 ### Authorization
 
@@ -127,7 +127,7 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+-| ------------ | ------------- | ------------- | -------------
  **q** | **String**| The data to search |
  **region** | **String**|  The region you want to query |
  **type** | [**List&lt;String&gt;**](String.md)| The type of data to search | [optional] [default to [u&#39;network&#39;, u&#39;commercial_mode&#39;, u&#39;line&#39;, u&#39;line_group&#39;, u&#39;route&#39;, u&#39;stop_area&#39;]] [enum: network, commercial_mode, line, line_group, route, stop_area, stop_point]
@@ -139,7 +139,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PtObjects**](PtObjects.md)
+[**PtObjects**](/navitia_sdk_docs/expert/android/endpoints/pt_objects)
 
 ### Authorization
 

@@ -1,9 +1,9 @@
 ---
 layout: default
-title: Address
+title: PhysicalModesApi
 parent: Endpoints
 grand_parent: Expert Android
-permalink: /expert/android/endpoints/address
+permalink: /expert/android/endpoints/PhysicalModesApi
 ---
 
 # PhysicalModesApi
@@ -12,14 +12,14 @@ All URIs are relative to *https://api.navitia.io/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getCoverageLonLatPhysicalModes**](PhysicalModesApi.md#getCoverageLonLatPhysicalModes) | **GET** /coverage/{lon};{lat}/physical_modes | 
-[**getCoverageLonLatPhysicalModesId**](PhysicalModesApi.md#getCoverageLonLatPhysicalModesId) | **GET** /coverage/{lon};{lat}/physical_modes/{id} | 
-[**getCoverageLonLatUriPhysicalModes**](PhysicalModesApi.md#getCoverageLonLatUriPhysicalModes) | **GET** /coverage/{lon};{lat}/{uri}/physical_modes | 
-[**getCoverageLonLatUriPhysicalModesId**](PhysicalModesApi.md#getCoverageLonLatUriPhysicalModesId) | **GET** /coverage/{lon};{lat}/{uri}/physical_modes/{id} | 
-[**getCoverageRegionPhysicalModes**](PhysicalModesApi.md#getCoverageRegionPhysicalModes) | **GET** /coverage/{region}/physical_modes | 
-[**getCoverageRegionPhysicalModesId**](PhysicalModesApi.md#getCoverageRegionPhysicalModesId) | **GET** /coverage/{region}/physical_modes/{id} | 
-[**getCoverageRegionUriPhysicalModes**](PhysicalModesApi.md#getCoverageRegionUriPhysicalModes) | **GET** /coverage/{region}/{uri}/physical_modes | 
-[**getCoverageRegionUriPhysicalModesId**](PhysicalModesApi.md#getCoverageRegionUriPhysicalModesId) | **GET** /coverage/{region}/{uri}/physical_modes/{id} | 
+[**getCoverageLonLatPhysicalModes**](#getCoverageLonLatPhysicalModes) | **GET** /coverage/{lon};{lat}/physical_modes | 
+[**getCoverageLonLatPhysicalModesId**](#getCoverageLonLatPhysicalModesId) | **GET** /coverage/{lon};{lat}/physical_modes/{id} | 
+[**getCoverageLonLatUriPhysicalModes**](#getCoverageLonLatUriPhysicalModes) | **GET** /coverage/{lon};{lat}/{uri}/physical_modes | 
+[**getCoverageLonLatUriPhysicalModesId**](#getCoverageLonLatUriPhysicalModesId) | **GET** /coverage/{lon};{lat}/{uri}/physical_modes/{id} | 
+[**getCoverageRegionPhysicalModes**](#getCoverageRegionPhysicalModes) | **GET** /coverage/{region}/physical_modes | 
+[**getCoverageRegionPhysicalModesId**](#getCoverageRegionPhysicalModesId) | **GET** /coverage/{region}/physical_modes/{id} | 
+[**getCoverageRegionUriPhysicalModes**](#getCoverageRegionUriPhysicalModes) | **GET** /coverage/{region}/{uri}/physical_modes | 
+[**getCoverageRegionUriPhysicalModesId**](#getCoverageRegionUriPhysicalModesId) | **GET** /coverage/{region}/{uri}/physical_modes/{id} | 
 
 
 <a name="getCoverageLonLatPhysicalModes"></a>
@@ -76,7 +76,7 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+-| ------------ | ------------- | ------------- | -------------
  **lat** | **BigDecimal**|  The latitude of where the coord you want to query |
  **lon** | **BigDecimal**|  The longitude of where the coord you want to query |
  **startPage** | **Integer**| The page where you want to start | [optional]
@@ -99,7 +99,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PhysicalModes**](PhysicalModes.md)
+[**PhysicalModes**](/navitia_sdk_docs/expert/android/endpoints/physical_modes)
 
 ### Authorization
 
@@ -164,7 +164,7 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+-| ------------ | ------------- | ------------- | -------------
  **lat** | **BigDecimal**|  The latitude of where the coord you want to query |
  **lon** | **BigDecimal**|  The longitude of where the coord you want to query |
  **id** | **String**| Id of the object you want to query |
@@ -187,7 +187,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PhysicalModes**](PhysicalModes.md)
+[**PhysicalModes**](/navitia_sdk_docs/expert/android/endpoints/physical_modes)
 
 ### Authorization
 
@@ -253,7 +253,7 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+-| ------------ | ------------- | ------------- | -------------
  **lat** | **BigDecimal**|  The latitude of where the coord you want to query |
  **lon** | **BigDecimal**|  The longitude of where the coord you want to query |
  **uri** | **String**| First part of the uri |
@@ -277,7 +277,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PhysicalModes**](PhysicalModes.md)
+[**PhysicalModes**](/navitia_sdk_docs/expert/android/endpoints/physical_modes)
 
 ### Authorization
 
@@ -343,7 +343,7 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+-| ------------ | ------------- | ------------- | -------------
  **lat** | **BigDecimal**|  The latitude of where the coord you want to query |
  **lon** | **BigDecimal**|  The longitude of where the coord you want to query |
  **uri** | **String**| First part of the uri |
@@ -367,7 +367,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PhysicalModes**](PhysicalModes.md)
+[**PhysicalModes**](/navitia_sdk_docs/expert/android/endpoints/physical_modes)
 
 ### Authorization
 
@@ -431,7 +431,7 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+-| ------------ | ------------- | ------------- | -------------
  **region** | **String**|  The region you want to query |
  **startPage** | **Integer**| The page where you want to start | [optional]
  **count** | **Integer**| Number of objects you want on a page | [optional] [default to 25]
@@ -453,7 +453,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PhysicalModes**](PhysicalModes.md)
+[**PhysicalModes**](/navitia_sdk_docs/expert/android/endpoints/physical_modes)
 
 ### Authorization
 
@@ -517,7 +517,7 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+-| ------------ | ------------- | ------------- | -------------
  **region** | **String**|  The region you want to query |
  **id** | **String**| Id of the object you want to query |
  **startPage** | **Integer**| The page where you want to start | [optional]
@@ -539,7 +539,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PhysicalModes**](PhysicalModes.md)
+[**PhysicalModes**](/navitia_sdk_docs/expert/android/endpoints/physical_modes)
 
 ### Authorization
 
@@ -604,7 +604,7 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+-| ------------ | ------------- | ------------- | -------------
  **region** | **String**|  The region you want to query |
  **uri** | **String**| First part of the uri |
  **startPage** | **Integer**| The page where you want to start | [optional]
@@ -627,7 +627,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PhysicalModes**](PhysicalModes.md)
+[**PhysicalModes**](/navitia_sdk_docs/expert/android/endpoints/physical_modes)
 
 ### Authorization
 
@@ -692,7 +692,7 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+-| ------------ | ------------- | ------------- | -------------
  **region** | **String**|  The region you want to query |
  **uri** | **String**| First part of the uri |
  **id** | **String**| Id of the object you want to query |
@@ -715,7 +715,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PhysicalModes**](PhysicalModes.md)
+[**PhysicalModes**](/navitia_sdk_docs/expert/android/endpoints/physical_modes)
 
 ### Authorization
 

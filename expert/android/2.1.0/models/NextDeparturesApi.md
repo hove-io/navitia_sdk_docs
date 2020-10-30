@@ -1,9 +1,9 @@
 ---
 layout: default
-title: Address
+title: NextDeparturesApi
 parent: Endpoints
 grand_parent: Expert Android
-permalink: /expert/android/endpoints/address
+permalink: /expert/android/endpoints/NextDeparturesApi
 ---
 
 # NextDeparturesApi
@@ -12,10 +12,10 @@ All URIs are relative to *https://api.navitia.io/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getCoverageLonLatDepartures**](NextDeparturesApi.md#getCoverageLonLatDepartures) | **GET** /coverage/{lon};{lat}/departures | 
-[**getCoverageLonLatUriDepartures**](NextDeparturesApi.md#getCoverageLonLatUriDepartures) | **GET** /coverage/{lon};{lat}/{uri}/departures | 
-[**getCoverageRegionDepartures**](NextDeparturesApi.md#getCoverageRegionDepartures) | **GET** /coverage/{region}/departures | 
-[**getCoverageRegionUriDepartures**](NextDeparturesApi.md#getCoverageRegionUriDepartures) | **GET** /coverage/{region}/{uri}/departures | 
+[**getCoverageLonLatDepartures**](#getCoverageLonLatDepartures) | **GET** /coverage/{lon};{lat}/departures | 
+[**getCoverageLonLatUriDepartures**](#getCoverageLonLatUriDepartures) | **GET** /coverage/{lon};{lat}/{uri}/departures | 
+[**getCoverageRegionDepartures**](#getCoverageRegionDepartures) | **GET** /coverage/{region}/departures | 
+[**getCoverageRegionUriDepartures**](#getCoverageRegionUriDepartures) | **GET** /coverage/{region}/{uri}/departures | 
 
 
 <a name="getCoverageLonLatDepartures"></a>
@@ -72,7 +72,7 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+-| ------------ | ------------- | ------------- | -------------
  **lat** | **BigDecimal**|  The latitude of where the coord you want to query |
  **lon** | **BigDecimal**|  The longitude of where the coord you want to query |
  **filter** | **String**| use to filter PT objects | [optional]
@@ -95,7 +95,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Departures**](Departures.md)
+[**Departures**](/navitia_sdk_docs/expert/android/endpoints/departures)
 
 ### Authorization
 
@@ -161,7 +161,7 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+-| ------------ | ------------- | ------------- | -------------
  **lat** | **BigDecimal**|  The latitude of where the coord you want to query |
  **lon** | **BigDecimal**|  The longitude of where the coord you want to query |
  **uri** | **String**| First part of the uri |
@@ -185,7 +185,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Departures**](Departures.md)
+[**Departures**](/navitia_sdk_docs/expert/android/endpoints/departures)
 
 ### Authorization
 
@@ -249,7 +249,7 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+-| ------------ | ------------- | ------------- | -------------
  **region** | **String**|  The region you want to query |
  **filter** | **String**| use to filter PT objects | [optional]
  **fromDatetime** | **DateTime**| The datetime from which you want the schedules | [optional]
@@ -271,7 +271,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Departures**](Departures.md)
+[**Departures**](/navitia_sdk_docs/expert/android/endpoints/departures)
 
 ### Authorization
 
@@ -336,7 +336,7 @@ try {
 ### Parameters
 
 Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+-| ------------ | ------------- | ------------- | -------------
  **region** | **String**|  The region you want to query |
  **uri** | **String**| First part of the uri |
  **filter** | **String**| use to filter PT objects | [optional]
@@ -359,7 +359,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Departures**](Departures.md)
+[**Departures**](/navitia_sdk_docs/expert/android/endpoints/departures)
 
 ### Authorization
 
