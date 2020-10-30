@@ -2,7 +2,7 @@
 layout: default
 title: Communicating with
 grand_parent: Journey
-nav_order: 3
+nav_order: 2
 nav_exclude: true
 permalink: /journey/android/3.2.1/communicating-with
 ---
@@ -13,7 +13,7 @@ Old version: 3.2.1
 {: .label .label-yellow }
 
 [Getting started](/navitia_sdk_docs/journey/android/3.2.1/getting-started)<br>
-[Screens](/navitia_sdk_docs/journey/android/3.2.1/screens)  
+[Screens](/navitia_sdk_docs/journey/android/3.2.1/screens)
 
 ---
 

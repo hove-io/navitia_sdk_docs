@@ -3,7 +3,7 @@ layout: default
 title: Getting started
 parent: Journey Android
 grand_parent: Journey
-nav_order: 2
+nav_order: 1
 permalink: /journey/android/getting-started
 ---
 

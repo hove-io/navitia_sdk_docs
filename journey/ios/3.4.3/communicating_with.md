@@ -1,7 +1,6 @@
 ---
 layout: default
 title: Communicating with
-parent: Journey iOS
 grand_parent: Journey
 nav_order: 3
 nav_exclude: true

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Journey
-nav_order: 3
+nav_order: 4
 has_children: true
 permalink: journey
 ---
@@ -15,7 +15,7 @@ Journey allows to research itineries from an origin to a destination. Those can 
 
 ## Overview
 
-<!-- Insérer schéma -->
+<!-- Insert schema -->
 
 ### Form
 {: .no_toc }

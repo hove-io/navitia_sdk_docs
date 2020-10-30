@@ -3,8 +3,7 @@ layout: default
 title: Communicating with
 parent: Journey Android
 grand_parent: Journey
-nav_order: 4
-nav_exclude: true
+nav_order: 2
 permalink: /journey/android/communicating-with
 ---
 

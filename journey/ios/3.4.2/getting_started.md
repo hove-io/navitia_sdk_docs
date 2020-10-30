@@ -1,7 +1,6 @@
 ---
 layout: default
 title: Getting started
-parent: Journey iOS
 grand_parent: Journey
 nav_order: 1
 nav_exclude: true

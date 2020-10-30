@@ -3,8 +3,8 @@ layout: default
 title: Screens
 parent: Journey Android
 grand_parent: Journey
-nav_order: 3
-permalink: /journey/android/screen
+nav_order: 2
+permalink: /journey/android/screens
 ---
 
 # Screens

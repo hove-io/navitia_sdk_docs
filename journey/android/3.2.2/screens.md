@@ -1,14 +1,20 @@
 ---
 layout: default
 title: Screens
-parent: Journey Android
 grand_parent: Journey
 nav_order: 2
-permalink: /journey/android/screens
+nav_exclude: true
+permalink: /journey/android/3.2.2/screens
 ---
 
 # Screens
 {: .no_toc }
+
+Old version: 3.2.2
+{: .label .label-yellow }
+
+[Getting started](/navitia_sdk_docs/journey/android/3.2.2/getting-started)<br>
+[Communicating with](/navitia_sdk_docs/journey/android/3.2.2/communicating-with)
 
 <details open markdown="block">
   <summary>

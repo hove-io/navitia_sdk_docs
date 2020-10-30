@@ -1,7 +1,6 @@
 ---
 layout: default
 title: Screens
-parent: Journey iOS
 grand_parent: Journey
 nav_order: 2
 nav_exclude: true

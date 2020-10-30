@@ -25,7 +25,7 @@ source 'https://github.com/CanalTP/Podspecs.git'
  
 et dans la section target :
 ```ruby
-pod ‘NavitiaSDKUI’, ‘3.4.1’
+pod ‘NavitiaSDKUI’, ‘3.4.5’
 ```
  
 Exécuter la commande :

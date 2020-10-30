@@ -13,7 +13,8 @@ permalink: /journey/ios
 
 | Version | |
 | --- | --- |
-| 3.4.4 |  <label class="label label-green">Latest</label> |
+| 3.4.5 |  <label class="label label-green">Latest</label> |
+| 3.4.4 |  <label class="label label-yellow">[Old documentation](/navitia_sdk_docs/journey/ios/3.4.4/getting-started)</label> |
 | 3.4.3 |  <label class="label label-yellow">[Old documentation](/navitia_sdk_docs/journey/ios/3.4.3/getting-started)</label> |
 | 3.4.2 |  <label class="label label-yellow">[Old documentation](/navitia_sdk_docs/journey/ios/3.4.2/getting-started)</label> |
 | < 3.4.2 | <label class="label label-red">Deprecated</label> |

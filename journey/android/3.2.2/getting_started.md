@@ -1,10 +1,10 @@
 ---
 layout: default
 title: Getting started
-parent: Journey Android
 grand_parent: Journey
 nav_order: 1
-permalink: /journey/android/getting-started
+nav_exclude: true
+permalink: /journey/android/3.2.2/getting-started
 ---
 
 # Getting Started
@@ -30,7 +30,7 @@ Add the following dependency in the `build.gradle` file of your application
 ```ruby
 dependencies {
     ...
-    implementation("com.kisio.navitia.sdk.ui:journey:3.1.2")
+    implementation("com.kisio.navitia.sdk.ui:journey:3.2.2")
 }
 ```
 

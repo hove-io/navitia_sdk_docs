@@ -1,13 +1,19 @@
 ---
 layout: default
 title: Getting started
-parent: Journey iOS
 grand_parent: Journey
 nav_order: 1
-permalink: /journey/ios/getting-started
+nav_exclude: true
+permalink: /journey/ios/3.4.4/getting-started
 ---
 
 # Getting Started
+
+Old version: 3.4.4
+{: .label .label-yellow }
+
+[Screens](/navitia_sdk_docs/journey/ios/3.4.4/screens)<br>
+[Communicating with](/navitia_sdk_docs/journey/ios/3.4.4/communicating-with)
 
 ---
 
@@ -25,7 +31,7 @@ source 'https://github.com/CanalTP/Podspecs.git'
  
 et dans la section target :
 ```ruby
-pod ‘NavitiaSDKUI’, ‘3.4.1’
+pod ‘NavitiaSDKUI’, ‘3.4.4’
 ```
  
 Exécuter la commande :

@@ -13,10 +13,13 @@ Navitia SDK Docs
 
 ---
 
+#### UI
 <!-- [Around Me](/navitia_sdk_docs/around-me) -->
 <!-- [Book]() -->
 [Journey](/navitia_sdk_docs/journey)
 <!-- [NFC]() -->
 <!-- [Ticket]() -->
-<!-- [Expert]() -->
+
+#### Data
+[Expert](/navitia_sdk_docs/expert)
 <!-- [Partners]() -->
