@@ -1,3 +1,11 @@
+---
+layout: default
+title: AddressesApi
+parent: Endpoints
+grand_parent: Expert Android
+permalink: /expert/android/endpoints/AddressesApi.md
+---
+
 # AddressesApi
 
 All URIs are relative to *https://api.navitia.io/v1*

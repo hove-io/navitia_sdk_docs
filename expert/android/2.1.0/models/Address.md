@@ -3,7 +3,7 @@ layout: default
 title: Address
 parent: Endpoints
 grand_parent: Expert Android
-permalink: /expert/android/models/address
+permalink: /expert/android/endpoints/address
 ---
 
 # Address
