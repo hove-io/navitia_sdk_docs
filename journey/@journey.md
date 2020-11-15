@@ -8,7 +8,7 @@ permalink: journey
 
 # Journey
 
-Journey allows to research itineries from an origin to a destination. Those can be stations, points of interest or adresses.
+Journey allows to research itineraries from an origin to a destination. Those can be stations, points of interest or addresses.
 {: .fs-6 .fw-300 }
 
 ---
