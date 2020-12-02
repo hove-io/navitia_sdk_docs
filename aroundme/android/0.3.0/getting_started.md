@@ -162,7 +162,7 @@ The `book_button` is a JSON object that contains String resource IDs for the boo
 
 ### How to configure Data?
 
-Easy peasy, follow one of the steps below 👇😉
+Easy peasy, follow one of the steps below 👇😉.\
 Please note that calling `resetUserPreferences()` will reset filters configuration and the content of the [filters](/navitia_sdk_docs/aroundme/android/screen#filters) screen.
 
 #### Using JSON file
