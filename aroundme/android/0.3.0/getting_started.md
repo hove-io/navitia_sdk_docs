@@ -8,6 +8,7 @@ permalink: /aroundme/android/getting-started
 ---
 
 # Getting Started
+{: .no_toc }
 
 ---
 

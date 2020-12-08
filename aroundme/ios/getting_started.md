@@ -8,6 +8,7 @@ permalink: /aroundme/ios/getting-started
 ---
 
 # Getting Started
+{: .no_toc }
 
 ---
 
@@ -19,85 +20,73 @@ permalink: /aroundme/ios/getting-started
 
 ---
 
+## 🧰 Requirements
+
+- [Cocoapods](https://cocoapods.org): this module is available through Cocoapods.
+- Minimum iOS deployment target: 10.0
+
 ## 💻 Setup
 
-Add the following maven repository in the `build.gradle` of your project. Replace `USERNAME` and `PASSWORD` with your credentials:
+The access to `Around Me` module and its dependencies requires valid credentials to our private artifactory. Add the following line to your `.netrc` file and replace `USERNAME` and `PASSWORD` with your credentials:
 
-```ruby
-repositories {
-    ...
-    maven {
-        credentials {
-            username = USERNAME
-            password = PASSWORD
-        }
-        url("https://kisiodigital.jfrog.io/kisiodigital/android-release")
-    }
-}
+```
+machine kisiodigital.jfrog.io login USERNAME password PASSWORD
 ```
  
-Add the following dependency in the `build.gradle` file of your application:
+In your project, add the following lines to your `Podfile`:
 
 ```ruby
-dependencies {
-    ...
-    implementation("com.kisio.navitia.sdk.ui:aroundme:0.2.2")
+platform :ios, '10.0' # Minimum deployment target
+use_frameworks!
+
+source 'https://github.com/CanalTP/Podspecs.git' # Around Me podspec URL
+
+target 'YOUR_PROJECT_SCHEME' do
+  pod 'AroundMeSDK', '~> 0.2.0' # Around Me Pod definition
+end
+```
+
+## 🚀 Launching
+
+This module needs to be initialized before launching the main `ViewController`. Therefore, You need to call the `AroundMe.shared.initialize()` method.\
+Please refer to the following code:
+
+```swift
+do {
+    guard let aroundMeViewController = AroundMe.shared.rootViewController else {
+      return
+    }
+
+    let aroundMeColorsConfiguration = AroundMeColorsConfiguration(background: .gray,
+                                                                  primary: .blue)
+    let aroundMeConfiguration = try AroundMeConfiguration(colorsConfiguration: aroundMeColorsConfiguration,
+                                                          dataConfiguration: DataConfiguration(filtersConfiguration: filtersConfiguration, bookButtonConfiguration: bookButtonConfiguration), // If configurationJsonFile is not set
+                                                          dataConfigurationJsonFile: "aroundme_data_configuration_json_filename", // If configuration is not set
+                                                          enableGoFromGoTo: enableGoToGoFromOption.isOn)
+    
+    try AroundMe.shared.initialize(token: navitia_token,
+                                   coverage: navitia_coverage,
+                                   configuration: aroundMeConfiguration)
+    navigationController?.pushViewController(aroundMeViewController, animated: false)
+} catch {
+    Logger.error("%@", String(format: "AroundMeSDK cannot be initialized! %@", error.localizedDescription))
 }
-```
-
-For the use of cartography, add your Google Maps API Key to your `AndroidManifest.xml` as well. Replace `YOUR_API_KEY` with your key:
-
-```xml
-<meta-data
-    android:name="com.google.android.geo.API_KEY"
-    android:value="YOUR_API_KEY"/>
-```
-
-The activity launching Journey must handle the following configuration changes: `orientation|screenSize` declared into your `AndroidManifest.xml`:
-
-```xml
-<activity
-    ...
-    android:configChanges="orientation|screenSize"
-    .../>
-```
-
-## 👨‍💻 Implementation
-
-This module is set up by calling `AroundMeUI.getInstance()`. The singleton behaves like a builder in which each method allows you to configure the module. You need to call the `init()` method at the end.\
-The following are arguments of the `init()` method:
-
-<div markdown="1">
-
-| Parameter | Type | Required | Description | Default |
-| --- | --- | --- | --- | --- |
-| `activity` | `WeakReference<AppCompatActivity>` | ✓ | Weak reference of the activity launching the module | ✗ |
-| `colors` | `AroundMeColors` | ✓ | Module colors configuration | ✗ |
-| `coverage` | `String` | ✓ | Navitia target coverage | ✗ |
-| `token` | `String` | ✓ | Navitia API access token | ✗ |
-| `configuration` | `Configuration` | Only if `configurationJsonFile` is not set | Data configuration of the module | `null` |
-| `configurationJsonFile` | `String` | Only if `Configuration` is not set | Json file name in `assets` folder | `null` |
-| `defaultLocation` | `LatLng` | ✗ | Default map center location | `DEFAULT_MALOT_LAT_LNG` |
-| `navigationListener` | `NavigationListener` | ✗ | Listener the module can rely on for navigation events within the app | `null` |
-
-</div>
-
-```kotlin
-AroundMeUI.getInstance()
-   .init(
-       activity = WeakReference(this),
-       colors = AroundMeColors(
-           backgroundColor = "#0277BD",
-           primaryColor = "#FF4081"
-       ),
-       coverage = "fr-idf",
-       token = "0de19ce5-e0eb-4524-a074-bda3c6894c19",
-       configuration = Configuration(filtersConfiguration, bookButtonConfiguration), // Not required if configurationJsonFile is set
-       configurationJsonFile = "jsonFile" // Not required if configuration object is set
-   )
 ```
 
 ## 🛠 Configuration
+
+The `AroundMeConfiguration` is a mandatory element to pass to the `ìnitialize()` method. The below is the list of parameters required to build this configuration object:
+
+<div markdown="1">
+
+| Color | Required | Description | Default |
+| --- |:---:| --- | --- |
+| `colorsConfiguration` | ✓ | To set the module colors configuration | ✗ |
+| `dataConfiguration` | Only if `dataConfigurationJsonFile`is not set | To set the data configuration | ✗ |
+| `dataConfigurationJsonFile` | Only if `dataConfiguration`is not set | To set the data configuration | ✗ |
+| `enableGoFromGoTo` | ✗ | To enable or disable the Go from/to feature | `false` |
+
+</div>
 
 ### Colors
 
@@ -112,7 +101,8 @@ AroundMeUI.getInstance()
 
 ### Data
 
-The module has to be configured to work properly. The filters and some UI components require a configuration, otherwise, you won't be able to launch the SDK. There are two main sections to configure: `filters` and `book_button`.
+The module has to be configured to work properly. The filters and some UI components require a configuration or else you won't be able to launch the SDK.\
+There are two main sections to configure: `filters` and `book_button`.
 
 The `filters` sets up the list of the categories/subcategories/types to be displayed in the filters page.\
 The `book_button` sets up the label to be displayed on the booking button when different UI components are shown on the screen.
@@ -122,6 +112,7 @@ The `book_button` sets up the label to be displayed on the booking button when d
 The `filters` is a JSON array of categories. Each category has subcategories and each subcategory has types.
 
 ###### Category
+
 <div markdown="1">
 
 | Value | Type | Required | Description |
@@ -132,6 +123,7 @@ The `filters` is a JSON array of categories. Each category has subcategories and
 </div>
 
 ###### Subcategory
+
 <div markdown="1">
 
 | Value | Type | Required | Description |
@@ -145,6 +137,7 @@ The `filters` is a JSON array of categories. Each category has subcategories and
 </div>
 
 ###### Subcategory type
+
 <div markdown="1">
 
 | Value | Type | Required | Description |
@@ -170,12 +163,12 @@ The `book_button` is a JSON object that contains String resource IDs for the boo
 
 ### How to configure Data?
 
-Follow one of the steps below:\
+Follow one of the steps below:
 
 - Using JSON file
 
-The JSON file should be added to the `assets` folder of your project.
-Please check the example below to know more about the structure of the configuration JSON file
+The JSON file should be added to the main bundle of your project.
+Please check the example below to know more about the structure of the configuration JSON file:
 
 ```json
     {
@@ -249,65 +242,46 @@ Please check the example below to know more about the structure of the configura
 
 - Using Configuration object
 
-```kotlin
-// Configure filters
-val filtersConfiguration = mutableListOf<ConfigurationFilterCategory>()
+```swift
+let filtersConfiguration = [
+    // Add stations category
+    ConfigurationFilterCategory(categoryNameRes: "stations", subcategories: [
+        ConfigurationFilterSubcategory(
+            nameRes: "metro",
+            iconRes: "ic_section_mode_metro",
+            selected: true,
+            group: SubcategoryFilterGroup.TRANSPORT_MODE,
+            types: [ConfigurationFilterSubcategoryType(id: "metro", nameRes: "physical_mode:Metro")]
+        ),
+        ConfigurationFilterSubcategory(
+            nameRes: "bus",
+            iconRes: "ic_section_mode_bus",
+            selected: true,
+            group: SubcategoryFilterGroup.TRANSPORT_MODE,
+            types: [ConfigurationFilterSubcategoryType(id: "bus", nameRes: "physical_mode:Bus")]
+        )
+    ]),
+    // Add services category
+    ConfigurationFilterCategory(categoryNameRes: "mobility_services", subcategories: [
+        ConfigurationFilterSubcategory(
+            nameRes: "bss_station",
+            iconRes: "ic_amenity_bicycle_rental",
+            selected: true,
+            group: SubcategoryFilterGroup.POI,
+            types: [ConfigurationFilterSubcategoryType(id: "bss_station", nameRes: "poi_type:amenity:bicycle_rental")]
+        ),
+        ConfigurationFilterSubcategory(
+            nameRes: "parking",
+            iconRes: "ic_amenity_parking",
+            selected: true,
+            group: SubcategoryFilterGroup.POI,
+            types: [ConfigurationFilterSubcategoryType(id: "parking", nameRes: "poi_type:amenity:parking")]
+        )
+    ])
+]
 
-// Add stations category
-val stationsSubcategories = listOf(
-    ConfigurationFilterSubcategory("metro",
-        "ic_section_mode_metro",
-        true,
-        SubcategoryFilterGroup.TRANSPORT_MODE,
-        listOf(ConfigurationFilterSubcategoryType("metro", "physical_mode:Metro"))
-    ),
-    ConfigurationFilterSubcategory("bus",
-        "ic_section_mode_bus",
-        true,
-        SubcategoryFilterGroup.TRANSPORT_MODE,
-        listOf(ConfigurationFilterSubcategoryType("bus", "physical_mode:Bus"))
-    )
-)
-filtersConfiguration.add(ConfigurationFilterCategory("stations", stationsSubcategories))
-
-// Add services category
-val servicesSubcategories = listOf(
-    ConfigurationFilterSubcategory("bss_station",
-        "ic_amenity_bicycle_rental",
-        true,
-        SubcategoryFilterGroup.POI,
-        listOf(ConfigurationFilterSubcategoryType("bss_station", "poi_type:amenity:bicycle_rental"))
-    ),
-    ConfigurationFilterSubcategory("parking",
-        "ic_amenity_parking",
-        true,
-        SubcategoryFilterGroup.POI,
-        listOf(ConfigurationFilterSubcategoryType("parking", "poi_type:amenity:parking"))
-    )
-)
-filtersConfiguration.add(ConfigurationFilterCategory("mobility_services", servicesSubcategories))
-
-// Configure book button label
-val bookButtonConfiguration = ConfigurationBookButton("book_bss", "book_car_park", "book_stop_point")
-
-// Setup configuration object
-val configuration = Configuration(filtersConfiguration, bookButtonConfiguration)
+let bookButtonConfiguration = ConfigurationBookButton(bssRes: "book_bss", carParkRes: "book_car_park", stopPointRes: "book_stop_point")         
+let dataConfiguration = ConfigurationRoot(filtersConfiguration: filtersConfiguration, bookButtonConfiguration: bookButtonConfiguration)
 ```
 
-Please note that calling `resetUserPreferences()` will reset filters configuration and the content of the [filters](/navitia_sdk_docs/aroundme/ios/screen#filters) screen.
-
-## 🚀 Launching
-
-Around Me has one entry point `MapFragment`. Please make sure to `init` the module before launching this fragment.
-
-- Example
-
-Assuming you have an `Activity` with a fragment container, please refer to the following example to launch the entry screen fragment.
-
-```kotlin
-supportFragmentManager.beginTransaction().run {
-    replace(R.id.container_id, MapFragment.newInstance(), MapFragment.TAG)
-    addToBackStack(MapFragment.TAG)
-    commit()
-}
-```
+Please note that calling `AroundMe.shared.resetUserPreferences()` will reset filters configuration and the content of the [filters](/navitia_sdk_docs/aroundme/ios/screen#filters) screen.
