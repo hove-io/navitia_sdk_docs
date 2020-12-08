@@ -94,8 +94,8 @@ The `AroundMeConfiguration` is a mandatory element to pass to the `ìnitialize()
 
 | Color | Required | Description | Default |
 | --- |:---:| --- | --- |
-| `backgroundColor` | ✓ | To set the background color | ✗ |
-| `primaryColor` | ✗ | To set the color of some UI components | `backgroundColor` |
+| `background` | ✓ | To set the background color | ✗ |
+| `primary` | ✗ | To set the color of some UI components | `background` |
 
 </div>
 

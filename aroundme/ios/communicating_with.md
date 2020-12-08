@@ -8,30 +8,20 @@ permalink: /aroundme/ios/communicating-with
 ---
 
 # Communicating with
-{: .no_toc }
-
----
-
-## Table of contents
-{: .no_toc .text-delta }
-
-1. TOC
-{:toc}
 
 ---
 
 ## Journey
 
-This module communicates with [Journey]({{ site.baseurl }}/journey/) module in order to get directions for a chosen itinerary. You should enable the `Go from/Go to` feature when first initializing the module by calling `AroundMeUI.getInstance().withGoFromGoTo()`.\
-The `Router` module should be initialized also with the right parameters, please refer to the code below:
+This module communicates with [Journey]({{ site.baseurl }}/journey/) module in order to get directions for a chosen itinerary. You should enable the `Go from/Go to` feature when first initializing the module by setting `enableGoFromGoTo` to `true` in `AroundMeConfiguration`.\
+Please refer to the code below to initialize the `Router` module since it's mandatory to build the connection between these modules:
 
-```kotlin
-if (!Router.getInstance().isInit) {
-    Router.getInstance()
-        .register(aroundMe = AroundMeUI.getInstance().aroundMeActivityDelegate)
-        .register(journey = JourneysUI.getInstance().activityDelegate)
-        .init()
-}
+```swift
+try Router.shared
+          .register(journey: JourneySdk.shared.journeyRouter)
+          .register(aroundMe: AroundMe.shared.aroundMeRouter)
+          .register(app: self)
+          .initialize()
 ```
 
 When the user taps on a marker on the map, the buttons `Go from` and `Go to` should pop up as follows:
