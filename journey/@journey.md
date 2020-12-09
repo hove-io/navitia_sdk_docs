@@ -3,6 +3,7 @@ layout: default
 title: Journey
 nav_order: 4
 has_children: true
+nav_exclude: true
 permalink: journey
 ---
 

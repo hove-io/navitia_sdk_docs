@@ -2,7 +2,7 @@
 layout: default
 title: Around Me iOS
 parent: Around Me
-nav_order: 2
+nav_order: 1
 has_children: true
 permalink: /aroundme/ios
 ---
