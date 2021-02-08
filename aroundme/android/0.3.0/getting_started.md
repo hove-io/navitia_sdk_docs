@@ -22,7 +22,6 @@ permalink: /aroundme/android/getting-started
 ## 💻 Setup
 
 Add the following maven repository in the `build.gradle` of your project. Replace `USERNAME` and `PASSWORD` with your credentials:
-
 ```ruby
 repositories {
     ...
@@ -64,7 +63,7 @@ The activity launching Journey must handle the following configuration changes: 
 
 ## 👨‍💻 Implementation
 
-This module is set up by calling `AroundMeUI.getInstance()`. The singleton behaves like a builder in which each method allows you to configure the module. You need to call the `init()` method at the end.\
+This module is set up by calling `AroundMeUI.getInstance()`. The singleton behaves like a builder in which each method allows you to configure the module. You need to call the `init()` method at the end.<br>
 The following are arguments of the `init()` method:
 
 <div markdown="1">
@@ -114,7 +113,7 @@ AroundMeUI.getInstance()
 
 The module has to be configured to work properly. The filters and some UI components require a configuration, otherwise, you won't be able to launch the SDK. There are two main sections to configure: `filters` and `book_button`.
 
-The `filters` sets up the list of the categories/subcategories/types to be displayed in the filters page.\
+The `filters` sets up the list of the categories/subcategories/types to be displayed in the filters page.<br>
 The `book_button` sets up the label to be displayed on the booking button when different UI components are shown on the screen.
 
 - Filters
@@ -170,7 +169,7 @@ The `book_button` is a JSON object that contains String resource IDs for the boo
 
 ### How to configure Data?
 
-Follow one of the steps below:\
+Follow one of the steps below:
 
 - Using JSON file
 
@@ -178,80 +177,80 @@ The JSON file should be added to the `assets` folder of your project.
 Please check the example below to know more about the structure of the configuration JSON file
 
 ```json
+{
+  "filters": [
     {
-      "filters": [
+      "category_name_res": "transport",
+      "subcategories": [
         {
-          "category_name_res": "transport",
-          "subcategories": [
+          "name_res": "metro",
+          "icon_res": "ic_section_mode_metro",
+          "selected": true,
+          "group": 0,
+          "types": [
             {
               "name_res": "metro",
-              "icon_res": "ic_section_mode_metro",
-              "selected": true,
-              "group": 0,
-              "types": [
-                {
-                  "name_res": "metro",
-                  "id": "physical_mode:Metro"
-                }
-              ]
-            },
-            {
-              "name_res": "bus",
-              "icon_res": "ic_section_mode_bus",
-              "selected": true,
-              "group": 0,
-              "types": [
-                {
-                  "name_res": "bus",
-                  "id": "physical_mode:Bus"
-                }
-              ]
+              "id": "physical_mode:Metro"
             }
           ]
         },
         {
-          "category_name_res": "poi",
-          "subcategories": [
+          "name_res": "bus",
+          "icon_res": "ic_section_mode_bus",
+          "selected": true,
+          "group": 0,
+          "types": [
             {
-              "name_res": "bss_station",
-              "icon_res": "ic_amenity_bicycle_rental",
-              "selected": true,
-              "group": 1,
-              "types": [
-                {
-                  "name_res": "bss_station",
-                  "id": "poi_type:amenity:bicycle_rental"
-                }
-              ]
-            },
-            {
-              "name_res": "parking",
-              "icon_res": "ic_amenity_parking",
-              "selected": true,
-              "group": 1,
-              "types": [
-                {
-                  "name_res": "parking",
-                  "id": "poi_type:amenity:parking"
-                }
-              ]
+              "name_res": "bus",
+              "id": "physical_mode:Bus"
             }
           ]
         }
-      ],
-      "book_button": {
-        "bss_res": "book_bss",
-        "car_park_res": "book_car_park",
-        "stop_point_res": "book_stop_point"
-      }
+      ]
+    },
+    {
+      "category_name_res": "poi",
+      "subcategories": [
+        {
+          "name_res": "bss_station",
+          "icon_res": "ic_amenity_bicycle_rental",
+          "selected": true,
+          "group": 1,
+          "types": [
+            {
+              "name_res": "bss_station",
+              "id": "poi_type:amenity:bicycle_rental"
+            }
+          ]
+        },
+        {
+          "name_res": "parking",
+          "icon_res": "ic_amenity_parking",
+          "selected": true,
+          "group": 1,
+          "types": [
+            {
+              "name_res": "parking",
+              "id": "poi_type:amenity:parking"
+            }
+          ]
+        }
+      ]
     }
+  ],
+  "book_button": {
+    "bss_res": "book_bss",
+    "car_park_res": "book_car_park",
+    "stop_point_res": "book_stop_point"
+  }
+}
 ```
 
 - Using Configuration object
 
 ```kotlin
 // Configure filters
-listOf(
+val filtersConfiguration = listOf(
     // Add stations category
     ConfigurationFilterCategory("stations", listOf(
         ConfigurationFilterSubcategory(
