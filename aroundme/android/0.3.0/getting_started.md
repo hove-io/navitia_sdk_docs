@@ -113,7 +113,7 @@ AroundMeUI.getInstance()
 
 The module has to be configured to work properly. The filters and some UI components require a configuration, otherwise, you won't be able to launch the SDK. There are two main sections to configure: `filters` and `book_button`.
 
-The `filters` sets up the list of the categories/subcategories/types to be displayed in the filters page.<br>
+The `filters` sets up the list of the categories/subcategories/types to be displayed in the filters page.\
 The `book_button` sets up the label to be displayed on the booking button when different UI components are shown on the screen.
 
 - Filters
