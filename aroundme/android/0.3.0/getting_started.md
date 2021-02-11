@@ -63,7 +63,7 @@ The activity launching Journey must handle the following configuration changes: 
 
 ## 👨‍💻 Implementation
 
-This module is set up by calling `AroundMeUI.getInstance()`. The singleton behaves like a builder in which each method allows you to configure the module. You need to call the `init()` method at the end.<br>
+This module is set up by calling `AroundMeUI.getInstance()`. The singleton behaves like a builder in which each method allows you to configure the module. You need to call the `init()` method at the end.\
 The following are arguments of the `init()` method:
 
 <div markdown="1">
