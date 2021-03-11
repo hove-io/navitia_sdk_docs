@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: main
 title: Getting started
 parent: Around Me iOS
 grand_parent: Around Me
@@ -20,12 +20,12 @@ permalink: /aroundme/ios/getting-started
 
 ---
 
-## 🧰 Requirements
+## 🧰  Requirements
 
 - [Cocoapods](https://cocoapods.org): this module is available through Cocoapods.
 - Minimum iOS deployment target: 10.0
 
-## 💻 Setup
+## 💻  Setup
 
 The access to `Around Me` module and its dependencies requires valid credentials to our private artifactory. Add the following line to your `.netrc` file and replace `USERNAME` and `PASSWORD` with your credentials:
 
@@ -46,7 +46,7 @@ target 'YOUR_PROJECT_SCHEME' do
 end
 ```
 
-## 🚀 Launching
+## 🚀  Launching
 
 This module needs to be initialized before launching the main `ViewController`. Therefore, You need to call the `AroundMe.shared.initialize()` method.\
 Please refer to the following code:

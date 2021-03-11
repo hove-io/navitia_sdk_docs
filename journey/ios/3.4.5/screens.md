@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: main
 title: Screens
 parent: Journey iOS
 grand_parent: Journey

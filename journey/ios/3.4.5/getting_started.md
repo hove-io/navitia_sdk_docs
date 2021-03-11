@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: main
 title: Getting started
 parent: Journey iOS
 grand_parent: Journey

@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: main
 title: Screens
 grand_parent: Journey
 nav_order: 2

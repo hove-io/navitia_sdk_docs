@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: main
 title: Getting started
 grand_parent: Journey
 nav_order: 1

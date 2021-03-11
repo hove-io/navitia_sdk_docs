@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: main
 title: Screens
 parent: Around Me Android
 grand_parent: Around Me

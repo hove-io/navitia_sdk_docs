@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: main
 title: Communicating with
 parent: Around Me iOS
 grand_parent: Around Me

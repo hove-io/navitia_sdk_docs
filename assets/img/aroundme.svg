@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 22.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Main" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 634.6 192.6" style="enable-background:new 0 0 634.6 192.6;" xml:space="preserve">
+<style type="text/css">
+	.st0{display:none;fill:#FFFFFF;}
+	.st1{fill:#4C6672;}
+	.st4{fill:#7EBAC8;}
+	.st6{fill:none;stroke:#FFFFFF;stroke-width:2.5944;stroke-miterlimit:10;}
+	.st7{fill:none;stroke:#FFFFFF;stroke-width:3.3158;stroke-miterlimit:10;}
+	.st14{font-family:'Kaleko105-Bold';}
+	.st15{font-size:77px;}
+	.st16{fill:#A5CFD3;}
+</style>
+<path id="card" class="st0" d="M602.8,192.6H34.6c-19,0-34.6-15.5-34.6-34.6V34.5C0,15.5,15.5,0,34.5,0h568.3
+	c19,0,34.6,15.5,34.6,34.6v123.5C637.3,177.1,621.8,192.6,602.8,192.6z"/>
+<g id="Logo">
+	<circle id="background" class="st1" cx="95.1" cy="97.4" r="85"/>
+	<g id="aroundme_logo">
+		<ellipse class="st6" cx="95.7" cy="127" rx="30" ry="8.4"/>
+		<ellipse class="st7" cx="95.7" cy="127" rx="52.5" ry="14.7"/>
+		<path class="st4" d="M95.7,44.6c-15.7,0-28.5,12.8-28.5,28.5c0,4.7,1.2,9.4,3.4,13.5l23.5,42.5c0.3,0.6,0.9,0.9,1.6,0.9
+			s1.2-0.4,1.6-0.9l23.5-42.6c2.2-4.1,3.4-8.8,3.4-13.5C124.2,57.4,111.4,44.6,95.7,44.6z M95.7,87.3c-7.9,0-14.2-6.4-14.2-14.2
+			s6.4-14.2,14.2-14.2s14.2,6.4,14.2,14.2S103.5,87.3,95.7,87.3z"/>
+	</g>
+</g>
+<text id="aroundme_text" transform="matrix(1 0 0 1 188.3956 123.0713)"><tspan x="0" y="0" class="st4 st14 st15">around</tspan><tspan x="311.7" y="0" class="st16 st14 st15">me</tspan></text>
+</svg>

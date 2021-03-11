@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: main
 title: Around Me Android
 parent: Around Me
 nav_order: 1
@@ -9,10 +9,10 @@ permalink: /aroundme/android
 
 # Around Me Android
 
-## Changelog & Releases
+<!-- ## Changelog & Releases
 
 | Version |  |
 | --- | --- |
 | 0.3.0 |  <label class="label label-green">Latest</label>  |
 
----
+--- -->

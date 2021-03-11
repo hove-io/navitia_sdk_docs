@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: main
 title: Communicating with
 grand_parent: Journey
 nav_order: 3

@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: main
 title: Screens
 parent: Journey Android
 grand_parent: Journey

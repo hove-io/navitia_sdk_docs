@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: main
 title: Journey Android
 parent: Journey
 nav_order: 1

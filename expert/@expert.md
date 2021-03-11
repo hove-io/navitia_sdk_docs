@@ -1,15 +1,15 @@
 ---
-layout: default
+layout: main
 title: Expert
 nav_order: 3
 has_children: true
-nav_exclude: true
-permalink: Expert
+permalink: expert
 ---
 
-# Expert
+<img class="img-title" src="/navitia_sdk_docs/assets/img/expert.svg" alt="Expert">
 
 Call natively Navitia while avoiding network calls, response parsing and boilerplate code.
+
 {: .fs-6 .fw-300 }
 
----
+

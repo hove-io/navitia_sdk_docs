@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: main
 title: Changelog & Releases
 parent: Journey Android
 grand_parent: Journey

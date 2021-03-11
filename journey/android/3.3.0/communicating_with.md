@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: main
 title: Communicating with
 parent: Journey Android
 grand_parent: Journey

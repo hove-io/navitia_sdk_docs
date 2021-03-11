@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: main
 title: Expert Android
 parent: Expert
 nav_order: 1
@@ -9,14 +9,14 @@ permalink: /expert/android
 
 # Expert Android
 
-## Changelog & Releases
+<!-- ## Changelog & Releases
 
 | Version |  |
 | --- | --- |
-| 2.1.0 |  <label class="label label-green">Latest</label>  |
-| < 2.1.0 | <label class="label label-red">Deprecated</label> |
+| 2.2.0 |  <label class="label label-green">Latest</label>  |
+| < 2.2.0 | <label class="label label-red">Deprecated</label> |
 
 ---
 
-### 2.1.0
+### 2.2.0 -->
 

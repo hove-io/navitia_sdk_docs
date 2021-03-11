@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: main
 title: Getting started
 parent: Around Me Android
 grand_parent: Around Me
@@ -19,7 +19,11 @@ permalink: /aroundme/android/getting-started
 
 ---
 
-## 💻 Setup
+## 🧰  Requirements
+
+Minimum Android SDK target: `21`
+
+## 💻  Setup
 
 Add the following maven repository in the `build.gradle` of your project. Replace `USERNAME` and `PASSWORD` with your credentials:
 
@@ -62,7 +66,7 @@ The activity launching Journey must handle the following configuration changes: 
     .../>
 ```
 
-## 👨‍💻 Implementation
+## 👨‍💻  Implementation
 
 This module is set up by calling `AroundMeUI.getInstance()`. The singleton behaves like a builder in which each method allows you to configure the module. You need to call the `init()` method at the end.\
 The following are arguments of the `init()` method:
@@ -97,7 +101,7 @@ AroundMeUI.getInstance()
    )
 ```
 
-## 🛠 Configuration
+## 🛠  Configuration
 
 ### Colors
 
@@ -297,7 +301,7 @@ val configuration = Configuration(filtersConfiguration, bookButtonConfiguration)
 
 Please note that calling `resetUserPreferences()` will reset filters configuration and the content of the [filters](/navitia_sdk_docs/aroundme/android/screen#filters) screen.
 
-## 🚀 Launching
+## 🚀  Launching
 
 Around Me has one entry point `MapFragment`. Please make sure to `init` the module before launching this fragment.
 
