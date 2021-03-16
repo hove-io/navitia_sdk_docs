@@ -23,6 +23,7 @@ Name | Type | Note
 **dataFreshness** | [**DataFreshnessEnum**](#DataFreshnessEnum)[optional] 
 
 ## List&lt;AdditionalInformationsEnum&gt;
+
 Name | Value
 ---- | -----
 PICK_UP_ONLY | &quot;pick_up_only&quot;
@@ -31,6 +32,7 @@ ON_DEMAND_TRANSPORT | &quot;on_demand_transport&quot;
 DATE_TIME_ESTIMATED | &quot;date_time_estimated&quot;
 
 ## DataFreshnessEnum
+
 Name | Value
 ---- | -----
 BASE_SCHEDULE | &quot;base_schedule&quot;

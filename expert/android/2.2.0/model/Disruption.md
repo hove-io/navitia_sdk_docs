@@ -13,7 +13,7 @@ permalink: /expert/android/model/Disruption
 
 Name | Type | Note
 ---- | ---- | ----
-**status** | [**StatusEnum**](#StatusEnum)[optional] 
+**status** | [**StatusEnum**](#StatusEnum) | [optional] 
 **category** | **String** | [optional] 
 **cause** | **String** | 
 **severity** | [**Severity**](Severity.md) | [optional] 
@@ -32,6 +32,7 @@ Name | Type | Note
 **properties** | [**List&lt;DisruptionProperty&gt;**](DisruptionProperty.md) | [optional] 
 
 ## StatusEnum
+
 Name | Value
 ---- | -----
 PAST | &quot;past&quot;

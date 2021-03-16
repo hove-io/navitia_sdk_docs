@@ -13,12 +13,13 @@ permalink: /expert/ios/model/EquipmentDetails
 
 Name | Type | Note
 ---- | ---- | ----
-**embeddedType** | [**EmbeddedType**](#EmbeddedType)[optional] 
+**embeddedType** | [**EmbeddedType**](#EmbeddedType) | [optional] 
 **id** | **String** | [optional] 
 **name** | **String** | [optional] 
 **currentAvailability** | [**CurrentAvailability**](CurrentAvailability.md) | [optional] 
 
 ## EmbeddedType
+
 Name | Value
 ---- | -----
 escalator | escalator

@@ -25,6 +25,7 @@ Name | Type | Note
 **stopArea** | [**StopArea**](StopArea.md) | [optional] 
 
 ## EmbeddedTypeEnum
+
 Name | Value
 ---- | -----
 LINE | &quot;line&quot;

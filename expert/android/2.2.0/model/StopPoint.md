@@ -32,6 +32,7 @@ Name | Type | Note
 **name** | **String** | Name of the object 
 
 ## List&lt;EquipmentsEnum&gt;
+
 Name | Value
 ---- | -----
 WHEELCHAIR_ACCESSIBILITY | &quot;has_wheelchair_accessibility&quot;

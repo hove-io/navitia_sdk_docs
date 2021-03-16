@@ -15,10 +15,11 @@ Name | Type | Note
 ---- | ---- | ----
 **alias** | **String** | 
 **image** | **String** | [optional] 
-**gender** | [**GenderEnum**](#GenderEnum)[optional] 
+**gender** | [**GenderEnum**](#GenderEnum) | [optional] 
 **rating** | [**IndividualRating**](IndividualRating.md) | [optional] 
 
 ## GenderEnum
+
 Name | Value
 ---- | -----
 FEMALE | &quot;female&quot;

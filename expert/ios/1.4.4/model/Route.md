@@ -27,6 +27,7 @@ Name | Type | Note
 **id** | **String** | Identifier of the object 
 
 ## IsFrequence
+
 Name | Value
 ---- | -----
 _false | False

@@ -30,6 +30,7 @@ Name | Type | Note
 **description** | **String** | [optional] 
 
 ## [Equipments]
+
 Name | Value
 ---- | -----
 wheelchairAccessibility | has_wheelchair_accessibility

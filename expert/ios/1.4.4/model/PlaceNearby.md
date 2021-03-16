@@ -25,6 +25,7 @@ Name | Type | Note
 **stopArea** | [**StopArea**](StopArea.md) | [optional] 
 
 ## EmbeddedType
+
 Name | Value
 ---- | -----
 line | line

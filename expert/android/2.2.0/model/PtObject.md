@@ -26,6 +26,7 @@ Name | Type | Note
 **network** | [**Network**](Network.md) | [optional] 
 
 ## EmbeddedTypeEnum
+
 Name | Value
 ---- | -----
 LINE | &quot;line&quot;

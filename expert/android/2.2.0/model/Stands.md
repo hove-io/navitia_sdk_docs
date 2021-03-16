@@ -13,12 +13,13 @@ permalink: /expert/android/model/Stands
 
 Name | Type | Note
 ---- | ---- | ----
-**status** | [**StatusEnum**](#StatusEnum)[optional] 
+**status** | [**StatusEnum**](#StatusEnum) | [optional] 
 **availablePlaces** | **Integer** | [optional] 
 **availableBikes** | **Integer** | [optional] 
 **totalStands** | **Integer** | [optional] 
 
 ## StatusEnum
+
 Name | Value
 ---- | -----
 UNAVAILABLE | &quot;unavailable&quot;

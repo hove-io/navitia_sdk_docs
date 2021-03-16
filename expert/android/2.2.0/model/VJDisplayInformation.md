@@ -30,6 +30,7 @@ Name | Type | Note
 **description** | **String** | [optional] 
 
 ## List&lt;EquipmentsEnum&gt;
+
 Name | Value
 ---- | -----
 WHEELCHAIR_ACCESSIBILITY | &quot;has_wheelchair_accessibility&quot;

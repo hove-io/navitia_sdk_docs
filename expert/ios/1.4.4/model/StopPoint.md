@@ -32,6 +32,7 @@ Name | Type | Note
 **name** | **String** | Name of the object 
 
 ## [Equipments]
+
 Name | Value
 ---- | -----
 wheelchairAccessibility | has_wheelchair_accessibility

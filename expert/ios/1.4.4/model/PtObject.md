@@ -26,6 +26,7 @@ Name | Type | Note
 **network** | [**Network**](Network.md) | [optional] 
 
 ## EmbeddedType
+
 Name | Value
 ---- | -----
 line | line

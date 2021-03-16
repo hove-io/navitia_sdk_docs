@@ -20,7 +20,7 @@ Name | Type | Note
 **id** | **String** | 
 **from** | [**Place**](Place.md) | [optional] 
 **arrivalDateTime** | **String** | Arrival date and time of the section [optional] 
-**additionalInformations** | [**List&lt;AdditionalInformationsEnum&gt;**](#List&lt;AdditionalInformationsEnum&gt;)[optional] 
+**additionalInformations** | [**List&lt;AdditionalInformationsEnum&gt;**](#List&lt;AdditionalInformationsEnum&gt;) | [optional] 
 **geojson** | [**SectionGeoJsonSchema**](SectionGeoJsonSchema.md) | GeoJSON of the shape of the section [optional] 
 **ridesharingInformations** | [**RidesharingInformation**](RidesharingInformation.md) | [optional] 
 **to** | [**Place**](Place.md) | [optional] 
@@ -37,6 +37,7 @@ Name | Type | Note
 **stopDateTimes** | [**List&lt;StopDateTime&gt;**](StopDateTime.md) | [optional] 
 
 ## List&lt;AdditionalInformationsEnum&gt;
+
 Name | Value
 ---- | -----
 ODT_WITH_ZONE | &quot;odt_with_zone&quot;
@@ -47,12 +48,14 @@ REGULAR | &quot;regular&quot;
 STAY_IN | &quot;stay_in&quot;
 
 ## TransferTypeEnum
+
 Name | Value
 ---- | -----
 WALKING | &quot;walking&quot;
 STAY_IN | &quot;stay_in&quot;
 
 ## TypeEnum
+
 Name | Value
 ---- | -----
 PUBLIC_TRANSPORT | &quot;public_transport&quot;
@@ -71,6 +74,7 @@ RIDESHARING | &quot;ridesharing&quot;
 ON_DEMAND_TRANSPORT | &quot;on_demand_transport&quot;
 
 ## DataFreshnessEnum
+
 Name | Value
 ---- | -----
 BASE_SCHEDULE | &quot;base_schedule&quot;
@@ -78,6 +82,7 @@ ADAPTED_SCHEDULE | &quot;adapted_schedule&quot;
 REALTIME | &quot;realtime&quot;
 
 ## ModeEnum
+
 Name | Value
 ---- | -----
 WALKING | &quot;walking&quot;

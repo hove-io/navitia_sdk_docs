@@ -15,7 +15,7 @@ Name | Type | Note
 ---- | ---- | ----
 **amendedArrivalTime** | **String** | [optional] 
 **stopPoint** | [**StopPoint**](StopPoint.md) | [optional] 
-**stopTimeEffect** | [**StopTimeEffect**](#StopTimeEffect)[optional] 
+**stopTimeEffect** | [**StopTimeEffect**](#StopTimeEffect) | [optional] 
 **departureStatus** | **String** | [optional] 
 **isDetour** | **Bool** | 
 **amendedDepartureTime** | **String** | [optional] 
@@ -25,6 +25,7 @@ Name | Type | Note
 **arrivalStatus** | **String** | [optional] 
 
 ## StopTimeEffect
+
 Name | Value
 ---- | -----
 delayed | delayed

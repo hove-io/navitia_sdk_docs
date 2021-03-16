@@ -13,12 +13,13 @@ permalink: /expert/android/model/EquipmentDetails
 
 Name | Type | Note
 ---- | ---- | ----
-**embeddedType** | [**EmbeddedTypeEnum**](#EmbeddedTypeEnum)[optional] 
+**embeddedType** | [**EmbeddedTypeEnum**](#EmbeddedTypeEnum) | [optional] 
 **id** | **String** | [optional] 
 **name** | **String** | [optional] 
 **currentAvailability** | [**CurrentAvailability**](CurrentAvailability.md) | [optional] 
 
 ## EmbeddedTypeEnum
+
 Name | Value
 ---- | -----
 ESCALATOR | &quot;escalator&quot;

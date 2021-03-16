@@ -20,23 +20,24 @@ Name | Type | Note
 **id** | **String** | 
 **from** | [**Place**](Place.md) | [optional] 
 **arrivalDateTime** | **String** | Arrival date and time of the section [optional] 
-**additionalInformations** | [**[AdditionalInformations]**](#[AdditionalInformations])[optional] 
+**additionalInformations** | [**[AdditionalInformations]**](#[AdditionalInformations]) | [optional] 
 **geojson** | [**SectionGeoJsonSchema**](SectionGeoJsonSchema.md) | GeoJSON of the shape of the section [optional] 
 **ridesharingInformations** | [**RidesharingInformation**](RidesharingInformation.md) | [optional] 
 **to** | [**Place**](Place.md) | [optional] 
 **baseArrivalDateTime** | **String** | Base-schedule arrival date and time of the section [optional] 
-**transferType** | [**TransferType**](#TransferType)[optional] 
-**type** | [**ModelType**](#ModelType)[optional] 
-**dataFreshness** | [**DataFreshness**](#DataFreshness)[optional] 
+**transferType** | [**TransferType**](#TransferType) | [optional] 
+**type** | [**ModelType**](#ModelType) | [optional] 
+**dataFreshness** | [**DataFreshness**](#DataFreshness) | [optional] 
 **co2Emission** | [**Amount**](Amount.md) | 
 **path** | [**[Path]**](Path.md) | [optional] 
 **cycleLaneLength** | **Int** | [optional] 
 **displayInformations** | [**VJDisplayInformation**](VJDisplayInformation.md) | [optional] 
-**mode** | [**Mode**](#Mode)[optional] 
+**mode** | [**Mode**](#Mode) | [optional] 
 **ridesharingJourneys** | [**[Journey]**](Journey.md) | [optional] 
 **stopDateTimes** | [**[StopDateTime]**](StopDateTime.md) | [optional] 
 
 ## [AdditionalInformations]
+
 Name | Value
 ---- | -----
 odtWithZone | odt_with_zone
@@ -47,12 +48,14 @@ regular | regular
 stayIn | stay_in
 
 ## TransferType
+
 Name | Value
 ---- | -----
 walking | walking
 stayIn | stay_in
 
 ## ModelType
+
 Name | Value
 ---- | -----
 publicTransport | public_transport
@@ -71,6 +74,7 @@ ridesharing | ridesharing
 onDemandTransport | on_demand_transport
 
 ## DataFreshness
+
 Name | Value
 ---- | -----
 baseSchedule | base_schedule
@@ -78,6 +82,7 @@ adaptedSchedule | adapted_schedule
 realtime | realtime
 
 ## Mode
+
 Name | Value
 ---- | -----
 walking | walking

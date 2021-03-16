@@ -16,9 +16,10 @@ Name | Type | Note
 **color** | **String** | [optional] 
 **priority** | **Integer** | [optional] 
 **name** | **String** | [optional] 
-**effect** | [**EffectEnum**](#EffectEnum)[optional] 
+**effect** | [**EffectEnum**](#EffectEnum) | [optional] 
 
 ## EffectEnum
+
 Name | Value
 ---- | -----
 NO_SERVICE | &quot;NO_SERVICE&quot;

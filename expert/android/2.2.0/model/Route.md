@@ -18,7 +18,7 @@ Name | Type | Note
 **name** | **String** | Name of the object 
 **links** | [**List&lt;LinkSchema&gt;**](LinkSchema.md) | 
 **physicalModes** | [**List&lt;PhysicalMode&gt;**](PhysicalMode.md) | [optional] 
-**isFrequence** | [**IsFrequenceEnum**](#IsFrequenceEnum)[optional] 
+**isFrequence** | [**IsFrequenceEnum**](#IsFrequenceEnum | [optional] 
 **comments** | [**List&lt;Comment&gt;**](Comment.md) | [optional] 
 **directionType** | **String** | 
 **geojson** | [**MultiLineStringSchema**](MultiLineStringSchema.md) | [optional] 
@@ -27,6 +27,7 @@ Name | Type | Note
 **id** | **String** | Identifier of the object 
 
 ## IsFrequenceEnum
+
 Name | Value
 ---- | -----
 FALSE | &quot;False&quot;

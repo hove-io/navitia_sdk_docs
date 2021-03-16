@@ -13,13 +13,14 @@ permalink: /expert/android/model/CurrentAvailability
 
 Name | Type | Note
 ---- | ---- | ----
-**status** | [**StatusEnum**](#StatusEnum)[optional] 
+**status** | [**StatusEnum**](#StatusEnum) | [optional] 
 **effect** | [**Effect**](Effect.md) | [optional] 
 **cause** | [**Cause**](Cause.md) | [optional] 
 **periods** | [**List&lt;Period&gt;**](Period.md) | [optional] 
 **updatedAt** | **String** | [optional] 
 
 ## StatusEnum
+
 Name | Value
 ---- | -----
 UNKNOWN | &quot;unknown&quot;

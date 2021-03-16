@@ -15,10 +15,11 @@ Name | Type | Note
 ---- | ---- | ----
 **contentType** | **String** | 
 **id** | **String** | 
-**types** | [**List&lt;TypesEnum&gt;**](#List&lt;TypesEnum&gt;)[optional] 
+**types** | [**List&lt;TypesEnum&gt;**](#List&lt;TypesEnum&gt;) | [optional] 
 **name** | **String** | 
 
 ## List&lt;TypesEnum&gt;
+
 Name | Value
 ---- | -----
 WEB | &quot;web&quot;

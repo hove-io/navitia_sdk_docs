@@ -13,12 +13,13 @@ permalink: /expert/ios/model/Stands
 
 Name | Type | Note
 ---- | ---- | ----
-**status** | [**Status**](#Status)[optional] 
+**status** | [**Status**](#Status) | [optional] 
 **availablePlaces** | **Int** | [optional] 
 **availableBikes** | **Int** | [optional] 
 **totalStands** | **Int** | [optional] 
 
 ## Status
+
 Name | Value
 ---- | -----
 unavailable | unavailable

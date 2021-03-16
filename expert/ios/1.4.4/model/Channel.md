@@ -15,10 +15,11 @@ Name | Type | Note
 ---- | ---- | ----
 **contentType** | **String** | 
 **id** | **String** | 
-**types** | [**[Types]**](#[Types])[optional] 
+**types** | [**[Types]**](#[Types]) | [optional] 
 **name** | **String** | 
 
 ## [Types]
+
 Name | Value
 ---- | -----
 web | web

@@ -13,7 +13,7 @@ permalink: /expert/ios/model/Disruption
 
 Name | Type | Note
 ---- | ---- | ----
-**status** | [**Status**](#Status)[optional] 
+**status** | [**Status**](#Status) | [optional] 
 **category** | **String** | [optional] 
 **cause** | **String** | 
 **severity** | [**Severity**](Severity.md) | [optional] 
@@ -32,6 +32,7 @@ Name | Type | Note
 **properties** | [**[DisruptionProperty]**](DisruptionProperty.md) | [optional] 
 
 ## Status
+
 Name | Value
 ---- | -----
 past | past

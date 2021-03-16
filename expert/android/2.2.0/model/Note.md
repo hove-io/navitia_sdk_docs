@@ -13,13 +13,14 @@ permalink: /expert/android/model/Note
 
 Name | Type | Note
 ---- | ---- | ----
-**category** | [**CategoryEnum**](#CategoryEnum)[optional] 
+**category** | [**CategoryEnum**](#CategoryEnum) | [optional] 
 **type** | **String** | [optional] 
 **value** | **String** | [optional] 
 **commentType** | **String** | [optional] 
 **id** | **String** | 
 
 ## CategoryEnum
+
 Name | Value
 ---- | -----
 COMMENT | &quot;comment&quot;
