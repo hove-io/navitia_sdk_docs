@@ -35,7 +35,7 @@ Please note that the transport modes can be configured as explained in the secti
 
 In this screen, the user can choose the departure and the arrival of his itinerary. While typing in the target field, a list of options is shown below the field. The user can simply choose one of the suggested options and mark it as a departure or as an arrival point.
 
-The suggested options are grouped in sections, it's whether a stop/station, an address or a point of interest.
+The suggested options are grouped in sections, it's whether a station, an address or a point of interest.
 In this screen, a geolocation service is used to get the user location and translate it into a readable address. Therefore, another option is given and it allows the user to set his position as a departure or an arrival of the itinerary.
 
 A history feature is added to this screen, allowing the user to choose from the previous selected items. The `maxHistory` parameter defines the maximum number of items to show in the history list.
