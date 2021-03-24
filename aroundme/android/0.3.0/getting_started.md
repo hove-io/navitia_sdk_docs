@@ -8,6 +8,7 @@ permalink: /aroundme/android/getting-started
 ---
 
 # Getting Started
+{: .no_toc }
 
 ---
 
@@ -101,6 +102,22 @@ AroundMeUI.getInstance()
    )
 ```
 
+## 🚀  Launching
+
+Around Me has one entry point `MapFragment`. Please make sure to `init` the module before launching this fragment.
+
+- Example
+
+Assuming you have an `Activity` with a fragment container, please refer to the following example to launch the entry screen fragment.
+
+```kotlin
+supportFragmentManager.beginTransaction().run {
+    replace(R.id.container_id, MapFragment.newInstance(), MapFragment.TAG)
+    addToBackStack(MapFragment.TAG)
+    commit()
+}
+```
+
 ## 🛠  Configuration
 
 ### Colors
@@ -174,7 +191,7 @@ The `book_button` is a JSON object that contains String resource IDs for the boo
 
 ### How to configure Data?
 
-Follow one of the steps below:\
+Follow one of the steps below:
 
 - Using JSON file
 
@@ -300,19 +317,3 @@ val configuration = Configuration(filtersConfiguration, bookButtonConfiguration)
 ```
 
 Please note that calling `resetUserPreferences()` will reset filters configuration and the content of the [filters](/navitia_sdk_docs/aroundme/android/screen#filters) screen.
-
-## 🚀  Launching
-
-Around Me has one entry point `MapFragment`. Please make sure to `init` the module before launching this fragment.
-
-- Example
-
-Assuming you have an `Activity` with a fragment container, please refer to the following example to launch the entry screen fragment.
-
-```kotlin
-supportFragmentManager.beginTransaction().run {
-    replace(R.id.container_id, MapFragment.newInstance(), MapFragment.TAG)
-    addToBackStack(MapFragment.TAG)
-    commit()
-}
-```
