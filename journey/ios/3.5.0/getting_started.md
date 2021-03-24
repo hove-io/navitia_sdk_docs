@@ -42,7 +42,7 @@ use_frameworks!
 source 'https://github.com/CanalTP/Podspecs.git' # Journey podspec URL
 
 target 'YOUR_PROJECT_SCHEME' do
-  pod 'NavitiaSDKUI', '~> 3.4.5' # Journey Pod definition
+  pod 'NavitiaSDKUI', '~> 3.5.0' # Journey Pod definition
 end
 ```
 
@@ -164,7 +164,9 @@ if let listJourneysViewController = journeyResultsViewController as? UIViewContr
 
 ## 🛠 Configuration
 
-The table below explains the different parameters that you are able to set before launching the `Journey` Module.
+The table below explains the different parameters that you are able to set before launching the `Journey` module.
+
+<div markdown="1">
 
 | Parameters | Type | Description | Default |
 | --- | --- |:----| --- |
@@ -177,7 +179,9 @@ The table below explains the different parameters that you are able to set befor
 | `titlesConfig` | `TitlesConfig?` | To set view controllers titles in navigation view controller | ✗ |
 | `disruptionContributor` | `String` | To filter disruption based on source contributor | ✗ |
 
-- Example:
+</div>
+
+- Example
 
 ```swift
 JourneySdk.shared.formJourney = false
@@ -234,7 +238,7 @@ JourneySdk.shared.disruptionContributor = "shortterm.tr_idfm"
 
 ### Colors
 
-In order to configurate SDK colors, you have to create a `JourneyColorConfiguration` object which takes the following parameters:
+In order to configurate colors, you have to create a `JourneyColorConfiguration` object which takes the following parameters:
 
 <div markdown="1">
 
@@ -261,23 +265,23 @@ Customizing transport mode icons and other resources is made possible. To use th
 
 | Mode | Resource name |
 | --- | --- |
-| Air | journey_mode_air |
-| Bike | journey_mode_bike |
-| BSS | journey_mode_bss |
-| Bus | journey_mode_bus |
-| Car | journey_mode_car |
-| Coach | journey_mode_coach |
-| Crow fly | journey_mode_crow_fly |
-| Ferry | journey_mode_ferry |
-| Funicular | journey_mode_funicular |
-| Metro | journey_mode_metro |
-| Rapid transit | journey_mode_rapidtransit |
-| Ridesharing | journey_mode_ridesharing |
-| Shuttle | journey_mode_shuttle |
-| Taxi | journey_mode_taxi |
-| Train | journey_mode_train |
-| Tramway | journey_mode_tramway |
-| Walking | journey_mode_walking |
+| Air | `journey_mode_air` |
+| Bike | `journey_mode_bike` |
+| BSS | `journey_mode_bss` |
+| Bus | `journey_mode_bus` |
+| Car | `journey_mode_car` |
+| Coach | `journey_mode_coach` |
+| Crow fly | `journey_mode_crow_fly` |
+| Ferry | `journey_mode_ferry` |
+| Funicular | `journey_mode_funicular` |
+| Metro | `journey_mode_metro` |
+| Rapid transit | `journey_mode_rapidtransit` |
+| Ridesharing | `journey_mode_ridesharing` |
+| Shuttle | `journey_mode_shuttle` |
+| Taxi | `journey_mode_taxi` |
+| Train | `journey_mode_train` |
+| Tramway | `journey_mode_tramway` |
+| Walking | `journey_mode_walking` |
 
 </div>
 
@@ -289,7 +293,7 @@ Customizing transport mode icons and other resources is made possible. To use th
 
 | Context | Resource name |
 | --- | --- |
-| Parking availability | journey_realtime_park |
+| Parking availability | `journey_realtime_park` |
 
 </div>
 
@@ -299,12 +303,12 @@ Customizing transport mode icons and other resources is made possible. To use th
 
 | Context | Resource name |
 | --- | --- |
-| Departure | journey_departure |
-| Arrival | journey_arrival |
-| My position | journey_my_position |
-| Address | journey_address |
-| POI | journey_poi |
-| Stop area | journey_stop_area |
-| Ridesharing pin | journey_ridesharing_pin |
+| Departure | `journey_departure` |
+| Arrival | `journey_arrival` |
+| My position | `journey_my_position` |
+| Address | `journey_address` |
+| POI | `journey_poi` |
+| Station | `journey_stop_area` |
+| Ridesharing pin | `journey_ridesharing_pin` |
 
 </div>

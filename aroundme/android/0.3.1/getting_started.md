@@ -26,7 +26,7 @@ Minimum Android SDK target: `21`
 
 ## 💻  Setup
 
-Add the following maven repository in the `build.gradle` of your project. Replace `USERNAME` and `PASSWORD` with your credentials:
+The access to `Around Me` module requires valid credentials to our private artifactory. Add the following maven repository in the `build.gradle` of your project. Replace `USERNAME` and `PASSWORD` with your credentials:
 
 ```ruby
 repositories {
@@ -46,7 +46,7 @@ Add the following dependency in the `build.gradle` file of your application:
 ```ruby
 dependencies {
     ...
-    implementation("com.kisio.navitia.sdk.ui:aroundme:0.2.2")
+    implementation("com.kisio.navitia.sdk.ui:aroundme:0.3.1")
 }
 ```
 
@@ -58,7 +58,7 @@ For the use of cartography, add your Google Maps API Key to your `AndroidManifes
     android:value="YOUR_API_KEY"/>
 ```
 
-The activity launching Journey must handle the following configuration changes: `orientation|screenSize` declared into your `AndroidManifest.xml`:
+The activity launching Around Me must handle the following configuration changes: `orientation|screenSize` declared into your `AndroidManifest.xml`:
 
 ```xml
 <activity
@@ -95,20 +95,26 @@ AroundMeUI.getInstance()
            backgroundColor = "#0277BD",
            primaryColor = "#FF4081"
        ),
-       coverage = "fr-idf",
-       token = "0de19ce5-e0eb-4524-a074-bda3c6894c19",
+       coverage = "YOUR_COVERAGE",
+       token = "YOUR_TOKEN",
        configuration = Configuration(filtersConfiguration, bookButtonConfiguration), // Not required if configurationJsonFile is set
-       configurationJsonFile = "jsonFile" // Not required if configuration object is set
+       configurationJsonFile = "jsonFile" // Not required if configuration object is set,
+       { fragment, _ ->
+            // Navigate from Fragment1 to Fragment2
+            // Execute some instructions
+        },
+        {
+            // Navigate from Fragment2 to Fragment1
+            // Execute some instructions
+            return true
+        }
    )
 ```
 
 ## 🚀  Launching
 
-Around Me has one entry point `MapFragment`. Please make sure to `init` the module before launching this fragment.
-
-- Example
-
-Assuming you have an `Activity` with a fragment container, please refer to the following example to launch the entry screen fragment.
+Around Me has one entry point `MapFragment`. Make sure to `init` the module before launching this fragment.\ 
+Assuming you have an `Activity` with a fragment container, refer to the following example to launch the entry screen fragment:
 
 ```kotlin
 supportFragmentManager.beginTransaction().run {
@@ -133,7 +139,7 @@ supportFragmentManager.beginTransaction().run {
 
 ### Data
 
-The module has to be configured to work properly. The filters and some UI components require a configuration, otherwise, you won't be able to launch the SDK. There are two main sections to configure: `filters` and `book_button`.
+The module has to be configured to work properly. The filters and some UI components require a configuration, otherwise, you won't be able to launch the module. There are two main sections to configure: `filters` and `book_button`.
 
 The `filters` sets up the list of the categories/subcategories/types to be displayed in the filters page.\
 The `book_button` sets up the label to be displayed on the booking button when different UI components are shown on the screen.
@@ -177,13 +183,13 @@ The `filters` is a JSON array of categories. Each category has subcategories and
 
 - Book Button
 
-The `book_button` is a JSON object that contains String resource IDs for the book button label in different UI components.
+The `book_button` is a JSON object that contains string resource IDs for the book button label in different UI components.
 
 <div markdown="1">
 
 | Value | Type | Required | Description |
 | --- | --- |:---:| --- |
-| `bss_res` | String | ✓ | String resource ID of the booking label when the BSS component is shown |
+| `bss_res` | String | ✓ | String resource ID of the booking label when the bike sharing service component is shown |
 | `car_park_res` | String | ✓ | String resource ID of the booking label when the car park component is shown |
 | `stop_point_res` | String | ✓ | String resource ID of the booking label when the stop point component is shown |
 

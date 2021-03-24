@@ -14,7 +14,7 @@ permalink: /aroundme/android/communicating-with
 ## Journey
 
 This module communicates with [Journey]({{ site.baseurl }}/journey/) module in order to get directions for a chosen itinerary. You should enable the `Go from/Go to` feature when first initializing the module by calling `AroundMeUI.getInstance().withGoFromGoTo()`.\
-The `Router` module should be initialized also with the right parameters, please refer to the code below:
+The `Router` module should be initialized also with the right parameters since it’s mandatory to build the connection between these modules:
 
 ```kotlin
 if (!Router.getInstance().isInit) {
@@ -27,6 +27,6 @@ if (!Router.getInstance().isInit) {
 
 When the user taps on a marker on the map, the buttons `Go from` and `Go to` should pop up as follows:
 
-<img src="{{ site.baseurl }}/assets/img/aroundme_android_go_fromto.png" alt="Map screen" width="250"/>
+<img src="{{ site.baseurl }}/assets/img/aroundme_android_go_fromto.png" alt="Map screen" width="350"/>
 
 Clicking on one of the buttons will redirect the user to Journey module with the given origin/destination.

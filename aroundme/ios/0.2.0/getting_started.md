@@ -46,34 +46,7 @@ target 'YOUR_PROJECT_SCHEME' do
 end
 ```
 
-## 🚀  Launching
-
-This module needs to be initialized before launching the main `ViewController`. Therefore, You need to call the `AroundMe.shared.initialize()` method.\
-Please refer to the following code:
-
-```swift
-do {
-    guard let aroundMeViewController = AroundMe.shared.rootViewController else {
-      return
-    }
-
-    let aroundMeColorsConfiguration = AroundMeColorsConfiguration(background: .gray,
-                                                                  primary: .blue)
-    let aroundMeConfiguration = try AroundMeConfiguration(colorsConfiguration: aroundMeColorsConfiguration,
-                                                          dataConfiguration: DataConfiguration(filtersConfiguration: filtersConfiguration, bookButtonConfiguration: bookButtonConfiguration), // If configurationJsonFile is not set
-                                                          dataConfigurationJsonFile: "aroundme_data_configuration_json_filename", // If configuration is not set
-                                                          enableGoFromGoTo: enableGoToGoFromOption.isOn)
-    
-    try AroundMe.shared.initialize(token: navitia_token,
-                                   coverage: navitia_coverage,
-                                   configuration: aroundMeConfiguration)
-    navigationController?.pushViewController(aroundMeViewController, animated: false)
-} catch {
-    Logger.error("%@", String(format: "AroundMeSDK cannot be initialized! %@", error.localizedDescription))
-}
-```
-
-## 🛠 Configuration
+## 👨‍💻  Implementation
 
 The `AroundMeConfiguration` is a mandatory element to pass to the `ìnitialize()` method. The below is the list of parameters required to build this configuration object:
 
@@ -87,6 +60,38 @@ The `AroundMeConfiguration` is a mandatory element to pass to the `ìnitialize()
 | `enableGoFromGoTo` | ✗ | To enable or disable the Go from/to feature | `false` |
 
 </div>
+
+```swift
+do {
+    let aroundMeColorsConfiguration = AroundMeColorsConfiguration(background: .gray,
+                                                                  primary: .blue)
+    let aroundMeConfiguration = try AroundMeConfiguration(colorsConfiguration: aroundMeColorsConfiguration,
+                                                          dataConfiguration: DataConfiguration(filtersConfiguration: filtersConfiguration, bookButtonConfiguration: bookButtonConfiguration), // If configurationJsonFile is not set
+                                                          dataConfigurationJsonFile: "aroundme_data_configuration_json_filename", // If configuration is not set
+                                                          enableGoFromGoTo: enableGoToGoFromOption.isOn)
+
+    try AroundMe.shared.initialize(token: navitia_token,
+                                   coverage: navitia_coverage,
+                                   configuration: aroundMeConfiguration)
+} catch {
+    Logger.error("%@", String(format: "AroundMeSDK cannot be initialized! %@", error.localizedDescription))
+}                                   
+```
+
+## 🚀  Launching
+
+This module needs to be initialized before launching the main `ViewController`. Make sure `AroundMe.shared.initialize()` is called before.\
+Refer to the following code to launch the main view controller:
+
+```swift
+guard let aroundMeViewController = AroundMe.shared.rootViewController else {
+  return
+}
+
+navigationController?.pushViewController(aroundMeViewController, animated: false)
+```
+
+## 🛠 Configuration
 
 ### Colors
 
