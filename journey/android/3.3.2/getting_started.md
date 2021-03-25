@@ -26,7 +26,7 @@ Minimum Android SDK target: `21`
 
 ## 💻 Setup
 
-The access to `Journey` module require valid credentials to our private artifactory. Add the following maven repository in the `build.gradle` of your project. Replace `USERNAME` and `PASSWORD` with your credentials:
+The access to `Journey` module requires valid credentials to our private artifactory. Add the following maven repository in the `build.gradle` of your project. Replace `USERNAME` and `PASSWORD` with your credentials:
 
 ```ruby
 repositories {
@@ -67,8 +67,8 @@ The activity launching Journey must handle the following configuration changes: 
 
 ### Init
 
-This module is set up by calling `JourneysUI.getInstance()`. The singleton behaves like a builder in which each method allows you to configure the module. You need to call the `init()` method at the end.
-There are arguments of the `init()` method:
+This module is set up by calling `JourneysUI.getInstance()`. The singleton behaves like a builder in which each method allows you to configure the module. Then, you need to call the `init()` method at the end. \
+This method takes the following parameters:
 
 <div markdown="1">
 
@@ -77,6 +77,8 @@ There are arguments of the `init()` method:
 | `context` | `Context` | ✓ | Context of the application | ✗ |
 | `token` | `String` | ✓ | Navitia API access token | ✗ |
 | `coverage` | `String` | ✓ | Navitia target coverage | ✗ |
+| `configuration` | `Configuration` | Only if `configurationJsonFile` is not set | Data configuration of the module | `null` |
+| `configurationJsonFile` | `String` | Only if `Configuration` is not set | Json file name in `assets` folder | `null` |
 | `onNavigate` | `(Fragment, String) -> Unit` | ✗ | Callback executed when a navigation event happens within the module | `null` |
 | `onBack` | `() -> Boolean` | ✗ | Callback executed when an `onBackPressed()` event happens within the module | `null` |
 
@@ -130,7 +132,7 @@ JourneysUI.getInstance().getActivityDelegate().onBackPressed()
 
 ## 🚀 Launching
 
-Journey has two entry points: `JourneysFragment` or `FormFragment`.
+This module has two entry points: `JourneysFragment` or `FormFragment`.
 You have to fill in the correct parameters and launch the fragment. Both need `JourneyRequest`.<br>
 
 ### Launching fragments
@@ -181,19 +183,20 @@ The table below explains the different methods of the builder that you are able 
 
 <div markdown="1">
 
-| Method | Description | Example |
+| Method | Description | Default |
 | --- | --- | --- |
-| `.autoCompleteTitle(String)`<br>`.autoCompleteTitle(StringRes)`  | To set the title of the auto completion view | by default the localized ressource `R.string.journeys` |
-| `.formTitle(String)`<br>`.formTitle(StringRes)` | To set the title of the form view | by default the localized ressource `R.string.journeys` |
-| `.journeysTitle(String)`<br>`.journeysTitle(StringRes)` | To set the title of the list of journeys view | by default the localized ressource `R.string.journeys` |
-| `.ridesharingTitle(String)`<br>`.ridesharingTitle(StringRes)` | To set the title of the list of ridesharings view | by default the localized ressource `R.string.ridesharing_noun` |
-| `.roadmapTitle(String)`<br>`.roadmapTitle(StringRes)` | To set the title of the roadmap view | by default the localized ressource `R.string.roadmap` |
-| `.disruptionContributor(String)` | To filter disruption based on source contributor |
-| `.maxHistory(Int)` | To set up the maximum number of items you can find in autocompletion search history | by default `10` |
-| `.withBooking()` | Some UI can have a different behaviour for this using in a Maas project | by default `false`. Calling the method put it to `true` |
-| `.withEarlierLaterFeature()` | ??? | by default `false`. Calling the method put it to `true` |
-| `.withMultiNetwork()` | To set the display of the network name in the roadmap  | by default `false`. Calling the method put it to `true` |
-| `.withNextDepartures()`| ??? | by default `false`. Calling the method put it to `true` |
+| `.autoCompleteTitle(String)`<br>`.autoCompleteTitle(StringRes)`  | To set the title of the auto completion view | Localized resource `R.string.journeys` |
+| `.formTitle(String)`<br>`.formTitle(StringRes)` | To set the title of the form view | Localized resource  `R.string.journeys` |
+| `.journeysTitle(String)`<br>`.journeysTitle(StringRes)` | To set the title of the list of journeys view | Localized resource  `R.string.journeys` |
+| `.ridesharingTitle(String)`<br>`.ridesharingTitle(StringRes)` | To set the title of the list of ridesharings view | Localized resource  `R.string.ridesharing_noun` |
+| `.roadmapTitle(String)`<br>`.roadmapTitle(StringRes)` | To set the title of the roadmap view | Localized resource  `R.string.roadmap` |
+| `.disruptionContributor(String)` | To filter disruption based on source contributor | ✗ |
+| `.maxHistory(Int)` | To set up the maximum number of items you can find in autocompletion search history | `10` |
+| `.withAdvancedSearchMode()` | To enable advanced search mode | `false`. Calling the method put it to `true`. If `FormFragment` is the enrtry point, this is automatically switched to `true` |
+| `.withBooking()` | Some UI can have a different behaviour for this using in a Maas project | `false`. Calling the method put it to `true` |
+| `.withEarlierLaterFeature()` | To use shortcuts for next and previous journeys | `false`. Calling the method put it to `true` |
+| `.withMultiNetwork()` | To set the display of the network name in the roadmap  | `false`. Calling the method put it to `true` |
+| `.withNextDepartures()`| To display 3 next departures of the journey | `false`. Calling the method put it to `true` |
 
 </div>
 
@@ -288,6 +291,8 @@ val transportModes = listOf<TransportModeModel>(
 | `maxNbJourneys` | `Int` | ✗ | The maximum number of journeys that will be displayed | `10` |
 | `addPoiInfos` | `List<String>` | ✗ | Allow the display of the availability in real time for bike share and car park | `listOf("bss_stands", "car_park")` |
 | `directPath` | `String` | ✗ | To indicate if the journey is direct | `"only"` |
+| `dataFreshness` | `String` | ✗ | To indicate if theoretical or realtime data are requested | `"realtime"` |
+| `travelerType` | `String` | ✗ | To give extra information about the traveler state| `Constant.TRAVELER_TYPE_STANDARD` |
 
 </div>
 
@@ -301,12 +306,14 @@ In order to configurate colors, you have to create a `JourneyColors` object whic
 | --- |:---:| --- |
 | `JourneyColors(String)` | ✓ | To set the main color |
 | `.setPrimaryColor(String)`<br>`.setPrimaryColorRes(ColorRes)` | ✗ | To set the secondary color |
-| `.setOriginColor(String)`<br>`.setOriginColorRes(ColorRes)`  | ✗ | To set the color of the origin icon on the map and the roadmap departure block |
-| `.setOriginBackgroundColor(String)`<br>`.setOriginBackgroundColorRes(ColorRes)`  | ✗ | To set the color of the roadmap departure block |
-| `.setOriginIconColor(String)`<br>`.setOriginIconColorRes(ColorRes)`  | ✗ | To set the color of the origin icon on a departure search field and on the map  |
+
+| `.setOriginColor(String)`<br>`.setOriginColorRes(ColorRes)`  | ✗ | To set the color of the origin pin icon color on the map and the roadmap departure block |
+| `.setOriginIconColor(String)`<br>`.setOriginIconColorRes(ColorRes)`  | ✗ | To set the color of the origin icon on a departure search field and on the map. *originColor* value will be ignored |
+| `.setOriginBackgroundColor(String)`<br>`.setOriginBackgroundColorRes(ColorRes)`  | ✗ | To set the color of the roadmap departure block. *originColor* value will be ignored |
+
 | `.setDestinationColor(String)`<br>`.setDestinationColorRes(ColorRes)` | ✗ | To set the color of the destination icon on the map and the roadmap arrival block |
-| `.setDestinationBackgroundColor(String)`<br>`.setDestinationBackgroundColorRes(ColorRes)`  | ✗ | To set the color of the roadmap arrival block  |
-| `.setDestinationIconColor(String)`<br>`.setDestinationIconColorRes(ColorRes)`  | ✗ | To set the color of the destination icon on a arrival search field and on the map |
+| `.setDestinationIconColor(String)`<br>`.setDestinationIconColorRes(ColorRes)`  | ✗ | To set the color of the destination icon on a arrival search field and on the map. *destinationColor* value will be ignored |
+| `.setDestinationBackgroundColor(String)`<br>`.setDestinationBackgroundColorRes(ColorRes)`  | ✗ | To set the color of the roadmap arrival block. *destinationColor* value will be ignored  |
 
 </div>
 
@@ -342,7 +349,7 @@ Customizing transport mode icons and other resources is made possible. To use th
 
 #### Generic
 
-- Realtime
+##### Realtime
 
 <div markdown="1">
 
@@ -352,7 +359,7 @@ Customizing transport mode icons and other resources is made possible. To use th
 
 </div>
 
-- And more...
+##### And more...
 
 <div markdown="1">
 

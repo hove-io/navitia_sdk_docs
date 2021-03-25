@@ -69,8 +69,8 @@ The activity launching Around Me must handle the following configuration changes
 
 ## 👨‍💻  Implementation
 
-This module is set up by calling `AroundMeUI.getInstance()`. The singleton behaves like a builder in which each method allows you to configure the module. You need to call the `init()` method at the end.\
-The following are arguments of the `init()` method:
+This module is set up by calling `AroundMeUI.getInstance()`. The singleton behaves like a builder in which each method allows you to configure the module. Then, you need to call the `init()` method at the end. \
+This method takes the following parameters:
 
 <div markdown="1">
 
@@ -113,7 +113,7 @@ AroundMeUI.getInstance()
 
 ## 🚀  Launching
 
-Around Me has one entry point `MapFragment`. Make sure to `init` the module before launching this fragment.\ 
+Around Me has a single entry point `MapFragment`. \
 Assuming you have an `Activity` with a fragment container, refer to the following example to launch the entry screen fragment:
 
 ```kotlin
@@ -139,7 +139,7 @@ supportFragmentManager.beginTransaction().run {
 
 ### Data
 
-The module has to be configured to work properly. The filters and some UI components require a configuration, otherwise, you won't be able to launch the module. There are two main sections to configure: `filters` and `book_button`.
+There are two main sections to configure: `filters` and `book_button`.
 
 The `filters` sets up the list of the categories/subcategories/types to be displayed in the filters page.\
 The `book_button` sets up the label to be displayed on the booking button when different UI components are shown on the screen.
@@ -195,9 +195,8 @@ The `book_button` is a JSON object that contains string resource IDs for the boo
 
 </div>
 
-### How to configure Data?
-
-Follow one of the steps below:
+#### How to configure Data
+{: .no_toc }
 
 - Using JSON file
 
@@ -322,4 +321,4 @@ val bookButtonConfiguration = ConfigurationBookButton("book_bss", "book_car_park
 val configuration = Configuration(filtersConfiguration, bookButtonConfiguration)
 ```
 
-Please note that calling `resetUserPreferences()` will reset filters configuration and the content of the [filters](/navitia_sdk_docs/aroundme/android/screen#filters) screen.
+Please note that calling `AroundMeUI.getInstance().resetUserPreferences()` will reset filters configuration and the content of the [filters](/navitia_sdk_docs/aroundme/android/screen#filters) screen.
