@@ -322,6 +322,7 @@ In order to configurate colors, you have to create a `JourneyColors` object whic
 Customizing transport mode icons and other resources is made possible. To use this feature, you should rename your image resource to match the resource name found below.
 
 #### Transport modes
+{: .no_toc }
 
 <div markdown="1">
 
@@ -348,8 +349,10 @@ Customizing transport mode icons and other resources is made possible. To use th
 </div>
 
 #### Generic
+{: .no_toc }
 
 ##### Realtime
+{: .no_toc }
 
 <div markdown="1">
 
@@ -360,6 +363,7 @@ Customizing transport mode icons and other resources is made possible. To use th
 </div>
 
 ##### And more...
+{: .no_toc }
 
 <div markdown="1">
 

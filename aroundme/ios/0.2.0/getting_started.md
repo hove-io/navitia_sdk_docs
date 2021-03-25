@@ -116,6 +116,7 @@ The `book_button` sets up the label to be displayed on the booking button when d
 The `filters` is a JSON array of categories. Each category has subcategories and each subcategory has types.
 
 ###### Category
+{: .no_toc }
 
 <div markdown="1">
 
@@ -127,6 +128,7 @@ The `filters` is a JSON array of categories. Each category has subcategories and
 </div>
 
 ###### Subcategory
+{: .no_toc }
 
 <div markdown="1">
 
@@ -141,6 +143,7 @@ The `filters` is a JSON array of categories. Each category has subcategories and
 </div>
 
 ###### Subcategory type
+{: .no_toc }
 
 <div markdown="1">
 

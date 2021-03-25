@@ -22,7 +22,7 @@ permalink: /journey/android/screens
 
 ## Screens
 
-#### Form
+### Form
 
 This screen shows different options for the user to define his itinerary. A set of options is available including departure and arrival fields, transport modes, profiles, walking speed and journey datetime configuration.
 
@@ -31,7 +31,7 @@ Transport modes can be configured as explained in the section [Transport Mode]({
 
 <img src="{{ site.baseurl }}/assets/img/journey_android_form_screen.png" alt="Form screen" width="250"/>
 
-#### Auto Completion
+### Auto Completion
 
 In this screen, the user can choose the departure and the arrival of his itinerary. While typing in the target field, a list of options is shown below the field. The user can simply choose one of the suggested options and mark it as a departure or as an arrival point.
 
@@ -42,7 +42,7 @@ A history feature is added to this screen, allowing the user to choose from the 
 
 <img src="{{ site.baseurl }}/assets/img/journey_android_autocompletion_screen.png" alt="Autocompletion screen" width="250"/>
 
-#### Journey
+### Journey
 
 The journeys screen is fundamental and offers the solutions to the user for the requested itinerary.
 After defining all the required parameters, this screen will popup with multiple results combining public transport, personal bikes/cars, bike sharing systems and even ridesharing possibilities.
@@ -55,13 +55,13 @@ You can enable the earlier/later feature using the `.withEarlierLaterFeature()` 
 
 <img src="{{ site.baseurl }}/assets/img/journey_android_journeys_screen.png" alt="Journeys screen" width="250"/>
 
-#### Ridesharing
+### Ridesharing
 
 This screen lists the different ridesharing offers for the selected journey. Regardless of the fact that the journey can propose a full ridesharing trip or a partial ride, the user can select among different third party offers. He has all the information needed to choose the best offer that fits his needs including the departure time, the available seats, the price and some data about the driver offering the ride.
 
 <img src="{{ site.baseurl }}/assets/img/journey_android_ridesharing_offers_screen.png" alt="Ridesharing offers screen" width="250"/>
 
-#### Roadmap
+### Roadmap
 
 We believe that the user needs more useful details about his journey and that's where the roadmap screen comes in. In this page, the user gets a visual overview about the selected itinerary with a simple colorful drawing on a map. Departure and arrival markers are also shown on the map along with the user location and itinerary segments delimiters.
 
@@ -72,3 +72,5 @@ The screen also includes a draggable bottom sheet which offers a step-by-step jo
 ## Navigating
 
 Refer to the following schema to learn more about different interactions and how to navigate between module screens.
+
+<img src="{{ site.baseurl }}/assets/img/journey_android_navigating.png" alt="Navigating screen" width="950"/>

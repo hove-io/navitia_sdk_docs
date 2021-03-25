@@ -40,7 +40,7 @@ In this screen, a geolocation service is used to get the user location and trans
 
 A history feature is added to this screen, allowing the user to choose from the previous selected items. The `maxHistory` parameter defines the maximum number of items to show in the history list.
 
-<img src="{{ site.baseurl }}/assets/img/journey_ios_autocompletion_screen.png" alt="Autocompletion screen" width="350"/>
+<img src="{{ site.baseurl }}/assets/img/journey_ios_autocompletion_screen.png" alt="Autocompletion screen" width="250"/>
 
 ### Journeys
 
@@ -53,13 +53,13 @@ The [autocompletion](#autocompletion) screen is also accessible from this page a
 
 You can enable the earlier/later feature using the `isEarlierLaterFeatureEnabled` parameter. When this feature is available, the user can request journeys with earlier or later departure/arrival for the same itinerary.
 
-<img src="{{ site.baseurl }}/assets/img/journey_ios_journeys_screen.png" alt="Journeys screen" width="350"/>
+<img src="{{ site.baseurl }}/assets/img/journey_ios_journeys_screen.png" alt="Journeys screen" width="250"/>
 
 ### Ridesharing offers
 
 This screen lists the different ridesharing offers for the selected journey. Regardless of the fact that the journey can propose a full ridesharing trip or a partial ride, the user can select among different third party offers. He has all the information needed to choose the best offer that fits his needs including the departure time, the available seats, the price and some data about the driver offering the ride.
 
-<img src="{{ site.baseurl }}/assets/img/journey_ios_ridesharing_offers_screen.png" alt="Ridesharing offers screen" width="350"/>
+<img src="{{ site.baseurl }}/assets/img/journey_ios_ridesharing_offers_screen.png" alt="Ridesharing offers screen" width="250"/>
 
 ### Roadmap
 
@@ -67,10 +67,10 @@ We believe that the user needs more useful details about his journey and that's 
 
 The screen also includes a draggable bottom sheet which offers a step-by-step journey sections. Each section is represented in a way that it makes it easier to the user to follow the given instructions. The user can follow a built-in navigation narrative system if choosing to walk, to drive his own car or even to ride his bike. The public transport section is also well detailed when it comes to explain to the user how to take different means of transport from the departure to the arrival point.
 
-<img src="{{ site.baseurl }}/assets/img/journey_ios_roadmap_screen.png" alt="Roadmap screen" width="350"/>
+<img src="{{ site.baseurl }}/assets/img/journey_ios_roadmap_screen.png" alt="Roadmap screen" width="250"/>
 
 ## Navigating
 
 Refer to the following schema to learn more about different interactions and how to navigate between module screens.
 
-<img src="{{ site.baseurl }}/assets/img/journey_ios_navigating.png" alt="Navigating screen" width="650"/>
+<img src="{{ site.baseurl }}/assets/img/journey_ios_navigating.png" alt="Navigating screen" width="950"/>
