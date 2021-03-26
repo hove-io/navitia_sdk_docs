@@ -23,7 +23,7 @@ permalink: /aroundme/ios/getting-started
 ## 🧰  Requirements
 
 - [Cocoapods](https://cocoapods.org): this module is available through Cocoapods.
-- Minimum iOS deployment target: 10.0
+- Minimum iOS deployment target: `10.0`
 
 ## 💻  Setup
 
@@ -46,36 +46,10 @@ target 'YOUR_PROJECT_SCHEME' do
 end
 ```
 
-## 🚀  Launching
+## 👨‍💻  Implementation
 
-This module needs to be initialized before launching the main `ViewController`. Therefore, You need to call the `AroundMe.shared.initialize()` method.\
-Please refer to the following code:
-
-```swift
-do {
-    guard let aroundMeViewController = AroundMe.shared.rootViewController else {
-      return
-    }
-
-    let aroundMeColorsConfiguration = AroundMeColorsConfiguration(background: .gray,
-                                                                  primary: .blue)
-    let aroundMeConfiguration = try AroundMeConfiguration(colorsConfiguration: aroundMeColorsConfiguration,
-                                                          dataConfiguration: DataConfiguration(filtersConfiguration: filtersConfiguration, bookButtonConfiguration: bookButtonConfiguration), // If configurationJsonFile is not set
-                                                          dataConfigurationJsonFile: "aroundme_data_configuration_json_filename", // If configuration is not set
-                                                          enableGoFromGoTo: enableGoToGoFromOption.isOn)
-    
-    try AroundMe.shared.initialize(token: navitia_token,
-                                   coverage: navitia_coverage,
-                                   configuration: aroundMeConfiguration)
-    navigationController?.pushViewController(aroundMeViewController, animated: false)
-} catch {
-    Logger.error("%@", String(format: "AroundMeSDK cannot be initialized! %@", error.localizedDescription))
-}
-```
-
-## 🛠 Configuration
-
-The `AroundMeConfiguration` is a mandatory element to pass to the `ìnitialize()` method. The below is the list of parameters required to build this configuration object:
+This module is set up by calling `AroundMe.shared`. The singleton has attributes which allow you to configure the module. Then, you need to call the `initialize()` method at the end. \
+This method takes the following parameters:
 
 <div markdown="1">
 
@@ -88,7 +62,38 @@ The `AroundMeConfiguration` is a mandatory element to pass to the `ìnitialize()
 
 </div>
 
+```swift
+do {
+    let aroundMeConfiguration = try AroundMeConfiguration(colorsConfiguration: AroundMeColorsConfiguration(background: .blue, primary: .red),
+                                                          dataConfiguration: DataConfiguration(filtersConfiguration: filtersConfiguration, bookButtonConfiguration: bookButtonConfiguration), // If configurationJsonFile is not set
+                                                          dataConfigurationJsonFile: "aroundme_data_configuration_json_filename", // If configuration is not set
+                                                          enableGoFromGoTo: enableGoToGoFromOption.isOn)
+
+    try AroundMe.shared.initialize(token: "YOUR_TOKEN",
+                                   coverage: "YOUR_COVERAGE",
+                                   configuration: aroundMeConfiguration
+} catch {
+    Logger.error("%@", String(format: "Around me SDK cannot be initialized! %@", error.localizedDescription))
+}                                   
+```
+
+## 🚀  Launching
+
+This module has a single entry point. 
+
+```swift
+guard let aroundMeViewController = AroundMe.shared.rootViewController else {
+  return nil
+}
+
+navigationController?.pushViewController(aroundMeViewController, animated: false)
+```
+
+## 🛠 Configuration
+
 ### Colors
+
+In order to configurate colors, you have to create a `AroundMeColorsConfiguration` object which takes the following parameters:
 
 <div markdown="1">
 
@@ -101,7 +106,6 @@ The `AroundMeConfiguration` is a mandatory element to pass to the `ìnitialize()
 
 ### Data
 
-The module has to be configured to work properly. The filters and some UI components require a configuration or else you won't be able to launch the SDK.\
 There are two main sections to configure: `filters` and `book_button`.
 
 The `filters` sets up the list of the categories/subcategories/types to be displayed in the filters page.\
@@ -112,6 +116,7 @@ The `book_button` sets up the label to be displayed on the booking button when d
 The `filters` is a JSON array of categories. Each category has subcategories and each subcategory has types.
 
 ###### Category
+{: .no_toc }
 
 <div markdown="1">
 
@@ -123,6 +128,7 @@ The `filters` is a JSON array of categories. Each category has subcategories and
 </div>
 
 ###### Subcategory
+{: .no_toc }
 
 <div markdown="1">
 
@@ -137,6 +143,7 @@ The `filters` is a JSON array of categories. Each category has subcategories and
 </div>
 
 ###### Subcategory type
+{: .no_toc }
 
 <div markdown="1">
 
@@ -149,7 +156,7 @@ The `filters` is a JSON array of categories. Each category has subcategories and
 
 - Book Button
 
-The `book_button` is a JSON object that contains String resource IDs for the book button label in different UI components.
+The `book_button` is a JSON object that contains string resource IDs for the book button label in different UI components.
 
 <div markdown="1">
 
@@ -161,14 +168,13 @@ The `book_button` is a JSON object that contains String resource IDs for the boo
 
 </div>
 
-### How to configure Data?
-
-Follow one of the steps below:
+#### How to configure Data
+{: .no_toc }
 
 - Using JSON file
 
 The JSON file should be added to the main bundle of your project.
-Please check the example below to know more about the structure of the configuration JSON file:
+Check the example below to know more about the structure of the configuration JSON file:
 
 ```json
     {

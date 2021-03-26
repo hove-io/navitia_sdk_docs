@@ -26,7 +26,7 @@ Minimum Android SDK target: `21`
 
 ## 💻  Setup
 
-Add the following maven repository in the `build.gradle` of your project. Replace `USERNAME` and `PASSWORD` with your credentials:
+The access to `Expert` module require valid credentials to our private artifactory. Add the following maven repository in the `build.gradle` of your project. Replace `USERNAME` and `PASSWORD` with your credentials:
 
 ```ruby
 repositories {

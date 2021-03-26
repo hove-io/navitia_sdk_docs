@@ -8,11 +8,3 @@ permalink: /aroundme/android
 ---
 
 # Around Me Android
-
-<!-- ## Changelog & Releases
-
-| Version |  |
-| --- | --- |
-| 0.3.0 |  <label class="label label-green">Latest</label>  |
-
---- -->

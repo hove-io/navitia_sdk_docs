@@ -23,11 +23,11 @@ permalink: /expert/ios/getting-started
 ## 🧰  Requirements
 
 - [Cocoapods](https://cocoapods.org): this module is available through Cocoapods.
-- Minimum iOS deployment target: 10.0
+- Minimum iOS deployment target: `10.0`
 
 ## 💻  Setup
 
-The access to `Expert` module and its dependencies requires valid credentials to our private artifactory. Add the following line to your `.netrc` file and replace `USERNAME` and `PASSWORD` with your credentials:
+The access to `Expert` module requires valid credentials to our private artifactory. Add the following line to your `.netrc` file and replace `USERNAME` and `PASSWORD` with your credentials:
 
 ```
 machine kisiodigital.jfrog.io login USERNAME password PASSWORD
