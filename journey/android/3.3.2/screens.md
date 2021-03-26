@@ -1,250 +1,76 @@
 ---
-layout: default
+layout: main
 title: Screens
 parent: Journey Android
 grand_parent: Journey
 nav_order: 3
-permalink: /journey/android/screen
+permalink: /journey/android/screens
 ---
 
 # Screens
 {: .no_toc }
 
-<details open markdown="block">
-  <summary>
-    Table of contents
-  </summary>
-  {: .text-delta }
+---
+
+## Table of contents
+{: .no_toc .text-delta }
 
 1. TOC
 {:toc}
-</details>
+
 ---
 
-## Launching
-Journey has 2 screens acting as entry points: `FormFragment` and `JourneysFragment`.
-You have to fill in the correct parameters and launch the fragment. Both need `JourneyRequest`.<br>
-See [Transport Mode](/navitia_sdk_docs/journey/android/screen#transport-mode) to know how to set `JourneyRequest.transportModeListRequested`
+## Screens
 
-### With Form
-{: .no_toc }
+### Form
 
-#### Example
-{: .no_toc }
-```kotlin
-val journeysRequest = JourneysRequest().apply {
-    originLabel = "My home"
-    originId = "2.3665844;48.8465337"
-    destinationId = "2.2979169;48.8848719"
-    addPoiInfos = listOf("bss_stands", "car_park")
-    count = 5
-    transportModeListRequested = listOf<TransportModeModel>()
-}
-val title = "Example title"
-val showBack = true
-val formFragment = FormFragment.newInstance(journeysRequest)
-supportFragmentManager.beginTransaction().run {
-    replace(R.id.container_id, formFragment, FormFragment.TAG)
-    addToBackStack(FormFragment.TAG)
-    commit()
-}
-```
+This screen shows different options for the user to define his itinerary. A set of options is available including departure and arrival fields, transport modes, profiles, walking speed and journey datetime configuration.
 
-### With Journeys
-{: .no_toc }
+The form screen can be used as an entry point of the SDK. You can see how to launch it in the section [Launching with Form]({{ site.baseurl }}/journey/android/getting-started#launching-with-journey).
+Transport modes can be configured as explained in the section [Transport Mode]({{ site.baseurl }}/journey/android/getting-started#transport-mode) from Getting Started page.
 
+<img src="{{ site.baseurl }}/assets/img/journey_android_form_screen.png" alt="Form screen" width="250"/>
 
-#### Example
-{: .no_toc }
-```kotlin
-val journeysRequest = JourneysRequest().apply {
-    originLabel = "My home"
-    originId = "2.3665844;48.8465337"
-    destinationId = "2.2979169;48.8848719"
-    addPoiInfos = listOf("bss_stands", "car_park")
-    count = 10
-}
-val journeysFragment = JourneysFragment.newInstance(journeysRequest)
-supportFragmentManager.beginTransaction().run {
-    replace(R.id.container_id, journeysFragment, JourneysFragment.TAG)
-    addToBackStack(JourneysFragment.TAG)
-    commit()
-}
-```
+### Auto Completion
 
-### Journeys request
-{: .no_toc }
-`JourneysRequest` has a multitude of parameters allowing to build a consumable request by Journey.
+In this screen, the user can choose the departure and the arrival of his itinerary. While typing in the target field, a list of options is shown below the field. The user can simply choose one of the suggested options and mark it as a departure or as an arrival point.
 
-<div markdown="1">
+The suggested options are grouped in sections, it's whether a station, an address or a point of interest.
+In this screen, a geolocation service is used to get the user location and translate it into a readable address. Therefore, another option is given and it allows the user to set his position as a departure or an arrival of the itinerary.
 
-| Parameters | Type | Required | Description | Example |
-| --- | --- |:---:| --- | --- |
-| `originId` | `String` | ✓ | Origin coordinates, following the format `lon;lat` | `"2.3665844;48.8465337"` |
-| `destinationId` | `String` | ✓ | Destination coordinates, following the format `lon;lat` | `"2.2979169;48.8848719"` |
-| `originLabel` | `String` | ✗ | Origin label, if not set the address will be displayed | `"Home"` |
-| `destinationLabel` | `String` | ✗ | Destination label, if not set the address will be displayed | `"Work"` |
-| `datetime` | `DateTime` | ✗ | Requested date and time for journey results | `DateTime.now()` |
-| `datetimeRepresents` | `String` | ✗ | Can be `.DEPARTURE` (journeys after datetime) or `.ARRIVAL` (journeys before datetime). | `JourneysRequest.DEPARTURE` |
-| `forbiddenUris` | `List<String>` | ✗ | Used to avoid lines, modes, networks, etc in the Journey search (List of navitia uris) | `listOf("commercial_mode:Bus", "line:1")` |
-| `allowedId` | `List<String>` | ✗ | If you want to use only a small subset of the public transport objects in the Journey search (List of navitia uris) | `listOf("commercial_mode:Bus", "line:1")` |
-| `firstSectionModes` | `List<String>` | ✗ | List of modes to use at the begining of the journey | `listOf("walking", "bike", "car", "bss", "ridesharing")` |
-| `lastSectionModes` | `List<String>` | ✗ | List of modes to use at the end of the journey | `listOf("walking", "bike", "car", "bss", "ridesharing")` |
-| `count` | `Int` | ✗ | The number of journeys that will be displayed | `3` |
-| `minNbJourneys` | `Int` | ✗ | The minimum number of journeys that will be displayed | `3` |
-| `maxNbJourneys` | `Int` | ✗ | The maximum number of journeys that will be displayed | `10` |
-| `addPoiInfos` | `List<String>` | ✗ | Allow the display of the availability in real time for bike share and car park | `listOf("bss_stands", "car_park")` |
-| `directPath` | `String` | ✗ | To indicate if the journey is direct | `"only"` |
+A history feature is added to this screen, allowing the user to choose from the previous selected items. The `maxHistory` parameter defines the maximum number of items to show in the history list.
 
-</div>
+<img src="{{ site.baseurl }}/assets/img/journey_android_autocompletion_screen.png" alt="Autocompletion screen" width="250"/>
 
-### Transport Mode
-{: .no_toc }
-A transport mode is used to filter a journeys query. It is necessary to add a list of transport mode to `JourneysRequest` in order to obtain the desired results.
-`TransportModeModel` represents a transport mode. You need to request Navitia first to get your available list of transport modes for your coverage:
-`https://api.navitia.io/v1/coverage/<COVERAGE>/physical_modes`
+### Journey
 
-<div markdown="1">
+The journeys screen is fundamental and offers the solutions to the user for the requested itinerary.
+After defining all the required parameters, this screen will popup with multiple results combining public transport, personal bikes/cars, bike sharing systems and even ridesharing possibilities.
 
-| Parameters | Type | Required | Description | Example |
-| --- | --- |:---:| --- | --- |
-| title | `String` | ✓ | The transport mode label | "Tramway" |
-| textIcon | `String` | ✓ | The transport mode Icon | "\uEA1B" |
-| firstSectionMode | `List<String>` | ✗ | List of modes to use at the begining of the journey | { "walking", "bike", "car", "bss", "ridesharing" } |
-| lastSectionMode | `List<String>` | ✗ | List of modes to use at the end of the journey | { "walking", "bike", "car", "bss", "ridesharing" } |
-| physicalModes | `List<String>` | ✗ | Used setup lines, modes, networks, etc in the Journey search (List of navitia uris) | { "physical_mode:Bike", "physical_mode:Train" } |
-| realTime | `Boolean` | ✗ | To indicate if real time is enabled | false |
-| selected | `Boolean` | ✗ | To indicate if the transport mode is selected | true |
+Each result gives the needed information to the user in order to plan his journey. He can check the duration, the suggested means of transport, the next departure datetimes and many other useful details. This combination of data, being served by [Navitia](http://doc.navitia.io) servers and translated into a comprehensible/user friendly interface, is perfectly shaped to the user profile and needs.
 
-</div>
+The [autocompletion](#autocompletion) screen is also accessible from this page along with other itinerary request parameters allowing the user to make in-screen changes without the need to go back to the [form](#form). In order to make it happen, you will need to use the method `.withAdvancedSearchMode()` when first configuring the SDK (which is already set to `true` by default if the form is use as an entry point).
 
-#### Example
-{: .no_toc }
-```kotlin
-val transportModes = listOf<TransportModeModel>(
-    TransportModeModel(TransportMode.BUS).apply {
-        setFirstSectionMode(SECTION_MODE_WALKING)
-        setLastSectionMode(SECTION_MODE_WALKING)
-        setPhysicalModes("physical_mode:Bus")
-        isSelected = true
-    },
-    TransportModeModel(TransportMode.BIKE).apply {
-        setFirstSectionMode(SECTION_MODE_BIKE)
-        setLastSectionMode(SECTION_MODE_BIKE)
-        setPhysicalModes("physical_mode:Bike")
-        isSelected = true
-    },
-    TransportModeModel(TransportMode.CAR).apply {
-        setFirstSectionMode(SECTION_MODE_CAR)
-        setLastSectionMode(SECTION_MODE_CAR)
-        setPhysicalModes("physical_mode:Car")
-        isSelected = true
-    }
-)
-```
+You can enable the earlier/later feature using the `.withEarlierLaterFeature()` method. When this feature is available, the user can request journeys with earlier or later departure/arrival for the same itinerary.
 
-### Some use cases
-{: .no_toc }
+<img src="{{ site.baseurl }}/assets/img/journey_android_journeys_screen.png" alt="Journeys screen" width="250"/>
 
-##### Bike
-{: .no_toc }
-```kotlin
-val journeysRequest = JourneysRequest().apply {
-    originId = "2.3665844;48.8465337"
-    destinationId = "2.2979169;48.8848719"
-    firstSectionModes = listOf("bike")
-    lastSectionModes = listOf("bike")
-}               
-```
+### Ridesharing
 
-##### BSS
-{: .no_toc }
-```kotlin
-val journeysRequest = JourneysRequest().apply {
-    originId = "2.3665844;48.8465337"
-    destinationId = "2.2979169;48.8848719"
-    firstSectionModes = listOf("bss")
-    lastSectionModes = listOf("bss")
-    addPoiInfos = listOf("bss_stands")
-}              
-```
+This screen lists the different ridesharing offers for the selected journey. Regardless of the fact that the journey can propose a full ridesharing trip or a partial ride, the user can select among different third party offers. He has all the information needed to choose the best offer that fits his needs including the departure time, the available seats, the price and some data about the driver offering the ride.
 
-##### Car
-{: .no_toc }
-```kotlin
-val journeysRequest = JourneysRequest().apply {
-    originId = "2.3665844;48.8465337"
-    destinationId = "2.2979169;48.8848719"
-    firstSectionModes = listOf("car")
-    lastSectionModes = listOf("car_park")
-}       
-```
+<img src="{{ site.baseurl }}/assets/img/journey_android_ridesharing_offers_screen.png" alt="Ridesharing offers screen" width="250"/>
 
-##### Ridesharing
-{: .no_toc }
-```kotlin
-val journeysRequest = JourneysRequest().apply {
-    originId = "2.3665844;48.8465337"
-    destinationId = "2.2979169;48.8848719"
-    firstSectionModes = listOf("ridesharing")
-    lastSectionModes = listOf("ridesharing")
-}
-```
+### Roadmap
 
-## Override icons
-To customize arrival, departure and transport mode icon, you need to add your vector asset in the `drawable` folder of your application.
-Rename your customized transport mode icon with the same resource name as the default icon.
+We believe that the user needs more useful details about his journey and that's where the roadmap screen comes in. In this page, the user gets a visual overview about the selected itinerary with a simple colorful drawing on a map. Departure and arrival markers are also shown on the map along with the user location and itinerary segments delimiters.
 
-### Departure icon
-{: .no_toc }
-To customize the `departure` icon, rename your resource as `ic_departure.xml`
+The screen also includes a draggable bottom sheet which offers a step-by-step journey sections. Each section is represented in a way that it makes it easier to the user to follow the given instructions. The user can follow a built-in navigation narrative system if choosing to walk, to drive his own car or even to ride his bike. The public transport section is also well detailed when it comes to explain to the user how to take different means of transport from the departure to the arrival point.
 
-### Arrival icon
-{: .no_toc }
-To customize the `arrival` icon, rename your resource as `ic_arrival.xml`
+<img src="{{ site.baseurl }}/assets/img/journey_android_roadmap_screen.png" alt="Roadmap screen" width="250"/>
 
-### Transport mode icons
-{: .no_toc }
-You can customize icons of transport modes by overriding drawable resources or by set those up programmatically
+## Navigating
 
-##### Drawables resources
-{: .no_toc }
-Rename your customized transport mode icon with the same resource name as the default icon.
-For example, if you want to customize the `bus` icon, rename your resource as `ic_transport_mode_bus.xml`
-Here is the list of default icon name:
-* `ic_transport_mode_air.xml`
-* `ic_transport_mode_bike.xml`
-* `ic_transport_mode_bss.xml`
-* `ic_transport_mode_bus.xml`
-* `ic_transport_mode_car.xml`
-* `ic_transport_mode_coach.xml`
-* `ic_transport_mode_ferry.xml`
-* `ic_transport_mode_funicular.xml`
-* `ic_transport_mode_metro.xml`
-* `ic_transport_mode_ridesharing.xml`
-* `ic_transport_mode_shuttle.xml`
-* `ic_transport_mode_taxi.xml`
-* `ic_transport_mode_train.xml`
-* `ic_transport_mode_tramway.xml`
-* `ic_transport_mode_walking.xml`
+Refer to the following schema to learn more about different interactions and how to navigate between module screens.
 
-##### Setup programmatically
-{: .no_toc }
-```kotlin
-val transportMode = TransportModeModel(TransportMode.BIKE).apply {
-    ...
-    resIconId = R.drawable.icon_id
-}
-```
-
-### Strings resources
-{: .no_toc }
-<div markdown="1">
-
-| Id | English | French |
-| --- | --- | --- |
-| `R.string.journeys` | Journeys | Itinéraires | 
-| `R.string.ridesharing_noun` | Ridesharing | Covoiturage | 
-| `R.string.roadmap` | Roadmap | Feuille de route | 
-
-</div>
+<img src="{{ site.baseurl }}/assets/img/journey_android_navigating.png" alt="Navigating screen" width="950"/>

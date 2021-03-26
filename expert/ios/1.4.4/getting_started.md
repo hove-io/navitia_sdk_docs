@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: main
 title: Getting started
 parent: Expert iOS
 grand_parent: Expert
@@ -8,47 +8,56 @@ permalink: /expert/ios/getting-started
 ---
 
 # Getting Started
+{: .no_toc }
 
 ---
 
-## Installation
-Ajouter dans le fichier `~/.netrc`. Remplacer `USERNAME` et `PASSWORD` par les valeurs correspondantes :
-```ruby
+## Table of contents
+{: .no_toc .text-delta }
+
+1. TOC
+{:toc}
+
+---
+
+## 🧰  Requirements
+
+- [Cocoapods](https://cocoapods.org): this module is available through Cocoapods.
+- Minimum iOS deployment target: `10.0`
+
+## 💻  Setup
+
+The access to `Expert` module requires valid credentials to our private artifactory. Add the following line to your `.netrc` file and replace `USERNAME` and `PASSWORD` with your credentials:
+
+```
 machine kisiodigital.jfrog.io login USERNAME password PASSWORD
 ```
  
-Ajouter dans le fichier Podfile :
-```ruby
-source 'https://github.com/CanalTP/Podspecs.git'
-```
-
-et dans la section target :
-```ruby
-pod ‘NavitiaSDK’, ‘1.4.4’
-```
-
-Exécuter la commande :
-```ruby
-pod deintegrate && pod install
-```
-
-
-NavitiaSDKUX is available through [CocoaPods](http://cocoapods.org). To install
-it, simply add the following line to your Podfile:
+In your project, add the following lines to your `Podfile`:
 
 ```ruby
-pod "NavitiaSDK"
+platform :ios, '10.0' # Minimum deployment target
+use_frameworks!
+
+source 'https://github.com/CanalTP/Podspecs.git' # Expert podspec URL
+
+target 'YOUR_PROJECT_SCHEME' do
+  pod 'ExpertSDK', '~> 0.2.0' # Expert Pod definition
+end
 ```
 
-## Configuration & initialization
+## 🚀  Launching
+
+You can now call any endpoint from `navitiaSdk` and its variety of builders that will help you request Navitia. As an example:
+
 ```swift
-let navitiaSDK = NavitiaSDK(configuration: NavitiaConfiguration(token: "my-token")
-navitiaSDK.journeysApi.newJourneyRequestBuilder()
-    .withFrom("2.38;48.84")
-    .withTo("2.29;48.82")
+navitiaSDK.physicalModesApi.newCoverageRegionPhysicalModesRequestBuilder()
+    .withRegion("YOUR_COVERAGE")
     .get { (result, error) in
-        if result != nil {
-            let journeys = result!.journeys
+        if let result = result {
+            // Use result
+        } else {
+            // There was an error
         }
     }
 ```

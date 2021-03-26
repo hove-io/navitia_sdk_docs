@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: main
 title: Communicating with
 parent: Around Me iOS
 grand_parent: Around Me
@@ -14,7 +14,7 @@ permalink: /aroundme/ios/communicating-with
 ## Journey
 
 This module communicates with [Journey]({{ site.baseurl }}/journey/) module in order to get directions for a chosen itinerary. You should enable the `Go from/Go to` feature when first initializing the module by setting `enableGoFromGoTo` to `true` in `AroundMeConfiguration`.\
-Please refer to the code below to initialize the `Router` module since it's mandatory to build the connection between these modules:
+The `Router` module should be initialized also with the right parameters since it’s mandatory to build the connection between these modules:
 
 ```swift
 try Router.shared

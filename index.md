@@ -1,27 +1,13 @@
 ---
-layout: default
+layout: main
 title: Home
 nav_order: 1
 description: "Documentation about SDK modules for Android and iOS"
 permalink: /
+search_exclude: true
 ---
 
-Navitia SDK Docs
+Navitia SDK documentation
 {: .fs-9 }
 
-{{ site.description }}
-
----
-
-#### UI
-<!-- [Around Me]() -->
-[Around Me](/navitia_sdk_docs/aroundme)
-<!-- [Journey]()
-[Journey](/navitia_sdk_docs/journey)
-<!-- [Book]() -->
-<!-- [NFC]() -->
-<!-- [Ticket]() -->
-
-<!-- #### Data
-[Expert](/navitia_sdk_docs/expert)
-<!-- [Partners]() -->
+{% include home_content.html %}

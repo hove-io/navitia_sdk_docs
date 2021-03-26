@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: main
 title: Expert iOS
 parent: Expert
 nav_order: 2
@@ -9,7 +9,7 @@ permalink: /expert/ios
 
 # Expert iOS
 
-## Changelog & Releases
+<!-- ## Changelog & Releases
 
 | Version | |
 | --- | --- |
@@ -18,4 +18,4 @@ permalink: /expert/ios
 
 ---
 
-### 3.4.4
+### 3.4.4 -->

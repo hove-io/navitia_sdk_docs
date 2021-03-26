@@ -2,7 +2,11 @@ source "https://rubygems.org"
 
 # Hello! This is where you manage which Jekyll version is used to run.
 # When you want to use a different version, change it below, save the
-# file and run `bundle install`. Run Jekyll with `bundle exec`, like so:
+# file and run:
+#
+#     bundle install 
+#
+# Then run Jekyll with :
 #
 #     bundle exec jekyll serve
 #
@@ -15,9 +19,12 @@ gem "minima", "~> 2.0"
 # If you want to use GitHub Pages, remove the "gem "jekyll"" above and
 # uncomment the line below. To upgrade, run `bundle update github-pages`.
 gem "github-pages", "~> 208", group: :jekyll_plugins
+gem "liquid-c"
 
 # If you have any plugins, put them here!
 group :jekyll_plugins do
+  gem "jekyll-commonmark"
+  gem "jekyll-include-cache"
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
