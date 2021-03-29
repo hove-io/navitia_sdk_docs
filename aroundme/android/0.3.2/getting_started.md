@@ -46,7 +46,7 @@ Add the following dependency in the `build.gradle` file of your application:
 ```ruby
 dependencies {
     ...
-    implementation("com.kisio.navitia.sdk.ui:aroundme:0.3.1")
+    implementation("com.kisio.navitia.sdk.ui:aroundme:0.3.2")
 }
 ```
 
@@ -98,7 +98,7 @@ AroundMeUI.getInstance()
        coverage = "YOUR_COVERAGE",
        token = "YOUR_TOKEN",
        configuration = Configuration(filtersConfiguration, bookButtonConfiguration), // Not required if configurationJsonFile is set
-       configurationJsonFile = "jsonFile" // Not required if configuration object is set,
+       configurationJsonFile = "jsonFile" // Not required if configuration object is set
        { fragment, _ ->
             // Navigate from Fragment1 to Fragment2
             // Execute some instructions

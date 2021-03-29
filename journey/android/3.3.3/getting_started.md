@@ -45,7 +45,7 @@ Add the following dependency in the `build.gradle` file of your application:
 ```ruby
 dependencies {
     ...
-    implementation("com.kisio.navitia.sdk.ui:journey:3.3.2")
+    implementation("com.kisio.navitia.sdk.ui:journey:3.3.3")
 }
 ```
 
