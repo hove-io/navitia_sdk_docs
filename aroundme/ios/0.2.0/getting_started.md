@@ -59,6 +59,9 @@ This method takes the following parameters:
 | `dataConfiguration` | Only if `dataConfigurationJsonFile`is not set | To set the data configuration | ✗ |
 | `dataConfigurationJsonFile` | Only if `dataConfiguration`is not set | To set the data configuration | ✗ |
 | `enableGoFromGoTo` | ✗ | To enable or disable the Go from/to feature | `false` |
+| `token` | ✓ | `String` | Your Navitia token | `0de19ce5-e0eb-4524-a074-bda3c6894c19` |
+| `coverage` | ✓ | `String` | Your Navitia coverage | `fr-idf` |
+| `colorConfiguration` | ✓ | `JourneyColorConfiguration` | To set colors of Journey | `AroundMeColorsConfiguration(background: .blue, primary: .red)` |
 
 </div>
 
