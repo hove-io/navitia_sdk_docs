@@ -306,12 +306,10 @@ In order to configurate colors, you have to create a `JourneyColors` object whic
 | --- |:---:| --- |
 | `JourneyColors(String)` | ✓ | To set the main color |
 | `.setPrimaryColor(String)`<br>`.setPrimaryColorRes(ColorRes)` | ✗ | To set the secondary color |
-
-| `.setOriginColor(String)`<br>`.setOriginColorRes(ColorRes)`  | ✗ | To set the color of the origin pin icon color on the map and the roadmap departure block |
+| `.setOriginColor(String)`<br>`.setOriginColorRes(ColorRes)`  | ✓ | To set the color of the origin pin icon color on the map and the roadmap departure block |
 | `.setOriginIconColor(String)`<br>`.setOriginIconColorRes(ColorRes)`  | ✗ | To set the color of the origin icon on a departure search field and on the map. *originColor* value will be ignored |
 | `.setOriginBackgroundColor(String)`<br>`.setOriginBackgroundColorRes(ColorRes)`  | ✗ | To set the color of the roadmap departure block. *originColor* value will be ignored |
-
-| `.setDestinationColor(String)`<br>`.setDestinationColorRes(ColorRes)` | ✗ | To set the color of the destination icon on the map and the roadmap arrival block |
+| `.setDestinationColor(String)`<br>`.setDestinationColorRes(ColorRes)` | ✓ | To set the color of the destination icon on the map and the roadmap arrival block |
 | `.setDestinationIconColor(String)`<br>`.setDestinationIconColorRes(ColorRes)`  | ✗ | To set the color of the destination icon on a arrival search field and on the map. *destinationColor* value will be ignored |
 | `.setDestinationBackgroundColor(String)`<br>`.setDestinationBackgroundColorRes(ColorRes)`  | ✗ | To set the color of the roadmap arrival block. *destinationColor* value will be ignored  |
 
