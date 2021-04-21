@@ -3,7 +3,7 @@ layout: main
 title: Screens
 parent: Schedule iOS
 grand_parent: Schedule
-nav_order: 3
+nav_order: 2
 permalink: /schedule/ios/screen
 ---
 

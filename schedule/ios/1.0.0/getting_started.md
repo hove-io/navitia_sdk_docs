@@ -3,7 +3,7 @@ layout: main
 title: Getting started
 parent: Schedule iOS
 grand_parent: Schedule
-nav_order: 2
+nav_order: 1
 permalink: /schedule/ios/getting-started
 ---
 
