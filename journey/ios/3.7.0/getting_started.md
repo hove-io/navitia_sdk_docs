@@ -42,7 +42,7 @@ use_frameworks!
 source 'https://github.com/CanalTP/Podspecs.git' # Journey podspec URL
 
 target 'YOUR_PROJECT_SCHEME' do
-  pod 'JourneySDK', '~> 3.5.0' # Journey Pod definition
+  pod 'JourneySDK', '~> 3.7.0' # Journey Pod definition
 end
 ```
 
