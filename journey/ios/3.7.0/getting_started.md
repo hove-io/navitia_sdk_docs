@@ -42,7 +42,7 @@ use_frameworks!
 source 'https://github.com/CanalTP/Podspecs.git' # Journey podspec URL
 
 target 'YOUR_PROJECT_SCHEME' do
-  pod 'NavitiaSDKUI', '~> 3.5.0' # Journey Pod definition
+  pod 'JourneySDK', '~> 3.5.0' # Journey Pod definition
 end
 ```
 
@@ -57,7 +57,7 @@ This method takes the following parameters:
 | --- |:---:| --- | --- | --- |
 | `token` | ✓ | `String` | Your Navitia token | `0de19ce5-e0eb-4524-a074-bda3c6894c19` |
 | `coverage` | ✓ | `String` | Your Navitia coverage | `fr-idf` |
-| `colorConfiguration` | ✓ | `JourneyColorConfiguration` | To set colors of Journey | `JourneyColorConfiguration(background: .blue, origin: .red, destination: .green)` |
+| `journeyConfiguration` | ✓ | `JourneyConfiguration` | To set colors of Journey and transport configuration |  |
 
 </div>
 
@@ -65,9 +65,35 @@ This method takes the following parameters:
 
 ```swift     
 do {
-    try JourneySdk.shared.initialize(token: "YOUR_TOKEN", 
-                                     coverage: "YOUR_COVERAGE", 
-                                     colorConfiguration: JourneyColorConfiguration(background: .blue, origin: .red, destination: .green))
+    let colorsConfiguration = ColorsConfiguration(primary: .blue,
+                                                  origin: .pink,
+                                                  originIcon: .red,
+                                                  destination: .yellow,
+                                                  destinationIcon: .green)
+
+    // choose between two ways of transportConfiguration
+    var transportConfiguration = nil
+    var transportConfigurationJson = nil
+    if useJsonFile {
+      transportConfigurationJson = "YOUR_CONFIGURATION_FILE.json"
+    } else {
+      transportConfiguration = TransportConfiguration(linesConfiguration: [], categoriesConfiguration: [])
+    }
+
+    let journeyConfiguration = try JourneyConfiguration(colorsConfiguration: colorsConfiguration,
+                                                        transportConfiguration: transportConfiguration,
+                                                        transportConfigurationJson: transportConfigurationJson)
+                                                        .withNextDeparturesFeature(enabled: true)
+                                                        .withEarlierLaterFeature(enabled: true)
+                                                        .withMultiNetwork(enabled:true)
+                                                        .withDisruptionContributor(disruptionContributorTextField.text ?? "")
+                                                        .withForm(enabled: true)
+                                                        .withFormCustomTransportModes(formButton)
+
+    try JourneySdk.shared.initialize(token: "YOUR_TOKEN",
+                                     coverage: "YOUR_COVERAGE",
+                                     environment: "YOUR_ENVIRONMENT",
+                                     journeyConfiguration: journeyConfiguration)
 } catch {
     Logger.error("%@", String(format: "Journey SDK cannot be initialized! %@", error.localizedDescription))
 }
@@ -83,36 +109,42 @@ This module has two entry points: Journeys screen and Form screen.
 ```swift
 let metroButton = ModeButtonModel(title: "Metro",
                                   type: "metro",
+                                  iconRes: "ic_metro",
                                   selected: true,
                                   firstSectionMode: ["walking"],
                                   lastSectionMode: ["walking"],
                                   physicalMode: ["physical_mode:Metro"])
 let busButton = ModeButtonModel(title: "Bus",
                                 type: "bus",
+                                iconRes: "ic_bus",
                                 selected: true,
                                 firstSectionMode: ["walking"],
                                 lastSectionMode: ["walking"],
                                 physicalMode: ["physical_mode:Bus"])
 let tramButton = ModeButtonModel(title: "Tramway",
                                  type: "tramway",
+                                 iconRes: "ic_tram",
                                  selected: false,
                                  firstSectionMode: ["walking"],
                                  lastSectionMode: ["walking"],
                                  physicalMode: ["physical_mode:Tramway"])
 let trainButton = ModeButtonModel(title: "Train",
                                   type: "train",
+                                  iconRes: "ic_train",
                                   selected: false,
                                   firstSectionMode: ["walking"],
                                   lastSectionMode: ["walking"],
                                   physicalMode: ["physical_mode:LocalTrain", "physical_mode:Train"])
 let bikeButton = ModeButtonModel(title: "Bike",
                                  type: "bike",
+                                 iconRes: "ic_bike",
                                  selected: false,
                                  firstSectionMode: ["bike"],
                                  lastSectionMode: ["bike"],
                                  physicalMode: ["physical_mode:Bike"])
 let carButton = ModeButtonModel(title: "Car",
                                 type: "car",
+                                iconRes: "ic_car",
                                 selected: false,
                                 firstSectionMode: ["car"],
                                 lastSectionMode: ["car"],
@@ -166,6 +198,7 @@ The table below explains the different parameters that you are able to set befor
 
 | Parameters | Type | Description | Default |
 | --- | --- |:----| --- |
+| `environment` | `ExpertEnvironment` | Navitia environment | `ExpertEnvironment.prod` |
 | `formJourney` | `Bool` | To display the journey form screen | `false` |
 | `advancedSearchMode` | `Bool` | To enable advanced search mode | `false` (If `formJourney` is set to true, this is automatically switched to true) |
 | `maxHistory` | `Int` | To set the maximum number of history inputs for autocompletion | 10 |
@@ -181,6 +214,7 @@ The table below explains the different parameters that you are able to set befor
 - Example
 
 ```swift
+JourneySdk.shared.enviroment = .prod
 JourneySdk.shared.formJourney = false
 JourneySdk.shared.advancedSearchMode = false
 JourneySdk.shared.maxHistory = 12
@@ -188,12 +222,14 @@ JourneySdk.shared.multiNetwork = true
 JourneySdk.shared.isEarlierLaterFeatureEnabled = true
 JourneySdk.shared.modeForm = [ModeButtonModel(title: "Metro",
                                               type: "metro",
+                                              iconRes: "ic_metro",
                                               selected: true,
                                               firstSectionMode: ["walking"],
                                               lastSectionMode: ["walking"],
                                               physicalMode: ["physical_mode:Metro"]),
                               ModeButtonModel(title: "Bus",
                                               type: "bus",
+                                              iconRes: "ic_bus",
                                               selected: true,
                                               firstSectionMode: ["walking"],
                                               lastSectionMode: ["walking"],
@@ -295,6 +331,79 @@ Customizing transport mode icons and other resources is made possible. To use th
 | Parking availability | `journey_realtime_park` |
 
 </div>
+
+
+#### How to configure Data
+{: .no_toc }
+
+- Using JSON file
+
+The JSON file should be added to the main bundle of your project.
+Check the example below to know more about the structure of the configuration JSON file:
+
+```
+json
+{
+  "lines": [
+    {
+      "code": "1",
+      "icon_res": "ic_bus_1",
+      "commercial": "Bus"
+    },
+    {
+      "code": "2",
+      "icon_res": "ic_metro_2",
+      "commercial": "Métro"
+    },
+    {
+      "code": "3",
+      "icon_res": "ic_local_train_3",
+      "commercial": "Train"
+    }
+  ],
+  "categories": [
+    {
+      "commercial": "Bus",
+      "icon_res": "ic_bus",
+      "name_res": "bus",
+      "subcategories": [
+        {
+          "name_res": "bus",
+          "physical_mode": "physical_mode:Bus",
+          "isSelected": false
+        }
+      ]
+    },
+    {
+      "commercial": "Train",
+      "icon_res": "ic_train",
+      "name_res": "train",
+      "subcategories": [
+        {
+          "name_res": "RER",
+          "physical_mode": "physical_mode:Rer",
+          "isSelected": true
+        },
+        {
+          "name_res": "localTrain",
+          "physical_mode": "physical_mode:LocalTrain",
+          "isSelected": false
+        }
+      ]
+    }
+  ],
+  "networks": [
+    {
+      "id": "id1",
+      "name": "NETWORK1"
+    },
+    {
+      "id": "id2",
+      "name": "NETWORK2"
+    }
+  ]
+}
+```
 
 ##### And more...
 {: .no_toc }
