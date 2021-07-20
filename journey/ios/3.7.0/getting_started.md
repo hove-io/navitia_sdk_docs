@@ -57,6 +57,7 @@ This method takes the following parameters:
 | --- |:---:| --- | --- | --- |
 | `token` | ✓ | `String` | Your Navitia token | `0de19ce5-e0eb-4524-a074-bda3c6894c19` |
 | `coverage` | ✓ | `String` | Your Navitia coverage | `fr-idf` |
+| `environment` | ✓ | `NavitiaEnvironment` | Your Navitia environment | `NavitiaEnvironment.dev` |
 | `journeyConfiguration` | ✓ | `JourneyConfiguration` | To set colors of Journey and transport configuration |  |
 
 </div>
@@ -83,16 +84,16 @@ do {
     let journeyConfiguration = try JourneyConfiguration(colorsConfiguration: colorsConfiguration,
                                                         transportConfiguration: transportConfiguration,
                                                         transportConfigurationJson: transportConfigurationJson)
-                                                        .withNextDeparturesFeature(enabled: true)
-                                                        .withEarlierLaterFeature(enabled: true)
-                                                        .withMultiNetwork(enabled:true)
-                                                        .withDisruptionContributor(disruptionContributorTextField.text ?? "")
-                                                        .withForm(enabled: true)
-                                                        .withFormCustomTransportModes(formButton)
+                                    .withNextDeparturesFeature(enabled: true)
+                                    .withEarlierLaterFeature(enabled: true)
+                                    .withMultiNetwork(enabled:true)
+                                    .withDisruptionContributor(disruptionContributorTextField.text ?? "")
+                                    .withForm(enabled: true)
+                                    .withFormCustomTransportModes(formButton)
 
     try JourneySdk.shared.initialize(token: "YOUR_TOKEN",
                                      coverage: "YOUR_COVERAGE",
-                                     environment: "YOUR_ENVIRONMENT",
+                                     environment: NavitiaEnvironment.prod,
                                      journeyConfiguration: journeyConfiguration)
 } catch {
     Logger.error("%@", String(format: "Journey SDK cannot be initialized! %@", error.localizedDescription))
@@ -179,7 +180,6 @@ journeysRequest.forbiddenUris = ["physical_mode:Bus"]
 journeysRequest.firstSectionModes = [.walking, .car, .bike, .bss, .ridesharing]
 journeysRequest.lastSectionModes = [.walking, .car, .bike, .bss, .ridesharing]
 
-JourneySdk.shared.formJourney = false
 guard var journeyResultsViewController = JourneySdk.shared.rootViewController else {
     return nil
 }
@@ -198,7 +198,7 @@ The table below explains the different parameters that you are able to set befor
 
 | Parameters | Type | Description | Default |
 | --- | --- |:----| --- |
-| `environment` | `ExpertEnvironment` | Navitia environment | `ExpertEnvironment.prod` |
+| `environment` | `NavitiaEnvironment` | Navitia environment | `NavitiaEnvironment.prod` |
 | `formJourney` | `Bool` | To display the journey form screen | `false` |
 | `advancedSearchMode` | `Bool` | To enable advanced search mode | `false` (If `formJourney` is set to true, this is automatically switched to true) |
 | `maxHistory` | `Int` | To set the maximum number of history inputs for autocompletion | 10 |
@@ -213,13 +213,19 @@ The table below explains the different parameters that you are able to set befor
 
 - Example
 
+the options are setting when the configuration object is instantiated.
+
 ```swift
-JourneySdk.shared.enviroment = .prod
-JourneySdk.shared.formJourney = false
-JourneySdk.shared.advancedSearchMode = false
-JourneySdk.shared.maxHistory = 12
-JourneySdk.shared.multiNetwork = true
-JourneySdk.shared.isEarlierLaterFeatureEnabled = true
+let journeyConfiguration = try JourneyConfiguration(colorsConfiguration: colorsConfiguration,
+                                                    transportConfiguration: transportConfiguration,
+                                                    transportConfigurationJson: transportConfigurationJson)
+                                .withNextDeparturesFeature(enabled: true)
+                                .withEarlierLaterFeature(enabled: true)
+                                .withMultiNetwork(enabled:true)
+                                .withDisruptionContributor(disruptionContributorTextField.text ?? "")
+                                .withForm(enabled: true)
+                                .withFormCustomTransportModes(formButton)
+                                
 JourneySdk.shared.modeForm = [ModeButtonModel(title: "Metro",
                                               type: "metro",
                                               iconRes: "ic_metro",
