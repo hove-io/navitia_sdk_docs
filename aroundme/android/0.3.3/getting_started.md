@@ -46,7 +46,7 @@ Add the following dependency in the `build.gradle` file of your application:
 ```ruby
 dependencies {
     ...
-    implementation("com.kisio.navitia.sdk.ui:aroundme:0.3.3")
+    implementation("com.kisio.navitia.sdk.ui:aroundme:1.0.0")
 }
 ```
 
@@ -76,39 +76,46 @@ This method takes the following parameters:
 
 | Parameter | Type | Required | Description | Default |
 | --- | --- | --- | --- | --- |
-| `activity` | `WeakReference<AppCompatActivity>` | ✓ | Weak reference of the activity launching the module | ✗ |
+| `context` | `Context` | ✓ | Context in which the module is launched | ✗ |
 | `colors` | `AroundMeColors` | ✓ | Module colors configuration | ✗ |
 | `coverage` | `String` | ✓ | Navitia target coverage | ✗ |
 | `token` | `String` | ✓ | Navitia API access token | ✗ |
+| `env` | `AroundMeEnvironment` | ✓ | Navitia API environment | ✗ |
 | `configuration` | `Configuration` | Only if `configurationJsonFile` is not set | Data configuration of the module | `null` |
 | `configurationJsonFile` | `String` | Only if `Configuration` is not set | Json file name in `assets` folder | `null` |
 | `defaultLocation` | `LatLng` | ✗ | Default map center location | `DEFAULT_MALOT_LAT_LNG` |
-| `navigationListener` | `NavigationListener` | ✗ | Listener the module can rely on for navigation events within the app | `null` |
+| `onNavigate` | `Unit` | ✗ | Listener for the navigation between module screens | `{ _ -> }` |
+| `onBack` | `Unit` | ✗ | Listener for the navigation back button click event | `{ _ -> }` |
+
+</div>
+
+- Colors
+
+<div markdown="1">
+
+| Color | Required | Description | Default |
+| --- |:---:| --- | --- |
+| `primaryColor` | ✓ | To set the main color of the screens | ✗ |
+| `secondaryColor` | ✗ | To set the color of some UI components | `primaryColor` |
 
 </div>
 
 ```kotlin
-AroundMeUI.getInstance()
-   .init(
-       activity = WeakReference(this),
-       colors = AroundMeColors(
-           backgroundColor = "#0277BD",
-           primaryColor = "#FF4081"
-       ),
-       coverage = "YOUR_COVERAGE",
-       token = "YOUR_TOKEN",
-       configuration = Configuration(filtersConfiguration, bookButtonConfiguration), // Not required if configurationJsonFile is set
-       configurationJsonFile = "jsonFile" // Not required if configuration object is set
-       { fragment, _ ->
-            // Navigate from Fragment1 to Fragment2
-            // Execute some instructions
-        },
-        {
-            // Navigate from Fragment2 to Fragment1
-            // Execute some instructions
-            return true
-        }
+AroundMeUI.getInstance().let { instance ->
+    instance.init(
+      context = this,
+      colors = AroundMeColors(
+          primaryColor = "#0277BD",
+          secondaryColor = "#FF4081"
+      ),
+      coverage = "YOUR_COVERAGE",
+      token = "YOUR_TOKEN",
+      env = AroundMeEnvironment.PROD,
+      defaultLocation = LatLng(48.846874, 2.377125),
+      configurationJsonFile = "config.json"
    )
+   instance.attachActivity(this)
+}
 ```
 
 ## 🚀  Launching
@@ -118,33 +125,42 @@ Assuming you have an `Activity` with a fragment container, refer to the followin
 
 ```kotlin
 supportFragmentManager.beginTransaction().run {
-    replace(R.id.container_id, MapFragment.newInstance(), MapFragment.TAG)
-    addToBackStack(MapFragment.TAG)
+    replace(R.id.container_id, MapFragment.newInstance(), "TAG")
+    addToBackStack("TAG")
     commit()
 }
 ```
 
 ## 🛠  Configuration
 
-### Colors
+### Lines
+
+The `lines` is a JSON array of a line configuration.
 
 <div markdown="1">
 
-| Color | Required | Description | Default |
-| --- |:---:| --- | --- |
-| `backgroundColor` | ✓ | To set the background color | ✗ |
-| `primaryColor` | ✗ | To set the color of some UI components | `backgroundColor` |
+| Value | Type | Required | Description |
+| --- | --- |:---:| --- |
+| `code` | String | ✓ | Line code identifier |
+| `icon_res` | String | ✓ | String resource ID of the line icon |
+| `commercial` | String | ✓ | Navitia commercial name of the line |
 
 </div>
 
-### Data
+### Modes
 
-There are two main sections to configure: `filters` and `book_button`.
+The `modes` is a JSON array of a transport mode configuration.
 
-The `filters` sets up the list of the categories/subcategories/types to be displayed in the filters page.\
-The `book_button` sets up the label to be displayed on the booking button when different UI components are shown on the screen.
+<div markdown="1">
 
-- Filters
+| Value | Type | Required | Description |
+| --- | --- |:---:| --- |
+| `commercial` | String | ✓ | Navitia commercial name of the transport mode |
+| `icon_res` | String | ✓ | String resource ID of the mode icon |
+
+</div>
+
+### Filters
 
 The `filters` is a JSON array of categories. Each category has subcategories and each subcategory has types.
 
@@ -187,7 +203,7 @@ The `filters` is a JSON array of categories. Each category has subcategories and
 
 </div>
 
-- Book Button
+### Book button
 
 The `book_button` is a JSON object that contains string resource IDs for the book button label in different UI components.
 
@@ -201,7 +217,7 @@ The `book_button` is a JSON object that contains string resource IDs for the boo
 
 </div>
 
-#### How to configure Data
+### Example
 {: .no_toc }
 
 - Using JSON file
@@ -211,6 +227,37 @@ Please check the example below to know more about the structure of the configura
 
 ```json
     {
+      "lines": [
+        {
+          "code": "a",
+          "icon_res": "ic_metro_a",
+          "commercial": "Metro"
+        },
+        {
+          "code": "C1",
+          "icon_res": "ic_bus_c1",
+          "commercial": "Bus"
+        },
+        {
+          "code": "C2",
+          "icon_res": "ic_bus_c2",
+          "commercial": "Bus"
+        }
+      ],
+      "modes": [
+        {
+          "commercial": "Metro",
+          "icon_res": "ic_metro"
+        },
+        {
+          "commercial": "Bus",
+          "icon_res": "ic_bus"
+        },
+        {
+          "commercial": "Coach",
+          "icon_res": "ic_bus"
+        }
+      ],
       "filters": [
         {
           "category_name_res": "transport",
@@ -282,8 +329,43 @@ Please check the example below to know more about the structure of the configura
 - Using Configuration object
 
 ```kotlin
+// Configure lines
+val linesConfiguration = listOf(
+    AroundMeConfigurationLine(
+        code = "a",
+        iconRes = "ic_metro_a",
+        commercial = "Metro"
+    ),
+    AroundMeConfigurationLine(
+        code = "C2",
+        iconRes = "ic_bus_c1",
+        commercial = "Bus"
+    ),
+    AroundMeConfigurationLine(
+        code = "a",
+        iconRes = "ic_bus_c2",
+        commercial = "Bus"
+    )
+)
+
+// Configure modes
+val modesConfiguration = listOf(
+    AroundMeConfigurationMode(
+        commercial = "Metro",
+        iconRes = "ic_metro"
+    ),
+    AroundMeConfigurationMode(
+        commercial = "Bus",
+        iconRes = "ic_bus"
+    ),
+    AroundMeConfigurationMode(
+        commercial = "Coach",
+        iconRes = "ic_bus"
+    )
+)
+
 // Configure filters
-listOf(
+val filtersConfiguration = listOf(
     // Add stations category
     ConfigurationFilterCategory("stations", listOf(
         ConfigurationFilterSubcategory(
@@ -324,7 +406,7 @@ listOf(
 val bookButtonConfiguration = ConfigurationBookButton("book_bss", "book_car_park", "book_stop_point")
 
 // Setup configuration object
-val configuration = Configuration(filtersConfiguration, bookButtonConfiguration)
+val configuration = Configuration(linesConfiguration, modesConfiguration, filtersConfiguration, bookButtonConfiguration)
 ```
 
 Please note that calling `AroundMeUI.getInstance().resetUserPreferences()` will reset filters configuration and the content of the [filters](/navitia_sdk_docs/aroundme/android/screen#filters) screen.

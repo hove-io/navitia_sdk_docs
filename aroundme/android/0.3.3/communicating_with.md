@@ -19,8 +19,8 @@ The `Router` module should be initialized also with the right parameters since i
 ```kotlin
 if (!Router.getInstance().isInit) {
     Router.getInstance()
-        .register(aroundMe = AroundMeUI.getInstance().aroundMeActivityDelegate)
-        .register(journey = JourneysUI.getInstance().activityDelegate)
+        .register(aroundMe = AroundMeUI.getInstance().delegate)
+        .register(journey = JourneysUI.getInstance().delegate)
         .init()
 }
 ```
