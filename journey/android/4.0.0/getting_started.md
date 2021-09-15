@@ -118,7 +118,7 @@ JourneyUI.getInstance().let { instance ->
       coverage = "YOUR_COVERAGE",
       token = "YOUR_TOKEN",
       configurationJsonFile = "config.json",
-      env = AroundMeEnvironment.PROD
+      env = ExpertEnvironment.PROD
    )
    instance.attachActivity(this)
 }
@@ -138,7 +138,7 @@ You can call this method before or after `init()`.
 
 </div>
 
-Then, you can call `JourneysUI.getInstance().getActivityDelegate()` to obtain the delegate.
+Then, you can call `JourneysUI.getInstance().delegate` to obtain the delegate.
 If you try to access it without attaching an activity before, an exception will be thrown.
 
 ```kotlin
@@ -176,7 +176,7 @@ val journeysRequest = JourneysRequest().apply {
     originLabel = "My home"
     originId = "2.3665844;48.8465337"
     destinationId = "2.2979169;48.8848719"
-    addPoiInfos = listOf("bss_stands", "car_park")
+    addPoiInfos = setOf("bss_stands", "car_park")
     count = 10
 }
 supportFragmentManager.beginTransaction().run {
@@ -211,8 +211,8 @@ The table below explains the different methods of the builder that you are able 
 
 #### Transport Mode
 
-A transport mode is used to filter a journeys query. It is necessary to add a list of transport mode to `JourneysRequest` in order to obtain the desired results.
-`TransportModeModel` represents a transport mode. You need to request Navitia first to get your available list of physical modes for your coverage:
+A transport mode is used to filter a journeys query. It is necessary to add a list of transport mode if you intend to use the form.
+`TransportMode` represents a transport mode. You need to request Navitia first to get your available list of physical modes for your coverage:
 `https://api.navitia.io/v1/coverage/<COVERAGE>/physical_modes`
 
 <div markdown="1">
@@ -221,9 +221,9 @@ A transport mode is used to filter a journeys query. It is necessary to add a li
 | --- | --- |:---:| --- | --- |
 | titleRes | `@StringRes Int` | ✓ | String resource ID of the mode | `R.string.ic_tramway` |
 | iconRes | `@DrawableRes Int` | ✗ | Icon resource ID of the mode | `R.id.ic_tramway` |
-| firstSectionModes | `Set<String>` | ✗ | List of modes to use at the begining of the journey | `setOf("walking", "bike", "car", "bss", "ridesharing")` |
-| lastSectionModes | `Set<String>` | ✗ | List of modes to use at the end of the journey | `setOf("walking", "bike", "car", "bss", "ridesharing")` |
-| directPathMode | `Set<String>` | ✗ | List of modes to use at the end of the journey | `setOf("walking", "bike", "car", "bss", "ridesharing")` |
+| firstSectionModes | `Set<String>` | ✗ | List of section modes to use at the beginning of the journey | `setOf("walking", "bike", "car", "bss", "ridesharing")` |
+| lastSectionModes | `Set<String>` | ✗ | List of section modes to use at the end of the journey | `setOf("walking", "bike", "car", "bss", "ridesharing")` |
+| directPathMode | `Set<String>` | ✗ | List of section modes to use for a full journey | `setOf("walking", "bike", "car", "bss", "ridesharing")` |
 | physicalModes | `Set<String>` | ✗ | Physical modes of the mode | `setOf("physical_mode:Bike", "physical_mode:Train")` |
 | isRealTime | `Boolean` | ✗ | To indicate if real time is enabled | `false` |
 | isSelected | `Boolean` | ✗ | To indicate if the transport mode is selected | `true` |
@@ -264,11 +264,11 @@ val transportModes = listOf(
 | `originAddress` | `String` | ✗ | Origin address | `"20 Rue Hector Malot, 75012, Paris"` |
 | `destinationId` | `String` | ✓ | Destination coordinates, following the format `lon;lat` | `"2.2979169;48.8848719"` |
 | `destinationLabel` | `String` | ✗ | Destination label, if not set the address will be displayed | `"Work"` |
-| `destinationAddress` | `String` | ✗ | Destination address| `"20 Rue Hector Malot, 75012, Paris"` |
+| `destinationAddress` | `String` | ✗ | Destination address | `"20 Rue Hector Malot, 75012, Paris"` |
 | `datetime` | `DateTime` | ✗ | Requested date and time for journey results | `DateTime.now()` |
-| `datetimeRepresents` | `String` | ✗ | Can be `.DEPARTURE` (journeys after datetime) or `.ARRIVAL` (journeys before datetime). | `JourneysRequest.DEPARTURE` |
+| `datetimeRepresents` | `DateTimeRepresents` | ✗ | Can be `.DEPARTURE` (journeys after datetime) or `.ARRIVAL` (journeys before datetime). | `DateTimeRepresents.DEPARTURE` |
 | `forbiddenUris` | `Set<String>` | ✗ | Used to avoid lines, modes, networks, etc in the Journey search (List of navitia uris) | `setOf("commercial_mode:Bus", "line:1")` |
-| `allowedId` | `Set<String>` | ✗ | If you want to use only a small subset of the public transport objects in the Journey search (List of navitia uris) | `listOf("commercial_mode:Bus", "line:1")` |
+| `allowedId` | `List<String>` | ✗ | If you want to use only a small subset of the public transport objects in the Journey search (List of navitia uris) | `listOf("commercial_mode:Bus", "line:1")` |
 | `firstSectionModes` | `Set<String>` | ✗ | List of modes to use at the begining of the journey | `setOf("walking", "bike", "car", "bss", "ridesharing")` |
 | `lastSectionModes` | `Set<String>` | ✗ | List of modes to use at the end of the journey | `setOf("walking", "bike", "car", "bss", "ridesharing")` |
 | `count` | `Int` | ✗ | The number of journeys that will be displayed | `3` |
@@ -277,8 +277,8 @@ val transportModes = listOf(
 | `addPoiInfos` | `Set<String>` | ✗ | Allow the display of the availability in real time for bike share and car park | `setOf("bss_stands", "car_park")` |
 | `directPathMode` | `Set<String>` | ✗ | Allow full journeys with section modes | `setOf("car", "bike")` |
 | `physicalModes` | `Set<String>` | ✗ | Allowed physical modes in the coverage | `setOf("physical_mode:Metro", "physical_mode:Bus")` |
-| `dataFreshness` | `String` | ✗ | To indicate if theoretical or realtime data are requested | `"realtime"` |
-| `travelerType` | `String` | ✗ | To give extra information about the traveler state| `Constant.TRAVELER_TYPE_STANDARD` |
+| `dataFreshness` | `DataFreshness` | ✗ | To indicate if theoretical or realtime data are requested | `DataFreshness.REALTIME` |
+| `travelerType` | `TravelerType` | ✗ | To give extra information about the traveler state | `TravelerType.TRAVELER_TYPE_STANDARD` |
 
 </div>
 
@@ -404,7 +404,7 @@ JourneyUI.getInstance().let { instance ->
       coverage = "YOUR_COVERAGE",
       token = "YOUR_TOKEN",
       configuration = iconsConfiguration,
-      env = AroundMeEnvironment.PROD
+      env = ExpertEnvironment.PROD
    )
    instance.attachActivity(this)
 }

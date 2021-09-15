@@ -135,7 +135,7 @@ You can call this method before or after `init()`.
 
 </div>
 
-Then, you can call `AroundMeUI.getInstance().getActivityDelegate()` to obtain the delegate.
+Then, you can call `AroundMeUI.getInstance().delegate` to obtain the delegate.
 If you try to access it without attaching an activity before, an exception will be thrown.
 
 ```kotlin
