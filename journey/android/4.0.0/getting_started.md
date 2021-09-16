@@ -341,10 +341,6 @@ Please check the example below to know more about the structure of the configura
     {
       "commercial": "Bus",
       "icon_res": "ic_bus"
-    },
-    {
-      "commercial": "Coach",
-      "icon_res": "ic_bus"
     }
   ]
 }
@@ -380,10 +376,6 @@ val modesConfiguration = listOf(
     ),
     ConfigurationMode(
         id = "Bus",
-        iconRes = "ic_bus"
-    ),
-    ConfigurationMode(
-        id = "Coach",
         iconRes = "ic_bus"
     )
 )
