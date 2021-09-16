@@ -100,6 +100,9 @@ This method takes the following parameters:
 
 </div>
 
+#### Example
+{: .no_toc }
+
 ```kotlin
 AroundMeUI.getInstance().let { instance ->
     instance.init(
@@ -116,6 +119,29 @@ AroundMeUI.getInstance().let { instance ->
    )
    instance.attachActivity(this)
 }
+```
+
+### Activity delegation
+
+Since the module launches its fragments, you may want to execute their `onBackPressed()` from your activity.
+For that, you have to attach the activity that will host fragments to `AroundMeUI.getInstance()`. This will provide a delegate which will execute `onBackPressed()` on the displayed fragment.\
+You can call this method before or after `init()`.
+
+<div markdown="1">
+
+| Method | Description |
+| --- | --- |
+| `.attachActivity(AppCompatActivity)` | Attach the activity that will host Schedule fragments |
+
+</div>
+
+Then, you can call `AroundMeUI.getInstance().delegate` to obtain the delegate.
+If you try to access it without attaching an activity before, an exception will be thrown.
+
+```kotlin
+AroundMeUI.getInstance().attachActivity(AppCompatActivity)
+...
+AroundMeUI.getInstance().delegate.onBackPressed()
 ```
 
 ## 🚀  Launching
