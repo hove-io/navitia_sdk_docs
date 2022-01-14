@@ -51,7 +51,7 @@ end
 This module is set up by calling `AroundMe.shared`. The singleton has attributes which allow you to configure the module. 
 Then, you need to call the `initialize()` method at the end. \
 
-### Parameters of `AroundMe.shared.initialize()` : 
+### Parameters of `AroundMe.shared.initialize()`
 
 <div markdown="1">
 
@@ -72,7 +72,7 @@ Then, you need to call the `initialize()` method at the end. \
 
 </div>
 
-### Example of initialization :  
+### Example of initialization
 
 ```swift
 do {
@@ -88,7 +88,7 @@ do {
                                                  addPoiInfos: [])
                               ]
                               
-    let aroundmeColorsConfiguration = AroundMeColorsConfiguration(primaryColor: #88819f, secondaryColor: #8faa96)
+    let aroundmeColorsConfiguration = AroundMeColorsConfiguration(primaryColor: "#88819f", secondaryColor: "#8faa96")
                     
     let aroundMeFeaturesConfiguration = AroundMeFeaturesConfiguration(goFromGoTo: false,
                                                                       bookingInfo: true,
@@ -105,7 +105,7 @@ do {
 }                                   
 ```
 
-### Example of initialization with JSON file :  
+### Example of initialization with JSON file
 
 ```swift
 do {
@@ -133,7 +133,7 @@ navigationController?.pushViewController(aroundMeViewController, animated: false
 
 The object `AroundMeColorsConfiguration` allow you to configure the colors of the SDK.
 
-#### Parameters of `AroundMeColorsConfiguration` :  
+#### Parameters of `AroundMeColorsConfiguration`
 
 <div markdown="1">
 
@@ -144,10 +144,10 @@ The object `AroundMeColorsConfiguration` allow you to configure the colors of th
 
 </div>
 
-#### Example of initialization :  
+#### Example of initialization
 
 ```swift
-    let aroundmeColorsConfiguration = AroundMeColorsConfiguration(primaryColor: #88819f, secondaryColor: #8faa96)
+    let aroundmeColorsConfiguration = AroundMeColorsConfiguration(primaryColor: "#88819f", secondaryColor: "#8faa96")
 ```
 
 ### Icons
@@ -158,7 +158,7 @@ The module offers the possibility to customize the icons of modes of transport a
 
 The `lineResource` is an object of transport lines datas.
 
-#### Parameters of `lineResource` :  
+#### Parameters of `lineResource`
 
 <div markdown="1">
 
@@ -170,7 +170,7 @@ The `lineResource` is an object of transport lines datas.
 
 </div>
 
-#### Example of initialization :  
+#### Example of initialization
 
 ```swift
     let commercialMode = CommercialMode(id: "id", name: "Bus")
@@ -181,7 +181,7 @@ The `lineResource` is an object of transport lines datas.
 
 The `ModeResource` is an object of transport modes datas.
 
-#### Parameters of `ModeResource` :  
+#### Parameters of `ModeResource`
 
 <div markdown="1">
 
@@ -192,7 +192,7 @@ The `ModeResource` is an object of transport modes datas.
 
 </div>
 
-#### Example of initialization :  
+#### Example of initialization
 
 ```swift
     let commercialMode = CommercialMode(id: "id", name: "Bus")
@@ -203,7 +203,7 @@ The `ModeResource` is an object of transport modes datas.
 
 The `PoiCategory` is an object that content POI informations.
 
-#### Parameters of `PoiCategory` :  
+#### Parameters of `PoiCategory`
 
 <div markdown="1">
 
@@ -214,7 +214,7 @@ The `PoiCategory` is an object that content POI informations.
 
 </div>
 
-#### Parameters of `PoiSubcategory` :  
+#### Parameters of `PoiSubcategory`
 
 <div markdown="1">
 
@@ -228,27 +228,27 @@ The `PoiCategory` is an object that content POI informations.
 
 </div>
 
-#### Example of initialization :  
+#### Example of initialization
 
 ```swift
     let poiTypeSubCategory = PoiTypeSubcategory(nameRes: "bike", 
                                                 poiTypeId: "BIKE")
                                                 
-    let subcategorie = PoiSubcategory(iconRes: "ic_bike",
+    let subcategory = PoiSubcategory(iconRes: "ic_bike",
                                       nameRes: "bike",
                                       selected: true,
                                       group: .freeFloating,
                                       types: [poiTypeSubCategory])
                                       
-    let poiCategorie = PoiCategory(nameRes: "free floating",
+    let poiCategory = PoiCategory(nameRes: "free floating",
                                    subcategories: [subcategorie]) 
 ```
 
-- Provider's
+- Providers
 
 The `ProviderResource` is an object that content the provider informations.
 
-#### Parameters of `ProviderResource` :  
+#### Parameters of `ProviderResource`
 
 <div markdown="1">
 
@@ -260,7 +260,7 @@ The `ProviderResource` is an object that content the provider informations.
 
 </div>
 
-#### Example of initialization :  
+#### Example of initialization
 
 ```swift
     let providerResource = ProviderResource(typeId: "SCOOTER",
@@ -276,7 +276,7 @@ The module offers the possibility to customize some texts like titles or booking
 
 The `AroundMeBookingResources` is an object that content booking informations.
 
-#### Parameters of `AroundMeBookingResources` :  
+#### Parameters of `AroundMeBookingResources`
 
 <div markdown="1">
 
@@ -288,7 +288,7 @@ The `AroundMeBookingResources` is an object that content booking informations.
 
 </div>
 
-#### Example of initialization :  
+#### Example of initialization
 
 ```swift
     let bookingResources = AroundMeBookingResources(bssRes: "book_bss",
