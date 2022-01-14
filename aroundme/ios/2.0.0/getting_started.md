@@ -310,7 +310,7 @@ The `AroundMeTitlesResources` is an object that content titles.
 
 </div>
 
-#### Example of initialization :  
+#### Example of initialization
 
 ```swift
     let titlesResources = AroundMeTitlesResources(filters: "filters_screen_title")
@@ -320,7 +320,7 @@ The `AroundMeTitlesResources` is an object that content titles.
 
 The object `TransportCategory` allow you to define a category of transport. It is also used to be displayed in the filters page.
 
-#### Parameters of `TransportCategory` :  
+#### Parameters of `TransportCategory`
 
 <div markdown="1">
 
@@ -337,7 +337,7 @@ The object `TransportCategory` allow you to define a category of transport. It i
 
 </div>
 
-#### Example of initialization : 
+#### Example of initialization
 
 ```swift
     let physicalModes = [TransportPhysicalMode(physicalModeId: "physical_mode:Metro", nameRes: "metro")]
@@ -355,7 +355,7 @@ The object `TransportCategory` allow you to define a category of transport. It i
 
 The object `AroundMeFeaturesConfiguration` allow you to enable or not some features.
 
-#### Parameters of `AroundMeFeaturesConfiguration` :  
+#### Parameters of `AroundMeFeaturesConfiguration` 
 
 <div markdown="1">
 
@@ -367,7 +367,7 @@ The object `AroundMeFeaturesConfiguration` allow you to enable or not some featu
 
 </div>
 
-#### Example of initialization : 
+#### Example of initialization
 
 ```swift
    let aroundMeLocation = AroundMeLocation(lat: "48.846790", lon: "2.377090")
