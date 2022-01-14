@@ -52,6 +52,7 @@ This module is set up by calling `AroundMe.shared`. The singleton has attributes
 Then, you need to call the `initialize()` method at the end. \
 
 ### Parameters of `AroundMe.shared.initialize()`
+{: .no_toc }
 
 <div markdown="1">
 
@@ -73,6 +74,7 @@ Then, you need to call the `initialize()` method at the end. \
 </div>
 
 ### Example of initialization
+{: .no_toc }
 
 ```swift
 do {
@@ -106,6 +108,7 @@ do {
 ```
 
 ### Example of initialization with JSON file
+{: .no_toc }
 
 ```swift
 do {
@@ -134,6 +137,7 @@ navigationController?.pushViewController(aroundMeViewController, animated: false
 The object `AroundMeColorsConfiguration` allow you to configure the colors of the SDK.
 
 #### Parameters of `AroundMeColorsConfiguration`
+{: .no_toc }
 
 <div markdown="1">
 
@@ -145,6 +149,7 @@ The object `AroundMeColorsConfiguration` allow you to configure the colors of th
 </div>
 
 #### Example of initialization
+{: .no_toc }
 
 ```swift
     let aroundmeColorsConfiguration = AroundMeColorsConfiguration(primaryColor: "#88819f", secondaryColor: "#8faa96")
@@ -159,6 +164,7 @@ The module offers the possibility to customize the icons of modes of transport a
 The `lineResource` is an object of transport lines datas.
 
 #### Parameters of `lineResource`
+{: .no_toc }
 
 <div markdown="1">
 
@@ -171,6 +177,7 @@ The `lineResource` is an object of transport lines datas.
 </div>
 
 #### Example of initialization
+{: .no_toc }
 
 ```swift
     let commercialMode = CommercialMode(id: "id", name: "Bus")
@@ -182,6 +189,7 @@ The `lineResource` is an object of transport lines datas.
 The `ModeResource` is an object of transport modes datas.
 
 #### Parameters of `ModeResource`
+{: .no_toc }
 
 <div markdown="1">
 
@@ -193,6 +201,7 @@ The `ModeResource` is an object of transport modes datas.
 </div>
 
 #### Example of initialization
+{: .no_toc }
 
 ```swift
     let commercialMode = CommercialMode(id: "id", name: "Bus")
@@ -204,6 +213,7 @@ The `ModeResource` is an object of transport modes datas.
 The `PoiCategory` is an object that content POI informations.
 
 #### Parameters of `PoiCategory`
+{: .no_toc }
 
 <div markdown="1">
 
@@ -215,6 +225,7 @@ The `PoiCategory` is an object that content POI informations.
 </div>
 
 #### Parameters of `PoiSubcategory`
+{: .no_toc }
 
 <div markdown="1">
 
@@ -229,6 +240,7 @@ The `PoiCategory` is an object that content POI informations.
 </div>
 
 #### Example of initialization
+{: .no_toc }
 
 ```swift
     let poiTypeSubCategory = PoiTypeSubcategory(nameRes: "bike", 
@@ -249,6 +261,7 @@ The `PoiCategory` is an object that content POI informations.
 The `ProviderResource` is an object that content the provider informations.
 
 #### Parameters of `ProviderResource`
+{: .no_toc }
 
 <div markdown="1">
 
@@ -261,6 +274,7 @@ The `ProviderResource` is an object that content the provider informations.
 </div>
 
 #### Example of initialization
+{: .no_toc }
 
 ```swift
     let providerResource = ProviderResource(typeId: "SCOOTER",
@@ -277,6 +291,7 @@ The module offers the possibility to customize some texts like titles or booking
 The `AroundMeBookingResources` is an object that content booking informations.
 
 #### Parameters of `AroundMeBookingResources`
+{: .no_toc }
 
 <div markdown="1">
 
@@ -289,6 +304,7 @@ The `AroundMeBookingResources` is an object that content booking informations.
 </div>
 
 #### Example of initialization
+{: .no_toc }
 
 ```swift
     let bookingResources = AroundMeBookingResources(bssRes: "book_bss",
@@ -301,6 +317,7 @@ The `AroundMeBookingResources` is an object that content booking informations.
 The `AroundMeTitlesResources` is an object that content titles.
 
 #### Parameters of `AroundMeTitlesResources` :  
+{: .no_toc }
 
 <div markdown="1">
 
@@ -311,6 +328,7 @@ The `AroundMeTitlesResources` is an object that content titles.
 </div>
 
 #### Example of initialization
+{: .no_toc }
 
 ```swift
     let titlesResources = AroundMeTitlesResources(filters: "filters_screen_title")
@@ -321,6 +339,7 @@ The `AroundMeTitlesResources` is an object that content titles.
 The object `TransportCategory` allow you to define a category of transport. It is also used to be displayed in the filters page.
 
 #### Parameters of `TransportCategory`
+{: .no_toc }
 
 <div markdown="1">
 
@@ -338,6 +357,7 @@ The object `TransportCategory` allow you to define a category of transport. It i
 </div>
 
 #### Example of initialization
+{: .no_toc }
 
 ```swift
     let physicalModes = [TransportPhysicalMode(physicalModeId: "physical_mode:Metro", nameRes: "metro")]
@@ -356,6 +376,7 @@ The object `TransportCategory` allow you to define a category of transport. It i
 The object `AroundMeFeaturesConfiguration` allow you to enable or not some features.
 
 #### Parameters of `AroundMeFeaturesConfiguration` 
+{: .no_toc }
 
 <div markdown="1">
 
@@ -368,6 +389,7 @@ The object `AroundMeFeaturesConfiguration` allow you to enable or not some featu
 </div>
 
 #### Example of initialization
+{: .no_toc }
 
 ```swift
    let aroundMeLocation = AroundMeLocation(lat: "48.846790", lon: "2.377090")
@@ -386,7 +408,7 @@ Please check the example below to know more about the structure of the configura
 ```json
     {
   "coverage": "fr-idf",
-  "token": "0de19ce5-e0eb-4524-a074-bda3c6894c19",
+  "token": "navitia_token",
   "env": "PROD",
   "colors": {
     "aroundme": {
