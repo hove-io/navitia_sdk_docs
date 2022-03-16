@@ -49,9 +49,10 @@ end
 ## 👨‍💻 Implementation
 
 Each module are configurable with a unique configuration.
-This module is set up by calling `Schedule.shared`. The singleton has attributes which allow you to configure the module. Then, you need to call the `initialize()` method at the end. \
+This module is set up by calling `Schedule.shared`. The singleton has attributes which allow you to configure the module. Then, you need to call the `initialize()` method at the end.
 
-### Parameters of `Schedule.shared.initialize()` : 
+### Parameters 
+{: .no_toc }
 
 <div markdown="1">
 
@@ -159,6 +160,7 @@ navigationController?.pushViewController(scheduleViewController, animated: false
 The object `ScheduleColorsConfiguration` allow you to configure the colors of the SDK.
 
 #### `ScheduleColorsConfiguration`
+{: .no_toc }
 
 <div markdown="1">
 

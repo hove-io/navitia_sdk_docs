@@ -49,9 +49,10 @@ end
 ## 👨‍💻 Implementation
 
 Each module are configurable with a unique configuration.
-This module is set up by calling `JourneySdk.shared`. The singleton has attributes which allow you to configure the module. Then, you need to call the `initialize()` method at the end. \
+This module is set up by calling `JourneySdk.shared`. The singleton has attributes which allow you to configure the module. Then, you need to call the `initialize()` method at the end. 
 
-### Parameters of `Journey.shared.initialize()` : 
+#### Parameters 
+{: .no_toc }
 
 <div markdown="1">
 
@@ -188,6 +189,7 @@ navigationController?.pushViewController(journeyViewController, animated: false)
 The object `JourneyColorsConfiguration` allow you to configure the colors of the SDK.
 
 #### `JourneyColorsConfiguration`
+{: .no_toc }
 
 <div markdown="1">
 
@@ -225,7 +227,8 @@ The object `JourneyColorsConfiguration` allow you to configure the colors of the
 
 The object `JourneyFeatureConfiguration` allow you to configure the features of the SDK.
 
-#### Parameters of `JourneyFeatureConfiguration` :  
+#### `JourneyFeatureConfiguration` 
+{: .no_toc }
 
 <div markdown="1">
 
