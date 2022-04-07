@@ -39,7 +39,7 @@ In your project, add the following lines to your `Podfile`:
 platform :ios, '10.0' # Minimum deployment target
 use_frameworks!
 
-source 'https://github.com/CanalTP/Podspecs.git' # Expert podspec URL
+source 'https://github.com/hove-io/Podspecs.git' # Expert podspec URL
 
 target 'YOUR_PROJECT_SCHEME' do
   pod 'ExpertSDK', '~> 0.2.0' # Expert Pod definition

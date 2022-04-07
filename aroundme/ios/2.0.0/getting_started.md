@@ -39,7 +39,7 @@ In your project, add the following lines to your `Podfile`:
 platform :ios, '10.0' # Minimum deployment target
 use_frameworks!
 
-source 'https://github.com/CanalTP/Podspecs.git' # Around Me podspec URL
+source 'https://github.com/hove-io/Podspecs.git' # Around Me podspec URL
 
 target 'YOUR_PROJECT_SCHEME' do
   pod 'AroundMeSDK', '~> 0.2.0' # Around Me Pod definition
@@ -49,7 +49,7 @@ end
 ## 👨‍💻  Implementation
 
 This module is set up by calling `AroundMe.shared`. The singleton has attributes which allow you to configure the module. 
-Then, you need to call the `initialize()` method at the end. \
+Then, you need to call the `initialize()` method at the end.
 
 ### Parameters of `AroundMe.shared.initialize()`
 {: .no_toc }
