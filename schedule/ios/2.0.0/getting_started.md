@@ -39,7 +39,7 @@ In your project, add the following lines to your `Podfile`:
 platform :ios, '10.0' # Minimum deployment target
 use_frameworks!
 
-source 'https://github.com/CanalTP/Podspecs.git' # Schedule podspec URL
+source 'https://github.com/hove-io/Podspecs.git' # Schedule podspec URL
 
 target 'YOUR_PROJECT_SCHEME' do
   pod 'ScheduleSDK', '~> 2.0.0' # Schedule Pod definition
