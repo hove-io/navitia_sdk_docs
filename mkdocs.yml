@@ -1,0 +1,110 @@
+# Project information
+site_name: Navitia SDK Documentation
+site_url: https://hove-io.github.io/navitia_sdk_docs/
+site_author: SDK Team
+site_description: >-
+  Create your own transport application using Navitia SDKs
+  
+# Repository
+repo_name: hove-io/navitia_sdk_docs
+repo_url: https://github.com/hove-io/navitia_sdk_docs
+
+# Copyright
+copyright: Copyright &copy; 2022 Hove
+  
+# Configuration
+theme:
+  name: material
+  features:
+    - navigation.instant
+    - navigation.top
+    - navigation.tracking
+    # - navigation.tabs // If we want to use navigation tabs instead of regular menu 
+    - toc.follow
+    - content.code.annotate
+    - search.share
+  palette:
+    - scheme: navitia-light
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  font:
+    text: Roboto
+    code: Roboto Mono
+  favicon: assets/img/favicon.png
+  logo: assets/img/navitia.svg
+
+# Code snippets/tables/emojis
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - attr_list
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+  - tables
+  #- toc:
+  #    toc_depth: 4
+
+# Social links/languages
+extra:
+  #generator: false // Hide the Made with Material MKDocs
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/hove-io/navitia
+    - icon: fontawesome/brands/medium
+      link: https://navitia-io.medium.com/
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com/hove_kdigital
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/company/kisiodigital
+    - icon: fontawesome/solid/frog
+      link: https://kisiodigital.jfrog.io/
+
+# Page tree
+nav:
+  - Home: index.md
+  - Getting started: getting_started.md
+  #- Around Me:
+  #  - Overview: around_me/overview.md
+  #  - Android: around_me/android/index.md
+  #  - iOS: around_me/ios/index.md
+  - Expert:
+    - Overview: expert/overview.md
+    - Android: expert/android/index.md
+    - iOS: expert/ios/index.md
+  - Journey:
+    - Overview: journey/overview.md
+    - Android: journey/android/index.md
+    - iOS: journey/ios/index.md
+  #- Schedule:
+  #  - Overview: schedule/overview.md
+  #  - Android: schedule/android/index.md
+  #  - iOS: schedule/ios/index.md
+  #- Traffic:
+  #  - Overview: traffic/overview.md
+  #  - Android: traffic/android/index.md
+  #  - iOS: traffic/ios/index.md
+    
+# Extra config
+extra_css:
+  - css/extra.css
+
+# Hide edit button
+edit_uri: ""
+
+# Plugins
+plugins:
+  - search
+  - exclude:
+      glob:
+        - around_me/*
+        - schedule/*
+        - traffic/*
