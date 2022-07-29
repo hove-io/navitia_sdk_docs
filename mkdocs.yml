@@ -105,6 +105,7 @@ plugins:
   - search
   - exclude:
       glob:
+        #- expert/*
         - around_me/*
         - schedule/*
         - traffic/*
