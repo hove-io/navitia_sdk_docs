@@ -4,7 +4,7 @@
 
 #### Features
 - Add Access Point API
-- Add Vehicule Position API
+- Add Vehicle Position API
 - Add Free Floating Nearby API
 
 #### Tasks 
