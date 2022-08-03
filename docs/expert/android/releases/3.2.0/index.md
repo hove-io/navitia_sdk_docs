@@ -11,4 +11,4 @@
 - Replace http URL with https
 
 #### Based on Navitia
-<a target="_blank">https://github.com/CanalTP/navitia/releases/tag/v15.11.1</a>
+<a target="_blank" href="https://github.com/CanalTP/navitia/releases/tag/v15.11.1">https://github.com/CanalTP/navitia/releases/tag/v15.11.1</a>
