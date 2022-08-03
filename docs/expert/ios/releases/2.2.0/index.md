@@ -4,11 +4,11 @@
 
 #### Features
 - Add Access Point API
-- Add Vehicule Position API
+- Add Vehicle Position API
 - Add Free Floating Nearby API
 
 #### Tasks 
 - Replace http URL with https
 
 #### Based on Navitia
-https://github.com/CanalTP/navitia/releases/tag/v15.11.1
+<a target="_blank">https://github.com/CanalTP/navitia/releases/tag/v15.11.1</a>
