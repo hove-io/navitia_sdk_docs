@@ -89,8 +89,79 @@ guard let journeyViewController = JourneySdk.shared.rootViewController else {
   return nil
 }
 
+journeyViewController.journeysRequest = JourneysRequest()
+
 navigationController?.pushViewController(journeyViewController, animated: false)
 ```
+
+### JourneysRequest
+
+The `JourneysRequest` object allows to configure the first itinerary search at screen launch. It has the following parameters:
+
+| Name | Required | Description | Type | Default |
+| --- |:---:| --- | --- | --- |
+| `allowedId`| :material-close: | Allowed Navitia object IDs | `[String]` | `nil` |
+| `addPoiInfos`| :material-close: | Request extra POI infos | [`[AddPoiInfos]`](#addpoiinfos) | `nil` |
+| `count`| :material-close: | The number of journeys to be displayed | `Int` | `nil` |
+| `dataFreshness`| :material-close: | To indicate if theoretical or realtime data are requested | [`DataFreshness`](#datafreshness) | `nil` |
+| `dateTime`| :material-close: | Requested date and time for journey results | `DateTime` | `nil` |
+| `dateTimeRepresents`| :material-close: | Whether the datetime represents the departure or arrival | [`DateTimeRepresents`](#datetimerepresents) | `nil` |
+| `destinationAddress`| :material-close: | Destination point address | `String` | `nil` |
+| `destinationId`| :material-close: | Destination Navitia ID | `String` | `nil` |
+| `destinationLabel`| :material-close: | Destination label, if not set the address will be displayed | `String` | `nil` |
+| `directPathMode`| :material-close: | List of direct path modes | [`[FilterMode]`](#filtermode) | `nil` |
+| `firstSectionModes`| :material-close: | List of first section modes | [`[FilterMode]`](#filtermode) | `nil` |
+| `forbiddenUris`| :material-close: | List of forbidden physical modes | `[String]` | `nil` |
+| `lastSectionModes`| :material-close: | List of last section modes | [`[FilterMode]`](#filtermode) | `nil` |
+| `maxNbJourneys`| :material-close: | The max number of journeys to be displayed | `Int` | `nil` |
+| `minNbJourneys`| :material-close: | The min number of journeys to be displayed | `Int` | `nil` |
+| `originAddress`| :material-close: | Origin point address | `String` | `nil` |
+| `originId`| :material-close: | Origin Navitia ID | `String` | `nil` |
+| `originLabel`| :material-close: | Origin label, if not set the address will be displayed | `String` | `nil` |
+| `travelerType`| :material-close: | Traveler type | [`TravelerType`](#travelertype) | `nil` |
+
+#### AddPoiInfos
+
+| Enum value | Description |
+| --- | --- |
+| `bssStands` | Request the number of available stands in a BSS station |
+| `carPark` | Request the number of available places in a car parking |
+
+#### DataFreshness
+
+| Enum value | Description |
+| --- | --- |
+| `base_schedule` | Get disrupted journeys with the given results |
+| `realtime` | Avoid disrupted journeys |
+
+#### DateTimeRepresents
+
+| Enum value | Description |
+| --- | --- |
+| `arrival` | The requestd datetime represents the arrival of the journey |
+| `departure` | The requested datetime represents the departure of the journey |
+
+#### FilterMode
+
+| Enum value | Description |
+| --- | --- |
+| `taxi` | Taxi |
+| `walking` | Walking |
+| `carNoPark` | Car without park |
+| `car` | Car |
+| `ridesharing` | Ridesharing |
+| `bss` | Bike sharing service |
+| `bike` | Bike |
+
+#### TravelerType
+
+| Enum value | Description |
+| --- | --- |
+| `fast_walker` | Fast walker |
+| `luggage` | With luggage |
+| `slow_walker` | Slow walker |
+| `standard` | Standard profile |
+| `wheelchair` | Using wheelchair |
 
 ## 📱 Screens
 
