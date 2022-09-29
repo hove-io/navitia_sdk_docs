@@ -8,11 +8,11 @@ Please check the [Getting Started](getting_started.md) page before proceeding to
 ### UI modules
 
 * Account (Available soon)
-* Around Me (Available soon)
+* [Around Me](aroundme/overview.md)
 * Crowdsourcing (Available soon)
 * [Journey](journey/overview.md)
-* Schedule (Available soon)
-* Traffic (Available soon)
+* [Schedule](schedule/overview.md)
+* [Traffic](traffic/overview.md)
 
 ### Data modules
 
