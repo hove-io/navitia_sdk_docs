@@ -8,7 +8,7 @@ Please check the [Getting Started](getting_started.md) page before proceeding to
 ### UI modules
 
 * Account (Available soon)
-* [Around Me](aroundme/overview.md)
+* [Around Me](around_me/overview.md)
 * Crowdsourcing (Available soon)
 * [Journey](journey/overview.md)
 * [Schedule](schedule/overview.md)
