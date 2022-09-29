@@ -72,10 +72,10 @@ extra:
 nav:
   - Home: index.md
   - Getting started: getting_started.md
-  #- Around Me:
-  #  - Overview: around_me/overview.md
-  #  - Android: around_me/android/index.md
-  #  - iOS: around_me/ios/index.md
+  - Around Me:
+    - Overview: around_me/overview.md
+    - Android: around_me/android/index.md
+    - iOS: around_me/ios/index.md
   - Expert:
     - Overview: expert/overview.md
     - Android: expert/android/index.md
@@ -84,14 +84,14 @@ nav:
     - Overview: journey/overview.md
     - Android: journey/android/index.md
     - iOS: journey/ios/index.md
-  #- Schedule:
-  #  - Overview: schedule/overview.md
-  #  - Android: schedule/android/index.md
-  #  - iOS: schedule/ios/index.md
-  #- Traffic:
-  #  - Overview: traffic/overview.md
-  #  - Android: traffic/android/index.md
-  #  - iOS: traffic/ios/index.md
+  - Schedule:
+    - Overview: schedule/overview.md
+    - Android: schedule/android/index.md
+    - iOS: schedule/ios/index.md
+  - Traffic:
+    - Overview: traffic/overview.md
+    - Android: traffic/android/index.md
+    - iOS: traffic/ios/index.md
     
 # Extra config
 extra_css:
@@ -106,6 +106,6 @@ plugins:
   - exclude:
       glob:
         #- expert/*
-        - around_me/*
-        - schedule/*
-        - traffic/*
+        #- around_me/*
+        #- schedule/*
+        #- traffic/*
