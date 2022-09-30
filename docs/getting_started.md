@@ -233,7 +233,6 @@ The following are the possible configuration parameters:
 | --- |:---:| --- | :---: |
 | `where_shall_we_go`| :material-close: | Enable/disable the journey search mode | `Boolean` |
 | `stop_point_search_mode`| :material-close: | Enable/disable search by stop point instead of stop area | `Boolean` | `false` |
-| `crowdsourcing_mode`| :material-close: | Enable/disable the crowdsourcing mode | `Boolean` |
 | `go_from_go_to`| :material-close: | Show/hide the go from/go to buttons | `Boolean` |
 | `default_location`| :material-close: | The default location on first launch | [`Around Me location`](#around-me-location) |
 | `max_history`| :material-close: | Define the max history items | `Int` |
