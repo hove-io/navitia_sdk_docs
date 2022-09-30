@@ -1,8 +1,17 @@
 # Around Me iOS 3.0.0 Changelogs
 
-<h2>🗓 01 Aug 2022</h2>
+<h2>🗓 29 Sept 2022</h2>
 
-#### Features
-- Map, filters and search screens redesigned
-- Journey mode added
-- Crowdsourcing mode added
+## Features
+- Redesign the whole module
+
+## Dependencies
+- `ToolboxEngine` > `1.6.2`
+- `DesignEngine` > `2.3.0`
+- `RouterEngine` > `0.4.5`
+- `NavitiaSDK` > `2.3.0`
+- `RealmSwift` > `10.29.0`
+- `FlexLayout` > `1.3.23`
+- `PinLayout` > `1.10.2`
+- `MaterialComponents/ProgressView` > `124.2.0`
+- `MaterialComponents/BottomSheet` > `124.2.0`
