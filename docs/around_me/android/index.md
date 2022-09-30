@@ -126,7 +126,7 @@ When the user taps on a marker on the map, the buttons **Go from there** and **G
 
 Clicking on one of the buttons will redirect the user to Journey module with the given origin/destination.<br>
 
-Another way to communicate with [Journey](../../journey/) module is through the [Map](#map) screen and precisely the **Where are we going?** button, this feature should also be enabled by setting the `journey_search_mode` in the [features configuration](../../getting_started/#around-me-features) to `true`.<br>
+Another way to communicate with [Journey](../../journey/) module is through the [Map](#map) screen and precisely the **Where are we going?** button, this feature should also be enabled by setting the `where_shall_we_go` in the [features configuration](../../getting_started/#around-me-features) to `true`.<br>
 
 The `Router` module should also be initialized with the right parameters since it’s mandatory to build the connection between these modules:
 
