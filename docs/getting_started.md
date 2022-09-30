@@ -231,7 +231,8 @@ The following are the possible configuration parameters:
 
 | Name | Required | Description | Type |
 | --- |:---:| --- | :---: |
-| `journey_search_mode`| :material-close: | Enable/disable the journey search mode | `Boolean` |
+| `where_shall_we_go`| :material-close: | Enable/disable the journey search mode | `Boolean` |
+| `stop_point_search_mode`| :material-close: | Enable/disable search by stop point instead of stop area | `Boolean` | `false` |
 | `crowdsourcing_mode`| :material-close: | Enable/disable the crowdsourcing mode | `Boolean` |
 | `go_from_go_to`| :material-close: | Show/hide the go from/go to buttons | `Boolean` |
 | `default_location`| :material-close: | The default location on first launch | [`Around Me location`](#around-me-location) |
@@ -249,6 +250,7 @@ The following are the possible configuration parameters:
 | Name | Required | Description | Type | Example |
 | --- |:---:| --- | :---: | :---: |
 | `search`| :material-close: | Enable/disable the autocompletion | `Boolean` | `false` |
+| `stop_point_search_mode`| :material-close: | Enable/disable search by stop point instead of stop area | `Boolean` | `false` |
 | `next_departures`| :material-close: | Show/hide the next departures | `Boolean` | `true` |
 | `price`| :material-close: | Show/hide the itinerary price | `Boolean` | `true` |
 | `carbon`| :material-close: | Show/hide the itinerary carbon summary | `Boolean` | `true` |
@@ -605,7 +607,8 @@ Please note that this is the complete version of the configuration, remove unuse
       ]
     },
     "aroundme": {
-      "journey_search_mode": true,
+      "where_shall_we_go": true,
+      "stop_point_search_mode": true,
       "crowdsourcing_mode": true,
       "go_from_go_to": true,
       "default_location": {
@@ -616,6 +619,7 @@ Please note that this is the complete version of the configuration, remove unuse
     },
     "journey": {
       "search": false,
+      "stop_point_search_mode": true,
       "next_departures": true,
       "price": true,
       "carbon": true,
