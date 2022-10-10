@@ -35,5 +35,3 @@
 - `com.google.code.gson:gson` > `2.8.9`
 - `com.kisio.navitia.sdk.data:expert` > `3.2.1`
 - `com.kisio.navitia.sdk.engine:design` > `2.4.0`
-- `com.kisio.navitia.sdk.engine:router` > `1.5.1`
-- `com.kisio.navitia.sdk.engine:toolbox` > `1.5.0`
