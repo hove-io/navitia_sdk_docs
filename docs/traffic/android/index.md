@@ -2,10 +2,11 @@
 
 ## 💻 Setup
 
-Add the following dependency in the `build.gradle` file of your application:
+Add the following dependencies in the `build.gradle` file of your application:
 
 ``` groovy
 dependencies {
+    implementation("com.kisio.navitia.sdk.engine:design:2.4.0")
     implementation("com.kisio.navitia.sdk.ui:traffic:2.0.0")
 }
 ```
