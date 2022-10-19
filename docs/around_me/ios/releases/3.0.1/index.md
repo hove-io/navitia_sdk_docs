@@ -1,4 +1,4 @@
-# AroundMe iOS 3.0.1 Changelogs
+# AroundMe iOS 3.0.1 Changelog
 
 <h2>🗓 29 Sept 2022</h2>
 

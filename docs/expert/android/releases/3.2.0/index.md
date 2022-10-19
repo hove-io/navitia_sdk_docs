@@ -1,4 +1,4 @@
-# Expert Android 3.2.0 Changelogs
+# Expert Android 3.2.0 Changelog
 
 <h2>🗓 03 Aug 2022</h2>
 

@@ -1,4 +1,4 @@
-# Journey Android 5.0.1 Changelogs
+# Journey Android 5.0.1 Changelog
 
 <h2>🗓 1 Sept 2022</h2>
 

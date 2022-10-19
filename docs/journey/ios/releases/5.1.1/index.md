@@ -1,4 +1,4 @@
-# Journey iOS 5.1.1 Changelogs
+# Journey iOS 5.1.1 Changelog
 
 <h2>🗓 12 Oct 2022</h2>
 

@@ -1,4 +1,4 @@
-# Schedule iOS 3.0.1 Changelogs
+# Schedule iOS 3.0.1 Changelog
 
 <h2>🗓 12 Oct 2022</h2>
 

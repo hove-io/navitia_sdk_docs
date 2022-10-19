@@ -1,4 +1,4 @@
-# Journey Android 5.0.0 Changelogs
+# Journey Android 5.0.0 Changelog
 
 <h2>🗓 3 Août 2022</h2>
 
