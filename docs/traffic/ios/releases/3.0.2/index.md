@@ -1,0 +1,16 @@
+# Traffic iOS 3.0.2 Changelog
+
+<h2>🗓 12 Oct 2022</h2>
+
+## Feature
+- Redesign the whole module
+
+## Fixes
+- Remove incompatible dependencies
+
+## Dependencies
+- `DesignEngine` > `2.3.1`
+- `RouterEngine` > `0.4.6`
+- `NavitiaSDK` > `2.3.2`
+- `RealmSwift` > `10.17.0`
+- `XCode` > `13.4`

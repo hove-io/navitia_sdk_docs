@@ -2,4 +2,4 @@
 
 ## Available versions
 
-* [v3.0.1](releases/3.0.1/index.md)
+* [v3.0.2](releases/3.0.2/index.md)
