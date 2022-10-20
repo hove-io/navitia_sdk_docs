@@ -9,9 +9,6 @@
 - Remove incompatible dependencies
 
 ## Dependencies
-- `ToolboxEngine` > `1.6.4`
-- `DesignEngine` > `2.3.1`
-- `RouterEngine` > `0.4.6`
 - `NavitiaSDK` > `2.3.2`
 - `RealmSwift` > `10.17.0`
 - `FlexLayout` > `1.3.23`

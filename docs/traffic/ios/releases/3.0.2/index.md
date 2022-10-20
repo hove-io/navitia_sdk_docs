@@ -1,6 +1,6 @@
 # Traffic iOS 3.0.2 Changelog
 
-<h2>🗓 12 Oct 2022</h2>
+<h2>🗓 20 Oct 2022</h2>
 
 ## Feature
 - Redesign the whole module

@@ -1,6 +1,6 @@
 # Journey Android 5.0.0 Changelog
 
-<h2>🗓 3 Août 2022</h2>
+<h2>🗓 03 Août 2022</h2>
 
 #### Features
 - Can consume a globalized configuration
