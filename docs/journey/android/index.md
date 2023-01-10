@@ -37,7 +37,7 @@ This method takes the following parameters:
 | Name | Required | Description | Type | Default |
 | --- |:---:| --- | :---: | :---: |
 | `context`| :material-check: | Context in which the module is launched | `Context` | :material-close: |
-| `token`| :material-check: | Navitia token | `String` | :material-close: |
+| `token`| :material-check: | <a href="https://navitia.io/inscription/" target="_blank">Get your token</a> | `String` | :material-close: |
 | `configuration`| :material-close: | Module configuration object | [`JourneyConfiguration`](../../getting_started/#modules-configuration) | `null` |
 | `configurationJsonFile`| :material-close: | Module configuration JSON file name | `String` | `null` |
 | `onNavigate`| :material-close: | Listener for the navigation between module screens | `Unit` | `{ _ -> }` |

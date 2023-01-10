@@ -57,7 +57,6 @@ The following are the possible configuration parameters:
 | Name | Required | Description | Type | Possible values | Target modules |
 | --- | :-: | --- | :--: | :---: | :---: |
 | `coverage` | :material-check: | Navitia coverage | `String` | `fr-idf`| All |
-| `token` | :material-check: | Navitia token | `String` | <a href="https://navitia.io/inscription/" target="_blank">Get your token</a> | All |
 | `env` | :material-check: | Navitia environment | `String` | `PROD`, `CUSTOMER` | All |
 | `colors` | :material-check: | Colors configuration | [`Colors`](#colors) | - | UI modules |
 | `transport_categories` | :material-check: | List of supported transport modes | [`[Transport category]`](#transport-category) | - | UI modules |
@@ -389,7 +388,6 @@ Please note that this is the complete version of the configuration, remove unuse
 ``` javascript
 {
   "coverage": "",
-  "token": "",
   "env": "PROD",
   "colors": {
     "account": {
