@@ -6,7 +6,7 @@ Add the following dependencies in the `build.gradle` file of your application:
 
 ``` groovy
 dependencies {
-    implementation("com.kisio.navitia.sdk.ui:journey:5.1.1")
+    implementation("com.kisio.navitia.sdk.ui:journey:5.2.0")
 }
 ```
 
@@ -37,6 +37,7 @@ This method takes the following parameters:
 | Name | Required | Description | Type | Default |
 | --- |:---:| --- | :---: | :---: |
 | `context`| :material-check: | Context in which the module is launched | `Context` | :material-close: |
+| `token`| :material-check: | Navitia token | `String` | :material-close: |
 | `configuration`| :material-close: | Module configuration object | [`JourneyConfiguration`](../../getting_started/#modules-configuration) | `null` |
 | `configurationJsonFile`| :material-close: | Module configuration JSON file name | `String` | `null` |
 | `onNavigate`| :material-close: | Listener for the navigation between module screens | `Unit` | `{ _ -> }` |
