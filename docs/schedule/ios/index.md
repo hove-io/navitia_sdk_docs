@@ -14,6 +14,15 @@ source 'https://github.com/hove-io/Podspecs.git' # Schedule podspec URL
 target 'YOUR_PROJECT_SCHEME' do
   pod 'ScheduleSDK', '3.1.0' # Schedule Pod definition
 end
+
+# Required for XCFramework
+post_install do |installer|
+  installer.pods_project.targets.each do |target|
+    target.build_configurations.each do |config|
+      config.build_settings['BUILD_LIBRARY_FOR_DISTRIBUTION'] = 'YES'
+    end
+  end
+end
 ```
 
 Using your CLI, run `pod install` in your project directory.

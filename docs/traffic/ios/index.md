@@ -14,6 +14,15 @@ source 'https://github.com/hove-io/Podspecs.git' # Traffic podspec URL
 target 'YOUR_PROJECT_SCHEME' do
   pod 'TrafficSDK', '3.0.4' # Traffic Pod definition
 end
+
+# Required for XCFramework
+post_install do |installer|
+  installer.pods_project.targets.each do |target|
+    target.build_configurations.each do |config|
+      config.build_settings['BUILD_LIBRARY_FOR_DISTRIBUTION'] = 'YES'
+    end
+  end
+end
 ```
 
 Using your CLI, run `pod install` in your project directory.
