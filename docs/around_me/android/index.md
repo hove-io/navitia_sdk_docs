@@ -49,6 +49,7 @@ This method takes the following parameters:
 AroundMeUI.getInstance().let { instance ->
     instance.init(
       context = this,
+      token = "your_token",
       configurationJsonFile = "config.json"
    )
    instance.attachActivity(this)

@@ -12,7 +12,7 @@ source 'https://github.com/CocoaPods/Specs.git' # Default Cocoapods URL
 source 'https://github.com/hove-io/Podspecs.git' # Around Me podspec URL
 
 target 'YOUR_PROJECT_SCHEME' do
-  pod 'AroundMeSDK', '3.0.2' # Around Me Pod definition
+  pod 'AroundMeSDK', '3.1.0' # Around Me Pod definition
 end
 ```
 
@@ -27,7 +27,6 @@ This module is set up by calling `AroundMe.shared.initialize()` method which tak
 | Name | Required | Description | Type | Example
 | --- |:---:| --- | :---: | :---: |
 | `coverage`| :material-check: | Navitia coverage | `String` | `fr-idf` |
-| `token`| :material-check: | Navitia token | `String` | `0de19ce5-e0eb-4524-a074-bda3c6894c19` |
 | `env`| :material-check: | Navitia environment | `String` | `PROD` |
 | `colors`| :material-check: | Define the custom colors | [`AroundMeColorsConfiguration`](../../getting_started/#around-me-color) | - |
 | `fonts`| :material-close: | Use custom fonts | [`AroundMeFontsConfiguration`](../../getting_started/#custom-font) | - |
@@ -62,7 +61,7 @@ do {
     let aroundmeColorsConfiguration = AroundMeColorsConfiguration(primaryColor: "#88819f", secondaryColor: "#8faa96")
                                                                       
     try AroundMe.shared.initialize(coverage: "fr-idf",
-                                   token: "0de19ce5-e0eb-4524-a074-bda3c6894c19",
+                                   token: "your_token",
                                    env: "PROD",
                                    colors: aroundmeColorsConfiguration,
                                    transportCategories: transportCategories)                                                                  
@@ -75,7 +74,7 @@ do {
 
 ``` swift
 do {
-    try AroundMe.shared.initialize(configurationJsonFile: "aroundme_configuration.json")                                                               
+    try AroundMe.shared.initialize(token: "your_token", configurationJsonFile: "aroundme_configuration.json")                                                               
 } catch {
     Logger.error("%@", String(format: "Around me SDK cannot be initialized! %@", error.localizedDescription))
 }                                   

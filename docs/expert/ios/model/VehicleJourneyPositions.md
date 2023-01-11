@@ -10,6 +10,6 @@ Name | Type | Note
 **vehicleJourney** | [**VehicleJourney**](VehicleJourney.md) | [optional] 
 **coord** | [**Coord**](Coord.md) | [optional] 
 **occupancy** | **String** | [optional] 
-**speed** | **Int** | [optional] 
+**speed** | **Float** | [optional] 
 **dataFreshness** | **String** | [optional] 
 

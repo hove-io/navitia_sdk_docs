@@ -12,7 +12,7 @@ source 'https://github.com/CocoaPods/Specs.git' # Default Cocoapods URL
 source 'https://github.com/hove-io/Podspecs.git' # Traffic podspec URL
 
 target 'YOUR_PROJECT_SCHEME' do
-  pod 'TrafficSDK', '3.0.2' # Traffic Pod definition
+  pod 'TrafficSDK', '3.0.4' # Traffic Pod definition
 end
 ```
 
@@ -27,7 +27,6 @@ This module is set up by calling `Traffic.shared.initialize()` method which take
 | Name | Required | Description | Type | Example
 | --- |:---:| --- | :---: | :---: |
 | `coverage`| :material-check: | Navitia coverage | `String` | `fr-idf` |
-| `token`| :material-check: | Navitia token | `String` | `0de19ce5-e0eb-4524-a074-bda3c6894c19` |
 | `env`| :material-check: | Navitia environment | `String` | `PROD` |
 | `colors`| :material-check: | Define the custom colors | [`TrafficColorsConfiguration`](../../getting_started/#traffic-color) | - |
 | `fonts`| :material-close: | Use custom fonts | [`TrafficFontsConfiguration`](../../getting_started/#custom-font) | - |
@@ -60,7 +59,7 @@ do {
     let trafficColorsConfiguration = TrafficColorsConfiguration(primaryColor: "#88819f", secondaryColor: "#8faa96")
                                                                       
     try Traffic.shared.initialize(coverage: "fr-idf",
-                                    token: "0de19ce5-e0eb-4524-a074-bda3c6894c19",
+                                    token: "your_token",
                                     env: "PROD",
                                     colors: trafficColorsConfiguration,
                                     transportCategories: transportCategories)                                                                  
@@ -73,7 +72,7 @@ do {
 
 ```swift
 do {
-    try Traffic.shared.initialize(configurationJsonFile: "traffic_configuration.json")                                                               
+    try Traffic.shared.initialize(token: "your_token", configurationJsonFile: "traffic_configuration.json")                                                               
 } catch {
     Logger.error("%@", String(format: "Traffic SDK cannot be initialized! %@", error.localizedDescription))
 }                                   
