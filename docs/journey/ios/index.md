@@ -12,7 +12,7 @@ source 'https://github.com/CocoaPods/Specs.git' # Default Cocoapods URL
 source 'https://github.com/hove-io/Podspecs.git' # Journey podspec URL
 
 target 'YOUR_PROJECT_SCHEME' do
-  pod 'JourneySDK', '5.1.2' # Journey Pod definition
+  pod 'JourneySDK', '5.2.0' # Journey Pod definition
 end
 ```
 
@@ -27,7 +27,6 @@ This module is set up by calling `JourneySdk.shared.initialize()` method which t
 | Name | Required | Description | Type | Example
 | --- |:---:| --- | :---: | :---: |
 | `coverage`| :material-check: | Navitia coverage | `String` | `fr-idf` |
-| `token`| :material-check: | Navitia token | `String` | `0de19ce5-e0eb-4524-a074-bda3c6894c19` |
 | `env`| :material-check: | Navitia environment | `String` | `PROD` |
 | `colors`| :material-check: | Define the custom colors | [`JourneyColorsConfiguration`](../../getting_started/#journey-color) | - |
 | `fonts`| :material-close: | Use custom fonts | [`JourneyFontsConfiguration`](../../getting_started/#custom-font) | - |
@@ -61,7 +60,7 @@ do {
     let journeyColorsConfiguration = JourneyColorsConfiguration(primaryColor: "#88819f", secondaryColor: "#8faa96")
                                                                       
     try JourneySdk.shared.initialize(coverage: "fr-idf",
-                                    token: "0de19ce5-e0eb-4524-a074-bda3c6894c19",
+                                    token: "your_token",
                                     env: "PROD",
                                     colors: journeyColorsConfiguration,
                                     transportCategories: transportCategories)                                                                  
@@ -74,7 +73,7 @@ do {
 
 ```swift
 do {
-    try JourneySdk.shared.initialize(configurationJsonFile: "journey_configuration.json")                                                               
+    try JourneySdk.shared.initialize(token: "your_token", configurationJsonFile: "journey_configuration.json")                                                               
 } catch {
     Logger.error("%@", String(format: "Journey SDK cannot be initialized! %@", error.localizedDescription))
 }                                   

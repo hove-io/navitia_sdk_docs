@@ -12,7 +12,7 @@ source 'https://github.com/CocoaPods/Specs.git' # Default Cocoapods URL
 source 'https://github.com/hove-io/Podspecs.git' # Schedule podspec URL
 
 target 'YOUR_PROJECT_SCHEME' do
-  pod 'ScheduleSDK', '3.0.2' # Schedule Pod definition
+  pod 'ScheduleSDK', '3.1.0' # Schedule Pod definition
 end
 ```
 
@@ -27,7 +27,6 @@ This module is set up by calling `Schedule.shared.initialize()` method which tak
 | Name | Required | Description | Type | Example
 | --- |:---:| --- | :---: | :---: |
 | `coverage`| :material-check: | Navitia coverage | `String` | `fr-idf` |
-| `token`| :material-check: | Navitia token | `String` | `0de19ce5-e0eb-4524-a074-bda3c6894c19` |
 | `env`| :material-check: | Navitia environment | `String` | `PROD` |
 | `colors`| :material-check: | Define the custom colors | [`ScheduleColorsConfiguration`](../../getting_started/#schedule-color) | - |
 | `fonts`| :material-close: | Use custom fonts | [`ScheduleFontsConfiguration`](../../getting_started/#custom-font) | - |
@@ -60,7 +59,7 @@ do {
     let scheduleColorsConfiguration = ScheduleColorsConfiguration(primaryColor: "#88819f", secondaryColor: "#8faa96")
                                                                       
     try Schedule.shared.initialize(coverage: "fr-idf",
-                                    token: "0de19ce5-e0eb-4524-a074-bda3c6894c19",
+                                    token: "your_token",
                                     env: "PROD",
                                     colors: scheduleColorsConfiguration,
                                     transportCategories: transportCategories)                                                                  
@@ -73,7 +72,7 @@ do {
 
 ```swift
 do {
-    try Schedule.shared.initialize(configurationJsonFile: "schedule_configuration.json")                                                               
+    try Schedule.shared.initialize(token: "your_token", configurationJsonFile: "schedule_configuration.json")                                                               
 } catch {
     Logger.error("%@", String(format: "Schedule SDK cannot be initialized! %@", error.localizedDescription))
 }                                   

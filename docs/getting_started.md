@@ -57,7 +57,6 @@ The following are the possible configuration parameters:
 | Name | Required | Description | Type | Possible values | Target modules |
 | --- | :-: | --- | :--: | :---: | :---: |
 | `coverage` | :material-check: | Navitia coverage | `String` | `fr-idf`| All |
-| `token` | :material-check: | Navitia token | `String` | <a href="https://navitia.io/inscription/" target="_blank">Get your token</a> | All |
 | `env` | :material-check: | Navitia environment | `String` | `PROD`, `CUSTOMER` | All |
 | `colors` | :material-check: | Colors configuration | [`Colors`](#colors) | - | UI modules |
 | `transport_categories` | :material-check: | List of supported transport modes | [`[Transport category]`](#transport-category) | - | UI modules |
@@ -109,6 +108,7 @@ The following are the possible configuration parameters:
 | --- |:---:| --- | :---: | :---: |
 | `primary_color`| :material-check: | To set the main color of the screens | `String` | `#88819f` |
 | `secondary_color`| :material-check: | To set the color of some UI components | `String` | `#8faa96` |
+| `tertiary_color`| :material-close: | To set the color of more UI components | `String` | `#efa59f` |
 | `origin_color`| :material-close: | To set the color of the itinerary origin | `String` | `#8faa96` |
 | `origin_background_color`| :material-close: | To set the background color of the itinerary origin | `String` | `#8faa96` |
 | `origin_icon_color`| :material-close: | To set the icon color of the itinerary origin | `String` | `#8faa96` |
@@ -231,8 +231,10 @@ The following are the possible configuration parameters:
 
 | Name | Required | Description | Type |
 | --- |:---:| --- | :---: |
-| `where_shall_we_go`| :material-close: | Enable/disable the journey search mode | `Boolean` |
-| `stop_point_search_mode`| :material-close: | Enable/disable search by stop point instead of stop area | `Boolean` | `false` |
+| `journey_mode`| :material-close: | Enable/disable the journey search mode | `Boolean` |
+| `bookmark_mode`| :material-close: | Enable/disable the bookmarks feature | `Boolean` |
+| `traffic_mode`| :material-close: | Show/hide the traffic button | `Boolean` |
+| `stop_point_search`| :material-close: | Enable/disable search by stop point instead of stop area | `Boolean` | `false` |
 | `go_from_go_to`| :material-close: | Show/hide the go from/go to buttons | `Boolean` |
 | `default_location`| :material-close: | The default location on first launch | [`Around Me location`](#around-me-location) |
 | `max_history`| :material-close: | Define the max history items | `Int` |
@@ -244,12 +246,20 @@ The following are the possible configuration parameters:
 | `lat`| :material-check: | The latitude of the default location | `String` | `"48.846790"` |
 | `lon`| :material-check: | The longitude of the default location | `String` | `"2.377090"` |
 
+#### Bookmark features
+
+| Name | Required | Description | Type | Example |
+| --- |:---:| --- | :---: | :---: |
+| `go_from_go_to`| :material-close: | Show/hide the go from/go to buttons | `Boolean` |
+
 #### Journey features
 
 | Name | Required | Description | Type | Example |
 | --- |:---:| --- | :---: | :---: |
-| `search`| :material-close: | Enable/disable the autocompletion | `Boolean` | `false` |
-| `stop_point_search_mode`| :material-close: | Enable/disable search by stop point instead of stop area | `Boolean` | `false` |
+| `autocompletion`| :material-close: | Enable/disable the autocompletion | `Boolean` | `false` |
+| `bookmark_mode`| :material-close: | Enable/disable the bookmarks feature | `Boolean` |
+| `stop_point_search`| :material-close: | Enable/disable search by stop point instead of stop area | `Boolean` | `false` |
+| `step_by_step_guidance`| :material-close: | Enable/disable the step by step guidance | `Boolean` |
 | `next_departures`| :material-close: | Show/hide the next departures | `Boolean` | `true` |
 | `price`| :material-close: | Show/hide the itinerary price | `Boolean` | `true` |
 | `carbon`| :material-close: | Show/hide the itinerary carbon summary | `Boolean` | `true` |
@@ -263,6 +273,7 @@ The following are the possible configuration parameters:
 | Name | Required | Description | Type |
 | --- |:---:| --- | :---: |
 | `directions_first`| :material-close: | Show destinations before selecting the station | `Boolean` |
+| `bookmark_mode`| :material-close: | Enable/disable the bookmarks feature | `Boolean` |
 | `transport_networks`| :material-close: | Enable/disable grouping lines by network | `Boolean` |
 | `max_history`| :material-close: | Define the max history items | `Int` |
 
@@ -389,7 +400,6 @@ Please note that this is the complete version of the configuration, remove unuse
 ``` javascript
 {
   "coverage": "",
-  "token": "",
   "env": "PROD",
   "colors": {
     "account": {
@@ -407,6 +417,7 @@ Please note that this is the complete version of the configuration, remove unuse
     "journey": {
       "primary_color": "",
       "secondary_color": "",
+      "tertiary_color": "",
       "destination_color": "",
       "destination_background_color": "",
       "destination_icon_color": "",
@@ -606,8 +617,10 @@ Please note that this is the complete version of the configuration, remove unuse
       ]
     },
     "aroundme": {
-      "where_shall_we_go": true,
-      "stop_point_search_mode": true,
+      "journey_mode": true,
+      "bookmark_mode": true,
+      "traffic_mode": true,
+      "stop_point_search": true,
       "crowdsourcing_mode": true,
       "go_from_go_to": true,
       "default_location": {
@@ -616,9 +629,14 @@ Please note that this is the complete version of the configuration, remove unuse
       },
       "max_history": 10
     },
+    "bookmark": {
+      "go_from_go_to": true
+    }
     "journey": {
-      "search": false,
-      "stop_point_search_mode": true,
+      "autocompletion": false,
+      "stop_point_search": true,
+      "bookmark_mode": true,
+      "step_by_step_guidance": true,
       "next_departures": true,
       "price": true,
       "carbon": true,
@@ -631,6 +649,7 @@ Please note that this is the complete version of the configuration, remove unuse
     },
     "schedule": {
       "directions_first": true,
+      "bookmark_mode": true,
       "transport_networks": true,
       "max_history": 10
     },
