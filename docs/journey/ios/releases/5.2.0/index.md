@@ -5,6 +5,7 @@
 #### Features
 - Add step by step feature
 - Sort journeys by reliability
+- Add a tertiary color
 
 #### Tasks
 - Add favorites in autocomplete
