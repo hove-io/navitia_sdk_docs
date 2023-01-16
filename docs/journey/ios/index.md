@@ -171,6 +171,13 @@ After defining all the required parameters, this screen will popup with multiple
 
 Each result gives the needed information to the user in order to planify his journey. He can check the duration, the suggested means of transport, the next departure datetimes and many other useful details. This combination of data, being served by <a href="https://doc.navitia.io" target="_blank">Navitia</a> servers and translated into a comprehensible/user friendly interface, is perfectly shaped to the user profile and needs.
 
+Les itinéraires sont triés dans différents onglets afin d'assurer une meilleure clareté de l'information: transports en commun, marche à pied, vélo, voiture, et covoiturage. Ces dernières catégories s'ajustent en fonction de votre configuration (nous n'affichons que les onglets dont les modes de transport concernés sont configurés).
+
+Dans l'onglet des transports en commun, les itinéraires sont rangé dans deux sous-catégories différentes : les itinéraires dits 'robustes' sont affichés en amont, afin de proposer en premier les meilleurs solutions.
+
+Dans l'onglet vélo nous affichons trois types de trajets différents avec leurs caractéristiques: le plus rapide, le plus confortable et le plus équilibré. Un indiquateur du pourcentage de pistes cyclable est également affiché pour aider l'utilisateur à trouver rapidement l'itinéraire qui lui convient le plus.
+Les itinéraires avec du vélo libre service se situent aussi dans cet onglet.
+
 <img class="img-overview" src="/navitia_sdk_docs/assets/img/journey_ios_journeys_screen.png" alt="Journeys screen">
 
 ### Search
