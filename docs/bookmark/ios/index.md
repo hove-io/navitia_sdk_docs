@@ -103,7 +103,7 @@ navigationController?.pushViewController(bookmarkViewController, animated: false
 
 ### Favorites
 
-The favorites screen centralizes any kind of elements (such as Stations, Bike sharing service stations, Parkings and places) the users add to its favorites in a single easy-to-read screen.<br>
+This screen lists all the favorite stations, Bike sharing service stations, car parkings and addresses added by the user through other UI modules (Around Me, Schedule...) or from within a 3rd party application.<br>
 
 <img class="img-overview" src="/navitia_sdk_docs/assets/img/bookmark_ios_favorites_screen.png" alt="Favorites screen">
 
