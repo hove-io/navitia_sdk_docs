@@ -102,11 +102,15 @@ The `newInstance()` method creates an instance of the target fragment and takes 
 ### Home
 
 The home screen allows the user to see all the lines of the defined coverage. The lines are sorted by the different configurable transport categories.<br>
-Another filter is added for each transport mode in the selected transport category.
+Another filter is added for each transport mode in the selected transport category. 
 
 The lines can also be grouped by networks. To enable this feature, you need to switch the `transport_networks` parameter to `true` in the [features configuration](../../getting_started/#schedule-features). 
 
 <img class="img-overview" src="/navitia_sdk_docs/assets/img/schedule_android_home_screen.png" alt="Home screen">
+
+If there is any favorites stations bookmarked, an additional tab will be shown listing them. Each station has 3 next departures maximum by destination or an empty state if data is unavailable.
+
+<img class="img-overview" src="/navitia_sdk_docs/assets/img/schedule_android_home_favorites_screen.png" alt="Home screen with favorites">
 
 ### Search
 
@@ -133,9 +137,13 @@ In case the `directions_first` parameter is set to `true` in the [features confi
 
 ### Next departures
 
-This screen allows the user to see the next departures of the target transport mode through the selected station which is heading to the choisen destination. The map gives more details about the vehicle journey by drawing the line path and both selected station and destination markers.<br>
+This screen allows the user to see the next departures of the target transport mode through the selected station which is heading to the chosen destination. The map gives more details about the vehicle journey by drawing the line path and both selected station and destination markers.<br>
 
 <img class="img-overview" src="/navitia_sdk_docs/assets/img/schedule_android_station_next_departures_screen.png" alt="Next departures screen">
+
+The user can also bookmark this selected station by taping on the Favorite button on the bottom-left corner of the map. To enable this feature, you need to switch the `bookmark_mode` parameter to `true` in the [features configuration](../../getting_started/#schedule-features). 
+
+<img class="img-overview" src="/navitia_sdk_docs/assets/img/schedule_android_station_next_departures_favorites_screen.png" alt="Next departures screen with favorite">
 
 ### All schedules
 
