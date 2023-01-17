@@ -108,7 +108,12 @@ navigationController?.pushViewController(aroundMeViewController, animated: false
 The map screen represents the main screen of this module. It shows the places nearby the center of the visible region, draws them on the map and adds them to the bottom sliding panel.<br>
 The shown data depend on the selected elements in the [filters](#filters) screen.
 
+In the bottomsheet of the main screen, the last added favorite stations are shown with the next departures for each direction, as well as an All Favorites button that redirects the user to the bookmark module.
+
 <img class="img-overview" src="/navitia_sdk_docs/assets/img/aroundme_ios_map_screen.png" alt="Map screen">
+
+In the details bottomsheet of a station or a POI, there is a star button in order to save or delete it from the bookmarks.
+<img class="img-overview" src="/navitia_sdk_docs/assets/img/aroundme_ios_bookmark_saving_node.png" alt="Traffic mode">
 
 ### Search
 
@@ -150,6 +155,37 @@ The `Router` module should also be initialized with the right parameters since i
 try Router.shared
           .register(journey: JourneySdk.shared.journeyRouter)
           .register(aroundMe: AroundMe.shared.aroundMeRouter)
+          .register(app: self)
+          .initialize()
+```
+
+### Bookmark
+
+This module communicates with [Bookmark](../../bookmark/) module in order to vizualize favorite stations and POIs. You should enable the `bookmark_mode` parameter in the [features configuration](../../getting_started/#around-me-features).<br>
+
+The `Router` module should also be initialized with the right parameters since it’s mandatory to build the connection between these modules:
+
+``` swift
+try Router.shared
+          .register(journey: JourneySdk.shared.journeyRouter)
+          .register(aroundMe: Bookmark.shared.bookmarkRouter)
+          .register(app: self)
+          .initialize()
+```
+
+### Traffic
+
+This module communicates with [Traffic](../../traffic/) module in order to easily access traffic information. You should enable the `traffic_mode` parameter in the [features configuration](../../getting_started/#around-me-features).<br>
+A red traffic button will appear in the top right corner, only when the search bar is hidden.
+
+<img class="img-overview" src="/navitia_sdk_docs/assets/img/aroundme_ios_traffic_button.png" alt="Traffic mode">
+
+The `Router` module should also be initialized with the right parameters since it’s mandatory to build the connection between these modules:
+
+``` swift
+try Router.shared
+          .register(journey: JourneySdk.shared.journeyRouter)
+          .register(aroundMe: Traffic.shared.trafficRouter)
           .register(app: self)
           .initialize()
 ```
