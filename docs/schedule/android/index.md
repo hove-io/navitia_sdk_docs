@@ -108,7 +108,7 @@ The lines can also be grouped by networks. To enable this feature, you need to s
 
 <img class="img-overview" src="/navitia_sdk_docs/assets/img/schedule_android_home_screen.png" alt="Home screen">
 
-If there is any favorites stations bookmarked, an additional tab will be shown listing them. Each station has 3 next departures maximum by destination or an empty state if data is unavailable.
+If there is any favorite station, an additional tab will be shown listing all bookmarked stations. Each station has a maximum of 3 next departures by destination or an empty state if data is unavailable.
 
 <img class="img-overview" src="/navitia_sdk_docs/assets/img/schedule_android_home_favorites_screen.png" alt="Home screen with favorites">
 
@@ -141,7 +141,7 @@ This screen allows the user to see the next departures of the target transport m
 
 <img class="img-overview" src="/navitia_sdk_docs/assets/img/schedule_android_station_next_departures_screen.png" alt="Next departures screen">
 
-The user can also bookmark this selected station by taping on the Favorite button on the bottom-left corner of the map. To enable this feature, you need to switch the `bookmark_mode` parameter to `true` in the [features configuration](../../getting_started/#schedule-features). 
+The user can also bookmark this selected station by taping the Favorite button on the bottom-right corner of the map. To enable this feature, you need to switch the `bookmark_mode` parameter to `true` in the [features configuration](../../getting_started/#schedule-features). 
 
 <img class="img-overview" src="/navitia_sdk_docs/assets/img/schedule_android_station_next_departures_favorites_screen.png" alt="Next departures screen with favorite">
 
