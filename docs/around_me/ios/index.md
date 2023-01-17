@@ -154,6 +154,24 @@ try Router.shared
           .initialize()
 ```
 
+### Traffic
+
+This module communicates with [Traffic](../../traffic/) module in order to easily access traffic information. You should enable the `traffic_mode` parameter in the [features configuration](../../getting_started/#around-me-features).<br>
+A red traffic button will appear in the top right corner, only when the search bar is hidden.
+
+<img class="img-overview" src="/navitia_sdk_docs/assets/img/aroundme_ios_traffic_button.png" alt="Traffic mode">
+
+The `Router` module should also be initialized with the right parameters since it’s mandatory to build the connection between these modules:
+
+``` swift
+try Router.shared
+          .register(journey: JourneySdk.shared.journeyRouter)
+          .register(aroundMe: Traffic.shared.trafficRouter)
+          .register(app: self)
+          .initialize()
+```
+
+
 ### Crowdsourcing
 
 ⚠️ This section will be available soon!
