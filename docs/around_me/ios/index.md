@@ -154,6 +154,26 @@ try Router.shared
           .initialize()
 ```
 
+### Bookmark
+
+This module communicates with [Bookmark](../../bookmark/) module in order to vizualize, save or delete some favorite stations or places. You should enable the `bookmark_mode` parameter in the [features configuration](../../getting_started/#around-me-features).<br>
+
+In the bottomsheet of the main screen, the three first bookmarks are shown with there next departures, as well as a favorite button that redirect the user to the bookmark module.
+<img class="img-overview" src="/navitia_sdk_docs/assets/img/aroundme_ios_bookmark_node.png" alt="Traffic mode">
+
+In the detail bottomsheet of a station or a place, there is a star button in order to save or delete it from the bookmarks.
+<img class="img-overview" src="/navitia_sdk_docs/assets/img/aroundme_ios_bookmark_saving_node.png" alt="Traffic mode">
+
+The `Router` module should also be initialized with the right parameters since it’s mandatory to build the connection between these modules:
+
+``` swift
+try Router.shared
+          .register(journey: JourneySdk.shared.journeyRouter)
+          .register(aroundMe: Bookmark.shared.bookmarkRouter)
+          .register(app: self)
+          .initialize()
+```
+
 ### Traffic
 
 This module communicates with [Traffic](../../traffic/) module in order to easily access traffic information. You should enable the `traffic_mode` parameter in the [features configuration](../../getting_started/#around-me-features).<br>
@@ -170,7 +190,6 @@ try Router.shared
           .register(app: self)
           .initialize()
 ```
-
 
 ### Crowdsourcing
 

@@ -141,6 +141,21 @@ if (!Router.getInstance().isInit) {
 }
 ```
 
+### Bookmark
+
+This module communicates with [Bookmark](../../bookmark/) module in order to vizualize, save or delete some favorite stations or places. You should enable the `bookmark_mode` parameter in the [features configuration](../../getting_started/#around-me-features).<br>
+
+The `Router` module should also be initialized with the right parameters since it’s mandatory to build the connection between these modules:
+
+``` kotlin
+if (!Router.getInstance().isInit) {
+    Router.getInstance()
+        .register(aroundMe = AroundMeUI.getInstance().delegate)
+        .register(bookmark = BookmarkUI.getInstance().delegate)
+        .init()
+}
+```
+
 ### Traffic
 
 This module communicates with [Traffic](../../traffic/) module in order to easily access traffic information. You should enable the `traffic_mode` parameter in the [features configuration](../../getting_started/#around-me-features).<br>
