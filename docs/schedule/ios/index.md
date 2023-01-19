@@ -155,7 +155,7 @@ This screen includes a datepicker button allowing the user to choose a date and 
 
 <img class="img-overview" src="/navitia_sdk_docs/assets/img/schedule_ios_all_schedules_screen.png" alt="All schedules screen">
 
-## 🗺 Navigating
+## 🗺 Screen flow
 
 Please refer to the following schema to learn more about different interactions and how to navigate between module screens.
 
