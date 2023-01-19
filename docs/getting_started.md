@@ -76,6 +76,7 @@ The following are the possible configuration parameters:
 | --- | :-: | :--: | :---: |
 | `account` | :material-check: | [`Account color`](#account-color) | Account |
 | `aroundme` | :material-check: | [`Around Me color`](#around-me-color) | Around Me |
+| `bookmark` | :material-check: | [`Bookmark color`](#bookmark-color) | Bookmark |
 | `crowdsourcing` | :material-check: | [`Crowdsourcing color`](#crowdsourcing-color) | Crowdsourcing |
 | `journey` | :material-check: | [`Journey color`](#journey-color) | Journey |
 | `schedule` | :material-check: | [`Schedule color`](#schedule-color) | Schedule |
@@ -89,6 +90,13 @@ The following are the possible configuration parameters:
 | `secondary_color`| :material-check: | To set the color of some UI components | `String` | `#8faa96` |
 
 #### Around Me color
+
+| Name | Required | Description | Type | Example |
+| --- |:---:| --- | :---: | :---: |
+| `primary_color`| :material-check: | To set the main color of the screens | `String` | `#88819f` |
+| `secondary_color`| :material-check: | To set the color of some UI components | `String` | `#8faa96` |
+
+#### Bookmark color
 
 | Name | Required | Description | Type | Example |
 | --- |:---:| --- | :---: | :---: |
@@ -195,6 +203,7 @@ The following are the possible configuration parameters:
 | --- | :-: | :--: | :---: |
 | `account` | :material-close: | [`Account features`](#account-features) | Account |
 | `aroundme` | :material-close: | [`Around Me features`](#around-me-features) | Around Me |
+| `bookmark` | :material-close: | [`Bookmark features`](#bookmark-features) | Bookmark |
 | `journey` | :material-close: | [`Journey features`](#journey-features) | Journey |
 | `schedule` | :material-close: | [`Schedule features`](#schedule-features) | Schedule |
 | `traffic` | :material-close: | [`Traffic features`](#traffic-features) | Traffic |
@@ -300,6 +309,7 @@ The following are the possible configuration parameters:
 | --- | :-: | :--: | :---: |
 | `account` | :material-close: | [`Custom font`](#custom-font) | Account |
 | `aroundme` | :material-close: | [`Custom font`](#custom-font) | Around Me |
+| `bookmark` | :material-close: | [`Custom font`](#custom-font) | Bookmark |
 | `journey` | :material-close: | [`Custom font`](#custom-font) | Journey |
 | `schedule` | :material-close: | [`Custom font`](#custom-font) | Schedule |
 | `traffic` | :material-close: | [`Custom font`](#custom-font) | Traffic |
@@ -407,6 +417,10 @@ Please note that this is the complete version of the configuration, remove unuse
       "secondary_color": ""
     },
     "aroundme": {
+      "primary_color": "",
+      "secondary_color": ""
+    },
+    "bookmark": {
       "primary_color": "",
       "secondary_color": ""
     },
