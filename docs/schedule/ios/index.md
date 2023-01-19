@@ -110,6 +110,10 @@ The lines can also be grouped by networks. To enable this feature, you need to s
 
 <img class="img-overview" src="/navitia_sdk_docs/assets/img/schedule_ios_home_screen.png" alt="Home screen">
 
+If there is any favorite station, an additional tab will be shown listing all bookmarked stations. Each station has a maximum of 3 next departures by destination or an empty state if data is unavailable.
+
+<img class="img-overview" src="/navitia_sdk_docs/assets/img/schedule_ios_home_favorites_screen.png" alt="Home screen with favorites">
+
 ### Search
 
 The search screen allows the user to seek for a station or a line using a built-in autocompletion. The result is based on the user search input text.<br>
@@ -138,6 +142,10 @@ In case the `directions_first` parameter is set to `true` in the [features confi
 This screen allows the user to see the next departures of the target transport mode through the selected station which is heading to the choisen destination. The map gives more details about the vehicle journey by drawing the line path and both selected station and destination markers.<br>
 
 <img class="img-overview" src="/navitia_sdk_docs/assets/img/schedule_ios_station_next_departures_screen.png" alt="Next departures screen">
+
+The user can also bookmark this selected station by taping on the Favorite button on the bottom-right corner of the map. To enable this feature, you need to switch the `bookmark_mode` parameter to `true` in the [features configuration](../../getting_started/#schedule-features). 
+
+<img class="img-overview" src="/navitia_sdk_docs/assets/img/schedule_ios_station_next_departures_favorites_screen.png" alt="Next departures screen with favorite">
 
 ### All schedules
 
