@@ -100,6 +100,7 @@ guard let scheduleViewController = Schedule.shared.rootViewController else {
 // Hide back button embedded in the first screen
 scheduleViewController.showBack = false
 
+// With a NavigationController
 navigationController?.pushViewController(scheduleViewController, animated: false) // (1)
 
 // With a ChildViewController
