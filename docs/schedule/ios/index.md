@@ -103,8 +103,10 @@ scheduleViewController.showBack = false
 navigationController?.pushViewController(scheduleViewController, animated: false)
 
 // With a ChildViewController
-// yourViewController.addChild(UINavigationController(rootViewController: scheduleViewController))
+// yourViewController.addChild(UINavigationController(rootViewController: scheduleViewController)) // (1)
 ```
+
+1.  Use this code if you're using a ChildViewController
 
 ## 📱 Screens
 
