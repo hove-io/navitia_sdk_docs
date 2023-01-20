@@ -109,7 +109,7 @@ plugins:
   - search
   - exclude:
       glob:
-        - expert/*
+        #- expert/*
         #- around_me/*
         #- schedule/*
         #- traffic/*
