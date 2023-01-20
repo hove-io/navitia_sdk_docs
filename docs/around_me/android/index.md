@@ -116,7 +116,7 @@ If you want to reset the user filters configuration, you can simply call `Around
 
 <img class="img-overview" src="/navitia_sdk_docs/assets/img/aroundme_android_filters_screen.png" alt="Filters screen">
 
-## 🗺 Navigating
+## 🗺 Screen flow
 
 Please refer to the following schema to learn more about different interactions and how to navigate between module screens:
 

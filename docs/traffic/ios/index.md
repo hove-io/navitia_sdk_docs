@@ -122,7 +122,7 @@ Some disruptions have messages with included hyperlinks. Those links are also ac
 
 <img class="img-overview" src="/navitia_sdk_docs/assets/img/traffic_ios_all_disruptions_screen.png" alt="All disruptions screen">
 
-## 🗺 Navigating
+## 🗺 Screen flow
 
 Please refer to the following schema to learn more about different interactions and how to navigate between module screens.
 

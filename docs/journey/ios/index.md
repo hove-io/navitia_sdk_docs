@@ -215,7 +215,16 @@ This screen lists the different ridesharing offers for the selected journey. Reg
 
 <img class="img-overview" src="/navitia_sdk_docs/assets/img/journey_ios_ridesharing_offers_screen.png" alt="Ridesharing offers screen">
 
-## 🗺 Navigating
+### Navigation
+
+This screen shows the different steps that the user should go through to reach his destination. Those steps are designed to be simple and easily readable for the user and focuses on the most important information during his journey.
+Along with the user location, an interaction between the map and the step card is also added to zoom over the current portion of path that refers to the current selected card.
+
+The journey duration and the estimated arrival time are realtime-updated variables which depend on various parameters such as the highlighted step, the next departure of each public transport mode...
+
+<img class="img-overview" src="/navitia_sdk_docs/assets/img/journey_ios_navigation_screen.png" alt="Navigation screen">
+
+## 🗺 Screen flow
 
 Please refer to the following schema to learn more about different interactions and how to navigate between module screens.
 
