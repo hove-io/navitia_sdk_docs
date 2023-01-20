@@ -89,12 +89,15 @@ do {
 
 ## 🚀  Launching
 
-This module has a single entry point. 
+This module has a single entry point. The parameter `showBack` handles the back button visibility on the first screen.
 
 ```swift
 guard let scheduleViewController = Schedule.shared.rootViewController else {
   return nil
 }
+
+// hide back button embedded in the first screen
+scheduleViewController.showBack = false
 
 navigationController?.pushViewController(scheduleViewController, animated: false)
 ```
