@@ -89,12 +89,15 @@ do {
 
 ## 🚀  Launching
 
-This module has a single entry point. 
+This module has a single entry point. The parameter `showBack` handles the back button visibility on the first screen.
 
 ```swift
 guard let scheduleViewController = Schedule.shared.rootViewController else {
   return nil
 }
+
+// hide back button embedded in the first screen
+scheduleViewController.showBack = false
 
 navigationController?.pushViewController(scheduleViewController, animated: false)
 ```
@@ -155,7 +158,7 @@ This screen includes a datepicker button allowing the user to choose a date and 
 
 <img class="img-overview" src="/navitia_sdk_docs/assets/img/schedule_ios_all_schedules_screen.png" alt="All schedules screen">
 
-## 🗺 Navigating
+## 🗺 Screen flow
 
 Please refer to the following schema to learn more about different interactions and how to navigate between module screens.
 
