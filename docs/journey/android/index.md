@@ -212,4 +212,4 @@ The journey duration and the estimated arrival time are realtime-updated variabl
 
 Please refer to the following schema to learn more about different interactions and how to navigate between module screens.
 
-<img class="img-navigating" src="/navitia_sdk_docs/assets/img/journey_android_navigating.png" alt="Navigating">
+<img class="img-navigating" src="/navitia_sdk_docs/assets/img/journey_android_screen_flow.png" alt="Screen flow">
