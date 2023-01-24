@@ -90,17 +90,25 @@ do {
 ## 🚀  Launching
 
 This module has a single entry point. The parameter `showBack` handles the back button visibility on the first screen.
+Please note that if you want to use the `rootViewController` as a `ChildViewController` of your `ViewController`, you should embed it in a `NavigationController`. 
 
 ```swift
 guard let scheduleViewController = Schedule.shared.rootViewController else {
   return nil
 }
 
-// hide back button embedded in the first screen
+// Hide back button embedded in the first screen
 scheduleViewController.showBack = false
 
-navigationController?.pushViewController(scheduleViewController, animated: false)
+// With a NavigationController
+navigationController?.pushViewController(scheduleViewController, animated: false) // (1)
+
+// With a ChildViewController
+yourViewController.addChild(UINavigationController(rootViewController: scheduleViewController)) // (2)
 ```
+
+1.  Use this code if you're using your own NavigationController
+2.  Use this code if you're using a ChildViewController
 
 ## 📱 Screens
 
