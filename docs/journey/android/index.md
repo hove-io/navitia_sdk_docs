@@ -167,11 +167,11 @@ Each result gives the needed information to the user in order to planify his jou
 The journeys are grouped into categories represented by different tabs: public transport, walking, bike, car and ridesharing. The visibility of each tab depends on the passed [transport categories configuration](../../getting_started/#transport-category).<br>
 In the public transport tab, the journeys are grouped in two sections: recommended journeys and other journeys. The recommended journey ensures to the user that the arrival date is respected and yet, the journey is reliable.<br>
 
-<img class="img-overview" src="/navitia_sdk_docs/assets/img/journey_ios_journeys_screen.png" alt="Journeys screen">
+<img class="img-overview" src="/navitia_sdk_docs/assets/img/journey_android_journeys_screen.png" alt="Journeys screen">
 
 In the bike tab, the bike journeys are classified depending on specific criteria: the fastest, the most comfortable and the most balanced. The cycling path percentage is also displayed to the user to help him choose the right journey. In the same tab, the journeys combining only bike sharing service and walking are also added.
 
-<img class="img-overview" src="/navitia_sdk_docs/assets/img/journey_ios_journeys_screen_bike_tab.png" alt="Bike tab">
+<img class="img-overview" src="/navitia_sdk_docs/assets/img/journey_android_journeys_screen_bike_tab.png" alt="Bike tab">
 
 ### Search
 
