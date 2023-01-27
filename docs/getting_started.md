@@ -60,7 +60,7 @@ The following are the possible configuration parameters:
 | `env` | :material-check: | Navitia environment | `String` | `PROD`, `CUSTOMER` | All |
 | `colors` | :material-check: | Colors configuration | [`Colors`](#colors) | - | UI modules |
 | `transport_categories` | :material-check: | List of supported transport modes | [`[Transport category]`](#transport-category) | - | UI modules |
-| `poi_categories` | :material-close: | List of supported POIs | [`[Poi category]`](#poi-category) | - | Around Me |
+| `poi_categories` | :material-close: | List of supported POIs | [`[Poi category]`](#poi-category) | - | Around Me, Bookmark |
 | `features_configuration` | :material-close: | Enable/disable different module features | [`Features`](#features) | - | All |
 | `fonts` | :material-close: | Override the fonts used in UI modules | [`Fonts`](#fonts) | - | UI modules |
 | `lines_resources` | :material-close: | Resources IDs for transport lines | [`[Line resource]`](#line-resource) | - | UI modules |

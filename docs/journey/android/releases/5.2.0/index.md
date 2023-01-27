@@ -11,8 +11,6 @@
 - Prefix all layouts by `navitia_journey_`
 - Token is passed via `init()` instead of configuration file or object
 
-#### Fixes
-
 #### Dependencies
 - `gradle-wrapper` > `7.4`
 - `com.android.tools.build:gradle` > `7.3.1`
