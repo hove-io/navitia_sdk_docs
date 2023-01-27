@@ -99,7 +99,7 @@ In the bottomsheet of the main screen, the last added favorite stations are show
 <img class="img-overview" src="/navitia_sdk_docs/assets/img/aroundme_android_map_screen.png" alt="Map screen">
 
 In the details bottomsheet of a station or a POI, there is a star button in order to save or delete it from the bookmarks.
-<img class="img-overview" src="/navitia_sdk_docs/assets/img/aroundme_android_bookmark_node.png" alt="Bookmark node">
+<img class="img-overview" src="/navitia_sdk_docs/assets/img/aroundme_android_bookmark_saving_node.png" alt="Bookmark node">
 
 ### Search
 
