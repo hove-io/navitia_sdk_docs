@@ -4,3 +4,6 @@
 
 #### Fixes
 - Fix step by step guidance
+- Fix missing walking icon
+- Fix next departures not showing
+- Fix public transport tab always showing
