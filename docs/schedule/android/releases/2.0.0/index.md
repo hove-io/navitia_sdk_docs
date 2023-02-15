@@ -34,7 +34,6 @@
 - `com.google.android.material:material` > `1.6.1`
 - `com.google.code.gson:gson` > `2.8.9`
 - `com.kisio.navitia.sdk.data:expert` > `3.2.1`
-- `com.kisio.navitia.sdk.engine:design` > `2.4.0`
 - `androidx.test.ext:junit` > `1.1.3`
 - `org.mockito:mockito-inline` >`3.11.2`
 - `org.mockito.kotlin:mockito-kotlin` > `3.2.0`

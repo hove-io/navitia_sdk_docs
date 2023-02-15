@@ -6,7 +6,7 @@ Add the following dependencies in the `build.gradle` file of your application:
 
 ``` groovy
 dependencies {
-    implementation("com.kisio.navitia.sdk.ui:aroundme:2.1.0")
+    implementation("com.kisio.navitia.sdk.ui:aroundme:2.3.0")
 }
 ```
 
@@ -94,11 +94,11 @@ supportFragmentManager.beginTransaction().run {
 The map screen represents the main screen of this module. It shows the places nearby the center of the visible region, draws them on the map and adds them to the bottom sliding panel.<br>
 The shown data depend on the selected elements in the [filters](#filters) screen.
 
-In the bottomsheet of the main screen, the last added favorite stations are shown with the next departures for each direction, as well as an All Favorites button that redirects the user to the bookmark module.
+In the bottom sheet of the main screen, the last added favorite stations are shown with the next departures for each direction, as well as an All Favorites button that redirects the user to the bookmark module.
 
 <img class="img-overview" src="/navitia_sdk_docs/assets/img/aroundme_android_map_screen.png" alt="Map screen">
 
-In the details bottomsheet of a station or a POI, there is a star button in order to save or delete it from the bookmarks.
+In the details bottom sheet of a station or a POI, there is a star button in order to save or delete it from the bookmarks.
 <img class="img-overview" src="/navitia_sdk_docs/assets/img/aroundme_android_bookmark_saving_node.png" alt="Bookmark node">
 
 ### Search

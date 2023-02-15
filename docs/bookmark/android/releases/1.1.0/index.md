@@ -18,5 +18,4 @@
 - `com.android.tools.build:gradle` > `7.3.1`
 - `androidx.navigation:navigation-fragment-ktx` > `2.5.3`
 - `com.kisio.navitia.sdk.data:expert` > `3.2.2`
-- `com.kisio.navitia.sdk.engine:design` > `2.5.0`
 - `org.jetbrains.kotlinx:kotlinx-serialization-json` > `1.4.1`
