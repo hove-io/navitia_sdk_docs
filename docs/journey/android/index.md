@@ -213,3 +213,25 @@ The journey duration and the estimated arrival time are realtime-updated variabl
 Please refer to the following schema to learn more about different interactions and how to navigate between module screens.
 
 <img class="img-navigating" src="/navitia_sdk_docs/assets/img/journey_android_screen_flow.png" alt="Screen flow">
+
+## 📢 Communicating with other modules
+
+### Application
+
+Some callbacks are delegated to the application allowing it to receive some module events. To subscribe to those events, the `Router` module should also be initialized with the right parameters:
+
+``` kotlin
+if (!Router.getInstance().isInit) {
+    Router.getInstance()
+        .register(app = appRouterImpl) <!-- (1) -->
+        .init()
+}
+```
+
+1.  `appRouterImpl` should be the class instance implementing `AppRouter` interface
+
+##### Roadmap button event
+
+A customizable button appears in the roadmap screen and the clicking event should be catched from the application.
+
+<img class="img-overview" src="/navitia_sdk_docs/assets/img/journey_android_roadmap_button_event.png" alt="Roadmap button event">

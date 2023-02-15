@@ -2,4 +2,5 @@
 
 ## Available versions
 
+* [v1.1.0](releases/1.1.0/index.md) (_15 Feb 2023_)
 * [v1.0.4](releases/1.0.4/index.md) (_10 Jan 2023_)

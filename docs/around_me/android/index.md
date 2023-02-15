@@ -179,6 +179,26 @@ if (!Router.getInstance().isInit) {
 }
 ```
 
+### Application
+
+Some callbacks are delegated to the application allowing it to receive some module events. To subscribe to those events, the `Router` module should also be initialized with the right parameters:
+
+``` kotlin
+if (!Router.getInstance().isInit) {
+    Router.getInstance()
+        .register(app = appRouterImpl) <!-- (1) -->
+        .init()
+}
+```
+
+1.  `appRouterImpl` should be the class instance implementing `AppRouter` interface
+
+##### POI button event
+
+A customizable button appears in the POI details screen and the clicking event should be catched from the application. A POI ID is sent with the callback in order to identify the selected POI.
+
+<img class="img-overview" src="/navitia_sdk_docs/assets/img/aroundme_android_poi_button_event.png" alt="POI button event">
+
 ### Crowdsourcing
 
 ⚠️ This section will be available soon!

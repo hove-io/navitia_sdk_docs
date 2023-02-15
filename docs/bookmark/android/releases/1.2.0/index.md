@@ -3,7 +3,7 @@
 <h2>🗓 15 Feb 2023</h2>
 
 #### Features
-- Categorize bookmarks by transports, journeys and adresses
+- Categorize bookmarks by transports, journeys and addresses
 
 #### Dependencies
 - `androidx.appcompat:appcompat` > `1.6.1`

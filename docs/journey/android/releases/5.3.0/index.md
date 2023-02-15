@@ -4,7 +4,7 @@
 
 #### Features
 - Can bookmark a journey
-- A buy button can be configured and added in the roadmap
+- A buy button can be configured and added to the roadmap
 
 #### Tasks
 - Rename `JourneyConfiguration.featuresConfiguration` by `JourneyConfiguration.features`

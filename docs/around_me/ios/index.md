@@ -190,6 +190,20 @@ try Router.shared
           .initialize()
 ```
 
+### Application
+
+Some callbacks are delegated to the application allowing it to receive some module events. To subscribe to those events, the delegate should be set as follows:
+
+``` swift
+AroundMe.shared.delegate = self
+```
+
+##### POI button event
+
+A customizable button appears in the POI details screen and the clicking event should be catched from the application. A POI ID is sent with the callback in order to identify the selected POI.
+
+<img class="img-overview" src="/navitia_sdk_docs/assets/img/aroundme_ios_poi_button_event.png" alt="POI button event">
+
 ### Crowdsourcing
 
 ⚠️ This section will be available soon!
