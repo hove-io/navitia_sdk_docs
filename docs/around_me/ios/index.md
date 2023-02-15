@@ -12,7 +12,7 @@ source 'https://github.com/CocoaPods/Specs.git' # Default Cocoapods URL
 source 'https://github.com/hove-io/Podspecs.git' # Around Me podspec URL
 
 target 'YOUR_PROJECT_SCHEME' do
-  pod 'AroundMeSDK', '3.1.0' # Around Me Pod definition
+  pod 'AroundMeSDK', '3.2.0' # Around Me Pod definition
 end
 
 # Required for XCFramework
@@ -189,6 +189,20 @@ try Router.shared
           .register(app: self)
           .initialize()
 ```
+
+### Application
+
+Some callbacks are delegated to the application allowing it to receive some module events. To subscribe to those events, the delegate should be set as follows:
+
+``` swift
+AroundMe.shared.delegate = self
+```
+
+##### POI button event
+
+A customizable button appears in the POI details screen and the clicking event should be catched from the application. A POI ID is sent with the callback in order to identify the selected POI.
+
+<img class="img-overview" src="/navitia_sdk_docs/assets/img/aroundme_ios_poi_button_event.png" alt="POI button event">
 
 ### Crowdsourcing
 

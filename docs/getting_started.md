@@ -63,12 +63,12 @@ The following are the possible configuration parameters:
 | `poi_categories` | :material-close: | List of supported POIs | [`[Poi category]`](#poi-category) | - | Around Me, Bookmark |
 | `features_configuration` | :material-close: | Enable/disable different module features | [`Features`](#features) | - | All |
 | `fonts` | :material-close: | Override the fonts used in UI modules | [`Fonts`](#fonts) | - | UI modules |
-| `lines_resources` | :material-close: | Resources IDs for transport lines | [`[Line resource]`](#line-resource) | - | UI modules |
-| `modes_resources` | :material-close: | Resources IDs for transport modes | [`[Mode resource]`](#mode-resource) | - | UI modules |
-| `providers_resources` | :material-close: | Resources IDs for data providers | [`[Provider resource]`](#provider-resource) | - | UI modules |
-| `networks_resources` | :material-close: | Resources IDs for data networks | [`[Network resource]`](#network-resource) | - | UI modules |
-| `icons_resources` | :material-close: | Resources IDs for some specific icons | [`Icon resource`](#icon-resource) | - | UI modules |
-| `titles_resources` | :material-close: | Resources IDs for screen titles | [`Title resource`](#title-resource) | - | UI modules |
+| `lines_resources` | :material-close: | Resources ids for transport lines | [`[Line resource]`](#line-resource) | - | UI modules |
+| `modes_resources` | :material-close: | Resources ids for transport modes | [`[Mode resource]`](#mode-resource) | - | UI modules |
+| `providers_resources` | :material-close: | Resources ids for data providers | [`[Provider resource]`](#provider-resource) | - | UI modules |
+| `networks_resources` | :material-close: | Resources ids for data networks | [`[Network resource]`](#network-resource) | - | UI modules |
+| `icons_resources` | :material-close: | Resources ids for some specific icons | [`Icon resource`](#icon-resource) | - | UI modules |
+| `titles_resources` | :material-close: | Resources ids for screen titles | [`Title resource`](#title-resource) | - | UI modules |
 
 ### Colors
 
@@ -95,6 +95,7 @@ The following are the possible configuration parameters:
 | --- |:---:| --- | :---: | :---: |
 | `primary_color`| :material-check: | To set the main color of the screens | `String` | `#88819f` |
 | `secondary_color`| :material-check: | To set the color of some UI components | `String` | `#8faa96` |
+| `tertiary_color`| :material-close: | To set the color of more UI components | `String` | `#efa59f` |
 
 #### Bookmark color
 
@@ -143,8 +144,8 @@ The following are the possible configuration parameters:
 | Name | Required | Description | Type | Example |
 | --- |:---:| --- | :---: | :---: |
 | `modules`| :material-check: | To set the target modules | `[String]` | `["aroundme","journey"]` |
-| `name_res`| :material-check: | To set the localization resource ID | `String` | `transport_name_res` |
-| `icon_res`| :material-check: | To set the icon resource ID | `String` | `ic_metro` |
+| `name_res`| :material-check: | To set the localized resource id | `String` | `transport_name_res` |
+| `icon_res`| :material-check: | To set the icon resource id | `String` | `ic_metro` |
 | `selected`| :material-close: | Whether the transport mode is selected by default or not | `Boolean` | `true` |
 | `modes`| :material-close: | List of supported transport modes | [`Transport Mode`](#transport-mode) | - |
 | `networks`| :material-close: | List of supported networks | `[String]` | `["network:BIL:27"]` |
@@ -163,39 +164,46 @@ The following are the possible configuration parameters:
 
 | Name | Required | Description | Type | Example |
 | --- |:---:| --- | :---: | :---: |
-| `id`| :material-check: | Navitia physical mode ID | `String` | `"physical_mode:Bus"` |
-| `name_res`| :material-check: | Localization name resource ID | `String` | `"transport_bus"` |
+| `id`| :material-check: | Navitia physical mode id | `String` | `"physical_mode:Bus"` |
+| `name_res`| :material-check: | Localized name resource id | `String` | `"transport_bus"` |
 
 ##### Transport commercial mode
 
 | Name | Required | Description | Type | Example |
 | --- |:---:| --- | :---: | :---: |
-| `id`| :material-check: | Navitia commercial mode ID | `String` | `"commercial_mode:Bus"` |
+| `id`| :material-check: | Navitia commercial mode id | `String` | `"commercial_mode:Bus"` |
 | `name`| :material-check: | Navitia commercial mode name | `String` | `"Bus"` |
 
 ### POI category
 
 | Name | Required | Description | Type | Example |
 | --- |:---:| --- | :---: | :---: |
-| `name_res`| :material-check: | Localization POI category name ID | `String` | `"stations"` |
+| `name_res`| :material-check: | Localized POI category name id | `String` | `"stations"` |
 | `subcategories`| :material-check: | List of POI subcategories | [`[POI subcategory]`](#poi-subcategory) | - |
 
 #### POI subcategory
 
 | Name | Required | Description | Type | Example |
 | --- |:---:| --- | :---: | :---: |
-| `name_res`| :material-check: | Localization POI subcategory name ID | `String` | `"bike_stations"` |
-| `icon_res`| :material-check: | POI subcategory icon ID | `String` | `"ic_bike_stations"` |
+| `name_res`| :material-check: | Localized POI subcategory name id | `String` | `"bike_stations"` |
+| `icon_res`| :material-check: | POI subcategory icon id | `String` | `"ic_bike_stations"` |
 | `selected`| :material-close: | Whether the subcategory is selected by default or not | `Boolean` | `true` |
-| `group`| :material-check: | The subcategory POI group | `String` | `STANDARD`, `TRANSPORT_MODE`, `FREE_FLOATING` |
-| `types`| :material-check: | The subcategory POI types | [`[POI Subcategory Type]`](#poi-subcategory-type) | - |
+| `group`| :material-check: | Subcategory POI group | `String` | `STANDARD`, `TRANSPORT_MODE`, `FREE_FLOATING` |
+| `types`| :material-check: | Subcategory POI types | [`[POI Subcategory Type]`](#poi-subcategory-type) | - |
+| `booking`| :material-close: | POI booking resources | [POI booking resources](#poi-booking-resources) | - |
 
 ##### POI subcategory type
 
 | Name | Required | Description | Type | Example |
 | --- |:---:| --- | :---: | :---: |
-| `name_res`| :material-check: | Localization POI subcategory type name ID | `String` | `"scooter"` |
-| `poi_type_id`| :material-check: | Navitia POI subcategory type ID | `String` | `"poi_type:amenity:bicycle_rental"` |
+| `name_res`| :material-check: | Localized POI subcategory type name id | `String` | `"scooter"` |
+| `poi_type_id`| :material-check: | Navitia POI subcategory type id | `String` | `"poi_type:amenity:bicycle_rental"` |
+
+##### POI booking resources
+
+| Name | Required | Description | Type | Example |
+| --- |:---:| --- | :---: | :---: |
+| `title_res`| :material-check: | Localized POI booking button title id | `String` | `"book_a_bike"` |
 
 ### Features
 
@@ -220,14 +228,14 @@ The following are the possible configuration parameters:
 
 | Name | Required | Description | Type | Example |
 | --- |:---:| --- | :---: | :---: |
-| `name_res`| :material-check: | Localization menu item title ID | `String` | `"bookmarks"` |
-| `icon_res`| :material-check: | Menu item icon resource ID | `String` | `"ic_bookmarks"` |
+| `name_res`| :material-check: | Localized menu item title id | `String` | `"bookmarks"` |
+| `icon_res`| :material-check: | Menu item icon resource id | `String` | `"ic_bookmarks"` |
 
 ##### Account form field
 
 | Name | Required | Description | Type | Example |
 | --- |:---:| --- | :---: | :---: |
-| `hint_res`| :material-check: | Localization field hint ID | `String` | `"name_hint"` |
+| `hint_res`| :material-check: | Localized field hint id | `String` | `"name_hint"` |
 | `type`| :material-check: | Field type | `String` | `"TEXT" OR "DATE" OR "EMAIL" OR "PASSWORD" OR "NUMBER" OR "PHONE"` |
 | `min_date`| :material-close: | Set the min datepicker date in this format dd/MM/yyyy | `String` | `"01/01/2022"` |
 | `max_date`| :material-close: | Set the max datepicker date in this format dd/MM/yyyy | `String` | `"01/01/2050"` |
@@ -272,10 +280,17 @@ The following are the possible configuration parameters:
 | `next_departures`| :material-close: | Show/hide the next departures | `Boolean` | `true` |
 | `price`| :material-close: | Show/hide the itinerary price | `Boolean` | `true` |
 | `carbon`| :material-close: | Show/hide the itinerary carbon summary | `Boolean` | `true` |
-| `calories`| :material-close: | Show/hide the itinerary caloris summary | `Boolean` | `false` |
+| `calories`| :material-close: | Show/hide the itinerary calories summary | `Boolean` | `false` |
 | `transport_networks`| :material-close: | Show/hide the public transport network | `Boolean` | `false` |
 | `max_history`| :material-close: | Define the max history items | `Int` | `10` |
-| `disruption_contributors`| :material-close: | Define the list of disruption contributors ID | `[String]` | `["shortterm.tr_idfm"]` |
+| `disruption_contributors`| :material-close: | Define the list of disruption contributors id | `[String]` | `["shortterm.tr_idfm"]` |
+| `buy_tickets`| :material-close: | Enable a buy button in roadmap | [Buy ticket button](#buy-ticket-button) |
+
+#### Buy ticket button
+
+| Name | Required | Description | Type | Example |
+| --- |:---:| --- | :---: | :---: |
+| `title_res`| :material-check: | Localized buy ticket button title id | `String` | `"buy_this_journey"` |
 
 #### Schedule features
 
@@ -290,15 +305,15 @@ The following are the possible configuration parameters:
 
 | Name | Required | Description | Type | Example |
 | --- |:---:| --- | :---: | :---: |
-| `disruption_contributors`| :material-close: | Define the list of disruption contributors ID | `[String]` | `["shortterm.tr_idfm"]` |
+| `disruption_contributors`| :material-close: | Define the list of disruption contributors id | `[String]` | `["shortterm.tr_idfm"]` |
 | `severity`| :material-close: | List of supported disruptions severities | [`[Traffic severity]`](#traffic-severity) | - |
 
 ##### Traffic severity
 
 | Name | Required | Description | Type | Example |
 | --- |:---:| --- | :---: | :---: |
-| `name_res`| :material-check: | Localization severity name ID | `String` | `blocking_disruptions` |
-| `icon_res`| :material-check: | Severity icon resource ID | `String` | `ic_blocking_disruptions` |
+| `name_res`| :material-check: | Localized severity name id | `String` | `blocking_disruptions` |
+| `icon_res`| :material-check: | Severity icon resource id | `String` | `ic_blocking_disruptions` |
 | `color`| :material-check: | Color of the target severity | `String` | `#E74C3C` |
 | `effects`| :material-check: | List of severity effects | `[String]` | `["SIGNIFICANT_DELAYS"]` |
 | `selected`| :material-close: | Whether the severity is selected by default or not | `Boolean` | `true` |
@@ -342,31 +357,31 @@ The following are the possible configuration parameters:
 | Name | Required | Description | Type | Example |
 | --- |:---:| --- | :---: | :---: |
 | `code`| :material-check: | Navitia line code | `String` | `1` |
-| `icon_res`| :material-check: | Line icon resource ID | `String` | `ic_metro_1` |
+| `icon_res`| :material-check: | Line icon resource id | `String` | `ic_metro_1` |
 | `commercial`| :material-check: | Transport commercial mode | [`Transport Commercial Mode`](#transport-commercial-mode) | - |
 
 ### Mode resource
 
 | Name | Required | Description | Type | Example |
 | --- |:---:| --- | :---: | :---: |
-| `icon_res`| :material-check: | Transport mode icon resource ID | `String` | `ic_bus` |
+| `icon_res`| :material-check: | Transport mode icon resource id | `String` | `ic_bus` |
 | `commercial`| :material-check: | Transport commercial mode | [`Transport Commercial Mode`](#transport-commercial-mode) | - |
 
 ### Provider resource
 
 | Name | Required | Description | Type | Example |
 | --- |:---:| --- | :---: | :---: |
-| `type_id`| :material-check: | Navitia provider type ID | `String` | `SCOOTER` |
-| `provider_id`| :material-check: | Navitia provider ID | `String` | `ridesharing_provider` |
-| `icon_res`| :material-check: | Provider icon resource ID | `String` | `ic_lime` |
+| `type_id`| :material-check: | Navitia provider type id | `String` | `SCOOTER` |
+| `provider_id`| :material-check: | Navitia provider id | `String` | `ridesharing_provider` |
+| `icon_res`| :material-check: | Provider icon resource id | `String` | `ic_lime` |
 
 ### Network resource
 
 | Name | Required | Description | Type | Example |
 | --- |:---:| --- | :---: | :---: |
-| `network_id`| :material-check: | Navitia network ID | `String` | `network:BIL:27` |
-| `name_res`| :material-check: | Localization network name resource ID | `String` | `sncf` |
-| `icon_res`| :material-check: | Network icon resource ID | `String` | `ic_sncf` |
+| `network_id`| :material-check: | Navitia network id | `String` | `network:BIL:27` |
+| `name_res`| :material-check: | Localized network name resource id | `String` | `sncf` |
+| `icon_res`| :material-check: | Network icon resource IidD | `String` | `ic_sncf` |
 
 ### Icon resource
 
@@ -378,8 +393,8 @@ The following are the possible configuration parameters:
 
 | Name | Required | Description | Type | Example |
 | --- |:---:| --- | :---: | :---: |
-| `departure_res`| :material-close: | Departure icon resource ID | `String` | `ic_departure` |
-| `arrival_res`| :material-close: | Arrival icon resource ID  | `String` | `ic_departure` |
+| `departure_res`| :material-close: | Departure icon resource id | `String` | `ic_departure` |
+| `arrival_res`| :material-close: | Arrival icon resource id  | `String` | `ic_departure` |
 
 ### Title resource
 
@@ -392,15 +407,15 @@ The following are the possible configuration parameters:
 
 | Name | Required | Description | Type | Example |
 | --- |:---:| --- | :---: | :---: |
-| `filters`| :material-close: | Localization filters screen title resource ID | `String` | `filters_screen_title` |
+| `filters`| :material-close: | Localized filters screen title resource id | `String` | `filters_screen_title` |
 
 #### Journey title resource
 
 | Name | Required | Description | Type | Example |
 | --- |:---:| --- | :---: | :---: |
-| `journeys`| :material-close: | Localization journeys screen title resource ID | `String` | `journeys_screen_title` |
-| `roadmap`| :material-close: | Localization roadmap screen title resource ID | `String` | `roadmap_screen_title` |
-| `ridesharing`| :material-close: | Localization ridesharing screen title resource ID | `String` | `ridesharing_screen_title` |
+| `journeys`| :material-close: | Localized journeys screen title resource id | `String` | `journeys_screen_title` |
+| `roadmap`| :material-close: | Localized roadmap screen title resource id | `String` | `roadmap_screen_title` |
+| `ridesharing`| :material-close: | Localized ridesharing screen title resource id | `String` | `ridesharing_screen_title` |
 
 ### Global configuration JSON structure
 
@@ -418,7 +433,8 @@ Please note that this is the complete version of the configuration, remove unuse
     },
     "aroundme": {
       "primary_color": "",
-      "secondary_color": ""
+      "secondary_color": "",
+      "tertiary_color": ""
     },
     "bookmark": {
       "primary_color": "",
@@ -566,7 +582,10 @@ Please note that this is the complete version of the configuration, remove unuse
               "name_res": "",
               "poi_type_id": ""
             }
-          ]
+          ],
+          "booking": {
+            "title_res" : ""
+          }
         }
       ]
     }
@@ -645,7 +664,7 @@ Please note that this is the complete version of the configuration, remove unuse
     },
     "bookmark": {
       "go_from_go_to": true
-    }
+    },
     "journey": {
       "autocompletion": false,
       "stop_point_search": true,
@@ -659,7 +678,10 @@ Please note that this is the complete version of the configuration, remove unuse
       "max_history": 10,
       "disruption_contributors": [
         "shortterm.tr_idfm"
-      ]
+      ],
+      "buy_tickets": {
+        "title_res" : ""
+      }
     },
     "schedule": {
       "directions_first": true,

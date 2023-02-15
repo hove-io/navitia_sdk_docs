@@ -12,7 +12,7 @@ source 'https://github.com/CocoaPods/Specs.git' # Default Cocoapods URL
 source 'https://github.com/hove-io/Podspecs.git' # Journey podspec URL
 
 target 'YOUR_PROJECT_SCHEME' do
-  pod 'JourneySDK', '5.2.0' # Journey Pod definition
+  pod 'JourneySDK', '5.3.0' # Journey Pod definition
 end
 
 # Required for XCFramework
@@ -229,3 +229,19 @@ The journey duration and the estimated arrival time are realtime-updated variabl
 Please refer to the following schema to learn more about different interactions and how to navigate between module screens.
 
 <img class="img-navigating" src="/navitia_sdk_docs/assets/img/journey_ios_screen_flow.png" alt="Screen flow">
+
+## 📢 Communicating with other modules
+
+### Application
+
+Some callbacks are delegated to the application allowing it to receive some module events. To subscribe to those events, the delegate should be set as follows:
+
+``` swift
+JourneySdk.shared.delegate = self
+```
+
+##### Roadmap button event
+
+A customizable button appears in the roadmap screen and the clicking event should be catched from the application.
+
+<img class="img-overview" src="/navitia_sdk_docs/assets/img/journey_ios_roadmap_button_event.png" alt="Roadmap button event">

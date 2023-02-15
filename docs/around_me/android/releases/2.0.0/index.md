@@ -33,4 +33,3 @@
 - `com.google.android.gms:play-services-maps` > `18.1.0`
 - `com.google.code.gson:gson` > `2.8.9`
 - `com.kisio.navitia.sdk.data:expert` > `3.2.1`
-- `com.kisio.navitia.sdk.engine:design` > `2.4.0`
