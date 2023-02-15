@@ -186,7 +186,7 @@ Some callbacks are delegated to the application allowing it to receive some modu
 ``` swift
 if (!Router.getInstance().isInit) {
     Router.getInstance()
-        .register(app = appRouterImpl) <!-- (1) -->
+        .register(app = appRouterImpl) // (1)
         .init()
 }
 ```
