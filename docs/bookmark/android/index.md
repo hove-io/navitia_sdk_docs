@@ -6,7 +6,7 @@ Add the following dependencies in the `build.gradle` file of your application:
 
 ``` groovy
 dependencies {
-    implementation("com.kisio.navitia.sdk.ui:bookmark:1.1.0")
+    implementation("com.kisio.navitia.sdk.ui:bookmark:1.2.0")
 }
 ```
 
@@ -66,7 +66,7 @@ BookmarkUI.getInstance().delegate.onBackPressed()
 
 ## 🚀  Launching
 
-Bookmar has a single entry point `FavoriteFragment`.<br>
+Bookmark has a single entry point `FavoriteFragment`.<br>
 Assuming you have an `Activity` with a fragment container, refer to the following example to launch the entry screen fragment:
 
 ``` kotlin

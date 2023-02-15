@@ -15,7 +15,9 @@
 - Fix annotations by filter
 
 #### Dependencies
-- `RouterEngine` > `0.5.0`
-- `ToolboxEngine` > `1.6.6`
-- `DesignEngine` > `2.4.0`
 - `NavitiaSDK` > `2.3.4`
+- `RealmSwift` > `10.17.0`
+- `FlexLayout` > `1.3.23`
+- `PinLayout` > `1.10.2`
+- `MaterialComponents/ProgressView` > `124.2.0`
+- `MaterialComponents/BottomSheet` > `124.2.0`
