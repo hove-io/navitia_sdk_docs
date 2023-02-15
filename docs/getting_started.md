@@ -95,6 +95,7 @@ The following are the possible configuration parameters:
 | --- |:---:| --- | :---: | :---: |
 | `primary_color`| :material-check: | To set the main color of the screens | `String` | `#88819f` |
 | `secondary_color`| :material-check: | To set the color of some UI components | `String` | `#8faa96` |
+| `tertiary_color`| :material-close: | To set the color of more UI components | `String` | `#efa59f` |
 
 #### Bookmark color
 
@@ -432,7 +433,8 @@ Please note that this is the complete version of the configuration, remove unuse
     },
     "aroundme": {
       "primary_color": "",
-      "secondary_color": ""
+      "secondary_color": "",
+      "tertiary_color": "",
     },
     "bookmark": {
       "primary_color": "",
