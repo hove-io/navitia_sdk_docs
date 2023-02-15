@@ -183,7 +183,7 @@ if (!Router.getInstance().isInit) {
 
 Some callbacks are delegated to the application allowing it to receive some module events. To subscribe to those events, the `Router` module should also be initialized with the right parameters:
 
-``` kotlin
+``` swift
 if (!Router.getInstance().isInit) {
     Router.getInstance()
         .register(app = appRouterImpl) <!-- (1) -->
