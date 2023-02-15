@@ -434,7 +434,7 @@ Please note that this is the complete version of the configuration, remove unuse
     "aroundme": {
       "primary_color": "",
       "secondary_color": "",
-      "tertiary_color": "",
+      "tertiary_color": ""
     },
     "bookmark": {
       "primary_color": "",
@@ -664,7 +664,7 @@ Please note that this is the complete version of the configuration, remove unuse
     },
     "bookmark": {
       "go_from_go_to": true
-    }
+    },
     "journey": {
       "autocompletion": false,
       "stop_point_search": true,
