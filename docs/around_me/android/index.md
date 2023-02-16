@@ -193,7 +193,7 @@ if (!Router.getInstance().isInit) {
 
 1.  `appRouterImpl` should be the class instance implementing `AppRouter` interface
 
-##### POI button event
+##### POI event
 
 A customizable button appears in the POI details screen and the clicking event should be catched from the application. A POI ID is sent with the callback in order to identify the selected POI.
 
