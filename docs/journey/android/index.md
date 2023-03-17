@@ -105,31 +105,19 @@ The `JourneysRequest` object allows to configure the first itinerary search at s
 | Name | Required | Description | Type | Default |
 | --- |:---:| --- | --- | --- |
 | `allowedId`| :material-close: | Allowed Navitia object IDs | `List<String>` | `emptyList()` |
-| `addPoiInfos`| :material-close: | Request extra POI infos | [`MutableSet<AddPoiInfos>`](#addpoiinfos) | `mutableSetOf()` |
 | `count`| :material-close: | The number of journeys to be displayed | `Int` | `-1` |
 | `dataFreshness`| :material-close: | To indicate if theoretical or realtime data are requested | [`DataFreshness`](#datafreshness) | `DataFreshness.BASE_SCHEDULE` |
 | `dateTime`| :material-close: | Requested date and time for journey results | `DateTime` | `null` |
 | `dateTimeRepresents`| :material-close: | Whether the datetime represents the departure or arrival | [`DateTimeRepresents`](#datetimerepresents) | `DateTimeRepresents.DEPARTURE` |
-| `destinationAddress`| :material-close: | Destination point address | `String` | `""` |
 | `destinationId`| :material-close: | Destination Navitia ID | `String` | `""` |
 | `destinationLabel`| :material-close: | Destination label, if not set the address will be displayed | `String` | `""` |
-| `directPathMode`| :material-close: | List of direct path modes | `MutableSet<String>` | `mutableSetOf()` |
-| `firstSectionModes`| :material-close: | List of first section modes | `MutableSet<String>` | `mutableSetOf()` |
-| `forbiddenUris`| :material-close: | List of forbidden physical modes | `MutableSet<String>` | `mutableSetOf()` |
-| `lastSectionModes`| :material-close: | List of last section modes | `MutableSet<String>` | `mutableSetOf()` |
+| `directPath` | :material-close: | Set the direct path of the journey | [`DirectPath`](#directpath) | `""` |
 | `maxJourneys`| :material-close: | The max number of journeys to be displayed | `Int` | `-1` |
 | `minJourneys`| :material-close: | The min number of journeys to be displayed | `Int` | `-1` |
-| `originAddress`| :material-close: | Origin point address | `String` | `""` |
+| `minNbTransfers`| :material-close: | The min number of public transport transfers | `Int` | `-1` |
 | `originId`| :material-close: | Origin Navitia ID | `String` | `""` |
 | `originLabel`| :material-close: | Origin label, if not set the address will be displayed | `String` | `""` |
 | `travelerType`| :material-close: | Traveler type | [`TravelerType`](#travelertype) | `TravelerType.STANDARD` |
-
-#### AddPoiInfos
-
-| Enum value | Description |
-| --- | --- |
-| `BSS_STANDS` | Request the number of available stands in a BSS station |
-| `CAR_PARK` | Request the number of available places in a car parking |
 
 #### DataFreshness
 
@@ -142,8 +130,17 @@ The `JourneysRequest` object allows to configure the first itinerary search at s
 
 | Enum value | Description |
 | --- | --- |
-| `ARRIVAL` | The requestd datetime represents the arrival of the journey |
+| `ARRIVAL` | The requested datetime represents the arrival of the journey |
 | `DEPARTURE` | The requested datetime represents the departure of the journey |
+
+#### DirectPath
+
+| Enum value | Description |
+| --- | --- |
+| `INDIFFERENT` | Default value |
+| `NONE` | For journeys using some public transport |
+| `ONLY` | For journeys without public transport |
+| `ONLY_WITH_ALTERNATIVES` | For journeys with specific bike  |
 
 #### TravelerType
 
