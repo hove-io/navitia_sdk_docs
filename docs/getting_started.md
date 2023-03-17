@@ -86,58 +86,75 @@ The following are the possible configuration parameters:
 
 | Name | Required | Description | Type | Example |
 | --- |:---:| --- | :---: | :---: |
-| `primary_color`| :material-check: | To set the main color of the screens | `String` | `#88819f` |
-| `secondary_color`| :material-check: | To set the color of some UI components | `String` | `#8faa96` |
+| `primary`| :material-check: | To set the main color of the screens | `String` | `#88819f` |
+| `secondary`| :material-check: | To set the color of some UI components | `String` | `#8faa96` |
 
 #### Around Me color
 
 | Name | Required | Description | Type | Example |
 | --- |:---:| --- | :---: | :---: |
-| `primary_color`| :material-check: | To set the main color of the screens | `String` | `#88819f` |
-| `secondary_color`| :material-check: | To set the color of some UI components | `String` | `#8faa96` |
-| `tertiary_color`| :material-close: | To set the color of more UI components | `String` | `#efa59f` |
+| `primary`| :material-check: | To set the main color of the screens | `String` | `#88819f` |
+| `secondary`| :material-check: | To set the color of some UI components | `String` | `#8faa96` |
+| `tertiary`| :material-close: | To set the color of more UI components | `String` | `#efa59f` |
 
 #### Bookmark color
 
 | Name | Required | Description | Type | Example |
 | --- |:---:| --- | :---: | :---: |
-| `primary_color`| :material-check: | To set the main color of the screens | `String` | `#88819f` |
-| `secondary_color`| :material-check: | To set the color of some UI components | `String` | `#8faa96` |
+| `primary`| :material-check: | To set the main color of the screens | `String` | `#88819f` |
+| `secondary`| :material-check: | To set the color of some UI components | `String` | `#8faa96` |
 
 #### Crowdsourcing color
 
 | Name | Required | Description | Type | Example |
 | --- |:---:| --- | :---: | :---: |
-| `primary_color`| :material-check: | To set the main color of the screens | `String` | `#88819f` |
-| `secondary_color`| :material-check: | To set the color of some UI components | `String` | `#8faa96` |
+| `primary`| :material-check: | To set the main color of the screens | `String` | `#88819f` |
+| `secondary`| :material-check: | To set the color of some UI components | `String` | `#8faa96` |
 
 #### Journey color
 
 | Name | Required | Description | Type | Example |
 | --- |:---:| --- | :---: | :---: |
-| `primary_color`| :material-check: | To set the main color of the screens | `String` | `#88819f` |
-| `secondary_color`| :material-check: | To set the color of some UI components | `String` | `#8faa96` |
-| `tertiary_color`| :material-close: | To set the color of more UI components | `String` | `#efa59f` |
-| `origin_color`| :material-close: | To set the color of the itinerary origin | `String` | `#8faa96` |
-| `origin_background_color`| :material-close: | To set the background color of the itinerary origin | `String` | `#8faa96` |
-| `origin_icon_color`| :material-close: | To set the icon color of the itinerary origin | `String` | `#8faa96` |
-| `destination_color`| :material-close: | To set the color of the itinerary destination | `String` | `#8faa96` |
-| `destination_background_color`| :material-close: | To set the background color of the itinerary destination | `String` | `#8faa96` |
-| `destination_icon_color`| :material-close: | To set the icon color of the itinerary destination | `String` | `#8faa96` |
+| `primary`| :material-check: | To set the main color of the screens | `String` | `#88819f` |
+| `secondary`| :material-check: | To set the color of some UI components | `String` | `#8faa96` |
+| `tertiary`| :material-close: | To set the color of more UI components | `String` | `#efa59f` |
+| `origin`| :material-close: | To set colors of the journey origin | [`Journey origin color`](#journey-origin-color) | - |
+| `destination`| :material-close: | To set colors of the journey destination | [`Journey destination color`](#journey-destination-color) | - |
+| `bike`| :material-close: | To set colors of the specific bike journey | [`Journey bike color`](#journey-bike-color) | - |
+
+##### Journey origin color
+
+| Name | Required | Description | Type | Example |
+| --- |:---:| --- | :---: | :---: |
+| `icon`| :material-check: | To set the icon color of the itinerary origin | `String` | `#88819f` |
+
+##### Journey destination color
+
+| Name | Required | Description | Type | Example |
+| --- |:---:| --- | :---: | :---: |
+| `primary`| :material-check: | To set the color of the arrival block | `String` | `#8faa96` |
+| `icon`| :material-close: | To set the icon color of the itinerary destination | `String` | `#88819f` |
+
+##### Journey bike color
+
+| Name | Required | Description | Type | Example |
+| --- |:---:| --- | :---: | :---: |
+| `primary`| :material-check: | To set the main color of the specific bike journey | `String` | `#8faa96` |
+| `non_cyclable`| :material-close: | To set the color of the non cyclable part for a specific bike journey | `String` | `#88819f` |
 
 #### Schedule color
 
 | Name | Required | Description | Type | Example |
 | --- |:---:| --- | :---: | :---: |
-| `primary_color`| :material-check: | To set the main color of the screens | `String` | `#88819f` |
-| `secondary_color`| :material-check: | To set the color of some UI components | `String` | `#8faa96` |
+| `primary`| :material-check: | To set the main color of the screens | `String` | `#88819f` |
+| `secondary`| :material-check: | To set the color of some UI components | `String` | `#8faa96` |
 
 #### Traffic color
 
 | Name | Required | Description | Type | Example |
 | --- |:---:| --- | :---: | :---: |
-| `primary_color`| :material-check: | To set the main color of the screens | `String` | `#88819f` |
-| `secondary_color`| :material-check: | To set the color of some UI components | `String` | `#8faa96` |
+| `primary`| :material-check: | To set the main color of the screens | `String` | `#88819f` |
+| `secondary`| :material-check: | To set the color of some UI components | `String` | `#8faa96` |
 
 ### Transport category
 
