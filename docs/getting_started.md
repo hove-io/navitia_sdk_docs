@@ -121,6 +121,7 @@ The following are the possible configuration parameters:
 | `origin`| :material-close: | To set colors of the journey origin | [`Journey origin color`](#journey-origin-color) | - |
 | `destination`| :material-close: | To set colors of the journey destination | [`Journey destination color`](#journey-destination-color) | - |
 | `bike`| :material-close: | To set colors of the specific bike journey | [`Journey bike color`](#journey-bike-color) | - |
+| `nav_bar_background` | :material-close: | To set the color of the navigation bar.iOS only.  | `String` | `#efa59f` |
 
 ##### Journey origin color
 
@@ -445,40 +446,46 @@ Please note that this is the complete version of the configuration, remove unuse
   "env": "PROD",
   "colors": {
     "account": {
-      "primary_color": "",
-      "secondary_color": ""
+      "primary": "",
+      "secondary": ""
     },
     "aroundme": {
-      "primary_color": "",
-      "secondary_color": "",
-      "tertiary_color": ""
+      "primary": "",
+      "secondary": "",
+      "tertiary": "",
     },
     "bookmark": {
-      "primary_color": "",
-      "secondary_color": ""
+      "primary": "",
+      "secondary": ""
     },
     "crowdsourcing": {
-      "primary_color": "",
-      "secondary_color": ""
+      "primary": "",
+      "secondary": ""
     },
     "journey": {
-      "primary_color": "",
-      "secondary_color": "",
-      "tertiary_color": "",
-      "destination_color": "",
-      "destination_background_color": "",
-      "destination_icon_color": "",
-      "origin_color": "",
-      "origin_background_color": "",
-      "origin_icon_color": ""
+      "primary": "",
+      "secondary": "",
+      "tertiary": "",
+      "destination": {
+        "primary" : "",
+        "icon": ""
+      },
+      "origin": {
+        "icon": ""
+      },
+      "bike": {
+        "primary": "",
+        "non_cyclable": ""
+      },
+      "nav_bar_background": ""
     },
     "schedule": {
-      "primary_color": "",
-      "secondary_color": ""
+      "primary": "",
+      "secondary": ""
     },
     "traffic": {
-      "primary_color": "",
-      "secondary_color": ""
+      "primary": "",
+      "secondary": ""
     }
   },
   "fonts": {
@@ -565,18 +572,33 @@ Please note that this is the complete version of the configuration, remove unuse
         }
       ],
       "networks": [
-        "network:BIL:27"
+        ""
+      ],
+      "direct_path_modes": [
+        "car",
+        "car_no_park",
+        "bss",
+        "bike",
+        "rideharing",
+        "taxi",
+        "walking"
       ],
       "first_section_modes": [
         "car",
+        "car_no_park",
         "bss",
         "bike",
+        "rideharing",
+        "taxi",
         "walking"
       ],
       "last_section_modes": [
         "car",
+        "car_no_park",
         "bss",
         "bike",
+        "rideharing",
+        "taxi",
         "walking"
       ],
       "add_poi_infos": [
@@ -683,7 +705,7 @@ Please note that this is the complete version of the configuration, remove unuse
       "go_from_go_to": true
     },
     "journey": {
-      "autocompletion": false,
+      "search_only": false,
       "stop_point_search": true,
       "bookmark_mode": true,
       "step_by_step_guidance": true,
@@ -694,7 +716,7 @@ Please note that this is the complete version of the configuration, remove unuse
       "transport_networks": true,
       "max_history": 10,
       "disruption_contributors": [
-        "shortterm.tr_idfm"
+        ""
       ],
       "buy_tickets": {
         "title_res" : ""
@@ -708,7 +730,7 @@ Please note that this is the complete version of the configuration, remove unuse
     },
     "traffic": {
       "disruption_contributors": [
-        "shortterm.tr_idfm"
+        ""
       ],
       "severity": [
         {
