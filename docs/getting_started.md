@@ -291,18 +291,21 @@ The following are the possible configuration parameters:
 
 | Name | Required | Description | Type | Example |
 | --- |:---:| --- | :---: | :---: |
-| `autocompletion`| :material-close: | Enable/disable the autocompletion | `Boolean` | `false` |
 | `bookmark_mode`| :material-close: | Enable/disable the bookmarks feature | `Boolean` |
-| `stop_point_search`| :material-close: | Enable/disable search by stop point instead of stop area | `Boolean` | `false` |
-| `step_by_step_guidance`| :material-close: | Enable/disable the step by step guidance | `Boolean` |
-| `next_departures`| :material-close: | Show/hide the next departures | `Boolean` | `true` |
-| `price`| :material-close: | Show/hide the itinerary price | `Boolean` | `true` |
+| `buy_tickets`| :material-close: | Enable a buy button in roadmap | [Buy ticket button](#buy-ticket-button) |
 | `carbon`| :material-close: | Show/hide the itinerary carbon summary | `Boolean` | `true` |
 | `calories`| :material-close: | Show/hide the itinerary calories summary | `Boolean` | `false` |
-| `transport_networks`| :material-close: | Show/hide the public transport network | `Boolean` | `false` |
-| `max_history`| :material-close: | Define the max history items | `Int` | `10` |
 | `disruption_contributors`| :material-close: | Define the list of disruption contributors id | `[String]` | `["shortterm.tr_idfm"]` |
-| `buy_tickets`| :material-close: | Enable a buy button in roadmap | [Buy ticket button](#buy-ticket-button) |
+| `disruption_contributors`| :material-close: | Define the list of disruption contributors id | `[String]` | `["shortterm.tr_idfm"]` |
+| `earlier_later`| :material-close: | Enable/disable the earlier/later journeys request | `Boolean` | `false` |
+| `max_favorite_addresses`| :material-close: | Define the max history items | `Int` | `0` |
+| `max_favorite_pois`| :material-close: | Define the max history items | `Int` | `0` |
+| `max_history`| :material-close: | Define the max history items | `Int` | `10` |
+| `next_departures`| :material-close: | Show/hide the next departures | `Boolean` | `true` |
+| `price`| :material-close: | Show/hide the itinerary price | `Boolean` | `true` |
+| `stop_point_search`| :material-close: | Enable/disable search by stop point instead of stop area | `Boolean` | `false` |
+| `step_by_step_guidance`| :material-close: | Enable/disable the step by step guidance | `Boolean` |
+| `transport_networks`| :material-close: | Show/hide the public transport network | `Boolean` | `false` |
 
 #### Buy ticket button
 
