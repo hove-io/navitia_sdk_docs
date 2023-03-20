@@ -2,6 +2,7 @@
 
 ## Available versions
 
+* [v3.2.1](releases/3.2.1/index.md) (_17 Mar 2023_)
 * [v3.2.0](releases/3.2.0/index.md) (_15 Feb 2023_)
 * [v3.1.2](releases/3.1.2/index.md) (_19 Jan 2023_)
 * [v3.1.1](releases/3.1.1/index.md) (_13 Jan 2023_)

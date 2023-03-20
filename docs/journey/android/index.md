@@ -74,6 +74,15 @@ JourneyUI.getInstance().attachActivity(AppCompatActivity)
 JourneyUI.getInstance().delegate.onBackPressed()
 ```
 
+### Events tracking
+
+In order to receive the list of generated events within Journey module, you have to attach the tracker to the module instance.<br>
+You can call this method before or after `init()`.
+
+| Method | Description |
+| --- | --- |
+| `.attachTracker(journeyTrackerImpl)` | Attach the class instance implementing `JourneyTracker` interface |
+
 ## 🚀  Launching
 
 Journey has a single entry point `JourneysFragment`.<br>
@@ -105,31 +114,19 @@ The `JourneysRequest` object allows to configure the first itinerary search at s
 | Name | Required | Description | Type | Default |
 | --- |:---:| --- | --- | --- |
 | `allowedId`| :material-close: | Allowed Navitia object IDs | `List<String>` | `emptyList()` |
-| `addPoiInfos`| :material-close: | Request extra POI infos | [`MutableSet<AddPoiInfos>`](#addpoiinfos) | `mutableSetOf()` |
 | `count`| :material-close: | The number of journeys to be displayed | `Int` | `-1` |
 | `dataFreshness`| :material-close: | To indicate if theoretical or realtime data are requested | [`DataFreshness`](#datafreshness) | `DataFreshness.BASE_SCHEDULE` |
 | `dateTime`| :material-close: | Requested date and time for journey results | `DateTime` | `null` |
 | `dateTimeRepresents`| :material-close: | Whether the datetime represents the departure or arrival | [`DateTimeRepresents`](#datetimerepresents) | `DateTimeRepresents.DEPARTURE` |
-| `destinationAddress`| :material-close: | Destination point address | `String` | `""` |
 | `destinationId`| :material-close: | Destination Navitia ID | `String` | `""` |
 | `destinationLabel`| :material-close: | Destination label, if not set the address will be displayed | `String` | `""` |
-| `directPathMode`| :material-close: | List of direct path modes | `MutableSet<String>` | `mutableSetOf()` |
-| `firstSectionModes`| :material-close: | List of first section modes | `MutableSet<String>` | `mutableSetOf()` |
-| `forbiddenUris`| :material-close: | List of forbidden physical modes | `MutableSet<String>` | `mutableSetOf()` |
-| `lastSectionModes`| :material-close: | List of last section modes | `MutableSet<String>` | `mutableSetOf()` |
+| `directPath` | :material-close: | Set the direct path of the journey | [`DirectPath`](#directpath) | `""` |
 | `maxJourneys`| :material-close: | The max number of journeys to be displayed | `Int` | `-1` |
 | `minJourneys`| :material-close: | The min number of journeys to be displayed | `Int` | `-1` |
-| `originAddress`| :material-close: | Origin point address | `String` | `""` |
+| `minNbTransfers`| :material-close: | The min number of public transport transfers | `Int` | `-1` |
 | `originId`| :material-close: | Origin Navitia ID | `String` | `""` |
 | `originLabel`| :material-close: | Origin label, if not set the address will be displayed | `String` | `""` |
 | `travelerType`| :material-close: | Traveler type | [`TravelerType`](#travelertype) | `TravelerType.STANDARD` |
-
-#### AddPoiInfos
-
-| Enum value | Description |
-| --- | --- |
-| `BSS_STANDS` | Request the number of available stands in a BSS station |
-| `CAR_PARK` | Request the number of available places in a car parking |
 
 #### DataFreshness
 
@@ -142,8 +139,17 @@ The `JourneysRequest` object allows to configure the first itinerary search at s
 
 | Enum value | Description |
 | --- | --- |
-| `ARRIVAL` | The requestd datetime represents the arrival of the journey |
+| `ARRIVAL` | The requested datetime represents the arrival of the journey |
 | `DEPARTURE` | The requested datetime represents the departure of the journey |
+
+#### DirectPath
+
+| Enum value | Description |
+| --- | --- |
+| `INDIFFERENT` | Default value |
+| `NONE` | For journeys using some public transport |
+| `ONLY` | For journeys without public transport |
+| `ONLY_WITH_ALTERNATIVES` | For journeys with specific bike  |
 
 #### TravelerType
 
@@ -173,15 +179,22 @@ In the bike tab, the bike journeys are classified depending on specific criteria
 
 <img class="img-overview" src="/navitia_sdk_docs/assets/img/journey_android_journeys_screen_bike_tab.png" alt="Bike tab">
 
+Each made itinerary request is saved and shown to the user at the screen launch. The history can be easily deleted by choosing delete from the action menu of the target item.<br>
+In the same screen, we also show the list of the favorite journeys that the user has added using the bookmark button (see [Roadmap](#roadmap) section below). To enable this feature, the `bookmark_mode`parameter should be set to `true` in [Journey features](../../getting_started/#journey-features).
+
+<img class="img-overview" src="/navitia_sdk_docs/assets/img/journey_android_journeys_screen_history_favorite_journeys.png" alt="Journey - History and favorites">
+
 ### Search
 
-The search feature can be enabled in the configuration by setting the parameter `search` to `true` as mentioned in the [Journey features](../../getting_started/#journey-features) section.<br>
+The search feature can be enabled in the configuration by setting the parameter `search_only` to `false` as mentioned in the [Journey features](../../getting_started/#journey-features) section.<br>
 In this screen, the user can choose the departure and the arrival of his itinerary. While typing in the target field, a list of options is shown below the field. The user can simply choose one of the suggested options and mark it as a departure or as an arrival point.<br>
 
 The suggested options are grouped in sections, it's whether a station, an address or a place.
 In this screen, a geolocation service is used to get the user location. Therefore, another option is given and it allows the user to set his position as a departure or an arrival of the itinerary.<br>
 
 A history feature is added to this screen, allowing the user to choose from the previous selected items. The `maxHistory` parameter defines the maximum number of items to show in the history list.
+
+If `bookmark_mode` feature is enabled in the [Journey features](../../getting_started/#journey-features), a bookmark section appears in the same screen allowing the user to choose from his favorite addresses/places. A shortcut button is also available for Home and Work favorites.
 
 <img class="img-overview" src="/navitia_sdk_docs/assets/img/journey_android_autocompletion_screen.png" alt="Autocompletion screen">
 
@@ -190,6 +203,8 @@ A history feature is added to this screen, allowing the user to choose from the 
 We believe that the user needs more useful details about his journey and that's where the roadmap screen comes in. In this page, the user gets a visual overview about the selected itinerary with a simple colorful drawing on a map. Departure and arrival markers are also shown on the map along with the user location and itinerary segments delimiters.
 
 The screen also includes a draggable bottom sheet which offers a step-by-step journey sections. Each section is represented in a way that it makes it easier to the user to follow the given instructions. The public transport section is also well detailed when it comes to explain to the user how to take different means of transport from the departure to the arrival point.
+
+A customized button can be added in case an external action needs to be made from outside this screen. To enable this button, the parameter `buy_tickets` should be set in [Journey features](../../getting_started/#journey-features).
 
 <img class="img-overview" src="/navitia_sdk_docs/assets/img/journey_android_roadmap_screen.png" alt="Roadmap screen">
 
