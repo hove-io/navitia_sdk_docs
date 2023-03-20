@@ -774,7 +774,7 @@ You can find in the following table the list of UI modules that support the even
 | --- | ---- | :---: |
 | Around Me | :material-close: | - |
 | Bookmark | :material-close: | - |
-| Journey | :material-check: | [Journey events tracking](journey/android/#events-tracking) |
+| Journey | :material-check: | [Journey events tracking](../journey/android/#events-tracking) |
 | Schedule | :material-close: | - |
 | Traffic | :material-close: | - |
 
@@ -784,6 +784,6 @@ You can find in the following table the list of UI modules that support the even
 | --- | ---- | :---: |
 | Around Me | :material-close: | - |
 | Bookmark | :material-close: | - |
-| Journey | :material-check: | [Journey events tracking](journey/ios/#events-tracking) |
+| Journey | :material-check: | [Journey events tracking](../journey/ios/#events-tracking) |
 | Schedule | :material-close: | - |
 | Traffic | :material-close: | - |
