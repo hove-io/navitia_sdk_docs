@@ -7,6 +7,7 @@
 - Show favorites journeys
 - Can open directly a favorite journey in _Journey_
 - An address can be added as favorite
+- Add events analytics
 
 #### Tasks
 - Change configuration color variable names

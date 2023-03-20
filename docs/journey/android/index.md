@@ -74,6 +74,15 @@ JourneyUI.getInstance().attachActivity(AppCompatActivity)
 JourneyUI.getInstance().delegate.onBackPressed()
 ```
 
+### Events tracking
+
+In order to receive the list of generated events within Journey module, you have to attach the tracker to the module instance.<br>
+You can call this method before or after `init()`.
+
+| Method | Description |
+| --- | --- |
+| `.attachTracker(journeyTrackerImpl)` | Attach the class instance implementing `JourneyTracker` interface |
+
 ## 🚀  Launching
 
 Journey has a single entry point `JourneysFragment`.<br>

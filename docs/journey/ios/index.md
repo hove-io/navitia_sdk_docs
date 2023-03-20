@@ -88,6 +88,14 @@ do {
 }                                   
 ```
 
+### Events tracking
+
+In order to receive the list of generated events within Journey module, you have to assign the instance of the tracker to the Journey module instance as follows and implement the required methods:
+
+```swift
+JourneySdk.shared.tracker = self
+```
+
 ## 🚀  Launching
 
 This module has a single entry point. 

@@ -750,3 +750,40 @@ Please note that this is the complete version of the configuration, remove unuse
   }
 }
 ```
+
+## 📈 Modules events tracking
+
+The events triggered within Navitia UI modules can be traced and forwarded to the application module. Each generated event is served with other information allowing to identify the target object on the module screen.<br>
+You can refer to the table below for possible generated events.
+
+| Event name | Possible object types | Description |
+| --- | --- |
+| `drag`| `map`, `bottomSheet`, `chart`, `map` | The user performs a drag action |
+| `edit`| `field` | The user has changed the input value of an object |
+| `tap`| `button`, `item`, `switch`, `tab` | The user performs a tap action |
+| `scroll`| `bottomSheet`, `list` | The user started a scroll on an object |
+| `show`| - | A screen is displayed |
+| `swipe`| `bottomSheet` | The user performs a swipe action |
+| `zoom`| `map` | The user performs whether a pinch, a double tap action to zoom on an object |
+
+You can find in the following table the list of UI modules that support the event tracking features
+
+<h4>Android</h4>
+
+| Module name | Available | Implementation |
+| --- | ---- | :---: |
+| Around Me | :material-close: | - |
+| Bookmark | :material-close: | - |
+| Journey | :material-check: | [Journey events tracking](journey/android/#events-tracking) |
+| Schedule | :material-close: | - |
+| Traffic | :material-close: | - |
+
+<h4>iOS</h4>
+
+| Module name | Available | Implementation |
+| --- | ---- | :---: |
+| Around Me | :material-close: | - |
+| Bookmark | :material-close: | - |
+| Journey | :material-check: | [Journey events tracking](journey/ios/#events-tracking) |
+| Schedule | :material-close: | - |
+| Traffic | :material-close: | - |
