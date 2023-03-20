@@ -86,58 +86,76 @@ The following are the possible configuration parameters:
 
 | Name | Required | Description | Type | Example |
 | --- |:---:| --- | :---: | :---: |
-| `primary_color`| :material-check: | To set the main color of the screens | `String` | `#88819f` |
-| `secondary_color`| :material-check: | To set the color of some UI components | `String` | `#8faa96` |
+| `primary`| :material-check: | To set the main color of the screens | `String` | `#88819f` |
+| `secondary`| :material-check: | To set the color of some UI components | `String` | `#8faa96` |
 
 #### Around Me color
 
 | Name | Required | Description | Type | Example |
 | --- |:---:| --- | :---: | :---: |
-| `primary_color`| :material-check: | To set the main color of the screens | `String` | `#88819f` |
-| `secondary_color`| :material-check: | To set the color of some UI components | `String` | `#8faa96` |
-| `tertiary_color`| :material-close: | To set the color of more UI components | `String` | `#efa59f` |
+| `primary`| :material-check: | To set the main color of the screens | `String` | `#88819f` |
+| `secondary`| :material-check: | To set the color of some UI components | `String` | `#8faa96` |
+| `tertiary`| :material-close: | To set the color of more UI components | `String` | `#efa59f` |
 
 #### Bookmark color
 
 | Name | Required | Description | Type | Example |
 | --- |:---:| --- | :---: | :---: |
-| `primary_color`| :material-check: | To set the main color of the screens | `String` | `#88819f` |
-| `secondary_color`| :material-check: | To set the color of some UI components | `String` | `#8faa96` |
+| `primary`| :material-check: | To set the main color of the screens | `String` | `#88819f` |
+| `secondary`| :material-check: | To set the color of some UI components | `String` | `#8faa96` |
 
 #### Crowdsourcing color
 
 | Name | Required | Description | Type | Example |
 | --- |:---:| --- | :---: | :---: |
-| `primary_color`| :material-check: | To set the main color of the screens | `String` | `#88819f` |
-| `secondary_color`| :material-check: | To set the color of some UI components | `String` | `#8faa96` |
+| `primary`| :material-check: | To set the main color of the screens | `String` | `#88819f` |
+| `secondary`| :material-check: | To set the color of some UI components | `String` | `#8faa96` |
 
 #### Journey color
 
 | Name | Required | Description | Type | Example |
 | --- |:---:| --- | :---: | :---: |
-| `primary_color`| :material-check: | To set the main color of the screens | `String` | `#88819f` |
-| `secondary_color`| :material-check: | To set the color of some UI components | `String` | `#8faa96` |
-| `tertiary_color`| :material-close: | To set the color of more UI components | `String` | `#efa59f` |
-| `origin_color`| :material-close: | To set the color of the itinerary origin | `String` | `#8faa96` |
-| `origin_background_color`| :material-close: | To set the background color of the itinerary origin | `String` | `#8faa96` |
-| `origin_icon_color`| :material-close: | To set the icon color of the itinerary origin | `String` | `#8faa96` |
-| `destination_color`| :material-close: | To set the color of the itinerary destination | `String` | `#8faa96` |
-| `destination_background_color`| :material-close: | To set the background color of the itinerary destination | `String` | `#8faa96` |
-| `destination_icon_color`| :material-close: | To set the icon color of the itinerary destination | `String` | `#8faa96` |
+| `primary`| :material-check: | To set the main color of the screens | `String` | `#88819f` |
+| `secondary`| :material-check: | To set the color of some UI components | `String` | `#8faa96` |
+| `tertiary`| :material-close: | To set the color of more UI components | `String` | `#efa59f` |
+| `origin`| :material-close: | To set colors of the journey origin | [`Journey origin color`](#journey-origin-color) | - |
+| `destination`| :material-close: | To set colors of the journey destination | [`Journey destination color`](#journey-destination-color) | - |
+| `bike`| :material-close: | To set colors of the specific bike journey | [`Journey bike color`](#journey-bike-color) | - |
+| `nav_bar_background` | :material-close: | To set the color of the navigation bar.iOS only.  | `String` | `#efa59f` |
+
+##### Journey origin color
+
+| Name | Required | Description | Type | Example |
+| --- |:---:| --- | :---: | :---: |
+| `icon`| :material-check: | To set the icon color of the itinerary origin | `String` | `#88819f` |
+
+##### Journey destination color
+
+| Name | Required | Description | Type | Example |
+| --- |:---:| --- | :---: | :---: |
+| `primary`| :material-check: | To set the color of the arrival block | `String` | `#8faa96` |
+| `icon`| :material-close: | To set the icon color of the itinerary destination | `String` | `#88819f` |
+
+##### Journey bike color
+
+| Name | Required | Description | Type | Example |
+| --- |:---:| --- | :---: | :---: |
+| `primary`| :material-check: | To set the main color of the specific bike journey | `String` | `#8faa96` |
+| `non_cyclable`| :material-close: | To set the color of the non cyclable part for a specific bike journey | `String` | `#88819f` |
 
 #### Schedule color
 
 | Name | Required | Description | Type | Example |
 | --- |:---:| --- | :---: | :---: |
-| `primary_color`| :material-check: | To set the main color of the screens | `String` | `#88819f` |
-| `secondary_color`| :material-check: | To set the color of some UI components | `String` | `#8faa96` |
+| `primary`| :material-check: | To set the main color of the screens | `String` | `#88819f` |
+| `secondary`| :material-check: | To set the color of some UI components | `String` | `#8faa96` |
 
 #### Traffic color
 
 | Name | Required | Description | Type | Example |
 | --- |:---:| --- | :---: | :---: |
-| `primary_color`| :material-check: | To set the main color of the screens | `String` | `#88819f` |
-| `secondary_color`| :material-check: | To set the color of some UI components | `String` | `#8faa96` |
+| `primary`| :material-check: | To set the main color of the screens | `String` | `#88819f` |
+| `secondary`| :material-check: | To set the color of some UI components | `String` | `#8faa96` |
 
 ### Transport category
 
@@ -273,18 +291,21 @@ The following are the possible configuration parameters:
 
 | Name | Required | Description | Type | Example |
 | --- |:---:| --- | :---: | :---: |
-| `autocompletion`| :material-close: | Enable/disable the autocompletion | `Boolean` | `false` |
 | `bookmark_mode`| :material-close: | Enable/disable the bookmarks feature | `Boolean` |
-| `stop_point_search`| :material-close: | Enable/disable search by stop point instead of stop area | `Boolean` | `false` |
-| `step_by_step_guidance`| :material-close: | Enable/disable the step by step guidance | `Boolean` |
-| `next_departures`| :material-close: | Show/hide the next departures | `Boolean` | `true` |
-| `price`| :material-close: | Show/hide the itinerary price | `Boolean` | `true` |
+| `buy_tickets`| :material-close: | Enable a buy button in roadmap | [Buy ticket button](#buy-ticket-button) |
 | `carbon`| :material-close: | Show/hide the itinerary carbon summary | `Boolean` | `true` |
 | `calories`| :material-close: | Show/hide the itinerary calories summary | `Boolean` | `false` |
-| `transport_networks`| :material-close: | Show/hide the public transport network | `Boolean` | `false` |
-| `max_history`| :material-close: | Define the max history items | `Int` | `10` |
 | `disruption_contributors`| :material-close: | Define the list of disruption contributors id | `[String]` | `["shortterm.tr_idfm"]` |
-| `buy_tickets`| :material-close: | Enable a buy button in roadmap | [Buy ticket button](#buy-ticket-button) |
+| `disruption_contributors`| :material-close: | Define the list of disruption contributors id | `[String]` | `["shortterm.tr_idfm"]` |
+| `earlier_later`| :material-close: | Enable/disable the earlier/later journeys request | `Boolean` | `false` |
+| `max_favorite_addresses`| :material-close: | Define the max history items | `Int` | `0` |
+| `max_favorite_pois`| :material-close: | Define the max history items | `Int` | `0` |
+| `max_history`| :material-close: | Define the max history items | `Int` | `10` |
+| `next_departures`| :material-close: | Show/hide the next departures | `Boolean` | `true` |
+| `price`| :material-close: | Show/hide the itinerary price | `Boolean` | `true` |
+| `stop_point_search`| :material-close: | Enable/disable search by stop point instead of stop area | `Boolean` | `false` |
+| `step_by_step_guidance`| :material-close: | Enable/disable the step by step guidance | `Boolean` |
+| `transport_networks`| :material-close: | Show/hide the public transport network | `Boolean` | `false` |
 
 #### Buy ticket button
 
@@ -428,40 +449,46 @@ Please note that this is the complete version of the configuration, remove unuse
   "env": "PROD",
   "colors": {
     "account": {
-      "primary_color": "",
-      "secondary_color": ""
+      "primary": "",
+      "secondary": ""
     },
     "aroundme": {
-      "primary_color": "",
-      "secondary_color": "",
-      "tertiary_color": ""
+      "primary": "",
+      "secondary": "",
+      "tertiary": "",
     },
     "bookmark": {
-      "primary_color": "",
-      "secondary_color": ""
+      "primary": "",
+      "secondary": ""
     },
     "crowdsourcing": {
-      "primary_color": "",
-      "secondary_color": ""
+      "primary": "",
+      "secondary": ""
     },
     "journey": {
-      "primary_color": "",
-      "secondary_color": "",
-      "tertiary_color": "",
-      "destination_color": "",
-      "destination_background_color": "",
-      "destination_icon_color": "",
-      "origin_color": "",
-      "origin_background_color": "",
-      "origin_icon_color": ""
+      "primary": "",
+      "secondary": "",
+      "tertiary": "",
+      "destination": {
+        "primary" : "",
+        "icon": ""
+      },
+      "origin": {
+        "icon": ""
+      },
+      "bike": {
+        "primary": "",
+        "non_cyclable": ""
+      },
+      "nav_bar_background": ""
     },
     "schedule": {
-      "primary_color": "",
-      "secondary_color": ""
+      "primary": "",
+      "secondary": ""
     },
     "traffic": {
-      "primary_color": "",
-      "secondary_color": ""
+      "primary": "",
+      "secondary": ""
     }
   },
   "fonts": {
@@ -548,18 +575,33 @@ Please note that this is the complete version of the configuration, remove unuse
         }
       ],
       "networks": [
-        "network:BIL:27"
+        ""
+      ],
+      "direct_path_modes": [
+        "car",
+        "car_no_park",
+        "bss",
+        "bike",
+        "rideharing",
+        "taxi",
+        "walking"
       ],
       "first_section_modes": [
         "car",
+        "car_no_park",
         "bss",
         "bike",
+        "rideharing",
+        "taxi",
         "walking"
       ],
       "last_section_modes": [
         "car",
+        "car_no_park",
         "bss",
         "bike",
+        "rideharing",
+        "taxi",
         "walking"
       ],
       "add_poi_infos": [
@@ -666,7 +708,7 @@ Please note that this is the complete version of the configuration, remove unuse
       "go_from_go_to": true
     },
     "journey": {
-      "autocompletion": false,
+      "search_only": false,
       "stop_point_search": true,
       "bookmark_mode": true,
       "step_by_step_guidance": true,
@@ -677,7 +719,7 @@ Please note that this is the complete version of the configuration, remove unuse
       "transport_networks": true,
       "max_history": 10,
       "disruption_contributors": [
-        "shortterm.tr_idfm"
+        ""
       ],
       "buy_tickets": {
         "title_res" : ""
@@ -691,7 +733,7 @@ Please note that this is the complete version of the configuration, remove unuse
     },
     "traffic": {
       "disruption_contributors": [
-        "shortterm.tr_idfm"
+        ""
       ],
       "severity": [
         {
@@ -708,3 +750,40 @@ Please note that this is the complete version of the configuration, remove unuse
   }
 }
 ```
+
+## 📈 Modules events tracking
+
+The events triggered within Navitia UI modules can be traced and forwarded to the application module. Each generated event is served with other information allowing to identify the target object on the module screen.<br>
+You can refer to the table below for possible generated events.
+
+| Event name | Possible object types | Description |
+| --- | --- |
+| `drag`| `map`, `bottomSheet`, `chart`, `map` | The user performs a drag action |
+| `edit`| `field` | The user has changed the input value of an object |
+| `tap`| `button`, `item`, `switch`, `tab` | The user performs a tap action |
+| `scroll`| `bottomSheet`, `list` | The user started a scroll on an object |
+| `show`| - | A screen is displayed |
+| `swipe`| `bottomSheet` | The user performs a swipe action |
+| `zoom`| `map` | The user performs whether a pinch, a double tap action to zoom on an object |
+
+You can find in the following table the list of UI modules that support the event tracking features
+
+<h4>Android</h4>
+
+| Module name | Available | Implementation |
+| --- | ---- | :---: |
+| Around Me | :material-close: | - |
+| Bookmark | :material-close: | - |
+| Journey | :material-check: | [Journey events tracking](journey/android/#events-tracking) |
+| Schedule | :material-close: | - |
+| Traffic | :material-close: | - |
+
+<h4>iOS</h4>
+
+| Module name | Available | Implementation |
+| --- | ---- | :---: |
+| Around Me | :material-close: | - |
+| Bookmark | :material-close: | - |
+| Journey | :material-check: | [Journey events tracking](journey/ios/#events-tracking) |
+| Schedule | :material-close: | - |
+| Traffic | :material-close: | - |
