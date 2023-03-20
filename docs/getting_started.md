@@ -757,7 +757,7 @@ The events triggered within Navitia UI modules can be traced and forwarded to th
 You can refer to the table below for possible generated events.
 
 | Event name | Possible object types | Description |
-| --- | --- |
+| --- | --- | --- |
 | `drag`| `map`, `bottomSheet`, `chart`, `map` | The user performs a drag action |
 | `edit`| `field` | The user has changed the input value of an object |
 | `tap`| `button`, `item`, `switch`, `tab` | The user performs a tap action |
