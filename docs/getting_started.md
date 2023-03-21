@@ -168,7 +168,8 @@ The following are the possible configuration parameters:
 | `modes`| :material-close: | List of supported transport modes | [`Transport Mode`](#transport-mode) | - |
 | `networks`| :material-close: | List of supported networks | `[String]` | `["network:BIL:27"]` |
 | `first_section_modes`| :material-close: | List of first section modes | `[String]` | `["bike", "car"]` |
-| `last_section_modes`| :material-close: | List of first section modes | `[String]` | `["ridesharing", "bss"]` |
+| `last_section_modes`| :material-close: | List of last section modes | `[String]` | `["ridesharing", "bss"]` |
+| `direct_path_modes`| :material-close: | List of direct path modes | `[String]` | `["ridesharing", "bss"]` |
 | `add_poi_infos`| :material-close: | List of requested extra POI data | `[String]` | `["bss_stands", "car_park"]` |
 
 #### Transport mode
