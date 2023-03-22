@@ -168,7 +168,8 @@ The following are the possible configuration parameters:
 | `modes`| :material-close: | List of supported transport modes | [`Transport Mode`](#transport-mode) | - |
 | `networks`| :material-close: | List of supported networks | `[String]` | `["network:BIL:27"]` |
 | `first_section_modes`| :material-close: | List of first section modes | `[String]` | `["bike", "car"]` |
-| `last_section_modes`| :material-close: | List of first section modes | `[String]` | `["ridesharing", "bss"]` |
+| `last_section_modes`| :material-close: | List of last section modes | `[String]` | `["ridesharing", "bss"]` |
+| `direct_path_modes`| :material-close: | List of direct path modes | `[String]` | `["taxi", "car_no_park"]` |
 | `add_poi_infos`| :material-close: | List of requested extra POI data | `[String]` | `["bss_stands", "car_park"]` |
 
 #### Transport mode
@@ -757,7 +758,7 @@ The events triggered within Navitia UI modules can be traced and forwarded to th
 You can refer to the table below for possible generated events.
 
 | Event name | Possible object types | Description |
-| --- | --- |
+| --- | --- | --- |
 | `drag`| `map`, `bottomSheet`, `chart`, `map` | The user performs a drag action |
 | `edit`| `field` | The user has changed the input value of an object |
 | `tap`| `button`, `item`, `switch`, `tab` | The user performs a tap action |
@@ -774,7 +775,7 @@ You can find in the following table the list of UI modules that support the even
 | --- | ---- | :---: |
 | Around Me | :material-close: | - |
 | Bookmark | :material-close: | - |
-| Journey | :material-check: | [Journey events tracking](journey/android/#events-tracking) |
+| Journey | :material-check: | [Journey events tracking](../journey/android/#events-tracking) |
 | Schedule | :material-close: | - |
 | Traffic | :material-close: | - |
 
@@ -784,6 +785,6 @@ You can find in the following table the list of UI modules that support the even
 | --- | ---- | :---: |
 | Around Me | :material-close: | - |
 | Bookmark | :material-close: | - |
-| Journey | :material-check: | [Journey events tracking](journey/ios/#events-tracking) |
+| Journey | :material-check: | [Journey events tracking](../journey/ios/#events-tracking) |
 | Schedule | :material-close: | - |
 | Traffic | :material-close: | - |

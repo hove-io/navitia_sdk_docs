@@ -1,4 +1,4 @@
-# Journey Android 5.2.2 Changelog
+# Journey Android 5.4.0 Changelog
 
 <h2>🗓 17 Mar 2023</h2>
 

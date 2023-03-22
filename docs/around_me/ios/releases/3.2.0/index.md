@@ -3,7 +3,7 @@
 <h2>🗓 15 Feb 2023</h2>
 
 #### Features
-- A buy button can be configured and added for POIs
+- A customizable POI event button is added
 - Show disruption icon on favorite stations
 
 #### Dependencies

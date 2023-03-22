@@ -4,3 +4,6 @@
 
 #### Tasks
 - Change configuration color variable names
+
+#### Fixes
+- Fix saved coordinates in history
