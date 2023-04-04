@@ -58,7 +58,7 @@ TrafficUI.getInstance().let { instance ->
 
 ### Alert subscription
 
-To enable the alert subscription feature the following instructions are required:
+To enable the alert subscription feature, the following instructions are required:
 - Add the [environment configuration](../../getting_started/#traffic-features)
 - Pass the [Kronos API credentials](#traffic-alert-subscription-credentials) to the initialization method
 - Set the firebase token `TrafficUI.getInstance().firebaseToken("token")` once received from the Firebase API at runtime
@@ -130,7 +130,9 @@ If the user hits the **Apply** button after changing the selection state, the ho
 ### Line/network disruptions
 
 This screen lists the disruptions related to the selected line or to all disrupted networks. Each element shows the title, the message and the application period of a target disruption.<br>
-Some disruptions have messages with included hyperlinks. Those links are also accessible to the user and will redirect him to an external browser to view the related link.
+Some disruptions have messages with included hyperlinks. Those links are also accessible to the user and will redirect him to an external browser to view the related link.<br>
+
+If the [alert subscription](#alert-subscription) feature is enabled, a bell button appears allowing the user to subscribe/unsubscribe to/from the line alerts.
 
 <img class="img-overview" src="/navitia_sdk_docs/assets/img/traffic_android_all_disruptions_screen.png" alt="All disruptions screen">
 
