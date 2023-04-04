@@ -56,6 +56,20 @@ TrafficUI.getInstance().let { instance ->
 }
 ```
 
+### Alert subscription
+
+To enable the alert subscription feature, the following instructions are required:
+- Add the [environment configuration](../../getting_started/#traffic-features)
+- Pass the [Kronos API credentials](#traffic-alert-subscription-credentials) to the initialization method
+- Set the firebase token `TrafficUI.getInstance().firebaseToken("token")` once received from the Firebase API at runtime
+
+#### Traffic alert subscription credentials
+
+| Name | Required | Description | Type |
+| --- |:---:| --- | :---: |
+| `username`| :material-check: | Kronos authentication username | `String` |
+| `password`| :material-check: | Kronos authentication password | `String` |
+
 ### Activity delegation
 
 Since the module launches its fragments, you may want to execute their `onBackPressed()` from your activity.
@@ -116,9 +130,31 @@ If the user hits the **Apply** button after changing the selection state, the ho
 ### Line/network disruptions
 
 This screen lists the disruptions related to the selected line or to all disrupted networks. Each element shows the title, the message and the application period of a target disruption.<br>
-Some disruptions have messages with included hyperlinks. Those links are also accessible to the user and will redirect him to an external browser to view the related link.
+Some disruptions have messages with included hyperlinks. Those links are also accessible to the user and will redirect him to an external browser to view the related link.<br>
+
+If the [alert subscription](#alert-subscription) feature is enabled, a bell button appears allowing the user to subscribe/unsubscribe to/from the line alerts.
 
 <img class="img-overview" src="/navitia_sdk_docs/assets/img/traffic_android_all_disruptions_screen.png" alt="All disruptions screen">
+
+### Line selection
+
+This screen includes an autocompletion that enables the user to search the transport line needed for alert subscription.<br>
+The parameter [`transport_networks`](../../getting_started/#traffic-features) allows to show the network providing the searched line. 
+
+<img class="img-overview" src="/navitia_sdk_docs/assets/img/traffic_android_line_selection_screen.png" alt="Line selection screen">
+
+### Subscription schedule
+
+After selecting a line from the autocompletion screen, this screen appears giving the ability to the user to choose/modify the periods in which the alert subscription can be received.<br>
+Please verify that you have passed valid [Kronos API credentials](#traffic-alert-subscription-credentials) to the module initialization method in order to ensure a successful alert subscription process.
+
+<img class="img-overview" src="/navitia_sdk_docs/assets/img/traffic_android_subscription_schedule_screen.png" alt="Subscription schedule screen">
+
+### Subscriptions list
+
+This screen lists all the alert subscriptions that the user have registered. The subscriptions are also grouped by transport categories allowing to filter the subscriptions depending on the impacted line transport mode.
+
+<img class="img-overview" src="/navitia_sdk_docs/assets/img/traffic_android_subscriptions_list_screen.png" alt="Subscriptions list screen">
 
 ## 🗺 Screen flow
 

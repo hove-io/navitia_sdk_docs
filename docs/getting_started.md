@@ -329,6 +329,8 @@ The following are the possible configuration parameters:
 | --- |:---:| --- | :---: | :---: |
 | `disruption_contributors`| :material-close: | Define the list of disruption contributors id | `[String]` | `["shortterm.tr_idfm"]` |
 | `severity`| :material-close: | List of supported disruptions severities | [`[Traffic severity]`](#traffic-severity) | - |
+| `alert_subscription`| :material-close: | Alert subscription environment configuration | [`Alert subscription`](#alert-subscription) | - |
+| `transport_networks`| :material-close: | Enable/disable showing network on lines | `Boolean` | - |
 
 ##### Traffic severity
 
@@ -339,6 +341,13 @@ The following are the possible configuration parameters:
 | `color`| :material-check: | Color of the target severity | `String` | `#E74C3C` |
 | `effects`| :material-check: | List of severity effects | `[String]` | `["SIGNIFICANT_DELAYS"]` |
 | `selected`| :material-close: | Whether the severity is selected by default or not | `Boolean` | `true` |
+
+##### Alert subscription
+
+| Name | Required | Description | Type | Example |
+| --- |:---:| --- | :---: | :---: |
+| `env`| :material-check: | Kronos environment | `String` | `PROD` |
+| `timezone`| :material-check: | Subscriptions timezone | `String` | `Europe/Paris` |
 
 ### Fonts
 
@@ -746,7 +755,12 @@ Please note that this is the complete version of the configuration, remove unuse
           ],
           "selected": true
         }
-      ]
+      ],
+      "alert_subscription": {
+        "env": "PROD",
+          "timezone": "Europe/Paris"
+      },
+      "transport_networks": true
     }
   }
 }
