@@ -4,3 +4,6 @@
 
 #### Features
 - Add alert subscription feature
+
+#### Fixes
+- Fix links not clickable on disruption message
