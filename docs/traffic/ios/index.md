@@ -37,6 +37,7 @@ This module is set up by calling `Traffic.shared.initialize()` method which take
 | --- |:---:| --- | :---: | :---: |
 | `coverage`| :material-check: | Navitia coverage | `String` | `fr-idf` |
 | `env`| :material-check: | Navitia environment | `String` | `PROD` |
+| `alertCredentials`| :material-close: | Kronos alert subscription credentials| [`TrafficAlertSubscriptionCredentials`](#traffic-alert-subscription-credentials) | - |
 | `colors`| :material-check: | Define the custom colors | [`TrafficColorsConfiguration`](../../getting_started/#traffic-color) | - |
 | `fonts`| :material-close: | Use custom fonts | [`TrafficFontsConfiguration`](../../getting_started/#custom-font) | - |
 | `lineResources`| :material-close: | List of transport lines resource IDs | [`[LineResource]`](../../getting_started/#line-resource) | - | 
@@ -87,6 +88,20 @@ do {
 }                                   
 ```
 
+### Alert subscription
+
+To enable the alert subscription feature the following instructions are required:
+- Add the [environment configuration](../../getting_started/#traffic-features)
+- Pass the [Kronos API credentials](#traffic-alert-subscription-credentials) to the initialization method
+- Set the firebase token `Traffic.shared.firebaseToken = "token"` once received from the Firebase API at runtime
+
+#### Traffic alert subscription credentials
+
+| Name | Required | Description | Type |
+| --- |:---:| --- | :---: |
+| `username`| :material-check: | Kronos authentication username | `String` |
+| `password`| :material-check: | Kronos authentication password | `String` |
+
 ## 🚀  Launching
 
 This module has a single entry point. 
@@ -121,6 +136,26 @@ This screen lists the disruptions related to the selected line or to all disrupt
 Some disruptions have messages with included hyperlinks. Those links are also accessible to the user and will redirect him to an external browser to view the related link.
 
 <img class="img-overview" src="/navitia_sdk_docs/assets/img/traffic_ios_all_disruptions_screen.png" alt="All disruptions screen">
+
+### Line selection
+
+This screen includes an autocompletion that enables the user to search the transport line needed for alert subscription.<br>
+The parameter [`transport_networks`](../../getting_started/#traffic-features) allows to show the network providing the searched line. 
+
+<img class="img-overview" src="/navitia_sdk_docs/assets/img/traffic_ios_line_selection_screen.png" alt="Line selection screen">
+
+### Subscription schedule
+
+After selecting a line from the autocompletion screen, this screen appears giving the ability to the user to choose/modify the periods in which the alert subscription can be received.<br>
+Please verify that you have passed valid [Kronos API credentials](#traffic-alert-subscription-credentials) to the module initialization method in order to ensure a successful alert subscription process.
+
+<img class="img-overview" src="/navitia_sdk_docs/assets/img/traffic_ios_subscription_schedule_screen.png" alt="Subscription schedule screen">
+
+### Subscriptions list
+
+This screen lists all the alert subscriptions that the user have registered. The subscriptions are also grouped by transport categories allowing to filter the subscriptions depending on the impacted line transport mode.
+
+<img class="img-overview" src="/navitia_sdk_docs/assets/img/traffic_ios_subscriptions_list_screen.png" alt="Subscriptions list screen">
 
 ## 🗺 Screen flow
 
