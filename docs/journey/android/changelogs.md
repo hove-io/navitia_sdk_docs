@@ -2,6 +2,7 @@
 
 ## Available versions
 
+* [v5.5.2](releases/5.5.2/index.md) (_11 May 2023_)
 * [v5.5.1](releases/5.5.1/index.md) (_27 Apr 2023_)
 * [v5.5.0](releases/5.5.0/index.md) (_03 Apr 2023_)
 * [v5.4.1](releases/5.4.1/index.md) (_22 Mar 2023_)
