@@ -159,18 +159,18 @@ The following are the possible configuration parameters:
 
 ### Transport category
 
-| Name | Required | Description | Type | Example |
-| --- |:---:| --- | :---: | :---: |
-| `modules`| :material-check: | To set the target modules | `[String]` | `["aroundme","journey"]` |
-| `name_res`| :material-check: | To set the localized resource id | `String` | `transport_name_res` |
-| `icon_res`| :material-check: | To set the icon resource id | `String` | `ic_metro` |
-| `selected`| :material-close: | Whether the transport mode is selected by default or not | `Boolean` | `true` |
-| `modes`| :material-close: | List of supported transport modes | [`Transport Mode`](#transport-mode) | - |
-| `networks`| :material-close: | List of supported networks | `[String]` | `["network:BIL:27"]` |
-| `first_section_modes`| :material-close: | List of first section modes | `[String]` | `["bike", "car"]` |
-| `last_section_modes`| :material-close: | List of last section modes | `[String]` | `["ridesharing", "bss"]` |
-| `direct_path_modes`| :material-close: | List of direct path modes | `[String]` | `["taxi", "car_no_park"]` |
-| `add_poi_infos`| :material-close: | List of requested extra POI data | `[String]` | `["bss_stands", "car_park"]` |
+| Name | Required | Description | Type | Example | Target modules |
+| --- |:---:| --- | :---: | :---: | :---: |
+| `modules`| :material-check: | To set the target modules | `[String]` | `["aroundme","journey"]` | `ALL` |
+| `name_res`| :material-check: | To set the localized resource id | `String` | `transport_name_res` | `ALL` |
+| `icon_res`| :material-check: | To set the icon resource id | `String` | `ic_metro` | `ALL` |
+| `selected`| :material-close: | Whether the transport mode is selected by default or not | `Boolean` | `true` | `ALL` |
+| `modes`| :material-close: | List of supported transport modes | [`Transport Mode`](#transport-mode) | - | `ALL` |
+| `networks`| :material-close: | List of supported networks | `[String]` | `["network:BIL:27"]` | `Schedule` |
+| `first_section_modes`| :material-close: | List of first section modes | `[String]` | `["bike", "car"]` | `Journey` |
+| `last_section_modes`| :material-close: | List of last section modes | `[String]` | `["ridesharing", "bss"]` | `Journey` |
+| `direct_path_modes`| :material-close: | List of direct path modes | `[String]` | `["taxi", "car_no_park"]` | `Journey` |
+| `add_poi_infos`| :material-close: | List of requested extra POI data | `[String]` | `["bss_stands", "car_park"]` | `Journey` |
 
 #### Transport mode
 
