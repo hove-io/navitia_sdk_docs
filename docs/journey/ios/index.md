@@ -114,22 +114,57 @@ navigationController?.pushViewController(journeyViewController, animated: false)
 
 The `JourneysRequest` object allows to configure the first itinerary search at screen launch. It has the following parameters:
 
-| Name | Required | Description | Type | Default |
-| --- |:---:| --- | --- | --- |
-| `allowedId`| :material-close: | Allowed Navitia object IDs | `[String]` | `nil` |
-| `count`| :material-close: | The number of journeys to be displayed | `Int` | `nil` |
-| `dataFreshness`| :material-close: | To indicate if theoretical or realtime data are requested | [`DataFreshness`](#datafreshness) | `nil` |
-| `dateTime`| :material-close: | Requested date and time for journey results | `DateTime` | `nil` |
-| `dateTimeRepresents`| :material-close: | Whether the datetime represents the departure or arrival | [`DateTimeRepresents`](#datetimerepresents) | `nil` |
-| `destinationId`| :material-close: | Destination Navitia ID | `String` | `nil` |
-| `destinationLabel`| :material-close: | Destination label, if not set the address will be displayed | `String` | `nil` |
-| `directPath` | :material-close: | Set the direct path of the journey | [`DirectPath`](#directpath) | `""` |
-| `maxNbJourneys`| :material-close: | The max number of journeys to be displayed | `Int` | `nil` |
-| `minNbJourneys`| :material-close: | The min number of journeys to be displayed | `Int` | `nil` |
-| `minNbTransfers`| :material-close: | The min number of public transport transfers | `Int` | `-1` |
-| `originId`| :material-close: | Origin Navitia ID | `String` | `nil` |
-| `originLabel`| :material-close: | Origin label, if not set the address will be displayed | `String` | `nil` |
-| `travelerType`| :material-close: | Traveler type | [`TravelerType`](#travelertype) | `nil` |
+| Name | Description | Type | Default |
+| --- | --- | --- | --- |
+| `additionalTimeAfterFirstSectionTaxi`| Additional time after first taxi section | `Int` | `nil` |
+| `additionalTimeBeforeLastSectionTaxi`| Additional time before last taxi section | `Int` | `nil` |
+| `allowedId`| Allowed Navitia object IDs | `Set<String>` | `[]` |
+| `bikeSpeed`| Bike speed | `Float` | `nil` |
+| `bssSpeed`| BSS speed | `Float` | `nil` |
+| `carNoParkSpeed`| Car no park speed | `Float` | `nil` |
+| `carSpeed`| Car speed | `Float` | `nil` |
+| `count`| The number of journeys to be displayed | `Int` | `nil` |
+| `dataFreshness`| To indicate if theoretical or realtime data are requested | [`DataFreshness`](#datafreshness) | `.base_schedule` |
+| `dateTime`| Requested date and time for journey results | `DateTime` | `nil` |
+| `dateTimeRepresents`| Whether the datetime represents the departure or arrival | [`DateTimeRepresents`](#datetimerepresents) | `.departure` |
+| `depth`| The request depth | `Int` | `nil` |
+| `destinationId`| Destination Navitia ID | `String` | `""` |
+| `destinationLabel`| Destination label, if not set the address will be displayed | `String` | `""` |
+| `directPath` | Set the direct path of the journey | [`DirectPath`](#directpath) | `.indifferent` |
+| `disruptionActive`| Check on [Navitia](https://doc.navitia.io/#journeys) | `Bool` | `nil` |
+| `equipmentDetails`| Check on [Navitia](https://doc.navitia.io/#journeys) | `Bool` | `nil` |
+| `freeRadiusFrom`| Check on [Navitia](https://doc.navitia.io/#journeys) | `Int` | `nil` |
+| `freeRadiusTo`| Check on [Navitia](https://doc.navitia.io/#journeys) | `Int` | `nil` |
+| `isJourneySchedules`| Check on [Navitia](https://doc.navitia.io/#journeys) | `Bool` | `nil` |
+| `maxBikeDirectPathDuration`| Check on [Navitia](https://doc.navitia.io/#journeys) | `Int` | `nil` |
+| `maxBikeDurationToPt`| Check on [Navitia](https://doc.navitia.io/#journeys) | `Int` | `nil` |
+| `maxBssDirectPathDuration`| Check on [Navitia](https://doc.navitia.io/#journeys) | `Int` | `nil` |
+| `maxBssDurationToPt`| Check on [Navitia](https://doc.navitia.io/#journeys) | `Int` | `nil` |
+| `maxCarDirectPathDuration`| Check on [Navitia](https://doc.navitia.io/#journeys) | `Int` | `nil` |
+| `maxCarDurationToPt`| Check on [Navitia](https://doc.navitia.io/#journeys) | `Int` | `nil` |
+| `maxCarNoParkDirectPathDuration`| Check on [Navitia](https://doc.navitia.io/#journeys) | `Int` | `nil` |
+| `maxCarNoParkDurationToPt`| Check on [Navitia](https://doc.navitia.io/#journeys) | `Int` | `nil` |
+| `maxDuration`| Check on [Navitia](https://doc.navitia.io/#journeys) | `Int` | `nil` |
+| `maxDurationToPt`| Check on [Navitia](https://doc.navitia.io/#journeys) | `Int` | `nil` |
+| `maxNbJourneys`| The max number of journeys to be displayed | `Int` | `-1` |
+| `maxNbTransfers`| The max number of public transport transfers | `Int` | `-1` |
+| `maxRidesharingDirectPathDuration`| Check on [Navitia](https://doc.navitia.io/#journeys) | `Int` | `nil` |
+| `maxRidesharingDurationToPt`| Check on [Navitia](https://doc.navitia.io/#journeys) | `Int` | `nil` |
+| `maxTaxiDirectPathDuration`| Check on [Navitia](https://doc.navitia.io/#journeys) | `Int` | `nil` |
+| `maxTaxiDurationToPt`| Check on [Navitia](https://doc.navitia.io/#journeys) | `Int` | `nil` |
+| `maxWaitingDuration`| Check on [Navitia](https://doc.navitia.io/#journeys) | `Int` | `nil` |
+| `maxWalkingDirectPathDuration`| Check on [Navitia](https://doc.navitia.io/#journeys) | `Int` | `nil` |
+| `maxWalkingDurationToPt`| Check on [Navitia](https://doc.navitia.io/#journeys) | `Int` | `nil` |
+| `minNbJourneys`| The min number of journeys to be displayed | `Int` | `-1` |
+| `minNbTransfers`| The min number of public transport transfers | `Int` | `-1` |
+| `originId`| Origin Navitia ID | `String` | `""` |
+| `originLabel`| Origin label, if not set the address will be displayed | `String` | `""` |
+| `ridesharingSpeed`| Ridesharing speed | `Float` | `nil` |
+| `taxiSpeed`| Taxi speed | `Float` | `nil` |
+| `timeframeDuration`| Taxi speed | `Int` | `nil` |
+| `travelerType`| Traveler type | [`TravelerType`](#travelertype) | `.standard` |
+| `walkingSpeed`| Walking speed | `Float` | `nil` |
+| `wheelchair`| Check on [Navitia](https://doc.navitia.io/#journeys)  | `Bool` | `nil` |
 
 #### DataFreshness
 
