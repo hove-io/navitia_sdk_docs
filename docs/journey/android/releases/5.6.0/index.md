@@ -2,11 +2,8 @@
 
 <h2>🗓 30 May 2023</h2>
 
-#### Feature
+#### Task
 - Hide times in ridesharing offers and roadmap
-
-#### Tasks
-- Upgrade minSdk to API level 23
 
 #### Fixes
 - Fix disruption formatting in roadmap
