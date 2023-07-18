@@ -12,7 +12,7 @@ source 'https://github.com/CocoaPods/Specs.git' # Default Cocoapods URL
 source 'https://github.com/hove-io/Podspecs.git' # Journey podspec URL
 
 target 'YOUR_PROJECT_SCHEME' do
-  pod 'JourneySDK', '5.4.6' # Journey Pod definition
+  pod 'JourneySDK', '5.4.7' # Journey Pod definition
 end
 
 # Required for XCFramework
