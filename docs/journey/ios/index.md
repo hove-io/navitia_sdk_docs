@@ -12,7 +12,7 @@ source 'https://github.com/CocoaPods/Specs.git' # Default Cocoapods URL
 source 'https://github.com/hove-io/Podspecs.git' # Journey podspec URL
 
 target 'YOUR_PROJECT_SCHEME' do
-  pod 'JourneySDK', '5.4.6' # Journey Pod definition
+  pod 'JourneySDK', '5.4.7' # Journey Pod definition
 end
 
 # Required for XCFramework
@@ -60,13 +60,15 @@ do {
                                                  iconRes: "ic_section_mode_metro",
                                                  nameRes: "metro",
                                                  selected: true,
-                                                 modes: [TransportCategoryMode(physical: TransportPhysicalMode(id: "physical_mode:Metro", nameRes: "metro"),
-                                                 commercial: TransportCommercialMode(id: "commercial_mode:Metro", name: "Metro"))],
+                                                 modes: [TransportCategoryMode(physical: TransportPhysicalMode(id "physical_mode:Metro"),
+                                                                               commercial: TransportCommercialMode(id: "commercial_mode:Metro", name: "Metro"))],
+                                                 networks: [],
                                                  firstSectionModes: ["walking"],
-                                                 lastSectionModes: ["walking"])
-                              ]
-                              
-    let journeyColorsConfiguration = JourneyColorsConfiguration(primaryColor: "#88819f", secondaryColor: "#8faa96")
+                                                 lastSectionModes: ["walking"],
+                                                 directPathModes: ["walking"],
+                                                 addPoiInfos: [])]
+            
+    let journeyColorsConfiguration = JourneyColorsConfiguration(primary: "#88819f", secondary: "#8faa96")
                                                                       
     try JourneySdk.shared.initialize(coverage: "fr-idf",
                                     token: "your_token",
@@ -101,13 +103,9 @@ JourneySdk.shared.tracker = self
 This module has a single entry point. 
 
 ```swift
-guard let journeyViewController = JourneySdk.shared.rootViewController else {
-  return nil
+if let journeyViewController = JourneySdk.shared.rootViewController {
+  navigationController?.pushViewController(journeyViewController, animated: false)
 }
-
-journeyViewController.journeysRequest = JourneysRequest()
-
-navigationController?.pushViewController(journeyViewController, animated: false)
 ```
 
 ### JourneysRequest
