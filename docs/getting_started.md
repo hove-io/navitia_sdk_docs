@@ -7,7 +7,7 @@
 
 <h4>Android</h4>
 
-- Minimum Android SDK target: `21`
+- Minimum Android SDK version: `23`
 
 <h4>iOS</h4>
 
