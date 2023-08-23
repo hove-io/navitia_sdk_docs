@@ -31,7 +31,7 @@ The activity launching Around Me must handle the following configuration changes
 
 ⚠️ Please make sure to read the [modules configuration](../../getting_started/#modules-configuration) section before proceeding!<br>
 
-This module is set up by calling `AroundMeUI.getInstance()`. The singleton behaves like a builder in which each method allows you to configure the module. Then, you need to call the `init()` method at the end.<br>
+This module is set up by calling `AroundMeUI.getInstance()`. The singleton behaves like a builder in which each method allows you to configure the module. Then, you need to call the `init()` method at the end. You should call this method in a `Application` subclass.<br>
 This method takes the following parameters:
 
 | Name | Required | Description | Type | Default |
@@ -51,27 +51,8 @@ AroundMeUI.getInstance().let { instance ->
       context = this,
       token = "your_token",
       configurationJsonFile = "config.json"
-   )
-   instance.attachActivity(this)
+    )
 }
-```
-
-### Activity delegation
-
-Since the module launches its fragments, you may want to execute their `onBackPressed()` from your activity.
-For that, you have to attach the activity that will host fragments to `AroundMeUI.getInstance()`. This will provide a delegate which will execute `onBackPressed()` on the displayed fragment.<br>
-You can call this method before or after `init()`.
-
-| Method | Description |
-| --- | --- |
-| `.attachActivity(AppCompatActivity)` | Attach the activity that will host Around Me fragments |
-
-Then, you can call `AroundMeUI.getInstance().delegate` to obtain the delegate.
-If you try to access it without attaching an activity before, an exception will be thrown.
-
-``` kotlin
-AroundMeUI.getInstance().attachActivity(AppCompatActivity)
-AroundMeUI.getInstance().delegate.onBackPressed()
 ```
 
 ## 🚀  Launching
@@ -135,31 +116,9 @@ Clicking on one of the buttons will redirect the user to Journey module with the
 
 Another way to communicate with [Journey](../../journey/) module is through the [Map](#map) screen and precisely the **Where are we going?** button, this feature should also be enabled by setting the `where_shall_we_go` in the [features configuration](../../getting_started/#around-me-features) to `true`.<br>
 
-The `Router` module should also be initialized with the right parameters since it’s mandatory to build the connection between these modules:
-
-``` kotlin
-if (!Router.getInstance().isInit) {
-    Router.getInstance()
-        .register(aroundMe = AroundMeUI.getInstance().delegate)
-        .register(journey = JourneysUI.getInstance().delegate)
-        .init()
-}
-```
-
 ### Bookmark
 
 This module communicates with [Bookmark](../../bookmark/) module in order to vizualize favorite stations and POIs. You should enable the `bookmark_mode` parameter in the [features configuration](../../getting_started/#around-me-features).<br>
-
-The `Router` module should also be initialized with the right parameters since it’s mandatory to build the connection between these modules:
-
-``` kotlin
-if (!Router.getInstance().isInit) {
-    Router.getInstance()
-        .register(aroundMe = AroundMeUI.getInstance().delegate)
-        .register(bookmark = BookmarkUI.getInstance().delegate)
-        .init()
-}
-```
 
 ### Traffic
 
@@ -168,30 +127,26 @@ A red traffic button will appear in the top right corner, only when the search b
 
 <img class="img-overview" src="/navitia_sdk_docs/assets/img/aroundme_android_traffic_button.png" alt="Traffic mode">
 
-The `Router` module should also be initialized with the right parameters since it’s mandatory to build the connection between these modules:
-
-``` kotlin
-if (!Router.getInstance().isInit) {
-    Router.getInstance()
-        .register(aroundMe = AroundMeUI.getInstance().delegate)
-        .register(traffic = TrafficUI.getInstance().delegate)
-        .init()
-}
-```
-
 ### Application
 
-Some callbacks are delegated to the application allowing it to receive some module events. To subscribe to those events, the `Router` module should also be initialized with the right parameters:
+Some route or callbacks are delegated to the application. 
+If you have to receive some module data, the `Router` module must register a receiver with the right parameter:
 
-``` swift
-if (!Router.getInstance().isInit) {
-    Router.getInstance()
-        .register(app = appRouterImpl) // (1)
-        .init()
-}
+``` kotlin
+Router.getInstance()
+    .register(appData = appRouterDataImpl) // (1)
 ```
 
-1.  `appRouterImpl` should be the class instance implementing `AppRouter` interface
+1.  `appRouterDataImpl` should be the class instance implementing `AppRouter.Data` interface. We recommand usign a `Application` subclass.
+
+If you have to handle navigation between modules, the `Router` module must also register a receiver:
+
+``` kotlin
+Router.getInstance()
+    .register(appUi = appRouterUiImpl) // (2)
+```
+
+2. `appRouterUiImpl` should be the class instance implementing `AppRouter.UI` interface. We recommand usign a `Application` subclass.
 
 ##### POI event
 

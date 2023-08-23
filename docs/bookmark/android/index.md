@@ -21,7 +21,7 @@ The activity launching Bookmark must handle the following configuration changes:
 
 ⚠️ Please make sure to read the [modules configuration](../../getting_started/#modules-configuration) section before proceeding!<br>
 
-This module is set up by calling `BookmarkUI.getInstance()`. The singleton behaves like a builder in which each method allows you to configure the module. Then, you need to call the `init()` method at the end.<br>
+This module is set up by calling `BookmarkUI.getInstance()`. The singleton behaves like a builder in which each method allows you to configure the module. Then, you need to call the `init()` method at the end. You should call this method in a `Application` subclass.<br>
 This method takes the following parameters:
 
 | Name | Required | Description | Type | Default |
@@ -44,24 +44,6 @@ BookmarkUI.getInstance().let { instance ->
    )
    instance.attachActivity(this)
 }
-```
-
-### Activity delegation
-
-Since the module launches its fragments, you may want to execute their `onBackPressed()` from your activity.
-For that, you have to attach the activity that will host fragments to `BookmarkUI.getInstance()`. This will provide a delegate which will execute `onBackPressed()` on the displayed fragment.<br>
-You can call this method before or after `init()`.
-
-| Method | Description |
-| --- | --- |
-| `.attachActivity(AppCompatActivity)` | Attach the activity that will host Around Me fragments |
-
-Then, you can call `BookmarkUI.getInstance().delegate` to obtain the delegate.
-If you try to access it without attaching an activity before, an exception will be thrown.
-
-``` kotlin
-BookmarkUI.getInstance().attachActivity(AppCompatActivity)
-BookmarkUI.getInstance().delegate.onBackPressed()
 ```
 
 ## 🚀  Launching
@@ -95,14 +77,3 @@ When the user taps on a marker on the map, the buttons **Go from there** and **G
 <img class="img-overview" src="/navitia_sdk_docs/assets/img/bookmark_android_go_fromto.png" alt="Go from/to">
 
 Clicking on one of the buttons will redirect the user to Journey module with the given origin/destination.<br>
-
-The `Router` module should also be initialized with the right parameters since it’s mandatory to build the connection between these modules:
-
-``` kotlin
-if (!Router.getInstance().isInit) {
-    Router.getInstance()
-        .register(aroundMe = BookmarkUI.getInstance().delegate)
-        .register(journey = JourneysUI.getInstance().delegate)
-        .init()
-}
-```

@@ -31,7 +31,7 @@ The activity launching Schedule must handle the following configuration changes:
 
 ⚠️ Please make sure to read the [modules configuration](../../getting_started/#modules-configuration) section before proceeding!<br>
 
-This module is set up by calling `ScheduleUI.getInstance()`. The singleton behaves like a builder in which each method allows you to configure the module. Then, you need to call the `init()` method at the end.<br>
+This module is set up by calling `ScheduleUI.getInstance()`. The singleton behaves like a builder in which each method allows you to configure the module. Then, you need to call the `init()` method at the end. You should call this method in a `Application` subclass.<br>
 This method takes the following parameters:
 
 | Name | Required | Description | Type | Default |
@@ -52,26 +52,7 @@ ScheduleUI.getInstance().let { instance ->
       token = "your_token",
       configurationJsonFile = "config.json"
    )
-   instance.attachActivity(this)
 }
-```
-
-### Activity delegation
-
-Since the module launches its fragments, you may want to execute their `onBackPressed()` from your activity.
-For that, you have to attach the activity that will host fragments to `ScheduleUI.getInstance()`. This will provide a delegate which will execute `onBackPressed()` on the displayed fragment.<br>
-You can call this method before or after `init()`.
-
-| Method | Description |
-| --- | --- |
-| `.attachActivity(AppCompatActivity)` | Attach the activity that will host Schedule fragments |
-
-Then, you can call `ScheduleUI.getInstance().delegate` to obtain the delegate.
-If you try to access it without attaching an activity before, an exception will be thrown.
-
-``` kotlin
-ScheduleUI.getInstance().attachActivity(AppCompatActivity)
-ScheduleUI.getInstance().delegate.onBackPressed()
 ```
 
 ## 🚀  Launching

@@ -31,7 +31,7 @@ The activity launching Journey must handle the following configuration changes: 
 
 ⚠️ Please make sure to read the [modules configuration](../../getting_started/#modules-configuration) section before proceeding!<br>
 
-This module is set up by calling `JourneyUI.getInstance()`. The singleton behaves like a builder in which each method allows you to configure the module. Then, you need to call the `init()` method at the end.<br>
+This module is set up by calling `JourneyUI.getInstance()`. The singleton behaves like a builder in which each method allows you to configure the module. Then, you need to call the `init()` method at the end. You should call this method in a `Application` subclass.<br>
 This method takes the following parameters:
 
 | Name | Required | Description | Type | Default |
@@ -40,8 +40,6 @@ This method takes the following parameters:
 | `token` | :material-check: | <a href="https://navitia.io/inscription/" target="_blank">Get your token</a> | `String` | :material-close: |
 | `configuration` | :material-close: | Module configuration object | [`JourneyConfiguration`](../../getting_started/#modules-configuration) | `null` |
 | `configurationJsonFile` | :material-close: | Module configuration JSON file name | `String` | `null` |
-| `onNavigate` | :material-close: | Listener for the navigation between module screens | `Unit` | `{ _ -> }` |
-| `onBack` | :material-close: | Listener for the navigation back button click event | `Unit` | `{ _ -> }` |
 
 <h4>Example</h4>
 
@@ -52,26 +50,7 @@ JourneyUI.getInstance().let { instance ->
       token = "your_token",
       configurationJsonFile = "config.json"
    )
-   instance.attachActivity(this)
 }
-```
-
-### Activity delegation
-
-Since the module launches its fragments, you may want to execute their `onBackPressed()` from your activity.
-For that, you have to attach the activity that will host fragments to `JourneyUI.getInstance()`. This will provide a delegate which will execute `onBackPressed()` on the displayed fragment.<br>
-You can call this method before or after `init()`.
-
-| Method | Description |
-| --- | --- |
-| `.attachActivity(AppCompatActivity)` | Attach the activity that will host Journey fragments |
-
-Then, you can call `JourneyUI.getInstance().delegate` to obtain the delegate.
-If you try to access it without attaching an activity before, an exception will be thrown.
-
-```kotlin
-JourneyUI.getInstance().attachActivity(AppCompatActivity)
-JourneyUI.getInstance().delegate.onBackPressed()
 ```
 
 ### Events tracking
@@ -268,17 +247,24 @@ Please refer to the following schema to learn more about different interactions 
 
 ### Application
 
-Some callbacks are delegated to the application allowing it to receive some module events. To subscribe to those events, the `Router` module should also be initialized with the right parameters:
+Some route or callbacks are delegated to the application. 
+If you have to receive some module data, the `Router` module must register a receiver with the right parameter:
 
-``` swift
-if (!Router.getInstance().isInit) {
-    Router.getInstance()
-        .register(app = appRouterImpl) // (1)
-        .init()
-}
+``` kotlin
+Router.getInstance()
+    .register(appData = appRouterDataImpl) // (1)
 ```
 
-1.  `appRouterImpl` should be the class instance implementing `AppRouter` interface
+1.  `appRouterDataImpl` should be the class instance implementing `AppRouter.Data` interface. We recommand usign a `Application` subclass.
+
+If you have to handle navigation between modules, the `Router` module must also register a receiver:
+
+``` kotlin
+Router.getInstance()
+    .register(appUi = appRouterUiImpl) // (2)
+```
+
+2. `appRouterUiImpl` should be the class instance implementing `AppRouter.UI` interface. We recommand usign a `Application` subclass.
 
 ##### Roadmap button event
 

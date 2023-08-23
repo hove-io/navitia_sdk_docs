@@ -31,7 +31,7 @@ The activity launching Traffic must handle the following configuration changes: 
 
 ⚠️ Please make sure to read the [modules configuration](../../getting_started/#modules-configuration) section before proceeding!<br>
 
-This module is set up by calling `TrafficUI.getInstance()`. The singleton behaves like a builder in which each method allows you to configure the module. Then, you need to call the `init()` method at the end.<br>
+This module is set up by calling `TrafficUI.getInstance()`. The singleton behaves like a builder in which each method allows you to configure the module. Then, you need to call the `init()` method at the end. You should call this method in a `Application` subclass.<br>
 This method takes the following parameters:
 
 | Name | Required | Description | Type | Default |
@@ -51,8 +51,7 @@ TrafficUI.getInstance().let { instance ->
       context = this,
       token = "your_token"
       configurationJsonFile = "config.json"
-   )
-   instance.attachActivity(this)
+    )
 }
 ```
 
@@ -69,24 +68,6 @@ To enable the alert subscription feature, the following instructions are require
 | --- |:---:| --- | :---: |
 | `username` | :material-check: | Kronos authentication username | `String` |
 | `password` | :material-check: | Kronos authentication password | `String` |
-
-### Activity delegation
-
-Since the module launches its fragments, you may want to execute their `onBackPressed()` from your activity.
-For that, you have to attach the activity that will host fragments to `TrafficUI.getInstance()`. This will provide a delegate which will execute `onBackPressed()` on the displayed fragment.<br>
-You can call this method before or after `init()`.
-
-| Method | Description |
-| --- | --- |
-| `.attachActivity(AppCompatActivity)` | Attach the activity that will host Traffic fragments |
-
-Then, you can call `TrafficUI.getInstance().delegate` to obtain the delegate.
-If you try to access it without attaching an activity before, an exception will be thrown.
-
-``` kotlin
-TrafficUI.getInstance().attachActivity(AppCompatActivity)
-TrafficUI.getInstance().delegate.onBackPressed()
-```
 
 ## 🚀  Launching
 
