@@ -13,6 +13,11 @@
 - Show vehicle positions on the map in roadmap
 - Show next departures beyond 1 hour
 - Show icon for air-conditioned lines
+- Update automatically the cards in guidance based on user location
+- Add button to toggle between satellite and standard map types
+- Can subscribe to a traffic alert when a journey is bookmarked
+- Show the number of available ridesharing for a journey
+- Hide tabs if corresponding filter is disabled
 
 #### Fixes
 - Fix display of location button in roadmap

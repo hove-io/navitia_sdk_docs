@@ -10,7 +10,6 @@ Please check the [Getting Started](getting_started.md) page before proceeding to
 * Account (Available soon)
 * [Around Me](around_me/overview.md)
 * [Bookmark](bookmark/overview.md)
-* Crowdsourcing (Available soon)
 * [Journey](journey/overview.md)
 * [Schedule](schedule/overview.md)
 * [Traffic](traffic/overview.md)

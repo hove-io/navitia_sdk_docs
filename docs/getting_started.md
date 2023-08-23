@@ -86,143 +86,150 @@ The following are the possible configuration parameters:
 
 | Name | Required | Description | Type | Example |
 | --- |:---:| --- | :---: | :---: |
-| `primary`| :material-check: | To set the main color of the screens | `String` | `#88819f` |
-| `secondary`| :material-check: | To set the color of some UI components | `String` | `#8faa96` |
+| `primary` | :material-check: | To set the main color of the screens | `String` | `#88819f` |
+| `secondary` | :material-check: | To set the color of some UI components | `String` | `#8faa96` |
 
 #### Around Me color
 
 | Name | Required | Description | Type | Example |
 | --- |:---:| --- | :---: | :---: |
-| `primary`| :material-check: | To set the main color of the screens | `String` | `#88819f` |
-| `secondary`| :material-check: | To set the color of some UI components | `String` | `#8faa96` |
-| `tertiary`| :material-close: | To set the color of more UI components | `String` | `#efa59f` |
+| `primary` | :material-check: | To set the main color of the screens | `String` | `#88819f` |
+| `secondary` | :material-check: | To set the color of some UI components | `String` | `#8faa96` |
+| `tertiary` | :material-close: | To set the color of more UI components | `String` | `#efa59f` |
+| `map` | :material-close: | To set colors of the markers on map | [`Map color`](#around-me-map-color) | - |
+
+##### Around me map color
+| Name | Required | Description | Type | Example |
+| --- |:---:| --- | :---: | :---: |
+| `poi` | :material-check: | To set the marker color of pois | `String` | `#9b59B6` |
+| `transport` | :material-check: | To set the marker color of stations | `String` | `#2980B9` |
 
 #### Bookmark color
 
 | Name | Required | Description | Type | Example |
 | --- |:---:| --- | :---: | :---: |
-| `primary`| :material-check: | To set the main color of the screens | `String` | `#88819f` |
-| `secondary`| :material-check: | To set the color of some UI components | `String` | `#8faa96` |
+| `primary` | :material-check: | To set the main color of the screens | `String` | `#88819f` |
+| `secondary` | :material-check: | To set the color of some UI components | `String` | `#8faa96` |
 
 #### Crowdsourcing color
 
 | Name | Required | Description | Type | Example |
 | --- |:---:| --- | :---: | :---: |
-| `primary`| :material-check: | To set the main color of the screens | `String` | `#88819f` |
-| `secondary`| :material-check: | To set the color of some UI components | `String` | `#8faa96` |
+| `primary` | :material-check: | To set the main color of the screens | `String` | `#88819f` |
+| `secondary` | :material-check: | To set the color of some UI components | `String` | `#8faa96` |
 
 #### Journey color
 
 | Name | Required | Description | Type | Example |
 | --- |:---:| --- | :---: | :---: |
-| `primary`| :material-check: | To set the main color of the screens | `String` | `#88819f` |
-| `secondary`| :material-check: | To set the color of some UI components | `String` | `#8faa96` |
-| `tertiary`| :material-close: | To set the color of more UI components | `String` | `#efa59f` |
-| `origin`| :material-close: | To set colors of the journey origin | [`Journey origin color`](#journey-origin-color) | - |
-| `destination`| :material-close: | To set colors of the journey destination | [`Journey destination color`](#journey-destination-color) | - |
-| `bike`| :material-close: | To set colors of the specific bike journey | [`Journey bike color`](#journey-bike-color) | - |
-| `nav_bar_background` | :material-close: | To set the color of the navigation bar.iOS only.  | `String` | `#efa59f` |
+| `primary` | :material-check: | To set the main color of the screens | `String` | `#88819f` |
+| `secondary` | :material-check: | To set the color of some UI components | `String` | `#8faa96` |
+| `tertiary` | :material-close: | To set the color of more UI components | `String` | `#efa59f` |
+| `origin` | :material-close: | To set colors of the journey origin | [`Journey origin color`](#journey-origin-color) | - |
+| `destination` | :material-close: | To set colors of the journey destination | [`Journey destination color`](#journey-destination-color) | - |
+| `bike` | :material-close: | To set colors of the specific bike journey | [`Journey bike color`](#journey-bike-color) | - |
+| `nav_bar_background` | :material-close: | To set the color of the navigation bar. iOS only.  | `String` | `#efa59f` |
 
 ##### Journey origin color
 
 | Name | Required | Description | Type | Example |
 | --- |:---:| --- | :---: | :---: |
-| `icon`| :material-check: | To set the icon color of the itinerary origin | `String` | `#88819f` |
+| `icon` | :material-check: | To set the icon color of the itinerary origin | `String` | `#88819f` |
 
 ##### Journey destination color
 
 | Name | Required | Description | Type | Example |
 | --- |:---:| --- | :---: | :---: |
-| `primary`| :material-check: | To set the color of the arrival block | `String` | `#8faa96` |
-| `icon`| :material-close: | To set the icon color of the itinerary destination | `String` | `#88819f` |
+| `primary` | :material-check: | To set the color of the arrival block | `String` | `#8faa96` |
+| `icon` | :material-close: | To set the icon color of the itinerary destination | `String` | `#88819f` |
 
 ##### Journey bike color
 
 | Name | Required | Description | Type | Example |
 | --- |:---:| --- | :---: | :---: |
-| `primary`| :material-check: | To set the main color of the specific bike journey | `String` | `#8faa96` |
-| `non_cyclable`| :material-close: | To set the color of the non cyclable part for a specific bike journey | `String` | `#88819f` |
+| `primary` | :material-check: | To set the main color of the specific bike journey | `String` | `#8faa96` |
+| `non_cyclable` | :material-close: | To set the color of the non cyclable part for a specific bike journey | `String` | `#88819f` |
 
 #### Schedule color
 
 | Name | Required | Description | Type | Example |
 | --- |:---:| --- | :---: | :---: |
-| `primary`| :material-check: | To set the main color of the screens | `String` | `#88819f` |
-| `secondary`| :material-check: | To set the color of some UI components | `String` | `#8faa96` |
+| `primary` | :material-check: | To set the main color of the screens | `String` | `#88819f` |
+| `secondary` | :material-check: | To set the color of some UI components | `String` | `#8faa96` |
 
 #### Traffic color
 
 | Name | Required | Description | Type | Example |
 | --- |:---:| --- | :---: | :---: |
-| `primary`| :material-check: | To set the main color of the screens | `String` | `#88819f` |
-| `secondary`| :material-check: | To set the color of some UI components | `String` | `#8faa96` |
+| `primary` | :material-check: | To set the main color of the screens | `String` | `#88819f` |
+| `secondary` | :material-check: | To set the color of some UI components | `String` | `#8faa96` |
 
 ### Transport category
 
 | Name | Required | Description | Type | Example | Target modules |
 | --- |:---:| --- | :---: | :---: | :---: |
-| `modules`| :material-check: | To set the target modules | `[String]` | `["aroundme","journey"]` | `ALL` |
-| `name_res`| :material-check: | To set the localized resource id | `String` | `transport_name_res` | `ALL` |
-| `icon_res`| :material-check: | To set the icon resource id | `String` | `ic_metro` | `ALL` |
-| `selected`| :material-close: | Whether the transport mode is selected by default or not | `Boolean` | `true` | `ALL` |
-| `modes`| :material-close: | List of supported transport modes | [`Transport Mode`](#transport-mode) | - | `ALL` |
-| `networks`| :material-close: | List of supported networks | `[String]` | `["network:BIL:27"]` | `Schedule` |
-| `first_section_modes`| :material-close: | List of first section modes | `[String]` | `["bike", "car"]` | `Journey` |
-| `last_section_modes`| :material-close: | List of last section modes | `[String]` | `["ridesharing", "bss"]` | `Journey` |
-| `direct_path_modes`| :material-close: | List of direct path modes | `[String]` | `["taxi", "car_no_park"]` | `Journey` |
-| `add_poi_infos`| :material-close: | List of requested extra POI data | `[String]` | `["bss_stands", "car_park"]` | `Journey` |
+| `modules` | :material-check: | To set the target modules | `[String]` | `["aroundme","journey"]` | `ALL` |
+| `name_res` | :material-check: | To set the localized resource id | `String` | `transport_name_res` | `ALL` |
+| `icon_res` | :material-check: | To set the icon resource id | `String` | `ic_metro` | `ALL` |
+| `selected` | :material-close: | Whether the transport mode is selected by default or not | `Boolean` | `true` | `ALL` |
+| `modes` | :material-close: | List of supported transport modes | [`Transport Mode`](#transport-mode) | - | `ALL` |
+| `networks` | :material-close: | List of supported networks | `[String]` | `["network:BIL:27"]` | `Schedule` |
+| `first_section_modes` | :material-close: | List of first section modes | `[String]` | `["bike", "car"]` | `Journey` |
+| `last_section_modes` | :material-close: | List of last section modes | `[String]` | `["ridesharing", "bss"]` | `Journey` |
+| `direct_path_modes` | :material-close: | List of direct path modes | `[String]` | `["taxi", "car_no_park"]` | `Journey` |
+| `add_poi_infos` | :material-close: | List of requested extra POI data | `[String]` | `["bss_stands", "car_park"]` | `Journey` |
 
 #### Transport mode
 
 | Name | Required | Description | Type | Example |
 | --- |:---:| --- | :---: | :---: |
-| `physical`| :material-check: | To set the transport physical mode | [`Transport Physical Mode`](#transport-physical-mode) | `["aroundme","journey"]` |
-| `commercial`| :material-check: | To set the transport commercial mode | [`Transport Commercial Mode`](#transport-commercial-mode) | - |
+| `physical` | :material-check: | To set the transport physical mode | [`Transport Physical Mode`](#transport-physical-mode) | `["aroundme","journey"]` |
+| `commercial` | :material-check: | To set the transport commercial mode | [`Transport Commercial Mode`](#transport-commercial-mode) | - |
 
 ##### Transport physical mode
 
 | Name | Required | Description | Type | Example |
 | --- |:---:| --- | :---: | :---: |
-| `id`| :material-check: | Navitia physical mode id | `String` | `"physical_mode:Bus"` |
-| `name_res`| :material-check: | Localized name resource id | `String` | `"transport_bus"` |
+| `id` | :material-check: | Navitia physical mode id | `String` | `"physical_mode:Bus"` |
+| `name_res` | :material-check: | Localized name resource id | `String` | `"transport_bus"` |
 
 ##### Transport commercial mode
 
 | Name | Required | Description | Type | Example |
 | --- |:---:| --- | :---: | :---: |
-| `id`| :material-check: | Navitia commercial mode id | `String` | `"commercial_mode:Bus"` |
-| `name`| :material-check: | Navitia commercial mode name | `String` | `"Bus"` |
+| `id` | :material-check: | Navitia commercial mode id | `String` | `"commercial_mode:Bus"` |
+| `name` | :material-check: | Navitia commercial mode name | `String` | `"Bus"` |
 
 ### POI category
 
 | Name | Required | Description | Type | Example |
 | --- |:---:| --- | :---: | :---: |
-| `name_res`| :material-check: | Localized POI category name id | `String` | `"stations"` |
-| `subcategories`| :material-check: | List of POI subcategories | [`[POI subcategory]`](#poi-subcategory) | - |
+| `name_res` | :material-check: | Localized POI category name id | `String` | `"stations"` |
+| `subcategories` | :material-check: | List of POI subcategories | [`[POI subcategory]`](#poi-subcategory) | - |
 
 #### POI subcategory
 
 | Name | Required | Description | Type | Example |
 | --- |:---:| --- | :---: | :---: |
-| `name_res`| :material-check: | Localized POI subcategory name id | `String` | `"bike_stations"` |
-| `icon_res`| :material-check: | POI subcategory icon id | `String` | `"ic_bike_stations"` |
-| `selected`| :material-close: | Whether the subcategory is selected by default or not | `Boolean` | `true` |
-| `group`| :material-check: | Subcategory POI group | `String` | `STANDARD`, `TRANSPORT_MODE`, `FREE_FLOATING` |
-| `types`| :material-check: | Subcategory POI types | [`[POI Subcategory Type]`](#poi-subcategory-type) | - |
-| `booking`| :material-close: | POI booking resources | [POI booking resources](#poi-booking-resources) | - |
+| `name_res` | :material-check: | Localized POI subcategory name id | `String` | `"bike_stations"` |
+| `icon_res` | :material-check: | POI subcategory icon id | `String` | `"ic_bike_stations"` |
+| `selected` | :material-close: | Whether the subcategory is selected by default or not | `Boolean` | `true` |
+| `group` | :material-check: | Subcategory POI group | `String` | `STANDARD`, `TRANSPORT_MODE`, `FREE_FLOATING` |
+| `types` | :material-check: | Subcategory POI types | [`[POI Subcategory Type]`](#poi-subcategory-type) | - |
+| `booking` | :material-close: | POI booking resources | [POI booking resources](#poi-booking-resources) | - |
 
 ##### POI subcategory type
 
 | Name | Required | Description | Type | Example |
 | --- |:---:| --- | :---: | :---: |
-| `name_res`| :material-check: | Localized POI subcategory type name id | `String` | `"scooter"` |
-| `poi_type_id`| :material-check: | Navitia POI subcategory type id | `String` | `"poi_type:amenity:bicycle_rental"` |
+| `name_res` | :material-check: | Localized POI subcategory type name id | `String` | `"scooter"` |
+| `poi_type_id` | :material-check: | Navitia POI subcategory type id | `String` | `"poi_type:amenity:bicycle_rental"` |
 
 ##### POI booking resources
 
 | Name | Required | Description | Type | Example |
 | --- |:---:| --- | :---: | :---: |
-| `title_res`| :material-check: | Localized POI booking button title id | `String` | `"book_a_bike"` |
+| `title_res` | :material-check: | Localized POI booking button title id | `String` | `"book_a_bike"` |
 
 ### Features
 
@@ -239,27 +246,27 @@ The following are the possible configuration parameters:
 
 | Name | Required | Description | Type |
 | --- |:---:| --- | :---: |
-| `my_account_menu_items`| :material-check: | To set the My Account menu items | [`My account menu item`](#my-account-menu-item) |
-| `signup_form_fields`| :material-check: | To set Sign up screen form fields | [`Account form field`](#account-form-field) |
-| `edit_form_fields`| :material-check: | To set Edit screen form fields | [`Account form field`](#account-form-field) |
+| `my_account_menu_items` | :material-check: | To set the My Account menu items | [`My account menu item`](#my-account-menu-item) |
+| `signup_form_fields` | :material-check: | To set Sign up screen form fields | [`Account form field`](#account-form-field) |
+| `edit_form_fields` | :material-check: | To set Edit screen form fields | [`Account form field`](#account-form-field) |
 
 ##### My account menu item
 
 | Name | Required | Description | Type | Example |
 | --- |:---:| --- | :---: | :---: |
-| `name_res`| :material-check: | Localized menu item title id | `String` | `"bookmarks"` |
-| `icon_res`| :material-check: | Menu item icon resource id | `String` | `"ic_bookmarks"` |
+| `name_res` | :material-check: | Localized menu item title id | `String` | `"bookmarks"` |
+| `icon_res` | :material-check: | Menu item icon resource id | `String` | `"ic_bookmarks"` |
 
 ##### Account form field
 
 | Name | Required | Description | Type | Example |
 | --- |:---:| --- | :---: | :---: |
-| `hint_res`| :material-check: | Localized field hint id | `String` | `"name_hint"` |
-| `type`| :material-check: | Field type | `String` | `"TEXT" OR "DATE" OR "EMAIL" OR "PASSWORD" OR "NUMBER" OR "PHONE"` |
-| `min_date`| :material-close: | Set the min datepicker date in this format dd/MM/yyyy | `String` | `"01/01/2022"` |
-| `max_date`| :material-close: | Set the max datepicker date in this format dd/MM/yyyy | `String` | `"01/01/2050"` |
-| `max_length`| :material-close: | Set the max allowed number of characters | `Int` | `0` |
-| `required`| :material-close: | Whether the field is mandatory | `Boolean` | `false` |
+| `hint_res` | :material-check: | Localized field hint id | `String` | `"name_hint"` |
+| `type` | :material-check: | Field type | `String` | `"TEXT" OR "DATE" OR "EMAIL" OR "PASSWORD" OR "NUMBER" OR "PHONE"` |
+| `min_date` | :material-close: | Set the min datepicker date in this format dd/MM/yyyy | `String` | `"01/01/2022"` |
+| `max_date` | :material-close: | Set the max datepicker date in this format dd/MM/yyyy | `String` | `"01/01/2050"` |
+| `max_length` | :material-close: | Set the max allowed number of characters | `Int` | `0` |
+| `required` | :material-close: | Whether the field is mandatory | `Boolean` | `false` |
 
 ⚠️ Please note that `PASSWORD` type is only available for signup screen!
 
@@ -267,46 +274,70 @@ The following are the possible configuration parameters:
 
 | Name | Required | Description | Type |
 | --- |:---:| --- | :---: |
-| `journey_mode`| :material-close: | Enable/disable the journey search mode | `Boolean` |
-| `bookmark_mode`| :material-close: | Enable/disable the bookmarks feature | `Boolean` |
-| `traffic_mode`| :material-close: | Show/hide the traffic button | `Boolean` |
-| `stop_point_search`| :material-close: | Enable/disable search by stop point instead of stop area | `Boolean` | `false` |
-| `go_from_go_to`| :material-close: | Show/hide the go from/go to buttons | `Boolean` |
-| `default_location`| :material-close: | The default location on first launch | [`Around Me location`](#around-me-location) |
-| `max_history`| :material-close: | Define the max history items | `Int` |
+| `booking` | :material-close: | Enable a booking button for a free floating | [`Booking`](#booking) |
+| `bookmark_mode` | :material-close: | Enable/disable the bookmarks feature | `Boolean` |
+| `default_location` | :material-close: | The default location on first launch | [`Default location`](#default-location) |
+| `go_from_go_to` | :material-close: | Show/hide the go from/go to buttons | `Boolean` |
+| `journey_mode` | :material-close: | Enable/disable the journey search mode | `Boolean` |
+| `max_history` | :material-close: | Define the max history items | `Int` |
+| `min_zoom_level` | :material-close: | Define the min zoom level of map. Android only | `Int` |
+| `stop_point_search` | :material-close: | Enable/disable search by stop point instead of stop area | `Boolean` | `false` |
+| `traffic_mode` | :material-close: | Show/hide the traffic button | `Boolean` |
+| `vehicle_positions`| :material-close: | Show bus vehicle positions on map | [`Vehicle positions (Around me)`](#vehicle-positions-around-me) |
 
-##### Around Me location
+##### Booking
+| Name | Required | Description | Type | Example |
+| --- |:---:| --- | :---: | :---: |
+| `name_res` | :material-check: | Localized menu item title id | `String` | `"bookmarks"` |
+
+##### Default location
 
 | Name | Required | Description | Type | Example |
 | --- |:---:| --- | :---: | :---: |
-| `lat`| :material-check: | The latitude of the default location | `String` | `"48.846790"` |
-| `lon`| :material-check: | The longitude of the default location | `String` | `"2.377090"` |
+| `lat` | :material-check: | The latitude of the default location | `String` | `"48.846790"` |
+| `lon` | :material-check: | The longitude of the default location | `String` | `"2.377090"` |
+
+##### Vehicle positions (Around me)
+
+| Name | Required | Description | Type | Example |
+| --- |:---:| --- | :---: | :---: |
+| `frequency` | :material-check: | frequency of the vehicle positions request in seconds | `String` | 30 |
 
 #### Bookmark features
 
 | Name | Required | Description | Type | Example |
 | --- |:---:| --- | :---: | :---: |
-| `go_from_go_to`| :material-close: | Show/hide the go from/go to buttons | `Boolean` |
+| `go_from_go_to` | :material-close: | Show/hide the go from/go to buttons | `Boolean` |
+| `tabs` | :material-close: | Enable/disable tabs | [`Bookmark tabs`](#bookmark-tabs) |
+
+##### Bookmark tabs
+
+| Name | Required | Description | Type | Example |
+| --- |:---:| --- | :---: | :---: |
+| `transports` | :material-check: | Enable/disable transport tab | `Boolean` | `true` |
+| `journeys` | :material-check: | Enable/disable journeys tab  | `Boolean` | `true` |
+| `addresses` | :material-check: | Enable/disable addresses tab  | `Boolean` | `true` |
 
 #### Journey features
 
 | Name | Required | Description | Type | Example |
 | --- |:---:| --- | :---: | :---: |
-| `bookmark_mode`| :material-close: | Enable/disable the bookmarks feature | `Boolean` |
-| `buy_tickets`| :material-close: | Enable a buy button in roadmap | [Buy ticket button](#buy-ticket-button) |
-| `carbon`| :material-close: | Show/hide the itinerary carbon summary | `Boolean` | `true` |
-| `calories`| :material-close: | Show/hide the itinerary calories summary | `Boolean` | `false` |
-| `disruption_contributors`| :material-close: | Define the list of disruption contributors id | `[String]` | `["shortterm.tr_idfm"]` |
-| `disruption_contributors`| :material-close: | Define the list of disruption contributors id | `[String]` | `["shortterm.tr_idfm"]` |
-| `earlier_later`| :material-close: | Enable/disable the earlier/later journeys request | `Boolean` | `false` |
-| `max_favorite_addresses`| :material-close: | Define the max history items | `Int` | `0` |
-| `max_favorite_pois`| :material-close: | Define the max history items | `Int` | `0` |
-| `max_history`| :material-close: | Define the max history items | `Int` | `10` |
-| `next_departures`| :material-close: | Show/hide the next departures | `Boolean` | `true` |
-| `price`| :material-close: | Show/hide the itinerary price | `Boolean` | `true` |
-| `stop_point_search`| :material-close: | Enable/disable search by stop point instead of stop area | `Boolean` | `false` |
-| `step_by_step_guidance`| :material-close: | Enable/disable the step by step guidance | `Boolean` |
-| `transport_networks`| :material-close: | Show/hide the public transport network | `Boolean` | `false` |
+| `bookmark_mode` | :material-close: | Enable/disable the bookmarks feature | `Boolean` |
+| `buy_tickets` | :material-close: | Enable a buy button in roadmap | [Buy ticket button](#buy-ticket-button) |
+| `calories` | :material-close: | Show/hide the itinerary calories summary | `Boolean` | `false` |
+| `carbon` | :material-close: | Show/hide the itinerary carbon summary | `Boolean` | `true` |
+| `disruption_contributors` | :material-close: | Define the list of disruption contributors id | `[String]` | `["shortterm.tr_idfm"]` |
+| `max_bookmark_address` | :material-close: | Define the max favorites addresses | `Int` | `10` |
+| `max_bookmark_poi` | :material-close: | Define the max favorites POIs | `Int` | `10` |
+| `max_history` | :material-close: | Define the max history items | `Int` | `10` |
+| `next_departures` | :material-close: | Show/hide the next departures | `Boolean` | `true` |
+| `price` | :material-close: | Show/hide the itinerary price | `Boolean` | `true` |
+| `ridesharing_price` | :material-close: | Show/hide the itinerary ridesharing price | `Boolean` | `true` |
+| `search_only` | :material-close: | Enable/disable a direct search without input from user | `Boolean` | `false` |
+| `step_by_step_guidance` | :material-close: | Enable/disable the step by step guidance | `Boolean` |
+| `stop_point_search` | :material-close: | Enable/disable search by stop point instead of stop area | `Boolean` | `false` |
+| `transport_networks` | :material-close: | Show/hide the public transport network | `Boolean` | `false` |
+| `vehicle_positions`| :material-close: | Show bus vehicle positions on roadmap | [`Vehicle positions (Journey)`](#vehicle-positions-journey) |
 
 #### Buy ticket button
 
@@ -314,40 +345,55 @@ The following are the possible configuration parameters:
 | --- |:---:| --- | :---: | :---: |
 | `title_res`| :material-check: | Localized buy ticket button title id | `String` | `"buy_this_journey"` |
 
+##### Vehicle positions (Journey)
+
+| Name | Required | Description | Type | Example |
+| --- |:---:| --- | :---: | :---: |
+| `frequency` | :material-check: | frequency of the vehicle positions request in seconds | `String` | 30 |
+
 #### Schedule features
 
 | Name | Required | Description | Type |
 | --- |:---:| --- | :---: |
-| `directions_first`| :material-close: | Show destinations before selecting the station | `Boolean` |
-| `bookmark_mode`| :material-close: | Enable/disable the bookmarks feature | `Boolean` |
-| `transport_networks`| :material-close: | Enable/disable grouping lines by network | `Boolean` |
-| `max_history`| :material-close: | Define the max history items | `Int` |
+| `bookmark_mode` | :material-close: | Enable/disable the bookmarks feature | `Boolean` |
+| `directions_first` | :material-close: | Show destinations before selecting the station | `Boolean` |
+| `max_history` | :material-close: | Define the max history items | `Int` |
+| `transport_networks` | :material-close: | Enable/disable grouping lines by network | `Boolean` |
+| `vehicle_positions`| :material-close: | Show bus vehicle positions on map | [`Vehicle positions (Schedule)`](#vehicle-positions-schedule) |
+
+##### Vehicle positions (Schedule)
+
+| Name | Required | Description | Type | Example |
+| --- |:---:| --- | :---: | :---: |
+| `frequency` | :material-check: | frequency of the vehicle positions request in seconds | `String` | 30 |
 
 #### Traffic features
 
 | Name | Required | Description | Type | Example |
 | --- |:---:| --- | :---: | :---: |
-| `disruption_contributors`| :material-close: | Define the list of disruption contributors id | `[String]` | `["shortterm.tr_idfm"]` |
-| `severity`| :material-close: | List of supported disruptions severities | [`[Traffic severity]`](#traffic-severity) | - |
-| `alert_subscription`| :material-close: | Alert subscription environment configuration | [`Alert subscription`](#alert-subscription) | - |
-| `transport_networks`| :material-close: | Enable/disable showing network on lines | `Boolean` | - |
+| `alert_subscription` | :material-close: | Alert subscription environment configuration | [`Alert subscription`](#alert-subscription) | - |
+| `disruption_contributors` | :material-close: | Define the list of disruption contributors id | `[String]` | `["shortterm.tr_idfm"]` |
+| `networks_first` | :material-close: | Show networks before line disruptions | `Boolean` |
+<!-- | `severity` | :material-close: | List of supported disruptions severities | [`[Traffic severity]`](#traffic-severity) | - | -->
+| `transport_networks` | :material-close: | Enable/disable showing network on lines | `Boolean` | - |
 
-##### Traffic severity
+<!-- Not yet -->
+<!-- ##### Traffic severity
 
 | Name | Required | Description | Type | Example |
 | --- |:---:| --- | :---: | :---: |
-| `name_res`| :material-check: | Localized severity name id | `String` | `blocking_disruptions` |
-| `icon_res`| :material-check: | Severity icon resource id | `String` | `ic_blocking_disruptions` |
-| `color`| :material-check: | Color of the target severity | `String` | `#E74C3C` |
-| `effects`| :material-check: | List of severity effects | `[String]` | `["SIGNIFICANT_DELAYS"]` |
-| `selected`| :material-close: | Whether the severity is selected by default or not | `Boolean` | `true` |
+| `name_res` | :material-check: | Localized severity name id | `String` | `blocking_disruptions` |
+| `icon_res` | :material-check: | Severity icon resource id | `String` | `ic_blocking_disruptions` |
+| `color` | :material-check: | Color of the target severity | `String` | `#E74C3C` |
+| `effects` | :material-check: | List of severity effects | `[String]` | `["SIGNIFICANT_DELAYS"]` |
+| `selected` | :material-close: | Whether the severity is selected by default or not | `Boolean` | `true` | -->
 
 ##### Alert subscription
 
 | Name | Required | Description | Type | Example |
 | --- |:---:| --- | :---: | :---: |
-| `env`| :material-check: | Kronos environment | `String` | `PROD` |
-| `timezone`| :material-check: | Subscriptions timezone | `String` | `Europe/Paris` |
+| `env` | :material-check: | Kronos environment | `String` | `PROD` |
+| `timezone` | :material-check: | Subscriptions timezone | `String` | `Europe/Paris` |
 
 ### Fonts
 
@@ -364,55 +410,55 @@ The following are the possible configuration parameters:
 
 | Name | Required | Description | Type |
 | --- |:---:| --- | :---: |
-| `numeric`| :material-close: | Custom numeric font | [`Font category`](#font-category) |
-| `alphanumeric`| :material-close: | Custom alphanumeric font | [`Font category`](#font-category) |
+| `numeric` | :material-close: | Custom numeric font | [`Font category`](#font-category) |
+| `alphanumeric` | :material-close: | Custom alphanumeric font | [`Font category`](#font-category) |
 
 ##### Font category
 
 | Name | Required | Description | Type |
 | --- |:---:| --- | :---: |
-| `regular`| :material-close: | Custom numeric font for regular typeface | [`Font Typeface`](#font-typeface) |
-| `semi_bold`| :material-close: | Custom numeric font for semi bold typeface | [`Font Typeface`](#font-typeface) |
-| `bold`| :material-close: | Custom numeric font for bold typeface | [`Font Typeface`](#font-typeface) |
-| `italic`| :material-close: | Custom numeric font for italic typeface | [`Font Typeface`](#font-typeface) |
+| `regular` | :material-close: | Custom numeric font for regular typeface | [`Font Typeface`](#font-typeface) |
+| `semi_bold` | :material-close: | Custom numeric font for semi bold typeface | [`Font Typeface`](#font-typeface) |
+| `bold` | :material-close: | Custom numeric font for bold typeface | [`Font Typeface`](#font-typeface) |
+| `italic` | :material-close: | Custom numeric font for italic typeface | [`Font Typeface`](#font-typeface) |
 
 ##### Font Typeface
 
 | Name | Required | Description | Type | Example |
 | --- |:---:| --- | :---: | :---: |
-| `ttf_file`| :material-check: | The TTF file name | `String` | `"SourceSansPro"` |
-| `fontname`| :material-check: | The font name | `String` | `"SourceSansPro-Bold"` |
+| `ttf_file` | :material-check: | The TTF file name | `String` | `"SourceSansPro"` |
+| `fontname` | :material-check: | The font name | `String` | `"SourceSansPro-Bold"` |
 
 ### Line resource
 
 | Name | Required | Description | Type | Example |
 | --- |:---:| --- | :---: | :---: |
-| `code`| :material-check: | Navitia line code | `String` | `1` |
-| `icon_res`| :material-check: | Line icon resource id | `String` | `ic_metro_1` |
-| `commercial`| :material-check: | Transport commercial mode | [`Transport Commercial Mode`](#transport-commercial-mode) | - |
+| `code` | :material-check: | Navitia line code | `String` | `1` |
+| `icon_res` | :material-check: | Line icon resource id | `String` | `ic_metro_1` |
+| `commercial` | :material-check: | Transport commercial mode | [`Transport Commercial Mode`](#transport-commercial-mode) | - |
 
 ### Mode resource
 
 | Name | Required | Description | Type | Example |
 | --- |:---:| --- | :---: | :---: |
-| `icon_res`| :material-check: | Transport mode icon resource id | `String` | `ic_bus` |
-| `commercial`| :material-check: | Transport commercial mode | [`Transport Commercial Mode`](#transport-commercial-mode) | - |
+| `icon_res` | :material-check: | Transport mode icon resource id | `String` | `ic_bus` |
+| `commercial` | :material-check: | Transport commercial mode | [`Transport Commercial Mode`](#transport-commercial-mode) | - |
 
 ### Provider resource
 
 | Name | Required | Description | Type | Example |
 | --- |:---:| --- | :---: | :---: |
-| `type_id`| :material-check: | Navitia provider type id | `String` | `SCOOTER` |
-| `provider_id`| :material-check: | Navitia provider id | `String` | `ridesharing_provider` |
-| `icon_res`| :material-check: | Provider icon resource id | `String` | `ic_lime` |
+| `type_id` | :material-check: | Navitia provider type id | `String` | `SCOOTER` |
+| `provider_id` | :material-check: | Navitia provider id | `String` | `ridesharing_provider` |
+| `icon_res` | :material-check: | Provider icon resource id | `String` | `ic_lime` |
 
 ### Network resource
 
 | Name | Required | Description | Type | Example |
 | --- |:---:| --- | :---: | :---: |
-| `network_id`| :material-check: | Navitia network id | `String` | `network:BIL:27` |
-| `name_res`| :material-check: | Localized network name resource id | `String` | `sncf` |
-| `icon_res`| :material-check: | Network icon resource IidD | `String` | `ic_sncf` |
+| `network_id` | :material-check: | Navitia network id | `String` | `network:BIL:27` |
+| `name_res` | :material-check: | Localized network name resource id | `String` | `sncf` |
+| `icon_res` | :material-check: | Network icon resource IidD | `String` | `ic_sncf` |
 
 ### Icon resource
 
@@ -424,8 +470,8 @@ The following are the possible configuration parameters:
 
 | Name | Required | Description | Type | Example |
 | --- |:---:| --- | :---: | :---: |
-| `departure_res`| :material-close: | Departure icon resource id | `String` | `ic_departure` |
-| `arrival_res`| :material-close: | Arrival icon resource id  | `String` | `ic_departure` |
+| `departure_res` | :material-close: | Departure icon resource id | `String` | `ic_departure` |
+| `arrival_res` | :material-close: | Arrival icon resource id  | `String` | `ic_departure` |
 
 ### Title resource
 
@@ -438,15 +484,15 @@ The following are the possible configuration parameters:
 
 | Name | Required | Description | Type | Example |
 | --- |:---:| --- | :---: | :---: |
-| `filters`| :material-close: | Localized filters screen title resource id | `String` | `filters_screen_title` |
+| `filters` | :material-close: | Localized filters screen title resource id | `String` | `filters_screen_title` |
 
 #### Journey title resource
 
 | Name | Required | Description | Type | Example |
 | --- |:---:| --- | :---: | :---: |
-| `journeys`| :material-close: | Localized journeys screen title resource id | `String` | `journeys_screen_title` |
-| `roadmap`| :material-close: | Localized roadmap screen title resource id | `String` | `roadmap_screen_title` |
-| `ridesharing`| :material-close: | Localized ridesharing screen title resource id | `String` | `ridesharing_screen_title` |
+| `journeys` | :material-close: | Localized journeys screen title resource id | `String` | `journeys_screen_title` |
+| `roadmap` | :material-close: | Localized roadmap screen title resource id | `String` | `roadmap_screen_title` |
+| `ridesharing` | :material-close: | Localized ridesharing screen title resource id | `String` | `ridesharing_screen_title` |
 
 ### Global configuration JSON structure
 
@@ -466,6 +512,10 @@ Please note that this is the complete version of the configuration, remove unuse
       "primary": "",
       "secondary": "",
       "tertiary": "",
+      "map": {
+        "poi": "",
+        "transport": ""
+      }
     },
     "bookmark": {
       "primary": "",
@@ -702,64 +752,74 @@ Please note that this is the complete version of the configuration, remove unuse
       ]
     },
     "aroundme": {
-      "journey_mode": true,
+      "booking": {
+        "title_res": ""
+      },
       "bookmark_mode": true,
-      "traffic_mode": true,
-      "stop_point_search": true,
       "crowdsourcing_mode": true,
-      "go_from_go_to": true,
       "default_location": {
         "lat": "48.846790",
         "lon": "2.377090"
       },
-      "max_history": 10
-    },
+      "go_from_go_to": true,
+      "journey_mode": true,
+      "max_history": 10,
+      "min_zoom_level": 15,
+      "stop_point_search": true,
+      "traffic_mode": true,
+      "vehicle_positions": {
+        "frequency": 30
+      },
     "bookmark": {
-      "go_from_go_to": true
+      "go_from_go_to": true,
+      "tabs": {
+        "transports": true,
+        "journeys": true,
+        "addresses": true
+      }
     },
     "journey": {
-      "search_only": false,
-      "stop_point_search": true,
       "bookmark_mode": true,
-      "step_by_step_guidance": true,
-      "next_departures": true,
-      "price": true,
-      "carbon": true,
+      "buy_tickets": {
+        "title_res" : "buy_tickets"
+      },
       "calories": true,
-      "transport_networks": true,
-      "max_history": 10,
+      "carbon": true,
       "disruption_contributors": [
         ""
       ],
-      "buy_tickets": {
-        "title_res" : ""
+      "max_bookmark_address": 10,
+      "max_bookmark_poi": 10,
+      "max_history": 10,
+      "next_departures": true,
+      "price": true,
+      "ridesharing_price": true,
+      "search_only": true,
+      "step_by_step_guidance": true,
+      "stop_point_search": true,
+      "transport_networks": true,
+      "vehicle_positions": {
+        "frequency": 30
       }
     },
     "schedule": {
-      "directions_first": true,
       "bookmark_mode": true,
+      "directions_first": true,
+      "max_history": 10,
       "transport_networks": true,
-      "max_history": 10
+      "vehicle_positions": {
+        "frequency": 30
+      }
     },
     "traffic": {
+      "alert_subscription": {
+        "env": "",
+        "timezone": ""
+      },
       "disruption_contributors": [
         ""
       ],
-      "severity": [
-        {
-          "icon_res": "",
-          "name_res": "",
-          "color": "",
-          "effects": [
-            ""
-          ],
-          "selected": true
-        }
-      ],
-      "alert_subscription": {
-        "env": "PROD",
-          "timezone": "Europe/Paris"
-      },
+      "networks_first": true,
       "transport_networks": true
     }
   }
@@ -773,13 +833,13 @@ You can refer to the table below for possible generated events.
 
 | Event name | Possible object types | Description |
 | --- | --- | --- |
-| `drag`| `map`, `bottomSheet`, `chart`, `map` | The user performs a drag action |
-| `edit`| `field` | The user has changed the input value of an object |
-| `tap`| `button`, `item`, `switch`, `tab` | The user performs a tap action |
-| `scroll`| `bottomSheet`, `list` | The user started a scroll on an object |
-| `show`| - | A screen is displayed |
-| `swipe`| `bottomSheet` | The user performs a swipe action |
-| `zoom`| `map` | The user performs whether a pinch, a double tap action to zoom on an object |
+| `drag` | `map`, `bottomSheet`, `chart`, `map` | The user performs a drag action |
+| `edit` | `field` | The user has changed the input value of an object |
+| `tap` | `button`, `item`, `switch`, `tab` | The user performs a tap action |
+| `scroll` | `bottomSheet`, `list` | The user started a scroll on an object |
+| `show` | - | A screen is displayed |
+| `swipe` | `bottomSheet` | The user performs a swipe action |
+| `zoom` | `map` | The user performs whether a pinch, a double tap action to zoom on an object |
 
 You can find in the following table the list of UI modules that support the event tracking features
 
@@ -787,7 +847,7 @@ You can find in the following table the list of UI modules that support the even
 
 | Module name | Available | Implementation |
 | --- | ---- | :---: |
-| Around Me | :material-close: | - |
+| Around Me | :material-close: |  |
 | Bookmark | :material-close: | - |
 | Journey | :material-check: | [Journey events tracking](../journey/android/#events-tracking) |
 | Schedule | :material-close: | - |
