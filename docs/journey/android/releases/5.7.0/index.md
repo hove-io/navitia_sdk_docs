@@ -25,7 +25,7 @@
 
 #### Tasks
 - Add custom analytics events
-- Update JourneyEnvironment which can have SBX, CUS and PROD
+- Update `JourneyEnvironment` which can have `SBX`, `CUS` and `PROD`
 - Delegate is no more accessible
 - Add navigation listener and remove navigation callbacks from `JourneyUI.init()`
 

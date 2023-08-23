@@ -15,7 +15,7 @@
 
 #### Tasks
 - Add custom analytics events
-- Update AroundMeEnvironment which can have SBX, CUS and PROD
+- Update `AroundMeEnvironment` which can have `SBX`, `CUS` and `PROD`
 - Delegate is no more accessible
 - Add navigation listener and remove navigation callbacks from `AroundMeUI.init()`
 

@@ -11,7 +11,7 @@
 
 #### Tasks
 - Add custom analytics events
-- Update BookmarkEnvironment which can have SBX, CUS and PROD
+- Update `BookmarkEnvironment` which can have `SBX`, `CUS` and `PROD`
 - Delegate is no more accessible
 - Add navigation listener and remove navigation callbacks from `BookmarkUI.init()`
 - Rename `BookmarkConfiguration.featuresConfiguration` by `BookmarkConfiguration.features`
