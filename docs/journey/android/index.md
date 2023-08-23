@@ -6,7 +6,7 @@ Add the following dependencies in the `build.gradle` file of your application:
 
 ``` groovy
 dependencies {
-    implementation("com.kisio.navitia.sdk.ui:journey:5.6.2")
+    implementation("com.kisio.navitia.sdk.ui:journey:5.7.0")
 }
 ```
 
