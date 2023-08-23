@@ -53,6 +53,33 @@ JourneyUI.getInstance().let { instance ->
 }
 ```
 
+### Navigation listener
+
+Since the module launches its own fragments, you may want your application to be aware of navigation events.
+For that, you have to set a navigation listener by calling this method before `init()`.
+
+| Method | Description |
+| --- | --- |
+| `.setNavigationListener(journeyNavigationListenerImpl)` | Set the class instance implementing `JourneyNavigationListener` interface |
+
+This interface gives you the method `onBack()` for any back event between two fragments and the method `onNavigate` for the reverse.
+Each method has a `JourneyNavigationListener.Event` parameter you can rely on.
+
+| Event |
+| --- |
+| `EXTERNAL_TO_JOURNEYS` |
+| `EXTERNAL_TO_ROADMAP` |
+| `GUIDANCE_BACK_TO_ROADMAP` |
+| `JOURNEYS_BACK_TO_EXTERNAL` |
+| `JOURNEYS_TO_RIDESHARING` |
+| `JOURNEYS_TO_ROADMAP` |
+| `RIDESHARING_BACK_TO_JOURNEYS` |
+| `RIDESHARING_TO_ROADMAP` |
+| `ROADMAP_TO_GUIDANCE` |
+| `ROADMAP_BACK_TO_EXTERNAL` |
+| `ROADMAP_BACK_TO_JOURNEYS` |
+| `ROADMAP_BACK_TO_RIDESHARING` |
+
 ### Events tracking
 
 In order to receive the list of generated events within Journey module, you have to attach the tracker to the module instance.<br>
@@ -247,7 +274,7 @@ Please refer to the following schema to learn more about different interactions 
 
 ### Application
 
-Some route or callbacks are delegated to the application. 
+Some routes or callbacks are delegated to the application. 
 If you have to receive some module data, the `Router` module must register a receiver with the right parameter:
 
 ``` kotlin

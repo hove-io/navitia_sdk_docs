@@ -55,6 +55,37 @@ TrafficUI.getInstance().let { instance ->
 }
 ```
 
+### Navigation listener
+
+Since the module launches its own fragments, you may want your application to be aware of navigation events.
+For that, you have to set a navigation listener by calling this method before `init()`.
+
+| Method | Description |
+| --- | --- |
+| `.setNavigationListener(trafficNavigationListenerImpl)` | Set the class instance implementing `TrafficNavigationListener` interface |
+
+This interface gives you the method `onBack()` for any back event between two fragments and the method `onNavigate` for the reverse.
+Each method has a `TrafficNavigationListener.Event` parameter you can rely on.
+
+| Event |
+| --- |
+| `ALL_DISRUPTIONS_BACK_TO_EXTERNAL` |
+| `ALL_DISRUPTIONS_BACK_TO_NETWORKS` |
+| `ALL_DISRUPTIONS_TO_AUTO_COMPLETION` |
+| `ALL_DISRUPTIONS_TO_DISRUPTION` |
+| `ALL_DISRUPTIONS_TO_MY_ALERTS` |
+| `AUTO_COMPLETION_BACK_TO_ALL_DISRUPTIONS` |
+| `AUTO_COMPLETION_TO_EDIT_ALERT` |
+| `DISRUPTION_BACK_TO_ALL_DISRUPTIONS` |
+| `EDIT_ALERT_BACK_TO_AUTO_COMPLETION` |
+| `EDIT_ALERT_BACK_TO_ALL_DISRUPTIONS` |
+| `EXTERNAL_TO_TRAFFIC` |
+| `MY_ALERTS_BACK_TO_ALL_DISRUPTIONS` |
+| `MY_ALERTS_TO_AUTO_COMPLETION` |
+| `MY_ALERTS_TO_EDIT_ALERT` |
+| `NETWORK_BACK_TO_EXTERNAL` |
+| `NETWORK_TO_ALL_DISRUPTIONS` |
+
 ### Alert subscription
 
 To enable the alert subscription feature, the following instructions are required:

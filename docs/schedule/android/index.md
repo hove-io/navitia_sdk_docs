@@ -55,6 +55,35 @@ ScheduleUI.getInstance().let { instance ->
 }
 ```
 
+### Navigation listener
+
+Since the module launches its own fragments, you may want your application to be aware of navigation events.
+For that, you have to set a navigation listener by calling this method before `init()`.
+
+| Method | Description |
+| --- | --- |
+| `.setNavigationListener(scheduleNavigationListenerImpl)` | Set the class instance implementing `ScheduleNavigationListener` interface |
+
+This interface gives you the method `onBack()` for any back event between two fragments and the method `onNavigate` for the reverse.
+Each method has a `ScheduleNavigationListener.Event` parameter you can rely on.
+
+| Event |
+| --- |
+| `DESTINATIONS_BACK_TO_LINES` |
+| `DESTINATIONS_BACK_TO_STATIONS` |
+| `DESTINATIONS_TO_MAP` |
+| `DESTINATIONS_TO_STATIONS` |
+| `LINES_BACK_TO_EXTERNAL` |
+| `LINES_TO_DESTINATIONS` |
+| `LINES_TO_STATIONS` |
+| `MAP_BACK_TO_DESTINATIONS` |
+| `MAP_BACK_TO_STATIONS` |
+| `SCHEDULE_BACK_TO_MAP` |
+| `STATIONS_BACK_TO_DESTINATIONS` |
+| `STATIONS_BACK_TO_LINE` |
+| `STATIONS_TO_DESTINATIONS` |
+| `STATIONS_TO_MAP` |
+
 ## 🚀  Launching
 
 Schedule has a single entry point `HomeFragment`.<br>

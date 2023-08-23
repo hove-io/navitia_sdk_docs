@@ -30,8 +30,6 @@ This method takes the following parameters:
 | `token` | :material-check: | <a href="https://navitia.io/inscription/" target="_blank">Get your token</a> | `String` | :material-close: |
 | `configuration` | :material-close: | Module configuration object | [`AroundMeConfiguration`](../../getting_started/#modules-configuration) | `null` |
 | `configurationJsonFile` | :material-close: | Module configuration JSON file name | `String` | `null` |
-| `onNavigate` | :material-close: | Listener for the navigation between module screens | `Unit` | `{ _ -> }` |
-| `onBack` | :material-close: | Listener for the navigation back button click event | `Unit` | `{ _ -> }` |
 
 <h4>Example</h4>
 
@@ -42,9 +40,29 @@ BookmarkUI.getInstance().let { instance ->
       token = "your_token",
       configurationJsonFile = "config.json"
    )
-   instance.attachActivity(this)
 }
 ```
+
+### Navigation listener
+
+Since the module launches its own fragments, you may want your application to be aware of navigation events.
+For that, you have to set a navigation listener by calling this method before `init()`.
+
+| Method | Description |
+| --- | --- |
+| `.setNavigationListener(bookmarkNavigationListenerImpl)` | Set the class instance implementing `BookmarkNavigationListener` interface |
+
+This interface gives you the method `onBack()` for any back event between two fragments and the method `onNavigate` for the reverse.
+Each method has a `BookmarkNavigationListener.Event` parameter you can rely on.
+
+| Event |
+| --- |
+| `ADD_ADDRESS_BACK_TO_FAVORITES` |
+| `EXTERNAL_TO_FAVORITES` |
+| `FAVORITES_BACK_TO_EXTERNAL` |
+| `FAVORITES_TO_JOURNEY` |
+| `FAVORITES_TO_ADD_ADDRESS` |
+| `FAVORITES_TO_ROADMAP` |
 
 ## 🚀  Launching
 

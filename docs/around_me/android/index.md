@@ -40,8 +40,6 @@ This method takes the following parameters:
 | `token` | :material-check: | <a href="https://navitia.io/inscription/" target="_blank">Get your token</a> | `String` | :material-close: |
 | `configuration` | :material-close: | Module configuration object | [`AroundMeConfiguration`](../../getting_started/#modules-configuration) | `null` |
 | `configurationJsonFile` | :material-close: | Module configuration JSON file name | `String` | `null` |
-| `onNavigate` | :material-close: | Listener for the navigation between module screens | `Unit` | `{ _ -> }` |
-| `onBack` | :material-close: | Listener for the navigation back button click event | `Unit` | `{ _ -> }` |
 
 <h4>Example</h4>
 
@@ -54,6 +52,30 @@ AroundMeUI.getInstance().let { instance ->
     )
 }
 ```
+
+### Navigation listener
+
+Since the module launches its own fragments, you may want your application to be aware of navigation events.
+For that, you have to set a navigation listener by calling this method before `init()`.
+
+| Method | Description |
+| --- | --- |
+| `.setNavigationListener(aroundMeNavigationListenerImpl)` | Set the class instance implementing `AroundMeNavigationListener` interface |
+
+This interface gives you the method `onBack()` for any back event between two fragments and the method `onNavigate` for the reverse.
+Each method has a `AroundMeNavigationListener.Event` parameter you can rely on.
+
+| Event |
+| --- |
+| `MAP_TO_FAVORITES` |
+| `MAP_TO_JOURNEY` |
+| `MAP_TO_TRAFFIC` |
+| `MAP_TO_ROADMAP` |
+| `MAP_TO_FILTER` |
+| `MAP_TO_SEARCH` |
+| `MAP_BACK_TO_EXTERNAL` |
+| `SEARCH_BACK_TO_MAP` |
+| `FILTER_BACK_TO_MAP` |
 
 ## 🚀  Launching
 
