@@ -847,18 +847,18 @@ You can find in the following table the list of UI modules that support the even
 
 | Module name | Available | Implementation |
 | --- | ---- | :---: |
-| Around Me | :material-close: |  |
-| Bookmark | :material-close: | - |
+| Around me | :material-close: | [Around me events tracking](../around_me/android/#events-tracking) |
+| Bookmark | :material-close: | [Bookmark events tracking](../bookmark/android/#events-tracking) |
 | Journey | :material-check: | [Journey events tracking](../journey/android/#events-tracking) |
-| Schedule | :material-close: | - |
-| Traffic | :material-close: | - |
+| Schedule | :material-close: | [Schedule events tracking](../schedule/android/#events-tracking) |
+| Traffic | :material-close: | [Traffic events tracking](../traffic/android/#events-tracking) |
 
 <h4>iOS</h4>
 
 | Module name | Available | Implementation |
 | --- | ---- | :---: |
-| Around Me | :material-close: | - |
-| Bookmark | :material-close: | - |
+| Around me | :material-close: | [Around me events tracking](../around_me/ios/#events-tracking) |
+| Bookmark | :material-close: | [Bookmark events tracking](../bookmark/ios/#events-tracking) |
 | Journey | :material-check: | [Journey events tracking](../journey/ios/#events-tracking) |
-| Schedule | :material-close: | - |
-| Traffic | :material-close: | - |
+| Schedule | :material-close: | [Schedule events tracking](../schedule/ios/#events-tracking) |
+| Traffic | :material-close: | [Traffic events tracking](../traffic/ios/#events-tracking) |
