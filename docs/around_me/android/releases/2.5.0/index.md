@@ -24,4 +24,5 @@
 - `gradle-wrapper` > `8.0`
 - `com.android.tools.build:gradle` > `8.0.2`
 - `minSdk` > `23`
+- `androidx.recyclerview:recyclerview` > `1.3.1`
 - `com.kisio.navitia.sdk.ui:bookmark` > Removed

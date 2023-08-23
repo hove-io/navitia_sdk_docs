@@ -1,20 +1,17 @@
-# Bookmark Android 1.3.0 Changelog
+# Traffic Android 2.2.0 Changelog
 
 <h2>🗓 23 Aug 2023</h2>
 
-#### Feature
-- Tabs are now configurable
-
-#### Fix
-- Fix deletion of a line from a favorite station
-- Fetch location if the user use _Go to there_ function
+#### Features
+- Show network list
+- Add traffic alert subscription for a network
 
 #### Tasks
 - Add custom analytics events
-- Update `BookmarkEnvironment` which can have `SBX`, `CUS` and `PROD`
+- Update `TrafficEnvironment` which can have `SBX`, `CUS` and `PROD`
 - Delegate is no more accessible
-- Add navigation listener and remove navigation callbacks from `BookmarkUI.init()`
-- Rename `BookmarkConfiguration.featuresConfiguration` by `BookmarkConfiguration.features`
+- Add navigation listener and remove navigation callbacks from `TrafficUI.init()`
+- Remove display of first disruption when selecting a disrupted line
 
 #### Dependencies
 - `kotlin` > `1.8.21`

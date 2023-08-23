@@ -39,4 +39,5 @@
 - `kotlinCoroutinesVersion ` > `1.6.4`
 - `navigationVersion` > `2.7.0`
 - `roomVersion` > `2.5.2`
+- `androidx.recyclerview:recyclerview` > `1.3.1`
 - `com.kisio.navitia.sdk.ui:bookmark` > Removed
