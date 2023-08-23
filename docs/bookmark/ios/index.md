@@ -35,21 +35,21 @@ This module is set up by calling `Bookmark.shared.initialize()` method which tak
 
 | Name | Required | Description | Type | Example
 | --- |:---:| --- | :---: | :---: |
-| `coverage`| :material-check: | Navitia coverage | `String` | `fr-idf` |
-| `token`| :material-check: | <a href="https://navitia.io/inscription/" target="_blank">Get your token</a> | `String` | :material-close: |
-| `env`| :material-check: | Navitia environment | `String` | `PROD` |
-| `colors`| :material-check: | Define the custom colors | [`AroundMeColorsConfiguration`](../../getting_started/#around-me-color) | - |
-| `fonts`| :material-close: | Use custom fonts | [`AroundMeFontsConfiguration`](../../getting_started/#custom-font) | - |
-| `lineResources`| :material-close: | List of transport lines resource IDs | [`[LineResource]`](../../getting_started/#line-resource) | - | 
-| `modeResources`| :material-close: | List of transport modes resource IDs | [`[ModeResource]`](../../getting_started/#mode-resource) | - | 
-| `transportCategories`| :material-check: | List of supported transport modes | [`[TransportCategory]`](../../getting_started/#transport-category) | - |
+| `coverage` | :material-check: | Navitia coverage | `String` | `fr-idf` |
+| `token` | :material-check: | <a href="https://navitia.io/inscription/" target="_blank">Get your token</a> | `String` | :material-close: |
+| `env` | :material-check: | Navitia environment | `String` | `PROD` |
+| `colors` | :material-check: | Define the custom colors | [`AroundMeColorsConfiguration`](../../getting_started/#around-me-color) | - |
+| `fonts` | :material-close: | Use custom fonts | [`AroundMeFontsConfiguration`](../../getting_started/#custom-font) | - |
+| `lineResources` | :material-close: | List of transport lines resource IDs | [`[LineResource]`](../../getting_started/#line-resource) | - | 
+| `modeResources` | :material-close: | List of transport modes resource IDs | [`[ModeResource]`](../../getting_started/#mode-resource) | - | 
+| `transportCategories` | :material-check: | List of supported transport modes | [`[TransportCategory]`](../../getting_started/#transport-category) | - |
 
 You can also call the `initialize()` method with the global JSON configuration file added to your application bundle:
 
 | Name | Required | Description | Type | Example |
 | --- |:---:| --- | :---: | :---: |
-| `token`| :material-check: | <a href="https://navitia.io/inscription/" target="_blank">Get your token</a> | `String` | :material-close: |
-| `configurationJsonFile`| :material-check: | Global configuration JSON file name | `String` | `configuration.json` |
+| `token` | :material-check: | <a href="https://navitia.io/inscription/" target="_blank">Get your token</a> | `String` | :material-close: |
+| `configurationJsonFile` | :material-check: | Global configuration JSON file name | `String` | `configuration.json` |
 
 <h4>Example</h4>
 

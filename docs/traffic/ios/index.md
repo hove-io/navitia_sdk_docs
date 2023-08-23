@@ -35,22 +35,22 @@ This module is set up by calling `Traffic.shared.initialize()` method which take
 
 | Name | Required | Description | Type | Example
 | --- |:---:| --- | :---: | :---: |
-| `coverage`| :material-check: | Navitia coverage | `String` | `fr-idf` |
-| `env`| :material-check: | Navitia environment | `String` | `PROD` |
-| `alertCredentials`| :material-close: | Kronos alert subscription credentials| [`TrafficAlertSubscriptionCredentials`](#traffic-alert-subscription-credentials) | - |
-| `colors`| :material-check: | Define the custom colors | [`TrafficColorsConfiguration`](../../getting_started/#traffic-color) | - |
-| `fonts`| :material-close: | Use custom fonts | [`TrafficFontsConfiguration`](../../getting_started/#custom-font) | - |
-| `lineResources`| :material-close: | List of transport lines resource IDs | [`[LineResource]`](../../getting_started/#line-resource) | - | 
-| `modeResources`| :material-close: | List of transport modes resource IDs | [`[ModeResource]`](../../getting_started/#mode-resource) | - | 
-| `transportCategories`| :material-check: | List of supported transport modes | [`[TransportCategory]`](../../getting_started/#transport-category) | - |
-| `networkResources`| :material-close: | List of network resource IDs | [`[NetworkResource]`](../../getting_started/#network-resource) | - |
-| `features`| :material-close: | Enable/disable some features  | [`TrafficFeaturesConfiguration`](../../getting_started/#traffic-features) | - |
+| `coverage` | :material-check: | Navitia coverage | `String` | `fr-idf` |
+| `env` | :material-check: | Navitia environment | `String` | `PROD` |
+| `alertCredentials` | :material-close: | Kronos alert subscription credentials| [`TrafficAlertSubscriptionCredentials`](#traffic-alert-subscription-credentials) | - |
+| `colors` | :material-check: | Define the custom colors | [`TrafficColorsConfiguration`](../../getting_started/#traffic-color) | - |
+| `fonts` | :material-close: | Use custom fonts | [`TrafficFontsConfiguration`](../../getting_started/#custom-font) | - |
+| `lineResources` | :material-close: | List of transport lines resource IDs | [`[LineResource]`](../../getting_started/#line-resource) | - | 
+| `modeResources` | :material-close: | List of transport modes resource IDs | [`[ModeResource]`](../../getting_started/#mode-resource) | - | 
+| `transportCategories` | :material-check: | List of supported transport modes | [`[TransportCategory]`](../../getting_started/#transport-category) | - |
+| `networkResources` | :material-close: | List of network resource IDs | [`[NetworkResource]`](../../getting_started/#network-resource) | - |
+| `features` | :material-close: | Enable/disable some features  | [`TrafficFeaturesConfiguration`](../../getting_started/#traffic-features) | - |
 
 You can also call the `initialize()` method with the global JSON configuration file added to your application bundle:
 
 | Name | Required | Description | Type | Example |
 | --- |:---:| --- | :---: | :---: |
-| `configurationJsonFile`| :material-check: | Global configuration JSON file name | `String` | `configuration.json` |
+| `configurationJsonFile` | :material-check: | Global configuration JSON file name | `String` | `configuration.json` |
 
 <h4>Example</h4>
 
@@ -99,8 +99,8 @@ To enable the alert subscription feature, the following instructions are require
 
 | Name | Required | Description | Type |
 | --- |:---:| --- | :---: |
-| `username`| :material-check: | Kronos authentication username | `String` |
-| `password`| :material-check: | Kronos authentication password | `String` |
+| `username` | :material-check: | Kronos authentication username | `String` |
+| `password` | :material-check: | Kronos authentication password | `String` |
 
 ## 🚀  Launching
 

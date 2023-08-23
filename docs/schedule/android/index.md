@@ -36,12 +36,12 @@ This method takes the following parameters:
 
 | Name | Required | Description | Type | Default |
 | --- |:---:| --- | :---: | :---: |
-| `context`| :material-check: | Context in which the module is launched | `Context` | :material-close: |
-| `token`| :material-check: | <a href="https://navitia.io/inscription/" target="_blank">Get your token</a> | `String` | :material-close: |
-| `configuration`| :material-close: | Module configuration object | [`ScheduleConfiguration`](../../getting_started/#modules-configuration) | `null` |
-| `configurationJsonFile`| :material-close: | Module configuration JSON file name | `String` | `null` |
-| `onNavigate`| :material-close: | Listener for the navigation between module screens | `Unit` | `{ _ -> }` |
-| `onBack`| :material-close: | Listener for the navigation back button click event | `Unit` | `{ _ -> }` |
+| `context` | :material-check: | Context in which the module is launched | `Context` | :material-close: |
+| `token` | :material-check: | <a href="https://navitia.io/inscription/" target="_blank">Get your token</a> | `String` | :material-close: |
+| `configuration` | :material-close: | Module configuration object | [`ScheduleConfiguration`](../../getting_started/#modules-configuration) | `null` |
+| `configurationJsonFile` | :material-close: | Module configuration JSON file name | `String` | `null` |
+| `onNavigate` | :material-close: | Listener for the navigation between module screens | `Unit` | `{ _ -> }` |
+| `onBack` | :material-close: | Listener for the navigation back button click event | `Unit` | `{ _ -> }` |
 
 <h4>Example</h4>
 
@@ -95,7 +95,7 @@ The `newInstance()` method creates an instance of the target fragment and takes 
 
 | Name | Required | Description | Type | Default |
 | --- |:---:| --- | --- | --- |
-| `showBack`| :material-close: | Show/hide back button on the first screen | `Boolean` | `false` |
+| `showBack` | :material-close: | Show/hide back button on the first screen | `Boolean` | `false` |
 
 ## 📱 Screens
 

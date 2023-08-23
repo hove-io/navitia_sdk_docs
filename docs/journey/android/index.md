@@ -36,12 +36,12 @@ This method takes the following parameters:
 
 | Name | Required | Description | Type | Default |
 | --- |:---:| --- | :---: | :---: |
-| `context`| :material-check: | Context in which the module is launched | `Context` | :material-close: |
-| `token`| :material-check: | <a href="https://navitia.io/inscription/" target="_blank">Get your token</a> | `String` | :material-close: |
-| `configuration`| :material-close: | Module configuration object | [`JourneyConfiguration`](../../getting_started/#modules-configuration) | `null` |
-| `configurationJsonFile`| :material-close: | Module configuration JSON file name | `String` | `null` |
-| `onNavigate`| :material-close: | Listener for the navigation between module screens | `Unit` | `{ _ -> }` |
-| `onBack`| :material-close: | Listener for the navigation back button click event | `Unit` | `{ _ -> }` |
+| `context` | :material-check: | Context in which the module is launched | `Context` | :material-close: |
+| `token` | :material-check: | <a href="https://navitia.io/inscription/" target="_blank">Get your token</a> | `String` | :material-close: |
+| `configuration` | :material-close: | Module configuration object | [`JourneyConfiguration`](../../getting_started/#modules-configuration) | `null` |
+| `configurationJsonFile` | :material-close: | Module configuration JSON file name | `String` | `null` |
+| `onNavigate` | :material-close: | Listener for the navigation between module screens | `Unit` | `{ _ -> }` |
+| `onBack` | :material-close: | Listener for the navigation back button click event | `Unit` | `{ _ -> }` |
 
 <h4>Example</h4>
 
@@ -104,8 +104,8 @@ The `newInstance()` method creates an instance of the target fragment and takes 
 
 | Name | Required | Description | Type | Default |
 | --- |:---:| --- | --- | --- |
-| `journeysRequest`| :material-check: | Itinerary search configuration | [`JourneysRequest`](#journeysrequest) | :material-close: |
-| `showBack`| :material-close: | Show/hide back button on the first screen | `Boolean` | `false` |
+| `journeysRequest` | :material-check: | Itinerary search configuration | [`JourneysRequest`](#journeysrequest) | :material-close: |
+| `showBack` | :material-close: | Show/hide back button on the first screen | `Boolean` | `false` |
 
 ### JourneysRequest
 
@@ -113,55 +113,55 @@ The `JourneysRequest` object allows to configure the first itinerary search at s
 
 | Name | Description | Type | Default |
 | --- | --- | --- | --- |
-| `additionalTimeAfterFirstSectionTaxi`| Additional time after first taxi section | `Int` | `null` |
-| `additionalTimeBeforeLastSectionTaxi`| Additional time before last taxi section | `Int` | `null` |
-| `allowedId`| Allowed Navitia object IDs | `List<String>` | `emptyList()` |
-| `bikeSpeed`| Bike speed | `Float` | `null` |
-| `bssSpeed`| BSS speed | `Float` | `null` |
-| `carNoParkSpeed`| Car no park speed | `Float` | `null` |
-| `carSpeed`| Car speed | `Float` | `null` |
-| `count`| The number of journeys to be displayed | `Int` | `-1` |
-| `dataFreshness`| To indicate if theoretical or realtime data are requested | [`DataFreshness`](#datafreshness) | `DataFreshness.BASE_SCHEDULE` |
-| `dateTime`| Requested date and time for journey results | `DateTime` | `null` |
-| `dateTimeRepresents`| Whether the datetime represents the departure or arrival | [`DateTimeRepresents`](#datetimerepresents) | `DateTimeRepresents.DEPARTURE` |
-| `depth`| The request depth | `Int` | `null` |
-| `destinationId`| Destination Navitia ID | `String` | `""` |
-| `destinationLabel`| Destination label, if not set the address will be displayed | `String` | `""` |
+| `additionalTimeAfterFirstSectionTaxi` | Additional time after first taxi section | `Int` | `null` |
+| `additionalTimeBeforeLastSectionTaxi` | Additional time before last taxi section | `Int` | `null` |
+| `allowedId` | Allowed Navitia object IDs | `List<String>` | `emptyList()` |
+| `bikeSpeed` | Bike speed | `Float` | `null` |
+| `bssSpeed` | BSS speed | `Float` | `null` |
+| `carNoParkSpeed` | Car no park speed | `Float` | `null` |
+| `carSpeed` | Car speed | `Float` | `null` |
+| `count` | The number of journeys to be displayed | `Int` | `-1` |
+| `dataFreshness` | To indicate if theoretical or realtime data are requested | [`DataFreshness`](#datafreshness) | `DataFreshness.BASE_SCHEDULE` |
+| `dateTime` | Requested date and time for journey results | `DateTime` | `null` |
+| `dateTimeRepresents` | Whether the datetime represents the departure or arrival | [`DateTimeRepresents`](#datetimerepresents) | `DateTimeRepresents.DEPARTURE` |
+| `depth` | The request depth | `Int` | `null` |
+| `destinationId` | Destination Navitia ID | `String` | `""` |
+| `destinationLabel` | Destination label, if not set the address will be displayed | `String` | `""` |
 | `directPath` | Set the direct path of the journey | [`DirectPath`](#directpath) | `""` |
-| `disruptionActive`| Check on [Navitia](https://doc.navitia.io/#journeys) | `Boolean` | `null` |
-| `equipmentDetails`| Check on [Navitia](https://doc.navitia.io/#journeys) | `Boolean` | `null` |
-| `freeRadiusFrom`| Check on [Navitia](https://doc.navitia.io/#journeys) | `Int` | `null` |
-| `freeRadiusTo`| Check on [Navitia](https://doc.navitia.io/#journeys) | `Int` | `null` |
-| `isJourneySchedules`| Check on [Navitia](https://doc.navitia.io/#journeys) | `Boolean` | `null` |
-| `maxBikeDirectPathDuration`| Check on [Navitia](https://doc.navitia.io/#journeys) | `Int` | `null` |
-| `maxBikeDurationToPt`| Check on [Navitia](https://doc.navitia.io/#journeys) | `Int` | `null` |
-| `maxBssDirectPathDuration`| Check on [Navitia](https://doc.navitia.io/#journeys) | `Int` | `null` |
-| `maxBssDurationToPt`| Check on [Navitia](https://doc.navitia.io/#journeys) | `Int` | `null` |
-| `maxCarDirectPathDuration`| Check on [Navitia](https://doc.navitia.io/#journeys) | `Int` | `null` |
-| `maxCarDurationToPt`| Check on [Navitia](https://doc.navitia.io/#journeys) | `Int` | `null` |
-| `maxCarNoParkDirectPathDuration`| Check on [Navitia](https://doc.navitia.io/#journeys) | `Int` | `null` |
-| `maxCarNoParkDurationToPt`| Check on [Navitia](https://doc.navitia.io/#journeys) | `Int` | `null` |
-| `maxDuration`| Check on [Navitia](https://doc.navitia.io/#journeys) | `Int` | `null` |
-| `maxDurationToPt`| Check on [Navitia](https://doc.navitia.io/#journeys) | `Int` | `null` |
-| `maxJourneys`| The max number of journeys to be displayed | `Int` | `-1` |
-| `maxNbTransfers`| The max number of public transport transfers | `Int` | `-1` |
-| `maxRidesharingDirectPathDuration`| Check on [Navitia](https://doc.navitia.io/#journeys) | `Int` | `null` |
-| `maxRidesharingDurationToPt`| Check on [Navitia](https://doc.navitia.io/#journeys) | `Int` | `null` |
-| `maxTaxiDirectPathDuration`| Check on [Navitia](https://doc.navitia.io/#journeys) | `Int` | `null` |
-| `maxTaxiDurationToPt`| Check on [Navitia](https://doc.navitia.io/#journeys) | `Int` | `null` |
-| `maxWaitingDuration`| Check on [Navitia](https://doc.navitia.io/#journeys) | `Int` | `null` |
-| `maxWalkingDirectPathDuration`| Check on [Navitia](https://doc.navitia.io/#journeys) | `Int` | `null` |
-| `maxWalkingDurationToPt`| Check on [Navitia](https://doc.navitia.io/#journeys) | `Int` | `null` |
-| `minJourneys`| The min number of journeys to be displayed | `Int` | `-1` |
-| `minNbTransfers`| The min number of public transport transfers | `Int` | `-1` |
-| `originId`| Origin Navitia ID | `String` | `""` |
-| `originLabel`| Origin label, if not set the address will be displayed | `String` | `""` |
-| `ridesharingSpeed`| Ridesharing speed | `Float` | `null` |
-| `taxiSpeed`| Taxi speed | `Float` | `null` |
-| `timeframeDuration`| Taxi speed | `Int` | `null` |
-| `travelerType`| Traveler type | [`TravelerType`](#travelertype) | `TravelerType.STANDARD` |
-| `walkingSpeed`| Walking speed | `Float` | `null` |
-| `wheelchair`| Check on [Navitia](https://doc.navitia.io/#journeys)  | `Boolean` | `null` |
+| `disruptionActive` | Check on [Navitia](https://doc.navitia.io/#journeys) | `Boolean` | `null` |
+| `equipmentDetails` | Check on [Navitia](https://doc.navitia.io/#journeys) | `Boolean` | `null` |
+| `freeRadiusFrom` | Check on [Navitia](https://doc.navitia.io/#journeys) | `Int` | `null` |
+| `freeRadiusTo` | Check on [Navitia](https://doc.navitia.io/#journeys) | `Int` | `null` |
+| `isJourneySchedules` | Check on [Navitia](https://doc.navitia.io/#journeys) | `Boolean` | `null` |
+| `maxBikeDirectPathDuration` | Check on [Navitia](https://doc.navitia.io/#journeys) | `Int` | `null` |
+| `maxBikeDurationToPt` | Check on [Navitia](https://doc.navitia.io/#journeys) | `Int` | `null` |
+| `maxBssDirectPathDuration` | Check on [Navitia](https://doc.navitia.io/#journeys) | `Int` | `null` |
+| `maxBssDurationToPt` | Check on [Navitia](https://doc.navitia.io/#journeys) | `Int` | `null` |
+| `maxCarDirectPathDuration` | Check on [Navitia](https://doc.navitia.io/#journeys) | `Int` | `null` |
+| `maxCarDurationToPt` | Check on [Navitia](https://doc.navitia.io/#journeys) | `Int` | `null` |
+| `maxCarNoParkDirectPathDuration` | Check on [Navitia](https://doc.navitia.io/#journeys) | `Int` | `null` |
+| `maxCarNoParkDurationToPt` | Check on [Navitia](https://doc.navitia.io/#journeys) | `Int` | `null` |
+| `maxDuration` | Check on [Navitia](https://doc.navitia.io/#journeys) | `Int` | `null` |
+| `maxDurationToPt` | Check on [Navitia](https://doc.navitia.io/#journeys) | `Int` | `null` |
+| `maxJourneys` | The max number of journeys to be displayed | `Int` | `-1` |
+| `maxNbTransfers` | The max number of public transport transfers | `Int` | `-1` |
+| `maxRidesharingDirectPathDuration` | Check on [Navitia](https://doc.navitia.io/#journeys) | `Int` | `null` |
+| `maxRidesharingDurationToPt` | Check on [Navitia](https://doc.navitia.io/#journeys) | `Int` | `null` |
+| `maxTaxiDirectPathDuration` | Check on [Navitia](https://doc.navitia.io/#journeys) | `Int` | `null` |
+| `maxTaxiDurationToPt` | Check on [Navitia](https://doc.navitia.io/#journeys) | `Int` | `null` |
+| `maxWaitingDuration` | Check on [Navitia](https://doc.navitia.io/#journeys) | `Int` | `null` |
+| `maxWalkingDirectPathDuration` | Check on [Navitia](https://doc.navitia.io/#journeys) | `Int` | `null` |
+| `maxWalkingDurationToPt` | Check on [Navitia](https://doc.navitia.io/#journeys) | `Int` | `null` |
+| `minJourneys` | The min number of journeys to be displayed | `Int` | `-1` |
+| `minNbTransfers` | The min number of public transport transfers | `Int` | `-1` |
+| `originId` | Origin Navitia ID | `String` | `""` |
+| `originLabel` | Origin label, if not set the address will be displayed | `String` | `""` |
+| `ridesharingSpeed` | Ridesharing speed | `Float` | `null` |
+| `taxiSpeed` | Taxi speed | `Float` | `null` |
+| `timeframeDuration` | Taxi speed | `Int` | `null` |
+| `travelerType` | Traveler type | [`TravelerType`](#travelertype) | `TravelerType.STANDARD` |
+| `walkingSpeed` | Walking speed | `Float` | `null` |
+| `wheelchair` | Check on [Navitia](https://doc.navitia.io/#journeys)  | `Boolean` | `null` |
 
 #### DataFreshness
 

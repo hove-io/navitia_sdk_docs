@@ -56,7 +56,7 @@ The following are the possible configuration parameters:
 
 | Name | Required | Description | Type | Possible values | Target modules |
 | --- | :-: | --- | :--: | :---: | :---: |
-| `coverage` | :material-check: | Navitia coverage | `String` | `fr-idf`| All |
+| `coverage` | :material-check: | Navitia coverage | `String` | `fr-idf` | All |
 | `env` | :material-check: | Navitia environment | `String` | `PROD`, `CUSTOMER` | All |
 | `colors` | :material-check: | Colors configuration | [`Colors`](#colors) | - | UI modules |
 | `transport_categories` | :material-check: | List of supported transport modes | [`[Transport category]`](#transport-category) | - | UI modules |

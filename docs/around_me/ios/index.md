@@ -35,23 +35,23 @@ This module is set up by calling `AroundMe.shared.initialize()` method which tak
 
 | Name | Required | Description | Type | Example
 | --- |:---:| --- | :---: | :---: |
-| `coverage`| :material-check: | Navitia coverage | `String` | `fr-idf` |
-| `env`| :material-check: | Navitia environment | `String` | `PROD` |
-| `colors`| :material-check: | Define the custom colors | [`AroundMeColorsConfiguration`](../../getting_started/#around-me-color) | - |
-| `fonts`| :material-close: | Use custom fonts | [`AroundMeFontsConfiguration`](../../getting_started/#custom-font) | - |
-| `lineResources`| :material-close: | List of transport lines resource IDs | [`[LineResource]`](../../getting_started/#line-resource) | - | 
-| `modeResources`| :material-close: | List of transport modes resource IDs | [`[ModeResource]`](../../getting_started/#mode-resource) | - | 
-| `transportCategories`| :material-check: | List of supported transport modes | [`[TransportCategory]`](../../getting_started/#transport-category) | - |
-| `poiCategories`| :material-close: | List of available POIs | [`[PoiCategory]`](../../getting_started/#poi-category) | - |
-| `providerResources`| :material-close: | Transport providers configuration | [`[ProviderResource]`](../../getting_started/#provider-resource) | - |
-| `titleResources`| :material-close: | Screens titles customization | [`AroundMeTitlesResources`](../../getting_started/#around-me-title-resource) | - |
-| `features`| :material-close: | Enable/disable some features  | [`AroundMeFeaturesConfiguration`](../../getting_started/#around-me-features) | - |
+| `coverage` | :material-check: | Navitia coverage | `String` | `fr-idf` |
+| `env` | :material-check: | Navitia environment | `String` | `PROD` |
+| `colors` | :material-check: | Define the custom colors | [`AroundMeColorsConfiguration`](../../getting_started/#around-me-color) | - |
+| `fonts` | :material-close: | Use custom fonts | [`AroundMeFontsConfiguration`](../../getting_started/#custom-font) | - |
+| `lineResources` | :material-close: | List of transport lines resource IDs | [`[LineResource]`](../../getting_started/#line-resource) | - | 
+| `modeResources` | :material-close: | List of transport modes resource IDs | [`[ModeResource]`](../../getting_started/#mode-resource) | - | 
+| `transportCategories` | :material-check: | List of supported transport modes | [`[TransportCategory]`](../../getting_started/#transport-category) | - |
+| `poiCategories` | :material-close: | List of available POIs | [`[PoiCategory]`](../../getting_started/#poi-category) | - |
+| `providerResources` | :material-close: | Transport providers configuration | [`[ProviderResource]`](../../getting_started/#provider-resource) | - |
+| `titleResources` | :material-close: | Screens titles customization | [`AroundMeTitlesResources`](../../getting_started/#around-me-title-resource) | - |
+| `features` | :material-close: | Enable/disable some features  | [`AroundMeFeaturesConfiguration`](../../getting_started/#around-me-features) | - |
 
 You can also call the `initialize()` method with the global JSON configuration file added to your application bundle:
 
 | Name | Required | Description | Type | Example |
 | --- |:---:| --- | :---: | :---: |
-| `configurationJsonFile`| :material-check: | Global configuration JSON file name | `String` | `configuration.json` |
+| `configurationJsonFile` | :material-check: | Global configuration JSON file name | `String` | `configuration.json` |
 
 <h4>Example</h4>
 
