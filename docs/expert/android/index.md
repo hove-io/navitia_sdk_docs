@@ -6,7 +6,7 @@ Add the following dependency in the `build.gradle` file of your application:
 
 ``` groovy
 dependencies {
-    implementation("com.kisio.navitia.sdk.data:expert:3.2.2")
+    implementation("com.kisio.navitia.sdk.data:expert:3.3.0")
 }
 ```
 
