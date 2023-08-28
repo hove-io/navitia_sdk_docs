@@ -11,7 +11,7 @@ use_frameworks!
 source 'https://github.com/CanalTP/Podspecs.git' # Expert podspec URL
 
 target 'YOUR_PROJECT_SCHEME' do
-  pod 'ExpertSDK', '2.3.4' # Expert Pod definition
+  pod 'ExpertSDK', '2.4.0' # Expert Pod definition
 end
 ```
 
