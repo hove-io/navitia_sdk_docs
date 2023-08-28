@@ -12,7 +12,7 @@
 <h4>iOS</h4>
 
 - [Cocoapods](https://cocoapods.org): All modules are available through Cocoapods.
-- Minimum iOS deployment target: `13.0`
+- Minimum iOS deployment target: `14.0`
 
 ## 💻 Artifactory Setup
 
@@ -322,34 +322,41 @@ The following are the possible configuration parameters:
 
 | Name | Required | Description | Type | Example |
 | --- |:---:| --- | :---: | :---: |
-| `bookmark_mode` | :material-close: | Enable/disable the bookmarks feature | `Boolean` |
+| `bookmark_mode` | :material-close: | Enable/disable the bookmark feature | `Boolean` | - |
 | `buy_tickets` | :material-close: | Enable a buy button in roadmap | [Buy ticket button](#buy-ticket-button) |
 | `calories` | :material-close: | Show/hide the itinerary calories summary | `Boolean` | `false` |
 | `carbon` | :material-close: | Show/hide the itinerary carbon summary | `Boolean` | `true` |
 | `disruption_contributors` | :material-close: | Define the list of disruption contributors id | `[String]` | `["shortterm.tr_idfm"]` |
-| `max_bookmark_address` | :material-close: | Define the max favorites addresses | `Int` | `10` |
-| `max_bookmark_poi` | :material-close: | Define the max favorites POIs | `Int` | `10` |
+| `max_favorite_addresses` | :material-close: | Define the max favorite addresses | `Int` | `10` |
+| `max_favorite_pois` | :material-close: | Define the max favorite POIs | `Int` | `10` |
 | `max_history` | :material-close: | Define the max history items | `Int` | `10` |
 | `next_departures` | :material-close: | Show/hide the next departures | `Boolean` | `true` |
 | `price` | :material-close: | Show/hide the itinerary price | `Boolean` | `true` |
 | `ridesharing_price` | :material-close: | Show/hide the itinerary ridesharing price | `Boolean` | `true` |
 | `search_only` | :material-close: | Enable/disable a direct search without input from user | `Boolean` | `false` |
 | `step_by_step_guidance` | :material-close: | Enable/disable the step by step guidance | `Boolean` |
-| `stop_point_search` | :material-close: | Enable/disable search by stop point instead of stop area | `Boolean` | `false` |
+| `stop_point_search_mode` | :material-close: | Enable/disable search by stop point instead of stop area | `Boolean` | `false` |
+| `traffic` | :material-close: | Define Traffic module options | [`Traffic options`](#traffic-options-journey) | - |
 | `transport_networks` | :material-close: | Show/hide the public transport network | `Boolean` | `false` |
-| `vehicle_positions`| :material-close: | Show bus vehicle positions on roadmap | [`Vehicle positions (Journey)`](#vehicle-positions-journey) |
+| `vehicle_positions`| :material-close: | Show bus vehicle positions on roadmap | [`Vehicle positions (Journey)`](#vehicle-positions-journey) | - |
 
 #### Buy ticket button
 
 | Name | Required | Description | Type | Example |
 | --- |:---:| --- | :---: | :---: |
-| `title_res`| :material-check: | Localized buy ticket button title id | `String` | `"buy_this_journey"` |
+| `title_res`| :material-close: | Localized buy ticket button title id | `String` | `"buy_this_journey"` |
+
+##### Traffic options (Journey)
+
+| Name | Required | Description | Type | Example |
+| --- |:---:| --- | :---: | :---: |
+| `alert_subscription` | :material-close: | Enable Traffic alert subscriptions | `Boolean` | `false` |
 
 ##### Vehicle positions (Journey)
 
 | Name | Required | Description | Type | Example |
 | --- |:---:| --- | :---: | :---: |
-| `frequency` | :material-check: | frequency of the vehicle positions request in seconds | `String` | 30 |
+| `frequency` | :material-close: | frequency of the vehicle positions request in seconds | `Int` | `30` |
 
 #### Schedule features
 
@@ -374,19 +381,7 @@ The following are the possible configuration parameters:
 | `alert_subscription` | :material-close: | Alert subscription environment configuration | [`Alert subscription`](#alert-subscription) | - |
 | `disruption_contributors` | :material-close: | Define the list of disruption contributors id | `[String]` | `["shortterm.tr_idfm"]` |
 | `networks_first` | :material-close: | Show networks before line disruptions | `Boolean` |
-<!-- | `severity` | :material-close: | List of supported disruptions severities | [`[Traffic severity]`](#traffic-severity) | - | -->
 | `transport_networks` | :material-close: | Enable/disable showing network on lines | `Boolean` | - |
-
-<!-- Not yet -->
-<!-- ##### Traffic severity
-
-| Name | Required | Description | Type | Example |
-| --- |:---:| --- | :---: | :---: |
-| `name_res` | :material-check: | Localized severity name id | `String` | `blocking_disruptions` |
-| `icon_res` | :material-check: | Severity icon resource id | `String` | `ic_blocking_disruptions` |
-| `color` | :material-check: | Color of the target severity | `String` | `#E74C3C` |
-| `effects` | :material-check: | List of severity effects | `[String]` | `["SIGNIFICANT_DELAYS"]` |
-| `selected` | :material-close: | Whether the severity is selected by default or not | `Boolean` | `true` | -->
 
 ##### Alert subscription
 
@@ -530,7 +525,7 @@ Please note that this is the complete version of the configuration, remove unuse
       "secondary": "",
       "tertiary": "",
       "destination": {
-        "primary" : "",
+        "primary": "",
         "icon": ""
       },
       "origin": {
@@ -553,42 +548,42 @@ Please note that this is the complete version of the configuration, remove unuse
   },
   "fonts": {
     "journey": {
-        "numeric": {
-            "regular": {
-                "ttf_file": "",
-                "fontname": ""
-            },
-            "bold": {
-                "ttf_file": "",
-                "fontname": ""
-            },
-            "semi_bold": {
-                "ttf_file": "",
-                "fontname": ""
-            },
-            "italic": {
-                "ttf_file": "",
-                "fontname": ""
-            }
+      "numeric": {
+        "regular": {
+          "ttf_file": "",
+          "fontname": ""
         },
-        "alphanumeric": {
-            "regular": {
-                "ttf_file": "",
-                "fontname": ""
-            },
-            "bold": {
-                "ttf_file": "",
-                "fontname": ""
-            },
-            "semi_bold": {
-                "ttf_file": "",
-                "fontname": ""
-            },
-            "italic": {
-                "ttf_file": "",
-                "fontname": ""
-            }
+        "bold": {
+          "ttf_file": "",
+          "fontname": ""
+        },
+        "semi_bold": {
+          "ttf_file": "",
+          "fontname": ""
+        },
+        "italic": {
+          "ttf_file": "",
+          "fontname": ""
         }
+      },
+      "alphanumeric": {
+        "regular": {
+          "ttf_file": "",
+          "fontname": ""
+        },
+        "bold": {
+          "ttf_file": "",
+          "fontname": ""
+        },
+        "semi_bold": {
+          "ttf_file": "",
+          "fontname": ""
+        },
+        "italic": {
+          "ttf_file": "",
+          "fontname": ""
+        }
+      }
     }
   },
   "lines_resources": [
@@ -677,6 +672,7 @@ Please note that this is the complete version of the configuration, remove unuse
         {
           "icon_res": "",
           "name_res": "",
+          "zoom_level": 16.5,
           "selected": true,
           "group": "STANDARD",
           "types": [
@@ -686,7 +682,7 @@ Please note that this is the complete version of the configuration, remove unuse
             }
           ],
           "booking": {
-            "title_res" : ""
+            "title_res": ""
           }
         }
       ]
@@ -769,7 +765,8 @@ Please note that this is the complete version of the configuration, remove unuse
       "traffic_mode": true,
       "vehicle_positions": {
         "frequency": 30
-      },
+      }
+    },
     "bookmark": {
       "go_from_go_to": true,
       "tabs": {
@@ -781,22 +778,25 @@ Please note that this is the complete version of the configuration, remove unuse
     "journey": {
       "bookmark_mode": true,
       "buy_tickets": {
-        "title_res" : "buy_tickets"
+        "title_res": "buy_tickets"
       },
       "calories": true,
       "carbon": true,
       "disruption_contributors": [
         ""
       ],
-      "max_bookmark_address": 10,
-      "max_bookmark_poi": 10,
+      "max_favorite_addresses": 10,
+      "max_favorite_pois": 10,
       "max_history": 10,
       "next_departures": true,
       "price": true,
       "ridesharing_price": true,
-      "search_only": true,
+      "search_only": false,
       "step_by_step_guidance": true,
-      "stop_point_search": true,
+      "stop_point_search_mode": true,
+      "traffic": {
+        "alert_subscription": true
+      },
       "transport_networks": true,
       "vehicle_positions": {
         "frequency": 30
@@ -835,6 +835,7 @@ You can refer to the table below for possible generated events.
 | --- | --- | --- |
 | `drag` | `map`, `bottomSheet`, `chart`, `map` | The user performs a drag action |
 | `edit` | `field` | The user has changed the input value of an object |
+| `pull` | `list` | The user has pulled the object |
 | `tap` | `button`, `item`, `switch`, `tab` | The user performs a tap action |
 | `scroll` | `bottomSheet`, `list` | The user started a scroll on an object |
 | `show` | - | A screen is displayed |
