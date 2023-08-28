@@ -26,7 +26,7 @@
 - Fix bottom sheet scroll for walking instructions in guidance
 - Fix display of lines when a searched station is added to history
 - Fix departure and arrival field states
-- Fix display of line icon in a `SpannableString` in guidance
+- Fix display of line icon in an `SpannableString` in guidance
 
 #### Tasks
 - Add custom analytics events
