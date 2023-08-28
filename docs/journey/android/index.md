@@ -6,7 +6,7 @@ Add the following dependencies in the `build.gradle` file of your application:
 
 ``` groovy
 dependencies {
-    implementation("com.kisio.navitia.sdk.ui:journey:5.6.2")
+    implementation("com.kisio.navitia.sdk.ui:journey:5.7.0")
 }
 ```
 
@@ -31,17 +31,15 @@ The activity launching Journey must handle the following configuration changes: 
 
 ⚠️ Please make sure to read the [modules configuration](../../getting_started/#modules-configuration) section before proceeding!<br>
 
-This module is set up by calling `JourneyUI.getInstance()`. The singleton behaves like a builder in which each method allows you to configure the module. Then, you need to call the `init()` method at the end.<br>
+This module is set up by calling `JourneyUI.getInstance()`. The singleton behaves like a builder in which each method allows you to configure the module. Then, you need to call the `init()` method at the end. You should call this method in an `Application` subclass.<br>
 This method takes the following parameters:
 
 | Name | Required | Description | Type | Default |
 | --- |:---:| --- | :---: | :---: |
-| `context`| :material-check: | Context in which the module is launched | `Context` | :material-close: |
-| `token`| :material-check: | <a href="https://navitia.io/inscription/" target="_blank">Get your token</a> | `String` | :material-close: |
-| `configuration`| :material-close: | Module configuration object | [`JourneyConfiguration`](../../getting_started/#modules-configuration) | `null` |
-| `configurationJsonFile`| :material-close: | Module configuration JSON file name | `String` | `null` |
-| `onNavigate`| :material-close: | Listener for the navigation between module screens | `Unit` | `{ _ -> }` |
-| `onBack`| :material-close: | Listener for the navigation back button click event | `Unit` | `{ _ -> }` |
+| `context` | :material-check: | Context in which the module is launched | `Context` | :material-close: |
+| `token` | :material-check: | <a href="https://navitia.io/inscription/" target="_blank">Get your token</a> | `String` | :material-close: |
+| `configuration` | :material-close: | Module configuration object | [`JourneyConfiguration`](../../getting_started/#modules-configuration) | `null` |
+| `configurationJsonFile` | :material-close: | Module configuration JSON file name | `String` | `null` |
 
 <h4>Example</h4>
 
@@ -52,27 +50,35 @@ JourneyUI.getInstance().let { instance ->
       token = "your_token",
       configurationJsonFile = "config.json"
    )
-   instance.attachActivity(this)
 }
 ```
 
-### Activity delegation
+### Navigation listener
 
-Since the module launches its fragments, you may want to execute their `onBackPressed()` from your activity.
-For that, you have to attach the activity that will host fragments to `JourneyUI.getInstance()`. This will provide a delegate which will execute `onBackPressed()` on the displayed fragment.<br>
-You can call this method before or after `init()`.
+Since the module launches its own fragments, you may want your application to be aware of navigation events.
+For that, you have to set a navigation listener by calling this method before `init()`.
 
 | Method | Description |
 | --- | --- |
-| `.attachActivity(AppCompatActivity)` | Attach the activity that will host Journey fragments |
+| `.setNavigationListener(journeyNavigationListenerImpl)` | Set the class instance implementing `JourneyNavigationListener` interface |
 
-Then, you can call `JourneyUI.getInstance().delegate` to obtain the delegate.
-If you try to access it without attaching an activity before, an exception will be thrown.
+This interface gives you the method `onBack()` for any back event between two fragments and the method `onNavigate` for the reverse.
+Each method has a `JourneyNavigationListener.Event` parameter you can rely on.
 
-```kotlin
-JourneyUI.getInstance().attachActivity(AppCompatActivity)
-JourneyUI.getInstance().delegate.onBackPressed()
-```
+| Event |
+| --- |
+| `EXTERNAL_TO_JOURNEYS` |
+| `EXTERNAL_TO_ROADMAP` |
+| `GUIDANCE_BACK_TO_ROADMAP` |
+| `JOURNEYS_BACK_TO_EXTERNAL` |
+| `JOURNEYS_TO_RIDESHARING` |
+| `JOURNEYS_TO_ROADMAP` |
+| `RIDESHARING_BACK_TO_JOURNEYS` |
+| `RIDESHARING_TO_ROADMAP` |
+| `ROADMAP_TO_GUIDANCE` |
+| `ROADMAP_BACK_TO_EXTERNAL` |
+| `ROADMAP_BACK_TO_JOURNEYS` |
+| `ROADMAP_BACK_TO_RIDESHARING` |
 
 ### Events tracking
 
@@ -104,8 +110,8 @@ The `newInstance()` method creates an instance of the target fragment and takes 
 
 | Name | Required | Description | Type | Default |
 | --- |:---:| --- | --- | --- |
-| `journeysRequest`| :material-check: | Itinerary search configuration | [`JourneysRequest`](#journeysrequest) | :material-close: |
-| `showBack`| :material-close: | Show/hide back button on the first screen | `Boolean` | `false` |
+| `journeysRequest` | :material-check: | Itinerary search configuration | [`JourneysRequest`](#journeysrequest) | :material-close: |
+| `showBack` | :material-close: | Show/hide back button on the first screen | `Boolean` | `false` |
 
 ### JourneysRequest
 
@@ -113,55 +119,55 @@ The `JourneysRequest` object allows to configure the first itinerary search at s
 
 | Name | Description | Type | Default |
 | --- | --- | --- | --- |
-| `additionalTimeAfterFirstSectionTaxi`| Additional time after first taxi section | `Int` | `null` |
-| `additionalTimeBeforeLastSectionTaxi`| Additional time before last taxi section | `Int` | `null` |
-| `allowedId`| Allowed Navitia object IDs | `List<String>` | `emptyList()` |
-| `bikeSpeed`| Bike speed | `Float` | `null` |
-| `bssSpeed`| BSS speed | `Float` | `null` |
-| `carNoParkSpeed`| Car no park speed | `Float` | `null` |
-| `carSpeed`| Car speed | `Float` | `null` |
-| `count`| The number of journeys to be displayed | `Int` | `-1` |
-| `dataFreshness`| To indicate if theoretical or realtime data are requested | [`DataFreshness`](#datafreshness) | `DataFreshness.BASE_SCHEDULE` |
-| `dateTime`| Requested date and time for journey results | `DateTime` | `null` |
-| `dateTimeRepresents`| Whether the datetime represents the departure or arrival | [`DateTimeRepresents`](#datetimerepresents) | `DateTimeRepresents.DEPARTURE` |
-| `depth`| The request depth | `Int` | `null` |
-| `destinationId`| Destination Navitia ID | `String` | `""` |
-| `destinationLabel`| Destination label, if not set the address will be displayed | `String` | `""` |
+| `additionalTimeAfterFirstSectionTaxi` | Additional time after first taxi section | `Int` | `null` |
+| `additionalTimeBeforeLastSectionTaxi` | Additional time before last taxi section | `Int` | `null` |
+| `allowedId` | Allowed Navitia object IDs | `List<String>` | `emptyList()` |
+| `bikeSpeed` | Bike speed | `Float` | `null` |
+| `bssSpeed` | BSS speed | `Float` | `null` |
+| `carNoParkSpeed` | Car no park speed | `Float` | `null` |
+| `carSpeed` | Car speed | `Float` | `null` |
+| `count` | The number of journeys to be displayed | `Int` | `-1` |
+| `dataFreshness` | To indicate if theoretical or realtime data are requested | [`DataFreshness`](#datafreshness) | `DataFreshness.BASE_SCHEDULE` |
+| `dateTime` | Requested date and time for journey results | `DateTime` | `null` |
+| `dateTimeRepresents` | Whether the datetime represents the departure or arrival | [`DateTimeRepresents`](#datetimerepresents) | `DateTimeRepresents.DEPARTURE` |
+| `depth` | The request depth | `Int` | `null` |
+| `destinationId` | Destination Navitia ID | `String` | `""` |
+| `destinationLabel` | Destination label, if not set the address will be displayed | `String` | `""` |
 | `directPath` | Set the direct path of the journey | [`DirectPath`](#directpath) | `""` |
-| `disruptionActive`| Check on [Navitia](https://doc.navitia.io/#journeys) | `Boolean` | `null` |
-| `equipmentDetails`| Check on [Navitia](https://doc.navitia.io/#journeys) | `Boolean` | `null` |
-| `freeRadiusFrom`| Check on [Navitia](https://doc.navitia.io/#journeys) | `Int` | `null` |
-| `freeRadiusTo`| Check on [Navitia](https://doc.navitia.io/#journeys) | `Int` | `null` |
-| `isJourneySchedules`| Check on [Navitia](https://doc.navitia.io/#journeys) | `Boolean` | `null` |
-| `maxBikeDirectPathDuration`| Check on [Navitia](https://doc.navitia.io/#journeys) | `Int` | `null` |
-| `maxBikeDurationToPt`| Check on [Navitia](https://doc.navitia.io/#journeys) | `Int` | `null` |
-| `maxBssDirectPathDuration`| Check on [Navitia](https://doc.navitia.io/#journeys) | `Int` | `null` |
-| `maxBssDurationToPt`| Check on [Navitia](https://doc.navitia.io/#journeys) | `Int` | `null` |
-| `maxCarDirectPathDuration`| Check on [Navitia](https://doc.navitia.io/#journeys) | `Int` | `null` |
-| `maxCarDurationToPt`| Check on [Navitia](https://doc.navitia.io/#journeys) | `Int` | `null` |
-| `maxCarNoParkDirectPathDuration`| Check on [Navitia](https://doc.navitia.io/#journeys) | `Int` | `null` |
-| `maxCarNoParkDurationToPt`| Check on [Navitia](https://doc.navitia.io/#journeys) | `Int` | `null` |
-| `maxDuration`| Check on [Navitia](https://doc.navitia.io/#journeys) | `Int` | `null` |
-| `maxDurationToPt`| Check on [Navitia](https://doc.navitia.io/#journeys) | `Int` | `null` |
-| `maxJourneys`| The max number of journeys to be displayed | `Int` | `-1` |
-| `maxNbTransfers`| The max number of public transport transfers | `Int` | `-1` |
-| `maxRidesharingDirectPathDuration`| Check on [Navitia](https://doc.navitia.io/#journeys) | `Int` | `null` |
-| `maxRidesharingDurationToPt`| Check on [Navitia](https://doc.navitia.io/#journeys) | `Int` | `null` |
-| `maxTaxiDirectPathDuration`| Check on [Navitia](https://doc.navitia.io/#journeys) | `Int` | `null` |
-| `maxTaxiDurationToPt`| Check on [Navitia](https://doc.navitia.io/#journeys) | `Int` | `null` |
-| `maxWaitingDuration`| Check on [Navitia](https://doc.navitia.io/#journeys) | `Int` | `null` |
-| `maxWalkingDirectPathDuration`| Check on [Navitia](https://doc.navitia.io/#journeys) | `Int` | `null` |
-| `maxWalkingDurationToPt`| Check on [Navitia](https://doc.navitia.io/#journeys) | `Int` | `null` |
-| `minJourneys`| The min number of journeys to be displayed | `Int` | `-1` |
-| `minNbTransfers`| The min number of public transport transfers | `Int` | `-1` |
-| `originId`| Origin Navitia ID | `String` | `""` |
-| `originLabel`| Origin label, if not set the address will be displayed | `String` | `""` |
-| `ridesharingSpeed`| Ridesharing speed | `Float` | `null` |
-| `taxiSpeed`| Taxi speed | `Float` | `null` |
-| `timeframeDuration`| Taxi speed | `Int` | `null` |
-| `travelerType`| Traveler type | [`TravelerType`](#travelertype) | `TravelerType.STANDARD` |
-| `walkingSpeed`| Walking speed | `Float` | `null` |
-| `wheelchair`| Check on [Navitia](https://doc.navitia.io/#journeys)  | `Boolean` | `null` |
+| `disruptionActive` | Check on [Navitia](https://doc.navitia.io/#journeys) | `Boolean` | `null` |
+| `equipmentDetails` | Check on [Navitia](https://doc.navitia.io/#journeys) | `Boolean` | `null` |
+| `freeRadiusFrom` | Check on [Navitia](https://doc.navitia.io/#journeys) | `Int` | `null` |
+| `freeRadiusTo` | Check on [Navitia](https://doc.navitia.io/#journeys) | `Int` | `null` |
+| `isJourneySchedules` | Check on [Navitia](https://doc.navitia.io/#journeys) | `Boolean` | `null` |
+| `maxBikeDirectPathDuration` | Check on [Navitia](https://doc.navitia.io/#journeys) | `Int` | `null` |
+| `maxBikeDurationToPt` | Check on [Navitia](https://doc.navitia.io/#journeys) | `Int` | `null` |
+| `maxBssDirectPathDuration` | Check on [Navitia](https://doc.navitia.io/#journeys) | `Int` | `null` |
+| `maxBssDurationToPt` | Check on [Navitia](https://doc.navitia.io/#journeys) | `Int` | `null` |
+| `maxCarDirectPathDuration` | Check on [Navitia](https://doc.navitia.io/#journeys) | `Int` | `null` |
+| `maxCarDurationToPt` | Check on [Navitia](https://doc.navitia.io/#journeys) | `Int` | `null` |
+| `maxCarNoParkDirectPathDuration` | Check on [Navitia](https://doc.navitia.io/#journeys) | `Int` | `null` |
+| `maxCarNoParkDurationToPt` | Check on [Navitia](https://doc.navitia.io/#journeys) | `Int` | `null` |
+| `maxDuration` | Check on [Navitia](https://doc.navitia.io/#journeys) | `Int` | `null` |
+| `maxDurationToPt` | Check on [Navitia](https://doc.navitia.io/#journeys) | `Int` | `null` |
+| `maxJourneys` | The max number of journeys to be displayed | `Int` | `-1` |
+| `maxNbTransfers` | The max number of public transport transfers | `Int` | `-1` |
+| `maxRidesharingDirectPathDuration` | Check on [Navitia](https://doc.navitia.io/#journeys) | `Int` | `null` |
+| `maxRidesharingDurationToPt` | Check on [Navitia](https://doc.navitia.io/#journeys) | `Int` | `null` |
+| `maxTaxiDirectPathDuration` | Check on [Navitia](https://doc.navitia.io/#journeys) | `Int` | `null` |
+| `maxTaxiDurationToPt` | Check on [Navitia](https://doc.navitia.io/#journeys) | `Int` | `null` |
+| `maxWaitingDuration` | Check on [Navitia](https://doc.navitia.io/#journeys) | `Int` | `null` |
+| `maxWalkingDirectPathDuration` | Check on [Navitia](https://doc.navitia.io/#journeys) | `Int` | `null` |
+| `maxWalkingDurationToPt` | Check on [Navitia](https://doc.navitia.io/#journeys) | `Int` | `null` |
+| `minJourneys` | The min number of journeys to be displayed | `Int` | `-1` |
+| `minNbTransfers` | The min number of public transport transfers | `Int` | `-1` |
+| `originId` | Origin Navitia ID | `String` | `""` |
+| `originLabel` | Origin label, if not set the address will be displayed | `String` | `""` |
+| `ridesharingSpeed` | Ridesharing speed | `Float` | `null` |
+| `taxiSpeed` | Taxi speed | `Float` | `null` |
+| `timeframeDuration` | Taxi speed | `Int` | `null` |
+| `travelerType` | Traveler type | [`TravelerType`](#travelertype) | `TravelerType.STANDARD` |
+| `walkingSpeed` | Walking speed | `Float` | `null` |
+| `wheelchair` | Check on [Navitia](https://doc.navitia.io/#journeys)  | `Boolean` | `null` |
 
 #### DataFreshness
 
@@ -268,17 +274,24 @@ Please refer to the following schema to learn more about different interactions 
 
 ### Application
 
-Some callbacks are delegated to the application allowing it to receive some module events. To subscribe to those events, the `Router` module should also be initialized with the right parameters:
+Some routes or callbacks are delegated to the application. 
+If you have to receive some module data, the `Router` module must register a receiver with the right parameter:
 
-``` swift
-if (!Router.getInstance().isInit) {
-    Router.getInstance()
-        .register(app = appRouterImpl) // (1)
-        .init()
-}
+``` kotlin
+Router.getInstance()
+    .register(appData = appRouterDataImpl) // (1)
 ```
 
-1.  `appRouterImpl` should be the class instance implementing `AppRouter` interface
+1.  `appRouterDataImpl` should be the class instance implementing `AppRouter.Data` interface. We recommand usign a `Application` subclass.
+
+If you have to handle navigation between modules, the `Router` module must also register a receiver:
+
+``` kotlin
+Router.getInstance()
+    .register(appUi = appRouterUiImpl) // (1)
+```
+
+1. `appRouterUiImpl` should be the class instance implementing `AppRouter.UI` interface. We recommand usign a `Application` subclass.
 
 ##### Roadmap button event
 
