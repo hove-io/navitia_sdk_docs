@@ -6,7 +6,7 @@ Add the following dependencies in the `build.gradle` file of your application:
 
 ``` groovy
 dependencies {
-    implementation("com.kisio.navitia.sdk.ui:bookmark:1.2.0")
+    implementation("com.kisio.navitia.sdk.ui:bookmark:1.3.0")
 }
 ```
 
@@ -21,17 +21,15 @@ The activity launching Bookmark must handle the following configuration changes:
 
 ⚠️ Please make sure to read the [modules configuration](../../getting_started/#modules-configuration) section before proceeding!<br>
 
-This module is set up by calling `BookmarkUI.getInstance()`. The singleton behaves like a builder in which each method allows you to configure the module. Then, you need to call the `init()` method at the end.<br>
+This module is set up by calling `BookmarkUI.getInstance()`. The singleton behaves like a builder in which each method allows you to configure the module. Then, you need to call the `init()` method at the end. You should call this method in an `Application` subclass.<br>
 This method takes the following parameters:
 
 | Name | Required | Description | Type | Default |
 | --- |:---:| --- | :---: | :---: |
-| `context`| :material-check: | Context in which the module is launched | `Context` | :material-close: |
-| `token`| :material-check: | <a href="https://navitia.io/inscription/" target="_blank">Get your token</a> | `String` | :material-close: |
-| `configuration`| :material-close: | Module configuration object | [`AroundMeConfiguration`](../../getting_started/#modules-configuration) | `null` |
-| `configurationJsonFile`| :material-close: | Module configuration JSON file name | `String` | `null` |
-| `onNavigate`| :material-close: | Listener for the navigation between module screens | `Unit` | `{ _ -> }` |
-| `onBack`| :material-close: | Listener for the navigation back button click event | `Unit` | `{ _ -> }` |
+| `context` | :material-check: | Context in which the module is launched | `Context` | :material-close: |
+| `token` | :material-check: | <a href="https://navitia.io/inscription/" target="_blank">Get your token</a> | `String` | :material-close: |
+| `configuration` | :material-close: | Module configuration object | [`AroundMeConfiguration`](../../getting_started/#modules-configuration) | `null` |
+| `configurationJsonFile` | :material-close: | Module configuration JSON file name | `String` | `null` |
 
 <h4>Example</h4>
 
@@ -42,27 +40,29 @@ BookmarkUI.getInstance().let { instance ->
       token = "your_token",
       configurationJsonFile = "config.json"
    )
-   instance.attachActivity(this)
 }
 ```
 
-### Activity delegation
+### Navigation listener
 
-Since the module launches its fragments, you may want to execute their `onBackPressed()` from your activity.
-For that, you have to attach the activity that will host fragments to `BookmarkUI.getInstance()`. This will provide a delegate which will execute `onBackPressed()` on the displayed fragment.<br>
-You can call this method before or after `init()`.
+Since the module launches its own fragments, you may want your application to be aware of navigation events.
+For that, you have to set a navigation listener by calling this method before `init()`.
 
 | Method | Description |
 | --- | --- |
-| `.attachActivity(AppCompatActivity)` | Attach the activity that will host Around Me fragments |
+| `.setNavigationListener(bookmarkNavigationListenerImpl)` | Set the class instance implementing `BookmarkNavigationListener` interface |
 
-Then, you can call `BookmarkUI.getInstance().delegate` to obtain the delegate.
-If you try to access it without attaching an activity before, an exception will be thrown.
+This interface gives you the method `onBack()` for any back event between two fragments and the method `onNavigate` for the reverse.
+Each method has a `BookmarkNavigationListener.Event` parameter you can rely on.
 
-``` kotlin
-BookmarkUI.getInstance().attachActivity(AppCompatActivity)
-BookmarkUI.getInstance().delegate.onBackPressed()
-```
+| Event |
+| --- |
+| `ADD_ADDRESS_BACK_TO_FAVORITES` |
+| `EXTERNAL_TO_FAVORITES` |
+| `FAVORITES_BACK_TO_EXTERNAL` |
+| `FAVORITES_TO_JOURNEY` |
+| `FAVORITES_TO_ADD_ADDRESS` |
+| `FAVORITES_TO_ROADMAP` |
 
 ## 🚀  Launching
 
@@ -95,14 +95,3 @@ When the user taps on a marker on the map, the buttons **Go from there** and **G
 <img class="img-overview" src="/navitia_sdk_docs/assets/img/bookmark_android_go_fromto.png" alt="Go from/to">
 
 Clicking on one of the buttons will redirect the user to Journey module with the given origin/destination.<br>
-
-The `Router` module should also be initialized with the right parameters since it’s mandatory to build the connection between these modules:
-
-``` kotlin
-if (!Router.getInstance().isInit) {
-    Router.getInstance()
-        .register(aroundMe = BookmarkUI.getInstance().delegate)
-        .register(journey = JourneysUI.getInstance().delegate)
-        .init()
-}
-```

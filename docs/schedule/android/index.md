@@ -6,7 +6,7 @@ Add the following dependencies in the `build.gradle` file of your application:
 
 ``` groovy
 dependencies {
-    implementation("com.kisio.navitia.sdk.ui:schedule:2.2.0")
+    implementation("com.kisio.navitia.sdk.ui:schedule:2.3.0")
 }
 ```
 
@@ -31,17 +31,17 @@ The activity launching Schedule must handle the following configuration changes:
 
 ⚠️ Please make sure to read the [modules configuration](../../getting_started/#modules-configuration) section before proceeding!<br>
 
-This module is set up by calling `ScheduleUI.getInstance()`. The singleton behaves like a builder in which each method allows you to configure the module. Then, you need to call the `init()` method at the end.<br>
+This module is set up by calling `ScheduleUI.getInstance()`. The singleton behaves like a builder in which each method allows you to configure the module. Then, you need to call the `init()` method at the end. You should call this method in an `Application` subclass.<br>
 This method takes the following parameters:
 
 | Name | Required | Description | Type | Default |
 | --- |:---:| --- | :---: | :---: |
-| `context`| :material-check: | Context in which the module is launched | `Context` | :material-close: |
-| `token`| :material-check: | <a href="https://navitia.io/inscription/" target="_blank">Get your token</a> | `String` | :material-close: |
-| `configuration`| :material-close: | Module configuration object | [`ScheduleConfiguration`](../../getting_started/#modules-configuration) | `null` |
-| `configurationJsonFile`| :material-close: | Module configuration JSON file name | `String` | `null` |
-| `onNavigate`| :material-close: | Listener for the navigation between module screens | `Unit` | `{ _ -> }` |
-| `onBack`| :material-close: | Listener for the navigation back button click event | `Unit` | `{ _ -> }` |
+| `context` | :material-check: | Context in which the module is launched | `Context` | :material-close: |
+| `token` | :material-check: | <a href="https://navitia.io/inscription/" target="_blank">Get your token</a> | `String` | :material-close: |
+| `configuration` | :material-close: | Module configuration object | [`ScheduleConfiguration`](../../getting_started/#modules-configuration) | `null` |
+| `configurationJsonFile` | :material-close: | Module configuration JSON file name | `String` | `null` |
+| `onNavigate` | :material-close: | Listener for the navigation between module screens | `Unit` | `{ _ -> }` |
+| `onBack` | :material-close: | Listener for the navigation back button click event | `Unit` | `{ _ -> }` |
 
 <h4>Example</h4>
 
@@ -52,27 +52,37 @@ ScheduleUI.getInstance().let { instance ->
       token = "your_token",
       configurationJsonFile = "config.json"
    )
-   instance.attachActivity(this)
 }
 ```
 
-### Activity delegation
+### Navigation listener
 
-Since the module launches its fragments, you may want to execute their `onBackPressed()` from your activity.
-For that, you have to attach the activity that will host fragments to `ScheduleUI.getInstance()`. This will provide a delegate which will execute `onBackPressed()` on the displayed fragment.<br>
-You can call this method before or after `init()`.
+Since the module launches its own fragments, you may want your application to be aware of navigation events.
+For that, you have to set a navigation listener by calling this method before `init()`.
 
 | Method | Description |
 | --- | --- |
-| `.attachActivity(AppCompatActivity)` | Attach the activity that will host Schedule fragments |
+| `.setNavigationListener(scheduleNavigationListenerImpl)` | Set the class instance implementing `ScheduleNavigationListener` interface |
 
-Then, you can call `ScheduleUI.getInstance().delegate` to obtain the delegate.
-If you try to access it without attaching an activity before, an exception will be thrown.
+This interface gives you the method `onBack()` for any back event between two fragments and the method `onNavigate` for the reverse.
+Each method has a `ScheduleNavigationListener.Event` parameter you can rely on.
 
-``` kotlin
-ScheduleUI.getInstance().attachActivity(AppCompatActivity)
-ScheduleUI.getInstance().delegate.onBackPressed()
-```
+| Event |
+| --- |
+| `DESTINATIONS_BACK_TO_LINES` |
+| `DESTINATIONS_BACK_TO_STATIONS` |
+| `DESTINATIONS_TO_MAP` |
+| `DESTINATIONS_TO_STATIONS` |
+| `LINES_BACK_TO_EXTERNAL` |
+| `LINES_TO_DESTINATIONS` |
+| `LINES_TO_STATIONS` |
+| `MAP_BACK_TO_DESTINATIONS` |
+| `MAP_BACK_TO_STATIONS` |
+| `SCHEDULE_BACK_TO_MAP` |
+| `STATIONS_BACK_TO_DESTINATIONS` |
+| `STATIONS_BACK_TO_LINE` |
+| `STATIONS_TO_DESTINATIONS` |
+| `STATIONS_TO_MAP` |
 
 ## 🚀  Launching
 
@@ -95,7 +105,7 @@ The `newInstance()` method creates an instance of the target fragment and takes 
 
 | Name | Required | Description | Type | Default |
 | --- |:---:| --- | --- | --- |
-| `showBack`| :material-close: | Show/hide back button on the first screen | `Boolean` | `false` |
+| `showBack` | :material-close: | Show/hide back button on the first screen | `Boolean` | `false` |
 
 ## 📱 Screens
 
