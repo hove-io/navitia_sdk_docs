@@ -10,7 +10,7 @@ repo_name: hove-io/navitia_sdk_docs
 repo_url: https://github.com/hove-io/navitia_sdk_docs
 
 # Copyright
-copyright: Copyright &copy; 2022 Hove
+copyright: Copyright &copy; 2024 Hove
   
 # Configuration
 theme:
