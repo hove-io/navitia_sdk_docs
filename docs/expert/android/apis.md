@@ -2,7 +2,7 @@
 
 | API |
 | --- |
-| [**AccessPointsApi**](api/AccessPointsApi.md) |  
+|[**AccessPointsApi**](api/AccessPointsApi.md) |  
 |[**AddressesApi**](api/AddressesApi.md) |  
 |[**CalendarsApi**](api/CalendarsApi.md) |  
 |[**CommercialModesApi**](api/CommercialModesApi.md) |  
@@ -10,7 +10,6 @@
 |[**ContributorsApi**](api/ContributorsApi.md) |  
 |[**CoordApi**](api/CoordApi.md) |  
 |[**CoordsApi**](api/CoordsApi.md) |  
-|[**CoverageApi**](api/CoverageApi.md) |  
 |[**DatasetsApi**](api/DatasetsApi.md) |  
 |[**DisruptionsApi**](api/DisruptionsApi.md) |  
 |[**EquipmentReportsApi**](api/EquipmentReportsApi.md) |  

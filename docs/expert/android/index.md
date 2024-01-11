@@ -6,18 +6,29 @@ Add the following dependency in the `build.gradle` file of your application:
 
 ``` groovy
 dependencies {
-    implementation("com.kisio.navitia.sdk.data:expert:3.3.0")
+    implementation("com.kisio.navitia.sdk.data:expert:3.4.1")
 }
 ```
 
 ## 👨‍💻 Implementation
 
-This module is set up by simply instanciate 2 objects: 
-- `NavitiaConfiguration` will hold your Navitia token
-- `NavitiaSDK` will hold `NavitiaConfiguration`
+This module is set up by calling `ExpertSdk.getInstance()`. The singleton behaves like a builder in which each method allows you to configure the module. Then, you need to call the `init()` method at the end. You should call this method in an `Application` subclass.<br>
+This method takes the following parameters:
+
+| Name | Required | Description | Type | Default |
+| --- |:---:| --- | :---: | :---: |
+| `token` | :material-check: | <a href="https://navitia.io/inscription/" target="_blank">Get your token</a> | `String` | :material-close: |
+| `env` | :material-check: | Environment in which the module is launched | `NavitiaEnvironment` | :material-close: |
+
+<h4>Example</h4>
 
 ``` kotlin
-val navitiaSdk = NavitiaSDK(NavitiaConfiguration(token))
+val expertSdk = ExpertSdk.getInstance().apply {
+    init(
+        token = "your_token",
+        env = NavitiaEnvironment.PROD
+    )
+}
 ```
 
 * [Available APIs](apis.md)
@@ -25,77 +36,20 @@ val navitiaSdk = NavitiaSDK(NavitiaConfiguration(token))
 
 ## 🚀 Launching
 
-You can now call any endpoint from `navitiaSdk` and its variety of builders that will help you request Navitia. As an example:
+You can now call any endpoint from `expertSdk` and its variety of builders that will help you request Navitia. As an example:
 
 ``` kotlin
-navitiaSdk.physicalModesApi.newCoverageRegionPhysicalModesRequestBuilder()
-    .withRegion("YOUR_COVERAGE")
-    .get(object : ApiCallback<T> {
-        override fun onSuccess(
-            result: T,
-            statusCode: Int,
-            responseHeaders: MutableMap<String, MutableList<String>>?
-        ) {
-            // Success result
-        }
-
-        override fun onFailure(
-            e: ApiException?,
-            statusCode: Int,
-            responseHeaders: MutableMap<String, MutableList<String>>?
-        ) {
-            // Failure result
-        }
-
-        override fun onUploadProgress(bytesWritten: Long, contentLength: Long, done: Boolean) {
-            // Progress upload
-        }
-
-        override fun onDownloadProgress(bytesRead: Long, contentLength: Long, done: Boolean) {
-            // Progress download
-        }
-    })
-```
-
-You can use this folliwing utility function to benefit from the advantages of coroutines
-
-``` kotlin
-@InternalCoroutinesApi
-@ExperimentalCoroutinesApi
-private suspend fun <T> awaitApiCallback(block: (ApiCallback<T>) -> Unit): Result<T> =
-    suspendCancellableCoroutine { cont ->
-        block(object : ApiCallback<T> {
-
-            override fun onSuccess(
-                result: T,
-                statusCode: Int,
-                responseHeaders: MutableMap<String, MutableList<String>>?
-            ) {
-                cont.resume(Result.success(result)) {}
-            }
-
-            override fun onFailure(
-                e: ApiException?,
-                statusCode: Int,
-                responseHeaders: MutableMap<String, MutableList<String>>?
-            ) {
-                cont.resume(Result.failure<ApiException>(e as ApiException)) {}
-            }
-
-            override fun onUploadProgress(bytesWritten: Long, contentLength: Long, done: Boolean) {
-            }
-
-            override fun onDownloadProgress(bytesRead: Long, contentLength: Long, done: Boolean) {
-            }
-        })
+try {
+    val request = expertSdk.physicalModesApi.getCoverageRegionPhysicalModes(
+        region = "your_coverage"
+    )
+    if (request.isSuccessful) {
+        val result = request.body() as PhysicalModes
+        // Handle result
+    } else {
+        // Handle failure
     }
-```
-and use it like so
-
-``` kotlin
-val result = awaitApiCallback<PhysicalModes> {
-    navitiaSDK.physicalModesApi.newCoverageRegionPhysicalModesRequestBuilder()
-        .withRegion("YOUR_COVERAGE")
-        .get(it)
-}
+} catch (ex: Exception) {
+    // Handle failure exception
+}   
 ```
