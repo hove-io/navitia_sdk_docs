@@ -35,7 +35,7 @@ theme:
   font:
     text: Roboto
     code: Roboto Mono
-  favicon: assets/img/favicon.png
+  favicon: assets/img/favicon.svg
   logo: assets/img/navitia.svg
 
 # Code snippets/tables/emojis
