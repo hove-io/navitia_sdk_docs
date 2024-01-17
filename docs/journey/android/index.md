@@ -293,8 +293,84 @@ Router.getInstance()
 
 1. `appRouterUiImpl` should be the class instance implementing `AppRouter.UI` interface. We recommand usign a `Application` subclass.
 
-##### Roadmap button event
+#### Roadmap actions
 
-A customizable button appears in the roadmap screen and the clicking event should be catched from the application.
+You can add some actions to the roadmap screen which can be configured using this appropriate delegate:
 
-<img class="img-overview" src="/navitia_sdk_docs/assets/img/journey_android_roadmap_button_event.png" alt="Roadmap button event">
+``` kotlin
+JourneyUI.getInstance().setRoadmapDelegate(this)
+```
+
+The implemented interface offers the following methods:
+
+| Method | Required | Description |
+| --- |:---:| --- | :---: | :---: |
+| `allowedRoadmapScreenActionsFor(inputData: SharedRoadmapScreenData): AllowedRoadmapScreenActions` | :material-check: | Define the allowed actions on the roadmap screen |
+| `onPrimaryButtonActionTriggered(inputData: SharedRoadmapScreenData)` | :material-check: | Tap callback on the primary button |
+| `onSecondaryButtonActionTriggered(inputData: SharedRoadmapScreenData)` | :material-check: | Tap callback on the secondary button |
+
+#### External view injection
+
+You can inject some external view that will be shown inside the journey module screens. In order to make it happen, you need to add the reference to the `injectableViewDelegate` as follows:
+
+``` kotlin
+JourneyUI.getInstance().setInjectableViewDelegate(this)
+```
+
+The interface provides the following methods:
+
+| Method | Required | Description |
+| --- |:---:| --- | :---: | :---: |
+| `allowExternalViewInjectionFor(screen: InjectableScreen, inputData: Any?): ExternalViewInjectionState` | :material-check: | Allow or not the external view injection |
+| `buildExternalViewFor(screen: InjectableScreen, inputData: Any?): View?` | :material-check: | Requests the instance of the view that needs to be injected in the injectable screen |
+
+The `inputData` can be of type:
+- `SharedJourneysScreenData`: If the injectable screen is `LIST_JOURNEYS`
+- `SharedRoadmapScreenData`: if the injectable screen is `ROADMAP`
+
+##### SharedJourneysScreenData
+
+| Name | Description | Type |
+| --- | --- | :---: |
+| `journeysRequest` | The request parameters object | `JourneysRequest` |
+| `hasResults` | Whether the request has results or not | `Boolean` |
+| `selectedFilterType` | The selected tab | `TransportModesFilterType` |
+
+##### SharedRoadmapScreenData
+
+| Name | Description | Type |
+| --- | --- | :---: |
+| `journeysRequest` | The request parameters object | `JourneysRequest` |
+| `selectedJourney` | The selected journey data | `SharedSelectedJourneyModel` |
+
+###### SharedSelectedJourneyModel
+
+| Name | Description | Type |
+| --- | --- | :---: |
+| `departureTime` | The departure time | `LocalDateTime` |
+| `arrivalTime` | The arrival time | `LocalDateTime` |
+| `departureAddress` | The departure address | `String` |
+| `arrivalAddress` | The arrival address | `String` |
+| `departureCoordinates` | The departure coordinates | `LatLng` |
+| `arrivalCoordinates` | The arrival coordinates | `LatLng` |
+| `sections` | The list of journey sections | `[SectionModel]` |
+
+###### SectionModel
+
+| Name | Description | Type |
+| --- | --- | :---: |
+| `departureTime` | The departure time | `LocalDateTime` |
+| `arrivalTime` | The arrival time | `LocalDateTime` |
+| `departureAddress` | The departure address | `String` |
+| `arrivalAddress` | The arrival address | `String` |
+| `departureCoordinates` | The departure coordinates | `LatLng?` |
+| `arrivalCoordinates` | The arrival coordinates | `LatLng?` |
+| `mobilityType` | The mobility type | `MobilityType` |
+| `distance` | The distance in meters | `Int` |
+| `duration` | The duration in seconds | `Int` |
+| `additionalInformation` | The extra section information if the mobility type allows it | `Any?` |
+
+Please note that the `additionalInformation` object in `SectionModel` can be of type:
+- `StreetNetworkSectionModel`: if the `mobilityType` is `STREET_NETWORK`
+- `PublicTransportSectionModel`: if the `mobilityType` is `PUBLIC_TRANSPORT`
+- `CarParkingSectionModel`: if the `mobilityType` is `CAR_PARKING`

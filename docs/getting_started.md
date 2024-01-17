@@ -274,21 +274,16 @@ The following are the possible configuration parameters:
 
 | Name | Required | Description | Type |
 | --- |:---:| --- | :---: |
-| `booking` | :material-close: | Enable a booking button for a free floating | [`Booking`](#booking) |
 | `bookmark_mode` | :material-close: | Enable/disable the bookmarks feature | `Boolean` |
 | `default_location` | :material-close: | The default location on first launch | [`Default location`](#default-location) |
 | `go_from_go_to` | :material-close: | Show/hide the go from/go to buttons | `Boolean` |
 | `journey_mode` | :material-close: | Enable/disable the journey search mode | `Boolean` |
 | `max_history` | :material-close: | Define the max history items | `Int` |
 | `min_zoom_level` | :material-close: | Define the min zoom level of map. Android only | `Int` |
-| `stop_point_search` | :material-close: | Enable/disable search by stop point instead of stop area | `Boolean` | `false` |
+| `next_departures` | :material-close: | Show/hide the next departures | [`Next departures`](#next-departures) |
+| `stop_point_search` | :material-close: | Enable/disable search by stop point instead of stop area | `Boolean` |
 | `traffic_mode` | :material-close: | Show/hide the traffic button | `Boolean` |
-| `vehicle_positions`| :material-close: | Show bus vehicle positions on map | [`Vehicle positions (Around me)`](#vehicle-positions-around-me) |
-
-##### Booking
-| Name | Required | Description | Type | Example |
-| --- |:---:| --- | :---: | :---: |
-| `name_res` | :material-check: | Localized menu item title id | `String` | `"bookmarks"` |
+| `vehicle_positions`| :material-close: | Show bus vehicle positions on map | [`Vehicle positions`](#vehicle-positions) |
 
 ##### Default location
 
@@ -297,7 +292,13 @@ The following are the possible configuration parameters:
 | `lat` | :material-check: | The latitude of the default location | `String` | `"48.846790"` |
 | `lon` | :material-check: | The longitude of the default location | `String` | `"2.377090"` |
 
-##### Vehicle positions (Around me)
+#### Next departures
+
+| Name | Required | Description | Type | Example |
+| --- |:---:| --- | :---: | :---: |
+| `frequency`| :material-check: | frequency of the next departures request in seconds | `Int` | `30` |
+
+##### Vehicle positions
 
 | Name | Required | Description | Type | Example |
 | --- |:---:| --- | :---: | :---: |
@@ -307,8 +308,9 @@ The following are the possible configuration parameters:
 
 | Name | Required | Description | Type | Example |
 | --- |:---:| --- | :---: | :---: |
-| `go_from_go_to` | :material-close: | Show/hide the go from/go to buttons | `Boolean` |
-| `tabs` | :material-close: | Enable/disable tabs | [`Bookmark tabs`](#bookmark-tabs) |
+| `go_from_go_to` | :material-close: | Show/hide the go from/go to buttons | `Boolean` | `true` |
+| `next_departures` | :material-close: | Show/hide the next departures | [`Next departures`](#next-departures) | - |
+| `tabs` | :material-close: | Enable/disable tabs | [`Bookmark tabs`](#bookmark-tabs) | - |
 
 ##### Bookmark tabs
 
@@ -323,14 +325,15 @@ The following are the possible configuration parameters:
 | Name | Required | Description | Type | Example |
 | --- |:---:| --- | :---: | :---: |
 | `bookmark_mode` | :material-close: | Enable/disable the bookmark feature | `Boolean` | - |
-| `buy_tickets` | :material-close: | Enable a buy button in roadmap | [Buy ticket button](#buy-ticket-button) |
 | `calories` | :material-close: | Show/hide the itinerary calories summary | `Boolean` | `false` |
 | `carbon` | :material-close: | Show/hide the itinerary carbon summary | `Boolean` | `true` |
+| `car_parking_highlight` | :material-close: | Show/hide the car parking in the journey solution | `Boolean` | `true` |
 | `disruption_contributors` | :material-close: | Define the list of disruption contributors id | `[String]` | `["shortterm.tr_idfm"]` |
+| `external_navigation` | :material-close: | Enable/disable the navigation using external applications | `Boolean` | `true` |
 | `max_favorite_addresses` | :material-close: | Define the max favorite addresses | `Int` | `10` |
 | `max_favorite_pois` | :material-close: | Define the max favorite POIs | `Int` | `10` |
 | `max_history` | :material-close: | Define the max history items | `Int` | `10` |
-| `next_departures` | :material-close: | Show/hide the next departures | `Boolean` | `true` |
+| `next_departures` | :material-close: | Show/hide the next departures | [`Next departures`](#next-departures) | - |
 | `price` | :material-close: | Show/hide the itinerary price | `Boolean` | `true` |
 | `ridesharing_price` | :material-close: | Show/hide the itinerary ridesharing price | `Boolean` | `true` |
 | `search_only` | :material-close: | Enable/disable a direct search without input from user | `Boolean` | `false` |
@@ -338,13 +341,7 @@ The following are the possible configuration parameters:
 | `stop_point_search_mode` | :material-close: | Enable/disable search by stop point instead of stop area | `Boolean` | `false` |
 | `traffic` | :material-close: | Define Traffic module options | [`Traffic options`](#traffic-options-journey) | - |
 | `transport_networks` | :material-close: | Show/hide the public transport network | `Boolean` | `false` |
-| `vehicle_positions`| :material-close: | Show bus vehicle positions on roadmap | [`Vehicle positions (Journey)`](#vehicle-positions-journey) | - |
-
-#### Buy ticket button
-
-| Name | Required | Description | Type | Example |
-| --- |:---:| --- | :---: | :---: |
-| `title_res`| :material-close: | Localized buy ticket button title id | `String` | `"buy_this_journey"` |
+| `vehicle_positions`| :material-close: | Show bus vehicle positions on roadmap | [`Vehicle positions`](#vehicle-positions) | - |
 
 ##### Traffic options (Journey)
 
@@ -352,27 +349,16 @@ The following are the possible configuration parameters:
 | --- |:---:| --- | :---: | :---: |
 | `alert_subscription` | :material-close: | Enable Traffic alert subscriptions | `Boolean` | `false` |
 
-##### Vehicle positions (Journey)
-
-| Name | Required | Description | Type | Example |
-| --- |:---:| --- | :---: | :---: |
-| `frequency` | :material-close: | frequency of the vehicle positions request in seconds | `Int` | `30` |
-
 #### Schedule features
 
 | Name | Required | Description | Type |
 | --- |:---:| --- | :---: |
 | `bookmark_mode` | :material-close: | Enable/disable the bookmarks feature | `Boolean` |
-| `directions_first` | :material-close: | Show destinations before selecting the station | `Boolean` |
 | `max_history` | :material-close: | Define the max history items | `Int` |
+| `networks_filter` | :material-close: | Show/hide the networks selector | `Boolean` |
+| `next_departures` | :material-close: | Show/hide the next departures | [`Next departures`](#next-departures) |
 | `transport_networks` | :material-close: | Enable/disable grouping lines by network | `Boolean` |
-| `vehicle_positions`| :material-close: | Show bus vehicle positions on map | [`Vehicle positions (Schedule)`](#vehicle-positions-schedule) |
-
-##### Vehicle positions (Schedule)
-
-| Name | Required | Description | Type | Example |
-| --- |:---:| --- | :---: | :---: |
-| `frequency` | :material-check: | frequency of the vehicle positions request in seconds | `String` | 30 |
+| `vehicle_positions`| :material-close: | Show bus vehicle positions on map | [`Vehicle positions`](#vehicle-positions) |
 
 #### Traffic features
 
@@ -465,8 +451,10 @@ The following are the possible configuration parameters:
 
 | Name | Required | Description | Type | Example |
 | --- |:---:| --- | :---: | :---: |
-| `departure_res` | :material-close: | Departure icon resource id | `String` | `ic_departure` |
-| `arrival_res` | :material-close: | Arrival icon resource id  | `String` | `ic_departure` |
+| `departure` | :material-close: | Departure icon resource id | `String` | `ic_departure` |
+| `arrival` | :material-close: | Arrival icon resource id  | `String` | `ic_departure` |
+| `indoor_parking` | :material-close: | Arrival icon resource id  | `String` | `ic_departure` |
+| `outdoor_parking` | :material-close: | Arrival icon resource id  | `String` | `ic_departure` |
 
 ### Title resource
 
