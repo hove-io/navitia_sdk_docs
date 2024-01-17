@@ -325,6 +325,7 @@ The interface provides the following methods:
 | `buildExternalViewFor(screen: InjectableScreen, inputData: Any?): View?` | :material-check: | Requests the instance of the view that needs to be injected in the injectable screen |
 
 The `inputData` can be of type:
+
 - `SharedJourneysScreenData`: if the injectable screen is `LIST_JOURNEYS`
 - `SharedRoadmapScreenData`: if the injectable screen is `ROADMAP`
 
