@@ -453,8 +453,8 @@ The following are the possible configuration parameters:
 | --- |:---:| --- | :---: | :---: |
 | `departure` | :material-close: | Departure icon resource id | `String` | `ic_departure` |
 | `arrival` | :material-close: | Arrival icon resource id  | `String` | `ic_departure` |
-| `indoor_parking` | :material-close: | Arrival icon resource id  | `String` | `ic_departure` |
-| `outdoor_parking` | :material-close: | Arrival icon resource id  | `String` | `ic_departure` |
+| `indoor_parking` | :material-close: | Indoor parking icon resource id  | `String` | `ic_indoor_parking` |
+| `outdoor_parking` | :material-close: | Outdoor parking icon resource id  | `String` | `ic_outdoor_parking` |
 
 ### Title resource
 
