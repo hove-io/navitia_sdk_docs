@@ -304,7 +304,7 @@ JourneyUI.getInstance().setRoadmapDelegate(this)
 The implemented interface offers the following methods:
 
 | Method | Required | Description |
-| --- |:---:| --- | :---: | :---: |
+| --- |:---:| --- |
 | `allowedRoadmapScreenActionsFor(inputData: SharedRoadmapScreenData): AllowedRoadmapScreenActions` | :material-check: | Define the allowed actions on the roadmap screen |
 | `onPrimaryButtonActionTriggered(inputData: SharedRoadmapScreenData)` | :material-check: | Tap callback on the primary button |
 | `onSecondaryButtonActionTriggered(inputData: SharedRoadmapScreenData)` | :material-check: | Tap callback on the secondary button |
@@ -320,7 +320,7 @@ JourneyUI.getInstance().setInjectableViewDelegate(this)
 The interface provides the following methods:
 
 | Method | Required | Description |
-| --- |:---:| --- | :---: | :---: |
+| --- |:---:| --- |
 | `allowExternalViewInjectionFor(screen: InjectableScreen, inputData: Any?): ExternalViewInjectionState` | :material-check: | Allow or not the external view injection |
 | `buildExternalViewFor(screen: InjectableScreen, inputData: Any?): View?` | :material-check: | Requests the instance of the view that needs to be injected in the injectable screen |
 
@@ -371,6 +371,6 @@ The `inputData` can be of type:
 | `additionalInformation` | The extra section information if the mobility type allows it | `Any?` |
 
 Please note that the `additionalInformation` object in `SectionModel` can be of type:
-- `StreetNetworkSectionModel`: if the `mobilityType` is `STREET_NETWORK`
-- `PublicTransportSectionModel`: if the `mobilityType` is `PUBLIC_TRANSPORT`
-- `CarParkingSectionModel`: if the `mobilityType` is `CAR_PARKING`
+* `StreetNetworkSectionModel`: if the `mobilityType` is `STREET_NETWORK`
+* `PublicTransportSectionModel`: if the `mobilityType` is `PUBLIC_TRANSPORT`
+* `CarParkingSectionModel`: if the `mobilityType` is `CAR_PARKING`
