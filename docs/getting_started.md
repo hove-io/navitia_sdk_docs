@@ -292,7 +292,7 @@ The following are the possible configuration parameters:
 | `lat` | :material-check: | The latitude of the default location | `String` | `"48.846790"` |
 | `lon` | :material-check: | The longitude of the default location | `String` | `"2.377090"` |
 
-#### Next departures
+##### Next departures
 
 | Name | Required | Description | Type | Example |
 | --- |:---:| --- | :---: | :---: |
