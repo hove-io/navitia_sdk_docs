@@ -269,14 +269,84 @@ Please refer to the following schema to learn more about different interactions 
 
 ### Application
 
-Some callbacks are delegated to the application allowing it to receive some module events. To subscribe to those events, the delegate should be set as follows:
+#### Roadmap actions
+
+You can add some actions to the roadmap screen which can be configured using this appropriate delegate:
 
 ``` swift
 JourneySdk.shared.delegate = self
 ```
 
-##### Roadmap button event
+The designated protocol offers the following methods:
 
-A customizable button appears in the roadmap screen and the clicking event should be catched from the application.
+| Method | Required | Description |
+| --- |:---:| --- | :---: | :---: |
+| `allowedRoadmapScreenActionsFor(inputData: SharedRoadmapScreenData) -> AllowedRoadmapScreenActions` | :material-check: | Define the allowed actions on the roadmap screen |
+| `onPrimaryButtonActionTriggered(inputData: SharedRoadmapScreenData)` | :material-check: | Tap callback on the primary button |
+| `onSecondaryButtonActionTriggered(inputData: SharedRoadmapScreenData)` | :material-check: | Tap callback on the secondary button |
 
-<img class="img-overview" src="/navitia_sdk_docs/assets/img/journey_ios_roadmap_button_event.png" alt="Roadmap button event">
+#### External view injection
+
+You can inject some external view that will be shown inside the journey module screens. In order to make it happen, you need to add the reference to the `injectableViewDelegate` as follows:
+
+``` swift
+JourneySdk.shared.injectableViewDelegate = self
+```
+
+The protocol provides the following methods:
+
+| Method | Required | Description |
+| --- |:---:| --- | :---: | :---: |
+| `allowExternalViewInjectionFor(screen: InjectableScreen, inputData: Any?) -> ExternalViewInjectionState` | :material-check: | Allow or not the external view injection |
+| `buildExternalViewFor(screen: InjectableScreen, inputData: Any?) -> UIView?` | :material-check: | Requests the instance of the view that needs to be injected in the injectable screen |
+
+The `inputData` can be of type:
+- `SharedJourneysScreenData`: if the injectable screen is `listJourneys`
+- `SharedRoadmapScreenData`: if the injectable screen is `roadmap`
+
+##### SharedJourneysScreenData
+
+| Name | Description | Type |
+| --- | --- | :---: |
+| `journeysRequest` | The request parameters object | `JourneysRequest` |
+| `hasResults` | Whether the request has results or not | `Bool` |
+| `selectedFilterType` | The selected tab | `TransportModesFilterType` |
+
+##### SharedRoadmapScreenData
+
+| Name | Description | Type |
+| --- | --- | :---: |
+| `journeysRequest` | The request parameters object | `JourneysRequest` |
+| `selectedJourney` | The selected journey data | `SharedSelectedJourneyModel` |
+
+###### SharedSelectedJourneyModel
+
+| Name | Description | Type |
+| --- | --- | :---: |
+| `departureTime` | The departure time | `Date` |
+| `arrivalTime` | The arrival time | `Date` |
+| `departureAddress` | The departure address | `String` |
+| `arrivalAddress` | The arrival address | `String` |
+| `departureCoordinates` | The departure coordinates | `CLLocationCoordinate2D` |
+| `arrivalCoordinates` | The arrival coordinates | `CLLocationCoordinate2D` |
+| `sections` | The list of journey sections | `[SectionModel]` |
+
+###### SectionModel
+
+| Name | Description | Type |
+| --- | --- | :---: |
+| `departureTime` | The departure time | `Date` |
+| `arrivalTime` | The arrival time | `Date` |
+| `departureAddress` | The departure address | `String` |
+| `arrivalAddress` | The arrival address | `String` |
+| `departureCoordinates` | The departure coordinates | `CLLocationCoordinate2D` |
+| `arrivalCoordinates` | The arrival coordinates | `CLLocationCoordinate2D` |
+| `mobilityType` | The mobility type | `MobilityType` |
+| `distance` | The distance in meters | `Int` |
+| `duration` | The duration in seconds | `Int` |
+| `additionalInformation` | The extra section information if the mobility type allows it | `Any?` |
+
+Please note that the `additionalInformation` object can be of type:
+- `StreetNetworkSectionModel`: if the `mobilityType` is `streetNetwork`
+- `PublicTransportSectionModel`: if the `mobilityType` is `public_transport`
+- `CarParkingSectionModel`: if the `mobilityType` is `carParking`
