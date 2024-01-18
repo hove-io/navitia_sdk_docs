@@ -301,6 +301,7 @@ The protocol provides the following methods:
 | `buildExternalViewFor(screen: InjectableScreen, inputData: Any?) -> UIView?` | :material-check: | Requests the instance of the view that needs to be injected in the injectable screen |
 
 The `inputData` can be of type:
+
 - `SharedJourneysScreenData`: if the injectable screen is `listJourneys`
 - `SharedRoadmapScreenData`: if the injectable screen is `roadmap`
 
@@ -347,6 +348,7 @@ The `inputData` can be of type:
 | `additionalInformation` | The extra section information if the mobility type allows it | `Any?` |
 
 Please note that the `additionalInformation` object can be of type:
-* `StreetNetworkSectionModel`: if the `mobilityType` is `streetNetwork`
-* `PublicTransportSectionModel`: if the `mobilityType` is `public_transport`
-* `CarParkingSectionModel`: if the `mobilityType` is `carParking`
+
+- `StreetNetworkSectionModel`: if the `mobilityType` is `streetNetwork`
+- `PublicTransportSectionModel`: if the `mobilityType` is `public_transport`
+- `CarParkingSectionModel`: if the `mobilityType` is `carParking`
