@@ -366,7 +366,7 @@ The following are the possible configuration parameters:
 | --- |:---:| --- | :---: | :---: |
 | `alert_subscription` | :material-close: | Alert subscription environment configuration | [`Alert subscription`](#alert-subscription) | - |
 | `disruption_contributors` | :material-close: | Define the list of disruption contributors id | `[String]` | `["shortterm.tr_idfm"]` |
-| `networks_first` | :material-close: | Show networks before line disruptions | `Boolean` |
+| `networks_filter` | :material-close: | Show/hide the networks selector | `Boolean` |
 | `transport_networks` | :material-close: | Enable/disable showing network on lines | `Boolean` | - |
 
 ##### Alert subscription
@@ -692,8 +692,10 @@ Please note that this is the complete version of the configuration, remove unuse
   ],
   "icons_resources": {
     "journey": {
-      "departure_res": "ic_departure",
-      "arrival_res": "ic_arrival"
+      "departure": "ic_departure",
+      "arrival": "ic_arrival",
+      "indoor_parking": "ic_indoor_parking",
+      "outdoor_parking": "ic_outdoor_parking"
     }
   },
   "titles_resources": {
@@ -736,11 +738,7 @@ Please note that this is the complete version of the configuration, remove unuse
       ]
     },
     "aroundme": {
-      "booking": {
-        "title_res": ""
-      },
       "bookmark_mode": true,
-      "crowdsourcing_mode": true,
       "default_location": {
         "lat": "48.846790",
         "lon": "2.377090"
@@ -749,6 +747,9 @@ Please note that this is the complete version of the configuration, remove unuse
       "journey_mode": true,
       "max_history": 10,
       "min_zoom_level": 15,
+      "next_departures": {
+        "frequency": 30
+      },
       "stop_point_search": true,
       "traffic_mode": true,
       "vehicle_positions": {
@@ -757,6 +758,9 @@ Please note that this is the complete version of the configuration, remove unuse
     },
     "bookmark": {
       "go_from_go_to": true,
+      "next_departures": {
+        "frequency": 30
+      },
       "tabs": {
         "transports": true,
         "journeys": true,
@@ -765,18 +769,19 @@ Please note that this is the complete version of the configuration, remove unuse
     },
     "journey": {
       "bookmark_mode": true,
-      "buy_tickets": {
-        "title_res": "buy_tickets"
-      },
       "calories": true,
       "carbon": true,
+      "car_parking_highlight": true,
       "disruption_contributors": [
         ""
       ],
+      "external_navigation": true,
       "max_favorite_addresses": 10,
       "max_favorite_pois": 10,
       "max_history": 10,
-      "next_departures": true,
+      "next_departures": {
+        "frequency": 30
+      },
       "price": true,
       "ridesharing_price": true,
       "search_only": false,
@@ -792,8 +797,11 @@ Please note that this is the complete version of the configuration, remove unuse
     },
     "schedule": {
       "bookmark_mode": true,
-      "directions_first": true,
       "max_history": 10,
+      "networks_filter": true,
+      "next_departures": {
+        "frequency": 30
+      },
       "transport_networks": true,
       "vehicle_positions": {
         "frequency": 30
@@ -807,7 +815,7 @@ Please note that this is the complete version of the configuration, remove unuse
       "disruption_contributors": [
         ""
       ],
-      "networks_first": true,
+      "networks_filter": true,
       "transport_networks": true
     }
   }
