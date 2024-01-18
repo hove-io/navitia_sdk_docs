@@ -372,6 +372,7 @@ The `inputData` can be of type:
 | `additionalInformation` | The extra section information if the mobility type allows it | `Any?` |
 
 Please note that the `additionalInformation` object in `SectionModel` can be of type:
-* `StreetNetworkSectionModel`: if the `mobilityType` is `STREET_NETWORK`
-* `PublicTransportSectionModel`: if the `mobilityType` is `PUBLIC_TRANSPORT`
-* `CarParkingSectionModel`: if the `mobilityType` is `CAR_PARKING`
+
+- `StreetNetworkSectionModel`: if the `mobilityType` is `STREET_NETWORK`
+- `PublicTransportSectionModel`: if the `mobilityType` is `PUBLIC_TRANSPORT`
+- `CarParkingSectionModel`: if the `mobilityType` is `CAR_PARKING`
