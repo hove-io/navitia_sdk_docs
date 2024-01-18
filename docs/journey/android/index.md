@@ -329,7 +329,7 @@ The `inputData` can be of type:
 - `SharedJourneysScreenData`: if the injectable screen is `LIST_JOURNEYS`
 - `SharedRoadmapScreenData`: if the injectable screen is `ROADMAP`
 
-##### SharedJourneysScreenData
+###### SharedJourneysScreenData
 
 | Name | Description | Type |
 | --- | --- | :---: |
@@ -337,7 +337,7 @@ The `inputData` can be of type:
 | `hasResults` | Whether the request has results or not | `Boolean` |
 | `selectedFilterType` | The selected tab | `TransportModesFilterType` |
 
-##### SharedRoadmapScreenData
+###### SharedRoadmapScreenData
 
 | Name | Description | Type |
 | --- | --- | :---: |
