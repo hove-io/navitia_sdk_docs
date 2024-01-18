@@ -127,7 +127,7 @@ The following are the possible configuration parameters:
 | `tertiary` | :material-close: | To set the color of more UI components | `String` | `#efa59f` |
 | `origin` | :material-close: | To set colors of the journey origin | [`Journey origin color`](#journey-origin-color) | - |
 | `destination` | :material-close: | To set colors of the journey destination | [`Journey destination color`](#journey-destination-color) | - |
-| `bike` | :material-close: | To set colors of the specific bike journey | [`Journey bike color`](#journey-bike-color) | - |
+| `map` | :material-close: | To set colors of the map elements | [`Journey map color`](#journey-map-color) | - |
 | `nav_bar_background` | :material-close: | To set the color of the navigation bar. iOS only.  | `String` | `#efa59f` |
 
 ##### Journey origin color
@@ -142,6 +142,19 @@ The following are the possible configuration parameters:
 | --- |:---:| --- | :---: | :---: |
 | `primary` | :material-check: | To set the color of the arrival block | `String` | `#8faa96` |
 | `icon` | :material-close: | To set the icon color of the itinerary destination | `String` | `#88819f` |
+
+##### Journey map color
+
+| Name | Required | Description | Type | Example |
+| --- |:---:| --- | :---: | :---: |
+| `path` | :material-check: | To set the color of the paths drawn on the map | [`Journey map path color`](#journey-map-path-color) | - |
+
+##### Journey map path color
+
+| Name | Required | Description | Type | Example |
+| --- |:---:| --- | :---: | :---: |
+| `bike` | :material-close: | To set colors of the specific bike journey | [`Journey bike color`](#journey-bike-color) | - |
+| `car` | :material-close: | To set the color of the car path | `String` | `#88819f |
 
 ##### Journey bike color
 
@@ -519,9 +532,14 @@ Please note that this is the complete version of the configuration, remove unuse
       "origin": {
         "icon": ""
       },
-      "bike": {
-        "primary": "",
-        "non_cyclable": ""
+      "map": {
+        "path": {
+            "bike": {
+                "cyclable": "",
+                "non_cyclable": "",
+            },
+            "car": ""
+        }
       },
       "nav_bar_background": ""
     },
