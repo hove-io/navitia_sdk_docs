@@ -1,3 +1,7 @@
+---
+title: Around Me iOS - Navitia SDK Docs
+---
+
 # Around Me iOS
 
 ## 💻 Setup

@@ -1,3 +1,7 @@
+---
+title: Schedule iOS 3.3.0 - Changelog - Navitia SDK Docs
+---
+
 # Schedule iOS 3.3.0 Changelog
 
 <h2>🗓 25 Aug 2023</h2>

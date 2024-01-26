@@ -1,3 +1,7 @@
+---
+title: Available APIs - Expert iOS - Navitia SDK Docs
+---
+
 # Available APIs
 
 | API |

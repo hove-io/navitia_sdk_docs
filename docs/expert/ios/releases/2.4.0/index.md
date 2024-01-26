@@ -1,10 +1,22 @@
-# Expert iOS 2.3.4 Changelog
+---
+title: Expert iOS 2.4.0 - Changelog - Navitia SDK Docs
+---
 
-<h2>🗓 10 Jan 2022</h2>
+# Expert iOS 2.4.0 Changelog
 
-#### Tasks 
-- Change decoding process for non mandatory variables
-- Change speed type
+<h2>🗓 23 Aug 2022</h2>
+
+#### Features
+- Update Graphical Isochrone API
+- Update Heat Map API
+- Update Journey API
+
+#### Fixes 
+- handle optional object in Navitia response 
 
 #### Based on Navitia
-<a target="_blank" href="https://github.com/CanalTP/navitia/releases/tag/v15.11.1">https://github.com/CanalTP/navitia/releases/tag/v15.11.1</a>
+
+https://github.com/CanalTP/navitia/releases/tag/v15.36.0
+
+#### Deployment target
+-  `iOS 14` minimun

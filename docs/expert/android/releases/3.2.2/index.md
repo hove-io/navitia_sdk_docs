@@ -1,3 +1,7 @@
+---
+title: Expert Android 3.2.2 - Changelog - Navitia SDK Docs
+---
+
 # Expert Android 3.2.2 Changelog
 
 <h2>🗓 10 Jan 2023</h2>

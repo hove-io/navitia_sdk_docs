@@ -1,3 +1,7 @@
+---
+title: Available APIs - Expert Android - Navitia SDK Docs
+---
+
 # Available APIs
 
 | API |

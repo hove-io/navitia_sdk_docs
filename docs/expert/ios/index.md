@@ -1,6 +1,10 @@
-#Expert iOS
+---
+title: Expert iOS - Navitia SDK Docs
+---
 
-## 💻  Setup
+# Expert iOS
+
+## 💻 Setup
 
 In your project, add the following lines to your `Podfile`:
 
@@ -17,7 +21,7 @@ end
 
 Using your CLI, run `pod install` in your project directory.
 
-## 👨‍💻  Implementation
+## 👨‍💻 Implementation
 
 This module is set up by calling `Expert.shared.initialize()`.<br>
 
@@ -38,7 +42,7 @@ Expert.shared.initialize(token: token,
 * [Available APIs](apis.md)
 * [Available models](models.md)
 
-## 🚀  Launching
+## 🚀 Launching
 
 You can now call any endpoint from `Expert.shared` and its variety of functions with a completion block that will help you request Navitia. As an example:
 

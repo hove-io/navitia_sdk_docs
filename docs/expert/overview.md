@@ -1,3 +1,7 @@
+---
+title: Expert - Overview - Navitia SDK Docs
+---
+
 <img class="img-overview" src="/navitia_sdk_docs/assets/img/expert.svg" alt="Expert">
 
 Call natively Navitia while avoiding network calls, response parsing and boilerplate code.
