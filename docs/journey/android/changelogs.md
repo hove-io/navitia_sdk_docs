@@ -1,3 +1,7 @@
+---
+title: Journey Android - Changelogs - Navitia SDK Docs
+---
+
 # Journey Android Changelogs
 
 ## Available versions

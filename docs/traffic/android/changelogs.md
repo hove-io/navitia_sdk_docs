@@ -1,3 +1,7 @@
+---
+title: Traffic Android - Changelogs - Navitia SDK Docs
+---
+
 # Traffic Android Changelogs
 
 ## Available versions

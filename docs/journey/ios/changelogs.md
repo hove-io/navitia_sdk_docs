@@ -1,3 +1,7 @@
+---
+title: Journey iOS - Changelogs - Navitia SDK Docs
+---
+
 # Journey iOS Changelogs
 
 ## Available versions

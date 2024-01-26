@@ -1,3 +1,7 @@
+---
+title: Schedule Android 2.2.1 - Changelog - Navitia SDK Docs
+---
+
 # Schedule Android 2.2.1 Changelog
 
 <h2>🗓 17 Mar 2023</h2>

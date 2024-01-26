@@ -1,3 +1,7 @@
+---
+title: Traffic - Overview - Navitia SDK Docs
+---
+
 <img class="img-overview" src="/navitia_sdk_docs/assets/img/traffic.svg" alt="Traffic">
 
 Show line and network disruptions for the given transport categories.

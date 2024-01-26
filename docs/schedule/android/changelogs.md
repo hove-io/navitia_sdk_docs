@@ -1,3 +1,7 @@
+---
+title: Schedule Android - Changelogs - Navitia SDK Docs
+---
+
 # Schedule Android Changelogs
 
 ## Available versions

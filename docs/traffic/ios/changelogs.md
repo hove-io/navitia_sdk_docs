@@ -1,3 +1,7 @@
+---
+title: Traffic iOS - Changelogs - Navitia SDK Docs
+---
+
 # Traffic iOS Changelogs
 
 ## Available versions

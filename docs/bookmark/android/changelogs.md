@@ -1,3 +1,7 @@
+---
+title: Bookmark Android - Changelogs - Navitia SDK Docs
+---
+
 # Bookmark Android Changelogs
 
 ## Available versions

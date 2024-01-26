@@ -1,3 +1,7 @@
+---
+title: Expert iOS 2.3.2 - Changelog - Navitia SDK Docs
+---
+
 # Expert iOS 2.3.2 Changelog
 
 <h2>🗓 20 Oct 2022</h2>

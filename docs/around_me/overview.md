@@ -1,3 +1,7 @@
+---
+title: Around Me - Overview - Navitia SDK Docs
+---
+
 <img class="img-overview" src="/navitia_sdk_docs/assets/img/aroundme.svg" alt="Around Me">
 
 Search for transport data nearby the user position, show schedules of available lines and a lot more...

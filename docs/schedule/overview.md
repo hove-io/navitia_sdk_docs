@@ -1,3 +1,7 @@
+---
+title: Schedule - Overview - Navitia SDK Docs
+---
+
 <img class="img-overview" src="/navitia_sdk_docs/assets/img/schedule.svg" alt="Schedule">
 
 Show scheduled departures of a line in a specific station.

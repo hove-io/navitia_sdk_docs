@@ -1,3 +1,7 @@
+---
+title: Getting started - Navitia SDK Docs
+---
+
 # Getting started
 
 ## 🧰 Requirements

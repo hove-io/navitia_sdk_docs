@@ -1,3 +1,7 @@
+---
+title: Navitia SDK Docs
+---
+
 # Welcome To Navitia SDK Documentation
 
 Navitia (pronounce [navi-sia]) provides a bunch of native SDKs for developers that can be easily integrated within an application. Each separate module offers a different service and may have its own requirements and configuration process.<br>

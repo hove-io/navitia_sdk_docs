@@ -1,3 +1,7 @@
+---
+title: Bookmark Android 1.1.0 - Changelog - Navitia SDK Docs
+---
+
 # Bookmark Android 1.1.0 Changelog
 
 <h2>🗓 10 Jan 2023</h2>

@@ -1,3 +1,7 @@
+---
+title: Journey Android - Navitia SDK Docs
+---
+
 # Journey Android
 
 ## 💻 Setup

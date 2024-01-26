@@ -1,3 +1,7 @@
+---
+title: Journey Android 5.2.1 - Changelog - Navitia SDK Docs
+---
+
 # Journey Android 5.2.1 Changelog
 
 <h2>🗓 07 Feb 2023</h2>
