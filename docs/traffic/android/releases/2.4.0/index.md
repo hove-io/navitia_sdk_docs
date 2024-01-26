@@ -1,3 +1,7 @@
+---
+title: Traffic Android 2.4.0 - Changelog - Navitia SDK Docs
+---
+
 # Traffic Android 2.4.0 Changelog
 
 <h2>🗓 11 Jan 2024</h2>

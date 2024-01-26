@@ -1,3 +1,7 @@
+---
+title: Schedule iOS - Navitia SDK Docs
+---
+
 # Schedule iOS
 
 ## 💻 Setup

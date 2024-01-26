@@ -1,3 +1,7 @@
+---
+title: Schedule iOS - Changelogs - Navitia SDK Docs
+---
+
 # Schedule iOS Changelogs
 
 ## Available versions

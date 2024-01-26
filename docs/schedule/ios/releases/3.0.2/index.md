@@ -1,3 +1,7 @@
+---
+title: Schedule iOS 3.0.2 - Changelog - Navitia SDK Docs
+---
+
 # Schedule iOS 3.0.2 Changelog
 
 <h2>🗓 20 Oct 2022</h2>

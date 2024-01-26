@@ -1,3 +1,7 @@
+---
+title: Traffic Android 2.2.0 - Changelog - Navitia SDK Docs
+---
+
 # Traffic Android 2.2.0 Changelog
 
 <h2>🗓 03 Apr 2023</h2>

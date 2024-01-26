@@ -1,3 +1,7 @@
+---
+title: Bookmark iOS - Changelogs - Navitia SDK Docs
+---
+
 # Bookmark iOS Changelogs
 
 ## Available versions

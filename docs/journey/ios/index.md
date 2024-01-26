@@ -1,3 +1,7 @@
+---
+title: Journey iOS - Navitia SDK Docs
+---
+
 # Journey iOS
 
 ## 💻 Setup

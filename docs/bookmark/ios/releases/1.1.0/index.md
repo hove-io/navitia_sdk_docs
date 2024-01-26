@@ -1,3 +1,7 @@
+---
+title: Bookmark iOS 1.1.0 - Changelog - Navitia SDK Docs
+---
+
 # Bookmark iOS 1.1.0 Changelog
 
 <h2>🗓 15 Feb 2023</h2>

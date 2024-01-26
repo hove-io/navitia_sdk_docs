@@ -1,3 +1,7 @@
+---
+title: Traffic iOS 3.4.0 - Changelog - Navitia SDK Docs
+---
+
 # Traffic iOS 3.4.0 Changelog
 
 <h2>🗓 25 Aug 2023</h2>

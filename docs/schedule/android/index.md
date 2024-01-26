@@ -1,3 +1,7 @@
+---
+title: Schedule Android - Navitia SDK Docs
+---
+
 # Schedule Android
 
 ## 💻 Setup

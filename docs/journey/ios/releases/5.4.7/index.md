@@ -1,3 +1,7 @@
+---
+title: Journey iOS 5.4.7 - Changelog - Navitia SDK Docs
+---
+
 # Journey iOS 5.4.7 Changelog
 
 <h2>🗓 18 Jul 2023</h2>
