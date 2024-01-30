@@ -6,6 +6,7 @@ title: Expert Android - Changelogs - Navitia SDK Docs
 
 ## Available versions
 
+* [v3.5.0](releases/3.5.0/index.md) (_30 Jan 2024_)
 * [v3.4.1](releases/3.4.1/index.md) (_11 Jan 2024_)
 * [v3.4.0](releases/3.4.0/index.md) (_14 Nov 2023_)
 * [v3.3.0](releases/3.3.0/index.md) (_23 Aug 2023_)
