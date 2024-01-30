@@ -61,6 +61,7 @@ The following are the possible configuration parameters:
 | Name | Required | Description | Type | Possible values | Target modules |
 | --- | :-: | --- | :--: | :---: | :---: |
 | `coverage` | :material-check: | Navitia coverage | `String` | `fr-idf` | All |
+| `timezone` | :material-check: | Timezone | `String` | `Europe/Paris` | All |
 | `env` | :material-check: | Navitia environment | `String` | `PROD`, `CUSTOMER` | All |
 | `colors` | :material-check: | Colors configuration | [`Colors`](#colors) | - | UI modules |
 | `transport_categories` | :material-check: | List of supported transport modes | [`[Transport category]`](#transport-category) | - | UI modules |
@@ -248,6 +249,17 @@ The following are the possible configuration parameters:
 | --- |:---:| --- | :---: | :---: |
 | `title_res` | :material-check: | Localized POI booking button title id | `String` | `"book_a_bike"` |
 
+### Fonts
+
+| Name | Required  | Type | Target module |
+| --- | :-: | :--: | :---: |
+| `account` | :material-close: | [`Account fonts`](#account-fonts) | Account |
+| `aroundme` | :material-close: | [`Around Me fonts`](#around-me-fonts) | Around Me |
+| `bookmark` | :material-close: | [`Bookmark fonts`](#bookmark-fonts) | Bookmark |
+| `journey` | :material-close: | [`Journey fonts`](#journey-fonts) | Journey |
+| `schedule` | :material-close: | [`Schedule fonts`](#schedule-fonts) | Schedule |
+| `traffic` | :material-close: | [`Traffic fonts`](#traffic-fonts) | Traffic |
+
 ### Features
 
 | Name | Required  | Type | Target module |
@@ -416,16 +428,21 @@ The following are the possible configuration parameters:
 | Name | Required | Description | Type |
 | --- |:---:| --- | :---: |
 | `regular` | :material-close: | Custom numeric font for regular typeface | [`Font Typeface`](#font-typeface) |
-| `semi_bold` | :material-close: | Custom numeric font for semi bold typeface | [`Font Typeface`](#font-typeface) |
-| `bold` | :material-close: | Custom numeric font for bold typeface | [`Font Typeface`](#font-typeface) |
 | `italic` | :material-close: | Custom numeric font for italic typeface | [`Font Typeface`](#font-typeface) |
+| `semi_bold` | :material-close: | Custom numeric font for semi bold typeface | [`Font Typeface`](#font-typeface) |
+| `semi_bold_italic` | :material-close: | Custom numeric font for semi bold italic typeface | [`Font Typeface`](#font-typeface) |
+| `bold` | :material-close: | Custom numeric font for bold typeface | [`Font Typeface`](#font-typeface) |
+| `bold_italic` | :material-close: | Custom numeric font for bold italic typeface | [`Font Typeface`](#font-typeface) |
+| `light` | :material-close: | Custom numeric font for light typeface | [`Font Typeface`](#font-typeface) |
+| `light_italic` | :material-close: | Custom numeric font for light italic typeface | [`Font Typeface`](#font-typeface) |
 
 ##### Font Typeface
 
-| Name | Required | Description | Type | Example |
-| --- |:---:| --- | :---: | :---: |
-| `ttf_file` | :material-check: | The TTF file name | `String` | `"SourceSansPro"` |
-| `fontname` | :material-check: | The font name | `String` | `"SourceSansPro-Bold"` |
+| Name | Required | Description | Type | Platform | Example |
+| --- |:---:| --- | :---: | :---: | :---: |
+| `font_res` | :material-check: | The font resource name | `String` | Android | `source_sans_pro_semi_bold` |
+| `ttf_file` | :material-check: | The TTF file name | `String` | iOS | `"SourceSansPro"` |
+| `font_name` | :material-check: | The font name | `String` | iOS | `"SourceSansPro-Bold"` |
 
 ### Line resource
 
@@ -502,7 +519,12 @@ Please note that this is the complete version of the configuration, remove unuse
 ``` javascript
 {
   "coverage": "",
+  "timezone": "",
   "env": "PROD",
+  "osm_region": {
+    "id": "",
+    "name_res": ""
+  },
   "colors": {
     "account": {
       "primary": "",
@@ -554,44 +576,526 @@ Please note that this is the complete version of the configuration, remove unuse
     "traffic": {
       "primary": "",
       "secondary": ""
+    },
+    "disruptions": {
+      "information": "",
+      "non_blocking": "",
+      "blocking": ""
     }
   },
   "fonts": {
-    "journey": {
-      "numeric": {
-        "regular": {
-          "ttf_file": "",
-          "fontname": ""
-        },
-        "bold": {
-          "ttf_file": "",
-          "fontname": ""
-        },
-        "semi_bold": {
-          "ttf_file": "",
-          "fontname": ""
-        },
-        "italic": {
-          "ttf_file": "",
-          "fontname": ""
-        }
-      },
+    "aroundme": {
       "alphanumeric": {
         "regular": {
+          "font_res": "",
           "ttf_file": "",
-          "fontname": ""
-        },
-        "bold": {
-          "ttf_file": "",
-          "fontname": ""
-        },
-        "semi_bold": {
-          "ttf_file": "",
-          "fontname": ""
+          "font_name": ""
         },
         "italic": {
+          "font_res": "",
           "ttf_file": "",
-          "fontname": ""
+          "font_name": ""
+        },
+        "bold": {
+          "font_res": "",
+          "ttf_file": "",
+          "font_name": ""
+        },
+        "bold_italic": {
+          "font_res": "",
+          "ttf_file": "",
+          "font_name": ""
+        },
+        "semi_bold": {
+          "font_res": "",
+          "ttf_file": "",
+          "font_name": ""
+        },
+        "semi_bold_italic": {
+          "font_res": "",
+          "ttf_file": "",
+          "font_name": ""
+        },
+        "light": {
+          "font_res": "",
+          "ttf_file": "",
+          "font_name": ""
+        },
+        "light_italic": {
+          "font_res": "",
+          "ttf_file": "",
+          "font_name": ""
+        }
+      },
+      "numeric": {
+        "regular": {
+          "font_res": "",
+          "ttf_file": "",
+          "font_name": ""
+        },
+        "italic": {
+          "font_res": "",
+          "ttf_file": "",
+          "font_name": ""
+        },
+        "bold": {
+          "font_res": "",
+          "ttf_file": "",
+          "font_name": ""
+        },
+        "bold_italic": {
+          "font_res": "",
+          "ttf_file": "",
+          "font_name": ""
+        },
+        "semi_bold": {
+          "font_res": "",
+          "ttf_file": "",
+          "font_name": ""
+        },
+        "semi_bold_italic": {
+          "font_res": "",
+          "ttf_file": "",
+          "font_name": ""
+        },
+        "light": {
+          "font_res": "",
+          "ttf_file": "",
+          "font_name": ""
+        },
+        "light_italic": {
+          "font_res": "",
+          "ttf_file": "",
+          "font_name": ""
+        }
+      }
+    },
+    "bookmark": {
+      "alphanumeric": {
+        "regular": {
+          "font_res": "",
+          "ttf_file": "",
+          "font_name": ""
+        },
+        "italic": {
+          "font_res": "",
+          "ttf_file": "",
+          "font_name": ""
+        },
+        "bold": {
+          "font_res": "",
+          "ttf_file": "",
+          "font_name": ""
+        },
+        "bold_italic": {
+          "font_res": "",
+          "ttf_file": "",
+          "font_name": ""
+        },
+        "semi_bold": {
+          "font_res": "",
+          "ttf_file": "",
+          "font_name": ""
+        },
+        "semi_bold_italic": {
+          "font_res": "",
+          "ttf_file": "",
+          "font_name": ""
+        },
+        "light": {
+          "font_res": "",
+          "ttf_file": "",
+          "font_name": ""
+        },
+        "light_italic": {
+          "font_res": "",
+          "ttf_file": "",
+          "font_name": ""
+        }
+      },
+      "numeric": {
+        "regular": {
+          "font_res": "",
+          "ttf_file": "",
+          "font_name": ""
+        },
+        "italic": {
+          "font_res": "",
+          "ttf_file": "",
+          "font_name": ""
+        },
+        "bold": {
+          "font_res": "",
+          "ttf_file": "",
+          "font_name": ""
+        },
+        "bold_italic": {
+          "font_res": "",
+          "ttf_file": "",
+          "font_name": ""
+        },
+        "semi_bold": {
+          "font_res": "",
+          "ttf_file": "",
+          "font_name": ""
+        },
+        "semi_bold_italic": {
+          "font_res": "",
+          "ttf_file": "",
+          "font_name": ""
+        },
+        "light": {
+          "font_res": "",
+          "ttf_file": "",
+          "font_name": ""
+        },
+        "light_italic": {
+          "font_res": "",
+          "ttf_file": "",
+          "font_name": ""
+        }
+      }
+    },
+    "crowdsourcing": {
+      "alphanumeric": {
+        "regular": {
+          "font_res": "",
+          "ttf_file": "",
+          "font_name": ""
+        },
+        "italic": {
+          "font_res": "",
+          "ttf_file": "",
+          "font_name": ""
+        },
+        "bold": {
+          "font_res": "",
+          "ttf_file": "",
+          "font_name": ""
+        },
+        "bold_italic": {
+          "font_res": "",
+          "ttf_file": "",
+          "font_name": ""
+        },
+        "semi_bold": {
+          "font_res": "",
+          "ttf_file": "",
+          "font_name": ""
+        },
+        "semi_bold_italic": {
+          "font_res": "",
+          "ttf_file": "",
+          "font_name": ""
+        },
+        "light": {
+          "font_res": "",
+          "ttf_file": "",
+          "font_name": ""
+        },
+        "light_italic": {
+          "font_res": "",
+          "ttf_file": "",
+          "font_name": ""
+        }
+      },
+      "numeric": {
+        "regular": {
+          "font_res": "",
+          "ttf_file": "",
+          "font_name": ""
+        },
+        "italic": {
+          "font_res": "",
+          "ttf_file": "",
+          "font_name": ""
+        },
+        "bold": {
+          "font_res": "",
+          "ttf_file": "",
+          "font_name": ""
+        },
+        "bold_italic": {
+          "font_res": "",
+          "ttf_file": "",
+          "font_name": ""
+        },
+        "semi_bold": {
+          "font_res": "",
+          "ttf_file": "",
+          "font_name": ""
+        },
+        "semi_bold_italic": {
+          "font_res": "",
+          "ttf_file": "",
+          "font_name": ""
+        },
+        "light": {
+          "font_res": "",
+          "ttf_file": "",
+          "font_name": ""
+        },
+        "light_italic": {
+          "font_res": "",
+          "ttf_file": "",
+          "font_name": ""
+        }
+      }
+    },
+    "journey": {
+      "alphanumeric": {
+        "regular": {
+          "font_res": "",
+          "ttf_file": "",
+          "font_name": ""
+        },
+        "italic": {
+          "font_res": "",
+          "ttf_file": "",
+          "font_name": ""
+        },
+        "bold": {
+          "font_res": "",
+          "ttf_file": "",
+          "font_name": ""
+        },
+        "bold_italic": {
+          "font_res": "",
+          "ttf_file": "",
+          "font_name": ""
+        },
+        "semi_bold": {
+          "font_res": "",
+          "ttf_file": "",
+          "font_name": ""
+        },
+        "semi_bold_italic": {
+          "font_res": "",
+          "ttf_file": "",
+          "font_name": ""
+        },
+        "light": {
+          "font_res": "",
+          "ttf_file": "",
+          "font_name": ""
+        },
+        "light_italic": {
+          "font_res": "",
+          "ttf_file": "",
+          "font_name": ""
+        }
+      },
+      "numeric": {
+        "regular": {
+          "font_res": "",
+          "ttf_file": "",
+          "font_name": ""
+        },
+        "italic": {
+          "font_res": "",
+          "ttf_file": "",
+          "font_name": ""
+        },
+        "bold": {
+          "font_res": "",
+          "ttf_file": "",
+          "font_name": ""
+        },
+        "bold_italic": {
+          "font_res": "",
+          "ttf_file": "",
+          "font_name": ""
+        },
+        "semi_bold": {
+          "font_res": "",
+          "ttf_file": "",
+          "font_name": ""
+        },
+        "semi_bold_italic": {
+          "font_res": "",
+          "ttf_file": "",
+          "font_name": ""
+        },
+        "light": {
+          "font_res": "",
+          "ttf_file": "",
+          "font_name": ""
+        },
+        "light_italic": {
+          "font_res": "",
+          "ttf_file": "",
+          "font_name": ""
+        }
+    },
+    "schedule": {
+      "alphanumeric": {
+        "regular": {
+          "font_res": "",
+          "ttf_file": "",
+          "font_name": ""
+        },
+        "italic": {
+          "font_res": "",
+          "ttf_file": "",
+          "font_name": ""
+        },
+        "bold": {
+          "font_res": "",
+          "ttf_file": "",
+          "font_name": ""
+        },
+        "bold_italic": {
+          "font_res": "",
+          "ttf_file": "",
+          "font_name": ""
+        },
+        "semi_bold": {
+          "font_res": "",
+          "ttf_file": "",
+          "font_name": ""
+        },
+        "semi_bold_italic": {
+          "font_res": "",
+          "ttf_file": "",
+          "font_name": ""
+        },
+        "light": {
+          "font_res": "",
+          "ttf_file": "",
+          "font_name": ""
+        },
+        "light_italic": {
+          "font_res": "",
+          "ttf_file": "",
+          "font_name": ""
+        }
+      },
+      "numeric": {
+        "regular": {
+          "font_res": "",
+          "ttf_file": "",
+          "font_name": ""
+        },
+        "italic": {
+          "font_res": "",
+          "ttf_file": "",
+          "font_name": ""
+        },
+        "bold": {
+          "font_res": "",
+          "ttf_file": "",
+          "font_name": ""
+        },
+        "bold_italic": {
+          "font_res": "",
+          "ttf_file": "",
+          "font_name": ""
+        },
+        "semi_bold": {
+          "font_res": "",
+          "ttf_file": "",
+          "font_name": ""
+        },
+        "semi_bold_italic": {
+          "font_res": "",
+          "ttf_file": "",
+          "font_name": ""
+        },
+        "light": {
+          "font_res": "",
+          "ttf_file": "",
+          "font_name": ""
+        },
+        "light_italic": {
+          "font_res": "",
+          "ttf_file": "",
+          "font_name": ""
+        }
+      }
+    },
+    "traffic": {
+      "alphanumeric": {
+        "regular": {
+          "font_res": "",
+          "ttf_file": "",
+          "font_name": ""
+        },
+        "italic": {
+          "font_res": "",
+          "ttf_file": "",
+          "font_name": ""
+        },
+        "bold": {
+          "font_res": "",
+          "ttf_file": "",
+          "font_name": ""
+        },
+        "bold_italic": {
+          "font_res": "",
+          "ttf_file": "",
+          "font_name": ""
+        },
+        "semi_bold": {
+          "font_res": "",
+          "ttf_file": "",
+          "font_name": ""
+        },
+        "semi_bold_italic": {
+          "font_res": "",
+          "ttf_file": "",
+          "font_name": ""
+        },
+        "light": {
+          "font_res": "",
+          "ttf_file": "",
+          "font_name": ""
+        },
+        "light_italic": {
+          "font_res": "",
+          "ttf_file": "",
+          "font_name": ""
+        }
+      },
+      "numeric": {
+        "regular": {
+          "font_res": "",
+          "ttf_file": "",
+          "font_name": ""
+        },
+        "italic": {
+          "font_res": "",
+          "ttf_file": "",
+          "font_name": ""
+        },
+        "bold": {
+          "font_res": "",
+          "ttf_file": "",
+          "font_name": ""
+        },
+        "bold_italic": {
+          "font_res": "",
+          "ttf_file": "",
+          "font_name": ""
+        },
+        "semi_bold": {
+          "font_res": "",
+          "ttf_file": "",
+          "font_name": ""
+        },
+        "semi_bold_italic": {
+          "font_res": "",
+          "ttf_file": "",
+          "font_name": ""
+        },
+        "light": {
+          "font_res": "",
+          "ttf_file": "",
+          "font_name": ""
+        },
+        "light_italic": {
+          "font_res": "",
+          "ttf_file": "",
+          "font_name": ""
         }
       }
     }
@@ -713,11 +1217,14 @@ Please note that this is the complete version of the configuration, remove unuse
     }
   ],
   "icons_resources": {
+    "aroundme": {
+      "traffic_button": ""
+    },
     "journey": {
       "departure": "ic_departure",
       "arrival": "ic_arrival",
-      "indoor_parking": "ic_indoor_parking",
-      "outdoor_parking": "ic_outdoor_parking"
+      "indoor_parking": "ic_custom_indoor_parking",
+      "outdoor_parking": "ic_custom_outdoor_parking"
     }
   },
   "titles_resources": {
@@ -738,7 +1245,7 @@ Please note that this is the complete version of the configuration, remove unuse
           "name_res": ""
         }
       ],
-      "signup_form_fields": [
+      "sign_up_form_fields": [
         {
           "hint_res": "",
           "type": "TEXT",
@@ -838,6 +1345,17 @@ Please note that this is the complete version of the configuration, remove unuse
         ""
       ],
       "networks_filter": true,
+      "severity": [
+        {
+          "icon_res": "",
+          "name_res": "",
+          "color": "",
+          "effects": [
+            ""
+          ],
+          "selected": true
+        }
+      ]
       "transport_networks": true
     }
   }

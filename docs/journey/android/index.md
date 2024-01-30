@@ -10,7 +10,7 @@ Add the following dependencies in the `build.gradle` file of your application:
 
 ``` groovy
 dependencies {
-    implementation("com.kisio.navitia.sdk.ui:journey:5.9.0")
+    implementation("com.kisio.navitia.sdk.ui:journey:5.10.0")
 }
 ```
 
@@ -273,6 +273,19 @@ The journey duration and the estimated arrival time are realtime-updated variabl
 Please refer to the following schema to learn more about different interactions and how to navigate between module screens.
 
 <img class="img-navigating" src="/navitia_sdk_docs/assets/img/journey_android_screen_flow.png" alt="Screen flow">
+
+## 🎨 Theming
+
+The date time picker theme in the Journeys screen is set by the system and cannot really offer yet some flexibility. If a dark mode is applied on the phone, the system will apply predefined colors regardless of the configured colors.<br>
+If you want to theme the date time picker, you can only add the following in your style or theme file of your app:
+
+```xml
+<style name="Journey.DateTimePicker" parent="ThemeOverlay.Material3.MaterialCalendar">
+    <item name="colorAccent">#251942</item> <!--header background-->
+    <item name="android:windowBackground">#FFFFFF</item> <!--calendar background-->
+    <item name="android:colorControlActivated">#251942</item> <!--selected day-->
+</style>
+```
 
 ## 📢 Communicating with other modules
 
