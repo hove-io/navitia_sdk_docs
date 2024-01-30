@@ -16,7 +16,7 @@ source 'https://github.com/CocoaPods/Specs.git' # Default Cocoapods URL
 source 'https://github.com/hove-io/Podspecs.git' # Journey podspec URL
 
 target 'YOUR_PROJECT_SCHEME' do
-  pod 'JourneySDK', '5.5.0' # Journey Pod definition
+  pod 'JourneySDK', '5.8.0' # Journey Pod definition
 end
 
 # Required for XCFramework
@@ -284,7 +284,7 @@ JourneySdk.shared.delegate = self
 The designated protocol offers the following methods:
 
 | Method | Required | Description |
-| --- |:---:| --- | :---: | :---: |
+| --- |:---:| --- |
 | `allowedRoadmapScreenActionsFor(inputData: SharedRoadmapScreenData) -> AllowedRoadmapScreenActions` | :material-check: | Define the allowed actions on the roadmap screen |
 | `onPrimaryButtonActionTriggered(inputData: SharedRoadmapScreenData)` | :material-check: | Tap callback on the primary button |
 | `onSecondaryButtonActionTriggered(inputData: SharedRoadmapScreenData)` | :material-check: | Tap callback on the secondary button |
@@ -300,15 +300,16 @@ JourneySdk.shared.injectableViewDelegate = self
 The protocol provides the following methods:
 
 | Method | Required | Description |
-| --- |:---:| --- | :---: | :---: |
+| --- |:---:| --- |
 | `allowExternalViewInjectionFor(screen: InjectableScreen, inputData: Any?) -> ExternalViewInjectionState` | :material-check: | Allow or not the external view injection |
 | `buildExternalViewFor(screen: InjectableScreen, inputData: Any?) -> UIView?` | :material-check: | Requests the instance of the view that needs to be injected in the injectable screen |
 
 The `inputData` can be of type:
+
 - `SharedJourneysScreenData`: if the injectable screen is `listJourneys`
 - `SharedRoadmapScreenData`: if the injectable screen is `roadmap`
 
-##### SharedJourneysScreenData
+###### SharedJourneysScreenData
 
 | Name | Description | Type |
 | --- | --- | :---: |
@@ -316,7 +317,7 @@ The `inputData` can be of type:
 | `hasResults` | Whether the request has results or not | `Bool` |
 | `selectedFilterType` | The selected tab | `TransportModesFilterType` |
 
-##### SharedRoadmapScreenData
+###### SharedRoadmapScreenData
 
 | Name | Description | Type |
 | --- | --- | :---: |
@@ -351,6 +352,7 @@ The `inputData` can be of type:
 | `additionalInformation` | The extra section information if the mobility type allows it | `Any?` |
 
 Please note that the `additionalInformation` object can be of type:
+
 - `StreetNetworkSectionModel`: if the `mobilityType` is `streetNetwork`
 - `PublicTransportSectionModel`: if the `mobilityType` is `public_transport`
 - `CarParkingSectionModel`: if the `mobilityType` is `carParking`

@@ -10,7 +10,7 @@ Add the following dependencies in the `build.gradle` file of your application:
 
 ``` groovy
 dependencies {
-    implementation("com.kisio.navitia.sdk.ui:journey:5.9.0")
+    implementation("com.kisio.navitia.sdk.ui:journey:5.10.0")
 }
 ```
 
@@ -274,6 +274,19 @@ Please refer to the following schema to learn more about different interactions 
 
 <img class="img-navigating" src="/navitia_sdk_docs/assets/img/journey_android_screen_flow.png" alt="Screen flow">
 
+## 🎨 Theming
+
+The date time picker theme in the Journeys screen is set by the system and cannot really offer yet some flexibility. If a dark mode is applied on the phone, the system will apply predefined colors regardless of the configured colors.<br>
+If you want to theme the date time picker, you can only add the following in your style or theme file of your app:
+
+```xml
+<style name="Journey.DateTimePicker" parent="ThemeOverlay.Material3.MaterialCalendar">
+    <item name="colorAccent">#251942</item> <!--header background-->
+    <item name="android:windowBackground">#FFFFFF</item> <!--calendar background-->
+    <item name="android:colorControlActivated">#251942</item> <!--selected day-->
+</style>
+```
+
 ## 📢 Communicating with other modules
 
 ### Application
@@ -308,7 +321,7 @@ JourneyUI.getInstance().setRoadmapDelegate(this)
 The implemented interface offers the following methods:
 
 | Method | Required | Description |
-| --- |:---:| --- | :---: | :---: |
+| --- |:---:| --- |
 | `allowedRoadmapScreenActionsFor(inputData: SharedRoadmapScreenData): AllowedRoadmapScreenActions` | :material-check: | Define the allowed actions on the roadmap screen |
 | `onPrimaryButtonActionTriggered(inputData: SharedRoadmapScreenData)` | :material-check: | Tap callback on the primary button |
 | `onSecondaryButtonActionTriggered(inputData: SharedRoadmapScreenData)` | :material-check: | Tap callback on the secondary button |
@@ -324,15 +337,16 @@ JourneyUI.getInstance().setInjectableViewDelegate(this)
 The interface provides the following methods:
 
 | Method | Required | Description |
-| --- |:---:| --- | :---: | :---: |
+| --- |:---:| --- |
 | `allowExternalViewInjectionFor(screen: InjectableScreen, inputData: Any?): ExternalViewInjectionState` | :material-check: | Allow or not the external view injection |
 | `buildExternalViewFor(screen: InjectableScreen, inputData: Any?): View?` | :material-check: | Requests the instance of the view that needs to be injected in the injectable screen |
 
 The `inputData` can be of type:
+
 - `SharedJourneysScreenData`: if the injectable screen is `LIST_JOURNEYS`
 - `SharedRoadmapScreenData`: if the injectable screen is `ROADMAP`
 
-##### SharedJourneysScreenData
+###### SharedJourneysScreenData
 
 | Name | Description | Type |
 | --- | --- | :---: |
@@ -340,7 +354,7 @@ The `inputData` can be of type:
 | `hasResults` | Whether the request has results or not | `Boolean` |
 | `selectedFilterType` | The selected tab | `TransportModesFilterType` |
 
-##### SharedRoadmapScreenData
+###### SharedRoadmapScreenData
 
 | Name | Description | Type |
 | --- | --- | :---: |
@@ -375,6 +389,7 @@ The `inputData` can be of type:
 | `additionalInformation` | The extra section information if the mobility type allows it | `Any?` |
 
 Please note that the `additionalInformation` object in `SectionModel` can be of type:
+
 - `StreetNetworkSectionModel`: if the `mobilityType` is `STREET_NETWORK`
 - `PublicTransportSectionModel`: if the `mobilityType` is `PUBLIC_TRANSPORT`
 - `CarParkingSectionModel`: if the `mobilityType` is `CAR_PARKING`
