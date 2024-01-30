@@ -172,3 +172,15 @@ This screen includes a datepicker button allowing the user to choose a date and 
 Please refer to the following schema to learn more about different interactions and how to navigate between module screens.
 
 <img class="img-navigating" src="/navitia_sdk_docs/assets/img/schedule_android_screen_flow.png" alt="Screen flow">
+
+## 🎨 Theming
+
+The date picker theme in the All schedules screen is set by the system and cannot really offers yet some flexibility. If a dark mode is applied on the phone, the system will apply predefined colors regardless of the colors configured.<br>
+If you want to theming the date picker, you can only by add the following in your style or theme file in the app:
+
+```xml
+<style name="Schedule.MaterialCalendar" parent="ThemeOverlay.MaterialComponents.MaterialCalendar">
+    <item name="colorPrimary">@#251942</item>
+    <item name="colorOnPrimary">#FFFFFF</item>
+</style>
+```
