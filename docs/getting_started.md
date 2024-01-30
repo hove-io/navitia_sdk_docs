@@ -132,7 +132,7 @@ The following are the possible configuration parameters:
 | `tertiary` | :material-close: | To set the color of more UI components | `String` | `#efa59f` |
 | `origin` | :material-close: | To set colors of the journey origin | [`Journey origin color`](#journey-origin-color) | - |
 | `destination` | :material-close: | To set colors of the journey destination | [`Journey destination color`](#journey-destination-color) | - |
-| `bike` | :material-close: | To set colors of the specific bike journey | [`Journey bike color`](#journey-bike-color) | - |
+| `map` | :material-close: | To set colors of the map elements | [`Journey map color`](#journey-map-color) | - |
 | `nav_bar_background` | :material-close: | To set the color of the navigation bar. iOS only.  | `String` | `#efa59f` |
 
 ##### Journey origin color
@@ -147,6 +147,19 @@ The following are the possible configuration parameters:
 | --- |:---:| --- | :---: | :---: |
 | `primary` | :material-check: | To set the color of the arrival block | `String` | `#8faa96` |
 | `icon` | :material-close: | To set the icon color of the itinerary destination | `String` | `#88819f` |
+
+##### Journey map color
+
+| Name | Required | Description | Type | Example |
+| --- |:---:| --- | :---: | :---: |
+| `path` | :material-check: | To set the color of the paths drawn on the map | [`Journey map path color`](#journey-map-path-color) | - |
+
+##### Journey map path color
+
+| Name | Required | Description | Type | Example |
+| --- |:---:| --- | :---: | :---: |
+| `bike` | :material-close: | To set colors of the specific bike journey | [`Journey bike color`](#journey-bike-color) | - |
+| `car` | :material-close: | To set the color of the car path | `String` | `#88819f |
 
 ##### Journey bike color
 
@@ -308,7 +321,7 @@ The following are the possible configuration parameters:
 | `lat` | :material-check: | The latitude of the default location | `String` | `"48.846790"` |
 | `lon` | :material-check: | The longitude of the default location | `String` | `"2.377090"` |
 
-#### Next departures
+##### Next departures
 
 | Name | Required | Description | Type | Example |
 | --- |:---:| --- | :---: | :---: |
@@ -382,7 +395,7 @@ The following are the possible configuration parameters:
 | --- |:---:| --- | :---: | :---: |
 | `alert_subscription` | :material-close: | Alert subscription environment configuration | [`Alert subscription`](#alert-subscription) | - |
 | `disruption_contributors` | :material-close: | Define the list of disruption contributors id | `[String]` | `["shortterm.tr_idfm"]` |
-| `networks_first` | :material-close: | Show networks before line disruptions | `Boolean` |
+| `networks_filter` | :material-close: | Show/hide the networks selector | `Boolean` |
 | `transport_networks` | :material-close: | Enable/disable showing network on lines | `Boolean` | - |
 
 ##### Alert subscription
@@ -545,9 +558,14 @@ Please note that this is the complete version of the configuration, remove unuse
       "origin": {
         "icon": ""
       },
-      "bike": {
-        "primary": "",
-        "non_cyclable": ""
+      "map": {
+        "path": {
+            "bike": {
+                "cyclable": "",
+                "non_cyclable": "",
+            },
+            "car": ""
+        }
       },
       "nav_bar_background": ""
     },
@@ -1249,11 +1267,7 @@ Please note that this is the complete version of the configuration, remove unuse
       ]
     },
     "aroundme": {
-      "booking": {
-        "title_res": ""
-      },
       "bookmark_mode": true,
-      "crowdsourcing_mode": true,
       "default_location": {
         "lat": "48.846790",
         "lon": "2.377090"
@@ -1341,7 +1355,7 @@ Please note that this is the complete version of the configuration, remove unuse
           ],
           "selected": true
         }
-      ],
+      ]
       "transport_networks": true
     }
   }
