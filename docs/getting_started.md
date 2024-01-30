@@ -61,8 +61,8 @@ The following are the possible configuration parameters:
 | Name | Required | Description | Type | Possible values | Target modules |
 | --- | :-: | --- | :--: | :---: | :---: |
 | `coverage` | :material-check: | Navitia coverage | `String` | `fr-idf` | All |
-| `env` | :material-check: | Navitia environment | `String` | `PROD`, `CUSTOMER` | All |
 | `timezone` | :material-check: | Timezone | `String` | `Europe/Paris` | All |
+| `env` | :material-check: | Navitia environment | `String` | `PROD`, `CUSTOMER` | All |
 | `colors` | :material-check: | Colors configuration | [`Colors`](#colors) | - | UI modules |
 | `transport_categories` | :material-check: | List of supported transport modes | [`[Transport category]`](#transport-category) | - | UI modules |
 | `poi_categories` | :material-close: | List of supported POIs | [`[Poi category]`](#poi-category) | - | Around Me, Bookmark |
