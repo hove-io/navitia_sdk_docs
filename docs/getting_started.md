@@ -62,6 +62,7 @@ The following are the possible configuration parameters:
 | --- | :-: | --- | :--: | :---: | :---: |
 | `coverage` | :material-check: | Navitia coverage | `String` | `fr-idf` | All |
 | `env` | :material-check: | Navitia environment | `String` | `PROD`, `CUSTOMER` | All |
+| `timezone` | :material-check: | Timezone | `String` | `Europe/Paris` | All |
 | `colors` | :material-check: | Colors configuration | [`Colors`](#colors) | - | UI modules |
 | `transport_categories` | :material-check: | List of supported transport modes | [`[Transport category]`](#transport-category) | - | UI modules |
 | `poi_categories` | :material-close: | List of supported POIs | [`[Poi category]`](#poi-category) | - | Around Me, Bookmark |
@@ -235,6 +236,17 @@ The following are the possible configuration parameters:
 | --- |:---:| --- | :---: | :---: |
 | `title_res` | :material-check: | Localized POI booking button title id | `String` | `"book_a_bike"` |
 
+### Fonts
+
+| Name | Required  | Type | Target module |
+| --- | :-: | :--: | :---: |
+| `account` | :material-close: | [`Account fonts`](#account-fonts) | Account |
+| `aroundme` | :material-close: | [`Around Me fonts`](#around-me-fonts) | Around Me |
+| `bookmark` | :material-close: | [`Bookmark fonts`](#bookmark-fonts) | Bookmark |
+| `journey` | :material-close: | [`Journey fonts`](#journey-fonts) | Journey |
+| `schedule` | :material-close: | [`Schedule fonts`](#schedule-fonts) | Schedule |
+| `traffic` | :material-close: | [`Traffic fonts`](#traffic-fonts) | Traffic |
+
 ### Features
 
 | Name | Required  | Type | Target module |
@@ -403,16 +415,21 @@ The following are the possible configuration parameters:
 | Name | Required | Description | Type |
 | --- |:---:| --- | :---: |
 | `regular` | :material-close: | Custom numeric font for regular typeface | [`Font Typeface`](#font-typeface) |
-| `semi_bold` | :material-close: | Custom numeric font for semi bold typeface | [`Font Typeface`](#font-typeface) |
-| `bold` | :material-close: | Custom numeric font for bold typeface | [`Font Typeface`](#font-typeface) |
 | `italic` | :material-close: | Custom numeric font for italic typeface | [`Font Typeface`](#font-typeface) |
+| `semi_bold` | :material-close: | Custom numeric font for semi bold typeface | [`Font Typeface`](#font-typeface) |
+| `semi_bold_italic` | :material-close: | Custom numeric font for semi bold italic typeface | [`Font Typeface`](#font-typeface) |
+| `bold` | :material-close: | Custom numeric font for bold typeface | [`Font Typeface`](#font-typeface) |
+| `bold_italic` | :material-close: | Custom numeric font for bold italic typeface | [`Font Typeface`](#font-typeface) |
+| `light` | :material-close: | Custom numeric font for light typeface | [`Font Typeface`](#font-typeface) |
+| `light_italic` | :material-close: | Custom numeric font for light italic typeface | [`Font Typeface`](#font-typeface) |
 
 ##### Font Typeface
 
-| Name | Required | Description | Type | Example |
-| --- |:---:| --- | :---: | :---: |
-| `ttf_file` | :material-check: | The TTF file name | `String` | `"SourceSansPro"` |
-| `fontname` | :material-check: | The font name | `String` | `"SourceSansPro-Bold"` |
+| Name | Required | Description | Type | Platform | Example |
+| --- |:---:| --- | :---: | :---: | :---: |
+| `font_res` | :material-check: | The font resource name | `String` | Android | `source_sans_pro_semi_bold` |
+| `ttf_file` | :material-check: | The TTF file name | `String` | iOS | `"SourceSansPro"` |
+| `font_name` | :material-check: | The font name | `String` | iOS | `"SourceSansPro-Bold"` |
 
 ### Line resource
 
@@ -489,7 +506,12 @@ Please note that this is the complete version of the configuration, remove unuse
 ``` javascript
 {
   "coverage": "",
+  "timezone": "",
   "env": "PROD",
+  "osm_region": {
+    "id": "",
+    "name_res": ""
+  },
   "colors": {
     "account": {
       "primary": "",
@@ -536,44 +558,430 @@ Please note that this is the complete version of the configuration, remove unuse
     "traffic": {
       "primary": "",
       "secondary": ""
+    },
+    "disruptions": {
+      "information": "",
+      "non_blocking": "",
+      "blocking": ""
     }
   },
   "fonts": {
-    "journey": {
-      "numeric": {
-        "regular": {
-          "ttf_file": "",
-          "fontname": ""
-        },
-        "bold": {
-          "ttf_file": "",
-          "fontname": ""
-        },
-        "semi_bold": {
-          "ttf_file": "",
-          "fontname": ""
-        },
-        "italic": {
-          "ttf_file": "",
-          "fontname": ""
-        }
-      },
+    "aroundme": {
       "alphanumeric": {
         "regular": {
-          "ttf_file": "",
-          "fontname": ""
-        },
-        "bold": {
-          "ttf_file": "",
-          "fontname": ""
-        },
-        "semi_bold": {
-          "ttf_file": "",
-          "fontname": ""
+          "file": "",
+          "font_name": ""
         },
         "italic": {
-          "ttf_file": "",
-          "fontname": ""
+          "file": "",
+          "font_name": ""
+        },
+        "bold": {
+          "file": "",
+          "font_name": ""
+        },
+        "bold_italic": {
+          "file": "",
+          "font_name": ""
+        },
+        "semi_bold": {
+          "file": "",
+          "font_name": ""
+        },
+        "semi_bold_italic": {
+          "file": "",
+          "font_name": ""
+        },
+        "light": {
+          "file": "",
+          "font_name": ""
+        },
+        "light_italic": {
+          "file": "",
+          "font_name": ""
+        }
+      },
+      "numeric": {
+        "regular": {
+          "file": "",
+          "font_name": ""
+        },
+        "italic": {
+          "file": "",
+          "font_name": ""
+        },
+        "bold": {
+          "file": "",
+          "font_name": ""
+        },
+        "bold_italic": {
+          "file": "",
+          "font_name": ""
+        },
+        "semi_bold": {
+          "file": "",
+          "font_name": ""
+        },
+        "semi_bold_italic": {
+          "file": "",
+          "font_name": ""
+        },
+        "light": {
+          "file": "",
+          "font_name": ""
+        },
+        "light_italic": {
+          "file": "",
+          "font_name": ""
+        }
+      }
+    },
+    "bookmark": {
+      "alphanumeric": {
+        "regular": {
+          "file": "",
+          "font_name": ""
+        },
+        "italic": {
+          "file": "",
+          "font_name": ""
+        },
+        "bold": {
+          "file": "",
+          "font_name": ""
+        },
+        "bold_italic": {
+          "file": "",
+          "font_name": ""
+        },
+        "semi_bold": {
+          "file": "",
+          "font_name": ""
+        },
+        "semi_bold_italic": {
+          "file": "",
+          "font_name": ""
+        },
+        "light": {
+          "file": "",
+          "font_name": ""
+        },
+        "light_italic": {
+          "file": "",
+          "font_name": ""
+        }
+      },
+      "numeric": {
+        "regular": {
+          "file": "",
+          "font_name": ""
+        },
+        "italic": {
+          "file": "",
+          "font_name": ""
+        },
+        "bold": {
+          "file": "",
+          "font_name": ""
+        },
+        "bold_italic": {
+          "file": "",
+          "font_name": ""
+        },
+        "semi_bold": {
+          "file": "",
+          "font_name": ""
+        },
+        "semi_bold_italic": {
+          "file": "",
+          "font_name": ""
+        },
+        "light": {
+          "file": "",
+          "font_name": ""
+        },
+        "light_italic": {
+          "file": "",
+          "font_name": ""
+        }
+      }
+    },
+    "crowdsourcing": {
+      "alphanumeric": {
+        "regular": {
+          "file": "",
+          "font_name": ""
+        },
+        "italic": {
+          "file": "",
+          "font_name": ""
+        },
+        "bold": {
+          "file": "",
+          "font_name": ""
+        },
+        "bold_italic": {
+          "file": "",
+          "font_name": ""
+        },
+        "semi_bold": {
+          "file": "",
+          "font_name": ""
+        },
+        "semi_bold_italic": {
+          "file": "",
+          "font_name": ""
+        },
+        "light": {
+          "file": "",
+          "font_name": ""
+        },
+        "light_italic": {
+          "file": "",
+          "font_name": ""
+        }
+      },
+      "numeric": {
+        "regular": {
+          "file": "",
+          "font_name": ""
+        },
+        "italic": {
+          "file": "",
+          "font_name": ""
+        },
+        "bold": {
+          "file": "",
+          "font_name": ""
+        },
+        "bold_italic": {
+          "file": "",
+          "font_name": ""
+        },
+        "semi_bold": {
+          "file": "",
+          "font_name": ""
+        },
+        "semi_bold_italic": {
+          "file": "",
+          "font_name": ""
+        },
+        "light": {
+          "file": "",
+          "font_name": ""
+        },
+        "light_italic": {
+          "file": "",
+          "font_name": ""
+        }
+      }
+    },
+    "journey": {
+      "alphanumeric": {
+        "regular": {
+          "file": "",
+          "font_name": ""
+        },
+        "italic": {
+          "file": "",
+          "font_name": ""
+        },
+        "bold": {
+          "file": "",
+          "font_name": ""
+        },
+        "bold_italic": {
+          "file": "",
+          "font_name": ""
+        },
+        "semi_bold": {
+          "file": "",
+          "font_name": ""
+        },
+        "semi_bold_italic": {
+          "file": "",
+          "font_name": ""
+        },
+        "light": {
+          "file": "",
+          "font_name": ""
+        },
+        "light_italic": {
+          "file": "",
+          "font_name": ""
+        }
+      },
+      "numeric": {
+        "regular": {
+          "file": "",
+          "font_name": ""
+        },
+        "italic": {
+          "file": "",
+          "font_name": ""
+        },
+        "bold": {
+          "file": "",
+          "font_name": ""
+        },
+        "bold_italic": {
+          "file": "",
+          "font_name": ""
+        },
+        "semi_bold": {
+          "file": "",
+          "font_name": ""
+        },
+        "semi_bold_italic": {
+          "file": "",
+          "font_name": ""
+        },
+        "light": {
+          "file": "",
+          "font_name": ""
+        },
+        "light_italic": {
+          "file": "",
+          "font_name": ""
+        }
+    },
+    "schedule": {
+      "alphanumeric": {
+        "regular": {
+          "file": "",
+          "font_name": ""
+        },
+        "italic": {
+          "file": "",
+          "font_name": ""
+        },
+        "bold": {
+          "file": "",
+          "font_name": ""
+        },
+        "bold_italic": {
+          "file": "",
+          "font_name": ""
+        },
+        "semi_bold": {
+          "file": "",
+          "font_name": ""
+        },
+        "semi_bold_italic": {
+          "file": "",
+          "font_name": ""
+        },
+        "light": {
+          "file": "",
+          "font_name": ""
+        },
+        "light_italic": {
+          "file": "",
+          "font_name": ""
+        }
+      },
+      "numeric": {
+        "regular": {
+          "file": "",
+          "font_name": ""
+        },
+        "italic": {
+          "file": "",
+          "font_name": ""
+        },
+        "bold": {
+          "file": "",
+          "font_name": ""
+        },
+        "bold_italic": {
+          "file": "",
+          "font_name": ""
+        },
+        "semi_bold": {
+          "file": "",
+          "font_name": ""
+        },
+        "semi_bold_italic": {
+          "file": "",
+          "font_name": ""
+        },
+        "light": {
+          "file": "",
+          "font_name": ""
+        },
+        "light_italic": {
+          "file": "",
+          "font_name": ""
+        }
+      }
+    },
+    "traffic": {
+      "alphanumeric": {
+        "regular": {
+          "file": "",
+          "font_name": ""
+        },
+        "italic": {
+          "file": "",
+          "font_name": ""
+        },
+        "bold": {
+          "file": "",
+          "font_name": ""
+        },
+        "bold_italic": {
+          "file": "",
+          "font_name": ""
+        },
+        "semi_bold": {
+          "file": "",
+          "font_name": ""
+        },
+        "semi_bold_italic": {
+          "file": "",
+          "font_name": ""
+        },
+        "light": {
+          "file": "",
+          "font_name": ""
+        },
+        "light_italic": {
+          "file": "",
+          "font_name": ""
+        }
+      },
+      "numeric": {
+        "regular": {
+          "file": "",
+          "font_name": ""
+        },
+        "italic": {
+          "file": "",
+          "font_name": ""
+        },
+        "bold": {
+          "file": "",
+          "font_name": ""
+        },
+        "bold_italic": {
+          "file": "",
+          "font_name": ""
+        },
+        "semi_bold": {
+          "file": "",
+          "font_name": ""
+        },
+        "semi_bold_italic": {
+          "file": "",
+          "font_name": ""
+        },
+        "light": {
+          "file": "",
+          "font_name": ""
+        },
+        "light_italic": {
+          "file": "",
+          "font_name": ""
         }
       }
     }
@@ -695,9 +1103,14 @@ Please note that this is the complete version of the configuration, remove unuse
     }
   ],
   "icons_resources": {
+    "aroundme": {
+      "traffic_button": ""
+    },
     "journey": {
-      "departure_res": "ic_departure",
-      "arrival_res": "ic_arrival"
+      "departure": "ic_departure",
+      "arrival": "ic_arrival",
+      "indoor_parking": "ic_custom_indoor_parking",
+      "outdoor_parking": "ic_custom_outdoor_parking"
     }
   },
   "titles_resources": {
@@ -718,7 +1131,7 @@ Please note that this is the complete version of the configuration, remove unuse
           "name_res": ""
         }
       ],
-      "signup_form_fields": [
+      "sign_up_form_fields": [
         {
           "hint_res": "",
           "type": "TEXT",
@@ -753,6 +1166,9 @@ Please note that this is the complete version of the configuration, remove unuse
       "journey_mode": true,
       "max_history": 10,
       "min_zoom_level": 15,
+      "next_departures": {
+        "frequency": 30
+      },
       "stop_point_search": true,
       "traffic_mode": true,
       "vehicle_positions": {
@@ -761,6 +1177,9 @@ Please note that this is the complete version of the configuration, remove unuse
     },
     "bookmark": {
       "go_from_go_to": true,
+      "next_departures": {
+        "frequency": 30
+      },
       "tabs": {
         "transports": true,
         "journeys": true,
@@ -769,18 +1188,19 @@ Please note that this is the complete version of the configuration, remove unuse
     },
     "journey": {
       "bookmark_mode": true,
-      "buy_tickets": {
-        "title_res": "buy_tickets"
-      },
       "calories": true,
       "carbon": true,
+      "car_parking_highlight": true,
       "disruption_contributors": [
         ""
       ],
+      "external_navigation": true,
       "max_favorite_addresses": 10,
       "max_favorite_pois": 10,
       "max_history": 10,
-      "next_departures": true,
+      "next_departures": {
+        "frequency": 30
+      },
       "price": true,
       "ridesharing_price": true,
       "search_only": false,
@@ -796,8 +1216,11 @@ Please note that this is the complete version of the configuration, remove unuse
     },
     "schedule": {
       "bookmark_mode": true,
-      "directions_first": true,
       "max_history": 10,
+      "networks_filter": true,
+      "next_departures": {
+        "frequency": 30
+      },
       "transport_networks": true,
       "vehicle_positions": {
         "frequency": 30
@@ -811,7 +1234,18 @@ Please note that this is the complete version of the configuration, remove unuse
       "disruption_contributors": [
         ""
       ],
-      "networks_first": true,
+      "networks_filter": true,
+      "severity": [
+        {
+          "icon_res": "",
+          "name_res": "",
+          "color": "",
+          "effects": [
+            ""
+          ],
+          "selected": true
+        }
+      ],
       "transport_networks": true
     }
   }
