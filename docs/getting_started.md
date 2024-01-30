@@ -569,69 +569,85 @@ Please note that this is the complete version of the configuration, remove unuse
     "aroundme": {
       "alphanumeric": {
         "regular": {
-          "file": "",
+          "font_res": "",
+          "ttf_file": "",
           "font_name": ""
         },
         "italic": {
-          "file": "",
+          "font_res": "",
+          "ttf_file": "",
           "font_name": ""
         },
         "bold": {
-          "file": "",
+          "font_res": "",
+          "ttf_file": "",
           "font_name": ""
         },
         "bold_italic": {
-          "file": "",
+          "font_res": "",
+          "ttf_file": "",
           "font_name": ""
         },
         "semi_bold": {
-          "file": "",
+          "font_res": "",
+          "ttf_file": "",
           "font_name": ""
         },
         "semi_bold_italic": {
-          "file": "",
+          "font_res": "",
+          "ttf_file": "",
           "font_name": ""
         },
         "light": {
-          "file": "",
+          "font_res": "",
+          "ttf_file": "",
           "font_name": ""
         },
         "light_italic": {
-          "file": "",
+          "font_res": "",
+          "ttf_file": "",
           "font_name": ""
         }
       },
       "numeric": {
         "regular": {
-          "file": "",
+          "font_res": "",
+          "ttf_file": "",
           "font_name": ""
         },
         "italic": {
-          "file": "",
+          "font_res": "",
+          "ttf_file": "",
           "font_name": ""
         },
         "bold": {
-          "file": "",
+          "font_res": "",
+          "ttf_file": "",
           "font_name": ""
         },
         "bold_italic": {
-          "file": "",
+          "font_res": "",
+          "ttf_file": "",
           "font_name": ""
         },
         "semi_bold": {
-          "file": "",
+          "font_res": "",
+          "ttf_file": "",
           "font_name": ""
         },
         "semi_bold_italic": {
-          "file": "",
+          "font_res": "",
+          "ttf_file": "",
           "font_name": ""
         },
         "light": {
-          "file": "",
+          "font_res": "",
+          "ttf_file": "",
           "font_name": ""
         },
         "light_italic": {
-          "file": "",
+          "font_res": "",
+          "ttf_file": "",
           "font_name": ""
         }
       }
@@ -639,69 +655,85 @@ Please note that this is the complete version of the configuration, remove unuse
     "bookmark": {
       "alphanumeric": {
         "regular": {
-          "file": "",
+          "font_res": "",
+          "ttf_file": "",
           "font_name": ""
         },
         "italic": {
-          "file": "",
+          "font_res": "",
+          "ttf_file": "",
           "font_name": ""
         },
         "bold": {
-          "file": "",
+          "font_res": "",
+          "ttf_file": "",
           "font_name": ""
         },
         "bold_italic": {
-          "file": "",
+          "font_res": "",
+          "ttf_file": "",
           "font_name": ""
         },
         "semi_bold": {
-          "file": "",
+          "font_res": "",
+          "ttf_file": "",
           "font_name": ""
         },
         "semi_bold_italic": {
-          "file": "",
+          "font_res": "",
+          "ttf_file": "",
           "font_name": ""
         },
         "light": {
-          "file": "",
+          "font_res": "",
+          "ttf_file": "",
           "font_name": ""
         },
         "light_italic": {
-          "file": "",
+          "font_res": "",
+          "ttf_file": "",
           "font_name": ""
         }
       },
       "numeric": {
         "regular": {
-          "file": "",
+          "font_res": "",
+          "ttf_file": "",
           "font_name": ""
         },
         "italic": {
-          "file": "",
+          "font_res": "",
+          "ttf_file": "",
           "font_name": ""
         },
         "bold": {
-          "file": "",
+          "font_res": "",
+          "ttf_file": "",
           "font_name": ""
         },
         "bold_italic": {
-          "file": "",
+          "font_res": "",
+          "ttf_file": "",
           "font_name": ""
         },
         "semi_bold": {
-          "file": "",
+          "font_res": "",
+          "ttf_file": "",
           "font_name": ""
         },
         "semi_bold_italic": {
-          "file": "",
+          "font_res": "",
+          "ttf_file": "",
           "font_name": ""
         },
         "light": {
-          "file": "",
+          "font_res": "",
+          "ttf_file": "",
           "font_name": ""
         },
         "light_italic": {
-          "file": "",
+          "font_res": "",
+          "ttf_file": "",
           "font_name": ""
         }
       }
@@ -709,69 +741,85 @@ Please note that this is the complete version of the configuration, remove unuse
     "crowdsourcing": {
       "alphanumeric": {
         "regular": {
-          "file": "",
+          "font_res": "",
+          "ttf_file": "",
           "font_name": ""
         },
         "italic": {
-          "file": "",
+          "font_res": "",
+          "ttf_file": "",
           "font_name": ""
         },
         "bold": {
-          "file": "",
+          "font_res": "",
+          "ttf_file": "",
           "font_name": ""
         },
         "bold_italic": {
-          "file": "",
+          "font_res": "",
+          "ttf_file": "",
           "font_name": ""
         },
         "semi_bold": {
-          "file": "",
+          "font_res": "",
+          "ttf_file": "",
           "font_name": ""
         },
         "semi_bold_italic": {
-          "file": "",
+          "font_res": "",
+          "ttf_file": "",
           "font_name": ""
         },
         "light": {
-          "file": "",
+          "font_res": "",
+          "ttf_file": "",
           "font_name": ""
         },
         "light_italic": {
-          "file": "",
+          "font_res": "",
+          "ttf_file": "",
           "font_name": ""
         }
       },
       "numeric": {
         "regular": {
-          "file": "",
+          "font_res": "",
+          "ttf_file": "",
           "font_name": ""
         },
         "italic": {
-          "file": "",
+          "font_res": "",
+          "ttf_file": "",
           "font_name": ""
         },
         "bold": {
-          "file": "",
+          "font_res": "",
+          "ttf_file": "",
           "font_name": ""
         },
         "bold_italic": {
-          "file": "",
+          "font_res": "",
+          "ttf_file": "",
           "font_name": ""
         },
         "semi_bold": {
-          "file": "",
+          "font_res": "",
+          "ttf_file": "",
           "font_name": ""
         },
         "semi_bold_italic": {
-          "file": "",
+          "font_res": "",
+          "ttf_file": "",
           "font_name": ""
         },
         "light": {
-          "file": "",
+          "font_res": "",
+          "ttf_file": "",
           "font_name": ""
         },
         "light_italic": {
-          "file": "",
+          "font_res": "",
+          "ttf_file": "",
           "font_name": ""
         }
       }
@@ -779,138 +827,170 @@ Please note that this is the complete version of the configuration, remove unuse
     "journey": {
       "alphanumeric": {
         "regular": {
-          "file": "",
+          "font_res": "",
+          "ttf_file": "",
           "font_name": ""
         },
         "italic": {
-          "file": "",
+          "font_res": "",
+          "ttf_file": "",
           "font_name": ""
         },
         "bold": {
-          "file": "",
+          "font_res": "",
+          "ttf_file": "",
           "font_name": ""
         },
         "bold_italic": {
-          "file": "",
+          "font_res": "",
+          "ttf_file": "",
           "font_name": ""
         },
         "semi_bold": {
-          "file": "",
+          "font_res": "",
+          "ttf_file": "",
           "font_name": ""
         },
         "semi_bold_italic": {
-          "file": "",
+          "font_res": "",
+          "ttf_file": "",
           "font_name": ""
         },
         "light": {
-          "file": "",
+          "font_res": "",
+          "ttf_file": "",
           "font_name": ""
         },
         "light_italic": {
-          "file": "",
+          "font_res": "",
+          "ttf_file": "",
           "font_name": ""
         }
       },
       "numeric": {
         "regular": {
-          "file": "",
+          "font_res": "",
+          "ttf_file": "",
           "font_name": ""
         },
         "italic": {
-          "file": "",
+          "font_res": "",
+          "ttf_file": "",
           "font_name": ""
         },
         "bold": {
-          "file": "",
+          "font_res": "",
+          "ttf_file": "",
           "font_name": ""
         },
         "bold_italic": {
-          "file": "",
+          "font_res": "",
+          "ttf_file": "",
           "font_name": ""
         },
         "semi_bold": {
-          "file": "",
+          "font_res": "",
+          "ttf_file": "",
           "font_name": ""
         },
         "semi_bold_italic": {
-          "file": "",
+          "font_res": "",
+          "ttf_file": "",
           "font_name": ""
         },
         "light": {
-          "file": "",
+          "font_res": "",
+          "ttf_file": "",
           "font_name": ""
         },
         "light_italic": {
-          "file": "",
+          "font_res": "",
+          "ttf_file": "",
           "font_name": ""
         }
     },
     "schedule": {
       "alphanumeric": {
         "regular": {
-          "file": "",
+          "font_res": "",
+          "ttf_file": "",
           "font_name": ""
         },
         "italic": {
-          "file": "",
+          "font_res": "",
+          "ttf_file": "",
           "font_name": ""
         },
         "bold": {
-          "file": "",
+          "font_res": "",
+          "ttf_file": "",
           "font_name": ""
         },
         "bold_italic": {
-          "file": "",
+          "font_res": "",
+          "ttf_file": "",
           "font_name": ""
         },
         "semi_bold": {
-          "file": "",
+          "font_res": "",
+          "ttf_file": "",
           "font_name": ""
         },
         "semi_bold_italic": {
-          "file": "",
+          "font_res": "",
+          "ttf_file": "",
           "font_name": ""
         },
         "light": {
-          "file": "",
+          "font_res": "",
+          "ttf_file": "",
           "font_name": ""
         },
         "light_italic": {
-          "file": "",
+          "font_res": "",
+          "ttf_file": "",
           "font_name": ""
         }
       },
       "numeric": {
         "regular": {
-          "file": "",
+          "font_res": "",
+          "ttf_file": "",
           "font_name": ""
         },
         "italic": {
-          "file": "",
+          "font_res": "",
+          "ttf_file": "",
           "font_name": ""
         },
         "bold": {
-          "file": "",
+          "font_res": "",
+          "ttf_file": "",
           "font_name": ""
         },
         "bold_italic": {
-          "file": "",
+          "font_res": "",
+          "ttf_file": "",
           "font_name": ""
         },
         "semi_bold": {
-          "file": "",
+          "font_res": "",
+          "ttf_file": "",
           "font_name": ""
         },
         "semi_bold_italic": {
-          "file": "",
+          "font_res": "",
+          "ttf_file": "",
           "font_name": ""
         },
         "light": {
-          "file": "",
+          "font_res": "",
+          "ttf_file": "",
           "font_name": ""
         },
         "light_italic": {
-          "file": "",
+          "font_res": "",
+          "ttf_file": "",
           "font_name": ""
         }
       }
@@ -918,69 +998,85 @@ Please note that this is the complete version of the configuration, remove unuse
     "traffic": {
       "alphanumeric": {
         "regular": {
-          "file": "",
+          "font_res": "",
+          "ttf_file": "",
           "font_name": ""
         },
         "italic": {
-          "file": "",
+          "font_res": "",
+          "ttf_file": "",
           "font_name": ""
         },
         "bold": {
-          "file": "",
+          "font_res": "",
+          "ttf_file": "",
           "font_name": ""
         },
         "bold_italic": {
-          "file": "",
+          "font_res": "",
+          "ttf_file": "",
           "font_name": ""
         },
         "semi_bold": {
-          "file": "",
+          "font_res": "",
+          "ttf_file": "",
           "font_name": ""
         },
         "semi_bold_italic": {
-          "file": "",
+          "font_res": "",
+          "ttf_file": "",
           "font_name": ""
         },
         "light": {
-          "file": "",
+          "font_res": "",
+          "ttf_file": "",
           "font_name": ""
         },
         "light_italic": {
-          "file": "",
+          "font_res": "",
+          "ttf_file": "",
           "font_name": ""
         }
       },
       "numeric": {
         "regular": {
-          "file": "",
+          "font_res": "",
+          "ttf_file": "",
           "font_name": ""
         },
         "italic": {
-          "file": "",
+          "font_res": "",
+          "ttf_file": "",
           "font_name": ""
         },
         "bold": {
-          "file": "",
+          "font_res": "",
+          "ttf_file": "",
           "font_name": ""
         },
         "bold_italic": {
-          "file": "",
+          "font_res": "",
+          "ttf_file": "",
           "font_name": ""
         },
         "semi_bold": {
-          "file": "",
+          "font_res": "",
+          "ttf_file": "",
           "font_name": ""
         },
         "semi_bold_italic": {
-          "file": "",
+          "font_res": "",
+          "ttf_file": "",
           "font_name": ""
         },
         "light": {
-          "file": "",
+          "font_res": "",
+          "ttf_file": "",
           "font_name": ""
         },
         "light_italic": {
-          "file": "",
+          "font_res": "",
+          "ttf_file": "",
           "font_name": ""
         }
       }
