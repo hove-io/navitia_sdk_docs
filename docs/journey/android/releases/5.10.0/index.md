@@ -8,10 +8,10 @@ title: Journey Android 5.10.0 - Changelog - Navitia SDK Docs
 
 #### Features
 - Can customize font of screens
-- Disable a journey when a car parking is unavailable
-
-### Task 
-- Handle timezone in dates
+- Add timezone support for date format
+- Add parking instruction in journey solution
+- Disable journey solution when the parking is not available
+- Show parking price when the parking is available
 
 #### Fixes
 - Avoid nullability of `JourneysRequest` on fragments

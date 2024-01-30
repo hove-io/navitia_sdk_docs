@@ -276,8 +276,8 @@ Please refer to the following schema to learn more about different interactions 
 
 ## 🎨 Theming
 
-The date time picker theme in the Journeys screen is set by the system and cannot really offers yet some flexibility. If a dark mode is applied on the phone, the system will apply predefined colors regardless of the colors configured.<br>
-If you want to theming the date time picker, you can only by add the following in your style or theme file in the app:
+The date time picker theme in the Journeys screen is set by the system and cannot really offer yet some flexibility. If a dark mode is applied on the phone, the system will apply predefined colors regardless of the configured colors.<br>
+If you want to theme the date time picker, you can only add the following in your style or theme file of your app:
 
 ```xml
 <style name="Journey.DateTimePicker" parent="ThemeOverlay.Material3.MaterialCalendar">

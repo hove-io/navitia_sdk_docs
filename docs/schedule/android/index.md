@@ -175,8 +175,8 @@ Please refer to the following schema to learn more about different interactions 
 
 ## 🎨 Theming
 
-The date picker theme in the All schedules screen is set by the system and cannot really offers yet some flexibility. If a dark mode is applied on the phone, the system will apply predefined colors regardless of the colors configured.<br>
-If you want to theming the date picker, you can only by add the following in your style or theme file in the app:
+The date picker theme in the Journeys screen is set by the system and cannot really offer yet some flexibility. If a dark mode is applied on the phone, the system will apply predefined colors regardless of the configured colors.<br>
+If you want to theme the date picker, you can only add the following in your style or theme file of your app:
 
 ```xml
 <style name="Schedule.MaterialCalendar" parent="ThemeOverlay.MaterialComponents.MaterialCalendar">
