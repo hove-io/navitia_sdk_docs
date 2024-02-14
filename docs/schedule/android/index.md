@@ -10,7 +10,7 @@ Add the following dependencies in the `build.gradle` file of your application:
 
 ``` groovy
 dependencies {
-    implementation("com.kisio.navitia.sdk.ui:schedule:2.4.0")
+    implementation("com.kisio.navitia.sdk.ui:schedule:2.5.0")
 }
 ```
 
@@ -90,14 +90,14 @@ Each method has a `ScheduleNavigationListener.Event` parameter you can rely on.
 
 ## 🚀  Launching
 
-Schedule has a single entry point `HomeFragment`.<br>
+Schedule has a single entry point `LinesFragment`.<br>
 Assuming you have an `Activity` with a fragment container, refer to the following example to launch the entry screen fragment:
 
 ``` kotlin
 supportFragmentManager.beginTransaction().run {
     replace(
         R.id.container_id,
-        HomeFragment.newInstance(showBack = false),
+        LinesFragment.newInstance(showBack = false),
         "TAG"
     )
     addToBackStack("TAG")
@@ -113,18 +113,18 @@ The `newInstance()` method creates an instance of the target fragment and takes 
 
 ## 📱 Screens
 
-### Home
+### Lines
 
-The home screen allows the user to see all the lines of the defined coverage. The lines are sorted by the different configurable transport categories.<br>
+The lines screen allows the user to see all the lines of the defined coverage. The lines are sorted by the different configurable transport categories.<br>
 Another filter is added for each transport mode in the selected transport category. 
 
 The lines can also be grouped by networks. To enable this feature, you need to switch the `transport_networks` parameter to `true` in the [features configuration](../../getting_started/#schedule-features). 
 
-<img class="img-overview" src="/navitia_sdk_docs/assets/img/schedule_android_home_screen.png" alt="Home screen">
+<img class="img-overview" src="/navitia_sdk_docs/assets/img/schedule_android_home_screen.png" alt="Lines screen">
 
 If there is any favorite station, an additional tab will be shown listing all bookmarked stations. Each station has a maximum of 3 next departures by destination or an empty state if data is unavailable.
 
-<img class="img-overview" src="/navitia_sdk_docs/assets/img/schedule_android_home_favorites_screen.png" alt="Home screen with favorites">
+<img class="img-overview" src="/navitia_sdk_docs/assets/img/schedule_android_home_favorites_screen.png" alt="Lines screen with favorites">
 
 ### Search
 
