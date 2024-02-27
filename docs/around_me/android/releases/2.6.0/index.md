@@ -4,7 +4,7 @@ title: AroundMe iOS 2.6.0 - Changelog - Navitia SDK Docs
 
 # Around Me Android 2.6.0 Changelog
 
-<h2>🗓 11 Jan 2023</h2>
+<h2>🗓 11 Jan 2024</h2>
 
 #### Features
 - Customizable disruption colors

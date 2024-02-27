@@ -10,7 +10,7 @@ Add the following dependencies in the `build.gradle` file of your application:
 
 ``` groovy
 dependencies {
-    implementation("com.kisio.navitia.sdk.ui:aroundme:2.6.0")
+    implementation("com.kisio.navitia.sdk.ui:aroundme:2.7.1")
 }
 ```
 

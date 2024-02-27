@@ -1,8 +1,8 @@
 ---
-title: Traffic Android 2.5.0 - Changelog - Navitia SDK Docs
+title: Schedule Android 2.5.0 - Changelog - Navitia SDK Docs
 ---
 
-# Traffic Android 2.5.0 Changelog
+# Schedule Android 2.5.0 Changelog
 
 <h2>🗓 12 Feb 2024</h2>
 
@@ -12,7 +12,8 @@ title: Traffic Android 2.5.0 - Changelog - Navitia SDK Docs
 - Enhance accessibility
 
 #### Dependencies
-- `kotlinVersion` > `1.9.22`
+- `kotlin` > `1.9.22`
+- `gradle-wrapper` > `8.2`
 - `com.android.tools.build:gradle` > `8.2.1`
 - `com.google.firebase:firebase-crashlytics-gradle` > `2.9.9`
 - `com.google.gms:google-services` > `4.4.0`
@@ -24,8 +25,12 @@ title: Traffic Android 2.5.0 - Changelog - Navitia SDK Docs
 - `androidx.room:room-ktx` > `2.6.1`
 - `androidx.room:room-runtime` > `2.6.1`
 - `com.google.android.material:material` > `1.11.0`
+- `com.google.dagger:dagger` > `2.50`
+- `com.google.dagger:dagger-android-support` > `2.50`
+- `com.google.dagger:dagger-compiler` > `2.50`
 - `org.jetbrains.kotlinx:kotlinx-coroutines-core` > `1.7.1`
 - `org.jetbrains.kotlinx:kotlinx-coroutines-android` > `1.7.1`
 - `org.jetbrains.kotlinx:kotlinx-serialization-json` > `1.5.1`
+- `androidx.test.espresso:espresso-core` > `3.5.1`
 - `androidx.test:runner` > `1.5.2`
 - `androidx.test:rules` > `1.5.2`
