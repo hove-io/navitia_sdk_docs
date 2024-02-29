@@ -10,7 +10,7 @@ Add the following dependencies in the `build.gradle` file of your application:
 
 ``` groovy
 dependencies {
-    implementation("com.kisio.navitia.sdk.ui:traffic:2.4.0")
+    implementation("com.kisio.navitia.sdk.ui:traffic:2.5.0")
 }
 ```
 
@@ -106,14 +106,14 @@ To enable the alert subscription feature, the following instructions are require
 
 ## 🚀  Launching
 
-Traffic has a single entry point `HomeFragment`.<br>
+Traffic has a single entry point `AllDisruptionsFragment`.<br>
 Assuming you have an `Activity` with a fragment container, refer to the following example to launch the entry screen fragment:
 
 ``` kotlin
 supportFragmentManager.beginTransaction().run {
     replace(
         R.id.container_id,
-        HomeFragment.newInstance(showBack = false),
+        AllDisruptionsFragment.newInstance(showBack = false),
         "TAG"
     )
     addToBackStack("TAG")
@@ -129,17 +129,17 @@ The `newInstance()` method creates an instance of the target fragment and takes 
 
 ## 📱 Screens
 
-### Home
+### All disruptions
 
-The home screen allows the user to view all the line and network disruptions sorted by transport category.<br>
+The all disruptions screen allows the user to view all the line and network disruptions sorted by transport category.<br>
 When clicking on a disrupted line, the message and the application period of the disruption shows up along with an **All disruptions** button. This button redirects the user to the [line disruptions](#linenetwork-disruptions) screen.
 
-<img class="img-overview" src="/navitia_sdk_docs/assets/img/traffic_android_home_screen.png" alt="Home screen">
+<img class="img-overview" src="/navitia_sdk_docs/assets/img/traffic_android_home_screen.png" alt="All disruptions screen">
 
 #### Filters
 
-The home screen integrated a menu accessible through the header right button. This menu shows the different transport categories with a default selection.<br>
-If the user hits the **Apply** button after changing the selection state, the home screen will refresh and will show the disruptions according to the updated filters.
+The all disruptions screen integrated a menu accessible through the header right button. This menu shows the different transport categories with a default selection.<br>
+If the user hits the **Apply** button after changing the selection state, the all disruptions screen will refresh and will show the disruptions according to the updated filters.
 
 <img class="img-overview" src="/navitia_sdk_docs/assets/img/traffic_android_filters_menu.png" alt="Filters menu">
 

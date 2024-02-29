@@ -6,6 +6,8 @@ title: Journey Android - Changelogs - Navitia SDK Docs
 
 ## Available versions
 
+* [v5.10.2](releases/5.10.2/index.md) (_28 Feb 2024_)
+* [v5.10.1](releases/5.10.1/index.md) (09 Feb 2024_)
 * [v5.10.0](releases/5.10.0/index.md) (_30 Jan 2024_)
 * [v5.9.0](releases/5.9.0/index.md) (_11 Jan 2024_)
 * [v5.8.0](releases/5.8.0/index.md) (_14 Nov 2023_)

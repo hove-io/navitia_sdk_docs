@@ -9,7 +9,7 @@ title: Schedule iOS - Navitia SDK Docs
 In your project, add the following lines to your `Podfile` :
 
 ```ruby
-platform :ios, '13.0' # Minimum deployment target
+platform :ios, '14.0' # Minimum deployment target
 use_frameworks!
 
 source 'https://github.com/CocoaPods/Specs.git' # Default Cocoapods URL
