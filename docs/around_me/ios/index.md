@@ -9,7 +9,7 @@ title: Around Me iOS - Navitia SDK Docs
 In your project, add the following lines to your `Podfile` :
 
 ``` ruby
-platform :ios, '13.0' # Minimum deployment target
+platform :ios, '14.0' # Minimum deployment target
 use_frameworks!
 
 source 'https://github.com/CocoaPods/Specs.git' # Default Cocoapods URL
@@ -95,15 +95,26 @@ do {
 
 ## 🚀  Launching
 
-This module has a single entry point. 
+This module has a single entry point. The parameter `showBack` handles the back button visibility on the first screen.
+Please note that if you want to use the `rootViewController` as a `ChildViewController` of your `ViewController`, you should embed it in an `NavigationController`.  
 
 ``` swift
 guard let aroundMeViewController = AroundMe.shared.rootViewController else {
   return nil
 }
 
-navigationController?.pushViewController(aroundMeViewController, animated: false)
+// Hide back button embedded in the first screen
+aroundMeViewController.showBack = false
+
+// With a NavigationController
+navigationController?.pushViewController(aroundMeViewController, animated: false) // (1)
+
+// With a ChildViewController
+yourViewController.addChild(UINavigationController(rootViewController: aroundMeViewController)) // (2)
 ```
+
+1.  Use this code if you're using your own NavigationController
+2.  Use this code if you're using a ChildViewController
 
 ## 📱 Screens
 
