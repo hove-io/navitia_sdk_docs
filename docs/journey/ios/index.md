@@ -9,7 +9,7 @@ title: Journey iOS - Navitia SDK Docs
 In your project, add the following lines to your `Podfile` :
 
 ```ruby
-platform :ios, '13.0' # Minimum deployment target
+platform :ios, '14.0' # Minimum deployment target
 use_frameworks!
 
 source 'https://github.com/CocoaPods/Specs.git' # Default Cocoapods URL
@@ -104,13 +104,26 @@ JourneySdk.shared.tracker = self
 
 ## 🚀  Launching
 
-This module has a single entry point. 
+This module has a single entry point. The parameter `showBack` handles the back button visibility on the first screen.
+Please note that if you want to use the `rootViewController` as a `ChildViewController` of your `ViewController`, you should embed it in an `NavigationController`. 
 
 ```swift
-if let journeyViewController = JourneySdk.shared.rootViewController {
-  navigationController?.pushViewController(journeyViewController, animated: false)
+guard let journeyViewController = JourneySdk.shared.rootViewController else {
+  return nil
 }
+
+// Hide back button embedded in the first screen
+journeyViewController.showBack = false
+
+// With a NavigationController
+navigationController?.pushViewController(journeyViewController, animated: false) // (1)
+
+// With a ChildViewController
+yourViewController.addChild(UINavigationController(rootViewController: journeyViewController)) // (2)
 ```
+
+1.  Use this code if you're using your own NavigationController
+2.  Use this code if you're using a ChildViewController
 
 ### JourneysRequest
 
@@ -148,8 +161,8 @@ The `JourneysRequest` object allows to configure the first itinerary search at s
 | `maxCarNoParkDurationToPt` | Check on [Navitia](https://doc.navitia.io/#journeys) | `Int` | `nil` |
 | `maxDuration` | Check on [Navitia](https://doc.navitia.io/#journeys) | `Int` | `nil` |
 | `maxDurationToPt` | Check on [Navitia](https://doc.navitia.io/#journeys) | `Int` | `nil` |
-| `maxNbJourneys` | The max number of journeys to be displayed | `Int` | `-1` |
-| `maxNbTransfers` | The max number of public transport transfers | `Int` | `-1` |
+| `maxNbJourneys` | The max number of journeys to be displayed | `Int` | `nil` |
+| `maxNbTransfers` | The max number of public transport transfers | `Int` | `nil` |
 | `maxRidesharingDirectPathDuration` | Check on [Navitia](https://doc.navitia.io/#journeys) | `Int` | `nil` |
 | `maxRidesharingDurationToPt` | Check on [Navitia](https://doc.navitia.io/#journeys) | `Int` | `nil` |
 | `maxTaxiDirectPathDuration` | Check on [Navitia](https://doc.navitia.io/#journeys) | `Int` | `nil` |
@@ -157,8 +170,8 @@ The `JourneysRequest` object allows to configure the first itinerary search at s
 | `maxWaitingDuration` | Check on [Navitia](https://doc.navitia.io/#journeys) | `Int` | `nil` |
 | `maxWalkingDirectPathDuration` | Check on [Navitia](https://doc.navitia.io/#journeys) | `Int` | `nil` |
 | `maxWalkingDurationToPt` | Check on [Navitia](https://doc.navitia.io/#journeys) | `Int` | `nil` |
-| `minNbJourneys` | The min number of journeys to be displayed | `Int` | `-1` |
-| `minNbTransfers` | The min number of public transport transfers | `Int` | `-1` |
+| `minNbJourneys` | The min number of journeys to be displayed | `Int` | `nil` |
+| `minNbTransfers` | The min number of public transport transfers | `Int` | `nil` |
 | `originId` | Origin Navitia ID | `String` | `""` |
 | `originLabel` | Origin label, if not set the address will be displayed | `String` | `""` |
 | `ridesharingSpeed` | Ridesharing speed | `Float` | `nil` |
