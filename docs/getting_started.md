@@ -363,6 +363,7 @@ The following are the possible configuration parameters:
 | `max_favorite_pois` | :material-close: | Define the max favorite POIs | `Int` | `10` |
 | `max_history` | :material-close: | Define the max history items | `Int` | `10` |
 | `next_departures` | :material-close: | Show/hide the next departures | [`Next departures`](#next-departures) | - |
+| `park_availability` | :material-close: | Set park availability request frequency | [`Park availability`](#next-departures) | - |
 | `price` | :material-close: | Show/hide the itinerary price | `Boolean` | `true` |
 | `ridesharing_price` | :material-close: | Show/hide the itinerary ridesharing price | `Boolean` | `true` |
 | `search_only` | :material-close: | Enable/disable a direct search without input from user | `Boolean` | `false` |
@@ -371,6 +372,12 @@ The following are the possible configuration parameters:
 | `traffic` | :material-close: | Define Traffic module options | [`Traffic options`](#traffic-options-journey) | - |
 | `transport_networks` | :material-close: | Show/hide the public transport network | `Boolean` | `false` |
 | `vehicle_positions`| :material-close: | Show bus vehicle positions on roadmap | [`Vehicle positions`](#vehicle-positions) | - |
+
+##### Park availability (Journey)
+
+| Name | Required | Description | Type | Example |
+| --- |:---:| --- | :---: | :---: |
+| `frequency`| :material-check: | frequency of the park availability request in seconds | `Int` | `30` |
 
 ##### Traffic options (Journey)
 
@@ -1311,6 +1318,9 @@ Please note that this is the complete version of the configuration, remove unuse
       "next_departures": {
         "frequency": 30
       },
+      "park_availability": {
+        "frequency": 30
+      }
       "price": true,
       "ridesharing_price": true,
       "search_only": false,
