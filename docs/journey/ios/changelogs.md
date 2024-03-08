@@ -6,6 +6,7 @@ title: Journey iOS - Changelogs - Navitia SDK Docs
 
 ## Available versions
 
+* [v5.9.0](releases/5.9.0/index.md) (_07 Mar 2024_)
 * [v5.8.0](releases/5.8.0/index.md) (_30 Jan 2024_)
 * [v5.7.0](releases/5.7.0/index.md) (_27 Dec 2023_)
 * [v5.6.0](releases/5.6.0/index.md) (_14 Nov 2023_)
