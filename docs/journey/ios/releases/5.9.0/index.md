@@ -9,9 +9,6 @@ title: Journey iOS 5.9.0 - Changelog - Navitia SDK Docs
 #### Features
 - Can configure park availability frequency
 
-#### Fixes
-- Disable dark mode for guidance screen
-
 #### Dependencies
 - `DesignEngine` -> `2.11.0`
 
