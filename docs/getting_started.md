@@ -560,11 +560,11 @@ Please note that this is the complete version of the configuration, remove unuse
       },
       "map": {
         "path": {
-            "bike": {
-                "cyclable": "",
-                "non_cyclable": "",
-            },
-            "car": ""
+          "bike": {
+            "cyclable": "",
+            "non_cyclable": ""
+          },
+          "car": ""
         }
       },
       "nav_bar_background": ""
@@ -926,6 +926,7 @@ Please note that this is the complete version of the configuration, remove unuse
           "ttf_file": "",
           "font_name": ""
         }
+      }
     },
     "schedule": {
       "alphanumeric": {
@@ -1355,7 +1356,7 @@ Please note that this is the complete version of the configuration, remove unuse
           ],
           "selected": true
         }
-      ]
+      ],
       "transport_networks": true
     }
   }
