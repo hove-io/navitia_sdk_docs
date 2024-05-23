@@ -6,6 +6,7 @@ title: Traffic iOS - Changelogs - Navitia SDK Docs
 
 ## Available versions
 
+* [v3.5.1](releases/3.5.1/index.md) (_21 Mai 2024_)
 * [v3.5.0](releases/3.5.0/index.md) (_27 Mar 2024_)
 * [v3.4.0](releases/3.4.0/index.md) (_25 Aug 2023_)
 * [v3.3.1](releases/3.3.1/index.md) (_12 Apr 2023_)
