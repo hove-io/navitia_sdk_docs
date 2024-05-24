@@ -1,5 +1,5 @@
 ---
-title: AroundMe iOS 2.2.1 - Changelog - Navitia SDK Docs
+title: AroundMe Android 2.2.1 - Changelog - Navitia SDK Docs
 ---
 
 # Around Me Android 2.2.1 Changelog

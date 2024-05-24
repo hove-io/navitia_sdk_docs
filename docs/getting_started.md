@@ -303,13 +303,16 @@ The following are the possible configuration parameters:
 
 | Name | Required | Description | Type |
 | --- |:---:| --- | :---: |
-| `bookmark_mode` | :material-close: | Enable/disable the bookmarks feature | `Boolean` |
+| `account_mode` | :material-close: | Enable/disable the account feature | `Boolean` |
+| `bookmark_mode` | :material-close: | Enable/disable the bookmarks feature | [`Bookmark options`](#bookmark-options) |
 | `default_location` | :material-close: | The default location on first launch | [`Default location`](#default-location) |
 | `go_from_go_to` | :material-close: | Show/hide the go from/go to buttons | `Boolean` |
 | `journey_mode` | :material-close: | Enable/disable the journey search mode | `Boolean` |
 | `max_history` | :material-close: | Define the max history items | `Int` |
 | `min_zoom_level` | :material-close: | Define the min zoom level of map. Android only | `Int` |
 | `next_departures` | :material-close: | Show/hide the next departures | [`Next departures`](#next-departures) |
+| `park_availability`| :material-close: | Configure bss and car parking availability requests | [`Park Availability`](#park-availability) |
+| `schedule_mode` | :material-close: | Enable/disable redirection to schedule autocompletion screen | `Boolean` |
 | `stop_point_search` | :material-close: | Enable/disable search by stop point instead of stop area | `Boolean` |
 | `traffic_mode` | :material-close: | Show/hide the traffic button | `Boolean` |
 | `vehicle_positions`| :material-close: | Show bus vehicle positions on map | [`Vehicle positions`](#vehicle-positions) |
@@ -327,11 +330,24 @@ The following are the possible configuration parameters:
 | --- |:---:| --- | :---: | :---: |
 | `frequency`| :material-check: | frequency of the next departures request in seconds | `Int` | `30` |
 
+##### Park availability
+
+| Name | Required | Description | Type | Example |
+| --- |:---:| --- | :---: | :---: |
+| `frequency`| :material-check: | frequency of the park availability requests in seconds | `Int` | `30` |
+
 ##### Vehicle positions
 
 | Name | Required | Description | Type | Example |
 | --- |:---:| --- | :---: | :---: |
 | `frequency` | :material-check: | frequency of the vehicle positions request in seconds | `String` | 30 |
+
+##### Bookmark options
+
+| Name | Required | Description | Type | Example |
+| --- |:---:| --- | :---: | :---: |
+| `bss` | :material-close: | Enable/disable favorite bss stations tab | `Boolean` | `true` |
+| `journeys` | :material-close: | Enable/disable favorite journeys tab | `Boolean` | `false` |
 
 #### Bookmark features
 
@@ -365,6 +381,7 @@ The following are the possible configuration parameters:
 | `next_departures` | :material-close: | Show/hide the next departures | [`Next departures`](#next-departures) | - |
 | `price` | :material-close: | Show/hide the itinerary price | `Boolean` | `true` |
 | `ridesharing_price` | :material-close: | Show/hide the itinerary ridesharing price | `Boolean` | `true` |
+| `park_availability`| :material-close: | Configure bss and car parking availability requests | [`Park Availability`](#park-availability) |
 | `search_only` | :material-close: | Enable/disable a direct search without input from user | `Boolean` | `false` |
 | `step_by_step_guidance` | :material-close: | Enable/disable the step by step guidance | `Boolean` |
 | `stop_point_search_mode` | :material-close: | Enable/disable search by stop point instead of stop area | `Boolean` | `false` |
@@ -926,9 +943,94 @@ Please note that this is the complete version of the configuration, remove unuse
           "ttf_file": "",
           "font_name": ""
         }
-      }
-    },
-    "schedule": {
+      },
+      "schedule": {
+        "alphanumeric": {
+          "regular": {
+            "font_res": "",
+            "ttf_file": "",
+            "font_name": ""
+          },
+          "italic": {
+            "font_res": "",
+            "ttf_file": "",
+            "font_name": ""
+          },
+          "bold": {
+            "font_res": "",
+            "ttf_file": "",
+            "font_name": ""
+          },
+          "bold_italic": {
+            "font_res": "",
+            "ttf_file": "",
+            "font_name": ""
+          },
+          "semi_bold": {
+            "font_res": "",
+            "ttf_file": "",
+            "font_name": ""
+          },
+          "semi_bold_italic": {
+            "font_res": "",
+            "ttf_file": "",
+            "font_name": ""
+          },
+          "light": {
+            "font_res": "",
+            "ttf_file": "",
+            "font_name": ""
+          },
+          "light_italic": {
+            "font_res": "",
+            "ttf_file": "",
+            "font_name": ""
+          }
+        },
+        "numeric": {
+          "regular": {
+            "font_res": "",
+            "ttf_file": "",
+            "font_name": ""
+          },
+          "italic": {
+            "font_res": "",
+            "ttf_file": "",
+            "font_name": ""
+          },
+          "bold": {
+            "font_res": "",
+            "ttf_file": "",
+            "font_name": ""
+          },
+          "bold_italic": {
+            "font_res": "",
+            "ttf_file": "",
+            "font_name": ""
+          },
+          "semi_bold": {
+            "font_res": "",
+            "ttf_file": "",
+            "font_name": ""
+          },
+          "semi_bold_italic": {
+            "font_res": "",
+            "ttf_file": "",
+            "font_name": ""
+          },
+          "light": {
+            "font_res": "",
+            "ttf_file": "",
+            "font_name": ""
+          },
+          "light_italic": {
+            "font_res": "",
+            "ttf_file": "",
+            "font_name": ""
+          }
+        }
+      },
+      "traffic": {
       "alphanumeric": {
         "regular": {
           "font_res": "",
@@ -1013,91 +1115,6 @@ Please note that this is the complete version of the configuration, remove unuse
           "font_name": ""
         }
       }
-    },
-    "traffic": {
-      "alphanumeric": {
-        "regular": {
-          "font_res": "",
-          "ttf_file": "",
-          "font_name": ""
-        },
-        "italic": {
-          "font_res": "",
-          "ttf_file": "",
-          "font_name": ""
-        },
-        "bold": {
-          "font_res": "",
-          "ttf_file": "",
-          "font_name": ""
-        },
-        "bold_italic": {
-          "font_res": "",
-          "ttf_file": "",
-          "font_name": ""
-        },
-        "semi_bold": {
-          "font_res": "",
-          "ttf_file": "",
-          "font_name": ""
-        },
-        "semi_bold_italic": {
-          "font_res": "",
-          "ttf_file": "",
-          "font_name": ""
-        },
-        "light": {
-          "font_res": "",
-          "ttf_file": "",
-          "font_name": ""
-        },
-        "light_italic": {
-          "font_res": "",
-          "ttf_file": "",
-          "font_name": ""
-        }
-      },
-      "numeric": {
-        "regular": {
-          "font_res": "",
-          "ttf_file": "",
-          "font_name": ""
-        },
-        "italic": {
-          "font_res": "",
-          "ttf_file": "",
-          "font_name": ""
-        },
-        "bold": {
-          "font_res": "",
-          "ttf_file": "",
-          "font_name": ""
-        },
-        "bold_italic": {
-          "font_res": "",
-          "ttf_file": "",
-          "font_name": ""
-        },
-        "semi_bold": {
-          "font_res": "",
-          "ttf_file": "",
-          "font_name": ""
-        },
-        "semi_bold_italic": {
-          "font_res": "",
-          "ttf_file": "",
-          "font_name": ""
-        },
-        "light": {
-          "font_res": "",
-          "ttf_file": "",
-          "font_name": ""
-        },
-        "light_italic": {
-          "font_res": "",
-          "ttf_file": "",
-          "font_name": ""
-        }
       }
     }
   },
@@ -1268,7 +1285,14 @@ Please note that this is the complete version of the configuration, remove unuse
       ]
     },
     "aroundme": {
-      "bookmark_mode": true,
+      "account_mode": true,
+      "booking": {
+        "title_res": ""
+      },
+      "bookmark_mode": {
+        "journeys": true,
+        "bss": true
+      },
       "default_location": {
         "lat": "48.846790",
         "lon": "2.377090"
@@ -1276,16 +1300,16 @@ Please note that this is the complete version of the configuration, remove unuse
       "go_from_go_to": true,
       "journey_mode": true,
       "max_history": 10,
-      "min_zoom_level": 15,
       "next_departures": {
         "frequency": 30
       },
+      "schedule_mode": true,
       "stop_point_search": true,
       "traffic_mode": true,
       "vehicle_positions": {
         "frequency": 30
       }
-    },
+    },  
     "bookmark": {
       "go_from_go_to": true,
       "next_departures": {
@@ -1310,6 +1334,9 @@ Please note that this is the complete version of the configuration, remove unuse
       "max_favorite_pois": 10,
       "max_history": 10,
       "next_departures": {
+        "frequency": 30
+      },
+      "park_availability": {
         "frequency": 30
       },
       "price": true,
