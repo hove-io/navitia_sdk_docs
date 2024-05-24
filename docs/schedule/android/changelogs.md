@@ -6,6 +6,9 @@ title: Schedule Android - Changelogs - Navitia SDK Docs
 
 ## Available versions
 
+* [v2.6.0](releases/2.6.0/index.md) (_21 Mai 2024_)
+* [v2.5.1](releases/2.5.1/index.md) (_21 Mar 2024_)
+* [v2.5.0](releases/2.5.0/index.md) (_12 Feb 2024_)
 * [v2.4.0](releases/2.4.0/index.md) (_11 Jan 2024_)
 * [v2.3.0](releases/2.3.0/index.md) (_23 Aug 2023_)
 * [v2.2.2](releases/2.2.2/index.md) (_03 Apr 2023_)
