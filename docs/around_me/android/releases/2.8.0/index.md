@@ -19,11 +19,11 @@ title: AroundMe Android 2.8.0 - Changelog - Navitia SDK Docs
 #### Fixes
 - Fix string resources persistance in database
 - Fix initialization of `AroundMeDisruptionColors`
-- Add showDirectlyAutoCompletion option for where are we going?
+- Add `showDirectlyAutoCompletion` option for _Where are we going?_
 - Fix realtime calls lifecycle
 - Remove old address marker after new search
-- Fix autocompletion order by replacing `surelyFind` by `multiFind` to allow null results in `mapNotNull`
-- Disable possibility to hide bottomsheet
+- Fix autocompletion order
+- Remove the ability to hide the bottom sheet
 - Add context to favorite journey route
 
 #### Dependencies

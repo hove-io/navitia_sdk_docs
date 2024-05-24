@@ -29,6 +29,3 @@ title: Bookmark Android 1.4.0 - Changelog - Navitia SDK Docs
 - `com.kisio.navitia.sdk.engine:router` > `2.3.1`
 - `com.kisio.navitia.sdk.engine:toolbox` > `1.13.1`
 - `org.jetbrains.kotlinx:kotlinx-serialization-json` > `1.5.1`
-
-
-

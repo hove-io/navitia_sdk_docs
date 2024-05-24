@@ -1309,7 +1309,7 @@ Please note that this is the complete version of the configuration, remove unuse
       "vehicle_positions": {
         "frequency": 30
       }
-    },  
+    },
     "bookmark": {
       "go_from_go_to": true,
       "next_departures": {
