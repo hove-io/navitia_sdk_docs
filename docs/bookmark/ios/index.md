@@ -16,7 +16,7 @@ source 'https://github.com/CocoaPods/Specs.git' # Default Cocoapods URL
 source 'https://github.com/hove-io/Podspecs.git' # Around Me podspec URL
 
 target 'YOUR_PROJECT_SCHEME' do
-  pod 'BookmarkSDK', '1.5.0' # Around Me Pod definition
+  pod 'BookmarkSDK', '1.5.2' # Around Me Pod definition
 end
 
 # Required for XCFramework

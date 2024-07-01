@@ -6,6 +6,7 @@ title: Around Me Android - Changelogs - Navitia SDK Docs
 
 ## Available versions
 
+* [v2.8.2](releases/2.8.2/index.md) (_24 Jun 2024_)
 * [v2.8.1](releases/2.8.1/index.md) (_07 Jun 2024_)
 * [v2.8.0](releases/2.8.0/index.md) (_21 Mai 2024_)
 * [v2.7.2](releases/2.7.2/index.md) (_28 Feb 2024_)
