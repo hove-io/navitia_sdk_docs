@@ -6,6 +6,7 @@ title: Expert iOS - Changelogs - Navitia SDK Docs
 
 ## Available versions
 
+* [v2.7.2](releases/2.7.2/index.md) (_25 Jun 2024_)
 * [v2.7.1](releases/2.7.1/index.md) (_27 Mar 2024_)
 * [v2.7.0](releases/2.7.0/index.md) (_30 Jan 2024_)
 * [v2.6.0](releases/2.6.0/index.md) (_27 Dec 2023_)
