@@ -10,7 +10,7 @@ Add the following dependencies in the `build.gradle` file of your application:
 
 ``` groovy
 dependencies {
-    implementation("com.kisio.navitia.sdk.ui:bookmark:1.5.1")
+    implementation("com.kisio.navitia.sdk.ui:bookmark:1.6.0")
 }
 ```
 
