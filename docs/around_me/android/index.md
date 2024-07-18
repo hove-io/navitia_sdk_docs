@@ -129,6 +129,16 @@ Please refer to the following schema to learn more about different interactions 
 
 <img class="img-navigating" src="/navitia_sdk_docs/assets/img/aroundme_android_screen_flow.png" alt="Screen flow">
 
+## 🎨 Theming
+
+The module utilizes graphical components from Material Design 3. To ensure these components function correctly and display properly on the screen, it is crucial to apply the appropriate parent theme:
+
+```xml
+<style name="Theme.App" parent="Theme.Material3.*"> <!--replace by the specific theme. For example: Theme.Material3.Light.NoActionBar-->
+    ...
+</style>
+```
+
 ## 📢 Communicating with other modules
 
 ### Journey

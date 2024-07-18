@@ -89,6 +89,16 @@ This screen lists all the favorite stations, Bike sharing service stations, car 
 
 <img class="img-overview" src="/navitia_sdk_docs/assets/img/bookmark_android_favorites_screen.png" alt="Favorites screen">
 
+## 🎨 Theming
+
+The module utilizes graphical components from Material Design 3. To ensure these components function correctly and display properly on the screen, it is crucial to apply the appropriate parent theme:
+
+```xml
+<style name="Theme.App" parent="Theme.Material3.*"> <!--replace by the specific theme. For example: Theme.Material3.Light.NoActionBar-->
+    ...
+</style>
+```
+
 ## 📢 Communicating with other modules
 
 ### Journey

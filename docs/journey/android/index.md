@@ -276,6 +276,18 @@ Please refer to the following schema to learn more about different interactions 
 
 ## 🎨 Theming
 
+### App theme
+
+The module utilizes graphical components from Material Design 3. To ensure these components function correctly and display properly on the screen, it is crucial to apply the appropriate parent theme:
+
+```xml
+<style name="Theme.App" parent="Theme.Material3.*"> <!--replace by the specific theme. For example: Theme.Material3.Light.NoActionBar-->
+    ...
+</style>
+```
+
+### Date time picker
+
 The date time picker theme in the Journeys screen is set by the system and cannot really offer yet some flexibility. If a dark mode is applied on the phone, the system will apply predefined colors regardless of the configured colors.<br>
 If you want to theme the date time picker, you can only add the following in your style or theme file of your app:
 
