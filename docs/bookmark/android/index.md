@@ -62,6 +62,7 @@ Each method has a `BookmarkNavigationListener.Event` parameter you can rely on.
 | Event |
 | --- |
 | `ADD_ADDRESS_BACK_TO_FAVORITES` |
+| `EXTERNAL_TO_ADD_ADDRESSES` |
 | `EXTERNAL_TO_FAVORITES` |
 | `FAVORITES_BACK_TO_EXTERNAL` |
 | `FAVORITES_TO_JOURNEY` |

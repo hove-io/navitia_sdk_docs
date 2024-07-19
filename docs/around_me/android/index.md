@@ -71,6 +71,7 @@ Each method has a `AroundMeNavigationListener.Event` parameter you can rely on.
 
 | Event |
 | --- |
+| `MAP_TO_ACCOUNT` |
 | `MAP_TO_FAVORITES` |
 | `MAP_TO_JOURNEY` |
 | `MAP_TO_TRAFFIC` |

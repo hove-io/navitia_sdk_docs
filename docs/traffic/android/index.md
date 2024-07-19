@@ -74,7 +74,6 @@ Each method has a `TrafficNavigationListener.Event` parameter you can rely on.
 | Event |
 | --- |
 | `ALL_DISRUPTIONS_BACK_TO_EXTERNAL` |
-| `ALL_DISRUPTIONS_BACK_TO_NETWORKS` |
 | `ALL_DISRUPTIONS_TO_AUTO_COMPLETION` |
 | `ALL_DISRUPTIONS_TO_DISRUPTION` |
 | `ALL_DISRUPTIONS_TO_MY_ALERTS` |
@@ -87,8 +86,6 @@ Each method has a `TrafficNavigationListener.Event` parameter you can rely on.
 | `MY_ALERTS_BACK_TO_ALL_DISRUPTIONS` |
 | `MY_ALERTS_TO_AUTO_COMPLETION` |
 | `MY_ALERTS_TO_EDIT_ALERT` |
-| `NETWORK_BACK_TO_EXTERNAL` |
-| `NETWORK_TO_ALL_DISRUPTIONS` |
 
 ### Alert subscription
 
