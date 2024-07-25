@@ -100,13 +100,73 @@ The module utilizes graphical components from Material Design 3. To ensure these
 </style>
 ```
 
-## 📢 Communicating with other modules
+## 📢 Communicating with other modules or the app
 
-### Journey
+Bookmark module can exchange data with, or navigate to, other modules or the host application.
+
+### Application
+
+Some route or callbacks are delegated to the application.
+If you have to receive some module data, the `Router` module must register a receiver with the right parameter:
+
+1.  `appRouterDataImpl` should be the class instance implementing `AppRouter.Data` interface. We recommand usign a `Application` subclass.
+
+If you have to handle navigation between modules, the `Router` module must also register a receiver:
+
+``` kotlin
+Router.getInstance()
+    .register(appUi = appRouterUiImpl) // (1)
+```
+
+1. `appRouterUiImpl` should be the class instance implementing `AppRouter.UI` interface. We recommand usign a `Application` subclass.
+
+#### Data interface methods
+
+##### onUpdateFavoriteStations
+
+```kotlin
+override fun onUpdateFavoriteStations(id: String) {
+    // (1)
+}
+```
+
+1.  handle the favorite station update booking
+
+| Param | Type | Description |
+| --- | --- | --- |
+| `id` | `String` | Updated favorite station id |
+
+### Modules
+
+#### Journey
 
 This module communicates with [Journey](../../journey/) module in order to get directions for a chosen itinerary. You should enable the `go_from_go_to` parameter in the [features configuration](../../getting_started/#around-me-features).<br>
 When the user taps on a marker on the map, the buttons **Go from there** and **Go to there** should pop up as follows:
 
 <img class="img-overview" src="/navitia_sdk_docs/assets/img/bookmark_android_go_fromto.png" alt="Go from/to">
 
-Clicking on one of the buttons will redirect the user to Journey module with the given origin/destination.<br>
+Clicking on one of the buttons will redirect the user to Journey module with the given origin/destination.
+
+##### Link via application host
+
+The following method from the `AppRouter.UI` interface should be implemented by the host application to enable navigation to the Journey module or any other custom screens. Note that the parameters of these methods can be ignored as needed.
+
+###### openJourneysViaHost
+
+```kotlin
+override fun openJourneysViaHost(
+    origin: SharedData.JourneyPoint?,
+    destination: SharedData.JourneyPoint?,
+    showDirectlyAutoCompletion: Boolean
+) {
+    // (1)
+}
+```
+
+1.  launch the journey module screen or your custom screen
+
+| Param | Type | Description | Value |
+| --- | --- | --- | --- |
+| `origin` | `SharedData.JourneyPoint?` | Point de départ souhaité de l'itinéraire. Il n'est pas obligatoire |
+| `destination` | `SharedData.JourneyPoint?` | Point d'arrivée souhaité de l'itinéraire. Il n'est pas obligatoire  |
+| `showDirectlyAutoCompletion` | `Boolean` | Affiche directement la recherche de départ et/ou d'arrivée |
