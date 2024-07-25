@@ -6,8 +6,8 @@ The documentation about Navitia SDK modules for iOS and Android is accessible th
 
 Install the following dependencies by running these commands:
 
-- `pip install mkdocs`
-- `pip install mkdocs-material`
+- `pip3 install mkdocs`
+- `pip3 install mkdocs-material`
 - `pip3 install mkdocs-exclude`
 
 ## Run
