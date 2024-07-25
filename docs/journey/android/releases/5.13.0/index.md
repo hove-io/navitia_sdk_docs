@@ -4,7 +4,7 @@ title: Journey Android 5.13.0 - Changelog - Navitia SDK Docs
 
 # Journey Android 5.13.0 Changelog
 
-<h2>🗓 19 Aug 2024</h2>
+<h2>🗓 26 Jul 2024</h2>
 
 #### Feature
 - Use new bookmark module routes

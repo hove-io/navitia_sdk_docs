@@ -135,10 +135,12 @@ Please refer to the following schema to learn more about different interactions 
 The module utilizes graphical components from Material Design 3. To ensure these components function correctly and display properly on the screen, it is crucial to apply the appropriate parent theme:
 
 ```xml
-<style name="Theme.App" parent="Theme.Material3.*"> <!--replace by the specific theme. For example: Theme.Material3.Light.NoActionBar-->
+<style name="Theme.App" parent="Theme.Material3.*"> <!-- (1) -->
     ...
 </style>
 ```
+
+1.  Replace by the specific theme. For example: `Theme.Material3.Light.NoActionBar`
 
 ## 📢 Communicating with other modules or the app
 
@@ -167,23 +169,17 @@ Router.getInstance()
 
 #### Data interface methods
 
-##### onBookFreeFloating
-
 A customizable button appears in the free floating details screen and the clicking event should be catched from the application.
 
 ```kotlin
 override fun onBookFreeFloating(id: String) {
-    // (1)
+    // handle the free floating booking
 }
 ```
-
-1.  handle the free floating booking
 
 | Param | Type | Description |
 | --- | --- | --- |
 | `id` | `String` | Selected free floating id |
-
-##### onBookPoi
 
 A customizable button appears in the POI details screen and the clicking event should be catched from the application.
 
@@ -191,11 +187,9 @@ A customizable button appears in the POI details screen and the clicking event s
 
 ```kotlin
 override fun onBookPoi(id: String) {
-    // (1)
+    // handle the free POI booking
 }
 ```
-
-1.  handle the free POI booking
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -207,66 +201,46 @@ override fun onBookPoi(id: String) {
 
 This module communicates with Account module in order to vizualize the account screens. You should enable the `account_mode` parameter in the [features configuration](../../getting_started/#around-me-features).
 
-##### Link via application host
-
-The following methods from the `AppRouter.UI` interface must be implemented by the host application to facilitate navigation to the Account module or any other custom screens.
-
-###### openAccountViaHost
+The following method from the `AppRouter.UI` interface must be implemented by the host application to facilitate navigation to the Account module or any other custom screens.
 
 ```kotlin
 override fun openAccountViaHost() {
-    // (1)
+    // launch the account module screen or your custom screen
 }
 ```
-
-1.  launch the account module screen or your custom screen
 
 #### Bookmark
 
 This module communicates with [Bookmark](../../bookmark/) module in order to vizualize favorite stations and POIs. You should enable the `bookmark_mode` parameter in the [features configuration](../../getting_started/#around-me-features).
 
-##### Link via application host
-
 The following methods from the `AppRouter.UI` interface should be implemented by the host application to enable navigation to the Bookmark module or any other custom screens. Note that the parameters of these methods can be omitted as needed.
-
-###### openFavoritesViaHost
 
 ```kotlin
 override fun openFavoritesViaHost(linkedModule: LinkedModule, tab: FavoriteTab) {
-    // (1)
+    // launch the bookmark module screen or your custom screen
 }
 ```
-
-1.  launch the bookmark module screen or your custom screen
 
 | Param | Type | Description | Value |
 | --- | --- | --- | --- |
 | `linkedModule` | `LinkedModule` | Module triggering the method call | `LinkedModule.AROUND_ME` or `LinkedModule.JOURNEY` |
 | `tab` | `FavoriteTab` | Tab to display in the Bookmark module screen | `FavoriteTab.TRANSPORTS`, `FavoriteTab.JOURNEYS` or `FavoriteTab.ADDRESSES` |
 
-###### openFavoriteHomeAddViaHost
-
 ```kotlin
 override fun openFavoriteHomeAddViaHost(linkedModule: LinkedModule) {
-    // (1)
+    // launch the bookmark module screen or your custom screen
 }
 ```
-
-1.  launch the bookmark module screen or your custom screen
 
 | Param | Type | Description | Value |
 | --- | --- | --- | --- |
 | `linkedModule` | `LinkedModule` | Module triggering the method call  | `LinkedModule.AROUND_ME` or `LinkedModule.JOURNEY` |
 
-###### openFavoriteWorkAddViaHost
-
 ```kotlin
 override fun openFavoriteWorkAddViaHost(linkedModule: LinkedModule) {
-    // (1)
+    // launch the bookmark module screen or your custom screen
 }
 ```
-
-1.  launch the bookmark module screen or your custom screen
 
 | Param | Type | Description | Value |
 | --- | --- | --- | --- |
@@ -282,11 +256,7 @@ When the user taps on a marker on the map, the buttons **Go from there** and **G
 Clicking on one of the buttons will redirect the user to Journey module with the given origin/destination.<br>
 Another way to communicate with [Journey](../../journey/) module is through the [Map](#map) screen and precisely the **Where are we going?** button, this feature should also be enabled by setting the `where_shall_we_go` in the [features configuration](../../getting_started/#around-me-features) to `true`.
 
-##### Link via application host
-
 The following method from the `AppRouter.UI` interface should be implemented by the host application to enable navigation to the Journey module or any other custom screens. Note that the parameters of these methods can be ignored as needed.
-
-###### openJourneysViaHost
 
 ```kotlin
 override fun openJourneysViaHost(
@@ -294,14 +264,12 @@ override fun openJourneysViaHost(
     destination: SharedData.JourneyPoint?,
     showDirectlyAutoCompletion: Boolean
 ) {
-    // (1)
+    // launch the journey module screen or your custom screen
 }
 ```
 
-1.  launch the journey module screen or your custom screen
-
-| Param | Type | Description | Value |
-| --- | --- | --- | --- |
+| Param | Type | Description |
+| --- | --- | --- |
 | `origin` | `SharedData.JourneyPoint?` | Point de départ souhaité de l'itinéraire. Il n'est pas obligatoire |
 | `destination` | `SharedData.JourneyPoint?` | Point d'arrivée souhaité de l'itinéraire. Il n'est pas obligatoire  |
 | `showDirectlyAutoCompletion` | `Boolean` | Affiche directement la recherche de départ et/ou d'arrivée |
@@ -310,19 +278,13 @@ override fun openJourneysViaHost(
 
 This module communicates with [Schedule](../../traffic/) module in order to vizualize line and station search. You should enable the `schedule_mode` parameter in the [features configuration](../../getting_started/#around-me-features).
 
-##### Link via application host
-
 The following method from the `AppRouter.UI` interface should be implemented by the host application to enable navigation to the Schedule module or any other custom screens.
-
-###### openScheduleSearchViaHost
 
 ```kotlin
 override fun openScheduleSearchViaHost() {
-    // (1)
+    // launch the schedule module screen or your custom screen
 }
 ```
-
-1.  launch the schedule module screen or your custom screen
 
 #### Traffic
 
@@ -331,16 +293,10 @@ A red traffic button will appear in the top right corner, only when the search b
 
 <img class="img-overview" src="/navitia_sdk_docs/assets/img/aroundme_android_traffic_button.png" alt="Traffic mode">
 
-##### Link via application host
-
 The following method from the `AppRouter.UI` interface should be implemented by the host application to enable navigation to the Traffic module or any other custom screens.
-
-###### openTrafficViaHost
 
 ```kotlin
 override fun openTrafficViaHost() {
-    // (1)
+    // launch the ticket module screen or your custom screen
 }
 ```
-
-1.  launch the ticket module screen or your custom screen

@@ -4,7 +4,7 @@ title: Schedule Android 2.7.1 - Changelog - Navitia SDK Docs
 
 # Schedule Android 2.7.1 Changelog
 
-<h2>🗓 19 Aug 2024</h2>
+<h2>🗓 26 Jul 2024</h2>
 
 #### Dependencies
 - `com.kisio.navitia.sdk.engine:design` > `2.16.0`

@@ -4,7 +4,7 @@ title: AroundMe Android 2.9.0 - Changelog - Navitia SDK Docs
 
 # Around Me Android 2.9.0 Changelog
 
-<h2>🗓 19 Aug 2024</h2>
+<h2>🗓 26 Jul 2024</h2>
 
 #### Features
 - Bookmark shorcut buttons can open implemented custom screens

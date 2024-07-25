@@ -4,7 +4,7 @@ title: Bookmark Android 1.6.0 - Changelog - Navitia SDK Docs
 
 # Bookmark Android 1.6.0 Changelog
 
-<h2>🗓 19 Aug 2024</h2>
+<h2>🗓 26 Jul 2024</h2>
 
 #### Features
 - Exposed functions for interacting with favorite data

@@ -95,10 +95,12 @@ This screen lists all the favorite stations, Bike sharing service stations, car 
 The module utilizes graphical components from Material Design 3. To ensure these components function correctly and display properly on the screen, it is crucial to apply the appropriate parent theme:
 
 ```xml
-<style name="Theme.App" parent="Theme.Material3.*"> <!--replace by the specific theme. For example: Theme.Material3.Light.NoActionBar-->
+<style name="Theme.App" parent="Theme.Material3.*"> <!-- (1) -->
     ...
 </style>
 ```
+
+1.  Replace by the specific theme. For example: `Theme.Material3.Light.NoActionBar`
 
 ## 📢 Communicating with other modules or the app
 
@@ -109,6 +111,11 @@ Bookmark module can exchange data with, or navigate to, other modules or the hos
 Some route or callbacks are delegated to the application.
 If you have to receive some module data, the `Router` module must register a receiver with the right parameter:
 
+``` kotlin
+Router.getInstance()
+    .register(appData = appRouterDataImpl) // (1)
+```
+
 1.  `appRouterDataImpl` should be the class instance implementing `AppRouter.Data` interface. We recommand usign a `Application` subclass.
 
 If you have to handle navigation between modules, the `Router` module must also register a receiver:
@@ -118,19 +125,15 @@ Router.getInstance()
     .register(appUi = appRouterUiImpl) // (1)
 ```
 
-1. `appRouterUiImpl` should be the class instance implementing `AppRouter.UI` interface. We recommand usign a `Application` subclass.
+1.  `appRouterUiImpl` should be the class instance implementing `AppRouter.UI` interface. We recommand usign a `Application` subclass.
 
 #### Data interface methods
 
-##### onUpdateFavoriteStations
-
 ```kotlin
 override fun onUpdateFavoriteStations(id: String) {
-    // (1)
+    // handle the favorite station update booking
 }
 ```
-
-1.  handle the favorite station update booking
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -147,11 +150,7 @@ When the user taps on a marker on the map, the buttons **Go from there** and **G
 
 Clicking on one of the buttons will redirect the user to Journey module with the given origin/destination.
 
-##### Link via application host
-
 The following method from the `AppRouter.UI` interface should be implemented by the host application to enable navigation to the Journey module or any other custom screens. Note that the parameters of these methods can be ignored as needed.
-
-###### openJourneysViaHost
 
 ```kotlin
 override fun openJourneysViaHost(
@@ -159,11 +158,9 @@ override fun openJourneysViaHost(
     destination: SharedData.JourneyPoint?,
     showDirectlyAutoCompletion: Boolean
 ) {
-    // (1)
+    // launch the journey module screen or your custom screen
 }
 ```
-
-1.  launch the journey module screen or your custom screen
 
 | Param | Type | Description | Value |
 | --- | --- | --- | --- |

@@ -281,10 +281,12 @@ Please refer to the following schema to learn more about different interactions 
 The module utilizes graphical components from Material Design 3. To ensure these components function correctly and display properly on the screen, it is crucial to apply the appropriate parent theme:
 
 ```xml
-<style name="Theme.App" parent="Theme.Material3.*"> <!--replace by the specific theme. For example: Theme.Material3.Light.NoActionBar-->
+<style name="Theme.App" parent="Theme.Material3.*"> <!-- (1) -->
     ...
 </style>
 ```
+
+1.  Replace by the specific theme. For example: `Theme.Material3.Light.NoActionBar`
 
 ### Date time picker
 
@@ -337,11 +339,9 @@ override fun openExternalNavigation(
     toLabel: String,
     mode: ExternalNavigationMode
 ) {
-    // (1)
+    // launch your external navigation service screen or your custom screen
 }
 ```
-
-1.  launch your external navigation service screen or your custom screen
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -443,33 +443,23 @@ Please note that the `additionalInformation` object in `SectionModel` can be of 
 
 This module communicates with [Bookmark](../../bookmark/) module in order to vizualize favorite stations and POIs. You should enable the `bookmark_mode` parameter in the [features configuration](../../getting_started/#around-me-features).<br>
 
-##### Link via application host
-
 The following methods from the `AppRouter.UI` interface should be implemented by the host application to enable navigation to the Bookmark module or any other custom screens. Note that the parameters of these methods can be omitted as needed.
-
-###### openFavoriteHomeAddViaHost
 
 ```kotlin
 override fun openFavoriteHomeAddViaHost(linkedModule: LinkedModule) {
-    // (1)
+    // launch the bookmark module screen or your custom screen
 }
 ```
-
-1.  launch the bookmark module screen or your custom screen
 
 | Param | Type | Description | Value |
 | --- | --- | --- | --- |
 | `linkedModule` | `LinkedModule` | Module triggering the method call  | `LinkedModule.AROUND_ME` or `LinkedModule.JOURNEY` |
 
-###### openFavoriteWorkAddViaHost
-
 ```kotlin
 override fun openFavoriteWorkAddViaHost(linkedModule: LinkedModule) {
-    // (1)
+    // launch the bookmark module screen or your custom screen
 }
 ```
-
-1.  launch the bookmark module screen or your custom screen
 
 | Param | Type | Description | Value |
 | --- | --- | --- | --- |

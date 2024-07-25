@@ -180,7 +180,9 @@ Please refer to the following schema to learn more about different interactions 
 The module utilizes graphical components from Material Design 3. To ensure these components function correctly and display properly on the screen, it is crucial to apply the appropriate parent theme:
 
 ```xml
-<style name="Theme.App" parent="Theme.Material3.*"> <!--replace by the specific theme. For example: Theme.Material3.Light.NoActionBar-->
+<style name="Theme.App" parent="Theme.Material3.*"> <!-- (1) -->
     ...
 </style>
 ```
+
+1.  Replace by the specific theme. For example: `Theme.Material3.Light.NoActionBar`
