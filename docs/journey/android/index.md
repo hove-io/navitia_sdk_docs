@@ -299,7 +299,9 @@ If you want to theme the date time picker, you can only add the following in you
 </style>
 ```
 
-## 📢 Communicating with other modules
+## 📢 Communicating with other modules or the app
+
+Journey module can exchange data with, or navigate to, other modules or the host application.
 
 ### Application
 
@@ -321,6 +323,35 @@ Router.getInstance()
 ```
 
 1. `appRouterUiImpl` should be the class instance implementing `AppRouter.UI` interface. We recommand usign a `Application` subclass.
+
+#### Roadmap navigation
+
+A journey may include sections for driving, walking, or cycling. This module provides the option in the Roadmap screen to enhance navigation accuracy using data from an external service.<br>
+To enable this feature, first enable the `external_navigation` parameter in the [features configuration](../../getting_started/#journey-features)n. Then, implement the following method:
+
+```kotlin
+override fun openExternalNavigation(
+    fromCoords: LatLng,
+    fromLabel: String,
+    toCoords: LatLng,
+    toLabel: String,
+    mode: ExternalNavigationMode
+) {
+    // (1)
+}
+```
+
+1.  launch your external navigation service screen or your custom screen
+
+| Param | Type | Description |
+| --- | --- | --- |
+| `fromCoords` | `LatLng` | Coordonnées de départ de la section de l'itinéraire |
+| `fromLabel` | `String` | Label du départ de la section de l'itinéraire |
+| `toCoords` | `LatLng` | Coordonnées d'arrivée de la section de l'itinéraire |
+| `toLabel` | `String` | Label de l'arrivée de la section de l'itinéraire |
+| `mode` | `ExternalNavigationMode` | Mode de déplacement de la section de l'itinéraire |
+
+`ExternalNavigationMode` has 3 modes of transportation that describe the section: `BIKE`, `CAR`, and `WALKING`.
 
 #### Roadmap actions
 
@@ -405,3 +436,41 @@ Please note that the `additionalInformation` object in `SectionModel` can be of 
 - `StreetNetworkSectionModel`: if the `mobilityType` is `STREET_NETWORK`
 - `PublicTransportSectionModel`: if the `mobilityType` is `PUBLIC_TRANSPORT`
 - `CarParkingSectionModel`: if the `mobilityType` is `CAR_PARKING`
+
+### Modules
+
+#### Bookmark
+
+This module communicates with [Bookmark](../../bookmark/) module in order to vizualize favorite stations and POIs. You should enable the `bookmark_mode` parameter in the [features configuration](../../getting_started/#around-me-features).<br>
+
+##### Link via application host
+
+The following methods from the `AppRouter.UI` interface should be implemented by the host application to enable navigation to the Bookmark module or any other custom screens. Note that the parameters of these methods can be omitted as needed.
+
+###### openFavoriteHomeAddViaHost
+
+```kotlin
+override fun openFavoriteHomeAddViaHost(linkedModule: LinkedModule) {
+    // (1)
+}
+```
+
+1.  launch the bookmark module screen or your custom screen
+
+| Param | Type | Description | Value |
+| --- | --- | --- | --- |
+| `linkedModule` | `LinkedModule` | Module triggering the method call  | `LinkedModule.AROUND_ME` or `LinkedModule.JOURNEY` |
+
+###### openFavoriteWorkAddViaHost
+
+```kotlin
+override fun openFavoriteWorkAddViaHost(linkedModule: LinkedModule) {
+    // (1)
+}
+```
+
+1.  launch the bookmark module screen or your custom screen
+
+| Param | Type | Description | Value |
+| --- | --- | --- | --- |
+| `linkedModule` | `LinkedModule` | Module triggering the method call  | `LinkedModule.AROUND_ME` or `LinkedModule.JOURNEY` |
