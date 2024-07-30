@@ -10,7 +10,7 @@ Add the following dependencies in the `build.gradle` file of your application:
 
 ``` groovy
 dependencies {
-    implementation("com.kisio.navitia.sdk.ui:schedule:2.7.0")
+    implementation("com.kisio.navitia.sdk.ui:schedule:2.7.1")
 }
 ```
 
@@ -73,20 +73,11 @@ Each method has a `ScheduleNavigationListener.Event` parameter you can rely on.
 
 | Event |
 | --- |
-| `DESTINATIONS_BACK_TO_LINES` |
-| `DESTINATIONS_BACK_TO_STATIONS` |
-| `DESTINATIONS_TO_MAP` |
-| `DESTINATIONS_TO_STATIONS` |
 | `LINES_BACK_TO_EXTERNAL` |
-| `LINES_TO_DESTINATIONS` |
 | `LINES_TO_STATIONS` |
-| `MAP_BACK_TO_DESTINATIONS` |
-| `MAP_BACK_TO_STATIONS` |
-| `SCHEDULE_BACK_TO_MAP` |
-| `STATIONS_BACK_TO_DESTINATIONS` |
+| `LINES_TO_TIMETABLE` |
 | `STATIONS_BACK_TO_LINE` |
-| `STATIONS_TO_DESTINATIONS` |
-| `STATIONS_TO_MAP` |
+| `TIMETABLE_BACK_TO_LINES` |
 
 ## 🚀  Launching
 
@@ -175,11 +166,25 @@ Please refer to the following schema to learn more about different interactions 
 
 ## 🎨 Theming
 
+### App theme
+
+The module utilizes graphical components from Material Design 3. To ensure these components function correctly and get displayed properly on the screen, it is crucial to apply the appropriate parent theme:
+
+```xml
+<style name="Theme.App" parent="Theme.Material3.*"> <!-- (1) -->
+    ...
+</style>
+```
+
+1.  Replace by the specific theme. For example: `Theme.Material3.Light.NoActionBar`
+
+### Date time picker
+
 The date picker theme in the Journeys screen is set by the system and cannot really offer yet some flexibility. If a dark mode is applied on the phone, the system will apply predefined colors regardless of the configured colors.<br>
 If you want to theme the date picker, you can only add the following in your style or theme file of your app:
 
 ```xml
-<style name="Schedule.MaterialCalendar" parent="ThemeOverlay.MaterialComponents.MaterialCalendar">
+<style name="Schedule.MaterialCalendar" parent="ThemeOverlay.Material3.MaterialCalendar">
     <item name="colorPrimary">@#251942</item>
     <item name="colorOnPrimary">#FFFFFF</item>
 </style>

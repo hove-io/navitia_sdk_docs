@@ -10,7 +10,7 @@ Add the following dependencies in the `build.gradle` file of your application:
 
 ``` groovy
 dependencies {
-    implementation("com.kisio.navitia.sdk.ui:journey:5.12.3")
+    implementation("com.kisio.navitia.sdk.ui:journey:5.13.0")
 }
 ```
 
@@ -276,6 +276,20 @@ Please refer to the following schema to learn more about different interactions 
 
 ## 🎨 Theming
 
+### App theme
+
+The module uses graphical components from Material Design 3. To ensure these components function correctly and get displayed properly on the screen, it is crucial to apply the appropriate parent theme:
+
+```xml
+<style name="Theme.App" parent="Theme.Material3.*"> <!-- (1) -->
+    ...
+</style>
+```
+
+1.  Replace by the specific theme. For example: `Theme.Material3.Light.NoActionBar`
+
+### Date time picker
+
 The date time picker theme in the Journeys screen is set by the system and cannot really offer yet some flexibility. If a dark mode is applied on the phone, the system will apply predefined colors regardless of the configured colors.<br>
 If you want to theme the date time picker, you can only add the following in your style or theme file of your app:
 
@@ -287,7 +301,9 @@ If you want to theme the date time picker, you can only add the following in you
 </style>
 ```
 
-## 📢 Communicating with other modules
+## 📢 Communicating with other modules or the app
+
+Journey module can exchange data with, or navigate to, other modules or the host application.
 
 ### Application
 
@@ -309,6 +325,33 @@ Router.getInstance()
 ```
 
 1. `appRouterUiImpl` should be the class instance implementing `AppRouter.UI` interface. We recommand usign a `Application` subclass.
+
+#### Roadmap navigation
+
+A journey may include sections for driving, walking, or cycling. This module provides the option in the Roadmap screen to enhance navigation accuracy using data from an external service.<br>
+To enable this feature, first enable the `external_navigation` parameter in the [features configuration](../../getting_started/#journey-features)n. Then, implement the following method:
+
+```kotlin
+override fun openExternalNavigation(
+    fromCoords: LatLng,
+    fromLabel: String,
+    toCoords: LatLng,
+    toLabel: String,
+    mode: ExternalNavigationMode
+) {
+    // launch your external navigation service screen or your custom screen
+}
+```
+
+| Param | Type | Description |
+| --- | --- | --- |
+| `fromCoords` | `LatLng` | Section departure coordinates |
+| `fromLabel` | `String` | Section departure label |
+| `toCoords` | `LatLng` | Section arrival coordinates |
+| `toLabel` | `String` | Section arrival label |
+| `mode` | `ExternalNavigationMode` | Section navigation mode |
+
+`ExternalNavigationMode` has 3 modes of transportation that describe the section: `BIKE`, `CAR`, and `WALKING`.
 
 #### Roadmap actions
 
@@ -393,3 +436,31 @@ Please note that the `additionalInformation` object in `SectionModel` can be of 
 - `StreetNetworkSectionModel`: if the `mobilityType` is `STREET_NETWORK`
 - `PublicTransportSectionModel`: if the `mobilityType` is `PUBLIC_TRANSPORT`
 - `CarParkingSectionModel`: if the `mobilityType` is `CAR_PARKING`
+
+### Modules
+
+#### Bookmark
+
+This module communicates with [Bookmark](../../bookmark/) module in order to display favorite stations and POIs. You should enable the `bookmark_mode` parameter in the [features configuration](../../getting_started/#around-me-features).<br>
+
+The following methods from the `AppRouter.UI` interface should be implemented by the host application to enable navigation to the Bookmark module or any other custom screen. Note that the parameters of these methods can be omitted as needed.
+
+```kotlin
+override fun openFavoriteHomeAddViaHost(linkedModule: BookmarkLinkedModule) {
+    // launch the bookmark module screen or your custom screen
+}
+```
+
+| Param | Type | Description | Value |
+| --- | --- | --- | --- |
+| `linkedModule` | `BookmarkLinkedModule` | Module triggering the method call  | `BookmarkLinkedModule.AROUND_ME` or `BookmarkLinkedModule.JOURNEY` |
+
+```kotlin
+override fun openFavoriteWorkAddViaHost(linkedModule: LinkedModule) {
+    // launch the bookmark module screen or your custom screen
+}
+```
+
+| Param | Type | Description | Value |
+| --- | --- | --- | --- |
+| `linkedModule` | `BookmarkLinkedModule ` | Module triggering the method call  | `BookmarkLinkedModule.AROUND_ME` or `BookmarkLinkedModule.JOURNEY` |
