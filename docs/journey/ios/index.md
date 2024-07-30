@@ -16,7 +16,7 @@ source 'https://github.com/CocoaPods/Specs.git' # Default Cocoapods URL
 source 'https://github.com/hove-io/Podspecs.git' # Journey podspec URL
 
 target 'YOUR_PROJECT_SCHEME' do
-  pod 'JourneySDK', '5.12.1' # Journey Pod definition
+  pod 'JourneySDK', '5.13.0' # Journey Pod definition
 end
 
 # Required for XCFramework
@@ -250,6 +250,27 @@ A history feature is added to this screen, allowing the user to choose from the 
 If `bookmark_mode` feature is enabled in the [Journey features](../../getting_started/#journey-features), a bookmark section appears in the same screen allowing the user to choose from his favorite addresses/places. A shortcut button is also available for Home and Work favorites.
 
 <img class="img-overview" src="/navitia_sdk_docs/assets/img/journey_ios_autocompletion_screen.png" alt="Autocompletion screen">
+
+#### Intercepting Bookmark callbacks
+
+In case you enable Bookmark feature in this module, some actions are defined by default to show Bookmark screen.
+Now, it's possible to intercept these callbacks and implement your own way of displaying user favorite data.<br>
+
+To do so, you will need to pass a `CustomJourneyBookmarkDelegate` to the Journey module instance.<br>
+This will allow to access to the following callbacks :
+
+``` swift
+extension YourClass: CustomJourneyBookmarkDelegate {
+
+  func onHomeAddressCompletionRequested(module: Router.BookmarkLinkedModule) {
+    // Called when the user taps on the Home button in Autocompletion screen and the home favorite address is not filled yet
+  }
+
+  func onWorkAddressCompletionRequested(module: Router.BookmarkLinkedModule) {
+    // Called when the user taps on the Work button in Autocompletion screen and the home favorite work is not filled yet
+  }
+}
+```
 
 ### Roadmap
 
