@@ -10,7 +10,7 @@ Add the following dependencies in the `build.gradle` file of your application:
 
 ``` groovy
 dependencies {
-    implementation("com.kisio.navitia.sdk.ui:aroundme:2.8.2")
+    implementation("com.kisio.navitia.sdk.ui:aroundme:2.9.0")
 }
 ```
 
@@ -71,6 +71,7 @@ Each method has a `AroundMeNavigationListener.Event` parameter you can rely on.
 
 | Event |
 | --- |
+| `MAP_TO_ACCOUNT` |
 | `MAP_TO_FAVORITES` |
 | `MAP_TO_JOURNEY` |
 | `MAP_TO_TRAFFIC` |
@@ -129,33 +130,25 @@ Please refer to the following schema to learn more about different interactions 
 
 <img class="img-navigating" src="/navitia_sdk_docs/assets/img/aroundme_android_screen_flow.png" alt="Screen flow">
 
-## 📢 Communicating with other modules
+## 🎨 Theming
 
-### Journey
+The module uses graphical components from Material Design 3. To ensure that these components function correctly and get displayed properly on the screen, it is crucial to apply the appropriate parent theme:
 
-This module communicates with [Journey](../../journey/) module in order to get directions for a chosen itinerary. You should enable the `go_from_go_to` parameter in the [features configuration](../../getting_started/#around-me-features).<br>
-When the user taps on a marker on the map, the buttons **Go from there** and **Go to there** should pop up as follows:
+```xml
+<style name="Theme.App" parent="Theme.Material3.*"> <!-- (1) -->
+    ...
+</style>
+```
 
-<img class="img-overview" src="/navitia_sdk_docs/assets/img/aroundme_android_go_fromto.png" alt="Go from/to">
+1.  Replace by the specific theme. For example: `Theme.Material3.Light.NoActionBar`
 
-Clicking on one of the buttons will redirect the user to Journey module with the given origin/destination.<br>
+## 📢 Communicating with other modules or the app
 
-Another way to communicate with [Journey](../../journey/) module is through the [Map](#map) screen and precisely the **Where are we going?** button, this feature should also be enabled by setting the `where_shall_we_go` in the [features configuration](../../getting_started/#around-me-features) to `true`.<br>
-
-### Bookmark
-
-This module communicates with [Bookmark](../../bookmark/) module in order to vizualize favorite stations and POIs. You should enable the `bookmark_mode` parameter in the [features configuration](../../getting_started/#around-me-features).<br>
-
-### Traffic
-
-This module communicates with [Traffic](../../traffic/) module in order to easily access traffic information. You should enable the `traffic_mode` parameter in the [features configuration](../../getting_started/#around-me-features).<br>
-A red traffic button will appear in the top right corner, only when the search bar is hidden.
-
-<img class="img-overview" src="/navitia_sdk_docs/assets/img/aroundme_android_traffic_button.png" alt="Traffic mode">
+Around Me module can exchange data with, or navigate to, other modules or the host application.
 
 ### Application
 
-Some route or callbacks are delegated to the application. 
+Some route or callbacks are delegated to the application.
 If you have to receive some module data, the `Router` module must register a receiver with the right parameter:
 
 ``` kotlin
@@ -174,12 +167,136 @@ Router.getInstance()
 
 1. `appRouterUiImpl` should be the class instance implementing `AppRouter.UI` interface. We recommand usign a `Application` subclass.
 
-##### POI event
+#### Data interface methods
 
-A customizable button appears in the POI details screen and the clicking event should be catched from the application. A POI ID is sent with the callback in order to identify the selected POI.
+A customizable button appears in the free floating details screen and the clicking event should be intercepted by the application.
+
+```kotlin
+override fun onBookFreeFloating(id: String) {
+    // handle the free floating booking
+}
+```
+
+| Param | Type | Description |
+| --- | --- | --- |
+| `id` | `String` | Selected free floating id |
+
+A customizable button appears in the POI details screen and the clicking event should be intercepted by the application.
 
 <img class="img-overview" src="/navitia_sdk_docs/assets/img/aroundme_android_poi_button_event.png" alt="POI button event">
 
-### Crowdsourcing
+```kotlin
+override fun onBookPoi(id: String) {
+    // handle the free POI booking
+}
+```
 
-⚠️ This section will be available soon!
+| Param | Type | Description |
+| --- | --- | --- |
+| `id` | `String` | Selected POI id |
+
+### Modules
+
+#### Account
+
+This module communicates with Account module in order to vizualize the account screen. You should enable the `account_mode` parameter in the [features configuration](../../getting_started/#around-me-features).
+
+The following method from the `AppRouter.UI` interface must be implemented by the host application to facilitate navigation to the Account module or any other custom screen.
+
+```kotlin
+override fun openAccountViaHost() {
+    // launch the account module screen or your custom screen
+}
+```
+
+#### Bookmark
+
+This module communicates with [Bookmark](../../bookmark/) module in order to display favorite stations and POIs. You should enable the `bookmark_mode` parameter in the [features configuration](../../getting_started/#around-me-features).
+
+The following methods from the `AppRouter.UI` interface should be implemented by the host application to enable navigation to the Bookmark module or any other custom screen. Note that the parameters of these methods can be omitted as needed.
+
+```kotlin
+override fun openFavoritesViaHost(linkedModule: LinkedModule, tab: FavoriteTab) {
+    // launch the bookmark module screen or your custom screen
+}
+```
+
+| Param | Type | Description | Value |
+| --- | --- | --- | --- |
+| `linkedModule` | `BookmarkLinkedModule` | Module triggering the method call | `BookmarkLinkedModule.AROUND_ME` or `BookmarkLinkedModule.JOURNEY` |
+| `tab` | `FavoriteTab` | Tab to display in the Bookmark module screen | `FavoriteTab.TRANSPORTS`, `FavoriteTab.JOURNEYS` or `FavoriteTab.ADDRESSES` |
+
+```kotlin
+override fun openFavoriteHomeAddViaHost(linkedModule: BookmarkLinkedModule) {
+    // launch the bookmark module screen or your custom screen
+}
+```
+
+| Param | Type | Description | Value |
+| --- | --- | --- | --- |
+| `linkedModule` | `BookmarkLinkedModule ` | Module triggering the method call  | `BookmarkLinkedModule.AROUND_ME` or `BookmarkLinkedModule.JOURNEY` |
+
+```kotlin
+override fun openFavoriteWorkAddViaHost(linkedModule: LinkedModule) {
+    // launch the bookmark module screen or your custom screen
+}
+```
+
+| Param | Type | Description | Value |
+| --- | --- | --- | --- |
+| `linkedModule` | `LinkedModule` | Module triggering the method call  | `LinkedModule.AROUND_ME` or `LinkedModule.JOURNEY` |
+
+#### Journey
+
+This module communicates with [Journey](../../journey/) module in order to get directions for a chosen itinerary. You should enable the `journey_mode` and the `go_from_go_to` parameter in the [features configuration](../../getting_started/#around-me-features).<br>
+When the user taps on a marker on the map, the buttons **Go from there** and **Go to there** should pop up as follows:
+
+<img class="img-overview" src="/navitia_sdk_docs/assets/img/aroundme_android_go_fromto.png" alt="Go from/to">
+
+Clicking on one of the buttons will redirect the user to Journey module with the given origin/destination.<br>
+Another way to communicate with [Journey](../../journey/) module is through the [Map](#map) screen and precisely the **Where are we going?** button, this feature should also be enabled by setting the `where_shall_we_go` in the [features configuration](../../getting_started/#around-me-features) to `true`.
+
+The following method from the `AppRouter.UI` interface should be implemented by the host application to enable navigation to the Journey module or any other custom screens. Note that the parameters of these methods can be ignored as needed.
+
+```kotlin
+override fun openJourneysViaHost(
+    origin: SharedData.JourneyPoint?,
+    destination: SharedData.JourneyPoint?,
+    showDirectlyAutoCompletion: Boolean
+) {
+    // launch the journey module screen or your custom screen
+}
+```
+
+| Param | Type | Description |
+| --- | --- | --- |
+| `origin` | `SharedData.JourneyPoint?` | Point de départ souhaité de l'itinéraire. Il n'est pas obligatoire |
+| `destination` | `SharedData.JourneyPoint?` | Point d'arrivée souhaité de l'itinéraire. Il n'est pas obligatoire  |
+| `showDirectlyAutoCompletion` | `Boolean` | Affiche directement la recherche de départ et/ou d'arrivée |
+
+#### Schedule
+
+This module communicates with [Schedule](../../traffic/) module in order to show line and station search. You should enable the `schedule_mode` parameter in the [features configuration](../../getting_started/#around-me-features).
+
+The following method from the `AppRouter.UI` interface should be implemented by the host application to enable navigation to the Schedule module or any other custom screens.
+
+```kotlin
+override fun openScheduleSearchViaHost() {
+    // launch the schedule module screen or your custom screen
+}
+```
+
+#### Traffic
+
+This module communicates with [Traffic](../../traffic/) module in order to easily access traffic information. You should enable the `traffic_mode` parameter in the [features configuration](../../getting_started/#around-me-features).<br>
+A red traffic button will appear in the top right corner, only when the search bar is hidden.
+
+<img class="img-overview" src="/navitia_sdk_docs/assets/img/aroundme_android_traffic_button.png" alt="Traffic mode">
+
+The following method from the `AppRouter.UI` interface should be implemented by the host application to enable navigation to the Traffic module or any other custom screen.
+
+```kotlin
+override fun openTrafficViaHost() {
+    // launch the ticket module screen or your custom screen
+}
+```
