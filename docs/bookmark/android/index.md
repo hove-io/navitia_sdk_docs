@@ -92,7 +92,7 @@ This screen lists all the favorite stations, Bike sharing service stations, car 
 
 ## 🎨 Theming
 
-The module utilizes graphical components from Material Design 3. To ensure these components function correctly and display properly on the screen, it is crucial to apply the appropriate parent theme:
+The module uses graphical components from Material Design 3. To ensure these components function correctly and get displayed properly on the screen, it is crucial to apply the appropriate parent theme:
 
 ```xml
 <style name="Theme.App" parent="Theme.Material3.*"> <!-- (1) -->
@@ -116,7 +116,7 @@ Router.getInstance()
     .register(appData = appRouterDataImpl) // (1)
 ```
 
-1.  `appRouterDataImpl` should be the class instance implementing `AppRouter.Data` interface. We recommand usign a `Application` subclass.
+1.  `appRouterDataImpl` should be the class instance implementing `AppRouter.Data` interface. We recommend using an `Application` subclass.
 
 If you have to handle navigation between modules, the `Router` module must also register a receiver:
 
@@ -125,7 +125,7 @@ Router.getInstance()
     .register(appUi = appRouterUiImpl) // (1)
 ```
 
-1.  `appRouterUiImpl` should be the class instance implementing `AppRouter.UI` interface. We recommand usign a `Application` subclass.
+1.  `appRouterUiImpl` should be the class instance implementing `AppRouter.UI` interface. We recommend using a `Application` subclass.
 
 #### Data interface methods
 
@@ -162,8 +162,8 @@ override fun openJourneysViaHost(
 }
 ```
 
-| Param | Type | Description | Value |
-| --- | --- | --- | --- |
-| `origin` | `SharedData.JourneyPoint?` | Point de départ souhaité de l'itinéraire. Il n'est pas obligatoire |
-| `destination` | `SharedData.JourneyPoint?` | Point d'arrivée souhaité de l'itinéraire. Il n'est pas obligatoire  |
-| `showDirectlyAutoCompletion` | `Boolean` | Affiche directement la recherche de départ et/ou d'arrivée |
+| Param | Type | Description |
+| --- | --- | --- |
+| `origin` | `SharedData.JourneyPoint?` | Journey departure point  |
+| `destination` | `SharedData.JourneyPoint?` | Journey arrival point  |
+| `showDirectlyAutoCompletion` | `Boolean` | Enable/disable showing the autocompletion on screen launch |

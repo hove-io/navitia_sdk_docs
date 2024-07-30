@@ -278,7 +278,7 @@ Please refer to the following schema to learn more about different interactions 
 
 ### App theme
 
-The module utilizes graphical components from Material Design 3. To ensure these components function correctly and display properly on the screen, it is crucial to apply the appropriate parent theme:
+The module uses graphical components from Material Design 3. To ensure these components function correctly and get displayed properly on the screen, it is crucial to apply the appropriate parent theme:
 
 ```xml
 <style name="Theme.App" parent="Theme.Material3.*"> <!-- (1) -->
@@ -345,11 +345,11 @@ override fun openExternalNavigation(
 
 | Param | Type | Description |
 | --- | --- | --- |
-| `fromCoords` | `LatLng` | Coordonnées de départ de la section de l'itinéraire |
-| `fromLabel` | `String` | Label du départ de la section de l'itinéraire |
-| `toCoords` | `LatLng` | Coordonnées d'arrivée de la section de l'itinéraire |
-| `toLabel` | `String` | Label de l'arrivée de la section de l'itinéraire |
-| `mode` | `ExternalNavigationMode` | Mode de déplacement de la section de l'itinéraire |
+| `fromCoords` | `LatLng` | Section departure coordinates |
+| `fromLabel` | `String` | Section departure label |
+| `toCoords` | `LatLng` | Section arrival coordinates |
+| `toLabel` | `String` | Section arrival label |
+| `mode` | `ExternalNavigationMode` | Section navigation mode |
 
 `ExternalNavigationMode` has 3 modes of transportation that describe the section: `BIKE`, `CAR`, and `WALKING`.
 
@@ -441,19 +441,19 @@ Please note that the `additionalInformation` object in `SectionModel` can be of 
 
 #### Bookmark
 
-This module communicates with [Bookmark](../../bookmark/) module in order to vizualize favorite stations and POIs. You should enable the `bookmark_mode` parameter in the [features configuration](../../getting_started/#around-me-features).<br>
+This module communicates with [Bookmark](../../bookmark/) module in order to display favorite stations and POIs. You should enable the `bookmark_mode` parameter in the [features configuration](../../getting_started/#around-me-features).<br>
 
-The following methods from the `AppRouter.UI` interface should be implemented by the host application to enable navigation to the Bookmark module or any other custom screens. Note that the parameters of these methods can be omitted as needed.
+The following methods from the `AppRouter.UI` interface should be implemented by the host application to enable navigation to the Bookmark module or any other custom screen. Note that the parameters of these methods can be omitted as needed.
 
 ```kotlin
-override fun openFavoriteHomeAddViaHost(linkedModule: LinkedModule) {
+override fun openFavoriteHomeAddViaHost(linkedModule: BookmarkLinkedModule) {
     // launch the bookmark module screen or your custom screen
 }
 ```
 
 | Param | Type | Description | Value |
 | --- | --- | --- | --- |
-| `linkedModule` | `LinkedModule` | Module triggering the method call  | `LinkedModule.AROUND_ME` or `LinkedModule.JOURNEY` |
+| `linkedModule` | `BookmarkLinkedModule` | Module triggering the method call  | `BookmarkLinkedModule.AROUND_ME` or `BookmarkLinkedModule.JOURNEY` |
 
 ```kotlin
 override fun openFavoriteWorkAddViaHost(linkedModule: LinkedModule) {
@@ -463,4 +463,4 @@ override fun openFavoriteWorkAddViaHost(linkedModule: LinkedModule) {
 
 | Param | Type | Description | Value |
 | --- | --- | --- | --- |
-| `linkedModule` | `LinkedModule` | Module triggering the method call  | `LinkedModule.AROUND_ME` or `LinkedModule.JOURNEY` |
+| `linkedModule` | `BookmarkLinkedModule ` | Module triggering the method call  | `BookmarkLinkedModule.AROUND_ME` or `BookmarkLinkedModule.JOURNEY` |

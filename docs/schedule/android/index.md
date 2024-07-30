@@ -168,7 +168,7 @@ Please refer to the following schema to learn more about different interactions 
 
 ### App theme
 
-The module utilizes graphical components from Material Design 3. To ensure these components function correctly and display properly on the screen, it is crucial to apply the appropriate parent theme:
+The module utilizes graphical components from Material Design 3. To ensure these components function correctly and get displayed properly on the screen, it is crucial to apply the appropriate parent theme:
 
 ```xml
 <style name="Theme.App" parent="Theme.Material3.*"> <!-- (1) -->

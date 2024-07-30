@@ -132,7 +132,7 @@ Please refer to the following schema to learn more about different interactions 
 
 ## 🎨 Theming
 
-The module utilizes graphical components from Material Design 3. To ensure these components function correctly and display properly on the screen, it is crucial to apply the appropriate parent theme:
+The module uses graphical components from Material Design 3. To ensure that these components function correctly and get displayed properly on the screen, it is crucial to apply the appropriate parent theme:
 
 ```xml
 <style name="Theme.App" parent="Theme.Material3.*"> <!-- (1) -->
@@ -169,7 +169,7 @@ Router.getInstance()
 
 #### Data interface methods
 
-A customizable button appears in the free floating details screen and the clicking event should be catched from the application.
+A customizable button appears in the free floating details screen and the clicking event should be intercepted by the application.
 
 ```kotlin
 override fun onBookFreeFloating(id: String) {
@@ -181,7 +181,7 @@ override fun onBookFreeFloating(id: String) {
 | --- | --- | --- |
 | `id` | `String` | Selected free floating id |
 
-A customizable button appears in the POI details screen and the clicking event should be catched from the application.
+A customizable button appears in the POI details screen and the clicking event should be intercepted by the application.
 
 <img class="img-overview" src="/navitia_sdk_docs/assets/img/aroundme_android_poi_button_event.png" alt="POI button event">
 
@@ -199,9 +199,9 @@ override fun onBookPoi(id: String) {
 
 #### Account
 
-This module communicates with Account module in order to vizualize the account screens. You should enable the `account_mode` parameter in the [features configuration](../../getting_started/#around-me-features).
+This module communicates with Account module in order to vizualize the account screen. You should enable the `account_mode` parameter in the [features configuration](../../getting_started/#around-me-features).
 
-The following method from the `AppRouter.UI` interface must be implemented by the host application to facilitate navigation to the Account module or any other custom screens.
+The following method from the `AppRouter.UI` interface must be implemented by the host application to facilitate navigation to the Account module or any other custom screen.
 
 ```kotlin
 override fun openAccountViaHost() {
@@ -211,9 +211,9 @@ override fun openAccountViaHost() {
 
 #### Bookmark
 
-This module communicates with [Bookmark](../../bookmark/) module in order to vizualize favorite stations and POIs. You should enable the `bookmark_mode` parameter in the [features configuration](../../getting_started/#around-me-features).
+This module communicates with [Bookmark](../../bookmark/) module in order to display favorite stations and POIs. You should enable the `bookmark_mode` parameter in the [features configuration](../../getting_started/#around-me-features).
 
-The following methods from the `AppRouter.UI` interface should be implemented by the host application to enable navigation to the Bookmark module or any other custom screens. Note that the parameters of these methods can be omitted as needed.
+The following methods from the `AppRouter.UI` interface should be implemented by the host application to enable navigation to the Bookmark module or any other custom screen. Note that the parameters of these methods can be omitted as needed.
 
 ```kotlin
 override fun openFavoritesViaHost(linkedModule: LinkedModule, tab: FavoriteTab) {
@@ -223,18 +223,18 @@ override fun openFavoritesViaHost(linkedModule: LinkedModule, tab: FavoriteTab) 
 
 | Param | Type | Description | Value |
 | --- | --- | --- | --- |
-| `linkedModule` | `LinkedModule` | Module triggering the method call | `LinkedModule.AROUND_ME` or `LinkedModule.JOURNEY` |
+| `linkedModule` | `BookmarkLinkedModule` | Module triggering the method call | `BookmarkLinkedModule.AROUND_ME` or `BookmarkLinkedModule.JOURNEY` |
 | `tab` | `FavoriteTab` | Tab to display in the Bookmark module screen | `FavoriteTab.TRANSPORTS`, `FavoriteTab.JOURNEYS` or `FavoriteTab.ADDRESSES` |
 
 ```kotlin
-override fun openFavoriteHomeAddViaHost(linkedModule: LinkedModule) {
+override fun openFavoriteHomeAddViaHost(linkedModule: BookmarkLinkedModule) {
     // launch the bookmark module screen or your custom screen
 }
 ```
 
 | Param | Type | Description | Value |
 | --- | --- | --- | --- |
-| `linkedModule` | `LinkedModule` | Module triggering the method call  | `LinkedModule.AROUND_ME` or `LinkedModule.JOURNEY` |
+| `linkedModule` | `BookmarkLinkedModule ` | Module triggering the method call  | `BookmarkLinkedModule.AROUND_ME` or `BookmarkLinkedModule.JOURNEY` |
 
 ```kotlin
 override fun openFavoriteWorkAddViaHost(linkedModule: LinkedModule) {
@@ -276,7 +276,7 @@ override fun openJourneysViaHost(
 
 #### Schedule
 
-This module communicates with [Schedule](../../traffic/) module in order to vizualize line and station search. You should enable the `schedule_mode` parameter in the [features configuration](../../getting_started/#around-me-features).
+This module communicates with [Schedule](../../traffic/) module in order to show line and station search. You should enable the `schedule_mode` parameter in the [features configuration](../../getting_started/#around-me-features).
 
 The following method from the `AppRouter.UI` interface should be implemented by the host application to enable navigation to the Schedule module or any other custom screens.
 
@@ -293,7 +293,7 @@ A red traffic button will appear in the top right corner, only when the search b
 
 <img class="img-overview" src="/navitia_sdk_docs/assets/img/aroundme_android_traffic_button.png" alt="Traffic mode">
 
-The following method from the `AppRouter.UI` interface should be implemented by the host application to enable navigation to the Traffic module or any other custom screens.
+The following method from the `AppRouter.UI` interface should be implemented by the host application to enable navigation to the Traffic module or any other custom screen.
 
 ```kotlin
 override fun openTrafficViaHost() {
