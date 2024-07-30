@@ -6,6 +6,7 @@ title: Around Me iOS - Changelogs - Navitia SDK Docs
 
 ## Available versions
 
+* [v3.7.0](releases/3.7.0/index.md) (_24 July 2024_)
 * [v3.6.2](releases/3.6.2/index.md) (_24 Jun 2024_)
 * [v3.6.1](releases/3.6.1/index.md) (_13 Jun 2024_)
 * [v3.6.0](releases/3.6.0/index.md) (_21 Mai 2024_)

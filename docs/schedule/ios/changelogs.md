@@ -6,6 +6,7 @@ title: Schedule iOS - Changelogs - Navitia SDK Docs
 
 ## Available versions
 
+* [v3.7.0](releases/3.7.0/index.md) (_24 Jul 2024_)
 * [v3.6.1](releases/3.6.1/index.md) (_27 Jun 2024_)
 * [v3.6.0](releases/3.6.0/index.md) (_25 Jun 2024_)
 * [v3.5.1](releases/3.5.1/index.md) (_13 Jun 2024_)
