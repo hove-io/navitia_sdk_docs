@@ -251,6 +251,27 @@ If `bookmark_mode` feature is enabled in the [Journey features](../../getting_st
 
 <img class="img-overview" src="/navitia_sdk_docs/assets/img/journey_ios_autocompletion_screen.png" alt="Autocompletion screen">
 
+#### Intercepting Bookmark callbacks
+
+In case you enable Bookmark feature in this module, some actions are defined by default to show Bookmark screen.
+Now, it's possible to intercept these callbacks and implement your own way of displaying user favorite data.<br>
+
+To do so, you will need to pass a `CustomJourneyBookmarkDelegate` to the Journey module instance.<br>
+This will allow to access to the following callbacks :
+
+``` swift
+extension YourClass: CustomJourneyBookmarkDelegate {
+
+  func onHomeAddressCompletionRequested(module: Router.BookmarkLinkedModule) {
+    // Called when the user taps on the Home button in Autocompletion screen and the home favorite address is not filled yet
+  }
+
+  func onWorkAddressCompletionRequested(module: Router.BookmarkLinkedModule) {
+    // Called when the user taps on the Work button in Autocompletion screen and the home favorite work is not filled yet
+  }
+}
+```
+
 ### Roadmap
 
 We believe that the user needs more useful details about his journey and that's where the roadmap screen comes in. In this page, the user gets a visual overview about the selected itinerary with a simple colorful drawing on a map. Departure and arrival markers are also shown on the map along with the user location and itinerary segments delimiters.
