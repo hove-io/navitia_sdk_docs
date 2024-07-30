@@ -16,7 +16,7 @@ source 'https://github.com/CocoaPods/Specs.git' # Default Cocoapods URL
 source 'https://github.com/hove-io/Podspecs.git' # Around Me podspec URL
 
 target 'YOUR_PROJECT_SCHEME' do
-  pod 'AroundMeSDK', '3.6.2' # Around Me Pod definition
+  pod 'AroundMeSDK', '3.7.0' # Around Me Pod definition
 end
 
 # Required for XCFramework
@@ -130,6 +130,32 @@ In the bottomsheet of the main screen, the last added favorite stations are show
 
 In the details bottomsheet of a station or a POI, there is a star button in order to save or delete it from the bookmarks.
 <img class="img-overview" src="/navitia_sdk_docs/assets/img/aroundme_ios_bookmark_saving_node.png" alt="Bookmark node">
+
+#### Intercepting Bookmark callbacks
+
+In case you enable Bookmark feature in this module, some actions are defined by default to show Bookmark screen.
+Now, it's possible to intercept these callbacks and implement your own way of displaying user favorite data.<br>
+
+To do so, you will need to pass a `CustomAroundMeBookmarkDelegate` to the Around Me module instance.<br>
+This will allow to access to the following callbacks :
+
+``` swift
+
+extension YourClass: CustomAroundMeBookmarkDelegate {
+
+  func onHomeAddressCompletionRequested(module: Router.BookmarkLinkedModule) {
+    // Called when the user taps on the Home button and the home favorite address is not filled yet
+  }
+
+  func onWorkAddressCompletionRequested(module: Router.BookmarkLinkedModule) {
+    // Called when the user taps on the Work button and the home favorite work is not filled yet
+  }
+
+  func onSeeAllFavoritesClicked() {
+    // Called when the user taps on All Favorites button in the bottom sheet tabs
+  }
+}
+```
 
 ### Search
 
