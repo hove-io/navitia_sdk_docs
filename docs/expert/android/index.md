@@ -8,7 +8,7 @@ title: Expert Android - Navitia SDK Docs
 
 Add the following dependency in the `build.gradle` file of your application:
 
-``` groovy
+```kotlin
 dependencies {
     implementation("com.kisio.navitia.sdk.data:expert:3.5.1")
 }

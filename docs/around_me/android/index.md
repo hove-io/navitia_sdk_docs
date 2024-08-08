@@ -8,7 +8,7 @@ title: Around Me Android - Navitia SDK Docs
 
 Add the following dependencies in the `build.gradle` file of your application:
 
-``` groovy
+```kotlin
 dependencies {
     implementation("com.kisio.navitia.sdk.ui:aroundme:2.9.0")
 }
@@ -270,9 +270,9 @@ override fun openJourneysViaHost(
 
 | Param | Type | Description |
 | --- | --- | --- |
-| `origin` | `SharedData.JourneyPoint?` | Point de départ souhaité de l'itinéraire. Il n'est pas obligatoire |
-| `destination` | `SharedData.JourneyPoint?` | Point d'arrivée souhaité de l'itinéraire. Il n'est pas obligatoire  |
-| `showDirectlyAutoCompletion` | `Boolean` | Affiche directement la recherche de départ et/ou d'arrivée |
+| `origin` | `SharedData.JourneyPoint?` | Desired starting point of the journey. Optional |
+| `destination` | `SharedData.JourneyPoint?` | Desired endpoint of the journey. Optional |
+| `showDirectlyAutoCompletion` | `Boolean` | Directly displays the search for the starting point and/or endpoint |
 
 #### Schedule
 
