@@ -8,7 +8,7 @@ title: Schedule Android - Navitia SDK Docs
 
 Add the following dependencies in the `build.gradle` file of your application:
 
-``` groovy
+```kotlin
 dependencies {
     implementation("com.kisio.navitia.sdk.ui:schedule:2.7.1")
 }
