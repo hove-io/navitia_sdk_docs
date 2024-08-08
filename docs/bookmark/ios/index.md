@@ -124,70 +124,214 @@ This screen lists all the favorite stations, Bike sharing service stations, car 
 
 ## 📖 Manipulating data
 
-In case you want to use your own screen to display favorites, it is possible to call data based methods.<br>
-The following are available methods:
+The module provides the ability to directly manipulate data for use in custom screens.
 
-##### Add favorites
-| Name | Description | Parameters | Result |
-| --- | --- | --- | --- |
-| `func addFavoriteAddress(_ address: SharedData.FavoriteAddress)` | Save a new favorite address | [`SharedData.FavoriteAddress`](#favorite-address) | `Bool`: success |
-| `func addFavoriteJourney(_ journey: SharedData.FavoriteJourney)` | Save a new favorite journey | [`SharedData.FavoriteJourney`](#favorite-journey) | `Bool`: success |
-| `func addFavoritePoi(_ poi: SharedData.FavoritePoi)` | Save a new favorite POI | [`SharedData.FavoritePoi`](#favorite-poi) | `Bool`: success |
-| `func addFavoriteStation(_ station: SharedData.FavoriteStation)` | Save a new favorite station | [`SharedData.FavoriteStation`](#favorite-station) | `Bool`: success |
+### Methods
 
-##### Delete favorites
-| Name | Description | Parameters | Result |
-| --- | --- | --- | --- |
-| `func fetchFavoriteAddress(id: String)` | Delete an existing address | `id`: address id | `Bool`: success |
-| `func deleteFavoriteJourney(id: String)` | Delete an existing journey | `id`: journey id | `Bool`: success |
-| `func deleteFavoritePoi(id: String)` | Delete an existing POI | `id`: POI id | `Bool`: success |
-| `func deleteFavoriteStation(id: String)` | Delete an existing station | `id`: station id | `Bool`: success |
+The various CRD methods are accessed through `BookmarkUI.shared`.
 
-##### Fetch favorites data
-| Name | Description | Parameters | Result |
-| --- | --- | --- | --- |
-| `func fetchFavoriteAddress(id: String)` | Fetch an existing address data | `id`: address id | [`SharedData.FavoriteAddress?`](#favorite-address) or `null` if not found |
-| `func fetchFavoriteAddresses(max: Int)` | Fetch all saved favorite addresses | `max`: limit the result count, `0` for all data | [`[SharedData.FavoriteAddress]`](#favorite-address) |
-| `func fetchFavoriteJourneys(max: Int)` | Fetch all saved favorite journeys | `max`: limit the result count, `0` for all data | [`[SharedData.FavoriteJourney]`](#favorite-journey) |
-| `func fetchFavoritePoi(id: String)` | Fetch an existing poi data | `id`: poi id | [`SharedData.FavoritePoi?`](#favorite-poi) |
-| `func fetchFavoritePois(max: Int)` | Fetch all saved favorite POIs | `max`: limit the result count, `0` for all data | [`[SharedData.FavoritePoi]`](#favorite-poi) |
-| `func fetchFavoriteStation(stopAreaId: String, lineId: String)` | Fetch an existing station data | `stopAreaId`: Navitia stop area ID, `lineId`: Navitia line ID | [`SharedData.FavoriteStation?`](#favorite-station) |
-| `func fetchFavoriteStations(max: Int)` | Fetch all saved favorite stations | `max`: limit the result count, `0` for all data | [`[SharedData.FavoriteStation]`](#favorite-station) |
-| `func isJourneyInBookmark(journeyId: String) -> Bool` | Fetch if a journey is added to favorites | `journeyId`: journey id | `Bool` |
+<h4>Create</h4>
 
-#### Favorite Address
+- Create a new favorite address. Returns a boolean if the creation has succeed or not.
+
+``` swift
+func addFavoriteAddress(_ address: SharedData.FavoriteAddress) -> Bool
+```
+
+| Param | Type | Description |
+| --- | --- | --- |
+| `address` | [`SharedData.FavoriteAddress`](#favorite-address) | Favorite address to create |
+
+- Create a new favorite journey. Returns a boolean if the creation has succeed or not.
+
+``` swift
+func addFavoriteJourney(_ journey: SharedData.FavoriteJourney) -> Bool
+```
+
+| Param | Type | Description |
+| --- | --- | --- |
+| `journey` | [`SharedData.FavoriteJourney`](#favorite-journey) | Favorite journey to create |
+
+- Create a new favorite POI. Returns a boolean if the creation has succeed or not.
+
+``` swift
+func addFavoritePoi(_ poi: SharedData.FavoritePoi) -> Bool
+```
+
+| Param | Type | Description |
+| --- | --- | --- |
+| `poi` | [`SharedData.FavoritePoi`](#favorite-poi)| Favorite POI to create |
+
+- Create a new favorite station. Returns a boolean if the creation has succeed or not.
+
+``` swift
+func addFavoriteStation(_ station: SharedData.FavoriteStation) -> Bool
+```
+
+| Param | Type | Description |
+| --- | --- | --- |
+| `station` | [`SharedData.FavoriteStation`](#favorite-station)| Favorite station to create |
+
+<h4>Read</h4>
+
+- Fetch a favorite address data. Returns [`SharedData.FavoriteAddress`](#favorite-address) or `nil` if not found.
+
+``` swift
+func fetchFavoriteAddress(id: String) -> SharedData.FavoriteAddress?
+```
+
+| Param | Type | Description |
+| --- | --- | --- |
+| `id` | `String` | Id of the favorite address to fetch |
+
+- Fetch all favorite addresses. Returns a list of [`SharedData.FavoriteAddress`](#favorite-address) or an empty list if there is no data.
+
+``` swift
+func fetchFavoriteAddresses(max: Int) -> [SharedData.FavoriteAddress]
+```
+
+| Param | Type | Description |
+| --- | --- | --- |
+| `max` | `Int` | Limit the result count. `0` for all data |
+
+- Fetch all favorite journeys. Returns a list of [`SharedData.FavoriteJourney`](#favorite-journey) or an empty list if there is no data.
+
+``` swift
+func fetchFavoriteJourneys(max: Int) -> [SharedData.FavoriteJourney]
+```
+
+| Param | Type | Description |
+| --- | --- | --- |
+| `max` | `Int` | Limit the result count. `0` for all data |
+
+- Get if a journey is added to favorites. Returns a boolean if the creation has succeed or not.
+
+``` swift
+func isJourneyInBookmark(journeyId: String) -> Bool
+```
+
+| Param | Type | Description |
+| --- | --- | --- |
+| `journeyId` | `String` | Id of the favorite journey to check |
+
+- Fetch a favorite POI data. Returns [`SharedData.FavoritePoi`](#favorite-poi) or `nil` if not found.
+
+``` swift
+func fetchFavoritePoi(id: String) -> SharedData.FavoritePoi?
+```
+
+| Param | Type | Description |
+| --- | --- | --- |
+| `id` | `String` | Id of the favorite POI to fetch |
+
+- Fetch all favorite POIs. Returns a list of [`SharedData.FavoritePoi`](#favorite-poi) or an empty list if there is no data.
+
+``` swift
+func fetchFavoritePois(max: Int) -> [SharedData.FavoritePoi]
+```
+
+| Param | Type | Description |
+| --- | --- | --- |
+| `max` | `Int` | Limit the result count. `0` for all data |
+
+- Fetch a favorite station data. Returns [`SharedData.FavoriteStation`](#favorite-station) or `nil` if not found.
+
+``` swift
+func fetchFavoriteStation(stopAreaId: String, lineId: String) -> SharedData.FavoriteStation?
+```
+
+| Param | Type | Description |
+| --- | --- | --- |
+| `stopAreaId` | `String` | Navitia stop area id of the favorite station to fetch |
+| `lineId` | `String` | Navitia line id of the favorite station to fetch |
+
+- Fetch all favorite stations. Returns a list of [`SharedData.FavoriteStation`](#avorite-station) or an empty list if there is no data.
+
+``` swift
+func fetchFavoriteStations(max: Int) -> [SharedData.FavoriteStation]
+```
+
+| Param | Type | Description |
+| --- | --- | --- |
+| `max` | `Int` | Limit the result count. `0` for all data |
+
+<h4>Delete</h4>
+
+- Delete an existing favorite address. Returns a boolean if the creation has succeed or not.
+
+``` swift
+func deleteFavoriteAddress(id: String) -> Bool
+```
+
+| Param | Type | Description |
+| --- | --- | --- |
+| `id` | `String` | Id of the favorite address to delete |
+
+- Delete an existing favorite journey. Returns a boolean if the creation has succeed or not.
+
+``` swift
+func deleteFavoriteJourney(id: String) -> Bool
+```
+
+| Param | Type | Description |
+| --- | --- | --- |
+| `id` | `String` | Id of the favorite journey to delete |
+
+- Delete an existing favorite POI. Returns a boolean if the creation has succeed or not.
+
+``` swift
+func deleteFavoritePoi(id: String) -> Bool
+```
+
+| Param | Type | Description |
+| --- | --- | --- |
+| `id` | `String` | Id of the favorite POI to delete |
+
+- Delete an existing favorite station. Returns a boolean if the creation has succeed or not.
+
+``` swift
+func deleteFavoriteStation(id: String) -> Bool
+```
+
+| Param | Type | Description |
+| --- | --- | --- |
+| `id` | `String` | Id of the favorite station to delete |
+
+### Data
+
+<h4>Favorite Address</h4>
 
 | Name | Required | Description | Type |
 | --- |:---:| --- | :---: |
-| `id` | :material-check: | Unique address ID | `String` |
+| `id` | :material-check: | Unique address id | `String` |
 | `name` | :material-check: | Address name | `String` |
 | `houseNumber` | :material-check: | House number | `Int` |
 | `address` | :material-check: | Address label | `String` |
 | `city` | :material-check: | Address city | `String` |
-| `zipCode` | :material-check: | Address zip code | `String` |
+| `zipCode` | :material-check: | Address postal code | `String` |
 | `addressTypeId` | :material-check: | Address type `home`, `work` or `custom` | `String` |
 | `additionalInformation` | :material-check: | Free field to save extra data | `String` |
 
-#### Favorite Journey
+<h4>Favorite Journey</h4>
 
 | Name | Required | Description | Type |
 | --- |:---:| --- | :---: |
-| `id` | :material-check: | Unique journey ID | `String` |
+| `id` | :material-check: | Unique journey id | `String` |
 | `fromName` | :material-check: | Departure name | `String` |
-| `fromId` | :material-check: | Departure Navitia ID | `String` |
+| `fromId` | :material-check: | Departure Navitia id | `String` |
 | `toName` | :material-check: | Arrival name | `String` |
-| `toId` | :material-check: | Arrival Navitia ID | `String` |
+| `toId` | :material-check: | Arrival Navitia id | `String` |
 | `connectionModes` | :material-check: | Array of connection modes. For example: `["bike", "walking"]` | `[String]` |
 | `sections` | :material-check: | Array of included journey sections | [`[SharedData.FavoriteJourneySection]`](#favorite-journey-section) |
 | `additionalInformation` | :material-check: | Free field to save extra data | `String` |
 
-##### Favorite Journey Section
+<h4>Favorite Journey Section</h4>
 
 | Name | Required | Description | Type |
 | --- |:---:| --- | :---: |
 | `type` | :material-check: | Section type. Example: `public_transport` | `String` |
 | `mode` | :material-check: | Section mode. Example: `walking` | `String` |
-| `lineId` | :material-check: | Navitia line ID | `String` |
+| `lineId` | :material-check: | Navitia line id | `String` |
 | `lineCode` | :material-check: | Navitia line code | `String` |
 | `lineTextColor` | :material-check: | Navitia line text color in HEX format | `String` |
 | `lineColor` | :material-check: | Navitia line color in HEX format | `String` |
@@ -195,11 +339,11 @@ The following are available methods:
 | `physicalMode` | :material-check: | Navitia public transport physical mode. Example: `physical_mode:Bus` | `String` |
 | `duration` | :material-check: | Section duration in seconds | `Int` |
 
-#### Favorite Poi
+<h4>Favorite Poi</h4>
 
 | Name | Required | Description | Type |
 | --- |:---:| --- | :---: |
-| `id` | :material-check: | Unique POI ID | `String` |
+| `id` | :material-check: | Unique POI id | `String` |
 | `coords` | :material-check: | POI coordinates | `CLLocationCoordinate2D` |
 | `name` | :material-check: | POI name | `String` |
 | `address` | :material-check: | POI address | `String` |
@@ -208,14 +352,14 @@ The following are available methods:
 | `network` | :material-check: | Navitia POI network | `String` |
 | `additionalInformation` | :material-check: | Free field to save extra data | `String` |
 
-#### Favorite Station
+<h4>Favorite Station</h4>
 
 | Name | Required | Description | Type |
 | --- |:---:| --- | :---: |
-| `stopAreaId` | :material-check: | Navitia stop area ID | `String` |
+| `stopAreaId` | :material-check: | Navitia stop area id | `String` |
 | `coords` | :material-check: | Station coordinates | `CLLocationCoordinate2D` |
 | `name` | :material-check: | Station name | `String` |
-| `lineId` | :material-check: | Navitia line ID | `String` |
+| `lineId` | :material-check: | Navitia line id | `String` |
 | `lineCode` | :material-check: | Line code | `String` |
 | `lineColor` | :material-check: | Line color in HEX format | `String` |
 | `lineTextColor` | :material-check: | Line text color in HEX format | `String` |

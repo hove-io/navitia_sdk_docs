@@ -8,7 +8,7 @@ title: Traffic Android - Navitia SDK Docs
 
 Add the following dependencies in the `build.gradle` file of your application:
 
-``` groovy
+```kotlin
 dependencies {
     implementation("com.kisio.navitia.sdk.ui:traffic:2.5.4")
 }
