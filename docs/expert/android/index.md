@@ -35,9 +35,6 @@ val expertSdk = ExpertSdk.getInstance().apply {
 }
 ```
 
-* [Available APIs](apis.md)
-* [Available models](models.md)
-
 ## 🚀 Launching
 
 You can now call any endpoint from `expertSdk` and its variety of builders that will help you request Navitia. As an example:

@@ -76,29 +76,51 @@ nav:
   - Home: index.md
   - Getting started: getting_started.md
   - Around Me:
-    - Overview: around_me/overview.md
-    - Android: around_me/android/index.md
-    - iOS: around_me/ios/index.md
+    - Android:
+      - Documentation: around_me/android/index.md
+      - Changelogs: around_me/android/changelogs.md
+    - iOS:
+      - Documentation: around_me/ios/index.md
+      - Changelogs: around_me/ios/changelogs.md
   - Bookmark:
-    - Overview: bookmark/overview.md
-    - Android: bookmark/android/index.md
-    - iOS: bookmark/ios/index.md
+    - Android:
+      - Documentation: bookmark/android/index.md
+      - Changelogs: bookmark/android/changelogs.md
+    - iOS:
+      - Documentation: bookmark/android/index.md
+      - Changelogs: bookmark/android/changelogs.md
   - Expert:
-    - Overview: expert/overview.md
-    - Android: expert/android/index.md
-    - iOS: expert/ios/index.md
+    - Android:
+      - Documentation: expert/android/index.md
+      - APIs: expert/android/apis.md
+      - Models: expert/android/models.md
+      - Changelogs: expert/android/changelogs.md
+    - iOS:
+      - Documentation: expert/ios/index.md
+      - APIs: expert/ios/apis.md
+      - Models: expert/ios/models.md
+      - Changelogs: expert/ios/changelogs.md
   - Journey:
-    - Overview: journey/overview.md
-    - Android: journey/android/index.md
-    - iOS: journey/ios/index.md
+    - Android:
+      - Documentation: journey/android/index.md
+      - Changelogs: journey/android/changelogs.md
+    - iOS:
+      - Documentation: journey/android/index.md
+      - Changelogs: journey/android/changelogs.md
   - Schedule:
-    - Overview: schedule/overview.md
-    - Android: schedule/android/index.md
-    - iOS: schedule/ios/index.md
+    - Android:
+      - Documentation: schedule/android/index.md
+      - Changelogs: schedule/android/changelogs.md
+    - iOS:
+      - Documentation: schedule/android/index.md
+      - Changelogs: schedule/android/changelogs.md
   - Traffic:
-    - Overview: traffic/overview.md
-    - Android: traffic/android/index.md
-    - iOS: traffic/ios/index.md
+    - Android:
+      - Documentation: traffic/android/index.md
+      - Changelogs: traffic/android/changelogs.md
+    - iOS:
+      - Documentation: traffic/android/index.md
+      - Changelogs: traffic/android/changelogs.md
     
 # Extra config
 extra_css:

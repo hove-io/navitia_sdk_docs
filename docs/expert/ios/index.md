@@ -39,9 +39,6 @@ Expert.shared.initialize(token: token,
                          debugEnabled: true)
 ```
 
-* [Available APIs](apis.md)
-* [Available models](models.md)
-
 ## 🚀 Launching
 
 You can now call any endpoint from `Expert.shared` and its variety of functions with a completion block that will help you request Navitia. As an example:
