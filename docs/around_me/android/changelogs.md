@@ -4,8 +4,6 @@ title: Around Me Android - Changelogs - Navitia SDK Docs
 
 # Around Me Android Changelogs
 
-## Available versions
-
 * [v2.10.0](releases/2.10.0/index.md) (_09 Sept 2024_)
 * [v2.9.1](releases/2.9.1/index.md) (_08 Aug 2024_)
 * [v2.9.0](releases/2.9.0/index.md) (_26 Jul 2024_)
