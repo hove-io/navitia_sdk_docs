@@ -27,3 +27,11 @@
 .md-source {
     display: none;
 }
+
+.android {
+    color: #32de84;
+}
+
+.ios {
+    color: #000000;
+}
