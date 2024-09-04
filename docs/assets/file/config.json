@@ -1,0 +1,858 @@
+{
+    "coverage": "",
+    "timezone": "",
+    "env": "PROD",
+    "osm_region": {
+        "id": "",
+        "name_res": ""
+    },
+    "colors": {
+        "account": {
+            "primary": "",
+            "secondary": ""
+        },
+        "aroundme": {
+            "primary": "",
+            "secondary": "",
+            "tertiary": "",
+            "map": {
+                "poi": "",
+                "transport": ""
+            }
+        },
+        "bookmark": {
+            "primary": "",
+            "secondary": ""
+        },
+        "crowdsourcing": {
+            "primary": "",
+            "secondary": ""
+        },
+        "journey": {
+            "primary": "",
+            "secondary": "",
+            "tertiary": "",
+            "destination": {
+                "primary": "",
+                "icon": ""
+            },
+            "origin": {
+                "icon": ""
+            },
+            "map": {
+                "path": {
+                    "bike": {
+                        "cyclable": "",
+                        "non_cyclable": ""
+                    },
+                    "car": ""
+                }
+            },
+            "nav_bar_background": ""
+        },
+        "schedule": {
+            "primary": "",
+            "secondary": ""
+        },
+        "traffic": {
+            "primary": "",
+            "secondary": ""
+        },
+        "disruptions": {
+            "information": "",
+            "non_blocking": "",
+            "blocking": ""
+        }
+    },
+    "fonts": {
+        "aroundme": {
+            "alphanumeric": {
+                "regular": {
+                    "font_res": "",
+                    "ttf_file": "",
+                    "font_name": ""
+                },
+                "italic": {
+                    "font_res": "",
+                    "ttf_file": "",
+                    "font_name": ""
+                },
+                "bold": {
+                    "font_res": "",
+                    "ttf_file": "",
+                    "font_name": ""
+                },
+                "bold_italic": {
+                    "font_res": "",
+                    "ttf_file": "",
+                    "font_name": ""
+                },
+                "semi_bold": {
+                    "font_res": "",
+                    "ttf_file": "",
+                    "font_name": ""
+                },
+                "semi_bold_italic": {
+                    "font_res": "",
+                    "ttf_file": "",
+                    "font_name": ""
+                },
+                "light": {
+                    "font_res": "",
+                    "ttf_file": "",
+                    "font_name": ""
+                },
+                "light_italic": {
+                    "font_res": "",
+                    "ttf_file": "",
+                    "font_name": ""
+                }
+            },
+            "numeric": {
+                "regular": {
+                    "font_res": "",
+                    "ttf_file": "",
+                    "font_name": ""
+                },
+                "italic": {
+                    "font_res": "",
+                    "ttf_file": "",
+                    "font_name": ""
+                },
+                "bold": {
+                    "font_res": "",
+                    "ttf_file": "",
+                    "font_name": ""
+                },
+                "bold_italic": {
+                    "font_res": "",
+                    "ttf_file": "",
+                    "font_name": ""
+                },
+                "semi_bold": {
+                    "font_res": "",
+                    "ttf_file": "",
+                    "font_name": ""
+                },
+                "semi_bold_italic": {
+                    "font_res": "",
+                    "ttf_file": "",
+                    "font_name": ""
+                },
+                "light": {
+                    "font_res": "",
+                    "ttf_file": "",
+                    "font_name": ""
+                },
+                "light_italic": {
+                    "font_res": "",
+                    "ttf_file": "",
+                    "font_name": ""
+                }
+            }
+        },
+        "bookmark": {
+            "alphanumeric": {
+                "regular": {
+                    "font_res": "",
+                    "ttf_file": "",
+                    "font_name": ""
+                },
+                "italic": {
+                    "font_res": "",
+                    "ttf_file": "",
+                    "font_name": ""
+                },
+                "bold": {
+                    "font_res": "",
+                    "ttf_file": "",
+                    "font_name": ""
+                },
+                "bold_italic": {
+                    "font_res": "",
+                    "ttf_file": "",
+                    "font_name": ""
+                },
+                "semi_bold": {
+                    "font_res": "",
+                    "ttf_file": "",
+                    "font_name": ""
+                },
+                "semi_bold_italic": {
+                    "font_res": "",
+                    "ttf_file": "",
+                    "font_name": ""
+                },
+                "light": {
+                    "font_res": "",
+                    "ttf_file": "",
+                    "font_name": ""
+                },
+                "light_italic": {
+                    "font_res": "",
+                    "ttf_file": "",
+                    "font_name": ""
+                }
+            },
+            "numeric": {
+                "regular": {
+                    "font_res": "",
+                    "ttf_file": "",
+                    "font_name": ""
+                },
+                "italic": {
+                    "font_res": "",
+                    "ttf_file": "",
+                    "font_name": ""
+                },
+                "bold": {
+                    "font_res": "",
+                    "ttf_file": "",
+                    "font_name": ""
+                },
+                "bold_italic": {
+                    "font_res": "",
+                    "ttf_file": "",
+                    "font_name": ""
+                },
+                "semi_bold": {
+                    "font_res": "",
+                    "ttf_file": "",
+                    "font_name": ""
+                },
+                "semi_bold_italic": {
+                    "font_res": "",
+                    "ttf_file": "",
+                    "font_name": ""
+                },
+                "light": {
+                    "font_res": "",
+                    "ttf_file": "",
+                    "font_name": ""
+                },
+                "light_italic": {
+                    "font_res": "",
+                    "ttf_file": "",
+                    "font_name": ""
+                }
+            }
+        },
+        "crowdsourcing": {
+            "alphanumeric": {
+                "regular": {
+                    "font_res": "",
+                    "ttf_file": "",
+                    "font_name": ""
+                },
+                "italic": {
+                    "font_res": "",
+                    "ttf_file": "",
+                    "font_name": ""
+                },
+                "bold": {
+                    "font_res": "",
+                    "ttf_file": "",
+                    "font_name": ""
+                },
+                "bold_italic": {
+                    "font_res": "",
+                    "ttf_file": "",
+                    "font_name": ""
+                },
+                "semi_bold": {
+                    "font_res": "",
+                    "ttf_file": "",
+                    "font_name": ""
+                },
+                "semi_bold_italic": {
+                    "font_res": "",
+                    "ttf_file": "",
+                    "font_name": ""
+                },
+                "light": {
+                    "font_res": "",
+                    "ttf_file": "",
+                    "font_name": ""
+                },
+                "light_italic": {
+                    "font_res": "",
+                    "ttf_file": "",
+                    "font_name": ""
+                }
+            },
+            "numeric": {
+                "regular": {
+                    "font_res": "",
+                    "ttf_file": "",
+                    "font_name": ""
+                },
+                "italic": {
+                    "font_res": "",
+                    "ttf_file": "",
+                    "font_name": ""
+                },
+                "bold": {
+                    "font_res": "",
+                    "ttf_file": "",
+                    "font_name": ""
+                },
+                "bold_italic": {
+                    "font_res": "",
+                    "ttf_file": "",
+                    "font_name": ""
+                },
+                "semi_bold": {
+                    "font_res": "",
+                    "ttf_file": "",
+                    "font_name": ""
+                },
+                "semi_bold_italic": {
+                    "font_res": "",
+                    "ttf_file": "",
+                    "font_name": ""
+                },
+                "light": {
+                    "font_res": "",
+                    "ttf_file": "",
+                    "font_name": ""
+                },
+                "light_italic": {
+                    "font_res": "",
+                    "ttf_file": "",
+                    "font_name": ""
+                }
+            }
+        },
+        "journey": {
+            "alphanumeric": {
+                "regular": {
+                    "font_res": "",
+                    "ttf_file": "",
+                    "font_name": ""
+                },
+                "italic": {
+                    "font_res": "",
+                    "ttf_file": "",
+                    "font_name": ""
+                },
+                "bold": {
+                    "font_res": "",
+                    "ttf_file": "",
+                    "font_name": ""
+                },
+                "bold_italic": {
+                    "font_res": "",
+                    "ttf_file": "",
+                    "font_name": ""
+                },
+                "semi_bold": {
+                    "font_res": "",
+                    "ttf_file": "",
+                    "font_name": ""
+                },
+                "semi_bold_italic": {
+                    "font_res": "",
+                    "ttf_file": "",
+                    "font_name": ""
+                },
+                "light": {
+                    "font_res": "",
+                    "ttf_file": "",
+                    "font_name": ""
+                },
+                "light_italic": {
+                    "font_res": "",
+                    "ttf_file": "",
+                    "font_name": ""
+                }
+            },
+            "numeric": {
+                "regular": {
+                    "font_res": "",
+                    "ttf_file": "",
+                    "font_name": ""
+                },
+                "italic": {
+                    "font_res": "",
+                    "ttf_file": "",
+                    "font_name": ""
+                },
+                "bold": {
+                    "font_res": "",
+                    "ttf_file": "",
+                    "font_name": ""
+                },
+                "bold_italic": {
+                    "font_res": "",
+                    "ttf_file": "",
+                    "font_name": ""
+                },
+                "semi_bold": {
+                    "font_res": "",
+                    "ttf_file": "",
+                    "font_name": ""
+                },
+                "semi_bold_italic": {
+                    "font_res": "",
+                    "ttf_file": "",
+                    "font_name": ""
+                },
+                "light": {
+                    "font_res": "",
+                    "ttf_file": "",
+                    "font_name": ""
+                },
+                "light_italic": {
+                    "font_res": "",
+                    "ttf_file": "",
+                    "font_name": ""
+                }
+            },
+            "schedule": {
+                "alphanumeric": {
+                    "regular": {
+                        "font_res": "",
+                        "ttf_file": "",
+                        "font_name": ""
+                    },
+                    "italic": {
+                        "font_res": "",
+                        "ttf_file": "",
+                        "font_name": ""
+                    },
+                    "bold": {
+                        "font_res": "",
+                        "ttf_file": "",
+                        "font_name": ""
+                    },
+                    "bold_italic": {
+                        "font_res": "",
+                        "ttf_file": "",
+                        "font_name": ""
+                    },
+                    "semi_bold": {
+                        "font_res": "",
+                        "ttf_file": "",
+                        "font_name": ""
+                    },
+                    "semi_bold_italic": {
+                        "font_res": "",
+                        "ttf_file": "",
+                        "font_name": ""
+                    },
+                    "light": {
+                        "font_res": "",
+                        "ttf_file": "",
+                        "font_name": ""
+                    },
+                    "light_italic": {
+                        "font_res": "",
+                        "ttf_file": "",
+                        "font_name": ""
+                    }
+                },
+                "numeric": {
+                    "regular": {
+                        "font_res": "",
+                        "ttf_file": "",
+                        "font_name": ""
+                    },
+                    "italic": {
+                        "font_res": "",
+                        "ttf_file": "",
+                        "font_name": ""
+                    },
+                    "bold": {
+                        "font_res": "",
+                        "ttf_file": "",
+                        "font_name": ""
+                    },
+                    "bold_italic": {
+                        "font_res": "",
+                        "ttf_file": "",
+                        "font_name": ""
+                    },
+                    "semi_bold": {
+                        "font_res": "",
+                        "ttf_file": "",
+                        "font_name": ""
+                    },
+                    "semi_bold_italic": {
+                        "font_res": "",
+                        "ttf_file": "",
+                        "font_name": ""
+                    },
+                    "light": {
+                        "font_res": "",
+                        "ttf_file": "",
+                        "font_name": ""
+                    },
+                    "light_italic": {
+                        "font_res": "",
+                        "ttf_file": "",
+                        "font_name": ""
+                    }
+                }
+            },
+            "traffic": {
+                "alphanumeric": {
+                    "regular": {
+                        "font_res": "",
+                        "ttf_file": "",
+                        "font_name": ""
+                    },
+                    "italic": {
+                        "font_res": "",
+                        "ttf_file": "",
+                        "font_name": ""
+                    },
+                    "bold": {
+                        "font_res": "",
+                        "ttf_file": "",
+                        "font_name": ""
+                    },
+                    "bold_italic": {
+                        "font_res": "",
+                        "ttf_file": "",
+                        "font_name": ""
+                    },
+                    "semi_bold": {
+                        "font_res": "",
+                        "ttf_file": "",
+                        "font_name": ""
+                    },
+                    "semi_bold_italic": {
+                        "font_res": "",
+                        "ttf_file": "",
+                        "font_name": ""
+                    },
+                    "light": {
+                        "font_res": "",
+                        "ttf_file": "",
+                        "font_name": ""
+                    },
+                    "light_italic": {
+                        "font_res": "",
+                        "ttf_file": "",
+                        "font_name": ""
+                    }
+                },
+                "numeric": {
+                    "regular": {
+                        "font_res": "",
+                        "ttf_file": "",
+                        "font_name": ""
+                    },
+                    "italic": {
+                        "font_res": "",
+                        "ttf_file": "",
+                        "font_name": ""
+                    },
+                    "bold": {
+                        "font_res": "",
+                        "ttf_file": "",
+                        "font_name": ""
+                    },
+                    "bold_italic": {
+                        "font_res": "",
+                        "ttf_file": "",
+                        "font_name": ""
+                    },
+                    "semi_bold": {
+                        "font_res": "",
+                        "ttf_file": "",
+                        "font_name": ""
+                    },
+                    "semi_bold_italic": {
+                        "font_res": "",
+                        "ttf_file": "",
+                        "font_name": ""
+                    },
+                    "light": {
+                        "font_res": "",
+                        "ttf_file": "",
+                        "font_name": ""
+                    },
+                    "light_italic": {
+                        "font_res": "",
+                        "ttf_file": "",
+                        "font_name": ""
+                    }
+                }
+            }
+        }
+    },
+    "lines_resources": [
+        {
+            "code": "",
+            "icon_res": "",
+            "commercial": {
+                "id": "",
+                "name": ""
+            }
+        }
+    ],
+    "modes_resources": [
+        {
+            "icon_res": "",
+            "commercial": {
+                "id": "",
+                "name": ""
+            }
+        }
+    ],
+    "transport_categories": [
+        {
+            "modules": [
+                "aroundme",
+                "crowdsourcing",
+                "journey",
+                "schedule",
+                "traffic"
+            ],
+            "icon_res": "",
+            "name_res": "",
+            "selected": true,
+            "modes": [
+                {
+                    "physical": {
+                        "id": "",
+                        "name_res": ""
+                    },
+                    "commercial": {
+                        "id": "",
+                        "name": ""
+                    }
+                }
+            ],
+            "networks": [
+                ""
+            ],
+            "direct_path_modes": [
+                "car",
+                "car_no_park",
+                "bss",
+                "bike",
+                "rideharing",
+                "taxi",
+                "walking"
+            ],
+            "first_section_modes": [
+                "car",
+                "car_no_park",
+                "bss",
+                "bike",
+                "rideharing",
+                "taxi",
+                "walking"
+            ],
+            "last_section_modes": [
+                "car",
+                "car_no_park",
+                "bss",
+                "bike",
+                "rideharing",
+                "taxi",
+                "walking"
+            ],
+            "add_poi_infos": [
+                "bss_stands",
+                "car_park"
+            ]
+        }
+    ],
+    "poi_categories": [
+        {
+            "name_res": "",
+            "subcategories": [
+                {
+                    "icon_res": "",
+                    "name_res": "",
+                    "zoom_level": 16.5,
+                    "selected": true,
+                    "group": "STANDARD",
+                    "types": [
+                        {
+                            "name_res": "",
+                            "poi_type_id": ""
+                        }
+                    ],
+                    "booking": {
+                        "title_res": ""
+                    }
+                }
+            ]
+        }
+    ],
+    "providers_resources": [
+        {
+            "type_id": "",
+            "provider_id": "",
+            "icon_res": ""
+        }
+    ],
+    "networks_resources": [
+        {
+            "network_id": "",
+            "icon_res": "",
+            "name_res": ""
+        }
+    ],
+    "icons_resources": {
+        "aroundme": {
+            "traffic_button": ""
+        },
+        "journey": {
+            "departure": "ic_departure",
+            "arrival": "ic_arrival",
+            "indoor_parking": "ic_custom_indoor_parking",
+            "outdoor_parking": "ic_custom_outdoor_parking"
+        }
+    },
+    "titles_resources": {
+        "journey": {
+            "journeys": "journeys_screen_title",
+            "roadmap": "roadmap_screen_title",
+            "ridesharing": "ridesharing_screen_title"
+        },
+        "aroundme": {
+            "filters": "filters_screen_title"
+        }
+    },
+    "features_configuration": {
+        "account": {
+            "my_account_menu_items": [
+                {
+                    "icon_res": "",
+                    "name_res": ""
+                }
+            ],
+            "sign_up_form_fields": [
+                {
+                    "hint_res": "",
+                    "type": "TEXT",
+                    "min_date": "dd/MM/yyyy",
+                    "max_date": "dd/MM/yyyy",
+                    "max_length": 0,
+                    "required": true
+                }
+            ],
+            "edit_form_fields": [
+                {
+                    "hint_res": "",
+                    "type": "DATE",
+                    "min_date": "dd/MM/yyyy",
+                    "max_date": "dd/MM/yyyy",
+                    "max_length": 0,
+                    "required": true
+                }
+            ]
+        },
+        "aroundme": {
+            "booking": true,
+            "bookmark_mode": {
+                "journeys": true,
+                "bss": true
+            },
+            "crowdsourcing_mode": true,
+            "default_location": {
+                "lat": "48.846790",
+                "lon": "2.377090"
+            },
+            "go_from_go_to": true,
+            "journey_mode": true,
+            "max_history": 10,
+            "next_departures": {
+                "frequency": 30
+            },
+            "schedule_mode": true,
+            "stop_point_search": true,
+            "traffic_mode": true,
+            "vehicle_positions": {
+                "frequency": 30
+            }
+        },
+        "bookmark": {
+            "go_from_go_to": true,
+            "next_departures": {
+                "frequency": 30
+            },
+            "tabs": {
+                "transports": true,
+                "journeys": true,
+                "addresses": true
+            }
+        },
+        "journey": {
+            "bookmark_mode": true,
+            "calories": true,
+            "carbon": true,
+            "car_parking_highlight": true,
+            "departure_time_shift": {
+                "earlier_minutes": 10,
+                "later_minutes": 50
+            },
+            "disruption_contributors": [
+                ""
+            ],
+            "external_navigation": true,
+            "max_favorite_addresses": 10,
+            "max_favorite_pois": 10,
+            "max_history": 10,
+            "next_departures": {
+                "frequency": 30
+            },
+            "park_availability": {
+                "frequency": 30
+            },
+            "price": true,
+            "ridesharing_price": true,
+            "search_only": false,
+            "step_by_step_guidance": true,
+            "stop_point_search_mode": false,
+            "traffic": {
+                "alert_subscription": true
+            },
+            "transport_networks": true,
+            "vehicle_positions": {
+                "frequency": 30
+            }
+        },
+        "schedule": {
+            "bookmark_mode": true,
+            "go_from_go_to": true,
+            "max_history": 10,
+            "networks_filter": true,
+            "next_departures": {
+                "frequency": 30
+            },
+            "station_map": true,
+            "transport_networks": true,
+            "vehicle_positions": {
+                "frequency": 30
+            }
+        },
+        "traffic": {
+            "alert_subscription": {
+                "env": "",
+                "timezone": ""
+            },
+            "disruption_contributors": [
+                ""
+            ],
+            "networks_filter": true,
+            "severity": [
+                {
+                    "icon_res": "",
+                    "name_res": "",
+                    "color": "",
+                    "effects": [
+                        ""
+                    ],
+                    "selected": true
+                }
+            ],
+            "transport_networks": true
+        }
+    }
+}
