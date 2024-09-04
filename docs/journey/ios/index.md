@@ -33,7 +33,9 @@ Using your CLI, run `pod install` in your project directory.
 
 ## 👨‍💻  Implementation
 
-⚠️ Please make sure to read the [modules configuration](../../getting_started/#modules-configuration) section before proceeding!<br>
+!!! warning "Warning"
+
+    Please make sure to read the [modules configuration](../../getting_started/#modules-configuration) section before proceeding!
 
 This module is set up by calling `JourneySdk.shared.initialize()` method which takes the following parameters:
 
