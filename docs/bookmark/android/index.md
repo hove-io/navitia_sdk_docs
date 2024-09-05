@@ -39,15 +39,36 @@ This method takes the following parameters:
 
 <h4>Example</h4>
 
-``` kotlin
-BookmarkUI.getInstance().let { instance ->
-    instance.init(
-      context = this,
-      token = "your_token",
-      configurationJsonFile = "config.json"
-   )
-}
-```
+=== "Configuration with file"
+
+    ``` kotlin
+    BookmarkUI.getInstance().let { instance ->
+        instance.init(
+            context = this,
+            token = "your_token",
+            configurationJsonFile = "config.json"
+        )
+    }
+    ```
+
+=== "Manual configuration"
+
+    ``` kotlin
+    BookmarkUI.getInstance().let { instance ->
+        instance.init(
+            context = this,
+            token = "your_token",
+            configuration = BookmarkConfiguration(
+                coverage = "your_coverage",
+                timezone = "Europe/Paris",
+                env = BookmarkEnvironment.PROD,
+                colors = BookmarkColors(
+                    primary = "#88819f"
+                )
+            )
+        )
+    }
+    ```
 
 ### Navigation listener
 

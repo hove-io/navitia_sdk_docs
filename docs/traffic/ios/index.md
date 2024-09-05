@@ -60,39 +60,41 @@ You can also call the `initialize()` method with the global JSON configuration f
 
 <h4>Example</h4>
 
-```swift
-do {
-    let transportCategories = [TransportCategory(modules: ["traffic"],
-                                                 iconRes: "ic_section_mode_metro",
-                                                 nameRes: "metro",
-                                                 selected: true,
-                                                 modes: [TransportCategoryMode(physical: TransportPhysicalMode(id: "physical_mode:Metro", nameRes: "metro"),
-                                                 commercial: TransportCommercialMode(id: "commercial_mode:Metro", name: "Metro"))],
-                                                 firstSectionModes: ["walking"],
-                                                 lastSectionModes: ["walking"])
-                              ]
-                              
-    let trafficColorsConfiguration = TrafficColorsConfiguration(primaryColor: "#88819f", secondaryColor: "#8faa96")
-                                                                      
-    try Traffic.shared.initialize(coverage: "fr-idf",
-                                    token: "your_token",
-                                    env: "PROD",
-                                    colors: trafficColorsConfiguration,
-                                    transportCategories: transportCategories)                                                                  
-} catch {
-    Logger.error("%@", String(format: "Traffic SDK cannot be initialized! %@", error.localizedDescription))
-}                                   
-```
+=== "Configuration with file"
 
-<h4>Example with JSON file</h4>
+    ```swift
+    do {
+        try Traffic.shared.initialize(token: "your_token", configurationJsonFile: "traffic_configuration.json")                                       
+    } catch {
+        Logger.error("%@", String(format: "Traffic SDK cannot be initialized! %@", error.localizedDescription))
+    }
+    ```
 
-```swift
-do {
-    try Traffic.shared.initialize(token: "your_token", configurationJsonFile: "traffic_configuration.json")                                                               
-} catch {
-    Logger.error("%@", String(format: "Traffic SDK cannot be initialized! %@", error.localizedDescription))
-}                                   
-```
+=== "Manual configuration"
+
+    ```swift
+    do {
+        let transportCategories = [TransportCategory(modules: ["traffic"],
+                                                    iconRes: "ic_section_mode_metro",
+                                                    nameRes: "metro",
+                                                    selected: true,
+                                                    modes: [TransportCategoryMode(physical: TransportPhysicalMode(id: "physical_mode:Metro", nameRes: "metro"),
+                                                    commercial: TransportCommercialMode(id: "commercial_mode:Metro", name: "Metro"))],
+                                                    firstSectionModes: ["walking"],
+                                                    lastSectionModes: ["walking"])
+                                  ]
+
+        let trafficColorsConfiguration = TrafficColorsConfiguration(primaryColor: "#88819f", secondaryColor: "#8faa96")
+                                                                          
+        try Traffic.shared.initialize(coverage: "fr-idf",
+                                        token: "your_token",
+                                        env: "PROD",
+                                        colors: trafficColorsConfiguration,
+                                        transportCategories: transportCategories)                                                                  
+    } catch {
+        Logger.error("%@", String(format: "Traffic SDK cannot be initialized! %@", error.localizedDescription))
+    }
+    ```
 
 ### Alert subscription
 

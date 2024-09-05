@@ -49,15 +49,37 @@ This method takes the following parameters:
 
 <h4>Example</h4>
 
-``` kotlin
-AroundMeUI.getInstance().let { instance ->
-    instance.init(
-      context = this,
-      token = "your_token",
-      configurationJsonFile = "config.json"
-    )
-}
-```
+=== "Configuration with file"
+
+    ``` kotlin
+    AroundMeUI.getInstance().let { instance ->
+        instance.init(
+            context = this,
+            token = "your_token",
+            configurationJsonFile = "your_config_file"
+        )
+    }
+    ```
+
+=== "Manual configuration"
+
+    ``` kotlin
+    AroundMeUI.getInstance().let { instance ->
+        instance.init(
+            context = this,
+            token = "your_token",
+            configuration = AroundMeConfiguration(
+                coverage = "your_coverage",
+                timezone = "Europe/Paris",
+                env = AroundMeEnvironment.PROD,
+                colors = AroundMeColors(
+                    primary = "#88819f"
+                ),
+                transportCategories = listOf<AroundMeTransportCategory>(),
+            )
+        )
+    }
+    ```
 
 ### Navigation listener
 

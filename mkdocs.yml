@@ -48,14 +48,16 @@ markdown_extensions:
   - toc:
       toc_depth: 4
   - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
   - pymdownx.highlight:
       anchor_linenums: true
   - pymdownx.inlinehilite
   - pymdownx.snippets
   - pymdownx.superfences
-  - pymdownx.emoji:
-      emoji_index: !!python/name:materialx.emoji.twemoji
-      emoji_generator: !!python/name:materialx.emoji.to_svg
+  - pymdownx.tabbed:
+      alternate_style: true
   - pymdownx.tasklist:
       custom_checkbox: true
 
@@ -90,8 +92,8 @@ nav:
       - Documentation: bookmark/android/index.md
       - Changelogs: bookmark/android/changelogs.md
     - iOS:
-      - Documentation: bookmark/android/index.md
-      - Changelogs: bookmark/android/changelogs.md
+      - Documentation: bookmark/ios/index.md
+      - Changelogs: bookmark/ios/changelogs.md
   - Expert:
     - Android:
       - Documentation: expert/android/index.md
@@ -108,22 +110,22 @@ nav:
       - Documentation: journey/android/index.md
       - Changelogs: journey/android/changelogs.md
     - iOS:
-      - Documentation: journey/android/index.md
-      - Changelogs: journey/android/changelogs.md
+      - Documentation: journey/ios/index.md
+      - Changelogs: journey/ios/changelogs.md
   - Schedule:
     - Android:
       - Documentation: schedule/android/index.md
       - Changelogs: schedule/android/changelogs.md
     - iOS:
-      - Documentation: schedule/android/index.md
-      - Changelogs: schedule/android/changelogs.md
+      - Documentation: schedule/ios/index.md
+      - Changelogs: schedule/ios/changelogs.md
   - Traffic:
     - Android:
       - Documentation: traffic/android/index.md
       - Changelogs: traffic/android/changelogs.md
     - iOS:
-      - Documentation: traffic/android/index.md
-      - Changelogs: traffic/android/changelogs.md
+      - Documentation: traffic/ios/index.md
+      - Changelogs: traffic/ios/changelogs.md
     
 # Extra config
 extra_css:

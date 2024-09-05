@@ -51,15 +51,37 @@ This method takes the following parameters:
 
 <h4>Example</h4>
 
-``` kotlin
-TrafficUI.getInstance().let { instance ->
-    instance.init(
-      context = this,
-      token = "your_token"
-      configurationJsonFile = "config.json"
-    )
-}
-```
+=== "Configuration with file"
+
+    ``` kotlin
+    TrafficUI.getInstance().let { instance ->
+        instance.init(
+            context = this,
+            token = "your_token"
+            configurationJsonFile = "config.json"
+        )
+    }
+    ```
+
+=== "Manual configuration"
+
+    ``` kotlin
+    TrafficUI.getInstance().let { instance ->
+        instance.init(
+            context = this,
+            token = "your_token",
+            configuration = TrafficConfiguration(
+                coverage = "your_coverage",
+                timezone = "Europe/Paris",
+                env = TrafficEnvironment.PROD,
+                colors = TrafficColors(
+                    primary = "#88819f"
+                ),
+                transportCategories = listOf<TrafficTransportCategory>()
+            )
+        )
+    }
+    ```
 
 ### Navigation listener
 

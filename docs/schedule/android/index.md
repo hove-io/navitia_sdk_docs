@@ -51,15 +51,37 @@ This method takes the following parameters:
 
 <h4>Example</h4>
 
-``` kotlin
-ScheduleUI.getInstance().let { instance ->
-    instance.init(
-      context = this,
-      token = "your_token",
-      configurationJsonFile = "config.json"
-   )
-}
-```
+=== "Configuration with file"
+
+    ``` kotlin
+    ScheduleUI.getInstance().let { instance ->
+        instance.init(
+            context = this,
+            token = "your_token",
+            configurationJsonFile = "config.json"
+        )
+    }
+    ```
+
+=== "Manual configuration"
+
+    ``` kotlin
+    ScheduleUI.getInstance().let { instance ->
+        instance.init(
+            context = this,
+            token = "your_token",
+            configuration = ScheduleConfiguration(
+                coverage = "your_coverage",
+                timezone = "Europe/Paris",
+                env = ScheduleEnvironment.PROD,
+                colors = ScheduleColors(
+                    primary = "#88819f"
+                ),
+                transportCategories = listOf<ScheduleTransportCategory>()
+            )
+        )
+    }
+    ```
 
 ### Navigation listener
 

@@ -59,39 +59,41 @@ You can also call the `initialize()` method with the global JSON configuration f
 
 <h4>Example</h4>
 
-```swift
-do {
-    let transportCategories = [TransportCategory(modules: ["schedule"],
-                                                 iconRes: "ic_section_mode_metro",
-                                                 nameRes: "metro",
-                                                 selected: true,
-                                                 modes: [TransportCategoryMode(physical: TransportPhysicalMode(id: "physical_mode:Metro", nameRes: "metro"),
-                                                 commercial: TransportCommercialMode(id: "commercial_mode:Metro", name: "Metro"))],
-                                                 firstSectionModes: ["walking"],
-                                                 lastSectionModes: ["walking"])
-                              ]
-                              
-    let scheduleColorsConfiguration = ScheduleColorsConfiguration(primaryColor: "#88819f", secondaryColor: "#8faa96")
-                                                                      
-    try Schedule.shared.initialize(coverage: "fr-idf",
-                                    token: "your_token",
-                                    env: "PROD",
-                                    colors: scheduleColorsConfiguration,
-                                    transportCategories: transportCategories)                                                                  
-} catch {
-    Logger.error("%@", String(format: "Schedule SDK cannot be initialized! %@", error.localizedDescription))
-}                                   
-```
+=== "Configuration with file"
 
-<h4>Example with JSON file</h4>
+    ```swift
+    do {
+        try Schedule.shared.initialize(token: "your_token", configurationJsonFile: "schedule_configuration.json")                                                               
+    } catch {
+        Logger.error("%@", String(format: "Schedule SDK cannot be initialized! %@", error.localizedDescription))
+    }                                   
+    ```
 
-```swift
-do {
-    try Schedule.shared.initialize(token: "your_token", configurationJsonFile: "schedule_configuration.json")                                                               
-} catch {
-    Logger.error("%@", String(format: "Schedule SDK cannot be initialized! %@", error.localizedDescription))
-}                                   
-```
+=== "Manual configuration"
+
+    ```swift
+    do {
+        let transportCategories = [TransportCategory(modules: ["schedule"],
+                                                    iconRes: "ic_section_mode_metro",
+                                                    nameRes: "metro",
+                                                    selected: true,
+                                                    modes: [TransportCategoryMode(physical: TransportPhysicalMode(id: "physical_mode:Metro", nameRes: "metro"),
+                                                    commercial: TransportCommercialMode(id: "commercial_mode:Metro", name: "Metro"))],
+                                                    firstSectionModes: ["walking"],
+                                                    lastSectionModes: ["walking"])
+                                  ]
+                                  
+        let scheduleColorsConfiguration = ScheduleColorsConfiguration(primaryColor: "#88819f", secondaryColor: "#8faa96")
+                                                                          
+        try Schedule.shared.initialize(coverage: "fr-idf",
+                                        token: "your_token",
+                                        env: "PROD",
+                                        colors: scheduleColorsConfiguration,
+                                        transportCategories: transportCategories)                                                                  
+    } catch {
+        Logger.error("%@", String(format: "Schedule SDK cannot be initialized! %@", error.localizedDescription))
+    }                                   
+    ```
 
 ## 🚀  Launching
 

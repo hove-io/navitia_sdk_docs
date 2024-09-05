@@ -60,41 +60,43 @@ You can also call the `initialize()` method with the global JSON configuration f
 
 <h4>Example</h4>
 
-```swift
-do {
-    let transportCategories = [TransportCategory(modules: ["journey"],
-                                                 iconRes: "ic_section_mode_metro",
-                                                 nameRes: "metro",
-                                                 selected: true,
-                                                 modes: [TransportCategoryMode(physical: TransportPhysicalMode(id "physical_mode:Metro"),
-                                                                               commercial: TransportCommercialMode(id: "commercial_mode:Metro", name: "Metro"))],
-                                                 networks: [],
-                                                 firstSectionModes: ["walking"],
-                                                 lastSectionModes: ["walking"],
-                                                 directPathModes: ["walking"],
-                                                 addPoiInfos: [])]
-            
-    let journeyColorsConfiguration = JourneyColorsConfiguration(primary: "#88819f", secondary: "#8faa96")
-                                                                      
-    try JourneySdk.shared.initialize(coverage: "fr-idf",
-                                    token: "your_token",
-                                    env: "PROD",
-                                    colors: journeyColorsConfiguration,
-                                    transportCategories: transportCategories)                                                                  
-} catch {
-    Logger.error("%@", String(format: "Journey SDK cannot be initialized! %@", error.localizedDescription))
-}                                   
-```
+=== "Configuration with file"
 
-<h4>Example with JSON file</h4>
+    ```swift
+    do {
+        try JourneySdk.shared.initialize(token: "your_token", configurationJsonFile: "journey_configuration.json")                                                               
+    } catch {
+        Logger.error("%@", String(format: "Journey SDK cannot be initialized! %@", error.localizedDescription))
+    }                                   
+    ```
 
-```swift
-do {
-    try JourneySdk.shared.initialize(token: "your_token", configurationJsonFile: "journey_configuration.json")                                                               
-} catch {
-    Logger.error("%@", String(format: "Journey SDK cannot be initialized! %@", error.localizedDescription))
-}                                   
-```
+=== "Manual configuration"
+
+    ```swift
+    do {
+        let transportCategories = [TransportCategory(modules: ["journey"],
+                                                    iconRes: "ic_section_mode_metro",
+                                                    nameRes: "metro",
+                                                    selected: true,
+                                                    modes: [TransportCategoryMode(physical: TransportPhysicalMode(id "physical_mode:Metro"),
+                                                                                  commercial: TransportCommercialMode(id: "commercial_mode:Metro", name: "Metro"))],
+                                                    networks: [],
+                                                    firstSectionModes: ["walking"],
+                                                    lastSectionModes: ["walking"],
+                                                    directPathModes: ["walking"],
+                                                    addPoiInfos: [])]
+                
+        let journeyColorsConfiguration = JourneyColorsConfiguration(primary: "#88819f", secondary: "#8faa96")
+                                                                          
+        try JourneySdk.shared.initialize(coverage: "fr-idf",
+                                        token: "your_token",
+                                        env: "PROD",
+                                        colors: journeyColorsConfiguration,
+                                        transportCategories: transportCategories)                                                                  
+    } catch {
+        Logger.error("%@", String(format: "Journey SDK cannot be initialized! %@", error.localizedDescription))
+    }                                   
+    ```
 
 ### Events tracking
 

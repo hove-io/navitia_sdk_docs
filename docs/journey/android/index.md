@@ -49,15 +49,37 @@ This method takes the following parameters:
 
 <h4>Example</h4>
 
-```kotlin
-JourneyUI.getInstance().let { instance ->
-    instance.init(
-      context = this,
-      token = "your_token",
-      configurationJsonFile = "config.json"
-   )
-}
-```
+=== "Configuration with file"
+
+    ``` kotlin
+    JourneyUI.getInstance().let { instance ->
+        instance.init(
+            context = this,
+            token = "your_token",
+            configurationJsonFile = "config.json"
+        )
+    }
+    ```
+
+=== "Manual configuration"
+
+    ``` kotlin
+    JourneyUI.getInstance().let { instance ->
+        instance.init(
+            context = this,
+            token = "your_token",
+            configuration = JourneyConfiguration(
+                coverage = "your_coverage",
+                timezone = "Europe/Paris",
+                env = JourneyEnvironment.PROD,
+                colors = JourneyColors(
+                    primary = "#88819f"
+                ),
+                transportCategories = listOf<JourneyTransportCategory>()
+            )
+        )
+    }
+    ```
 
 ### Navigation listener
 
