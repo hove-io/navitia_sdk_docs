@@ -6,12 +6,9 @@ title: Schedule iOS - Navitia SDK Docs
 
 ## 💻 Setup
 
-In your project, add the following lines to your `Podfile` :
+In your project, add the following lines to your `Podfile`:
 
 ```ruby
-platform :ios, '14.0' # Minimum deployment target
-use_frameworks!
-
 source 'https://github.com/CocoaPods/Specs.git' # Default Cocoapods URL
 source 'https://github.com/hove-io/Podspecs.git' # Schedule podspec URL
 
@@ -35,7 +32,7 @@ Using your CLI, run `pod install` in your project directory.
 
 !!! warning "Warning"
 
-    Please make sure to read the [modules configuration](../../getting_started/#modules-configuration) section before proceeding!
+    Make sure to read the [modules configuration](../../getting_started/#modules-configuration) section before proceeding
 
 This module is set up by calling `Schedule.shared.initialize()` method which takes the following parameters:
 
@@ -74,15 +71,13 @@ You can also call the `initialize()` method with the global JSON configuration f
     ```swift
     do {
         let transportCategories = [TransportCategory(modules: ["schedule"],
-                                                    iconRes: "ic_section_mode_metro",
-                                                    nameRes: "metro",
-                                                    selected: true,
-                                                    modes: [TransportCategoryMode(physical: TransportPhysicalMode(id: "physical_mode:Metro", nameRes: "metro"),
-                                                    commercial: TransportCommercialMode(id: "commercial_mode:Metro", name: "Metro"))],
-                                                    firstSectionModes: ["walking"],
-                                                    lastSectionModes: ["walking"])
-                                  ]
-                                  
+                                                     iconRes: "ic_section_mode_metro",
+                                                     nameRes: "metro",
+                                                     selected: true,
+                                                     modes: [TransportCategoryMode(physical: TransportPhysicalMode(id: "physical_mode:Metro", nameRes: "metro"),
+                                                     commercial: TransportCommercialMode(id: "commercial_mode:Metro", name: "Metro"))],
+                                                     firstSectionModes: ["walking"],
+                                                     lastSectionModes: ["walking"])]
         let scheduleColorsConfiguration = ScheduleColorsConfiguration(primaryColor: "#88819f", secondaryColor: "#8faa96")
                                                                           
         try Schedule.shared.initialize(coverage: "fr-idf",
@@ -98,25 +93,27 @@ You can also call the `initialize()` method with the global JSON configuration f
 ## 🚀  Launching
 
 This module has a single entry point. The parameter `showBack` handles the back button visibility on the first screen.
-Please note that if you want to use the `rootViewController` as a `ChildViewController` of your `ViewController`, you should embed it in an `NavigationController`. 
 
 ```swift
 guard let scheduleViewController = Schedule.shared.rootViewController else {
   return nil
 }
-
-// Hide back button embedded in the first screen
-scheduleViewController.showBack = false
-
-// With a NavigationController
-navigationController?.pushViewController(scheduleViewController, animated: false) // (1)
-
-// With a ChildViewController
-yourViewController.addChild(UINavigationController(rootViewController: scheduleViewController)) // (2)
+scheduleViewController.showBack = false // Hide back button embedded in the first screen
 ```
 
-1.  Use this code if you're using your own NavigationController
-2.  Use this code if you're using a ChildViewController
+If you want to use the `rootViewController` as a `ChildViewController` of your `ViewController`, you should embed it in an `NavigationController`. 
+
+=== "Using a `NavigationController`"
+
+    ```swift
+    navigationController?.pushViewController(scheduleViewController, animated: false)
+    ```
+
+=== "Using a `ChildViewController`"
+
+    ```swift
+    yourViewController.addChild(UINavigationController(rootViewController: scheduleViewController))
+    ```
 
 ## 📱 Screens
 

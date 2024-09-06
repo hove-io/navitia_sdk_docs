@@ -6,12 +6,9 @@ title: Expert iOS - Navitia SDK Docs
 
 ## 💻 Setup
 
-In your project, add the following lines to your `Podfile`:
+In your project, add the following lines to your podfile:
 
 ```ruby
-platform :ios, '14.0' # Minimum deployment target
-use_frameworks!
-
 source 'https://github.com/CanalTP/Podspecs.git' # Expert podspec URL
 
 target 'YOUR_PROJECT_SCHEME' do

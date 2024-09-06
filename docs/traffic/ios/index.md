@@ -6,12 +6,9 @@ title: Traffic iOS - Navitia SDK Docs
 
 ## 💻 Setup
 
-In your project, add the following lines to your `Podfile` :
+In your project, add the following lines to your `Podfile`:
 
 ```ruby
-platform :ios, '14.0' # Minimum deployment target
-use_frameworks!
-
 source 'https://github.com/CocoaPods/Specs.git' # Default Cocoapods URL
 source 'https://github.com/hove-io/Podspecs.git' # Traffic podspec URL
 
@@ -35,7 +32,7 @@ Using your CLI, run `pod install` in your project directory.
 
 !!! warning "Warning"
 
-    Please make sure to read the [modules configuration](../../getting_started/#modules-configuration) section before proceeding!
+    Make sure to read the [modules configuration](../../getting_started/#modules-configuration) section before proceeding
 
 This module is set up by calling `Traffic.shared.initialize()` method which takes the following parameters:
 
@@ -75,22 +72,20 @@ You can also call the `initialize()` method with the global JSON configuration f
     ```swift
     do {
         let transportCategories = [TransportCategory(modules: ["traffic"],
-                                                    iconRes: "ic_section_mode_metro",
-                                                    nameRes: "metro",
-                                                    selected: true,
-                                                    modes: [TransportCategoryMode(physical: TransportPhysicalMode(id: "physical_mode:Metro", nameRes: "metro"),
-                                                    commercial: TransportCommercialMode(id: "commercial_mode:Metro", name: "Metro"))],
-                                                    firstSectionModes: ["walking"],
-                                                    lastSectionModes: ["walking"])
-                                  ]
-
+                                                     iconRes: "ic_section_mode_metro",
+                                                     nameRes: "metro",
+                                                     selected: true,
+                                                     modes: [TransportCategoryMode(physical: TransportPhysicalMode(id: "physical_mode:Metro", nameRes: "metro"),
+                                                     commercial: TransportCommercialMode(id: "commercial_mode:Metro", name: "Metro"))],
+                                                     firstSectionModes: ["walking"],
+                                                     lastSectionModes: ["walking"])]
         let trafficColorsConfiguration = TrafficColorsConfiguration(primaryColor: "#88819f", secondaryColor: "#8faa96")
                                                                           
         try Traffic.shared.initialize(coverage: "fr-idf",
-                                        token: "your_token",
-                                        env: "PROD",
-                                        colors: trafficColorsConfiguration,
-                                        transportCategories: transportCategories)                                                                  
+                                      token: "your_token",
+                                      env: "PROD",
+                                      colors: trafficColorsConfiguration,
+                                      transportCategories: transportCategories)                                                                  
     } catch {
         Logger.error("%@", String(format: "Traffic SDK cannot be initialized! %@", error.localizedDescription))
     }
@@ -99,6 +94,7 @@ You can also call the `initialize()` method with the global JSON configuration f
 ### Alert subscription
 
 To enable the alert subscription feature, the following instructions are required:
+
 - Add the [environment configuration](../../getting_started/#traffic-features)
 - Pass the [Kronos API credentials](#traffic-alert-subscription-credentials) to the initialization method
 - Set the firebase token `Traffic.shared.firebaseToken = "token"` once received from the Firebase API at runtime
@@ -113,25 +109,27 @@ To enable the alert subscription feature, the following instructions are require
 ## 🚀  Launching
 
 This module has a single entry point. The parameter `showBack` handles the back button visibility on the first screen.
-Please note that if you want to use the `rootViewController` as a `ChildViewController` of your `ViewController`, you should embed it in an `NavigationController`. 
 
 ```swift
 guard let trafficViewController = Traffic.shared.rootViewController else {
   return nil
 }
-
-// Hide back button embedded in the first screen
-trafficViewController.showBack = false
-
-// With a NavigationController
-navigationController?.pushViewController(trafficViewController, animated: false) // (1)
-
-// With a ChildViewController
-yourViewController.addChild(UINavigationController(rootViewController: trafficViewController)) // (2)
+trafficViewController.showBack = false // Hide back button embedded in the first screen
 ```
 
-1.  Use this code if you're using your own NavigationController
-2.  Use this code if you're using a ChildViewController
+If you want to use the `rootViewController` as a `ChildViewController` of your `ViewController`, you should embed it in an `NavigationController`. 
+
+=== "Using a `NavigationController`"
+
+    ```swift
+    navigationController?.pushViewController(trafficViewController, animated: false)
+    ```
+
+=== "Using a `ChildViewController`"
+
+    ```swift
+    yourViewController.addChild(UINavigationController(rootViewController: trafficViewController))
+    ```
 
 ## 📱 Screens
 
@@ -180,6 +178,6 @@ This screen lists all the alert subscriptions that the user have registered. The
 
 ## 🗺 Screen flow
 
-Please refer to the following schema to learn more about different interactions and how to navigate between module screens.
+Refer to the following schema to learn more about different interactions and how to navigate between module screens.
 
 <img class="img-navigating" src="/navitia_sdk_docs/assets/img/traffic_ios_screen_flow.png" alt="Screen flow">
