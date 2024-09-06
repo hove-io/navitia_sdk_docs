@@ -35,3 +35,20 @@
 .ios {
     color: #000000;
 }
+
+.home-module-title-block {
+    display: inline-flex;
+    margin-bottom: .3em;
+}
+
+.home-module-title-text {
+    font-size: 1.25em;
+    font-weight: 400;
+    letter-spacing: -.01em;
+    line-height: 1.5;
+}
+.home-module-title-block img {
+    align-self: flex-end;
+    margin-inline-start: .5em;
+    margin-bottom: .35em;
+}
