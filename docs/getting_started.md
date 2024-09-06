@@ -21,9 +21,10 @@ title: Getting started - Navitia SDK Docs
 
 === "iOS"
 
-    Install <span style="text-decoration:underline">[Cocoapods](https://cocoapods.org)</span> and add the following in the podfile of your project:
+    Install <span style="text-decoration:underline">[Cocoapods](https://cocoapods.org)</span> and add the following in the `Podfile` of your project:
     ``` ruby
     platform :ios, '14.0'
+    use_frameworks!
     ```
 
 ## 💻 Artifactory Setup
@@ -56,7 +57,7 @@ The access to the SDK requires valid credentials to our private artifactory. See
 
 ## 🛠 Modules Configuration
 
-The Navitia SDKs should be configured before usage. Within a specific module, the customization can affect data or graphical components.<br>
+The Navitia SDKs should be configured before usage. Within a specific module, the customization can affect data or graphical components.
 Since your application can integrate one or more Navitia modules, you can use a single JSON file to configure all the modules at once.<br>
 The following are the possible configuration parameters:
 
@@ -105,7 +106,7 @@ The following are the possible configuration parameters:
 | `tertiary` | :material-close: | To set the color of more UI components | `String` | `#efa59f` |
 | `map` | :material-close: | To set colors of the markers on map | [`Map color`](#around-me-map-color) | - |
 
-##### Around me map color
+<h4>Around me map color</h4>
 
 | Name | Required | Description | Type | Example |
 | --- |:---:| --- | :---: | :---: |
@@ -138,33 +139,33 @@ The following are the possible configuration parameters:
 | `map` | :material-close: | To set colors of the map elements | [`Journey map color`](#journey-map-color) | - |
 | `nav_bar_background` | :material-close: | To set the color of the navigation bar. iOS only.  | `String` | `#efa59f` |
 
-##### Journey origin color
+<h4>Journey origin color</h4>
 
 | Name | Required | Description | Type | Example |
 | --- |:---:| --- | :---: | :---: |
 | `icon` | :material-check: | To set the icon color of the itinerary origin | `String` | `#88819f` |
 
-##### Journey destination color
+<h4>Journey destination color</h4>
 
 | Name | Required | Description | Type | Example |
 | --- |:---:| --- | :---: | :---: |
 | `primary` | :material-check: | To set the color of the arrival block | `String` | `#8faa96` |
 | `icon` | :material-close: | To set the icon color of the itinerary destination | `String` | `#88819f` |
 
-##### Journey map color
+<h4>Journey map color</h4>
 
 | Name | Required | Description | Type | Example |
 | --- |:---:| --- | :---: | :---: |
 | `path` | :material-check: | To set the color of the paths drawn on the map | [`Journey map path color`](#journey-map-path-color) | - |
 
-##### Journey map path color
+<h4>Journey map path color</h4>
 
 | Name | Required | Description | Type | Example |
 | --- |:---:| --- | :---: | :---: |
 | `bike` | :material-close: | To set colors of the specific bike journey | [`Journey bike color`](#journey-bike-color) | - |
 | `car` | :material-close: | To set the color of the car path | `String` | `#88819f |
 
-##### Journey bike color
+<h4>Journey bike color</h4>
 
 | Name | Required | Description | Type | Example |
 | --- |:---:| --- | :---: | :---: |
@@ -207,14 +208,14 @@ The following are the possible configuration parameters:
 | `physical` | :material-check: | To set the transport physical mode | [`Transport Physical Mode`](#transport-physical-mode) | `["aroundme","journey"]` |
 | `commercial` | :material-check: | To set the transport commercial mode | [`Transport Commercial Mode`](#transport-commercial-mode) | - |
 
-##### Transport physical mode
+<h4>Transport physical mode</h4>
 
 | Name | Required | Description | Type | Example |
 | --- |:---:| --- | :---: | :---: |
 | `id` | :material-check: | Navitia physical mode id | `String` | `"physical_mode:Bus"` |
 | `name_res` | :material-check: | Localized name resource id | `String` | `"transport_bus"` |
 
-##### Transport commercial mode
+<h4>Transport commercial mode</h4>
 
 | Name | Required | Description | Type | Example |
 | --- |:---:| --- | :---: | :---: |
@@ -239,14 +240,14 @@ The following are the possible configuration parameters:
 | `types` | :material-check: | Subcategory POI types | [`[POI Subcategory Type]`](#poi-subcategory-type) | - |
 | `booking` | :material-close: | POI booking resources | [POI booking resources](#poi-booking-resources) | - |
 
-##### POI subcategory type
+<h4>POI subcategory type</h4>
 
 | Name | Required | Description | Type | Example |
 | --- |:---:| --- | :---: | :---: |
 | `name_res` | :material-check: | Localized POI subcategory type name id | `String` | `"scooter"` |
 | `poi_type_id` | :material-check: | Navitia POI subcategory type id | `String` | `"poi_type:amenity:bicycle_rental"` |
 
-##### POI booking resources
+<h4>POI booking resources</h4>
 
 | Name | Required | Description | Type | Example |
 | --- |:---:| --- | :---: | :---: |
@@ -282,14 +283,14 @@ The following are the possible configuration parameters:
 | `signup_form_fields` | :material-check: | To set Sign up screen form fields | [`Account form field`](#account-form-field) |
 | `edit_form_fields` | :material-check: | To set Edit screen form fields | [`Account form field`](#account-form-field) |
 
-##### My account menu item
+<h4>My account menu item</h4>
 
 | Name | Required | Description | Type | Example |
 | --- |:---:| --- | :---: | :---: |
 | `name_res` | :material-check: | Localized menu item title id | `String` | `"bookmarks"` |
 | `icon_res` | :material-check: | Menu item icon resource id | `String` | `"ic_bookmarks"` |
 
-##### Account form field
+<h4>Account form field</h4>
 
 | Name | Required | Description | Type | Example |
 | --- |:---:| --- | :---: | :---: |
@@ -300,7 +301,9 @@ The following are the possible configuration parameters:
 | `max_length` | :material-close: | Set the max allowed number of characters | `Int` | `0` |
 | `required` | :material-close: | Whether the field is mandatory | `Boolean` | `false` |
 
-⚠️ Please note that `PASSWORD` type is only available for signup screen!
+!!! info "Info"
+
+    `PASSWORD` field type is only available for signup screen
 
 #### Around Me features
 
@@ -320,32 +323,32 @@ The following are the possible configuration parameters:
 | `traffic_mode` | :material-close: | Show/hide the traffic button | `Boolean` |
 | `vehicle_positions`| :material-close: | Show bus vehicle positions on map | [`Vehicle positions`](#vehicle-positions) |
 
-##### Default location
+<h4>Default location</h4>
 
 | Name | Required | Description | Type | Example |
 | --- |:---:| --- | :---: | :---: |
 | `lat` | :material-check: | The latitude of the default location | `String` | `"48.846790"` |
 | `lon` | :material-check: | The longitude of the default location | `String` | `"2.377090"` |
 
-##### Next departures
+<h4>Next departures</h4>
 
 | Name | Required | Description | Type | Example |
 | --- |:---:| --- | :---: | :---: |
 | `frequency`| :material-check: | frequency of the next departures request in seconds | `Int` | `30` |
 
-##### Park availability
+<h4>Park availability</h4>
 
 | Name | Required | Description | Type | Example |
 | --- |:---:| --- | :---: | :---: |
 | `frequency`| :material-check: | frequency of the park availability requests in seconds | `Int` | `30` |
 
-##### Vehicle positions
+<h4>Vehicle positions</h4>
 
 | Name | Required | Description | Type | Example |
 | --- |:---:| --- | :---: | :---: |
 | `frequency` | :material-check: | frequency of the vehicle positions request in seconds | `String` | 30 |
 
-##### Bookmark options
+<h4>Bookmark options</h4>
 
 | Name | Required | Description | Type | Example |
 | --- |:---:| --- | :---: | :---: |
@@ -360,7 +363,7 @@ The following are the possible configuration parameters:
 | `next_departures` | :material-close: | Show/hide the next departures | [`Next departures`](#next-departures) | - |
 | `tabs` | :material-close: | Enable/disable tabs | [`Bookmark tabs`](#bookmark-tabs) | - |
 
-##### Bookmark tabs
+<h4>Bookmark tabs</h4>
 
 | Name | Required | Description | Type | Example |
 | --- |:---:| --- | :---: | :---: |
@@ -392,7 +395,7 @@ The following are the possible configuration parameters:
 | `transport_networks` | :material-close: | Show/hide the public transport network | `Boolean` | `false` |
 | `vehicle_positions`| :material-close: | Show bus vehicle positions on roadmap | [`Vehicle positions`](#vehicle-positions) | - |
 
-##### Traffic options (Journey)
+<h4>Traffic options (Journey)</h4>
 
 | Name | Required | Description | Type | Example |
 | --- |:---:| --- | :---: | :---: |
@@ -418,7 +421,7 @@ The following are the possible configuration parameters:
 | `networks_filter` | :material-close: | Show/hide the networks selector | `Boolean` |
 | `transport_networks` | :material-close: | Enable/disable showing network on lines | `Boolean` | - |
 
-##### Alert subscription
+<h4>Alert subscription</h4>
 
 | Name | Required | Description | Type | Example |
 | --- |:---:| --- | :---: | :---: |
@@ -443,7 +446,7 @@ The following are the possible configuration parameters:
 | `numeric` | :material-close: | Custom numeric font | [`Font category`](#font-category) |
 | `alphanumeric` | :material-close: | Custom alphanumeric font | [`Font category`](#font-category) |
 
-##### Font category
+<h4>Font category</h4>
 
 | Name | Required | Description | Type |
 | --- |:---:| --- | :---: |
@@ -456,7 +459,7 @@ The following are the possible configuration parameters:
 | `light` | :material-close: | Custom numeric font for light typeface | [`Font Typeface`](#font-typeface) |
 | `light_italic` | :material-close: | Custom numeric font for light italic typeface | [`Font Typeface`](#font-typeface) |
 
-##### Font Typeface
+<h4>Font Typeface</h4>
 
 | Name | Required | Description | Type | Platform | Example |
 | --- |:---:| --- | :---: | :---: | :---: |
@@ -531,7 +534,7 @@ The following are the possible configuration parameters:
 | `roadmap` | :material-close: | Localized roadmap screen title resource id | `String` | `roadmap_screen_title` |
 | `ridesharing` | :material-close: | Localized ridesharing screen title resource id | `String` | `ridesharing_screen_title` |
 
-### Global configuration JSON file
+### Configuration JSON file
 
 You can refer to the JSON file <span style="text-decoration:underline">[here](./assets/file/config.json){:download="config_example.json"}</span> to generate your own configuration.<br>
 Note that this is the complete version of the configuration. Remove unused objects and adapt the values as needed.
