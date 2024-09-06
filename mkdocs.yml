@@ -16,13 +16,13 @@ copyright: Copyright &copy; 2024 Hove
 theme:
   name: material
   features:
+    - content.code.annotate
+    - content.tabs.link
     - navigation.instant
     - navigation.top
     - navigation.tracking
-    # - navigation.tabs // If we want to use navigation tabs instead of regular menu 
-    - toc.follow
-    - content.code.annotate
     - search.share
+    - toc.follow
   palette:
     - scheme: navitia-light
       toggle:

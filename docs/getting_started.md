@@ -5,52 +5,54 @@ title: Getting started - Navitia SDK Docs
 # Getting started
 
 ## 🧰 Requirements
+- Get an access to <a href="https://navitia.io/inscription/" style="text-decoration:underline">Navitia.io</a> API. A token will be provided later and will be used to configure all the modules.
+- The SDKs are accessible privately, so you should request an access to our private <a href="https://kisiodigital.jfrog.io/" style="text-decoration:underline">artifactory</a>. Those credentials will be used later to configure your machine to be able to download our dependencies.
 
-- Get an access to <a href="https://navitia.io/inscription/" target="_blank">Navitia.io</a> API. A token will be provided later and will be used to configure all the modules.
-- The SDKs are accessible privately, so you should request an access to our private <a href="https://kisiodigital.jfrog.io/" target="_blank">artifactory</a>. Those credentials will be used later to configure your machine to be able to download our dependencies.
+=== "Android"
 
-<h4>Android</h4>
+    Add the following in the `build.gradle` of your app:
+    ``` kotlin
+    android {
+        defaultConfig {
+            minSdk = 23
+        }
+    }
+    ```
 
-- Minimum Android SDK version: `23`
+=== "iOS"
 
-<h4>iOS</h4>
-
-- [Cocoapods](https://cocoapods.org): All modules are available through Cocoapods.
-- Minimum iOS deployment target: `14.0`
+    Install <span style="text-decoration:underline">[Cocoapods](https://cocoapods.org)</span> and add the following in the podfile of your project:
+    ``` ruby
+    platform :ios, '14.0'
+    ```
 
 ## 💻 Artifactory Setup
 
-The access to the SDK requires valid credentials to our private artifactory. Please see [Requirements](#requirements) for more information. 
+The access to the SDK requires valid credentials to our private artifactory. See [Requirements](#requirements) for more information. Replace `artifactoryUsername` and `artifactoryPassword` with your credentials.
 
-<h4>Android</h4>
+=== "Android"
 
-Please add the following maven repository in the `build.gradle` of your project and replace `USERNAME` and `PASSWORD` with your credentials:
+    Add the following in the `build.gradle` of your project:
 
-``` groovy
-repositories {
-    maven {
-        credentials {
-            username = USERNAME // (1)
-            password = PASSWORD // (2)
+    ``` kotlin
+    repositories {
+        maven {
+            credentials {
+                username = artifactoryUsername
+                password = artifactoryPassword
+            }
+            url = uri("https://kisiodigital.jfrog.io/kisiodigital/android-release")
         }
-        url("https://kisiodigital.jfrog.io/kisiodigital/android-release")
     }
-}
-```
+    ```
 
-1.  Replace `USERNAME` with your artifactory username
-2.  Replace `PASSWORD` with your artifactory password
+=== "iOS"
 
-<h4>iOS</h4>
+    Create a `.netrc` file in the `$HOME` directory of your machine and add the following line to your `.netrc` file:
 
-Create a `.netrc` file in the `$HOME` directory of your machine.<br>
-Add the following line to your `.netrc` file and replace `USERNAME` and `PASSWORD` with your credentials:
-
-``` ruby
-machine kisiodigital.jfrog.io login USERNAME password PASSWORD # (1)
-```
-
-1.  Replace `USERNAME` and `PASSWORD` with your artifactory username and password
+    ``` ruby
+    machine kisiodigital.jfrog.io login artifactoryUsername password artifactoryPassword
+    ```
 
 ## 🛠 Modules Configuration
 
@@ -531,7 +533,7 @@ The following are the possible configuration parameters:
 
 ### Global configuration JSON file
 
-You can refer to the JSON file [here](./assets/file/config.json){:download="config_example.json"} to generate your own configuration.<br>
+You can refer to the JSON file <span style="text-decoration:underline">[here](./assets/file/config.json){:download="config_example.json"}</span> to generate your own configuration.<br>
 Note that this is the complete version of the configuration. Remove unused objects and adapt the values as needed.
 
 ## 📈 Modules events tracking
