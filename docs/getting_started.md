@@ -82,20 +82,20 @@ The following are the possible configuration parameters:
 
 | Name | Required  | Type | Target module |
 | --- | :-: | :--: | :---: |
-| `account` | :material-check: | [`Account color`](#account-color) | Account |
 | `aroundme` | :material-check: | [`Around Me color`](#around-me-color) | Around Me |
 | `bookmark` | :material-check: | [`Bookmark color`](#bookmark-color) | Bookmark |
-| `crowdsourcing` | :material-check: | [`Crowdsourcing color`](#crowdsourcing-color) | Crowdsourcing |
 | `journey` | :material-check: | [`Journey color`](#journey-color) | Journey |
 | `schedule` | :material-check: | [`Schedule color`](#schedule-color) | Schedule |
 | `traffic` | :material-check: | [`Traffic color`](#traffic-color) | Traffic |
+<!-- | `account` | :material-check: | [`Account color`](#account-color) | Account | -->
+<!-- | `crowdsourcing` | :material-check: | [`Crowdsourcing color`](#crowdsourcing-color) | Crowdsourcing | -->
 
-#### Account color
+<!-- #### Account color
 
 | Name | Required | Description | Type | Example |
 | --- |:---:| --- | :---: | :---: |
 | `primary` | :material-check: | To set the main color of the screens | `String` | `#88819f` |
-| `secondary` | :material-check: | To set the color of some UI components | `String` | `#8faa96` |
+| `secondary` | :material-check: | To set the color of some UI components | `String` | `#8faa96` | -->
 
 #### Around Me color
 
@@ -120,12 +120,12 @@ The following are the possible configuration parameters:
 | `primary` | :material-check: | To set the main color of the screens | `String` | `#88819f` |
 | `secondary` | :material-check: | To set the color of some UI components | `String` | `#8faa96` |
 
-#### Crowdsourcing color
+<!-- #### Crowdsourcing color
 
 | Name | Required | Description | Type | Example |
 | --- |:---:| --- | :---: | :---: |
 | `primary` | :material-check: | To set the main color of the screens | `String` | `#88819f` |
-| `secondary` | :material-check: | To set the color of some UI components | `String` | `#8faa96` |
+| `secondary` | :material-check: | To set the color of some UI components | `String` | `#8faa96` | -->
 
 #### Journey color
 
@@ -257,25 +257,25 @@ The following are the possible configuration parameters:
 
 | Name | Required  | Type | Target module |
 | --- | :-: | :--: | :---: |
-| `account` | :material-close: | [`Account fonts`](#account-fonts) | Account |
 | `aroundme` | :material-close: | [`Around Me fonts`](#around-me-fonts) | Around Me |
 | `bookmark` | :material-close: | [`Bookmark fonts`](#bookmark-fonts) | Bookmark |
 | `journey` | :material-close: | [`Journey fonts`](#journey-fonts) | Journey |
 | `schedule` | :material-close: | [`Schedule fonts`](#schedule-fonts) | Schedule |
 | `traffic` | :material-close: | [`Traffic fonts`](#traffic-fonts) | Traffic |
+<!-- | `account` | :material-close: | [`Account fonts`](#account-fonts) | Account | -->
 
 ### Features
 
 | Name | Required  | Type | Target module |
 | --- | :-: | :--: | :---: |
-| `account` | :material-close: | [`Account features`](#account-features) | Account |
 | `aroundme` | :material-close: | [`Around Me features`](#around-me-features) | Around Me |
 | `bookmark` | :material-close: | [`Bookmark features`](#bookmark-features) | Bookmark |
 | `journey` | :material-close: | [`Journey features`](#journey-features) | Journey |
 | `schedule` | :material-close: | [`Schedule features`](#schedule-features) | Schedule |
 | `traffic` | :material-close: | [`Traffic features`](#traffic-features) | Traffic |
+<!-- | `account` | :material-close: | [`Account features`](#account-features) | Account | -->
 
-#### Account features
+<!-- #### Account features
 
 | Name | Required | Description | Type |
 | --- |:---:| --- | :---: |
@@ -303,13 +303,12 @@ The following are the possible configuration parameters:
 
 !!! info "Info"
 
-    `PASSWORD` field type is only available for signup screen
+    `PASSWORD` field type is only available for signup screen -->
 
 #### Around Me features
 
 | Name | Required | Description | Type |
 | --- |:---:| --- | :---: |
-| `account_mode` | :material-close: | Enable/disable the account feature | `Boolean` |
 | `bookmark_mode` | :material-close: | Enable/disable the bookmarks feature | [`Bookmark options`](#bookmark-options) |
 | `default_location` | :material-close: | The default location on first launch | [`Default location`](#default-location) |
 | `go_from_go_to` | :material-close: | Show/hide the go from/go to buttons | `Boolean` |
@@ -322,6 +321,7 @@ The following are the possible configuration parameters:
 | `stop_point_search` | :material-close: | Enable/disable search by stop point instead of stop area | `Boolean` |
 | `traffic_mode` | :material-close: | Show/hide the traffic button | `Boolean` |
 | `vehicle_positions`| :material-close: | Show bus vehicle positions on map | [`Vehicle positions`](#vehicle-positions) |
+<!-- | `account_mode` | :material-close: | Enable/disable the account feature | `Boolean` | -->
 
 <h4>Default location</h4>
 
@@ -432,7 +432,7 @@ The following are the possible configuration parameters:
 
 | Name | Required  | Type | Target module |
 | --- | :-: | :--: | :---: |
-| `account` | :material-close: | [`Custom font`](#custom-font) | Account |
+<!-- | `account` | :material-close: | [`Custom font`](#custom-font) | Account | -->
 | `aroundme` | :material-close: | [`Custom font`](#custom-font) | Around Me |
 | `bookmark` | :material-close: | [`Custom font`](#custom-font) | Bookmark |
 | `journey` | :material-close: | [`Custom font`](#custom-font) | Journey |

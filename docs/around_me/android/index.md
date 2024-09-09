@@ -93,7 +93,6 @@ Each method has a `AroundMeNavigationListener.Event` parameter you can rely on.
 
 | Event |
 | --- |
-| `MAP_TO_ACCOUNT` |
 | `MAP_TO_FAVORITES` |
 | `MAP_TO_JOURNEY` |
 | `MAP_TO_TRAFFIC` |
@@ -184,7 +183,7 @@ override fun onBookPoi(id: String) {
 
 ### Modules
 
-#### Account
+<!-- #### Account
 
 This module communicates with Account module in order to vizualize the account screen. You should enable the `account_mode` parameter in the [features configuration](../../getting_started/#around-me-features).
 
@@ -194,7 +193,7 @@ The following method from the `AppRouter.UI` interface must be implemented by th
 override fun openAccountViaHost() {
     // launch the account module screen or your custom screen
 }
-```
+``` -->
 
 #### Bookmark
 

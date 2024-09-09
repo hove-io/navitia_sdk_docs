@@ -225,6 +225,3 @@ A customizable button appears in the POI details screen and the clicking event s
 
 <img class="img-overview" src="/navitia_sdk_docs/assets/img/aroundme_ios_poi_button_event.png" alt="POI button event">
 
-### Crowdsourcing
-
-⚠️ This section will be available soon!

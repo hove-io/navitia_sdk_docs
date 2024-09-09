@@ -7,10 +7,6 @@
         "name_res": ""
     },
     "colors": {
-        "account": {
-            "primary": "",
-            "secondary": ""
-        },
         "aroundme": {
             "primary": "",
             "secondary": "",
@@ -21,10 +17,6 @@
             }
         },
         "bookmark": {
-            "primary": "",
-            "secondary": ""
-        },
-        "crowdsourcing": {
             "primary": "",
             "secondary": ""
         },
@@ -152,92 +144,6 @@
             }
         },
         "bookmark": {
-            "alphanumeric": {
-                "regular": {
-                    "font_res": "",
-                    "ttf_file": "",
-                    "font_name": ""
-                },
-                "italic": {
-                    "font_res": "",
-                    "ttf_file": "",
-                    "font_name": ""
-                },
-                "bold": {
-                    "font_res": "",
-                    "ttf_file": "",
-                    "font_name": ""
-                },
-                "bold_italic": {
-                    "font_res": "",
-                    "ttf_file": "",
-                    "font_name": ""
-                },
-                "semi_bold": {
-                    "font_res": "",
-                    "ttf_file": "",
-                    "font_name": ""
-                },
-                "semi_bold_italic": {
-                    "font_res": "",
-                    "ttf_file": "",
-                    "font_name": ""
-                },
-                "light": {
-                    "font_res": "",
-                    "ttf_file": "",
-                    "font_name": ""
-                },
-                "light_italic": {
-                    "font_res": "",
-                    "ttf_file": "",
-                    "font_name": ""
-                }
-            },
-            "numeric": {
-                "regular": {
-                    "font_res": "",
-                    "ttf_file": "",
-                    "font_name": ""
-                },
-                "italic": {
-                    "font_res": "",
-                    "ttf_file": "",
-                    "font_name": ""
-                },
-                "bold": {
-                    "font_res": "",
-                    "ttf_file": "",
-                    "font_name": ""
-                },
-                "bold_italic": {
-                    "font_res": "",
-                    "ttf_file": "",
-                    "font_name": ""
-                },
-                "semi_bold": {
-                    "font_res": "",
-                    "ttf_file": "",
-                    "font_name": ""
-                },
-                "semi_bold_italic": {
-                    "font_res": "",
-                    "ttf_file": "",
-                    "font_name": ""
-                },
-                "light": {
-                    "font_res": "",
-                    "ttf_file": "",
-                    "font_name": ""
-                },
-                "light_italic": {
-                    "font_res": "",
-                    "ttf_file": "",
-                    "font_name": ""
-                }
-            }
-        },
-        "crowdsourcing": {
             "alphanumeric": {
                 "regular": {
                     "font_res": "",
@@ -605,7 +511,6 @@
         {
             "modules": [
                 "aroundme",
-                "crowdsourcing",
                 "journey",
                 "schedule",
                 "traffic"
@@ -720,41 +625,12 @@
         }
     },
     "features_configuration": {
-        "account": {
-            "my_account_menu_items": [
-                {
-                    "icon_res": "",
-                    "name_res": ""
-                }
-            ],
-            "sign_up_form_fields": [
-                {
-                    "hint_res": "",
-                    "type": "TEXT",
-                    "min_date": "dd/MM/yyyy",
-                    "max_date": "dd/MM/yyyy",
-                    "max_length": 0,
-                    "required": true
-                }
-            ],
-            "edit_form_fields": [
-                {
-                    "hint_res": "",
-                    "type": "DATE",
-                    "min_date": "dd/MM/yyyy",
-                    "max_date": "dd/MM/yyyy",
-                    "max_length": 0,
-                    "required": true
-                }
-            ]
-        },
         "aroundme": {
             "booking": true,
             "bookmark_mode": {
                 "journeys": true,
                 "bss": true
             },
-            "crowdsourcing_mode": true,
             "default_location": {
                 "lat": "48.846790",
                 "lon": "2.377090"
