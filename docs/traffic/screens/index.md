@@ -26,11 +26,11 @@ When clicking on a disrupted line, the message and the application period of the
 
 === "Android"
 
-    <img class="img-overview" src="/navitia_sdk_docs/assets/img/traffic_android_home_screen.png" alt="All disruptions screen">
+    <img class="img-overview" src="/navitia_sdk_docs/assets/img/traffic/android/home_screen.png" alt="All disruptions screen">
 
 === "iOS"
 
-    <img class="img-overview" src="/navitia_sdk_docs/assets/img/traffic_ios_home_screen.png" alt="All disruptions screen">
+    <img class="img-overview" src="/navitia_sdk_docs/assets/img/traffic/ios/home_screen.png" alt="All disruptions screen">
 
 ### Filters
 
@@ -39,11 +39,11 @@ If the user hits the **Apply** button after changing the selection state, the al
 
 === "Android"
 
-    <img class="img-overview" src="/navitia_sdk_docs/assets/img/traffic_android_filters_menu.png" alt="Filters menu">
+    <img class="img-overview" src="/navitia_sdk_docs/assets/img/traffic/android/filters_menu.png" alt="Filters menu">
 
 === "iOS"
 
-    <img class="img-overview" src="/navitia_sdk_docs/assets/img/traffic_ios_filters_menu.png" alt="Filters menu">
+    <img class="img-overview" src="/navitia_sdk_docs/assets/img/traffic/ios/filters_menu.png" alt="Filters menu">
 
 ## Line/network disruptions
 
@@ -54,11 +54,11 @@ If the [alert subscription](#alert-subscription) feature is enabled, a bell butt
 
 === "Android"
 
-    <img class="img-overview" src="/navitia_sdk_docs/assets/img/traffic_android_all_disruptions_screen.png" alt="All disruptions screen">
+    <img class="img-overview" src="/navitia_sdk_docs/assets/img/traffic/android/all_disruptions_screen.png" alt="All disruptions screen">
 
 === "iOS"
 
-    <img class="img-overview" src="/navitia_sdk_docs/assets/img/traffic_ios_all_disruptions_screen.png" alt="All disruptions screen">
+    <img class="img-overview" src="/navitia_sdk_docs/assets/img/traffic/ios/all_disruptions_screen.png" alt="All disruptions screen">
 
 ## Line selection
 
@@ -67,11 +67,11 @@ The parameter [`transport_networks`](../../getting_started/#traffic-features) al
 
 === "Android"
 
-    <img class="img-overview" src="/navitia_sdk_docs/assets/img/traffic_android_line_selection_screen.png" alt="Line selection screen">
+    <img class="img-overview" src="/navitia_sdk_docs/assets/img/traffic/android/line_selection_screen.png" alt="Line selection screen">
 
 === "iOS"
 
-    <img class="img-overview" src="/navitia_sdk_docs/assets/img/traffic_ios_line_selection_screen.png" alt="Line selection screen">
+    <img class="img-overview" src="/navitia_sdk_docs/assets/img/traffic/ios/line_selection_screen.png" alt="Line selection screen">
 
 ## Subscription schedule
 
@@ -80,11 +80,11 @@ Please verify that you have passed valid [Kronos API credentials](#traffic-alert
 
 === "Android"
 
-    <img class="img-overview" src="/navitia_sdk_docs/assets/img/traffic_android_subscription_schedule_screen.png" alt="Subscription schedule screen">
+    <img class="img-overview" src="/navitia_sdk_docs/assets/img/traffic/android/subscription_schedule_screen.png" alt="Subscription schedule screen">
 
 === "iOS"
 
-    <img class="img-overview" src="/navitia_sdk_docs/assets/img/traffic_ios_subscription_schedule_screen.png" alt="Subscription schedule screen">
+    <img class="img-overview" src="/navitia_sdk_docs/assets/img/traffic/ios/subscription_schedule_screen.png" alt="Subscription schedule screen">
 
 ## Subscriptions list
 
@@ -92,8 +92,8 @@ This screen lists all the alert subscriptions that the user have registered. The
 
 === "Android"
 
-    <img class="img-overview" src="/navitia_sdk_docs/assets/img/traffic_android_subscriptions_list_screen.png" alt="Subscriptions list screen">
+    <img class="img-overview" src="/navitia_sdk_docs/assets/img/traffic/android/subscriptions_list_screen.png" alt="Subscriptions list screen">
 
 === "iOS"
 
-    <img class="img-overview" src="/navitia_sdk_docs/assets/img/traffic_ios_subscriptions_list_screen.png" alt="Subscriptions list screen">
+    <img class="img-overview" src="/navitia_sdk_docs/assets/img/traffic/ios/subscriptions_list_screen.png" alt="Subscriptions list screen">

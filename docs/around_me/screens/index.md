@@ -28,21 +28,21 @@ In the bottom sheet of the main screen, the last added favorite stations are sho
 
 === "Android"
 
-    <img class="img-overview" src="/navitia_sdk_docs/assets/img/aroundme_android_map_screen.png" alt="Map screen">
+    <img class="img-overview" src="/navitia_sdk_docs/assets/img/around_me/android/map_screen.png" alt="Map screen">
 
 === "iOS"
 
-    <img class="img-overview" src="/navitia_sdk_docs/assets/img/aroundme_ios_map_screen.png" alt="Map screen">
+    <img class="img-overview" src="/navitia_sdk_docs/assets/img/around_me/ios/map_screen.png" alt="Map screen">
 
 In the details bottom sheet of a station or a POI, there is a star button in order to save or delete it from the bookmarks.
 
 === "Android"
 
-    <img class="img-overview" src="/navitia_sdk_docs/assets/img/aroundme_android_bookmark_saving_node.png" alt="Bookmark node">
+    <img class="img-overview" src="/navitia_sdk_docs/assets/img/around_me/android/bookmark_saving_node.png" alt="Bookmark node">
 
 === "iOS"
 
-    <img class="img-overview" src="/navitia_sdk_docs/assets/img/aroundme_ios_bookmark_saving_node.png" alt="Bookmark node">
+    <img class="img-overview" src="/navitia_sdk_docs/assets/img/around_me/ios/bookmark_saving_node.png" alt="Bookmark node">
 
 ## Map dragged
 
@@ -54,22 +54,22 @@ Please note that a history feature is added to this screen, allowing the user to
 
 === "Android"
 
-    <img class="img-overview" src="/navitia_sdk_docs/assets/img/aroundme_android_search_screen.png" alt="Search screen">
+    <img class="img-overview" src="/navitia_sdk_docs/assets/img/around_me/android/search_screen.png" alt="Search screen">
 
 === "iOS"
     
-    <img class="img-overview" src="/navitia_sdk_docs/assets/img/aroundme_ios_search_screen.png" alt="Search screen">
+    <img class="img-overview" src="/navitia_sdk_docs/assets/img/around_me/ios/search_screen.png" alt="Search screen">
 
 ## Filters
 
-This screen content is a visual version of the passed transport categories and POI categories configuration (check [modules configuration](../../getting_started/#modules-configuration) section for more information). The selected elements will be used to filter the data received and drawn within the map. One filter should at least be selected or else the user can't apply the current filters configuration.<br><br>
+This screen content is a visual version of the passed transport categories and POI categories configuration (check [modules configuration](../../getting_started/#modules-configuration) section for more information). The selected elements will be used to filter the data received and drawn within the map. One filter should at least be selected or else the user can't apply the current filters configuration.
 
 === "Android"
 
-    <img class="img-overview" src="/navitia_sdk_docs/assets/img/aroundme_android_filters_screen.png" alt="Filters screen">
+    <img class="img-overview" src="/navitia_sdk_docs/assets/img/around_me/android/filters_screen.png" alt="Filters screen">
 
     If you want to reset the user filters configuration, you can simply call `AroundMeUI.getInstance().resetUserPreferences()` and the current configuration will be deleted and the screen will be updated according to the new passed configuration.
 
 === "iOS"
 
-    <img class="img-overview" src="/navitia_sdk_docs/assets/img/aroundme_ios_filters_screen.png" alt="Filters screen">
+    <img class="img-overview" src="/navitia_sdk_docs/assets/img/around_me/ios/filters_screen.png" alt="Filters screen">

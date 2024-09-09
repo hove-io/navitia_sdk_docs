@@ -21,11 +21,11 @@ This screen lists all the favorite stations, Bike sharing service stations, car 
 
 === "Android"
 
-    <img class="img-overview" src="/navitia_sdk_docs/assets/img/bookmark_android_favorites_screen.png" alt="Favorites screen">
+    <img class="img-overview" src="/navitia_sdk_docs/assets/img/bookmark/android/favorites_screen.png" alt="Favorites screen">
 
 === "iOS"
     
-    <img class="img-overview" src="/navitia_sdk_docs/assets/img/bookmark_ios_favorites_screen.png" alt="Favorites screen">
+    <img class="img-overview" src="/navitia_sdk_docs/assets/img/bookmark/ios/favorites_screen.png" alt="Favorites screen">
 
 ## Autocomplete
 

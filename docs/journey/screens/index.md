@@ -35,32 +35,32 @@ In the public transport tab, the journeys are grouped in two sections: recommend
 
 === "Android"
 
-    <img class="img-overview" src="/navitia_sdk_docs/assets/img/journey_android_journeys_screen.png" alt="Journeys screen">
+    <img class="img-overview" src="/navitia_sdk_docs/assets/img/journey/android/journeys_screen.png" alt="Journeys screen">
 
 === "iOS"
 
-    <img class="img-overview" src="/navitia_sdk_docs/assets/img/journey_ios_journeys_screen.png" alt="Journeys screen">
+    <img class="img-overview" src="/navitia_sdk_docs/assets/img/journey/ios/journeys_screen.png" alt="Journeys screen">
 
 In the bike tab, the bike journeys are classified depending on specific criteria: the fastest, the most comfortable and the most balanced. The cycling path percentage is also displayed to the user to help him choose the right journey. In the same tab, the journeys combining only bike sharing service and walking are also added.
 
 === "Android"
 
-    <img class="img-overview" src="/navitia_sdk_docs/assets/img/journey_android_journeys_screen_bike_tab.png" alt="Bike tab">
+    <img class="img-overview" src="/navitia_sdk_docs/assets/img/journey/android/journeys_screen_bike_tab.png" alt="Bike tab">
 
 === "iOS"
 
-    <img class="img-overview" src="/navitia_sdk_docs/assets/img/journey_ios_journeys_screen_bike_tab.png" alt="Bike tab">
+    <img class="img-overview" src="/navitia_sdk_docs/assets/img/journey/ios/journeys_screen_bike_tab.png" alt="Bike tab">
 
 Each made itinerary request is saved and shown to the user at the screen launch. The history can be easily deleted by choosing delete from the action menu of the target item.<br>
 In the same screen, we also show the list of the favorite journeys that the user has added using the bookmark button (see [Roadmap](#roadmap) section below). To enable this feature, the `bookmark_mode`parameter should be set to `true` in [Journey features](../../getting_started/#journey-features).
 
 === "Android"
     
-    <img class="img-overview" src="/navitia_sdk_docs/assets/img/journey_android_journeys_screen_history_favorite_journeys.png" alt="Journey - History and favorites">
+    <img class="img-overview" src="/navitia_sdk_docs/assets/img/journey/android/journeys_screen_history_favorite_journeys.png" alt="Journey - History and favorites">
 
 === "iOS"
 
-    <img class="img-overview" src="/navitia_sdk_docs/assets/img/journey_ios_journeys_screen_history_favorite_journeys.png" alt="Journey - History and favorites">
+    <img class="img-overview" src="/navitia_sdk_docs/assets/img/journey/ios/journeys_screen_history_favorite_journeys.png" alt="Journey - History and favorites">
 
 ## Search
 
@@ -76,11 +76,11 @@ If `bookmark_mode` feature is enabled in the [Journey features](../../getting_st
 
 === "Android"
 
-    <img class="img-overview" src="/navitia_sdk_docs/assets/img/journey_android_autocompletion_screen.png" alt="Autocompletion screen">
+    <img class="img-overview" src="/navitia_sdk_docs/assets/img/journey/android/autocompletion_screen.png" alt="Autocompletion screen">
 
 === "iOS"
 
-    <img class="img-overview" src="/navitia_sdk_docs/assets/img/journey_ios_autocompletion_screen.png" alt="Autocompletion screen">
+    <img class="img-overview" src="/navitia_sdk_docs/assets/img/journey/ios/autocompletion_screen.png" alt="Autocompletion screen">
 
 ## Roadmap
 
@@ -92,11 +92,11 @@ A customized button can be added in case an external action needs to be made fro
 
 === "Android"
 
-    <img class="img-overview" src="/navitia_sdk_docs/assets/img/journey_android_roadmap_screen.png" alt="Roadmap screen">
+    <img class="img-overview" src="/navitia_sdk_docs/assets/img/journey/android/roadmap_screen.png" alt="Roadmap screen">
 
 === "iOS"
 
-    <img class="img-overview" src="/navitia_sdk_docs/assets/img/journey_ios_roadmap_screen.png" alt="Roadmap screen">
+    <img class="img-overview" src="/navitia_sdk_docs/assets/img/journey/ios/roadmap_screen.png" alt="Roadmap screen">
 
 ## Ridesharing offers
 
@@ -104,11 +104,11 @@ This screen lists the different ridesharing offers for the selected journey. Reg
 
 === "Android"
 
-    <img class="img-overview" src="/navitia_sdk_docs/assets/img/journey_android_ridesharing_offers_screen.png" alt="Ridesharing offers screen">
+    <img class="img-overview" src="/navitia_sdk_docs/assets/img/journey/android/ridesharing_offers_screen.png" alt="Ridesharing offers screen">
 
 === "iOS"
 
-    <img class="img-overview" src="/navitia_sdk_docs/assets/img/journey_ios_ridesharing_offers_screen.png" alt="Ridesharing offers screen">
+    <img class="img-overview" src="/navitia_sdk_docs/assets/img/journey/ios/ridesharing_offers_screen.png" alt="Ridesharing offers screen">
 
 ## Step by step guidance
 
@@ -119,8 +119,8 @@ The journey duration and the estimated arrival time are realtime-updated variabl
 
 === "Android"
     
-    <img class="img-overview" src="/navitia_sdk_docs/assets/img/journey_android_navigation_screen.png" alt="Navigation screen">
+    <img class="img-overview" src="/navitia_sdk_docs/assets/img/journey/android/navigation_screen.png" alt="Navigation screen">
 
 === "iOS"
 
-    <img class="img-overview" src="/navitia_sdk_docs/assets/img/journey_ios_navigation_screen.png" alt="Navigation screen">
+    <img class="img-overview" src="/navitia_sdk_docs/assets/img/journey/ios/navigation_screen.png" alt="Navigation screen">

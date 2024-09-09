@@ -29,21 +29,21 @@ The lines can also be grouped by networks. To enable this feature, you need to s
 
 === "Android"
 
-    <img class="img-overview" src="/navitia_sdk_docs/assets/img/schedule_android_home_screen.png" alt="Lines screen">
+    <img class="img-overview" src="/navitia_sdk_docs/assets/img/schedule/android/home_screen.png" alt="Lines screen">
 
 === "iOS"
 
-    <img class="img-overview" src="/navitia_sdk_docs/assets/img/schedule_ios_home_screen.png" alt="Lines screen">
+    <img class="img-overview" src="/navitia_sdk_docs/assets/img/schedule/ios/home_screen.png" alt="Lines screen">
 
 If there is any favorite station, an additional tab will be shown listing all bookmarked stations. Each station has a maximum of 3 next departures by destination or an empty state if data is unavailable.
 
 === "Android"
 
-    <img class="img-overview" src="/navitia_sdk_docs/assets/img/schedule_android_home_favorites_screen.png" alt="Lines screen with favorites">
+    <img class="img-overview" src="/navitia_sdk_docs/assets/img/schedule/android/home_favorites_screen.png" alt="Lines screen with favorites">
 
 === "iOS"
 
-    <img class="img-overview" src="/navitia_sdk_docs/assets/img/schedule_ios_home_favorites_screen.png" alt="Lines screen with favorites">
+    <img class="img-overview" src="/navitia_sdk_docs/assets/img/schedule/ios/home_favorites_screen.png" alt="Lines screen with favorites">
 
 ## Search
 
@@ -54,11 +54,11 @@ A history feature is added to this screen, allowing the user to choose from the 
 
 === "Android"
 
-    <img class="img-overview" src="/navitia_sdk_docs/assets/img/schedule_android_search_screen.png" alt="Search screen">
+    <img class="img-overview" src="/navitia_sdk_docs/assets/img/schedule/android/search_screen.png" alt="Search screen">
 
 === "iOS"
 
-    <img class="img-overview" src="/navitia_sdk_docs/assets/img/schedule_ios_search_screen.png" alt="Search screen">
+    <img class="img-overview" src="/navitia_sdk_docs/assets/img/schedule/ios/search_screen.png" alt="Search screen">
 
 ## Stations
 
@@ -67,11 +67,11 @@ In case the `directions_first` parameter is set to `true` in the [features confi
 
 === "Android"
 
-    <img class="img-overview" src="/navitia_sdk_docs/assets/img/schedule_android_line_stations_screen.png" alt="Stations screen">
+    <img class="img-overview" src="/navitia_sdk_docs/assets/img/schedule/android/line_stations_screen.png" alt="Stations screen">
 
 === "iOS"
 
-    <img class="img-overview" src="/navitia_sdk_docs/assets/img/schedule_ios_line_stations_screen.png" alt="Stations screen">
+    <img class="img-overview" src="/navitia_sdk_docs/assets/img/schedule/ios/line_stations_screen.png" alt="Stations screen">
 
 ## Timetable
 
@@ -79,21 +79,21 @@ This screen allows the user to see the next departures of the target transport m
 
 === "Android"
 
-    <img class="img-overview" src="/navitia_sdk_docs/assets/img/schedule_android_station_next_departures_screen.png" alt="Next departures screen">
+    <img class="img-overview" src="/navitia_sdk_docs/assets/img/schedule/android/station_next_departures_screen.png" alt="Next departures screen">
 
 === "iOS"
 
-    <img class="img-overview" src="/navitia_sdk_docs/assets/img/schedule_ios_station_next_departures_screen.png" alt="Next departures screen">
+    <img class="img-overview" src="/navitia_sdk_docs/assets/img/schedule/ios/station_next_departures_screen.png" alt="Next departures screen">
 
 The user can also bookmark this selected station by taping the Favorite button on the bottom-right corner of the map. To enable this feature, you need to switch the `bookmark_mode` parameter to `true` in the [features configuration](../../getting_started/#schedule-features). 
 
 === "Android"
 
-    <img class="img-overview" src="/navitia_sdk_docs/assets/img/schedule_android_station_next_departures_favorites_screen.png" alt="Next departures screen with favorite">
+    <img class="img-overview" src="/navitia_sdk_docs/assets/img/schedule/android/station_next_departures_favorites_screen.png" alt="Next departures screen with favorite">
 
 === "iOS"
 
-    <img class="img-overview" src="/navitia_sdk_docs/assets/img/schedule_ios_station_next_departures_favorites_screen.png" alt="Next departures screen with favorite">
+    <img class="img-overview" src="/navitia_sdk_docs/assets/img/schedule/ios/station_next_departures_favorites_screen.png" alt="Next departures screen with favorite">
 
 When the user taps on the All schedules button in the [next departures](#next-departures) screen, the all schedules screen shows up and gives all theoretical departures of the selected line from the selected station to the target destination.<br>
 
@@ -101,8 +101,8 @@ This screen includes a datepicker button allowing the user to choose a date and 
 
 === "Android"
     
-    <img class="img-overview" src="/navitia_sdk_docs/assets/img/schedule_android_all_schedules_screen.png" alt="All schedules screen">
+    <img class="img-overview" src="/navitia_sdk_docs/assets/img/schedule/android/all_schedules_screen.png" alt="All schedules screen">
 
 === "iOS"
 
-    <img class="img-overview" src="/navitia_sdk_docs/assets/img/schedule_ios_all_schedules_screen.png" alt="All schedules screen">
+    <img class="img-overview" src="/navitia_sdk_docs/assets/img/schedule/ios/all_schedules_screen.png" alt="All schedules screen">
