@@ -55,7 +55,11 @@ markdown_extensions:
       anchor_linenums: true
   - pymdownx.inlinehilite
   - pymdownx.snippets
-  - pymdownx.superfences
+  - pymdownx.superfences:
+      custom_fences:
+          - name: mermaid
+            class: mermaid
+            format: !!python/name:pymdownx.superfences.fence_code_format
   - pymdownx.tabbed:
       alternate_style: true
   - pymdownx.tasklist:
@@ -87,6 +91,7 @@ nav:
     - iOS:
       - Documentation: around_me/ios/index.md
       - Changelogs: around_me/ios/changelogs.md
+    - Screens: around_me/screens/index.md
   - Bookmark:
     - Android:
       - Documentation: bookmark/android/index.md
@@ -94,6 +99,7 @@ nav:
     - iOS:
       - Documentation: bookmark/ios/index.md
       - Changelogs: bookmark/ios/changelogs.md
+    - Screens: bookmark/screens/index.md
   - Expert:
     - Android:
       - Documentation: expert/android/index.md
@@ -112,6 +118,7 @@ nav:
     - iOS:
       - Documentation: journey/ios/index.md
       - Changelogs: journey/ios/changelogs.md
+    - Screens: journey/screens/index.md
   - Schedule:
     - Android:
       - Documentation: schedule/android/index.md
@@ -119,6 +126,7 @@ nav:
     - iOS:
       - Documentation: schedule/ios/index.md
       - Changelogs: schedule/ios/changelogs.md
+    - Screens: schedule/screens/index.md
   - Traffic:
     - Android:
       - Documentation: traffic/android/index.md
@@ -126,6 +134,7 @@ nav:
     - iOS:
       - Documentation: traffic/ios/index.md
       - Changelogs: traffic/ios/changelogs.md
+    - Screens: traffic/screens/index.md
     
 # Extra config
 extra_css:
@@ -139,7 +148,9 @@ plugins:
   - search
   - exclude:
       glob:
-        #- expert/*
         #- around_me/*
+        #- bookmark/*
+        #- expert/*
+        #- journey/*
         #- schedule/*
         #- traffic/*

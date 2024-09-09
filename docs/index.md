@@ -16,7 +16,7 @@ Please check the <span style="text-decoration:underline">[Getting Started](getti
 
 Search for transport data nearby the user position, show schedules of available lines and a lot more
 
-<div class="grid cards" markdown>
+<div class="grid cards" style="margin-bottom: .4em" markdown>
 
 -  :fontawesome-brands-android:{ .android } Android
 
@@ -29,6 +29,13 @@ Search for transport data nearby the user position, show schedules of available 
     [:octicons-arrow-right-24: Changelogs](around_me/ios/changelogs.md)
 
 </div>
+<div class="grid cards" style="margin-top: 0em" markdown>
+
+- 
+    
+    [:octicons-arrow-right-24: Screens](around_me/screens/index.md)
+
+</div>
 
 <p class="home-module-title-block">
     <span class="home-module-title-text">Bookmark</span>
@@ -37,7 +44,7 @@ Search for transport data nearby the user position, show schedules of available 
 
 Show to the user his preferred data and more
 
-<div class="grid cards" markdown>
+<div class="grid cards" style="margin-bottom: .4em" markdown>
 
 -  :fontawesome-brands-android:{ .android } Android
 
@@ -50,6 +57,13 @@ Show to the user his preferred data and more
     [:octicons-arrow-right-24: Changelogs](bookmark/ios/changelogs.md)
 
 </div>
+<div class="grid cards" style="margin-top: 0em" markdown>
+
+- 
+    
+    [:octicons-arrow-right-24: Screens](bookmark/screens/index.md)
+
+</div>
 
 <p class="home-module-title-block">
     <span class="home-module-title-text">Journey</span>
@@ -58,7 +72,7 @@ Show to the user his preferred data and more
 
 Allows to search itineraries from an origin point to a destination point. These points can be stations, points of interest, addresses or even location coordinates
 
-<div class="grid cards" markdown>
+<div class="grid cards" style="margin-bottom: .4em" markdown>
 
 -  :fontawesome-brands-android:{ .android } Android
 
@@ -71,6 +85,13 @@ Allows to search itineraries from an origin point to a destination point. These 
     [:octicons-arrow-right-24: Changelogs](journey/ios/changelogs.md)
 
 </div>
+<div class="grid cards" style="margin-top: 0em" markdown>
+
+- 
+    
+    [:octicons-arrow-right-24: Screens](journey/screens/index.md)
+
+</div>
 
 <p class="home-module-title-block">
     <span class="home-module-title-text">Schedule</span>
@@ -79,7 +100,7 @@ Allows to search itineraries from an origin point to a destination point. These 
 
 Show upcoming departures and the timetable of a line in a specific station
 
-<div class="grid cards" markdown>
+<div class="grid cards" style="margin-bottom: .4em" markdown>
 
 -  :fontawesome-brands-android:{ .android } Android
 
@@ -92,6 +113,13 @@ Show upcoming departures and the timetable of a line in a specific station
     [:octicons-arrow-right-24: Changelogs](schedule/ios/changelogs.md)
 
 </div>
+<div class="grid cards" style="margin-top: 0em" markdown>
+
+- 
+    
+    [:octicons-arrow-right-24: Screens](schedule/screens/index.md)
+
+</div>
 
 <p class="home-module-title-block">
     <span class="home-module-title-text">Traffic</span>
@@ -100,7 +128,7 @@ Show upcoming departures and the timetable of a line in a specific station
 
 Show upcoming departures and the timetable of a line in a specific station
 
-<div class="grid cards" markdown>
+<div class="grid cards" style="margin-bottom: .4em" markdown>
 
 -  :fontawesome-brands-android:{ .android } Android
 
@@ -111,6 +139,13 @@ Show upcoming departures and the timetable of a line in a specific station
     
     [:octicons-arrow-right-24: Documentation](traffic/ios/index.md)<br>
     [:octicons-arrow-right-24: Changelogs](traffic/ios/changelogs.md)
+
+</div>
+<div class="grid cards" style="margin-top: 0em" markdown>
+
+- 
+    
+    [:octicons-arrow-right-24: Screens](traffic/screens/index.md)
 
 </div>
 

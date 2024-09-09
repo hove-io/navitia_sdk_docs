@@ -115,14 +115,6 @@ If you want to use the `rootViewController` as a `ChildViewController` of your `
     yourViewController.addChild(UINavigationController(rootViewController: bookmarkViewController))
     ```
 
-## 📱 Screens
-
-### Favorites
-
-This screen lists all the favorite stations, Bike sharing service stations, car parkings and addresses added by the user through other UI modules (Around Me, Schedule...) or from within a 3rd party application.<br>
-
-<img class="img-overview" src="/navitia_sdk_docs/assets/img/bookmark_ios_favorites_screen.png" alt="Favorites screen">
-
 ## 📖 Manipulating data
 
 The module provides the ability to directly manipulate data for use in custom screens.
