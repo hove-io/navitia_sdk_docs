@@ -90,6 +90,14 @@ You can also call the `initialize()` method with the global JSON configuration f
     }                                   
     ```
 
+### Events tracking
+
+In order to receive the list of generated events within Bookmark module, you have to assign the instance of the tracker to the Bookmark module instance as follows and implement the required methods:
+
+```swift
+Bookmark.shared.tracker = self
+```
+
 ## 🚀  Launching
 
 This module has a single entry point. The parameter `showBack` handles the back button visibility on the first screen.

@@ -103,6 +103,15 @@ Each method has a `AroundMeNavigationListener.Event` parameter you can rely on.
 | `SEARCH_BACK_TO_MAP` |
 | `FILTER_BACK_TO_MAP` |
 
+### Events tracking
+
+In order to receive the list of generated events within Around me module, you have to attach the tracker to the module instance.<br>
+You can call this method before or after `init()`.
+
+| Method | Description |
+| --- | --- |
+| `.attachTracker(aroundMeTrackerImpl)` | Attach the class instance implementing `AroundMeTracker` interface |
+
 ## 🚀  Launching
 
 Around Me has a single entry point `MapFragment`.<br>

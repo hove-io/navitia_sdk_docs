@@ -106,6 +106,14 @@ To enable the alert subscription feature, the following instructions are require
 | `username` | :material-check: | Kronos authentication username | `String` |
 | `password` | :material-check: | Kronos authentication password | `String` |
 
+### Events tracking
+
+In order to receive the list of generated events within Traffic module, you have to assign the instance of the tracker to the Traffic module instance as follows and implement the required methods:
+
+```swift
+Traffic.shared.tracker = self
+```
+
 ## 🚀  Launching
 
 This module has a single entry point. The parameter `showBack` handles the back button visibility on the first screen.

@@ -92,6 +92,15 @@ Each method has a `BookmarkNavigationListener.Event` parameter you can rely on.
 | `FAVORITES_TO_ADD_ADDRESS` |
 | `FAVORITES_TO_ROADMAP` |
 
+### Events tracking
+
+In order to receive the list of generated events within Bookmark module, you have to attach the tracker to the module instance.<br>
+You can call this method before or after `init()`.
+
+| Method | Description |
+| --- | --- |
+| `.attachTracker(bookmarkTrackerImpl)` | Attach the class instance implementing `BookmarkTracker` interface |
+
 ## 🚀  Launching
 
 Bookmark has a single entry point `FavoriteFragment`.<br>

@@ -101,6 +101,15 @@ Each method has a `ScheduleNavigationListener.Event` parameter you can rely on.
 | `STATIONS_BACK_TO_LINE` |
 | `TIMETABLE_BACK_TO_LINES` |
 
+### Events tracking
+
+In order to receive the list of generated events within Schedule module, you have to attach the tracker to the module instance.<br>
+You can call this method before or after `init()`.
+
+| Method | Description |
+| --- | --- |
+| `.attachTracker(scheduleTrackerImpl)` | Attach the class instance implementing `ScheduleTracker` interface |
+
 ## 🚀  Launching
 
 Schedule has a single entry point `LinesFragment`.<br>

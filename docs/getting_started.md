@@ -555,24 +555,22 @@ You can refer to the table below for possible generated events.
 | `swipe` | `bottomSheet` | The user performs a swipe action |
 | `zoom` | `map` | The user performs whether a pinch, a double tap action to zoom on an object |
 
-You can find in the following table the list of UI modules that support the event tracking features
+=== "Android"
 
-<h4>Android</h4>
+    | Module name  | Implementation |
+    | --- | :---: |
+    | Around me | [Around me Android events tracking](../around_me/android/#events-tracking) |
+    | Bookmark | [Bookmark Android events tracking](../bookmark/android/#events-tracking) |
+    | Journey | [Journey Android events tracking](../journey/android/#events-tracking) |
+    | Schedule | [Schedule Android events tracking](../schedule/android/#events-tracking) |
+    | Traffic | [Traffic Android events tracking](../traffic/android/#events-tracking) |
 
-| Module name | Available | Implementation |
-| --- | ---- | :---: |
-| Around me | :material-close: | [Around me events tracking](../around_me/android/#events-tracking) |
-| Bookmark | :material-close: | [Bookmark events tracking](../bookmark/android/#events-tracking) |
-| Journey | :material-check: | [Journey events tracking](../journey/android/#events-tracking) |
-| Schedule | :material-close: | [Schedule events tracking](../schedule/android/#events-tracking) |
-| Traffic | :material-close: | [Traffic events tracking](../traffic/android/#events-tracking) |
+=== "iOS"
 
-<h4>iOS</h4>
-
-| Module name | Available | Implementation |
-| --- | ---- | :---: |
-| Around me | :material-close: | [Around me events tracking](../around_me/ios/#events-tracking) |
-| Bookmark | :material-close: | [Bookmark events tracking](../bookmark/ios/#events-tracking) |
-| Journey | :material-check: | [Journey events tracking](../journey/ios/#events-tracking) |
-| Schedule | :material-close: | [Schedule events tracking](../schedule/ios/#events-tracking) |
-| Traffic | :material-close: | [Traffic events tracking](../traffic/ios/#events-tracking) |
+    | Module name | Implementation |
+    | --- | :---: |
+    | Around me | [Around me iOS events tracking](../around_me/ios/#events-tracking) |
+    | Bookmark | [Bookmark iOS events tracking](../bookmark/ios/#events-tracking) |
+    | Journey | [Journey iOS events tracking](../journey/ios/#events-tracking) |
+    | Schedule | [Schedule iOS events tracking](../schedule/ios/#events-tracking) |
+    | Traffic | [Traffic iOS events tracking](../traffic/ios/#events-tracking) |

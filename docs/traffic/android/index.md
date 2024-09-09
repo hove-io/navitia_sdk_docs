@@ -115,6 +115,15 @@ To enable the alert subscription feature, the following instructions are require
 | `username` | :material-check: | Kronos authentication username | `String` |
 | `password` | :material-check: | Kronos authentication password | `String` |
 
+### Events tracking
+
+In order to receive the list of generated events within Traffic module, you have to attach the tracker to the module instance.<br>
+You can call this method before or after `init()`.
+
+| Method | Description |
+| --- | --- |
+| `.attachTracker(trafficTrackerImpl)` | Attach the class instance implementing `TrafficTracker` interface |
+
 ## 🚀  Launching
 
 Traffic has a single entry point `AllDisruptionsFragment`.<br>
