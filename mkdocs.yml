@@ -1,5 +1,5 @@
 # Project information
-site_name: Navitia SDK Documentation
+site_name: Navitia SDK Docs
 site_url: https://hove-io.github.io/navitia_sdk_docs/
 site_author: Front Mobile Team
 site_description: >-
@@ -36,7 +36,7 @@ theme:
     text: Roboto
     code: Roboto Mono
   favicon: assets/img/favicon.svg
-  logo: assets/img/navitia.svg
+  logo: assets/img/hove.svg
 
 # Code snippets/tables/emojis
 markdown_extensions:

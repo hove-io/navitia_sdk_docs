@@ -7,7 +7,7 @@ title: Navitia SDK Docs
 Navitia (_pronounce [navi-sia]_) provides a bunch of native SDKs for developers that can be easily integrated within an application. Each separate module offers a different service and may have its own requirements and configuration process.<br>
 Please check the <span style="text-decoration:underline">[Getting Started](getting_started.md)</span> page before proceeding to configure the desirable module.
 
-## Modules
+<h2>Modules</h2>
 
 <p class="home-module-title-block">
     <span class="home-module-title-text">Around Me</span>
@@ -35,7 +35,7 @@ Search for transport data nearby the user position, show schedules of available 
     <img src="https://img.shields.io/badge/UI-module?style=flat&color=%2300beda">
 </p>
 
-Show to the user his preferred data and more...
+Show to the user his preferred data and more
 
 <div class="grid cards" markdown>
 
