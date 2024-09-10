@@ -4,14 +4,11 @@ title: Journey iOS - Navitia SDK Docs
 
 # Journey iOS
 
-## 💻 Setup
+## :computer: Setup
 
-In your project, add the following lines to your `Podfile` :
+In your project, add the following lines to your `Podfile`:
 
 ```ruby
-platform :ios, '14.0' # Minimum deployment target
-use_frameworks!
-
 source 'https://github.com/CocoaPods/Specs.git' # Default Cocoapods URL
 source 'https://github.com/hove-io/Podspecs.git' # Journey podspec URL
 
@@ -31,9 +28,11 @@ end
 
 Using your CLI, run `pod install` in your project directory.
 
-## 👨‍💻  Implementation
+## :man_technologist: Implementation
 
-⚠️ Please make sure to read the [modules configuration](../../getting_started/#modules-configuration) section before proceeding!<br>
+!!! warning "Warning"
+
+    Make sure to read the [modules configuration](../../getting_started/#modules-configuration) section before proceeding!
 
 This module is set up by calling `JourneySdk.shared.initialize()` method which takes the following parameters:
 
@@ -58,41 +57,42 @@ You can also call the `initialize()` method with the global JSON configuration f
 
 <h4>Example</h4>
 
-```swift
-do {
-    let transportCategories = [TransportCategory(modules: ["journey"],
-                                                 iconRes: "ic_section_mode_metro",
-                                                 nameRes: "metro",
-                                                 selected: true,
-                                                 modes: [TransportCategoryMode(physical: TransportPhysicalMode(id "physical_mode:Metro"),
-                                                                               commercial: TransportCommercialMode(id: "commercial_mode:Metro", name: "Metro"))],
-                                                 networks: [],
-                                                 firstSectionModes: ["walking"],
-                                                 lastSectionModes: ["walking"],
-                                                 directPathModes: ["walking"],
-                                                 addPoiInfos: [])]
-            
-    let journeyColorsConfiguration = JourneyColorsConfiguration(primary: "#88819f", secondary: "#8faa96")
-                                                                      
-    try JourneySdk.shared.initialize(coverage: "fr-idf",
-                                    token: "your_token",
-                                    env: "PROD",
-                                    colors: journeyColorsConfiguration,
-                                    transportCategories: transportCategories)                                                                  
-} catch {
-    Logger.error("%@", String(format: "Journey SDK cannot be initialized! %@", error.localizedDescription))
-}                                   
-```
+=== "Configuration with file"
 
-<h4>Example with JSON file</h4>
+    ```swift
+    do {
+        try JourneySdk.shared.initialize(token: "your_token", configurationJsonFile: "journey_configuration.json")                                                               
+    } catch {
+        Logger.error("%@", String(format: "Journey SDK cannot be initialized! %@", error.localizedDescription))
+    }                                   
+    ```
 
-```swift
-do {
-    try JourneySdk.shared.initialize(token: "your_token", configurationJsonFile: "journey_configuration.json")                                                               
-} catch {
-    Logger.error("%@", String(format: "Journey SDK cannot be initialized! %@", error.localizedDescription))
-}                                   
-```
+=== "Manual configuration"
+
+    ```swift
+    do {
+        let transportCategories = [TransportCategory(modules: ["journey"],
+                                                     iconRes: "ic_section_mode_metro",
+                                                     nameRes: "metro",
+                                                     selected: true,
+                                                     modes: [TransportCategoryMode(physical: TransportPhysicalMode(id "physical_mode:Metro"),
+                                                                                   commercial: TransportCommercialMode(id: "commercial_mode:Metro", name: "Metro"))],
+                                                     networks: [],
+                                                     firstSectionModes: ["walking"],
+                                                     lastSectionModes: ["walking"],
+                                                     directPathModes: ["walking"],
+                                                     addPoiInfos: [])]
+        let journeyColorsConfiguration = JourneyColorsConfiguration(primary: "#88819f", secondary: "#8faa96")
+                                                                          
+        try JourneySdk.shared.initialize(coverage: "fr-idf",
+                                        token: "your_token",
+                                        env: "PROD",
+                                        colors: journeyColorsConfiguration,
+                                        transportCategories: transportCategories)                                                                  
+    } catch {
+        Logger.error("%@", String(format: "Journey SDK cannot be initialized! %@", error.localizedDescription))
+    }                                   
+    ```
 
 ### Events tracking
 
@@ -102,30 +102,32 @@ In order to receive the list of generated events within Journey module, you have
 JourneySdk.shared.tracker = self
 ```
 
-## 🚀  Launching
+## :rocket: Launching
 
 This module has a single entry point. The parameter `showBack` handles the back button visibility on the first screen.
-Please note that if you want to use the `rootViewController` as a `ChildViewController` of your `ViewController`, you should embed it in an `NavigationController`. 
 
 ```swift
 guard let journeyViewController = JourneySdk.shared.rootViewController else {
   return nil
 }
-
-// Hide back button embedded in the first screen
-journeyViewController.showBack = false
-
-// With a NavigationController
-navigationController?.pushViewController(journeyViewController, animated: false) // (1)
-
-// With a ChildViewController
-yourViewController.addChild(UINavigationController(rootViewController: journeyViewController)) // (2)
+journeyViewController.showBack = false // Hide back button embedded in the first screen
 ```
 
-1.  Use this code if you're using your own NavigationController
-2.  Use this code if you're using a ChildViewController
+If you want to use the `rootViewController` as a `ChildViewController` of your `ViewController`, you should embed it in an `NavigationController`. 
 
-### JourneysRequest
+=== "Using a `NavigationController`"
+
+    ```swift
+    navigationController?.pushViewController(journeyViewController, animated: false)
+    ```
+
+=== "Using a `ChildViewController`"
+
+    ```swift
+    yourViewController.addChild(UINavigationController(rootViewController: journeyViewController))
+    ```
+
+### :fontawesome-solid-file-code: `JourneysRequest`
 
 The `JourneysRequest` object allows to configure the first itinerary search at screen launch. It has the following parameters:
 
@@ -181,21 +183,21 @@ The `JourneysRequest` object allows to configure the first itinerary search at s
 | `walkingSpeed` | Walking speed | `Float` | `nil` |
 | `wheelchair` | Check on [Navitia](https://doc.navitia.io/#journeys)  | `Bool` | `nil` |
 
-#### DataFreshness
+#### :fontawesome-solid-file-code: `DataFreshness`
 
 | Enum value | Description |
 | --- | --- |
 | `base_schedule` | Get disrupted journeys with the given results |
 | `realtime` | Avoid disrupted journeys |
 
-#### DateTimeRepresents
+#### :fontawesome-solid-file-code: `DateTimeRepresents`
 
 | Enum value | Description |
 | --- | --- |
 | `arrival` | The requestd datetime represents the arrival of the journey |
 | `departure` | The requested datetime represents the departure of the journey |
 
-#### DirectPath
+#### :fontawesome-solid-file-code: `DirectPath`
 
 | Enum value | Description |
 | --- | --- |
@@ -204,7 +206,7 @@ The `JourneysRequest` object allows to configure the first itinerary search at s
 | `only` | For journeys without public transport |
 | `onlyWithAlternatives` | For journeys with specific bike |
 
-#### TravelerType
+#### :fontawesome-solid-file-code: `TravelerType`
 
 | Enum value | Description |
 | --- | --- |
@@ -214,116 +216,20 @@ The `JourneysRequest` object allows to configure the first itinerary search at s
 | `standard` | Standard profile |
 | `wheelchair` | Using wheelchair |
 
-## 📱 Screens
+## :mega: Communicating with other modules or the app
 
-### Journeys
-
-The journeys screen is fundamental and offers the solutions to the user for the requested itinerary.
-After defining all the required parameters, this screen will popup with multiple results combining public transport, personal bikes/cars, bike sharing system and even ridesharing possibilities.
-
-Each result gives the needed information to the user in order to planify his journey. He can check the duration, the suggested means of transport, the next departure datetimes and many other useful details. This combination of data, being served by <a href="https://doc.navitia.io" target="_blank">Navitia</a> servers and translated into a comprehensible/user friendly interface, is perfectly shaped to the user profile and needs.
-
-The journeys are grouped into categories represented by different tabs: public transport, walking, bike, car and ridesharing. The visibility of each tab depends on the passed [transport categories configuration](../../getting_started/#transport-category).<br>
-In the public transport tab, the journeys are grouped in two sections: recommended journeys and other journeys. The recommended journey ensures to the user that the arrival date is respected and yet, the journey is reliable.<br>
-
-<img class="img-overview" src="/navitia_sdk_docs/assets/img/journey_ios_journeys_screen.png" alt="Journeys screen">
-
-In the bike tab, the bike journeys are classified depending on specific criteria: the fastest, the most comfortable and the most balanced. The cycling path percentage is also displayed to the user to help him choose the right journey. In the same tab, the journeys combining only bike sharing service and walking are also added.
-
-<img class="img-overview" src="/navitia_sdk_docs/assets/img/journey_ios_journeys_screen_bike_tab.png" alt="Bike tab">
-
-Each made itinerary request is saved and shown to the user at the screen launch. The history can be easily deleted by choosing delete from the action menu of the target item.<br>
-In the same screen, we also show the list of the favorite journeys that the user has added using the bookmark button (see [Roadmap](#roadmap) section below). To enable this feature, the `bookmark_mode`parameter should be set to `true` in [Journey features](../../getting_started/#journey-features).
-
-<img class="img-overview" src="/navitia_sdk_docs/assets/img/journey_ios_journeys_screen_history_favorite_journeys.png" alt="Journey - History and favorites">
-
-### Search
-
-The search feature can be enabled in the configuration by setting the parameter `search_only` to `false` as mentioned in the [Journey features](../../getting_started/#journey-features) section.<br>
-In this screen, the user can choose the departure and the arrival of his itinerary. While typing in the target field, a list of options is shown below the field. The user can simply choose one of the suggested options and mark it as a departure or as an arrival point.<br>
-
-The suggested options are grouped in sections, it's whether a station, an address or a place.
-In this screen, a geolocation service is used to get the user location. Therefore, another option is given and it allows the user to set his position as a departure or an arrival of the itinerary.<br>
-
-A history feature is added to this screen, allowing the user to choose from the previous selected items. The `maxHistory` parameter defines the maximum number of items to show in the history list.
-
-If `bookmark_mode` feature is enabled in the [Journey features](../../getting_started/#journey-features), a bookmark section appears in the same screen allowing the user to choose from his favorite addresses/places. A shortcut button is also available for Home and Work favorites.
-
-<img class="img-overview" src="/navitia_sdk_docs/assets/img/journey_ios_autocompletion_screen.png" alt="Autocompletion screen">
-
-#### Intercepting Bookmark callbacks
-
-In case you enable Bookmark feature in this module, some actions are defined by default to show Bookmark screen.
-Now, it's possible to intercept these callbacks and implement your own way of displaying user favorite data.<br>
-
-To do so, you will need to pass a `CustomJourneyBookmarkDelegate` to the Journey module instance.<br>
-This will allow to access to the following callbacks :
+Bookmark module can exchange data with or navigate to either other modules or the host application.<br>
+To do this, the host application must initialize `Router`. This singleton will ensure communication between the different modules or the app. Communication will not occur unless those are registered beforehand:
 
 ``` swift
-extension YourClass: CustomJourneyBookmarkDelegate {
-
-  func onHomeAddressCompletionRequested(module: Router.BookmarkLinkedModule) {
-    // Called when the user taps on the Home button in Autocompletion screen and the home favorite address is not filled yet
-  }
-
-  func onWorkAddressCompletionRequested(module: Router.BookmarkLinkedModule) {
-    // Called when the user taps on the Work button in Autocompletion screen and the home favorite work is not filled yet
-  }
-}
+try Router.shared
+          ... // Register modules and/or app
+          .initialize()
 ```
-
-### Roadmap
-
-We believe that the user needs more useful details about his journey and that's where the roadmap screen comes in. In this page, the user gets a visual overview about the selected itinerary with a simple colorful drawing on a map. Departure and arrival markers are also shown on the map along with the user location and itinerary segments delimiters.
-
-The screen also includes a draggable bottom sheet which offers a step-by-step journey sections. Each section is represented in a way that it makes it easier to the user to follow the given instructions. The public transport section is also well detailed when it comes to explain to the user how to take different means of transport from the departure to the arrival point.
-
-A customized button can be added in case an external action needs to be made from outside this screen. To enable this button, the parameter `buy_tickets` should be set in [Journey features](../../getting_started/#journey-features).
-
-<img class="img-overview" src="/navitia_sdk_docs/assets/img/journey_ios_roadmap_screen.png" alt="Roadmap screen">
-
-### Ridesharing offers
-
-This screen lists the different ridesharing offers for the selected journey. Regardless of the fact that the journey can propose a full ridesharing trip or a partial ride, the user can select among different third party offers. He has all the information needed to choose the best offer that fits his needs including the departure time, the available seats, the price and some data about the driver offering the ride.
-
-<img class="img-overview" src="/navitia_sdk_docs/assets/img/journey_ios_ridesharing_offers_screen.png" alt="Ridesharing offers screen">
-
-### Navigation
-
-This screen shows the different steps that the user should go through to reach his destination. Those steps are designed to be simple and easily readable for the user and focuses on the most important information during his journey.
-Along with the user location, an interaction between the map and the step card is also added to zoom over the current portion of path that refers to the current selected card.
-
-The journey duration and the estimated arrival time are realtime-updated variables which depend on various parameters such as the highlighted step, the next departure of each public transport mode...
-
-<img class="img-overview" src="/navitia_sdk_docs/assets/img/journey_ios_navigation_screen.png" alt="Navigation screen">
-
-## 🗺 Screen flow
-
-Please refer to the following schema to learn more about different interactions and how to navigate between module screens.
-
-<img class="img-navigating" src="/navitia_sdk_docs/assets/img/journey_ios_screen_flow.png" alt="Screen flow">
-
-## 📢 Communicating with other modules
 
 ### Application
 
-#### Roadmap actions
-
-You can add some actions to the roadmap screen which can be configured using this appropriate delegate:
-
-``` swift
-JourneySdk.shared.delegate = self
-```
-
-The designated protocol offers the following methods:
-
-| Method | Required | Description |
-| --- |:---:| --- |
-| `allowedRoadmapScreenActionsFor(inputData: SharedRoadmapScreenData) -> AllowedRoadmapScreenActions` | :material-check: | Define the allowed actions on the roadmap screen |
-| `onPrimaryButtonActionTriggered(inputData: SharedRoadmapScreenData)` | :material-check: | Tap callback on the primary button |
-| `onSecondaryButtonActionTriggered(inputData: SharedRoadmapScreenData)` | :material-check: | Tap callback on the secondary button |
-
-#### External view injection
+#### Result journeys / Roadmap view injection
 
 You can inject some external view that will be shown inside the journey module screens. In order to make it happen, you need to add the reference to the `injectableViewDelegate` as follows:
 
@@ -333,17 +239,26 @@ JourneySdk.shared.injectableViewDelegate = self
 
 The protocol provides the following methods:
 
-| Method | Required | Description |
-| --- |:---:| --- |
-| `allowExternalViewInjectionFor(screen: InjectableScreen, inputData: Any?) -> ExternalViewInjectionState` | :material-check: | Allow or not the external view injection |
-| `buildExternalViewFor(screen: InjectableScreen, inputData: Any?) -> UIView?` | :material-check: | Requests the instance of the view that needs to be injected in the injectable screen |
+``` swift
+func allowExternalViewInjectionFor(screen: InjectableScreen, inputData: Any?) -> ExternalViewInjectionState {
+  // Allow or not the external view injection
+}
+```
 
-The `inputData` can be of type:
+``` swift
+func buildExternalViewFor(screen: InjectableScreen, inputData: Any?) -> UIView? {
+  // Put the view that needs to be injected in the injectable screen
+}
+```
 
-- `SharedJourneysScreenData`: if the injectable screen is `listJourneys`
-- `SharedRoadmapScreenData`: if the injectable screen is `roadmap`
+!!! info "Note"
 
-###### SharedJourneysScreenData
+	The `inputData` can be of type:
+
+	- `SharedJourneysScreenData` if the injectable screen is `listJourneys`
+	- `SharedRoadmapScreenData` if the injectable screen is `roadmap`
+
+:fontawesome-solid-file-code: `SharedJourneysScreenData`<br>
 
 | Name | Description | Type |
 | --- | --- | :---: |
@@ -351,14 +266,14 @@ The `inputData` can be of type:
 | `hasResults` | Whether the request has results or not | `Bool` |
 | `selectedFilterType` | The selected tab | `TransportModesFilterType` |
 
-###### SharedRoadmapScreenData
+:fontawesome-solid-file-code: `SharedRoadmapScreenData`<br>
 
 | Name | Description | Type |
 | --- | --- | :---: |
 | `journeysRequest` | The request parameters object | `JourneysRequest` |
 | `selectedJourney` | The selected journey data | `SharedSelectedJourneyModel` |
 
-###### SharedSelectedJourneyModel
+:fontawesome-solid-file-code: `SharedSelectedJourneyModel`<br>
 
 | Name | Description | Type |
 | --- | --- | :---: |
@@ -370,7 +285,7 @@ The `inputData` can be of type:
 | `arrivalCoordinates` | The arrival coordinates | `CLLocationCoordinate2D` |
 | `sections` | The list of journey sections | `[SectionModel]` |
 
-###### SectionModel
+:fontawesome-solid-file-code: `SectionModel`<br>
 
 | Name | Description | Type |
 | --- | --- | :---: |
@@ -385,8 +300,88 @@ The `inputData` can be of type:
 | `duration` | The duration in seconds | `Int` |
 | `additionalInformation` | The extra section information if the mobility type allows it | `Any?` |
 
-Please note that the `additionalInformation` object can be of type:
+!!! info "Note"
 
-- `StreetNetworkSectionModel`: if the `mobilityType` is `streetNetwork`
-- `PublicTransportSectionModel`: if the `mobilityType` is `public_transport`
-- `CarParkingSectionModel`: if the `mobilityType` is `carParking`
+	Please note that the `additionalInformation` object can be of type:
+
+	- `StreetNetworkSectionModel` if the `mobilityType` is `streetNetwork`
+	- `PublicTransportSectionModel` if the `mobilityType` is `public_transport`
+	- `CarParkingSectionModel` if the `mobilityType` is `carParking`
+
+
+#### Roadmap actions
+
+You can add some actions to the roadmap screen which can be configured using this appropriate delegate:
+
+``` swift
+JourneySdk.shared.delegate = self
+```
+
+The designated protocol offers the following methods:
+
+``` swift
+func allowedRoadmapScreenActionsFor(inputData: SharedRoadmapScreenData) -> AllowedRoadmapScreenActions {
+	// Define the allowed actions on the roadmap screen
+}
+
+func onPrimaryButtonActionTriggered(inputData: SharedRoadmapScreenData) {
+	// Handle primary action button click
+}
+
+func onSecondaryButtonActionTriggered(inputData: SharedRoadmapScreenData) {
+	// Handle secondary action button click
+}
+```
+
+#### Roadmap navigation
+
+A journey may include sections for driving, walking, or cycling. This module provides the option in the Roadmap screen to enhance navigation accuracy using data from an external service.<br>
+To enable this feature, first enable the `external_navigation` parameter in the [features configuration](../../getting_started/#journey-features). Then, implement the following method:
+
+``` swift
+func onLaunchExternalNavigationApp(from: CLLocationCoordinate2D, to: CLLocationCoordinate2D, navigationMode: JourneyExternalNavigationMode) {
+	// launch your external navigation service screen or your custom screen
+}
+```
+
+| Param | Type | Description |
+| --- | --- | --- |
+| `from` | `LatLng` | Section departure coordinates |
+| `toCoords` | `LatLng` | Section arrival coordinates |
+| `navigationMode` | `JourneyExternalNavigationMode` | Section navigation mode |
+
+!!! info "Note"
+
+    `JourneyExternalNavigationMode` has 3 modes of transportation that describe the section: `bike`, `car`, and `walking`.
+
+### Modules
+
+#### Bookmark
+
+:octicons-arrow-right-24: Enabling<br>
+
+This module communicates with [Bookmark](../../bookmark/) module in order to display favorite stations and POIs. You should enable the `bookmark_mode` parameter in the [features configuration](../../getting_started/#journey-features).<br>
+
+:octicons-arrow-right-24: Methods<br>
+
+The following methods from the `CustomJourneyBookmarkDelegate` interface should be implemented by the host application to enable navigation to the Bookmark module or any other custom screen. Note that the parameters of these methods can be omitted as needed.
+
+``` swift
+func onHomeAddressCompletionRequested(module: Router.BookmarkLinkedModule) {
+    // launch the bookmark module screen or your custom screen
+}
+```
+
+| Param | Type | Description | Value |
+| --- | --- | --- | --- |
+| `module` | `Router.BookmarkLinkedModule` | Module triggering the method call | `Router.BookmarkLinkedModule.aroundMe` or `Router.BookmarkLinkedModule.journey` |
+
+``` swift
+func onWorkAddressCompletionRequested(module: Router.BookmarkLinkedModule) {
+    // launch the bookmark module screen or your custom screen
+}
+```
+
+| Param | Type | Description | Value |
+| --- | --- | --- | --- |
+| `module` | `Router.BookmarkLinkedModule` | Module triggering the method call | `Router.BookmarkLinkedModule.aroundMe` or `Router.BookmarkLinkedModule.journey` |

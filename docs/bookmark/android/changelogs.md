@@ -4,8 +4,7 @@ title: Bookmark Android - Changelogs - Navitia SDK Docs
 
 # Bookmark Android Changelogs
 
-## Available versions
-
+* [v1.7.0](releases/1.7.0/index.md) (_09 Sept 2024_)
 * [v1.6.1](releases/1.6.1/index.md) (_08 Aug 2024_)
 * [v1.6.0](releases/1.6.0/index.md) (_26 Jul 2024_)
 * [v1.5.1](releases/1.5.1/index.md) (_24 Jun 2024_)

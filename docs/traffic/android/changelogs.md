@@ -4,8 +4,7 @@ title: Traffic Android - Changelogs - Navitia SDK Docs
 
 # Traffic Android Changelogs
 
-## Available versions
-
+* [v2.5.6](releases/2.5.6/index.md) (_09 Sept 2024_)
 * [v2.5.5](releases/2.5.5/index.md) (_08 Aug 2024_)
 * [v2.5.4](releases/2.5.4/index.md) (_26 Jul 2024_)
 * [v2.5.3](releases/2.5.3/index.md) (_24 Jun 2024_)

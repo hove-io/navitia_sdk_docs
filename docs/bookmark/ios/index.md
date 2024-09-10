@@ -4,14 +4,11 @@ title: Bookmark iOS - Navitia SDK Docs
 
 # Bookmark iOS
 
-## 💻 Setup
+## :computer: Setup
 
-In your project, add the following lines to your `Podfile` :
+In your project, add the following lines to your `Podfile`:
 
 ``` ruby
-platform :ios, '14.0' # Minimum deployment target
-use_frameworks!
-
 source 'https://github.com/CocoaPods/Specs.git' # Default Cocoapods URL
 source 'https://github.com/hove-io/Podspecs.git' # Bookmark podspec URL
 
@@ -31,9 +28,11 @@ end
 
 Using your CLI, run `pod install` in your project directory.
 
-## 👨‍💻  Implementation
+## :man_technologist: Implementation
 
-⚠️ Please make sure to read the [modules configuration](../../getting_started/#modules-configuration) section before proceeding!<br>
+!!! warning "Warning"
+
+    Make sure to read the [modules configuration](../../getting_started/#modules-configuration) section before proceeding
 
 This module is set up by calling `Bookmark.shared.initialize()` method which takes the following parameters:
 
@@ -57,72 +56,74 @@ You can also call the `initialize()` method with the global JSON configuration f
 
 <h4>Example</h4>
 
-``` swift
-do {
-    let transportCategories = [TransportCategory(modules: ["aroundme"],
-                                                 iconRes: "ic_section_mode_metro",
-                                                 nameRes: "metro",
-                                                 selected: true,
-                                                 modes: [TransportCategoryMode(physical: TransportPhysicalMode(id: "physical_mode:Metro", nameRes: "metro"),
-                                                 commercial: TransportCommercialMode(id: "commercial_mode:Metro", name: "Metro"))],
-                                                 firstSectionModes: ["walking"],
-                                                 lastSectionModes: ["walking"])
-                              ]
-                              
-    let bookmarkColorsConfiguration = AroundMeColorsConfiguration(primaryColor: "#88819f", secondaryColor: "#8faa96")
-                                                                      
-    try Bookmark.shared.initialize(coverage: "fr-idf",
-                                   token: "your_token",
-                                   env: "PROD",
-                                   colors: bookmarkColorsConfiguration,
-                                   transportCategories: transportCategories)                                                                  
-} catch {
-    Logger.error("%@", String(format: "Bookmark SDK cannot be initialized! %@", error.localizedDescription))
-}                                   
+=== "Configuration with file"
+
+    ```swift
+    do {
+        try Bookmark.shared.initialize(token: "your_token", configurationJsonFile: "aroundme_configuration.json")                                                               
+    } catch {
+        Logger.error("%@", String(format: "Bookmark SDK cannot be initialized! %@", error.localizedDescription))
+    }                                   
+    ```
+
+=== "Manual configuration"
+
+    ```swift
+    do {
+        let transportCategories = [TransportCategory(modules: ["aroundme"],
+                                                     iconRes: "ic_section_mode_metro",
+                                                     nameRes: "metro",
+                                                     selected: true,
+                                                     modes: [TransportCategoryMode(physical: TransportPhysicalMode(id: "physical_mode:Metro", nameRes: "metro"),
+                                                     commercial: TransportCommercialMode(id: "commercial_mode:Metro", name: "Metro"))],
+                                                     firstSectionModes: ["walking"],
+                                                     lastSectionModes: ["walking"])]
+        let bookmarkColorsConfiguration = AroundMeColorsConfiguration(primaryColor: "#88819f", secondaryColor: "#8faa96")
+                                                                          
+        try Bookmark.shared.initialize(coverage: "fr-idf",
+                                      token: "your_token",
+                                      env: "PROD",
+                                      colors: bookmarkColorsConfiguration,
+                                      transportCategories: transportCategories)                                                                  
+    } catch {
+        Logger.error("%@", String(format: "Bookmark SDK cannot be initialized! %@", error.localizedDescription))
+    }                                   
+    ```
+
+### Events tracking
+
+In order to receive the list of generated events within Bookmark module, you have to assign the instance of the tracker to the Bookmark module instance as follows and implement the required methods:
+
+```swift
+Bookmark.shared.tracker = self
 ```
 
-<h4>Example with JSON file</h4>
-
-``` swift
-do {
-    try Bookmark.shared.initialize(token: "your_token", configurationJsonFile: "aroundme_configuration.json")                                                               
-} catch {
-    Logger.error("%@", String(format: "Bookmark SDK cannot be initialized! %@", error.localizedDescription))
-}                                   
-```
-
-## 🚀  Launching
+## :rocket: Launching
 
 This module has a single entry point. The parameter `showBack` handles the back button visibility on the first screen.
-Please note that if you want to use the `rootViewController` as a `ChildViewController` of your `ViewController`, you should embed it in an `NavigationController`.
 
 ``` swift
 guard let bookmarkViewController = Bookmark.shared.rootViewController else {
   return nil
 }
-
-// Hide back button embedded in the first screen
-bookmarkViewController.showBack = false
-
-// With a NavigationController
-navigationController?.pushViewController(bookmarkViewController, animated: false) // (1)
-
-// With a ChildViewController
-yourViewController.addChild(UINavigationController(rootViewController: bookmarkViewController)) // (2)
+bookmarkViewController.showBack = false // Hide back button embedded in the first screen
 ```
 
-1.  Use this code if you're using your own NavigationController
-2.  Use this code if you're using a ChildViewController
+If you want to use the `rootViewController` as a `ChildViewController` of your `ViewController`, you should embed it in an `NavigationController`. 
 
-## 📱 Screens
+=== "Using a `NavigationController`"
 
-### Favorites
+    ```swift
+    navigationController?.pushViewController(bookmarkViewController, animated: false)
+    ```
 
-This screen lists all the favorite stations, Bike sharing service stations, car parkings and addresses added by the user through other UI modules (Around Me, Schedule...) or from within a 3rd party application.<br>
+=== "Using a `ChildViewController`"
 
-<img class="img-overview" src="/navitia_sdk_docs/assets/img/bookmark_ios_favorites_screen.png" alt="Favorites screen">
+    ```swift
+    yourViewController.addChild(UINavigationController(rootViewController: bookmarkViewController))
+    ```
 
-## 📖 Manipulating data
+## :book: Manipulating data
 
 The module provides the ability to directly manipulate data for use in custom screens.
 
@@ -132,7 +133,7 @@ The various CRD methods are accessed through `BookmarkUI.shared`.
 
 <h4>Create</h4>
 
-- Create a new favorite address. Returns a boolean if the creation has succeed or not.
+:material-arrow-right: Create a new favorite address. Returns a boolean if the creation has succeed or not.
 
 ``` swift
 func addFavoriteAddress(_ address: SharedData.FavoriteAddress) -> Bool
@@ -142,7 +143,7 @@ func addFavoriteAddress(_ address: SharedData.FavoriteAddress) -> Bool
 | --- | --- | --- |
 | `address` | [`SharedData.FavoriteAddress`](#favorite-address) | Favorite address to create |
 
-- Create a new favorite journey. Returns a boolean if the creation has succeed or not.
+:material-arrow-right: Create a new favorite journey. Returns a boolean if the creation has succeed or not.
 
 ``` swift
 func addFavoriteJourney(_ journey: SharedData.FavoriteJourney) -> Bool
@@ -152,7 +153,7 @@ func addFavoriteJourney(_ journey: SharedData.FavoriteJourney) -> Bool
 | --- | --- | --- |
 | `journey` | [`SharedData.FavoriteJourney`](#favorite-journey) | Favorite journey to create |
 
-- Create a new favorite POI. Returns a boolean if the creation has succeed or not.
+:material-arrow-right: Create a new favorite POI. Returns a boolean if the creation has succeed or not.
 
 ``` swift
 func addFavoritePoi(_ poi: SharedData.FavoritePoi) -> Bool
@@ -162,7 +163,7 @@ func addFavoritePoi(_ poi: SharedData.FavoritePoi) -> Bool
 | --- | --- | --- |
 | `poi` | [`SharedData.FavoritePoi`](#favorite-poi)| Favorite POI to create |
 
-- Create a new favorite station. Returns a boolean if the creation has succeed or not.
+:material-arrow-right: Create a new favorite station. Returns a boolean if the creation has succeed or not.
 
 ``` swift
 func addFavoriteStation(_ station: SharedData.FavoriteStation) -> Bool
@@ -174,7 +175,7 @@ func addFavoriteStation(_ station: SharedData.FavoriteStation) -> Bool
 
 <h4>Read</h4>
 
-- Fetch a favorite address data. Returns [`SharedData.FavoriteAddress`](#favorite-address) or `nil` if not found.
+:material-arrow-right: Fetch a favorite address data. Returns [`SharedData.FavoriteAddress`](#favorite-address) or `nil` if not found.
 
 ``` swift
 func fetchFavoriteAddress(id: String) -> SharedData.FavoriteAddress?
@@ -184,7 +185,7 @@ func fetchFavoriteAddress(id: String) -> SharedData.FavoriteAddress?
 | --- | --- | --- |
 | `id` | `String` | Id of the favorite address to fetch |
 
-- Fetch all favorite addresses. Returns a list of [`SharedData.FavoriteAddress`](#favorite-address) or an empty list if there is no data.
+:material-arrow-right: Fetch all favorite addresses. Returns a list of [`SharedData.FavoriteAddress`](#favorite-address) or an empty list if there is no data.
 
 ``` swift
 func fetchFavoriteAddresses(max: Int) -> [SharedData.FavoriteAddress]
@@ -194,7 +195,7 @@ func fetchFavoriteAddresses(max: Int) -> [SharedData.FavoriteAddress]
 | --- | --- | --- |
 | `max` | `Int` | Limit the result count. `0` for all data |
 
-- Fetch all favorite journeys. Returns a list of [`SharedData.FavoriteJourney`](#favorite-journey) or an empty list if there is no data.
+:material-arrow-right: Fetch all favorite journeys. Returns a list of [`SharedData.FavoriteJourney`](#favorite-journey) or an empty list if there is no data.
 
 ``` swift
 func fetchFavoriteJourneys(max: Int) -> [SharedData.FavoriteJourney]
@@ -204,7 +205,7 @@ func fetchFavoriteJourneys(max: Int) -> [SharedData.FavoriteJourney]
 | --- | --- | --- |
 | `max` | `Int` | Limit the result count. `0` for all data |
 
-- Get if a journey is added to favorites. Returns a boolean if the creation has succeed or not.
+:material-arrow-right: Get if a journey is added to favorites. Returns a boolean if the creation has succeed or not.
 
 ``` swift
 func isJourneyInBookmark(journeyId: String) -> Bool
@@ -214,7 +215,7 @@ func isJourneyInBookmark(journeyId: String) -> Bool
 | --- | --- | --- |
 | `journeyId` | `String` | Id of the favorite journey to check |
 
-- Fetch a favorite POI data. Returns [`SharedData.FavoritePoi`](#favorite-poi) or `nil` if not found.
+:material-arrow-right: Fetch a favorite POI data. Returns [`SharedData.FavoritePoi`](#favorite-poi) or `nil` if not found.
 
 ``` swift
 func fetchFavoritePoi(id: String) -> SharedData.FavoritePoi?
@@ -224,7 +225,7 @@ func fetchFavoritePoi(id: String) -> SharedData.FavoritePoi?
 | --- | --- | --- |
 | `id` | `String` | Id of the favorite POI to fetch |
 
-- Fetch all favorite POIs. Returns a list of [`SharedData.FavoritePoi`](#favorite-poi) or an empty list if there is no data.
+:material-arrow-right: Fetch all favorite POIs. Returns a list of [`SharedData.FavoritePoi`](#favorite-poi) or an empty list if there is no data.
 
 ``` swift
 func fetchFavoritePois(max: Int) -> [SharedData.FavoritePoi]
@@ -234,7 +235,7 @@ func fetchFavoritePois(max: Int) -> [SharedData.FavoritePoi]
 | --- | --- | --- |
 | `max` | `Int` | Limit the result count. `0` for all data |
 
-- Fetch a favorite station data. Returns [`SharedData.FavoriteStation`](#favorite-station) or `nil` if not found.
+:material-arrow-right: Fetch a favorite station data. Returns [`SharedData.FavoriteStation`](#favorite-station) or `nil` if not found.
 
 ``` swift
 func fetchFavoriteStation(stopAreaId: String, lineId: String) -> SharedData.FavoriteStation?
@@ -245,7 +246,7 @@ func fetchFavoriteStation(stopAreaId: String, lineId: String) -> SharedData.Favo
 | `stopAreaId` | `String` | Navitia stop area id of the favorite station to fetch |
 | `lineId` | `String` | Navitia line id of the favorite station to fetch |
 
-- Fetch all favorite stations. Returns a list of [`SharedData.FavoriteStation`](#avorite-station) or an empty list if there is no data.
+:material-arrow-right: Fetch all favorite stations. Returns a list of [`SharedData.FavoriteStation`](#avorite-station) or an empty list if there is no data.
 
 ``` swift
 func fetchFavoriteStations(max: Int) -> [SharedData.FavoriteStation]
@@ -257,7 +258,7 @@ func fetchFavoriteStations(max: Int) -> [SharedData.FavoriteStation]
 
 <h4>Delete</h4>
 
-- Delete an existing favorite address. Returns a boolean if the creation has succeed or not.
+:material-arrow-right:v Delete an existing favorite address. Returns a boolean if the creation has succeed or not.
 
 ``` swift
 func deleteFavoriteAddress(id: String) -> Bool
@@ -267,7 +268,7 @@ func deleteFavoriteAddress(id: String) -> Bool
 | --- | --- | --- |
 | `id` | `String` | Id of the favorite address to delete |
 
-- Delete an existing favorite journey. Returns a boolean if the creation has succeed or not.
+:material-arrow-right: Delete an existing favorite journey. Returns a boolean if the creation has succeed or not.
 
 ``` swift
 func deleteFavoriteJourney(id: String) -> Bool
@@ -277,7 +278,7 @@ func deleteFavoriteJourney(id: String) -> Bool
 | --- | --- | --- |
 | `id` | `String` | Id of the favorite journey to delete |
 
-- Delete an existing favorite POI. Returns a boolean if the creation has succeed or not.
+:material-arrow-right: Delete an existing favorite POI. Returns a boolean if the creation has succeed or not.
 
 ``` swift
 func deleteFavoritePoi(id: String) -> Bool
@@ -287,7 +288,7 @@ func deleteFavoritePoi(id: String) -> Bool
 | --- | --- | --- |
 | `id` | `String` | Id of the favorite POI to delete |
 
-- Delete an existing favorite station. Returns a boolean if the creation has succeed or not.
+:material-arrow-right: Delete an existing favorite station. Returns a boolean if the creation has succeed or not.
 
 ``` swift
 func deleteFavoriteStation(id: String) -> Bool
@@ -299,7 +300,7 @@ func deleteFavoriteStation(id: String) -> Bool
 
 ### Data
 
-<h4>Favorite Address</h4>
+<h4 markdown>:fontawesome-solid-file-code: `FavoriteAddress`</h4>
 
 | Name | Required | Description | Type |
 | --- |:---:| --- | :---: |
@@ -312,7 +313,7 @@ func deleteFavoriteStation(id: String) -> Bool
 | `addressTypeId` | :material-check: | Address type `home`, `work` or `custom` | `String` |
 | `additionalInformation` | :material-check: | Free field to save extra data | `String` |
 
-<h4>Favorite Journey</h4>
+<h4 markdown>:fontawesome-solid-file-code: `FavoriteJourney`</h4>
 
 | Name | Required | Description | Type |
 | --- |:---:| --- | :---: |
@@ -322,10 +323,10 @@ func deleteFavoriteStation(id: String) -> Bool
 | `toName` | :material-check: | Arrival name | `String` |
 | `toId` | :material-check: | Arrival Navitia id | `String` |
 | `connectionModes` | :material-check: | Array of connection modes. For example: `["bike", "walking"]` | `[String]` |
-| `sections` | :material-check: | Array of included journey sections | [`[SharedData.FavoriteJourneySection]`](#favorite-journey-section) |
+| `sections` | :material-check: | Array of included journey sections | [`[SharedData.FavoriteJourneySection]`](#favoritejourneysection) |
 | `additionalInformation` | :material-check: | Free field to save extra data | `String` |
 
-<h4>Favorite Journey Section</h4>
+<h4 markdown>:fontawesome-solid-file-code: `FavoriteJourneySection`</h4>
 
 | Name | Required | Description | Type |
 | --- |:---:| --- | :---: |
@@ -339,7 +340,7 @@ func deleteFavoriteStation(id: String) -> Bool
 | `physicalMode` | :material-check: | Navitia public transport physical mode. Example: `physical_mode:Bus` | `String` |
 | `duration` | :material-check: | Section duration in seconds | `Int` |
 
-<h4>Favorite Poi</h4>
+<h4 markdown>:fontawesome-solid-file-code: `FavoritePoi`</h4>
 
 | Name | Required | Description | Type |
 | --- |:---:| --- | :---: |
@@ -352,7 +353,7 @@ func deleteFavoriteStation(id: String) -> Bool
 | `network` | :material-check: | Navitia POI network | `String` |
 | `additionalInformation` | :material-check: | Free field to save extra data | `String` |
 
-<h4>Favorite Station</h4>
+<h4 markdown>:fontawesome-solid-file-code: `FavoriteStation`</h4>
 
 | Name | Required | Description | Type |
 | --- |:---:| --- | :---: |
@@ -367,23 +368,25 @@ func deleteFavoriteStation(id: String) -> Bool
 | `physicalMode` | :material-check: | Navitia public transport physical mode. Example: `physical_mode:Bus` | `String` |
 | `additionalInformation` | :material-check: | Free field to save extra data | `String` |
 
-## 📢 Communicating with other modules
+## :mega: Communicating with other modules
 
-### Journey
-
-This module communicates with [Journey](../../journey/) module in order to get directions for a chosen favorites element. You should enable the `go_from_go_to` parameter in the [features configuration](../../getting_started/#around-me-features).<br>
-When the user taps on a marker on the map, the buttons **Go from there** and **Go to there** should pop up as follows:
-
-<img class="img-overview" src="/navitia_sdk_docs/assets/img/bookmark_ios_go_fromto.png" alt="Go from/to">
-
-Clicking on one of the buttons will redirect the user to Journey module with the given origin/destination.<br>
-
-The `Router` module should also be initialized with the right parameters since it’s mandatory to build the connection between these modules:
+Bookmark module can exchange data with or navigate to either other modules.<br>
+To do this, the host application must initialize `Router`. This singleton will ensure communication between the different modules. Communication will not occur unless those are registered beforehand:
 
 ``` swift
 try Router.shared
-          .register(journey: JourneySdk.shared.journeyRouter)
-          .register(aroundMe: Bookmark.shared.bookmarkRouter)
-          .register(app: self)
+          ... // Register modules and/or app
           .initialize()
+```
+### Modules
+
+#### Journey
+
+:octicons-arrow-right-24: Enabling<br>
+
+This module communicates with [Journey](../../journey/) module in order to get directions for a chosen favorites element. You should enable the `go_from_go_to` parameter in the [features configuration](../../getting_started/#bookmark-features).<br>
+
+Journey module must also be registered in the `Router` to build the connection between these modules:
+``` swift
+Router.shared.register(journey: JourneySdk.shared.journeyRouter)
 ```

@@ -4,8 +4,6 @@ title: Bookmark iOS - Changelogs - Navitia SDK Docs
 
 # Bookmark iOS Changelogs
 
-## Available versions
-
 * [v1.6.0](releases/1.6.0/index.md) (_24 Jul 2024_)
 * [v1.5.2](releases/1.5.2/index.md) (_24 Jun 2024_)
 * [v1.5.1](releases/1.5.1/index.md) (_13 Jun 2024_)
