@@ -370,21 +370,23 @@ func deleteFavoriteStation(id: String) -> Bool
 
 ## 📢 Communicating with other modules
 
-### Journey
-
-This module communicates with [Journey](../../journey/) module in order to get directions for a chosen favorites element. You should enable the `go_from_go_to` parameter in the [features configuration](../../getting_started/#around-me-features).<br>
-When the user taps on a marker on the map, the buttons **Go from there** and **Go to there** should pop up as follows:
-
-<img class="img-overview" src="/navitia_sdk_docs/assets/img/bookmark_ios_go_fromto.png" alt="Go from/to">
-
-Clicking on one of the buttons will redirect the user to Journey module with the given origin/destination.<br>
-
-The `Router` module should also be initialized with the right parameters since it’s mandatory to build the connection between these modules:
+Bookmark module can exchange data with or navigate to either other modules.<br>
+To do this, the host application must initialize `Router`. This singleton will ensure communication between the different modules. Communication will not occur unless those are registered beforehand:
 
 ``` swift
 try Router.shared
-          .register(journey: JourneySdk.shared.journeyRouter)
-          .register(aroundMe: Bookmark.shared.bookmarkRouter)
-          .register(app: self)
+          ... // Register modules and/or app
           .initialize()
+```
+### Modules
+
+#### Journey
+
+:octicons-arrow-right-24: Enabling<br>
+
+This module communicates with [Journey](../../journey/) module in order to get directions for a chosen favorites element. You should enable the `go_from_go_to` parameter in the [features configuration](../../getting_started/#bookmark-features).<br>
+
+Journey module must also be registered in the `Router` to build the connection between these modules:
+``` swift
+Router.shared.register(journey: JourneySdk.shared.journeyRouter)
 ```

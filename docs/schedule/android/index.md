@@ -133,6 +133,60 @@ The `newInstance()` method creates an instance of the target fragment and takes 
 | --- |:---:| --- | --- | --- |
 | `showBack` | :material-close: | Show/hide back button on the first screen | `Boolean` | `false` |
 
+## 📢 Communicating with other modules or the app
+
+Schedule module navigate to other modules directly or via the host application.<br>
+To do this, the host application must initialize `Router`. This singleton will ensure communication between the different modules or the app. Communication will not occur unless those are registered beforehand:
+
+``` kotlin
+Router.getInstance()
+    ... // Register modules and/or app
+    .init()
+```
+
+### Application
+
+Some routes are delegated to the application.
+If you have to handle navigation between modules, the `Router` module must register a receiver:
+
+``` kotlin
+Router.getInstance()
+    .register(appUi = appRouterUiImpl) // (1)
+```
+
+1.  `appRouterUiImpl` should be the class instance implementing `AppRouter.UI` interface. We recommend using a `Application` subclass.
+
+
+### Modules
+
+#### Bookmark
+
+This module communicates with [Bookmark](../../bookmark/) module in order to display favorite stations and POIs. You should enable the `bookmark_mode` parameter in the [features configuration](../../getting_started/#schedule-features).
+
+#### Journey
+
+This module communicates with [Journey](../../journey/) module in order to get directions for a chosen itinerary. You should enable the `go_from_go_to` parameter in the [features configuration](../../getting_started/#schedule-features).<br>
+
+The following method from the `AppRouter.UI` interface should be implemented by the host application to enable navigation to the Journey module or any other custom screens. Note that the parameters of these methods can be ignored as needed.
+
+```kotlin
+override fun openJourneysViaHost(
+    origin: SharedData.JourneyPoint?,
+    destination: SharedData.JourneyPoint?,
+    showDirectlyAutoCompletion: Boolean,
+    showDirectlyJourneysSearch: Boolean
+) {
+    // launch the journey module screen or your custom screen
+}
+```
+
+| Param | Type | Description |
+| --- | --- | --- |
+| `origin` | `SharedData.JourneyPoint?` | Desired starting point of the journey. Optional |
+| `destination` | `SharedData.JourneyPoint?` | Desired endpoint of the journey. Optional |
+| `showDirectlyAutoCompletion` | `Boolean` | Directly displays the search for the starting point and/or endpoint. If true, `showDirectlyJourneysSearch` can only be false |
+| `showDirectlyJourneysSearch` | `Boolean` | Directly displays the journey search. If true, `showDirectlyAutoCompletion` can only be false |
+
 ## 🎨 Theming
 
 ### App theme
@@ -154,7 +208,7 @@ If you want to theme the date picker, you can only add the following in your sty
 
 ```xml
 <style name="Schedule.MaterialCalendar" parent="ThemeOverlay.Material3.MaterialCalendar">
-    <item name="colorPrimary">@#251942</item>
+    <item name="colorPrimary">#251942</item>
     <item name="colorOnPrimary">#FFFFFF</item>
 </style>
 ```

@@ -398,21 +398,16 @@ fun deleteStation(stopAreaId: String, lineId: String)
 | `lines` | :material-check: | Station lines | [`List<SharedData.LineBookmark>`](#linebookmark) |
 | `additionalInformation` | :material-check: | Free field to save extra data | `String` |
 
-## 🎨 Theming
-
-The module uses graphical components from Material Design 3. To ensure these components function correctly and get displayed properly on the screen, it is crucial to apply the appropriate parent theme:
-
-```xml
-<style name="Theme.App" parent="Theme.Material3.*"> <!-- (1) -->
-    ...
-</style>
-```
-
-1.  Replace by the specific theme. For example: `Theme.Material3.Light.NoActionBar`
-
 ## 📢 Communicating with other modules or the app
 
-Bookmark module can exchange data with, or navigate to, other modules or the host application.
+Bookmark module can exchange data with or navigate to either other modules or the host application.<br>
+To do this, the host application must initialize `Router`. This singleton will ensure communication between the different modules or the app. Communication will not occur unless those are registered beforehand:
+
+``` kotlin
+Router.getInstance()
+    ... // Register modules and/or app
+    .init()
+```
 
 ### Application
 
@@ -451,12 +446,11 @@ override fun onUpdateFavoriteStations(id: String) {
 
 #### Journey
 
-This module communicates with [Journey](../../journey/) module in order to get directions for a chosen itinerary. You should enable the `go_from_go_to` parameter in the [features configuration](../../getting_started/#around-me-features).<br>
-When the user taps on a marker on the map, the buttons **Go from there** and **Go to there** should pop up as follows:
+:octicons-arrow-right-24: Enabling<br>
 
-<img class="img-overview" src="/navitia_sdk_docs/assets/img/bookmark_android_go_fromto.png" alt="Go from/to">
+This module communicates with [Journey](../../journey/) module in order to get directions for a chosen itinerary. You should enable the `go_from_go_to` parameter in the [features configuration](../../getting_started/#bookmark-features).<br>
 
-Clicking on one of the buttons will redirect the user to Journey module with the given origin/destination.
+:octicons-arrow-right-24: Method<br>
 
 The following method from the `AppRouter.UI` interface should be implemented by the host application to enable navigation to the Journey module or any other custom screens. Note that the parameters of these methods can be ignored as needed.
 
@@ -464,7 +458,8 @@ The following method from the `AppRouter.UI` interface should be implemented by 
 override fun openJourneysViaHost(
     origin: SharedData.JourneyPoint?,
     destination: SharedData.JourneyPoint?,
-    showDirectlyAutoCompletion: Boolean
+    showDirectlyAutoCompletion: Boolean,
+    showDirectlyJourneysSearch: Boolean
 ) {
     // launch the journey module screen or your custom screen
 }
@@ -472,6 +467,19 @@ override fun openJourneysViaHost(
 
 | Param | Type | Description |
 | --- | --- | --- |
-| `origin` | `SharedData.JourneyPoint?` | Journey departure point  |
-| `destination` | `SharedData.JourneyPoint?` | Journey arrival point  |
-| `showDirectlyAutoCompletion` | `Boolean` | Enable/disable showing the autocompletion on screen launch |
+| `origin` | `SharedData.JourneyPoint?` | Desired starting point of the journey. Optional |
+| `destination` | `SharedData.JourneyPoint?` | Desired endpoint of the journey. Optional |
+| `showDirectlyAutoCompletion` | `Boolean` | Directly displays the search for the starting point and/or endpoint. If true, `showDirectlyJourneysSearch` can only be false |
+| `showDirectlyJourneysSearch` | `Boolean` | Directly displays the journey search. If true, `showDirectlyAutoCompletion` can only be false |
+
+## 🎨 Theming
+
+The module uses graphical components from Material Design 3. To ensure these components function correctly and get displayed properly on the screen, it is crucial to apply the appropriate parent theme:
+
+```xml
+<style name="Theme.App" parent="Theme.Material3.*"> <!-- (1) -->
+    ...
+</style>
+```
+
+1.  Replace by the specific theme. For example: `Theme.Material3.Light.NoActionBar`

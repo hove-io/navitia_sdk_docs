@@ -125,111 +125,99 @@ If you want to use the `rootViewController` as a `ChildViewController` of your `
     yourViewController.addChild(UINavigationController(rootViewController: trafficViewController))
     ```
 
-## 📱 Screens
-
-
-
-
-
-
-
 ### Filters
 
 This screen content is a visual version of the passed transport categories and POI categories configuration (check [modules configuration](../../getting_started/#modules-configuration) section for more information). The selected elements will be used to filter the data received and drawn within the map. One filter should at least be selected or else the user can't apply the current filters configuration.<br><br>
 If you want to reset the user filters configuration, you can simply call `AroundMeUI.getInstance().resetUserPreferences()` and the current configuration will be deleted and the screen will be updated according to the new passed configuration.
 
+## 📢 Communicating with other modules or the app
 
-
-## 📢 Communicating with other modules
-
-### Journey
-
-This module communicates with [Journey](../../journey/) module in order to get directions for a chosen itinerary. You should enable the `go_from_go_to` parameter in the [features configuration](../../getting_started/#around-me-features).<br>
-When the user taps on a marker on the map, the buttons **Go from there** and **Go to there** should pop up as follows:
-
-<img class="img-overview" src="/navitia_sdk_docs/assets/img/aroundme_ios_go_fromto.png" alt="Go from/to">
-
-Clicking on one of the buttons will redirect the user to Journey module with the given origin/destination.<br>
-
-Another way to communicate with [Journey](../../journey/) module is through the [Map](#map) screen and precisely the **Where are we going?** button, this feature should also be enabled by setting the `journey_search_mode` in the [features configuration](../../getting_started/#around-me-features) to `true`.<br>
-
-The `Router` module should also be initialized with the right parameters since it’s mandatory to build the connection between these modules:
+Around Me module can exchange data with or navigate to either other modules or the host application.<br>
+To do this, the host application must initialize `Router`. This singleton will ensure communication between the different modules or the app. Communication will not occur unless those are registered beforehand:
 
 ``` swift
 try Router.shared
-          .register(journey: JourneySdk.shared.journeyRouter)
-          .register(aroundMe: AroundMe.shared.aroundMeRouter)
-          .register(app: self)
-          .initialize()
-```
-
-### Bookmark
-
-This module communicates with [Bookmark](../../bookmark/) module in order to vizualize favorite stations and POIs. You should enable the `bookmark_mode` parameter in the [features configuration](../../getting_started/#around-me-features).<br>
-
-The `Router` module should also be initialized with the right parameters since it’s mandatory to build the connection between these modules:
-
-``` swift
-try Router.shared
-          .register(journey: JourneySdk.shared.journeyRouter)
-          .register(aroundMe: Bookmark.shared.bookmarkRouter)
-          .register(app: self)
-          .initialize()
-```
-
-#### Intercepting Bookmark callbacks
-
-In case you enable Bookmark feature in this module, some actions are defined by default to show Bookmark screen.
-Now, it's possible to intercept these callbacks and implement your own way of displaying user favorite data.<br>
-
-To do so, you will need to pass a `CustomAroundMeBookmarkDelegate` to the Around Me module instance.<br>
-This will allow to access to the following callbacks :
-
-``` swift
-extension YourClass: CustomAroundMeBookmarkDelegate {
-
-  func onHomeAddressCompletionRequested(module: Router.BookmarkLinkedModule) {
-    // Called when the user taps on the Home button and the home favorite address is not filled yet
-  }
-
-  func onWorkAddressCompletionRequested(module: Router.BookmarkLinkedModule) {
-    // Called when the user taps on the Work button and the home favorite work is not filled yet
-  }
-
-  func onSeeAllFavoritesClicked() {
-    // Called when the user taps on All Favorites button in the bottom sheet tabs
-  }
-}
-```
-
-### Traffic
-
-This module communicates with [Traffic](../../traffic/) module in order to easily access traffic information. You should enable the `traffic_mode` parameter in the [features configuration](../../getting_started/#around-me-features).<br>
-A red traffic button will appear in the top right corner, only when the search bar is hidden.
-
-<img class="img-overview" src="/navitia_sdk_docs/assets/img/aroundme_ios_traffic_button.png" alt="Traffic mode">
-
-The `Router` module should also be initialized with the right parameters since it’s mandatory to build the connection between these modules:
-
-``` swift
-try Router.shared
-          .register(journey: JourneySdk.shared.journeyRouter)
-          .register(aroundMe: Traffic.shared.trafficRouter)
-          .register(app: self)
+          ... // Register modules and/or app
           .initialize()
 ```
 
 ### Application
 
-Some callbacks are delegated to the application allowing it to receive some module events. To subscribe to those events, the delegate should be set as follows:
+<!-- TODO: To write -->
+
+### Modules
+
+#### Bookmark
+
+:octicons-arrow-right-24: Enabling<br>
+
+This module communicates with [Bookmark](../../bookmark/) module in order to vizualize favorite stations and POIs. You should enable the `bookmark_mode` parameter in the [features configuration](../../getting_started/#around-me-features).<br>
+
+Bookmark module must be registered in the `Router` to build the connection between these modules:
 
 ``` swift
-AroundMe.shared.delegate = self
+Router.shared.register(bookmark: Bookmark.shared.bookmarkRouter)
 ```
 
-##### POI event
+:octicons-arrow-right-24: Methods<br>
 
-A customizable button appears in the POI details screen and the clicking event should be catched from the application. A POI ID is sent with the callback in order to identify the selected POI.
+The following methods from the `CustomAroundMeBookmarkDelegate` interface should be implemented by the host application to enable navigation to the Bookmark module or any other custom screen. Note that the parameters of these methods can be omitted as needed.
 
-<img class="img-overview" src="/navitia_sdk_docs/assets/img/aroundme_ios_poi_button_event.png" alt="POI button event">
+``` swift
+func onHomeAddressCompletionRequested(module: Router.BookmarkLinkedModule) {
+    // launch the bookmark module screen or your custom screen
+}
+```
+
+| Param | Type | Description | Value |
+| --- | --- | --- | --- |
+| `module` | `Router.BookmarkLinkedModule` | Module triggering the method call | `Router.BookmarkLinkedModule.aroundMe` or `Router.BookmarkLinkedModule.journey` |
+
+``` swift
+func onWorkAddressCompletionRequested(module: Router.BookmarkLinkedModule) {
+    // launch the bookmark module screen or your custom screen
+}
+```
+
+| Param | Type | Description | Value |
+| --- | --- | --- | --- |
+| `module` | `Router.BookmarkLinkedModule` | Module triggering the method call | `Router.BookmarkLinkedModule.aroundMe` or `Router.BookmarkLinkedModule.journey` |
+
+``` swift
+func onSeeAllFavoritesClicked() {
+    // launch the bookmark module screen or your custom screen
+  }
+```
+
+#### Journey
+
+:octicons-arrow-right-24: Enabling<br>
+
+This module communicates with [Journey](../../journey/) module in order to get directions for a chosen itinerary. You should enable the `journey_mode` and the `go_from_go_to` parameter in the [features configuration](../../getting_started/#around-me-features).<br>
+Another way to communicate with is through the [Map](../screens/#map) screen and precisely the _Where are we going?_ button, this feature should also be enabled by setting the `where_shall_we_go` in the [features configuration](../../getting_started/#around-me-features) to `true`.<br>
+
+Journey module must also be registered in the `Router` to build the connection between these modules:
+``` swift
+Router.shared.register(journey: JourneySdk.shared.journeyRouter)
+```
+
+:octicons-arrow-right-24: Methods<br>
+
+<!-- TODO: To write -->
+
+#### Traffic
+
+:octicons-arrow-right-24: Enabling<br>
+
+This module communicates with [Traffic](../../traffic/) module in order to easily access traffic information. You should enable the `traffic_mode` parameter in the [features configuration](../../getting_started/#around-me-features).<br>
+
+Traffic module must also be registered in the `Router` to build the connection between these modules:
+
+``` swift
+Router.shared.register(traffic: Traffic.shared.trafficRouter)
+```
+
+:octicons-arrow-right-24: Methods<br>
+
+<!-- TODO: To write -->
 

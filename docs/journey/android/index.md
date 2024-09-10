@@ -139,7 +139,7 @@ The `newInstance()` method creates an instance of the target fragment and takes 
 | `journeysRequest` | :material-check: | Itinerary search configuration | [`JourneysRequest`](#journeysrequest) | :material-close: |
 | `showBack` | :material-close: | Show/hide back button on the first screen | `Boolean` | `false` |
 
-### JourneysRequest
+### :fontawesome-solid-file-code: `JourneysRequest`
 
 The `JourneysRequest` object allows to configure the first itinerary search at screen launch. It has the following parameters:
 
@@ -195,21 +195,21 @@ The `JourneysRequest` object allows to configure the first itinerary search at s
 | `walkingSpeed` | Walking speed | `Float` | `null` |
 | `wheelchair` | Check on [Navitia](https://doc.navitia.io/#journeys)  | `Boolean` | `null` |
 
-#### DataFreshness
+#### :fontawesome-solid-file-code: `DataFreshness`
 
 | Enum value | Description |
 | --- | --- |
 | `BASE_SCHEDULE` | Get disrupted journeys with the given results |
 | `REALTIME` | Avoid disrupted journeys |
 
-#### DateTimeRepresents
+#### :fontawesome-solid-file-code: `DateTimeRepresents`
 
 | Enum value | Description |
 | --- | --- |
 | `ARRIVAL` | The requested datetime represents the arrival of the journey |
 | `DEPARTURE` | The requested datetime represents the departure of the journey |
 
-#### DirectPath
+#### :fontawesome-solid-file-code: `DirectPath`
 
 | Enum value | Description |
 | --- | --- |
@@ -218,7 +218,7 @@ The `JourneysRequest` object allows to configure the first itinerary search at s
 | `ONLY` | For journeys without public transport |
 | `ONLY_WITH_ALTERNATIVES` | For journeys with specific bike  |
 
-#### TravelerType
+#### :fontawesome-solid-file-code: `TravelerType`
 
 | Enum value | Description |
 | --- | --- |
@@ -228,6 +228,199 @@ The `JourneysRequest` object allows to configure the first itinerary search at s
 | `STANDARD` | Standard profile |
 | `WHEELCHAIR` | Using wheelchair |
 
+## 📢 Communicating with other modules or the app
+
+Journey module can exchange data with or navigate to either other modules or the host application.<br>
+To do this, the host application must initialize `Router`. This singleton will ensure communication between the different modules or the app. Communication will not occur unless those are registered beforehand:
+
+``` kotlin
+Router.getInstance()
+    ... // Register modules and/or app
+    .init()
+```
+
+### Application
+
+Some routes or callbacks are delegated to the application. 
+If you have to receive some module data, the `Router` module must register a receiver with the right parameter:
+
+``` kotlin
+Router.getInstance()
+    .register(appData = appRouterDataImpl) // (1)
+```
+
+1.  `appRouterDataImpl` should be the class instance implementing `AppRouter.Data` interface. We recommand usign a `Application` subclass.
+
+If you have to handle navigation between modules, the `Router` module must also register a receiver:
+
+``` kotlin
+Router.getInstance()
+    .register(appUi = appRouterUiImpl) // (1)
+```
+
+1. `appRouterUiImpl` should be the class instance implementing `AppRouter.UI` interface. We recommand usign a `Application` subclass.
+
+#### Result journeys / Roadmap view injection
+
+You can inject some external view that will be shown inside the journey module screens. In order to make it happen, you need to add the reference to the `injectableViewDelegate` as follows:
+
+``` kotlin
+JourneyUI.getInstance().setInjectableViewDelegate(this)
+```
+
+The interface provides the following methods:
+
+```kotlin
+override fun allowExternalViewInjectionFor(screen: InjectableScreen, inputData: Any?): ExternalViewInjectionState {
+    // Allow or not the external view injection
+}
+
+override fun buildExternalViewFor(screen: InjectableScreen, inputData: Any?): View? {
+    // Put the view that needs to be injected in the injectable screen
+}
+```
+
+!!! info "Note"
+
+    `inputData` can be of type:
+
+    - `SharedJourneysScreenData` if the injectable screen is `LIST_JOURNEYS`
+    - `SharedRoadmapScreenData` if the injectable screen is `ROADMAP`
+
+:fontawesome-solid-file-code: `SharedJourneysScreenData`<br>
+
+| Name | Description | Type |
+| --- | --- | :---: |
+| `journeysRequest` | The request parameters object | `JourneysRequest` |
+| `hasResults` | Whether the request has results or not | `Boolean` |
+| `selectedFilterType` | The selected tab | `TransportModesFilterType` |
+
+:fontawesome-solid-file-code: `SharedRoadmapScreenData`<br>
+
+| Name | Description | Type |
+| --- | --- | :---: |
+| `journeysRequest` | The request parameters object | `JourneysRequest` |
+| `selectedJourney` | The selected journey data | `SharedSelectedJourneyModel` |
+
+:fontawesome-solid-file-code: `SharedSelectedJourneyModel`<br>
+
+| Name | Description | Type |
+| --- | --- | :---: |
+| `departureTime` | The departure time | `LocalDateTime` |
+| `arrivalTime` | The arrival time | `LocalDateTime` |
+| `departureAddress` | The departure address | `String` |
+| `arrivalAddress` | The arrival address | `String` |
+| `departureCoordinates` | The departure coordinates | `LatLng` |
+| `arrivalCoordinates` | The arrival coordinates | `LatLng` |
+| `sections` | The list of journey sections | `List<SectionModel>` |
+
+:fontawesome-solid-file-code: `SectionModel`<br>
+
+| Name | Description | Type |
+| --- | --- | :---: |
+| `departureTime` | The departure time | `LocalDateTime` |
+| `arrivalTime` | The arrival time | `LocalDateTime` |
+| `departureAddress` | The departure address | `String` |
+| `arrivalAddress` | The arrival address | `String` |
+| `departureCoordinates` | The departure coordinates | `LatLng?` |
+| `arrivalCoordinates` | The arrival coordinates | `LatLng?` |
+| `mobilityType` | The mobility type | `MobilityType` |
+| `distance` | The distance in meters | `Int` |
+| `duration` | The duration in seconds | `Int` |
+| `additionalInformation` | The extra section information if the mobility type allows it | `Any?` |
+
+!!! info "Note"
+
+    `additionalInformation` object in `SectionModel` can be of type:
+
+    - `StreetNetworkSectionModel` if the `mobilityType` is `STREET_NETWORK`
+    - `PublicTransportSectionModel` if the `mobilityType` is `PUBLIC_TRANSPORT`
+    - `CarParkingSectionModel` if the `mobilityType` is `CAR_PARKING`
+
+#### Roadmap actions
+
+You can add some actions to the roadmap screen which can be configured using this appropriate delegate:
+
+``` kotlin
+JourneyUI.getInstance().setRoadmapDelegate(this)
+```
+
+The implemented interface offers the following methods:
+
+```kotlin
+override fun allowedRoadmapScreenActionsFor(inputData: SharedRoadmapScreenData) {
+    // Define the allowed actions on the roadmap screen
+}
+
+override fun onPrimaryButtonActionTriggered(inputData: SharedRoadmapScreenData) {
+    // Handle primary action button click
+}
+
+override fun onSecondaryButtonActionTriggered(inputData: SharedRoadmapScreenData) {
+    // Handle secondary action button click
+}
+```
+
+#### Roadmap navigation
+
+A journey may include sections for driving, walking, or cycling. This module provides the option in the Roadmap screen to enhance navigation accuracy using data from an external service.<br>
+To enable this feature, first enable the `external_navigation` parameter in the [features configuration](../../getting_started/#journey-features). Then, implement the following method:
+
+```kotlin
+override fun openExternalNavigation(
+    fromCoords: LatLng,
+    fromLabel: String,
+    toCoords: LatLng,
+    toLabel: String,
+    mode: ExternalNavigationMode
+) {
+    // launch your external navigation service screen or your custom screen
+}
+```
+
+| Param | Type | Description |
+| --- | --- | --- |
+| `fromCoords` | `LatLng` | Section departure coordinates |
+| `fromLabel` | `String` | Section departure label |
+| `toCoords` | `LatLng` | Section arrival coordinates |
+| `toLabel` | `String` | Section arrival label |
+| `mode` | `ExternalNavigationMode` | Section navigation mode |
+
+!!! info "Note"
+
+    `ExternalNavigationMode` has 3 modes of transportation that describe the section: `BIKE`, `CAR`, and `WALKING`.
+
+### Modules
+
+#### Bookmark
+
+:octicons-arrow-right-24: Enabling<br>
+
+This module communicates with [Bookmark](../../bookmark/) module in order to display favorite stations and POIs. You should enable the `bookmark_mode` parameter in the [features configuration](../../getting_started/#journey-features).<br>
+
+:octicons-arrow-right-24: Methods<br>
+
+The following methods from the `AppRouter.UI` interface should be implemented by the host application to enable navigation to the Bookmark module or any other custom screen. Note that the parameters of these methods can be omitted as needed.
+
+```kotlin
+override fun openFavoriteHomeAddViaHost(linkedModule: BookmarkLinkedModule) {
+    // launch the bookmark module screen or your custom screen
+}
+```
+
+| Param | Type | Description | Value |
+| --- | --- | --- | --- |
+| `linkedModule` | `BookmarkLinkedModule` | Module triggering the method call  | `BookmarkLinkedModule.AROUND_ME` or `BookmarkLinkedModule.JOURNEY` |
+
+```kotlin
+override fun openFavoriteWorkAddViaHost(linkedModule: LinkedModule) {
+    // launch the bookmark module screen or your custom screen
+}
+```
+
+| Param | Type | Description | Value |
+| --- | --- | --- | --- |
+| `linkedModule` | `BookmarkLinkedModule ` | Module triggering the method call  | `BookmarkLinkedModule.AROUND_ME` or `BookmarkLinkedModule.JOURNEY` |
 
 ## 🎨 Theming
 
@@ -255,167 +448,3 @@ If you want to theme the date time picker, you can only add the following in you
     <item name="android:colorControlActivated">#251942</item> <!--selected day-->
 </style>
 ```
-
-## 📢 Communicating with other modules or the app
-
-Journey module can exchange data with, or navigate to, other modules or the host application.
-
-### Application
-
-Some routes or callbacks are delegated to the application. 
-If you have to receive some module data, the `Router` module must register a receiver with the right parameter:
-
-``` kotlin
-Router.getInstance()
-    .register(appData = appRouterDataImpl) // (1)
-```
-
-1.  `appRouterDataImpl` should be the class instance implementing `AppRouter.Data` interface. We recommand usign a `Application` subclass.
-
-If you have to handle navigation between modules, the `Router` module must also register a receiver:
-
-``` kotlin
-Router.getInstance()
-    .register(appUi = appRouterUiImpl) // (1)
-```
-
-1. `appRouterUiImpl` should be the class instance implementing `AppRouter.UI` interface. We recommand usign a `Application` subclass.
-
-#### Roadmap navigation
-
-A journey may include sections for driving, walking, or cycling. This module provides the option in the Roadmap screen to enhance navigation accuracy using data from an external service.<br>
-To enable this feature, first enable the `external_navigation` parameter in the [features configuration](../../getting_started/#journey-features)n. Then, implement the following method:
-
-```kotlin
-override fun openExternalNavigation(
-    fromCoords: LatLng,
-    fromLabel: String,
-    toCoords: LatLng,
-    toLabel: String,
-    mode: ExternalNavigationMode
-) {
-    // launch your external navigation service screen or your custom screen
-}
-```
-
-| Param | Type | Description |
-| --- | --- | --- |
-| `fromCoords` | `LatLng` | Section departure coordinates |
-| `fromLabel` | `String` | Section departure label |
-| `toCoords` | `LatLng` | Section arrival coordinates |
-| `toLabel` | `String` | Section arrival label |
-| `mode` | `ExternalNavigationMode` | Section navigation mode |
-
-`ExternalNavigationMode` has 3 modes of transportation that describe the section: `BIKE`, `CAR`, and `WALKING`.
-
-#### Roadmap actions
-
-You can add some actions to the roadmap screen which can be configured using this appropriate delegate:
-
-``` kotlin
-JourneyUI.getInstance().setRoadmapDelegate(this)
-```
-
-The implemented interface offers the following methods:
-
-| Method | Required | Description |
-| --- |:---:| --- |
-| `allowedRoadmapScreenActionsFor(inputData: SharedRoadmapScreenData): AllowedRoadmapScreenActions` | :material-check: | Define the allowed actions on the roadmap screen |
-| `onPrimaryButtonActionTriggered(inputData: SharedRoadmapScreenData)` | :material-check: | Tap callback on the primary button |
-| `onSecondaryButtonActionTriggered(inputData: SharedRoadmapScreenData)` | :material-check: | Tap callback on the secondary button |
-
-#### External view injection
-
-You can inject some external view that will be shown inside the journey module screens. In order to make it happen, you need to add the reference to the `injectableViewDelegate` as follows:
-
-``` kotlin
-JourneyUI.getInstance().setInjectableViewDelegate(this)
-```
-
-The interface provides the following methods:
-
-| Method | Required | Description |
-| --- |:---:| --- |
-| `allowExternalViewInjectionFor(screen: InjectableScreen, inputData: Any?): ExternalViewInjectionState` | :material-check: | Allow or not the external view injection |
-| `buildExternalViewFor(screen: InjectableScreen, inputData: Any?): View?` | :material-check: | Requests the instance of the view that needs to be injected in the injectable screen |
-
-The `inputData` can be of type:
-
-- `SharedJourneysScreenData`: if the injectable screen is `LIST_JOURNEYS`
-- `SharedRoadmapScreenData`: if the injectable screen is `ROADMAP`
-
-###### SharedJourneysScreenData
-
-| Name | Description | Type |
-| --- | --- | :---: |
-| `journeysRequest` | The request parameters object | `JourneysRequest` |
-| `hasResults` | Whether the request has results or not | `Boolean` |
-| `selectedFilterType` | The selected tab | `TransportModesFilterType` |
-
-###### SharedRoadmapScreenData
-
-| Name | Description | Type |
-| --- | --- | :---: |
-| `journeysRequest` | The request parameters object | `JourneysRequest` |
-| `selectedJourney` | The selected journey data | `SharedSelectedJourneyModel` |
-
-###### SharedSelectedJourneyModel
-
-| Name | Description | Type |
-| --- | --- | :---: |
-| `departureTime` | The departure time | `LocalDateTime` |
-| `arrivalTime` | The arrival time | `LocalDateTime` |
-| `departureAddress` | The departure address | `String` |
-| `arrivalAddress` | The arrival address | `String` |
-| `departureCoordinates` | The departure coordinates | `LatLng` |
-| `arrivalCoordinates` | The arrival coordinates | `LatLng` |
-| `sections` | The list of journey sections | `[SectionModel]` |
-
-###### SectionModel
-
-| Name | Description | Type |
-| --- | --- | :---: |
-| `departureTime` | The departure time | `LocalDateTime` |
-| `arrivalTime` | The arrival time | `LocalDateTime` |
-| `departureAddress` | The departure address | `String` |
-| `arrivalAddress` | The arrival address | `String` |
-| `departureCoordinates` | The departure coordinates | `LatLng?` |
-| `arrivalCoordinates` | The arrival coordinates | `LatLng?` |
-| `mobilityType` | The mobility type | `MobilityType` |
-| `distance` | The distance in meters | `Int` |
-| `duration` | The duration in seconds | `Int` |
-| `additionalInformation` | The extra section information if the mobility type allows it | `Any?` |
-
-Please note that the `additionalInformation` object in `SectionModel` can be of type:
-
-- `StreetNetworkSectionModel`: if the `mobilityType` is `STREET_NETWORK`
-- `PublicTransportSectionModel`: if the `mobilityType` is `PUBLIC_TRANSPORT`
-- `CarParkingSectionModel`: if the `mobilityType` is `CAR_PARKING`
-
-### Modules
-
-#### Bookmark
-
-This module communicates with [Bookmark](../../bookmark/) module in order to display favorite stations and POIs. You should enable the `bookmark_mode` parameter in the [features configuration](../../getting_started/#around-me-features).<br>
-
-The following methods from the `AppRouter.UI` interface should be implemented by the host application to enable navigation to the Bookmark module or any other custom screen. Note that the parameters of these methods can be omitted as needed.
-
-```kotlin
-override fun openFavoriteHomeAddViaHost(linkedModule: BookmarkLinkedModule) {
-    // launch the bookmark module screen or your custom screen
-}
-```
-
-| Param | Type | Description | Value |
-| --- | --- | --- | --- |
-| `linkedModule` | `BookmarkLinkedModule` | Module triggering the method call  | `BookmarkLinkedModule.AROUND_ME` or `BookmarkLinkedModule.JOURNEY` |
-
-```kotlin
-override fun openFavoriteWorkAddViaHost(linkedModule: LinkedModule) {
-    // launch the bookmark module screen or your custom screen
-}
-```
-
-| Param | Type | Description | Value |
-| --- | --- | --- | --- |
-| `linkedModule` | `BookmarkLinkedModule ` | Module triggering the method call  | `BookmarkLinkedModule.AROUND_ME` or `BookmarkLinkedModule.JOURNEY` |

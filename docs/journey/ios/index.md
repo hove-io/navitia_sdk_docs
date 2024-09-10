@@ -216,48 +216,20 @@ The `JourneysRequest` object allows to configure the first itinerary search at s
 | `standard` | Standard profile |
 | `wheelchair` | Using wheelchair |
 
-## 📢 Communicating with other modules
+## 📢 Communicating with other modules or the app
 
-#### Intercepting Bookmark callbacks
-
-In case you enable Bookmark feature in this module, some actions are defined by default to show Bookmark screen.
-Now, it's possible to intercept these callbacks and implement your own way of displaying user favorite data.<br>
-
-To do so, you will need to pass a `CustomJourneyBookmarkDelegate` to the Journey module instance.<br>
-This will allow to access to the following callbacks :
+Bookmark module can exchange data with or navigate to either other modules or the host application.<br>
+To do this, the host application must initialize `Router`. This singleton will ensure communication between the different modules or the app. Communication will not occur unless those are registered beforehand:
 
 ``` swift
-extension YourClass: CustomJourneyBookmarkDelegate {
-
-  func onHomeAddressCompletionRequested(module: Router.BookmarkLinkedModule) {
-    // Called when the user taps on the Home button in Autocompletion screen and the home favorite address is not filled yet
-  }
-
-  func onWorkAddressCompletionRequested(module: Router.BookmarkLinkedModule) {
-    // Called when the user taps on the Work button in Autocompletion screen and the home favorite work is not filled yet
-  }
-}
+try Router.shared
+          ... // Register modules and/or app
+          .initialize()
 ```
 
 ### Application
 
-#### Roadmap actions
-
-You can add some actions to the roadmap screen which can be configured using this appropriate delegate:
-
-``` swift
-JourneySdk.shared.delegate = self
-```
-
-The designated protocol offers the following methods:
-
-| Method | Required | Description |
-| --- |:---:| --- |
-| `allowedRoadmapScreenActionsFor(inputData: SharedRoadmapScreenData) -> AllowedRoadmapScreenActions` | :material-check: | Define the allowed actions on the roadmap screen |
-| `onPrimaryButtonActionTriggered(inputData: SharedRoadmapScreenData)` | :material-check: | Tap callback on the primary button |
-| `onSecondaryButtonActionTriggered(inputData: SharedRoadmapScreenData)` | :material-check: | Tap callback on the secondary button |
-
-#### External view injection
+#### Result journeys / Roadmap view injection
 
 You can inject some external view that will be shown inside the journey module screens. In order to make it happen, you need to add the reference to the `injectableViewDelegate` as follows:
 
@@ -267,17 +239,26 @@ JourneySdk.shared.injectableViewDelegate = self
 
 The protocol provides the following methods:
 
-| Method | Required | Description |
-| --- |:---:| --- |
-| `allowExternalViewInjectionFor(screen: InjectableScreen, inputData: Any?) -> ExternalViewInjectionState` | :material-check: | Allow or not the external view injection |
-| `buildExternalViewFor(screen: InjectableScreen, inputData: Any?) -> UIView?` | :material-check: | Requests the instance of the view that needs to be injected in the injectable screen |
+``` swift
+func allowExternalViewInjectionFor(screen: InjectableScreen, inputData: Any?) -> ExternalViewInjectionState {
+  // Allow or not the external view injection
+}
+```
 
-The `inputData` can be of type:
+``` swift
+func buildExternalViewFor(screen: InjectableScreen, inputData: Any?) -> UIView? {
+  // Put the view that needs to be injected in the injectable screen
+}
+```
 
-- `SharedJourneysScreenData`: if the injectable screen is `listJourneys`
-- `SharedRoadmapScreenData`: if the injectable screen is `roadmap`
+!!! info "Note"
 
-###### SharedJourneysScreenData
+	The `inputData` can be of type:
+
+	- `SharedJourneysScreenData` if the injectable screen is `listJourneys`
+	- `SharedRoadmapScreenData` if the injectable screen is `roadmap`
+
+:fontawesome-solid-file-code: `SharedJourneysScreenData`<br>
 
 | Name | Description | Type |
 | --- | --- | :---: |
@@ -285,14 +266,14 @@ The `inputData` can be of type:
 | `hasResults` | Whether the request has results or not | `Bool` |
 | `selectedFilterType` | The selected tab | `TransportModesFilterType` |
 
-###### SharedRoadmapScreenData
+:fontawesome-solid-file-code: `SharedRoadmapScreenData`<br>
 
 | Name | Description | Type |
 | --- | --- | :---: |
 | `journeysRequest` | The request parameters object | `JourneysRequest` |
 | `selectedJourney` | The selected journey data | `SharedSelectedJourneyModel` |
 
-###### SharedSelectedJourneyModel
+:fontawesome-solid-file-code: `SharedSelectedJourneyModel`<br>
 
 | Name | Description | Type |
 | --- | --- | :---: |
@@ -304,7 +285,7 @@ The `inputData` can be of type:
 | `arrivalCoordinates` | The arrival coordinates | `CLLocationCoordinate2D` |
 | `sections` | The list of journey sections | `[SectionModel]` |
 
-###### SectionModel
+:fontawesome-solid-file-code: `SectionModel`<br>
 
 | Name | Description | Type |
 | --- | --- | :---: |
@@ -319,8 +300,88 @@ The `inputData` can be of type:
 | `duration` | The duration in seconds | `Int` |
 | `additionalInformation` | The extra section information if the mobility type allows it | `Any?` |
 
-Please note that the `additionalInformation` object can be of type:
+!!! info "Note"
 
-- `StreetNetworkSectionModel`: if the `mobilityType` is `streetNetwork`
-- `PublicTransportSectionModel`: if the `mobilityType` is `public_transport`
-- `CarParkingSectionModel`: if the `mobilityType` is `carParking`
+	Please note that the `additionalInformation` object can be of type:
+
+	- `StreetNetworkSectionModel` if the `mobilityType` is `streetNetwork`
+	- `PublicTransportSectionModel` if the `mobilityType` is `public_transport`
+	- `CarParkingSectionModel` if the `mobilityType` is `carParking`
+
+
+#### Roadmap actions
+
+You can add some actions to the roadmap screen which can be configured using this appropriate delegate:
+
+``` swift
+JourneySdk.shared.delegate = self
+```
+
+The designated protocol offers the following methods:
+
+``` swift
+func allowedRoadmapScreenActionsFor(inputData: SharedRoadmapScreenData) -> AllowedRoadmapScreenActions {
+	// Define the allowed actions on the roadmap screen
+}
+
+func onPrimaryButtonActionTriggered(inputData: SharedRoadmapScreenData) {
+	// Handle primary action button click
+}
+
+func onSecondaryButtonActionTriggered(inputData: SharedRoadmapScreenData) {
+	// Handle secondary action button click
+}
+```
+
+#### Roadmap navigation
+
+A journey may include sections for driving, walking, or cycling. This module provides the option in the Roadmap screen to enhance navigation accuracy using data from an external service.<br>
+To enable this feature, first enable the `external_navigation` parameter in the [features configuration](../../getting_started/#journey-features). Then, implement the following method:
+
+``` swift
+func onLaunchExternalNavigationApp(from: CLLocationCoordinate2D, to: CLLocationCoordinate2D, navigationMode: JourneyExternalNavigationMode) {
+	// launch your external navigation service screen or your custom screen
+}
+```
+
+| Param | Type | Description |
+| --- | --- | --- |
+| `from` | `LatLng` | Section departure coordinates |
+| `toCoords` | `LatLng` | Section arrival coordinates |
+| `navigationMode` | `JourneyExternalNavigationMode` | Section navigation mode |
+
+!!! info "Note"
+
+    `JourneyExternalNavigationMode` has 3 modes of transportation that describe the section: `bike`, `car`, and `walking`.
+
+### Modules
+
+#### Bookmark
+
+:octicons-arrow-right-24: Enabling<br>
+
+This module communicates with [Bookmark](../../bookmark/) module in order to display favorite stations and POIs. You should enable the `bookmark_mode` parameter in the [features configuration](../../getting_started/#journey-features).<br>
+
+:octicons-arrow-right-24: Methods<br>
+
+The following methods from the `CustomJourneyBookmarkDelegate` interface should be implemented by the host application to enable navigation to the Bookmark module or any other custom screen. Note that the parameters of these methods can be omitted as needed.
+
+``` swift
+func onHomeAddressCompletionRequested(module: Router.BookmarkLinkedModule) {
+    // launch the bookmark module screen or your custom screen
+}
+```
+
+| Param | Type | Description | Value |
+| --- | --- | --- | --- |
+| `module` | `Router.BookmarkLinkedModule` | Module triggering the method call | `Router.BookmarkLinkedModule.aroundMe` or `Router.BookmarkLinkedModule.journey` |
+
+``` swift
+func onWorkAddressCompletionRequested(module: Router.BookmarkLinkedModule) {
+    // launch the bookmark module screen or your custom screen
+}
+```
+
+| Param | Type | Description | Value |
+| --- | --- | --- | --- |
+| `module` | `Router.BookmarkLinkedModule` | Module triggering the method call | `Router.BookmarkLinkedModule.aroundMe` or `Router.BookmarkLinkedModule.journey` |

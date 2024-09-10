@@ -122,3 +122,36 @@ If you want to use the `rootViewController` as a `ChildViewController` of your `
     ```swift
     yourViewController.addChild(UINavigationController(rootViewController: scheduleViewController))
     ```
+
+## 📢 Communicating with other modules
+
+Schedule module navigate to other modules directly.<br>
+To do this, the host application must initialize `Router`. This singleton will ensure communication between the different modules. Communication will not occur unless those are registered beforehand:
+
+``` swift
+try Router.shared
+          ... // Register modules and/or app
+          .initialize()
+```
+
+### Modules
+
+#### Bookmark
+
+This module communicates with [Bookmark](../../bookmark/) module in order to display favorite stations and POIs. You should enable the `bookmark_mode` parameter in the [features configuration](../../getting_started/#schedule-features).
+
+Bookmark module must be registered in the `Router` to build the connection between these modules
+
+``` swift
+Router.shared.register(bookmark: Bookmark.shared.bookmarkRouter)
+```
+
+#### Journey
+
+This module communicates with [Journey](../../journey/) module in order to get directions for a chosen itinerary. You should enable the `go_from_go_to` parameter in the [features configuration](../../getting_started/#schedule-features).<br>
+
+Bookmark module must be registered in the `Router` to build the connection between these modules
+
+``` swift
+Router.shared.register(journey: JourneySdk.shared.bookmarkRouter)
+```

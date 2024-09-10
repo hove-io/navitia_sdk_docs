@@ -87,17 +87,21 @@ The following are the possible configuration parameters:
 | `journey` | :material-check: | [`Journey color`](#journey-color) | Journey |
 | `schedule` | :material-check: | [`Schedule color`](#schedule-color) | Schedule |
 | `traffic` | :material-check: | [`Traffic color`](#traffic-color) | Traffic |
-<!-- | `account` | :material-check: | [`Account color`](#account-color) | Account | -->
-<!-- | `crowdsourcing` | :material-check: | [`Crowdsourcing color`](#crowdsourcing-color) | Crowdsourcing | -->
+<!-- 
+| `account` | :material-check: | [`Account color`](#account-color) | Account |
+| `crowdsourcing` | :material-check: | [`Crowdsourcing color`](#crowdsourcing-color) | Crowdsourcing | 
+-->
 
-<!-- #### Account color
+<!-- [Not yet]
+#### Account color
 
 | Name | Required | Description | Type | Example |
 | --- |:---:| --- | :---: | :---: |
 | `primary` | :material-check: | To set the main color of the screens | `String` | `#88819f` |
-| `secondary` | :material-check: | To set the color of some UI components | `String` | `#8faa96` | -->
+| `secondary` | :material-check: | To set the color of some UI components | `String` | `#8faa96` | 
+-->
 
-#### Around Me color
+#### Around me color
 
 | Name | Required | Description | Type | Example |
 | --- |:---:| --- | :---: | :---: |
@@ -262,7 +266,9 @@ The following are the possible configuration parameters:
 | `journey` | :material-close: | [`Journey fonts`](#journey-fonts) | Journey |
 | `schedule` | :material-close: | [`Schedule fonts`](#schedule-fonts) | Schedule |
 | `traffic` | :material-close: | [`Traffic fonts`](#traffic-fonts) | Traffic |
-<!-- | `account` | :material-close: | [`Account fonts`](#account-fonts) | Account | -->
+<!-- [Not yet]
+| `account` | :material-close: | [`Account fonts`](#account-fonts) | Account | 
+-->
 
 ### Features
 
@@ -273,9 +279,12 @@ The following are the possible configuration parameters:
 | `journey` | :material-close: | [`Journey features`](#journey-features) | Journey |
 | `schedule` | :material-close: | [`Schedule features`](#schedule-features) | Schedule |
 | `traffic` | :material-close: | [`Traffic features`](#traffic-features) | Traffic |
-<!-- | `account` | :material-close: | [`Account features`](#account-features) | Account | -->
+<!-- [Not yet]
+| `account` | :material-close: | [`Account features`](#account-features) | Account | 
+-->
 
-<!-- #### Account features
+<!-- [Not yet]
+#### Account features
 
 | Name | Required | Description | Type |
 | --- |:---:| --- | :---: |
@@ -303,7 +312,8 @@ The following are the possible configuration parameters:
 
 !!! info "Info"
 
-    `PASSWORD` field type is only available for signup screen -->
+    `PASSWORD` field type is only available for signup screen 
+-->
 
 #### Around Me features
 
@@ -321,7 +331,9 @@ The following are the possible configuration parameters:
 | `stop_point_search` | :material-close: | Enable/disable search by stop point instead of stop area | `Boolean` |
 | `traffic_mode` | :material-close: | Show/hide the traffic button | `Boolean` |
 | `vehicle_positions`| :material-close: | Show bus vehicle positions on map | [`Vehicle positions`](#vehicle-positions) |
-<!-- | `account_mode` | :material-close: | Enable/disable the account feature | `Boolean` | -->
+<!-- [Not yet]
+| `account_mode` | :material-close: | Enable/disable the account feature | `Boolean` | 
+-->
 
 <h4>Default location</h4>
 
@@ -406,6 +418,7 @@ The following are the possible configuration parameters:
 | Name | Required | Description | Type |
 | --- |:---:| --- | :---: |
 | `bookmark_mode` | :material-close: | Enable/disable the bookmarks feature | `Boolean` |
+| `go_from_go_to` | :material-close: | Show/hide the go from/go to buttons | `Boolean` | `true` |
 | `max_history` | :material-close: | Define the max history items | `Int` |
 | `networks_filter` | :material-close: | Show/hide the networks selector | `Boolean` |
 | `next_departures` | :material-close: | Show/hide the next departures | [`Next departures`](#next-departures) |
@@ -432,12 +445,14 @@ The following are the possible configuration parameters:
 
 | Name | Required  | Type | Target module |
 | --- | :-: | :--: | :---: |
-<!-- | `account` | :material-close: | [`Custom font`](#custom-font) | Account | -->
 | `aroundme` | :material-close: | [`Custom font`](#custom-font) | Around Me |
 | `bookmark` | :material-close: | [`Custom font`](#custom-font) | Bookmark |
 | `journey` | :material-close: | [`Custom font`](#custom-font) | Journey |
 | `schedule` | :material-close: | [`Custom font`](#custom-font) | Schedule |
 | `traffic` | :material-close: | [`Custom font`](#custom-font) | Traffic |
+<!-- [Not yet]
+| `account` | :material-close: | [`Custom font`](#custom-font) | Account | 
+-->
 
 #### Custom font
 
