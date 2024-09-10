@@ -143,6 +143,10 @@ try Router.shared
 
 ### Application
 
+!!! failure "404"
+
+    This section is not written yet
+
 <!-- TODO: To write -->
 
 ### Modules
@@ -203,6 +207,10 @@ Router.shared.register(journey: JourneySdk.shared.journeyRouter)
 
 :octicons-arrow-right-24: Methods<br>
 
+!!! failure "404"
+
+    This section is not written yet
+
 <!-- TODO: To write -->
 
 #### Traffic
@@ -219,5 +227,8 @@ Router.shared.register(traffic: Traffic.shared.trafficRouter)
 
 :octicons-arrow-right-24: Methods<br>
 
-<!-- TODO: To write -->
+!!! failure "404"
 
+    This section is not written yet
+
+<!-- TODO: To write -->

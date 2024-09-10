@@ -46,6 +46,10 @@ In the details bottom sheet of a station or a POI, there is a star button in ord
 
 ## Map dragged
 
+!!! failure "404"
+
+    This section is not written yet
+
 ## Search
 
 The search screen allows the user to seek for a place using a built-in autocompletion. The result is a selection of addresses, stations and points of interest based on the user search input text.<br>
