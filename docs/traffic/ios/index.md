@@ -4,7 +4,7 @@ title: Traffic iOS - Navitia SDK Docs
 
 # Traffic iOS
 
-## 💻 Setup
+## :computer: Setup
 
 In your project, add the following lines to your `Podfile`:
 
@@ -28,7 +28,7 @@ end
 
 Using your CLI, run `pod install` in your project directory.
 
-## 👨‍💻  Implementation
+## :man_technologist: Implementation
 
 !!! warning "Warning"
 
@@ -114,7 +114,7 @@ In order to receive the list of generated events within Traffic module, you have
 Traffic.shared.tracker = self
 ```
 
-## 🚀  Launching
+## :rocket: Launching
 
 This module has a single entry point. The parameter `showBack` handles the back button visibility on the first screen.
 

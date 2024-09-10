@@ -4,7 +4,7 @@ title: Around Me iOS - Navitia SDK Docs
 
 # Around Me iOS
 
-## 💻 Setup
+## :computer: Setup
 
 In your project, add the following lines to your `Podfile`:
 
@@ -28,7 +28,7 @@ end
 
 Using your CLI, run `pod install` in your project directory.
 
-## 👨‍💻  Implementation
+## :man_technologist: Implementation
 
 !!! warning "Warning"
 
@@ -100,7 +100,7 @@ In order to receive the list of generated events within Around me module, you ha
 AroundMe.shared.tracker = self
 ```
 
-## 🚀  Launching
+## :rocket: Launching
 
 This module has a single entry point. The parameter `showBack` handles the back button visibility on the first screen.
 
@@ -130,7 +130,7 @@ If you want to use the `rootViewController` as a `ChildViewController` of your `
 This screen content is a visual version of the passed transport categories and POI categories configuration (check [modules configuration](../../getting_started/#modules-configuration) section for more information). The selected elements will be used to filter the data received and drawn within the map. One filter should at least be selected or else the user can't apply the current filters configuration.<br><br>
 If you want to reset the user filters configuration, you can simply call `AroundMeUI.getInstance().resetUserPreferences()` and the current configuration will be deleted and the screen will be updated according to the new passed configuration.
 
-## 📢 Communicating with other modules or the app
+## :mega: Communicating with other modules or the app
 
 Around Me module can exchange data with or navigate to either other modules or the host application.<br>
 To do this, the host application must initialize `Router`. This singleton will ensure communication between the different modules or the app. Communication will not occur unless those are registered beforehand:

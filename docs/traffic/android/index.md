@@ -4,7 +4,7 @@ title: Traffic Android - Navitia SDK Docs
 
 # Traffic Android
 
-## 💻 Setup
+## :computer: Setup
 
 Add the following dependencies in the `build.gradle` file of your application:
 
@@ -21,7 +21,7 @@ The activity launching Traffic must handle the following configuration changes: 
     android:configChanges="orientation|screenSize"/>
 ```
 
-## 👨‍💻  Implementation
+## :man_technologist: Implementation
 
 !!! warning "Warning"
 
@@ -124,7 +124,7 @@ You can call this method before or after `init()`.
 | --- | --- |
 | `.attachTracker(trafficTrackerImpl)` | Attach the class instance implementing `TrafficTracker` interface |
 
-## 🚀  Launching
+## :rocket: Launching
 
 Traffic has a single entry point `AllDisruptionsFragment`.<br>
 Assuming you have an `Activity` with a fragment container, refer to the following example to launch the entry screen fragment:
@@ -147,7 +147,7 @@ The `newInstance()` method creates an instance of the target fragment and takes 
 | --- |:---:| --- | --- | --- |
 | `showBack` | :material-close: | Show/hide back button on the first screen | `Boolean` | `false` |
 
-## 🎨 Theming
+## :art: Theming
 
 The module uses graphical components from Material Design 3. To ensure these components function correctly and get displayed properly on the screen, it is crucial to apply the appropriate parent theme:
 

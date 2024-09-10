@@ -4,7 +4,7 @@ title: Around Me Android - Navitia SDK Docs
 
 # Around Me Android
 
-## 💻 Setup
+## :computer: Setup
 
 Add the following dependencies in the `build.gradle` file of your application:
 
@@ -29,7 +29,7 @@ The activity launching Around Me must handle the following configuration changes
     android:configChanges="orientation|screenSize"/>
 ```
 
-## 👨‍💻  Implementation
+## :man_technologist: Implementation
 
 !!! warning "Warning"
 
@@ -112,7 +112,7 @@ You can call this method before or after `init()`.
 | --- | --- |
 | `.attachTracker(aroundMeTrackerImpl)` | Attach the class instance implementing `AroundMeTracker` interface |
 
-## 🚀  Launching
+## :rocket: Launching
 
 Around Me has a single entry point `MapFragment`.<br>
 Assuming you have an `Activity` with a fragment container, refer to the following example to launch the entry screen fragment:
@@ -125,7 +125,7 @@ supportFragmentManager.beginTransaction().run {
 }
 ```
 
-## 📢 Communicating with other modules or the app
+## :mega: Communicating with other modules or the app
 
 Around Me module can exchange data with or navigate to either other modules or the host application.
 
@@ -295,7 +295,7 @@ override fun openTrafficViaHost() {
 }
 ```
 
-## 🎨 Theming
+## :art: Theming
 
 The module uses graphical components from Material Design 3. To ensure that these components function correctly and get displayed properly on the screen, it is crucial to apply the appropriate parent theme:
 

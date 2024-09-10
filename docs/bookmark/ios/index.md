@@ -4,7 +4,7 @@ title: Bookmark iOS - Navitia SDK Docs
 
 # Bookmark iOS
 
-## 💻 Setup
+## :computer: Setup
 
 In your project, add the following lines to your `Podfile`:
 
@@ -28,7 +28,7 @@ end
 
 Using your CLI, run `pod install` in your project directory.
 
-## 👨‍💻  Implementation
+## :man_technologist: Implementation
 
 !!! warning "Warning"
 
@@ -98,7 +98,7 @@ In order to receive the list of generated events within Bookmark module, you hav
 Bookmark.shared.tracker = self
 ```
 
-## 🚀  Launching
+## :rocket: Launching
 
 This module has a single entry point. The parameter `showBack` handles the back button visibility on the first screen.
 
@@ -123,7 +123,7 @@ If you want to use the `rootViewController` as a `ChildViewController` of your `
     yourViewController.addChild(UINavigationController(rootViewController: bookmarkViewController))
     ```
 
-## 📖 Manipulating data
+## :book: Manipulating data
 
 The module provides the ability to directly manipulate data for use in custom screens.
 
@@ -368,7 +368,7 @@ func deleteFavoriteStation(id: String) -> Bool
 | `physicalMode` | :material-check: | Navitia public transport physical mode. Example: `physical_mode:Bus` | `String` |
 | `additionalInformation` | :material-check: | Free field to save extra data | `String` |
 
-## 📢 Communicating with other modules
+## :mega: Communicating with other modules
 
 Bookmark module can exchange data with or navigate to either other modules.<br>
 To do this, the host application must initialize `Router`. This singleton will ensure communication between the different modules. Communication will not occur unless those are registered beforehand:

@@ -4,7 +4,7 @@ title: Schedule Android - Navitia SDK Docs
 
 # Schedule Android
 
-## 💻 Setup
+## :computer: Setup
 
 Add the following dependencies in the `build.gradle` file of your application:
 
@@ -29,7 +29,7 @@ The activity launching Schedule must handle the following configuration changes:
     android:configChanges="orientation|screenSize"/>
 ```
 
-## 👨‍💻  Implementation
+## :man_technologist: Implementation
 
 !!! warning "Warning"
 
@@ -110,7 +110,7 @@ You can call this method before or after `init()`.
 | --- | --- |
 | `.attachTracker(scheduleTrackerImpl)` | Attach the class instance implementing `ScheduleTracker` interface |
 
-## 🚀  Launching
+## :rocket: Launching
 
 Schedule has a single entry point `LinesFragment`.<br>
 Assuming you have an `Activity` with a fragment container, refer to the following example to launch the entry screen fragment:
@@ -133,7 +133,7 @@ The `newInstance()` method creates an instance of the target fragment and takes 
 | --- |:---:| --- | --- | --- |
 | `showBack` | :material-close: | Show/hide back button on the first screen | `Boolean` | `false` |
 
-## 📢 Communicating with other modules or the app
+## :mega: Communicating with other modules or the app
 
 Schedule module navigate to other modules directly or via the host application.<br>
 To do this, the host application must initialize `Router`. This singleton will ensure communication between the different modules or the app. Communication will not occur unless those are registered beforehand:
@@ -187,7 +187,7 @@ override fun openJourneysViaHost(
 | `showDirectlyAutoCompletion` | `Boolean` | Directly displays the search for the starting point and/or endpoint. If true, `showDirectlyJourneysSearch` can only be false |
 | `showDirectlyJourneysSearch` | `Boolean` | Directly displays the journey search. If true, `showDirectlyAutoCompletion` can only be false |
 
-## 🎨 Theming
+## :art: Theming
 
 ### App theme
 

@@ -4,7 +4,7 @@ title: Journey iOS - Navitia SDK Docs
 
 # Journey iOS
 
-## 💻 Setup
+## :computer: Setup
 
 In your project, add the following lines to your `Podfile`:
 
@@ -28,7 +28,7 @@ end
 
 Using your CLI, run `pod install` in your project directory.
 
-## 👨‍💻  Implementation
+## :man_technologist: Implementation
 
 !!! warning "Warning"
 
@@ -102,7 +102,7 @@ In order to receive the list of generated events within Journey module, you have
 JourneySdk.shared.tracker = self
 ```
 
-## 🚀  Launching
+## :rocket: Launching
 
 This module has a single entry point. The parameter `showBack` handles the back button visibility on the first screen.
 
@@ -216,7 +216,7 @@ The `JourneysRequest` object allows to configure the first itinerary search at s
 | `standard` | Standard profile |
 | `wheelchair` | Using wheelchair |
 
-## 📢 Communicating with other modules or the app
+## :mega: Communicating with other modules or the app
 
 Bookmark module can exchange data with or navigate to either other modules or the host application.<br>
 To do this, the host application must initialize `Router`. This singleton will ensure communication between the different modules or the app. Communication will not occur unless those are registered beforehand:

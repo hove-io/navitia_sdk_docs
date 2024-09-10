@@ -4,7 +4,7 @@ title: Journey Android - Navitia SDK Docs
 
 # Journey Android
 
-## 💻 Setup
+## :computer: Setup
 
 Add the following dependencies in the `build.gradle` file of your application:
 
@@ -29,7 +29,7 @@ The activity launching Journey must handle the following configuration changes: 
     android:configChanges="orientation|screenSize"/>
 ```
 
-## 👨‍💻  Implementation
+## :man_technologist: Implementation
 
 !!! warning "Warning"
 
@@ -115,7 +115,7 @@ You can call this method before or after `init()`.
 | --- | --- |
 | `.attachTracker(journeyTrackerImpl)` | Attach the class instance implementing `JourneyTracker` interface |
 
-## 🚀  Launching
+## :rocket: Launching
 
 Journey has a single entry point `JourneysFragment`.<br>
 Assuming you have an `Activity` with a fragment container, refer to the following example to launch the entry screen fragment:
@@ -228,7 +228,7 @@ The `JourneysRequest` object allows to configure the first itinerary search at s
 | `STANDARD` | Standard profile |
 | `WHEELCHAIR` | Using wheelchair |
 
-## 📢 Communicating with other modules or the app
+## :mega: Communicating with other modules or the app
 
 Journey module can exchange data with or navigate to either other modules or the host application.<br>
 To do this, the host application must initialize `Router`. This singleton will ensure communication between the different modules or the app. Communication will not occur unless those are registered beforehand:
@@ -422,7 +422,7 @@ override fun openFavoriteWorkAddViaHost(linkedModule: LinkedModule) {
 | --- | --- | --- | --- |
 | `linkedModule` | `BookmarkLinkedModule ` | Module triggering the method call  | `BookmarkLinkedModule.AROUND_ME` or `BookmarkLinkedModule.JOURNEY` |
 
-## 🎨 Theming
+## :art: Theming
 
 ### App theme
 

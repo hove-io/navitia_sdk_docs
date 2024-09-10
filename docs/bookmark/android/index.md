@@ -4,7 +4,7 @@ title: Bookmark Android - Navitia SDK Docs
 
 # Bookmark Android
 
-## 💻 Setup
+## :computer: Setup
 
 Add the following dependencies in the `build.gradle` file of your application:
 
@@ -21,7 +21,7 @@ The activity launching Bookmark must handle the following configuration changes:
     android:configChanges="orientation|screenSize"/>
 ```
 
-## 👨‍💻  Implementation
+## :man_technologist: Implementation
 
 !!! warning "Warning"
 
@@ -101,7 +101,7 @@ You can call this method before or after `init()`.
 | --- | --- |
 | `.attachTracker(bookmarkTrackerImpl)` | Attach the class instance implementing `BookmarkTracker` interface |
 
-## 🚀  Launching
+## :rocket: Launching
 
 Bookmark has a single entry point `FavoriteFragment`.<br>
 Assuming you have an `Activity` with a fragment container, refer to the following example to launch the entry screen fragment:
@@ -114,7 +114,7 @@ supportFragmentManager.beginTransaction().run {
 }
 ```
 
-## 📖 Manipulating data
+## :book: Manipulating data
 
 The module provides the ability to directly manipulate data for use in custom screens.
 
@@ -398,7 +398,7 @@ fun deleteStation(stopAreaId: String, lineId: String)
 | `lines` | :material-check: | Station lines | [`List<SharedData.LineBookmark>`](#linebookmark) |
 | `additionalInformation` | :material-check: | Free field to save extra data | `String` |
 
-## 📢 Communicating with other modules or the app
+## :mega: Communicating with other modules or the app
 
 Bookmark module can exchange data with or navigate to either other modules or the host application.<br>
 To do this, the host application must initialize `Router`. This singleton will ensure communication between the different modules or the app. Communication will not occur unless those are registered beforehand:
@@ -472,7 +472,7 @@ override fun openJourneysViaHost(
 | `showDirectlyAutoCompletion` | `Boolean` | Directly displays the search for the starting point and/or endpoint. If true, `showDirectlyJourneysSearch` can only be false |
 | `showDirectlyJourneysSearch` | `Boolean` | Directly displays the journey search. If true, `showDirectlyAutoCompletion` can only be false |
 
-## 🎨 Theming
+## :art: Theming
 
 The module uses graphical components from Material Design 3. To ensure these components function correctly and get displayed properly on the screen, it is crucial to apply the appropriate parent theme:
 

@@ -4,7 +4,7 @@ title: Schedule iOS - Navitia SDK Docs
 
 # Schedule iOS
 
-## 💻 Setup
+## :computer: Setup
 
 In your project, add the following lines to your `Podfile`:
 
@@ -28,7 +28,7 @@ end
 
 Using your CLI, run `pod install` in your project directory.
 
-## 👨‍💻  Implementation
+## :man_technologist: Implementation
 
 !!! warning "Warning"
 
@@ -98,7 +98,7 @@ In order to receive the list of generated events within Schedule module, you hav
 Schedule.shared.tracker = self
 ```
 
-## 🚀  Launching
+## :rocket: Launching
 
 This module has a single entry point. The parameter `showBack` handles the back button visibility on the first screen.
 
@@ -123,7 +123,7 @@ If you want to use the `rootViewController` as a `ChildViewController` of your `
     yourViewController.addChild(UINavigationController(rootViewController: scheduleViewController))
     ```
 
-## 📢 Communicating with other modules
+## :mega: Communicating with other modules
 
 Schedule module navigate to other modules directly.<br>
 To do this, the host application must initialize `Router`. This singleton will ensure communication between the different modules. Communication will not occur unless those are registered beforehand:
