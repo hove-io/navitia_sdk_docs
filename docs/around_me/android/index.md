@@ -4,7 +4,7 @@ title: Around Me Android - Navitia SDK Docs
 
 # Around Me Android
 
-## 💻 Setup
+## :computer: Setup
 
 Add the following dependencies in the `build.gradle` file of your application:
 
@@ -19,10 +19,8 @@ For the use of cartography, add your Google Maps API Key to your `AndroidManifes
 ``` xml
 <meta-data
     android:name="com.google.android.geo.API_KEY"
-    android:value="YOUR_API_KEY"/> <!-- (1) -->
+    android:value="YOUR_API_KEY"/>
 ```
-
-1.  Replace `YOUR_API_KEY` with your Google Maps API Key
 
 The activity launching Around Me must handle the following configuration changes: `orientation|screenSize` declared into your `AndroidManifest.xml`:
 
@@ -31,9 +29,11 @@ The activity launching Around Me must handle the following configuration changes
     android:configChanges="orientation|screenSize"/>
 ```
 
-## 👨‍💻  Implementation
+## :man_technologist: Implementation
 
-⚠️ Please make sure to read the [modules configuration](../../getting_started/#modules-configuration) section before proceeding!<br>
+!!! warning "Warning"
+
+    Make sure to read the [modules configuration](../../getting_started/#modules-configuration) section before proceeding
 
 This module is set up by calling `AroundMeUI.getInstance()`. The singleton behaves like a builder in which each method allows you to configure the module. Then, you need to call the `init()` method at the end. You should call this method in an `Application` subclass.<br>
 This method takes the following parameters:
@@ -41,48 +41,85 @@ This method takes the following parameters:
 | Name | Required | Description | Type | Default |
 | --- |:---:| --- | :---: | :---: |
 | `context` | :material-check: | Context in which the module is launched | `Context` | :material-close: |
-| `token` | :material-check: | <a href="https://navitia.io/inscription/" target="_blank">Get your token</a> | `String` | :material-close: |
+| `token` | :material-check: | <a href="https://navitia.io/inscription/" style="text-decoration: underline">Get your token</a> | `String` | :material-close: |
 | `configuration` | :material-close: | Module configuration object | [`AroundMeConfiguration`](../../getting_started/#modules-configuration) | `null` |
 | `configurationJsonFile` | :material-close: | Module configuration JSON file name | `String` | `null` |
 
 <h4>Example</h4>
 
-``` kotlin
-AroundMeUI.getInstance().let { instance ->
-    instance.init(
-      context = this,
-      token = "your_token",
-      configurationJsonFile = "config.json"
-    )
-}
-```
+=== "Configuration with file"
+
+    ``` kotlin
+    AroundMeUI.getInstance().let { instance ->
+        instance.init(
+            context = this,
+            token = "your_token",
+            configurationJsonFile = "your_config_file"
+        )
+    }
+    ```
+
+=== "Manual configuration"
+
+    ``` kotlin
+    AroundMeUI.getInstance().let { instance ->
+        instance.init(
+            context = this,
+            token = "your_token",
+            configuration = AroundMeConfiguration(
+                coverage = "your_coverage",
+                timezone = "Europe/Paris",
+                env = AroundMeEnvironment.PROD,
+                colors = AroundMeColors(
+                    primary = "#88819f"
+                ),
+                transportCategories = listOf<AroundMeTransportCategory>(),
+            )
+        )
+    }
+    ```
 
 ### Navigation listener
 
 Since the module launches its own fragments, you may want your application to be aware of navigation events.
 For that, you have to set a navigation listener by calling this method before `init()`.
 
-| Method | Description |
-| --- | --- |
-| `.setNavigationListener(aroundMeNavigationListenerImpl)` | Set the class instance implementing `AroundMeNavigationListener` interface |
+``` kotlin
+AroundMeUI.getInstance()
+    .setNavigationListener(aroundMeNavigationListenerImpl) // (1)
+```
+
+1.  `aroundMeNavigationListenerImpl` should be the class instance implementing `AroundMeNavigationListener` interface.
 
 This interface gives you the method `onBack()` for any back event between two fragments and the method `onNavigate` for the reverse.
 Each method has a `AroundMeNavigationListener.Event` parameter you can rely on.
 
-| Event |
-| --- |
-| `MAP_TO_ACCOUNT` |
-| `MAP_TO_FAVORITES` |
-| `MAP_TO_JOURNEY` |
-| `MAP_TO_TRAFFIC` |
-| `MAP_TO_ROADMAP` |
-| `MAP_TO_FILTER` |
-| `MAP_TO_SEARCH` |
-| `MAP_BACK_TO_EXTERNAL` |
-| `SEARCH_BACK_TO_MAP` |
-| `FILTER_BACK_TO_MAP` |
+``` kotlin
+// Navigation events
+MAP_TO_FAVORITES
+MAP_TO_JOURNEY
+MAP_TO_TRAFFIC
+MAP_TO_ROADMAP
+MAP_TO_FILTER
+MAP_TO_SEARCH
+MAP_BACK_TO_EXTERNAL
+SEARCH_BACK_TO_MAP
+FILTER_BACK_TO_MAP
+```
 
-## 🚀  Launching
+### Events tracking
+
+In order to receive the list of generated events within Around Me module, you have to attach the tracker to the module instance.<br>
+You can call this method before or after `init()`.
+
+``` kotlin
+AroundMeUI.getInstance()
+    .attachTracker(aroundMeTrackerImpl) // (1)
+```
+
+1.  `aroundMeTrackerImpl` should be the class instance implementing `AroundMeTracker` interface.
+
+## :rocket: Launching
 
 Around Me has a single entry point `MapFragment`.<br>
 Assuming you have an `Activity` with a fragment container, refer to the following example to launch the entry screen fragment:
@@ -95,61 +132,14 @@ supportFragmentManager.beginTransaction().run {
 }
 ```
 
-## 📱 Screens
+## :mega: Communicating with other modules or the app
 
-### Map
-
-The map screen represents the main screen of this module. It shows the places nearby the center of the visible region, draws them on the map and adds them to the bottom sliding panel.<br>
-The shown data depend on the selected elements in the [filters](#filters) screen.
-
-In the bottom sheet of the main screen, the last added favorite stations are shown with the next departures for each direction, as well as an All Favorites button that redirects the user to the bookmark module. In the same section, if the user has added his journeys to favorites in journey module, a favorite journeys section appears showing the list of bookmarked journeys.
-
-<img class="img-overview" src="/navitia_sdk_docs/assets/img/aroundme_android_map_screen.png" alt="Map screen">
-
-In the details bottom sheet of a station or a POI, there is a star button in order to save or delete it from the bookmarks.
-<img class="img-overview" src="/navitia_sdk_docs/assets/img/aroundme_android_bookmark_saving_node.png" alt="Bookmark node">
-
-### Search
-
-The search screen allows the user to seek for a place using a built-in autocompletion. The result is a selection of addresses, stations and points of interest based on the user search input text.<br>
-If an element is selected, this screen will disappear and the map will be centered over the selected item location.
-Please note that a history feature is added to this screen, allowing the user to choose from the previous selected items. The `maxHistory` parameter defines the maximum number of items to show in the history list.
-
-<img class="img-overview" src="/navitia_sdk_docs/assets/img/aroundme_android_search_screen.png" alt="Search screen">
-
-### Filters
-
-This screen content is a visual version of the passed transport categories and POI categories configuration (check [modules configuration](../../getting_started/#modules-configuration) section for more information). The selected elements will be used to filter the data received and drawn within the map. One filter should at least be selected or else the user can't apply the current filters configuration.<br><br>
-If you want to reset the user filters configuration, you can simply call `AroundMeUI.getInstance().resetUserPreferences()` and the current configuration will be deleted and the screen will be updated according to the new passed configuration.
-
-<img class="img-overview" src="/navitia_sdk_docs/assets/img/aroundme_android_filters_screen.png" alt="Filters screen">
-
-## 🗺 Screen flow
-
-Please refer to the following schema to learn more about different interactions and how to navigate between module screens:
-
-<img class="img-navigating" src="/navitia_sdk_docs/assets/img/aroundme_android_screen_flow.png" alt="Screen flow">
-
-## 🎨 Theming
-
-The module uses graphical components from Material Design 3. To ensure that these components function correctly and get displayed properly on the screen, it is crucial to apply the appropriate parent theme:
-
-```xml
-<style name="Theme.App" parent="Theme.Material3.*"> <!-- (1) -->
-    ...
-</style>
-```
-
-1.  Replace by the specific theme. For example: `Theme.Material3.Light.NoActionBar`
-
-## 📢 Communicating with other modules or the app
-
-Around Me module can exchange data with, or navigate to, other modules or the host application.
+Around Me module can exchange data with or navigate to either other modules or the host application.
 
 ### Application
 
 Some route or callbacks are delegated to the application.
-If you have to receive some module data, the `Router` module must register a receiver with the right parameter:
+If you have to receive some module data, `Router` must register the app data receiver:
 
 ``` kotlin
 Router.getInstance()
@@ -158,7 +148,7 @@ Router.getInstance()
 
 1.  `appRouterDataImpl` should be the class instance implementing `AppRouter.Data` interface. We recommand usign a `Application` subclass.
 
-If you have to handle navigation between modules, the `Router` module must also register a receiver:
+If you have to handle navigation between modules, `Router` must also register the app UI receiver:
 
 ``` kotlin
 Router.getInstance()
@@ -166,6 +156,13 @@ Router.getInstance()
 ```
 
 1. `appRouterUiImpl` should be the class instance implementing `AppRouter.UI` interface. We recommand usign a `Application` subclass.
+
+After registering, you have to call `init()`:
+
+``` kotlin
+Router.getInstance().init()
+```
+
 
 #### Data interface methods
 
@@ -183,8 +180,6 @@ override fun onBookFreeFloating(id: String) {
 
 A customizable button appears in the POI details screen and the clicking event should be intercepted by the application.
 
-<img class="img-overview" src="/navitia_sdk_docs/assets/img/aroundme_android_poi_button_event.png" alt="POI button event">
-
 ```kotlin
 override fun onBookPoi(id: String) {
     // handle the free POI booking
@@ -195,23 +190,23 @@ override fun onBookPoi(id: String) {
 | --- | --- | --- |
 | `id` | `String` | Selected POI id |
 
-### Modules
-
-#### Account
-
-This module communicates with Account module in order to vizualize the account screen. You should enable the `account_mode` parameter in the [features configuration](../../getting_started/#around-me-features).
-
-The following method from the `AppRouter.UI` interface must be implemented by the host application to facilitate navigation to the Account module or any other custom screen.
+#### Custom account UI
 
 ```kotlin
 override fun openAccountViaHost() {
-    // launch the account module screen or your custom screen
+    // launch your custom screen
 }
-```
+``` 
+
+### Modules
 
 #### Bookmark
 
-This module communicates with [Bookmark](../../bookmark/) module in order to display favorite stations and POIs. You should enable the `bookmark_mode` parameter in the [features configuration](../../getting_started/#around-me-features).
+:octicons-arrow-right-24: Enabling<br>
+
+This module communicates with [Bookmark](../../bookmark/) module in order to display favorite stations and POIs. You should enable the `bookmark_mode` parameter in the [features configuration](../../getting_started/#around-me-features).<br>
+
+:octicons-arrow-right-24: Methods<br>
 
 The following methods from the `AppRouter.UI` interface should be implemented by the host application to enable navigation to the Bookmark module or any other custom screen. Note that the parameters of these methods can be omitted as needed.
 
@@ -234,7 +229,7 @@ override fun openFavoriteHomeAddViaHost(linkedModule: BookmarkLinkedModule) {
 
 | Param | Type | Description | Value |
 | --- | --- | --- | --- |
-| `linkedModule` | `BookmarkLinkedModule ` | Module triggering the method call  | `BookmarkLinkedModule.AROUND_ME` or `BookmarkLinkedModule.JOURNEY` |
+| `linkedModule` | `BookmarkLinkedModule` | Module triggering the method call  | `BookmarkLinkedModule.AROUND_ME` or `BookmarkLinkedModule.JOURNEY` |
 
 ```kotlin
 override fun openFavoriteWorkAddViaHost(linkedModule: LinkedModule) {
@@ -248,13 +243,12 @@ override fun openFavoriteWorkAddViaHost(linkedModule: LinkedModule) {
 
 #### Journey
 
+:octicons-arrow-right-24: Enabling<br>
+
 This module communicates with [Journey](../../journey/) module in order to get directions for a chosen itinerary. You should enable the `journey_mode` and the `go_from_go_to` parameter in the [features configuration](../../getting_started/#around-me-features).<br>
-When the user taps on a marker on the map, the buttons **Go from there** and **Go to there** should pop up as follows:
+Another way to communicate with is through the [Map](../screens/#map) screen and precisely the _Where are we going?_ button, this feature should also be enabled by setting the `where_shall_we_go` in the [features configuration](../../getting_started/#around-me-features) to `true`.<br>
 
-<img class="img-overview" src="/navitia_sdk_docs/assets/img/aroundme_android_go_fromto.png" alt="Go from/to">
-
-Clicking on one of the buttons will redirect the user to Journey module with the given origin/destination.<br>
-Another way to communicate with [Journey](../../journey/) module is through the [Map](#map) screen and precisely the **Where are we going?** button, this feature should also be enabled by setting the `where_shall_we_go` in the [features configuration](../../getting_started/#around-me-features) to `true`.
+:octicons-arrow-right-24: Methods<br>
 
 The following method from the `AppRouter.UI` interface should be implemented by the host application to enable navigation to the Journey module or any other custom screens. Note that the parameters of these methods can be ignored as needed.
 
@@ -262,7 +256,8 @@ The following method from the `AppRouter.UI` interface should be implemented by 
 override fun openJourneysViaHost(
     origin: SharedData.JourneyPoint?,
     destination: SharedData.JourneyPoint?,
-    showDirectlyAutoCompletion: Boolean
+    showDirectlyAutoCompletion: Boolean,
+    showDirectlyJourneysSearch: Boolean
 ) {
     // launch the journey module screen or your custom screen
 }
@@ -272,11 +267,16 @@ override fun openJourneysViaHost(
 | --- | --- | --- |
 | `origin` | `SharedData.JourneyPoint?` | Desired starting point of the journey. Optional |
 | `destination` | `SharedData.JourneyPoint?` | Desired endpoint of the journey. Optional |
-| `showDirectlyAutoCompletion` | `Boolean` | Directly displays the search for the starting point and/or endpoint |
+| `showDirectlyAutoCompletion` | `Boolean` | Directly displays the search for the starting point and/or endpoint. If true, `showDirectlyJourneysSearch` can only be false |
+| `showDirectlyJourneysSearch` | `Boolean` | Directly displays the journey search. If true, `showDirectlyAutoCompletion` can only be false |
 
 #### Schedule
 
+:octicons-arrow-right-24: Enabling<br>
+
 This module communicates with [Schedule](../../traffic/) module in order to show line and station search. You should enable the `schedule_mode` parameter in the [features configuration](../../getting_started/#around-me-features).
+
+:octicons-arrow-right-24: Method<br>
 
 The following method from the `AppRouter.UI` interface should be implemented by the host application to enable navigation to the Schedule module or any other custom screens.
 
@@ -288,10 +288,11 @@ override fun openScheduleSearchViaHost() {
 
 #### Traffic
 
-This module communicates with [Traffic](../../traffic/) module in order to easily access traffic information. You should enable the `traffic_mode` parameter in the [features configuration](../../getting_started/#around-me-features).<br>
-A red traffic button will appear in the top right corner, only when the search bar is hidden.
+:octicons-arrow-right-24: Enabling<br>
 
-<img class="img-overview" src="/navitia_sdk_docs/assets/img/aroundme_android_traffic_button.png" alt="Traffic mode">
+This module communicates with [Traffic](../../traffic/) module in order to easily access traffic information. You should enable the `traffic_mode` parameter in the [features configuration](../../getting_started/#around-me-features).<br>
+
+:octicons-arrow-right-24: Method<br>
 
 The following method from the `AppRouter.UI` interface should be implemented by the host application to enable navigation to the Traffic module or any other custom screen.
 
@@ -300,3 +301,15 @@ override fun openTrafficViaHost() {
     // launch the ticket module screen or your custom screen
 }
 ```
+
+## :art: Theming
+
+The module uses graphical components from Material Design 3. To ensure that these components function correctly and get displayed properly on the screen, it is crucial to apply the appropriate parent theme:
+
+```xml
+<style name="Theme.App" parent="Theme.Material3.*"> <!-- (1) -->
+    ...
+</style>
+```
+
+1.  Replace by the specific theme. For example: `Theme.Material3.Light.NoActionBar`

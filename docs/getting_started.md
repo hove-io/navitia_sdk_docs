@@ -5,56 +5,59 @@ title: Getting started - Navitia SDK Docs
 # Getting started
 
 ## 🧰 Requirements
+- Get an access to <a href="https://navitia.io/inscription/" style="text-decoration:underline">Navitia.io</a> API. A token will be provided later and will be used to configure all the modules.
+- The SDKs are accessible privately, so you should request an access to our private <a href="https://kisiodigital.jfrog.io/" style="text-decoration:underline">artifactory</a>. Those credentials will be used later to configure your machine to be able to download our dependencies.
 
-- Get an access to <a href="https://navitia.io/inscription/" target="_blank">Navitia.io</a> API. A token will be provided later and will be used to configure all the modules.
-- The SDKs are accessible privately, so you should request an access to our private <a href="https://kisiodigital.jfrog.io/" target="_blank">artifactory</a>. Those credentials will be used later to configure your machine to be able to download our dependencies.
+=== "Android"
 
-<h4>Android</h4>
+    Add the following in the `build.gradle` of your app:
+    ``` kotlin
+    android {
+        defaultConfig {
+            minSdk = 23
+        }
+    }
+    ```
 
-- Minimum Android SDK version: `23`
+=== "iOS"
 
-<h4>iOS</h4>
-
-- [Cocoapods](https://cocoapods.org): All modules are available through Cocoapods.
-- Minimum iOS deployment target: `14.0`
+    Install <span style="text-decoration:underline">[Cocoapods](https://cocoapods.org)</span> and add the following in the `Podfile` of your project:
+    ``` ruby
+    platform :ios, '14.0'
+    use_frameworks!
+    ```
 
 ## 💻 Artifactory Setup
 
-The access to the SDK requires valid credentials to our private artifactory. Please see [Requirements](#requirements) for more information. 
+The access to the SDK requires valid credentials to our private artifactory. See <span style="text-decoration:underline">[Requirements](#requirements)</span> for more information. Replace `artifactoryUsername` and `artifactoryPassword` with your credentials.
 
-<h4>Android</h4>
+=== "Android"
 
-Please add the following maven repository in the `build.gradle` of your project and replace `USERNAME` and `PASSWORD` with your credentials:
+    Add the following in the `build.gradle` of your project:
 
-``` groovy
-repositories {
-    maven {
-        credentials {
-            username = USERNAME // (1)
-            password = PASSWORD // (2)
+    ``` kotlin
+    repositories {
+        maven {
+            credentials {
+                username = artifactoryUsername
+                password = artifactoryPassword
+            }
+            url = uri("https://kisiodigital.jfrog.io/kisiodigital/android-release")
         }
-        url("https://kisiodigital.jfrog.io/kisiodigital/android-release")
     }
-}
-```
+    ```
 
-1.  Replace `USERNAME` with your artifactory username
-2.  Replace `PASSWORD` with your artifactory password
+=== "iOS"
 
-<h4>iOS</h4>
+    Create a `.netrc` file in the `$HOME` directory of your machine and add the following line to your `.netrc` file:
 
-Create a `.netrc` file in the `$HOME` directory of your machine.<br>
-Add the following line to your `.netrc` file and replace `USERNAME` and `PASSWORD` with your credentials:
-
-``` ruby
-machine kisiodigital.jfrog.io login USERNAME password PASSWORD # (1)
-```
-
-1.  Replace `USERNAME` and `PASSWORD` with your artifactory username and password
+    ``` ruby
+    machine kisiodigital.jfrog.io login artifactoryUsername password artifactoryPassword
+    ```
 
 ## 🛠 Modules Configuration
 
-The Navitia SDKs should be configured before usage. Within a specific module, the customization can affect data or graphical components.<br>
+The Navitia SDKs should be configured before usage. Within a specific module, the customization can affect data or graphical components.
 Since your application can integrate one or more Navitia modules, you can use a single JSON file to configure all the modules at once.<br>
 The following are the possible configuration parameters:
 
@@ -79,20 +82,24 @@ The following are the possible configuration parameters:
 
 | Name | Required  | Type | Target module |
 | --- | :-: | :--: | :---: |
-| `account` | :material-check: | [`Account color`](#account-color) | Account |
 | `aroundme` | :material-check: | [`Around Me color`](#around-me-color) | Around Me |
 | `bookmark` | :material-check: | [`Bookmark color`](#bookmark-color) | Bookmark |
-| `crowdsourcing` | :material-check: | [`Crowdsourcing color`](#crowdsourcing-color) | Crowdsourcing |
 | `journey` | :material-check: | [`Journey color`](#journey-color) | Journey |
 | `schedule` | :material-check: | [`Schedule color`](#schedule-color) | Schedule |
 | `traffic` | :material-check: | [`Traffic color`](#traffic-color) | Traffic |
+<!-- 
+| `account` | :material-check: | [`Account color`](#account-color) | Account |
+| `crowdsourcing` | :material-check: | [`Crowdsourcing color`](#crowdsourcing-color) | Crowdsourcing | 
+-->
 
+<!-- [Not yet]
 #### Account color
 
 | Name | Required | Description | Type | Example |
 | --- |:---:| --- | :---: | :---: |
 | `primary` | :material-check: | To set the main color of the screens | `String` | `#88819f` |
-| `secondary` | :material-check: | To set the color of some UI components | `String` | `#8faa96` |
+| `secondary` | :material-check: | To set the color of some UI components | `String` | `#8faa96` | 
+-->
 
 #### Around Me color
 
@@ -103,7 +110,8 @@ The following are the possible configuration parameters:
 | `tertiary` | :material-close: | To set the color of more UI components | `String` | `#efa59f` |
 | `map` | :material-close: | To set colors of the markers on map | [`Map color`](#around-me-map-color) | - |
 
-##### Around me map color
+<h4>Around Me map color</h4>
+
 | Name | Required | Description | Type | Example |
 | --- |:---:| --- | :---: | :---: |
 | `poi` | :material-check: | To set the marker color of pois | `String` | `#9b59B6` |
@@ -116,12 +124,12 @@ The following are the possible configuration parameters:
 | `primary` | :material-check: | To set the main color of the screens | `String` | `#88819f` |
 | `secondary` | :material-check: | To set the color of some UI components | `String` | `#8faa96` |
 
-#### Crowdsourcing color
+<!-- #### Crowdsourcing color
 
 | Name | Required | Description | Type | Example |
 | --- |:---:| --- | :---: | :---: |
 | `primary` | :material-check: | To set the main color of the screens | `String` | `#88819f` |
-| `secondary` | :material-check: | To set the color of some UI components | `String` | `#8faa96` |
+| `secondary` | :material-check: | To set the color of some UI components | `String` | `#8faa96` | -->
 
 #### Journey color
 
@@ -135,33 +143,33 @@ The following are the possible configuration parameters:
 | `map` | :material-close: | To set colors of the map elements | [`Journey map color`](#journey-map-color) | - |
 | `nav_bar_background` | :material-close: | To set the color of the navigation bar. iOS only.  | `String` | `#efa59f` |
 
-##### Journey origin color
+<h4>Journey origin color</h4>
 
 | Name | Required | Description | Type | Example |
 | --- |:---:| --- | :---: | :---: |
 | `icon` | :material-check: | To set the icon color of the itinerary origin | `String` | `#88819f` |
 
-##### Journey destination color
+<h4>Journey destination color</h4>
 
 | Name | Required | Description | Type | Example |
 | --- |:---:| --- | :---: | :---: |
 | `primary` | :material-check: | To set the color of the arrival block | `String` | `#8faa96` |
 | `icon` | :material-close: | To set the icon color of the itinerary destination | `String` | `#88819f` |
 
-##### Journey map color
+<h4>Journey map color</h4>
 
 | Name | Required | Description | Type | Example |
 | --- |:---:| --- | :---: | :---: |
 | `path` | :material-check: | To set the color of the paths drawn on the map | [`Journey map path color`](#journey-map-path-color) | - |
 
-##### Journey map path color
+<h4>Journey map path color</h4>
 
 | Name | Required | Description | Type | Example |
 | --- |:---:| --- | :---: | :---: |
 | `bike` | :material-close: | To set colors of the specific bike journey | [`Journey bike color`](#journey-bike-color) | - |
 | `car` | :material-close: | To set the color of the car path | `String` | `#88819f |
 
-##### Journey bike color
+<h4>Journey bike color</h4>
 
 | Name | Required | Description | Type | Example |
 | --- |:---:| --- | :---: | :---: |
@@ -204,14 +212,14 @@ The following are the possible configuration parameters:
 | `physical` | :material-check: | To set the transport physical mode | [`Transport Physical Mode`](#transport-physical-mode) | `["aroundme","journey"]` |
 | `commercial` | :material-check: | To set the transport commercial mode | [`Transport Commercial Mode`](#transport-commercial-mode) | - |
 
-##### Transport physical mode
+<h4>Transport physical mode</h4>
 
 | Name | Required | Description | Type | Example |
 | --- |:---:| --- | :---: | :---: |
 | `id` | :material-check: | Navitia physical mode id | `String` | `"physical_mode:Bus"` |
 | `name_res` | :material-check: | Localized name resource id | `String` | `"transport_bus"` |
 
-##### Transport commercial mode
+<h4>Transport commercial mode</h4>
 
 | Name | Required | Description | Type | Example |
 | --- |:---:| --- | :---: | :---: |
@@ -236,14 +244,14 @@ The following are the possible configuration parameters:
 | `types` | :material-check: | Subcategory POI types | [`[POI Subcategory Type]`](#poi-subcategory-type) | - |
 | `booking` | :material-close: | POI booking resources | [POI booking resources](#poi-booking-resources) | - |
 
-##### POI subcategory type
+<h4>POI subcategory type</h4>
 
 | Name | Required | Description | Type | Example |
 | --- |:---:| --- | :---: | :---: |
 | `name_res` | :material-check: | Localized POI subcategory type name id | `String` | `"scooter"` |
 | `poi_type_id` | :material-check: | Navitia POI subcategory type id | `String` | `"poi_type:amenity:bicycle_rental"` |
 
-##### POI booking resources
+<h4>POI booking resources</h4>
 
 | Name | Required | Description | Type | Example |
 | --- |:---:| --- | :---: | :---: |
@@ -253,24 +261,29 @@ The following are the possible configuration parameters:
 
 | Name | Required  | Type | Target module |
 | --- | :-: | :--: | :---: |
-| `account` | :material-close: | [`Account fonts`](#account-fonts) | Account |
 | `aroundme` | :material-close: | [`Around Me fonts`](#around-me-fonts) | Around Me |
 | `bookmark` | :material-close: | [`Bookmark fonts`](#bookmark-fonts) | Bookmark |
 | `journey` | :material-close: | [`Journey fonts`](#journey-fonts) | Journey |
 | `schedule` | :material-close: | [`Schedule fonts`](#schedule-fonts) | Schedule |
 | `traffic` | :material-close: | [`Traffic fonts`](#traffic-fonts) | Traffic |
+<!-- [Not yet]
+| `account` | :material-close: | [`Account fonts`](#account-fonts) | Account | 
+-->
 
 ### Features
 
 | Name | Required  | Type | Target module |
 | --- | :-: | :--: | :---: |
-| `account` | :material-close: | [`Account features`](#account-features) | Account |
 | `aroundme` | :material-close: | [`Around Me features`](#around-me-features) | Around Me |
 | `bookmark` | :material-close: | [`Bookmark features`](#bookmark-features) | Bookmark |
 | `journey` | :material-close: | [`Journey features`](#journey-features) | Journey |
 | `schedule` | :material-close: | [`Schedule features`](#schedule-features) | Schedule |
 | `traffic` | :material-close: | [`Traffic features`](#traffic-features) | Traffic |
+<!-- [Not yet]
+| `account` | :material-close: | [`Account features`](#account-features) | Account | 
+-->
 
+<!-- [Not yet]
 #### Account features
 
 | Name | Required | Description | Type |
@@ -279,14 +292,14 @@ The following are the possible configuration parameters:
 | `signup_form_fields` | :material-check: | To set Sign up screen form fields | [`Account form field`](#account-form-field) |
 | `edit_form_fields` | :material-check: | To set Edit screen form fields | [`Account form field`](#account-form-field) |
 
-##### My account menu item
+<h4>My account menu item</h4>
 
 | Name | Required | Description | Type | Example |
 | --- |:---:| --- | :---: | :---: |
 | `name_res` | :material-check: | Localized menu item title id | `String` | `"bookmarks"` |
 | `icon_res` | :material-check: | Menu item icon resource id | `String` | `"ic_bookmarks"` |
 
-##### Account form field
+<h4>Account form field</h4>
 
 | Name | Required | Description | Type | Example |
 | --- |:---:| --- | :---: | :---: |
@@ -297,13 +310,15 @@ The following are the possible configuration parameters:
 | `max_length` | :material-close: | Set the max allowed number of characters | `Int` | `0` |
 | `required` | :material-close: | Whether the field is mandatory | `Boolean` | `false` |
 
-⚠️ Please note that `PASSWORD` type is only available for signup screen!
+!!! info "Info"
+
+    `PASSWORD` field type is only available for signup screen 
+-->
 
 #### Around Me features
 
 | Name | Required | Description | Type |
 | --- |:---:| --- | :---: |
-| `account_mode` | :material-close: | Enable/disable the account feature | `Boolean` |
 | `bookmark_mode` | :material-close: | Enable/disable the bookmarks feature | [`Bookmark options`](#bookmark-options) |
 | `default_location` | :material-close: | The default location on first launch | [`Default location`](#default-location) |
 | `go_from_go_to` | :material-close: | Show/hide the go from/go to buttons | `Boolean` |
@@ -316,33 +331,36 @@ The following are the possible configuration parameters:
 | `stop_point_search` | :material-close: | Enable/disable search by stop point instead of stop area | `Boolean` |
 | `traffic_mode` | :material-close: | Show/hide the traffic button | `Boolean` |
 | `vehicle_positions`| :material-close: | Show bus vehicle positions on map | [`Vehicle positions`](#vehicle-positions) |
+<!-- [Not yet]
+| `account_mode` | :material-close: | Enable/disable the account feature | `Boolean` | 
+-->
 
-##### Default location
+<h4>Default location</h4>
 
 | Name | Required | Description | Type | Example |
 | --- |:---:| --- | :---: | :---: |
 | `lat` | :material-check: | The latitude of the default location | `String` | `"48.846790"` |
 | `lon` | :material-check: | The longitude of the default location | `String` | `"2.377090"` |
 
-##### Next departures
+<h4>Next departures</h4>
 
 | Name | Required | Description | Type | Example |
 | --- |:---:| --- | :---: | :---: |
 | `frequency`| :material-check: | frequency of the next departures request in seconds | `Int` | `30` |
 
-##### Park availability
+<h4>Park availability</h4>
 
 | Name | Required | Description | Type | Example |
 | --- |:---:| --- | :---: | :---: |
 | `frequency`| :material-check: | frequency of the park availability requests in seconds | `Int` | `30` |
 
-##### Vehicle positions
+<h4>Vehicle positions</h4>
 
 | Name | Required | Description | Type | Example |
 | --- |:---:| --- | :---: | :---: |
 | `frequency` | :material-check: | frequency of the vehicle positions request in seconds | `String` | 30 |
 
-##### Bookmark options
+<h4>Bookmark options</h4>
 
 | Name | Required | Description | Type | Example |
 | --- |:---:| --- | :---: | :---: |
@@ -357,7 +375,7 @@ The following are the possible configuration parameters:
 | `next_departures` | :material-close: | Show/hide the next departures | [`Next departures`](#next-departures) | - |
 | `tabs` | :material-close: | Enable/disable tabs | [`Bookmark tabs`](#bookmark-tabs) | - |
 
-##### Bookmark tabs
+<h4>Bookmark tabs</h4>
 
 | Name | Required | Description | Type | Example |
 | --- |:---:| --- | :---: | :---: |
@@ -389,7 +407,7 @@ The following are the possible configuration parameters:
 | `transport_networks` | :material-close: | Show/hide the public transport network | `Boolean` | `false` |
 | `vehicle_positions`| :material-close: | Show bus vehicle positions on roadmap | [`Vehicle positions`](#vehicle-positions) | - |
 
-##### Traffic options (Journey)
+<h4>Traffic options (Journey)</h4>
 
 | Name | Required | Description | Type | Example |
 | --- |:---:| --- | :---: | :---: |
@@ -400,6 +418,7 @@ The following are the possible configuration parameters:
 | Name | Required | Description | Type |
 | --- |:---:| --- | :---: |
 | `bookmark_mode` | :material-close: | Enable/disable the bookmarks feature | `Boolean` |
+| `go_from_go_to` | :material-close: | Show/hide the go from/go to buttons | `Boolean` | `true` |
 | `max_history` | :material-close: | Define the max history items | `Int` |
 | `networks_filter` | :material-close: | Show/hide the networks selector | `Boolean` |
 | `next_departures` | :material-close: | Show/hide the next departures | [`Next departures`](#next-departures) |
@@ -415,7 +434,7 @@ The following are the possible configuration parameters:
 | `networks_filter` | :material-close: | Show/hide the networks selector | `Boolean` |
 | `transport_networks` | :material-close: | Enable/disable showing network on lines | `Boolean` | - |
 
-##### Alert subscription
+<h4>Alert subscription</h4>
 
 | Name | Required | Description | Type | Example |
 | --- |:---:| --- | :---: | :---: |
@@ -426,12 +445,14 @@ The following are the possible configuration parameters:
 
 | Name | Required  | Type | Target module |
 | --- | :-: | :--: | :---: |
-| `account` | :material-close: | [`Custom font`](#custom-font) | Account |
 | `aroundme` | :material-close: | [`Custom font`](#custom-font) | Around Me |
 | `bookmark` | :material-close: | [`Custom font`](#custom-font) | Bookmark |
 | `journey` | :material-close: | [`Custom font`](#custom-font) | Journey |
 | `schedule` | :material-close: | [`Custom font`](#custom-font) | Schedule |
 | `traffic` | :material-close: | [`Custom font`](#custom-font) | Traffic |
+<!-- [Not yet]
+| `account` | :material-close: | [`Custom font`](#custom-font) | Account | 
+-->
 
 #### Custom font
 
@@ -440,7 +461,7 @@ The following are the possible configuration parameters:
 | `numeric` | :material-close: | Custom numeric font | [`Font category`](#font-category) |
 | `alphanumeric` | :material-close: | Custom alphanumeric font | [`Font category`](#font-category) |
 
-##### Font category
+<h4>Font category</h4>
 
 | Name | Required | Description | Type |
 | --- |:---:| --- | :---: |
@@ -453,7 +474,7 @@ The following are the possible configuration parameters:
 | `light` | :material-close: | Custom numeric font for light typeface | [`Font Typeface`](#font-typeface) |
 | `light_italic` | :material-close: | Custom numeric font for light italic typeface | [`Font Typeface`](#font-typeface) |
 
-##### Font Typeface
+<h4>Font Typeface</h4>
 
 | Name | Required | Description | Type | Platform | Example |
 | --- |:---:| --- | :---: | :---: | :---: |
@@ -528,867 +549,10 @@ The following are the possible configuration parameters:
 | `roadmap` | :material-close: | Localized roadmap screen title resource id | `String` | `roadmap_screen_title` |
 | `ridesharing` | :material-close: | Localized ridesharing screen title resource id | `String` | `ridesharing_screen_title` |
 
-### Global configuration JSON structure
+### Configuration JSON file
 
-You can refer to the JSON below to generate your own configuration.<br>
-Please note that this is the complete version of the configuration, remove unused objects and adapt the values as needed.
-
-``` javascript
-{
-  "coverage": "",
-  "timezone": "",
-  "env": "PROD",
-  "osm_region": {
-    "id": "",
-    "name_res": ""
-  },
-  "colors": {
-    "account": {
-      "primary": "",
-      "secondary": ""
-    },
-    "aroundme": {
-      "primary": "",
-      "secondary": "",
-      "tertiary": "",
-      "map": {
-        "poi": "",
-        "transport": ""
-      }
-    },
-    "bookmark": {
-      "primary": "",
-      "secondary": ""
-    },
-    "crowdsourcing": {
-      "primary": "",
-      "secondary": ""
-    },
-    "journey": {
-      "primary": "",
-      "secondary": "",
-      "tertiary": "",
-      "destination": {
-        "primary": "",
-        "icon": ""
-      },
-      "origin": {
-        "icon": ""
-      },
-      "map": {
-        "path": {
-          "bike": {
-            "cyclable": "",
-            "non_cyclable": ""
-          },
-          "car": ""
-        }
-      },
-      "nav_bar_background": ""
-    },
-    "schedule": {
-      "primary": "",
-      "secondary": ""
-    },
-    "traffic": {
-      "primary": "",
-      "secondary": ""
-    },
-    "disruptions": {
-      "information": "",
-      "non_blocking": "",
-      "blocking": ""
-    }
-  },
-  "fonts": {
-    "aroundme": {
-      "alphanumeric": {
-        "regular": {
-          "font_res": "",
-          "ttf_file": "",
-          "font_name": ""
-        },
-        "italic": {
-          "font_res": "",
-          "ttf_file": "",
-          "font_name": ""
-        },
-        "bold": {
-          "font_res": "",
-          "ttf_file": "",
-          "font_name": ""
-        },
-        "bold_italic": {
-          "font_res": "",
-          "ttf_file": "",
-          "font_name": ""
-        },
-        "semi_bold": {
-          "font_res": "",
-          "ttf_file": "",
-          "font_name": ""
-        },
-        "semi_bold_italic": {
-          "font_res": "",
-          "ttf_file": "",
-          "font_name": ""
-        },
-        "light": {
-          "font_res": "",
-          "ttf_file": "",
-          "font_name": ""
-        },
-        "light_italic": {
-          "font_res": "",
-          "ttf_file": "",
-          "font_name": ""
-        }
-      },
-      "numeric": {
-        "regular": {
-          "font_res": "",
-          "ttf_file": "",
-          "font_name": ""
-        },
-        "italic": {
-          "font_res": "",
-          "ttf_file": "",
-          "font_name": ""
-        },
-        "bold": {
-          "font_res": "",
-          "ttf_file": "",
-          "font_name": ""
-        },
-        "bold_italic": {
-          "font_res": "",
-          "ttf_file": "",
-          "font_name": ""
-        },
-        "semi_bold": {
-          "font_res": "",
-          "ttf_file": "",
-          "font_name": ""
-        },
-        "semi_bold_italic": {
-          "font_res": "",
-          "ttf_file": "",
-          "font_name": ""
-        },
-        "light": {
-          "font_res": "",
-          "ttf_file": "",
-          "font_name": ""
-        },
-        "light_italic": {
-          "font_res": "",
-          "ttf_file": "",
-          "font_name": ""
-        }
-      }
-    },
-    "bookmark": {
-      "alphanumeric": {
-        "regular": {
-          "font_res": "",
-          "ttf_file": "",
-          "font_name": ""
-        },
-        "italic": {
-          "font_res": "",
-          "ttf_file": "",
-          "font_name": ""
-        },
-        "bold": {
-          "font_res": "",
-          "ttf_file": "",
-          "font_name": ""
-        },
-        "bold_italic": {
-          "font_res": "",
-          "ttf_file": "",
-          "font_name": ""
-        },
-        "semi_bold": {
-          "font_res": "",
-          "ttf_file": "",
-          "font_name": ""
-        },
-        "semi_bold_italic": {
-          "font_res": "",
-          "ttf_file": "",
-          "font_name": ""
-        },
-        "light": {
-          "font_res": "",
-          "ttf_file": "",
-          "font_name": ""
-        },
-        "light_italic": {
-          "font_res": "",
-          "ttf_file": "",
-          "font_name": ""
-        }
-      },
-      "numeric": {
-        "regular": {
-          "font_res": "",
-          "ttf_file": "",
-          "font_name": ""
-        },
-        "italic": {
-          "font_res": "",
-          "ttf_file": "",
-          "font_name": ""
-        },
-        "bold": {
-          "font_res": "",
-          "ttf_file": "",
-          "font_name": ""
-        },
-        "bold_italic": {
-          "font_res": "",
-          "ttf_file": "",
-          "font_name": ""
-        },
-        "semi_bold": {
-          "font_res": "",
-          "ttf_file": "",
-          "font_name": ""
-        },
-        "semi_bold_italic": {
-          "font_res": "",
-          "ttf_file": "",
-          "font_name": ""
-        },
-        "light": {
-          "font_res": "",
-          "ttf_file": "",
-          "font_name": ""
-        },
-        "light_italic": {
-          "font_res": "",
-          "ttf_file": "",
-          "font_name": ""
-        }
-      }
-    },
-    "crowdsourcing": {
-      "alphanumeric": {
-        "regular": {
-          "font_res": "",
-          "ttf_file": "",
-          "font_name": ""
-        },
-        "italic": {
-          "font_res": "",
-          "ttf_file": "",
-          "font_name": ""
-        },
-        "bold": {
-          "font_res": "",
-          "ttf_file": "",
-          "font_name": ""
-        },
-        "bold_italic": {
-          "font_res": "",
-          "ttf_file": "",
-          "font_name": ""
-        },
-        "semi_bold": {
-          "font_res": "",
-          "ttf_file": "",
-          "font_name": ""
-        },
-        "semi_bold_italic": {
-          "font_res": "",
-          "ttf_file": "",
-          "font_name": ""
-        },
-        "light": {
-          "font_res": "",
-          "ttf_file": "",
-          "font_name": ""
-        },
-        "light_italic": {
-          "font_res": "",
-          "ttf_file": "",
-          "font_name": ""
-        }
-      },
-      "numeric": {
-        "regular": {
-          "font_res": "",
-          "ttf_file": "",
-          "font_name": ""
-        },
-        "italic": {
-          "font_res": "",
-          "ttf_file": "",
-          "font_name": ""
-        },
-        "bold": {
-          "font_res": "",
-          "ttf_file": "",
-          "font_name": ""
-        },
-        "bold_italic": {
-          "font_res": "",
-          "ttf_file": "",
-          "font_name": ""
-        },
-        "semi_bold": {
-          "font_res": "",
-          "ttf_file": "",
-          "font_name": ""
-        },
-        "semi_bold_italic": {
-          "font_res": "",
-          "ttf_file": "",
-          "font_name": ""
-        },
-        "light": {
-          "font_res": "",
-          "ttf_file": "",
-          "font_name": ""
-        },
-        "light_italic": {
-          "font_res": "",
-          "ttf_file": "",
-          "font_name": ""
-        }
-      }
-    },
-    "journey": {
-      "alphanumeric": {
-        "regular": {
-          "font_res": "",
-          "ttf_file": "",
-          "font_name": ""
-        },
-        "italic": {
-          "font_res": "",
-          "ttf_file": "",
-          "font_name": ""
-        },
-        "bold": {
-          "font_res": "",
-          "ttf_file": "",
-          "font_name": ""
-        },
-        "bold_italic": {
-          "font_res": "",
-          "ttf_file": "",
-          "font_name": ""
-        },
-        "semi_bold": {
-          "font_res": "",
-          "ttf_file": "",
-          "font_name": ""
-        },
-        "semi_bold_italic": {
-          "font_res": "",
-          "ttf_file": "",
-          "font_name": ""
-        },
-        "light": {
-          "font_res": "",
-          "ttf_file": "",
-          "font_name": ""
-        },
-        "light_italic": {
-          "font_res": "",
-          "ttf_file": "",
-          "font_name": ""
-        }
-      },
-      "numeric": {
-        "regular": {
-          "font_res": "",
-          "ttf_file": "",
-          "font_name": ""
-        },
-        "italic": {
-          "font_res": "",
-          "ttf_file": "",
-          "font_name": ""
-        },
-        "bold": {
-          "font_res": "",
-          "ttf_file": "",
-          "font_name": ""
-        },
-        "bold_italic": {
-          "font_res": "",
-          "ttf_file": "",
-          "font_name": ""
-        },
-        "semi_bold": {
-          "font_res": "",
-          "ttf_file": "",
-          "font_name": ""
-        },
-        "semi_bold_italic": {
-          "font_res": "",
-          "ttf_file": "",
-          "font_name": ""
-        },
-        "light": {
-          "font_res": "",
-          "ttf_file": "",
-          "font_name": ""
-        },
-        "light_italic": {
-          "font_res": "",
-          "ttf_file": "",
-          "font_name": ""
-        }
-      },
-      "schedule": {
-        "alphanumeric": {
-          "regular": {
-            "font_res": "",
-            "ttf_file": "",
-            "font_name": ""
-          },
-          "italic": {
-            "font_res": "",
-            "ttf_file": "",
-            "font_name": ""
-          },
-          "bold": {
-            "font_res": "",
-            "ttf_file": "",
-            "font_name": ""
-          },
-          "bold_italic": {
-            "font_res": "",
-            "ttf_file": "",
-            "font_name": ""
-          },
-          "semi_bold": {
-            "font_res": "",
-            "ttf_file": "",
-            "font_name": ""
-          },
-          "semi_bold_italic": {
-            "font_res": "",
-            "ttf_file": "",
-            "font_name": ""
-          },
-          "light": {
-            "font_res": "",
-            "ttf_file": "",
-            "font_name": ""
-          },
-          "light_italic": {
-            "font_res": "",
-            "ttf_file": "",
-            "font_name": ""
-          }
-        },
-        "numeric": {
-          "regular": {
-            "font_res": "",
-            "ttf_file": "",
-            "font_name": ""
-          },
-          "italic": {
-            "font_res": "",
-            "ttf_file": "",
-            "font_name": ""
-          },
-          "bold": {
-            "font_res": "",
-            "ttf_file": "",
-            "font_name": ""
-          },
-          "bold_italic": {
-            "font_res": "",
-            "ttf_file": "",
-            "font_name": ""
-          },
-          "semi_bold": {
-            "font_res": "",
-            "ttf_file": "",
-            "font_name": ""
-          },
-          "semi_bold_italic": {
-            "font_res": "",
-            "ttf_file": "",
-            "font_name": ""
-          },
-          "light": {
-            "font_res": "",
-            "ttf_file": "",
-            "font_name": ""
-          },
-          "light_italic": {
-            "font_res": "",
-            "ttf_file": "",
-            "font_name": ""
-          }
-        }
-      },
-      "traffic": {
-      "alphanumeric": {
-        "regular": {
-          "font_res": "",
-          "ttf_file": "",
-          "font_name": ""
-        },
-        "italic": {
-          "font_res": "",
-          "ttf_file": "",
-          "font_name": ""
-        },
-        "bold": {
-          "font_res": "",
-          "ttf_file": "",
-          "font_name": ""
-        },
-        "bold_italic": {
-          "font_res": "",
-          "ttf_file": "",
-          "font_name": ""
-        },
-        "semi_bold": {
-          "font_res": "",
-          "ttf_file": "",
-          "font_name": ""
-        },
-        "semi_bold_italic": {
-          "font_res": "",
-          "ttf_file": "",
-          "font_name": ""
-        },
-        "light": {
-          "font_res": "",
-          "ttf_file": "",
-          "font_name": ""
-        },
-        "light_italic": {
-          "font_res": "",
-          "ttf_file": "",
-          "font_name": ""
-        }
-      },
-      "numeric": {
-        "regular": {
-          "font_res": "",
-          "ttf_file": "",
-          "font_name": ""
-        },
-        "italic": {
-          "font_res": "",
-          "ttf_file": "",
-          "font_name": ""
-        },
-        "bold": {
-          "font_res": "",
-          "ttf_file": "",
-          "font_name": ""
-        },
-        "bold_italic": {
-          "font_res": "",
-          "ttf_file": "",
-          "font_name": ""
-        },
-        "semi_bold": {
-          "font_res": "",
-          "ttf_file": "",
-          "font_name": ""
-        },
-        "semi_bold_italic": {
-          "font_res": "",
-          "ttf_file": "",
-          "font_name": ""
-        },
-        "light": {
-          "font_res": "",
-          "ttf_file": "",
-          "font_name": ""
-        },
-        "light_italic": {
-          "font_res": "",
-          "ttf_file": "",
-          "font_name": ""
-        }
-      }
-      }
-    }
-  },
-  "lines_resources": [
-    {
-      "code": "",
-      "icon_res": "",
-      "commercial": {
-        "id": "",
-        "name": ""
-      }
-    }
-  ],
-  "modes_resources": [
-    {
-      "icon_res": "",
-      "commercial": {
-        "id": "",
-        "name": ""
-      }
-    }
-  ],
-  "transport_categories": [
-    {
-      "modules": [
-        "aroundme",
-        "crowdsourcing",
-        "journey",
-        "schedule",
-        "traffic"
-      ],
-      "icon_res": "",
-      "name_res": "",
-      "selected": true,
-      "modes": [
-        {
-          "physical": {
-            "id": "",
-            "name_res": ""
-          },
-          "commercial": {
-            "id": "",
-            "name": ""
-          }
-        }
-      ],
-      "networks": [
-        ""
-      ],
-      "direct_path_modes": [
-        "car",
-        "car_no_park",
-        "bss",
-        "bike",
-        "rideharing",
-        "taxi",
-        "walking"
-      ],
-      "first_section_modes": [
-        "car",
-        "car_no_park",
-        "bss",
-        "bike",
-        "rideharing",
-        "taxi",
-        "walking"
-      ],
-      "last_section_modes": [
-        "car",
-        "car_no_park",
-        "bss",
-        "bike",
-        "rideharing",
-        "taxi",
-        "walking"
-      ],
-      "add_poi_infos": [
-        "bss_stands",
-        "car_park"
-      ]
-    }
-  ],
-  "poi_categories": [
-    {
-      "name_res": "",
-      "subcategories": [
-        {
-          "icon_res": "",
-          "name_res": "",
-          "zoom_level": 16.5,
-          "selected": true,
-          "group": "STANDARD",
-          "types": [
-            {
-              "name_res": "",
-              "poi_type_id": ""
-            }
-          ],
-          "booking": {
-            "title_res": ""
-          }
-        }
-      ]
-    }
-  ],
-  "providers_resources": [
-    {
-      "type_id": "",
-      "provider_id": "",
-      "icon_res": ""
-    }
-  ],
-  "networks_resources": [
-    {
-      "network_id": "",
-      "icon_res": "",
-      "name_res": ""
-    }
-  ],
-  "icons_resources": {
-    "aroundme": {
-      "traffic_button": ""
-    },
-    "journey": {
-      "departure": "ic_departure",
-      "arrival": "ic_arrival",
-      "indoor_parking": "ic_custom_indoor_parking",
-      "outdoor_parking": "ic_custom_outdoor_parking"
-    }
-  },
-  "titles_resources": {
-    "journey": {
-      "journeys": "journeys_screen_title",
-      "roadmap": "roadmap_screen_title",
-      "ridesharing": "ridesharing_screen_title"
-    },
-    "aroundme": {
-      "filters": "filters_screen_title"
-    }
-  },
-  "features_configuration": {
-    "account": {
-      "my_account_menu_items": [
-        {
-          "icon_res": "",
-          "name_res": ""
-        }
-      ],
-      "sign_up_form_fields": [
-        {
-          "hint_res": "",
-          "type": "TEXT",
-          "min_date": "dd/MM/yyyy",
-          "max_date": "dd/MM/yyyy",
-          "max_length": 0,
-          "required": true
-        }
-      ],
-      "edit_form_fields": [
-        {
-          "hint_res": "",
-          "type": "DATE",
-          "min_date": "dd/MM/yyyy",
-          "max_date": "dd/MM/yyyy",
-          "max_length": 0,
-          "required": true
-        }
-      ]
-    },
-    "aroundme": {
-      "account_mode": true,
-      "booking": {
-        "title_res": ""
-      },
-      "bookmark_mode": {
-        "journeys": true,
-        "bss": true
-      },
-      "default_location": {
-        "lat": "48.846790",
-        "lon": "2.377090"
-      },
-      "go_from_go_to": true,
-      "journey_mode": true,
-      "max_history": 10,
-      "next_departures": {
-        "frequency": 30
-      },
-      "schedule_mode": true,
-      "stop_point_search": true,
-      "traffic_mode": true,
-      "vehicle_positions": {
-        "frequency": 30
-      }
-    },
-    "bookmark": {
-      "go_from_go_to": true,
-      "next_departures": {
-        "frequency": 30
-      },
-      "tabs": {
-        "transports": true,
-        "journeys": true,
-        "addresses": true
-      }
-    },
-    "journey": {
-      "bookmark_mode": true,
-      "calories": true,
-      "carbon": true,
-      "car_parking_highlight": true,
-      "disruption_contributors": [
-        ""
-      ],
-      "external_navigation": true,
-      "max_favorite_addresses": 10,
-      "max_favorite_pois": 10,
-      "max_history": 10,
-      "next_departures": {
-        "frequency": 30
-      },
-      "park_availability": {
-        "frequency": 30
-      },
-      "price": true,
-      "ridesharing_price": true,
-      "search_only": false,
-      "step_by_step_guidance": true,
-      "stop_point_search_mode": true,
-      "traffic": {
-        "alert_subscription": true
-      },
-      "transport_networks": true,
-      "vehicle_positions": {
-        "frequency": 30
-      }
-    },
-    "schedule": {
-      "bookmark_mode": true,
-      "max_history": 10,
-      "networks_filter": true,
-      "next_departures": {
-        "frequency": 30
-      },
-      "transport_networks": true,
-      "vehicle_positions": {
-        "frequency": 30
-      }
-    },
-    "traffic": {
-      "alert_subscription": {
-        "env": "",
-        "timezone": ""
-      },
-      "disruption_contributors": [
-        ""
-      ],
-      "networks_filter": true,
-      "severity": [
-        {
-          "icon_res": "",
-          "name_res": "",
-          "color": "",
-          "effects": [
-            ""
-          ],
-          "selected": true
-        }
-      ],
-      "transport_networks": true
-    }
-  }
-}
-```
+You can refer to the JSON file <span style="text-decoration:underline">[here](./assets/file/config.json){:download="config_example.json"}</span> to generate your own configuration.<br>
+Note that this is the complete version of the configuration. Remove unused objects and adapt the values as needed.
 
 ## 📈 Modules events tracking
 
@@ -1406,24 +570,22 @@ You can refer to the table below for possible generated events.
 | `swipe` | `bottomSheet` | The user performs a swipe action |
 | `zoom` | `map` | The user performs whether a pinch, a double tap action to zoom on an object |
 
-You can find in the following table the list of UI modules that support the event tracking features
+=== "Android"
 
-<h4>Android</h4>
+    | Module name  | Implementation |
+    | --- | :---: |
+    | Around me | [Around Me Android events tracking](../around_me/android/#events-tracking) |
+    | Bookmark | [Bookmark Android events tracking](../bookmark/android/#events-tracking) |
+    | Journey | [Journey Android events tracking](../journey/android/#events-tracking) |
+    | Schedule | [Schedule Android events tracking](../schedule/android/#events-tracking) |
+    | Traffic | [Traffic Android events tracking](../traffic/android/#events-tracking) |
 
-| Module name | Available | Implementation |
-| --- | ---- | :---: |
-| Around me | :material-close: | [Around me events tracking](../around_me/android/#events-tracking) |
-| Bookmark | :material-close: | [Bookmark events tracking](../bookmark/android/#events-tracking) |
-| Journey | :material-check: | [Journey events tracking](../journey/android/#events-tracking) |
-| Schedule | :material-close: | [Schedule events tracking](../schedule/android/#events-tracking) |
-| Traffic | :material-close: | [Traffic events tracking](../traffic/android/#events-tracking) |
+=== "iOS"
 
-<h4>iOS</h4>
-
-| Module name | Available | Implementation |
-| --- | ---- | :---: |
-| Around me | :material-close: | [Around me events tracking](../around_me/ios/#events-tracking) |
-| Bookmark | :material-close: | [Bookmark events tracking](../bookmark/ios/#events-tracking) |
-| Journey | :material-check: | [Journey events tracking](../journey/ios/#events-tracking) |
-| Schedule | :material-close: | [Schedule events tracking](../schedule/ios/#events-tracking) |
-| Traffic | :material-close: | [Traffic events tracking](../traffic/ios/#events-tracking) |
+    | Module name | Implementation |
+    | --- | :---: |
+    | Around Me | [Around Me iOS events tracking](../around_me/ios/#events-tracking) |
+    | Bookmark | [Bookmark iOS events tracking](../bookmark/ios/#events-tracking) |
+    | Journey | [Journey iOS events tracking](../journey/ios/#events-tracking) |
+    | Schedule | [Schedule iOS events tracking](../schedule/ios/#events-tracking) |
+    | Traffic | [Traffic iOS events tracking](../traffic/ios/#events-tracking) |

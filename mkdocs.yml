@@ -1,7 +1,7 @@
 # Project information
-site_name: Navitia SDK Documentation
+site_name: Navitia SDK Docs
 site_url: https://hove-io.github.io/navitia_sdk_docs/
-site_author: SDK Team
+site_author: Front Mobile Team
 site_description: >-
   Create your own transport application using Navitia SDKs
   
@@ -16,13 +16,13 @@ copyright: Copyright &copy; 2024 Hove
 theme:
   name: material
   features:
+    - content.code.annotate
+    - content.tabs.link
     - navigation.instant
     - navigation.top
     - navigation.tracking
-    # - navigation.tabs // If we want to use navigation tabs instead of regular menu 
-    - toc.follow
-    - content.code.annotate
     - search.share
+    - toc.follow
   palette:
     - scheme: navitia-light
       toggle:
@@ -36,25 +36,34 @@ theme:
     text: Roboto
     code: Roboto Mono
   favicon: assets/img/favicon.svg
-  logo: assets/img/navitia.svg
+  logo: assets/img/hove.svg
 
 # Code snippets/tables/emojis
 markdown_extensions:
+  - admonition
+  - attr_list
+  - def_list
+  - md_in_html
+  - tables
+  - toc:
+      toc_depth: 4
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
   - pymdownx.highlight:
       anchor_linenums: true
   - pymdownx.inlinehilite
   - pymdownx.snippets
-  - pymdownx.superfences
-  - attr_list
-  - pymdownx.emoji:
-      emoji_index: !!python/name:materialx.emoji.twemoji
-      emoji_generator: !!python/name:materialx.emoji.to_svg
-  - tables
-  - def_list
+  - pymdownx.superfences:
+      custom_fences:
+          - name: mermaid
+            class: mermaid
+            format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
   - pymdownx.tasklist:
       custom_checkbox: true
-  #- toc:
-  #    toc_depth: 4
 
 # Social links/languages
 extra:
@@ -76,29 +85,56 @@ nav:
   - Home: index.md
   - Getting started: getting_started.md
   - Around Me:
-    - Overview: around_me/overview.md
-    - Android: around_me/android/index.md
-    - iOS: around_me/ios/index.md
+    - Android:
+      - Documentation: around_me/android/index.md
+      - Changelogs: around_me/android/changelogs.md
+    - iOS:
+      - Documentation: around_me/ios/index.md
+      - Changelogs: around_me/ios/changelogs.md
+    - Screens: around_me/screens/index.md
   - Bookmark:
-    - Overview: bookmark/overview.md
-    - Android: bookmark/android/index.md
-    - iOS: bookmark/ios/index.md
+    - Android:
+      - Documentation: bookmark/android/index.md
+      - Changelogs: bookmark/android/changelogs.md
+    - iOS:
+      - Documentation: bookmark/ios/index.md
+      - Changelogs: bookmark/ios/changelogs.md
+    - Screens: bookmark/screens/index.md
   - Expert:
-    - Overview: expert/overview.md
-    - Android: expert/android/index.md
-    - iOS: expert/ios/index.md
+    - Android:
+      - Documentation: expert/android/index.md
+      - APIs: expert/android/apis.md
+      - Models: expert/android/models.md
+      - Changelogs: expert/android/changelogs.md
+    - iOS:
+      - Documentation: expert/ios/index.md
+      - APIs: expert/ios/apis.md
+      - Models: expert/ios/models.md
+      - Changelogs: expert/ios/changelogs.md
   - Journey:
-    - Overview: journey/overview.md
-    - Android: journey/android/index.md
-    - iOS: journey/ios/index.md
+    - Android:
+      - Documentation: journey/android/index.md
+      - Changelogs: journey/android/changelogs.md
+    - iOS:
+      - Documentation: journey/ios/index.md
+      - Changelogs: journey/ios/changelogs.md
+    - Screens: journey/screens/index.md
   - Schedule:
-    - Overview: schedule/overview.md
-    - Android: schedule/android/index.md
-    - iOS: schedule/ios/index.md
+    - Android:
+      - Documentation: schedule/android/index.md
+      - Changelogs: schedule/android/changelogs.md
+    - iOS:
+      - Documentation: schedule/ios/index.md
+      - Changelogs: schedule/ios/changelogs.md
+    - Screens: schedule/screens/index.md
   - Traffic:
-    - Overview: traffic/overview.md
-    - Android: traffic/android/index.md
-    - iOS: traffic/ios/index.md
+    - Android:
+      - Documentation: traffic/android/index.md
+      - Changelogs: traffic/android/changelogs.md
+    - iOS:
+      - Documentation: traffic/ios/index.md
+      - Changelogs: traffic/ios/changelogs.md
+    - Screens: traffic/screens/index.md
     
 # Extra config
 extra_css:
@@ -112,7 +148,9 @@ plugins:
   - search
   - exclude:
       glob:
-        #- expert/*
         #- around_me/*
+        #- bookmark/*
+        #- expert/*
+        #- journey/*
         #- schedule/*
         #- traffic/*
