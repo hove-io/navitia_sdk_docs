@@ -127,7 +127,7 @@ If you want to use the `rootViewController` as a `ChildViewController` of your `
     yourViewController.addChild(UINavigationController(rootViewController: journeyViewController))
     ```
 
-### JourneysRequest
+### :fontawesome-solid-file-code: `JourneysRequest`
 
 The `JourneysRequest` object allows to configure the first itinerary search at screen launch. It has the following parameters:
 
@@ -183,21 +183,21 @@ The `JourneysRequest` object allows to configure the first itinerary search at s
 | `walkingSpeed` | Walking speed | `Float` | `nil` |
 | `wheelchair` | Check on [Navitia](https://doc.navitia.io/#journeys)  | `Bool` | `nil` |
 
-#### DataFreshness
+#### :fontawesome-solid-file-code: `DataFreshness`
 
 | Enum value | Description |
 | --- | --- |
 | `base_schedule` | Get disrupted journeys with the given results |
 | `realtime` | Avoid disrupted journeys |
 
-#### DateTimeRepresents
+#### :fontawesome-solid-file-code: `DateTimeRepresents`
 
 | Enum value | Description |
 | --- | --- |
 | `arrival` | The requestd datetime represents the arrival of the journey |
 | `departure` | The requested datetime represents the departure of the journey |
 
-#### DirectPath
+#### :fontawesome-solid-file-code: `DirectPath`
 
 | Enum value | Description |
 | --- | --- |
@@ -206,7 +206,7 @@ The `JourneysRequest` object allows to configure the first itinerary search at s
 | `only` | For journeys without public transport |
 | `onlyWithAlternatives` | For journeys with specific bike |
 
-#### TravelerType
+#### :fontawesome-solid-file-code: `TravelerType`
 
 | Enum value | Description |
 | --- | --- |

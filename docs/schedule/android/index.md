@@ -41,7 +41,7 @@ This method takes the following parameters:
 | Name | Required | Description | Type | Default |
 | --- |:---:| --- | :---: | :---: |
 | `context` | :material-check: | Context in which the module is launched | `Context` | :material-close: |
-| `token` | :material-check: | <a href="https://navitia.io/inscription/" target="_blank">Get your token</a> | `String` | :material-close: |
+| `token` | :material-check: | <a href="https://navitia.io/inscription/" style="text-decoration: underline">Get your token</a> | `String` | :material-close: |
 | `configuration` | :material-close: | Module configuration object | [`ScheduleConfiguration`](../../getting_started/#modules-configuration) | `null` |
 | `configurationJsonFile` | :material-close: | Module configuration JSON file name | `String` | `null` |
 | `onNavigate` | :material-close: | Listener for the navigation between module screens | `Unit` | `{ _ -> }` |
@@ -86,29 +86,36 @@ This method takes the following parameters:
 Since the module launches its own fragments, you may want your application to be aware of navigation events.
 For that, you have to set a navigation listener by calling this method before `init()`.
 
-| Method | Description |
-| --- | --- |
-| `.setNavigationListener(scheduleNavigationListenerImpl)` | Set the class instance implementing `ScheduleNavigationListener` interface |
+``` kotlin
+ScheduleUI.getInstance()
+    .setNavigationListener(scheduleNavigationListenerImpl) // (1)
+```
+
+1.  `scheduleNavigationListenerImpl` should be the class instance implementing `ScheduleNavigationListener` interface.
 
 This interface gives you the method `onBack()` for any back event between two fragments and the method `onNavigate` for the reverse.
 Each method has a `ScheduleNavigationListener.Event` parameter you can rely on.
 
-| Event |
-| --- |
-| `LINES_BACK_TO_EXTERNAL` |
-| `LINES_TO_STATIONS` |
-| `LINES_TO_TIMETABLE` |
-| `STATIONS_BACK_TO_LINE` |
-| `TIMETABLE_BACK_TO_LINES` |
+``` kotlin
+// Navigation events
+LINES_BACK_TO_EXTERNAL
+LINES_TO_STATIONS
+LINES_TO_TIMETABLE
+STATIONS_BACK_TO_LINE
+TIMETABLE_BACK_TO_LINES
+```
 
 ### Events tracking
 
 In order to receive the list of generated events within Schedule module, you have to attach the tracker to the module instance.<br>
 You can call this method before or after `init()`.
 
-| Method | Description |
-| --- | --- |
-| `.attachTracker(scheduleTrackerImpl)` | Attach the class instance implementing `ScheduleTracker` interface |
+``` kotlin
+JourneyUI.getInstance()
+    .attachTracker(scheduleTrackerImpl) // (1)
+```
+
+1.  `scheduleTrackerImpl` should be the class instance implementing `ScheduleTracker` interface.
 
 ## :rocket: Launching
 

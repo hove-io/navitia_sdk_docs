@@ -64,7 +64,7 @@ You can also call the `initialize()` method with the global JSON configuration f
     do {
         try AroundMe.shared.initialize(token: "your_token", configurationJsonFile: "aroundme_configuration.json")                                                               
     } catch {
-        Logger.error("%@", String(format: "Around me SDK cannot be initialized! %@", error.localizedDescription))
+        Logger.error("%@", String(format: "Around Me SDK cannot be initialized! %@", error.localizedDescription))
     }                                   
     ```
 
@@ -88,13 +88,13 @@ You can also call the `initialize()` method with the global JSON configuration f
                                       colors: aroundmeColorsConfiguration,
                                       transportCategories: transportCategories)                                                                  
     } catch {
-        Logger.error("%@", String(format: "Around me SDK cannot be initialized! %@", error.localizedDescription))
+        Logger.error("%@", String(format: "Around Me SDK cannot be initialized! %@", error.localizedDescription))
     }                                   
     ```
 
 ### Events tracking
 
-In order to receive the list of generated events within Around me module, you have to assign the instance of the tracker to the Around me module instance as follows and implement the required methods:
+In order to receive the list of generated events within Around Me module, you have to assign the instance of the tracker to the Around Me module instance as follows and implement the required methods:
 
 ```swift
 AroundMe.shared.tracker = self

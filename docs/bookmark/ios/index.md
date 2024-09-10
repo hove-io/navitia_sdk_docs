@@ -133,7 +133,7 @@ The various CRD methods are accessed through `BookmarkUI.shared`.
 
 <h4>Create</h4>
 
-- Create a new favorite address. Returns a boolean if the creation has succeed or not.
+:material-arrow-right: Create a new favorite address. Returns a boolean if the creation has succeed or not.
 
 ``` swift
 func addFavoriteAddress(_ address: SharedData.FavoriteAddress) -> Bool
@@ -143,7 +143,7 @@ func addFavoriteAddress(_ address: SharedData.FavoriteAddress) -> Bool
 | --- | --- | --- |
 | `address` | [`SharedData.FavoriteAddress`](#favorite-address) | Favorite address to create |
 
-- Create a new favorite journey. Returns a boolean if the creation has succeed or not.
+:material-arrow-right: Create a new favorite journey. Returns a boolean if the creation has succeed or not.
 
 ``` swift
 func addFavoriteJourney(_ journey: SharedData.FavoriteJourney) -> Bool
@@ -153,7 +153,7 @@ func addFavoriteJourney(_ journey: SharedData.FavoriteJourney) -> Bool
 | --- | --- | --- |
 | `journey` | [`SharedData.FavoriteJourney`](#favorite-journey) | Favorite journey to create |
 
-- Create a new favorite POI. Returns a boolean if the creation has succeed or not.
+:material-arrow-right: Create a new favorite POI. Returns a boolean if the creation has succeed or not.
 
 ``` swift
 func addFavoritePoi(_ poi: SharedData.FavoritePoi) -> Bool
@@ -163,7 +163,7 @@ func addFavoritePoi(_ poi: SharedData.FavoritePoi) -> Bool
 | --- | --- | --- |
 | `poi` | [`SharedData.FavoritePoi`](#favorite-poi)| Favorite POI to create |
 
-- Create a new favorite station. Returns a boolean if the creation has succeed or not.
+:material-arrow-right: Create a new favorite station. Returns a boolean if the creation has succeed or not.
 
 ``` swift
 func addFavoriteStation(_ station: SharedData.FavoriteStation) -> Bool
@@ -175,7 +175,7 @@ func addFavoriteStation(_ station: SharedData.FavoriteStation) -> Bool
 
 <h4>Read</h4>
 
-- Fetch a favorite address data. Returns [`SharedData.FavoriteAddress`](#favorite-address) or `nil` if not found.
+:material-arrow-right: Fetch a favorite address data. Returns [`SharedData.FavoriteAddress`](#favorite-address) or `nil` if not found.
 
 ``` swift
 func fetchFavoriteAddress(id: String) -> SharedData.FavoriteAddress?
@@ -185,7 +185,7 @@ func fetchFavoriteAddress(id: String) -> SharedData.FavoriteAddress?
 | --- | --- | --- |
 | `id` | `String` | Id of the favorite address to fetch |
 
-- Fetch all favorite addresses. Returns a list of [`SharedData.FavoriteAddress`](#favorite-address) or an empty list if there is no data.
+:material-arrow-right: Fetch all favorite addresses. Returns a list of [`SharedData.FavoriteAddress`](#favorite-address) or an empty list if there is no data.
 
 ``` swift
 func fetchFavoriteAddresses(max: Int) -> [SharedData.FavoriteAddress]
@@ -195,7 +195,7 @@ func fetchFavoriteAddresses(max: Int) -> [SharedData.FavoriteAddress]
 | --- | --- | --- |
 | `max` | `Int` | Limit the result count. `0` for all data |
 
-- Fetch all favorite journeys. Returns a list of [`SharedData.FavoriteJourney`](#favorite-journey) or an empty list if there is no data.
+:material-arrow-right: Fetch all favorite journeys. Returns a list of [`SharedData.FavoriteJourney`](#favorite-journey) or an empty list if there is no data.
 
 ``` swift
 func fetchFavoriteJourneys(max: Int) -> [SharedData.FavoriteJourney]
@@ -205,7 +205,7 @@ func fetchFavoriteJourneys(max: Int) -> [SharedData.FavoriteJourney]
 | --- | --- | --- |
 | `max` | `Int` | Limit the result count. `0` for all data |
 
-- Get if a journey is added to favorites. Returns a boolean if the creation has succeed or not.
+:material-arrow-right: Get if a journey is added to favorites. Returns a boolean if the creation has succeed or not.
 
 ``` swift
 func isJourneyInBookmark(journeyId: String) -> Bool
@@ -215,7 +215,7 @@ func isJourneyInBookmark(journeyId: String) -> Bool
 | --- | --- | --- |
 | `journeyId` | `String` | Id of the favorite journey to check |
 
-- Fetch a favorite POI data. Returns [`SharedData.FavoritePoi`](#favorite-poi) or `nil` if not found.
+:material-arrow-right: Fetch a favorite POI data. Returns [`SharedData.FavoritePoi`](#favorite-poi) or `nil` if not found.
 
 ``` swift
 func fetchFavoritePoi(id: String) -> SharedData.FavoritePoi?
@@ -225,7 +225,7 @@ func fetchFavoritePoi(id: String) -> SharedData.FavoritePoi?
 | --- | --- | --- |
 | `id` | `String` | Id of the favorite POI to fetch |
 
-- Fetch all favorite POIs. Returns a list of [`SharedData.FavoritePoi`](#favorite-poi) or an empty list if there is no data.
+:material-arrow-right: Fetch all favorite POIs. Returns a list of [`SharedData.FavoritePoi`](#favorite-poi) or an empty list if there is no data.
 
 ``` swift
 func fetchFavoritePois(max: Int) -> [SharedData.FavoritePoi]
@@ -235,7 +235,7 @@ func fetchFavoritePois(max: Int) -> [SharedData.FavoritePoi]
 | --- | --- | --- |
 | `max` | `Int` | Limit the result count. `0` for all data |
 
-- Fetch a favorite station data. Returns [`SharedData.FavoriteStation`](#favorite-station) or `nil` if not found.
+:material-arrow-right: Fetch a favorite station data. Returns [`SharedData.FavoriteStation`](#favorite-station) or `nil` if not found.
 
 ``` swift
 func fetchFavoriteStation(stopAreaId: String, lineId: String) -> SharedData.FavoriteStation?
@@ -246,7 +246,7 @@ func fetchFavoriteStation(stopAreaId: String, lineId: String) -> SharedData.Favo
 | `stopAreaId` | `String` | Navitia stop area id of the favorite station to fetch |
 | `lineId` | `String` | Navitia line id of the favorite station to fetch |
 
-- Fetch all favorite stations. Returns a list of [`SharedData.FavoriteStation`](#avorite-station) or an empty list if there is no data.
+:material-arrow-right: Fetch all favorite stations. Returns a list of [`SharedData.FavoriteStation`](#avorite-station) or an empty list if there is no data.
 
 ``` swift
 func fetchFavoriteStations(max: Int) -> [SharedData.FavoriteStation]
@@ -258,7 +258,7 @@ func fetchFavoriteStations(max: Int) -> [SharedData.FavoriteStation]
 
 <h4>Delete</h4>
 
-- Delete an existing favorite address. Returns a boolean if the creation has succeed or not.
+:material-arrow-right:v Delete an existing favorite address. Returns a boolean if the creation has succeed or not.
 
 ``` swift
 func deleteFavoriteAddress(id: String) -> Bool
@@ -268,7 +268,7 @@ func deleteFavoriteAddress(id: String) -> Bool
 | --- | --- | --- |
 | `id` | `String` | Id of the favorite address to delete |
 
-- Delete an existing favorite journey. Returns a boolean if the creation has succeed or not.
+:material-arrow-right: Delete an existing favorite journey. Returns a boolean if the creation has succeed or not.
 
 ``` swift
 func deleteFavoriteJourney(id: String) -> Bool
@@ -278,7 +278,7 @@ func deleteFavoriteJourney(id: String) -> Bool
 | --- | --- | --- |
 | `id` | `String` | Id of the favorite journey to delete |
 
-- Delete an existing favorite POI. Returns a boolean if the creation has succeed or not.
+:material-arrow-right: Delete an existing favorite POI. Returns a boolean if the creation has succeed or not.
 
 ``` swift
 func deleteFavoritePoi(id: String) -> Bool
@@ -288,7 +288,7 @@ func deleteFavoritePoi(id: String) -> Bool
 | --- | --- | --- |
 | `id` | `String` | Id of the favorite POI to delete |
 
-- Delete an existing favorite station. Returns a boolean if the creation has succeed or not.
+:material-arrow-right: Delete an existing favorite station. Returns a boolean if the creation has succeed or not.
 
 ``` swift
 func deleteFavoriteStation(id: String) -> Bool
@@ -300,7 +300,7 @@ func deleteFavoriteStation(id: String) -> Bool
 
 ### Data
 
-<h4>Favorite Address</h4>
+<h4 markdown>:fontawesome-solid-file-code: `FavoriteAddress`</h4>
 
 | Name | Required | Description | Type |
 | --- |:---:| --- | :---: |
@@ -313,7 +313,7 @@ func deleteFavoriteStation(id: String) -> Bool
 | `addressTypeId` | :material-check: | Address type `home`, `work` or `custom` | `String` |
 | `additionalInformation` | :material-check: | Free field to save extra data | `String` |
 
-<h4>Favorite Journey</h4>
+<h4 markdown>:fontawesome-solid-file-code: `FavoriteJourney`</h4>
 
 | Name | Required | Description | Type |
 | --- |:---:| --- | :---: |
@@ -323,10 +323,10 @@ func deleteFavoriteStation(id: String) -> Bool
 | `toName` | :material-check: | Arrival name | `String` |
 | `toId` | :material-check: | Arrival Navitia id | `String` |
 | `connectionModes` | :material-check: | Array of connection modes. For example: `["bike", "walking"]` | `[String]` |
-| `sections` | :material-check: | Array of included journey sections | [`[SharedData.FavoriteJourneySection]`](#favorite-journey-section) |
+| `sections` | :material-check: | Array of included journey sections | [`[SharedData.FavoriteJourneySection]`](#favoritejourneysection) |
 | `additionalInformation` | :material-check: | Free field to save extra data | `String` |
 
-<h4>Favorite Journey Section</h4>
+<h4 markdown>:fontawesome-solid-file-code: `FavoriteJourneySection`</h4>
 
 | Name | Required | Description | Type |
 | --- |:---:| --- | :---: |
@@ -340,7 +340,7 @@ func deleteFavoriteStation(id: String) -> Bool
 | `physicalMode` | :material-check: | Navitia public transport physical mode. Example: `physical_mode:Bus` | `String` |
 | `duration` | :material-check: | Section duration in seconds | `Int` |
 
-<h4>Favorite Poi</h4>
+<h4 markdown>:fontawesome-solid-file-code: `FavoritePoi`</h4>
 
 | Name | Required | Description | Type |
 | --- |:---:| --- | :---: |
@@ -353,7 +353,7 @@ func deleteFavoriteStation(id: String) -> Bool
 | `network` | :material-check: | Navitia POI network | `String` |
 | `additionalInformation` | :material-check: | Free field to save extra data | `String` |
 
-<h4>Favorite Station</h4>
+<h4 markdown>:fontawesome-solid-file-code: `FavoriteStation`</h4>
 
 | Name | Required | Description | Type |
 | --- |:---:| --- | :---: |

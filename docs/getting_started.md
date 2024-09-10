@@ -29,7 +29,7 @@ title: Getting started - Navitia SDK Docs
 
 ## 💻 Artifactory Setup
 
-The access to the SDK requires valid credentials to our private artifactory. See [Requirements](#requirements) for more information. Replace `artifactoryUsername` and `artifactoryPassword` with your credentials.
+The access to the SDK requires valid credentials to our private artifactory. See <span style="text-decoration:underline">[Requirements](#requirements)</span> for more information. Replace `artifactoryUsername` and `artifactoryPassword` with your credentials.
 
 === "Android"
 
@@ -101,7 +101,7 @@ The following are the possible configuration parameters:
 | `secondary` | :material-check: | To set the color of some UI components | `String` | `#8faa96` | 
 -->
 
-#### Around me color
+#### Around Me color
 
 | Name | Required | Description | Type | Example |
 | --- |:---:| --- | :---: | :---: |
@@ -110,7 +110,7 @@ The following are the possible configuration parameters:
 | `tertiary` | :material-close: | To set the color of more UI components | `String` | `#efa59f` |
 | `map` | :material-close: | To set colors of the markers on map | [`Map color`](#around-me-map-color) | - |
 
-<h4>Around me map color</h4>
+<h4>Around Me map color</h4>
 
 | Name | Required | Description | Type | Example |
 | --- |:---:| --- | :---: | :---: |
@@ -574,7 +574,7 @@ You can refer to the table below for possible generated events.
 
     | Module name  | Implementation |
     | --- | :---: |
-    | Around me | [Around me Android events tracking](../around_me/android/#events-tracking) |
+    | Around me | [Around Me Android events tracking](../around_me/android/#events-tracking) |
     | Bookmark | [Bookmark Android events tracking](../bookmark/android/#events-tracking) |
     | Journey | [Journey Android events tracking](../journey/android/#events-tracking) |
     | Schedule | [Schedule Android events tracking](../schedule/android/#events-tracking) |
@@ -584,7 +584,7 @@ You can refer to the table below for possible generated events.
 
     | Module name | Implementation |
     | --- | :---: |
-    | Around me | [Around me iOS events tracking](../around_me/ios/#events-tracking) |
+    | Around Me | [Around Me iOS events tracking](../around_me/ios/#events-tracking) |
     | Bookmark | [Bookmark iOS events tracking](../bookmark/ios/#events-tracking) |
     | Journey | [Journey iOS events tracking](../journey/ios/#events-tracking) |
     | Schedule | [Schedule iOS events tracking](../schedule/ios/#events-tracking) |

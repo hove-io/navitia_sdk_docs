@@ -33,7 +33,7 @@ This method takes the following parameters:
 | Name | Required | Description | Type | Default |
 | --- |:---:| --- | :---: | :---: |
 | `context` | :material-check: | Context in which the module is launched | `Context` | :material-close: |
-| `token` | :material-check: | <a href="https://navitia.io/inscription/" target="_blank">Get your token</a> | `String` | :material-close: |
+| `token` | :material-check: | <a href="https://navitia.io/inscription/" style="text-decoration: underline">Get your token</a> | `String` | :material-close: |
 | `configuration` | :material-close: | Module configuration object | [`TrafficConfiguration`](../../getting_started/#modules-configuration) | `null` |
 | `configurationJsonFile` | :material-close: | Module configuration JSON file name | `String` | `null` |
 | `onNavigate` | :material-close: | Listener for the navigation between module screens | `Unit` | `{ _ -> }` |
@@ -78,28 +78,32 @@ This method takes the following parameters:
 Since the module launches its own fragments, you may want your application to be aware of navigation events.
 For that, you have to set a navigation listener by calling this method before `init()`.
 
-| Method | Description |
-| --- | --- |
-| `.setNavigationListener(trafficNavigationListenerImpl)` | Set the class instance implementing `TrafficNavigationListener` interface |
+``` kotlin
+TrafficUI.getInstance()
+    .setNavigationListener(trafficNavigationListenerImpl) // (1)
+```
+
+1.  `trafficNavigationListenerImpl` should be the class instance implementing `TrafficNavigationListener` interface.
 
 This interface gives you the method `onBack()` for any back event between two fragments and the method `onNavigate` for the reverse.
 Each method has a `TrafficNavigationListener.Event` parameter you can rely on.
 
-| Event |
-| --- |
-| `ALL_DISRUPTIONS_BACK_TO_EXTERNAL` |
-| `ALL_DISRUPTIONS_TO_AUTO_COMPLETION` |
-| `ALL_DISRUPTIONS_TO_DISRUPTION` |
-| `ALL_DISRUPTIONS_TO_MY_ALERTS` |
-| `AUTO_COMPLETION_BACK_TO_ALL_DISRUPTIONS` |
-| `AUTO_COMPLETION_TO_EDIT_ALERT` |
-| `DISRUPTION_BACK_TO_ALL_DISRUPTIONS` |
-| `EDIT_ALERT_BACK_TO_AUTO_COMPLETION` |
-| `EDIT_ALERT_BACK_TO_ALL_DISRUPTIONS` |
-| `EXTERNAL_TO_TRAFFIC` |
-| `MY_ALERTS_BACK_TO_ALL_DISRUPTIONS` |
-| `MY_ALERTS_TO_AUTO_COMPLETION` |
-| `MY_ALERTS_TO_EDIT_ALERT` |
+``` kotlin
+// Navigation events
+ALL_DISRUPTIONS_BACK_TO_EXTERNAL
+ALL_DISRUPTIONS_TO_AUTO_COMPLETION
+ALL_DISRUPTIONS_TO_DISRUPTION
+ALL_DISRUPTIONS_TO_MY_ALERTS
+AUTO_COMPLETION_BACK_TO_ALL_DISRUPTIONS
+AUTO_COMPLETION_TO_EDIT_ALERT
+DISRUPTION_BACK_TO_ALL_DISRUPTIONS
+EDIT_ALERT_BACK_TO_AUTO_COMPLETION
+EDIT_ALERT_BACK_TO_ALL_DISRUPTIONS
+EXTERNAL_TO_TRAFFIC
+MY_ALERTS_BACK_TO_ALL_DISRUPTIONS
+MY_ALERTS_TO_AUTO_COMPLETION
+MY_ALERTS_TO_EDIT_ALERT
+```
 
 ### Alert subscription
 
@@ -120,9 +124,12 @@ To enable the alert subscription feature, the following instructions are require
 In order to receive the list of generated events within Traffic module, you have to attach the tracker to the module instance.<br>
 You can call this method before or after `init()`.
 
-| Method | Description |
-| --- | --- |
-| `.attachTracker(trafficTrackerImpl)` | Attach the class instance implementing `TrafficTracker` interface |
+``` kotlin
+TrafficUI.getInstance()
+    .attachTracker(trafficTrackerImpl) // (1)
+```
+
+1.  `trafficTrackerImpl` should be the class instance implementing `TrafficTracker` interface.
 
 ## :rocket: Launching
 

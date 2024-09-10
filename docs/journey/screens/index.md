@@ -23,6 +23,12 @@ graph TB
 
 ## Latest journeys / Favorite journeys
 
+!!! failure "404"
+
+    This section is not written yet
+
+<!-- TODO: To write -->
+
 ## Result journeys
 
 The journeys screen is fundamental and offers the solutions to the user for the requested itinerary.

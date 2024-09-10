@@ -33,7 +33,7 @@ This method takes the following parameters:
 | Name | Required | Description | Type | Default |
 | --- |:---:| --- | :---: | :---: |
 | `context` | :material-check: | Context in which the module is launched | `Context` | :material-close: |
-| `token` | :material-check: | <a href="https://navitia.io/inscription/" target="_blank">Get your token</a> | `String` | :material-close: |
+| `token` | :material-check: | <a href="https://navitia.io/inscription/" style="text-decoration: underline">Get your token</a> | `String` | :material-close: |
 | `configuration` | :material-close: | Module configuration object | [`AroundMeConfiguration`](../../getting_started/#modules-configuration) | `null` |
 | `configurationJsonFile` | :material-close: | Module configuration JSON file name | `String` | `null` |
 
@@ -75,31 +75,38 @@ This method takes the following parameters:
 Since the module launches its own fragments, you may want your application to be aware of navigation events.
 For that, you have to set a navigation listener by calling this method before `init()`.
 
-| Method | Description |
-| --- | --- |
-| `.setNavigationListener(bookmarkNavigationListenerImpl)` | Set the class instance implementing `BookmarkNavigationListener` interface |
+``` kotlin
+BookmarkUI.getInstance()
+    .setNavigationListener(bookmarkNavigationListenerImpl) // (1)
+```
+
+1.  `bookmarkNavigationListenerImpl` should be the class instance implementing `BookmarkNavigationListener` interface.
 
 This interface gives you the method `onBack()` for any back event between two fragments and the method `onNavigate` for the reverse.
 Each method has a `BookmarkNavigationListener.Event` parameter you can rely on.
 
-| Event |
-| --- |
-| `ADD_ADDRESS_BACK_TO_FAVORITES` |
-| `EXTERNAL_TO_ADD_ADDRESSES` |
-| `EXTERNAL_TO_FAVORITES` |
-| `FAVORITES_BACK_TO_EXTERNAL` |
-| `FAVORITES_TO_JOURNEY` |
-| `FAVORITES_TO_ADD_ADDRESS` |
-| `FAVORITES_TO_ROADMAP` |
+``` kotlin
+// Navigation events
+ADD_ADDRESS_BACK_TO_FAVORITES
+EXTERNAL_TO_ADD_ADDRESSES
+EXTERNAL_TO_FAVORITES
+FAVORITES_BACK_TO_EXTERNAL
+FAVORITES_TO_JOURNEY
+FAVORITES_TO_ADD_ADDRESS
+FAVORITES_TO_ROADMAP
+```
 
 ### Events tracking
 
 In order to receive the list of generated events within Bookmark module, you have to attach the tracker to the module instance.<br>
 You can call this method before or after `init()`.
 
-| Method | Description |
-| --- | --- |
-| `.attachTracker(bookmarkTrackerImpl)` | Attach the class instance implementing `BookmarkTracker` interface |
+``` kotlin
+BookmarkUI.getInstance()
+    .attachTracker(bookmarkTrackerImpl) // (1)
+```
+
+1.  `bookmarkTrackerImpl` should be the class instance implementing `BookmarkTracker` interface.
 
 ## :rocket: Launching
 
@@ -124,7 +131,7 @@ The various CRUD methods are accessed through `BookmarkUI.getInstance().data`.
 
 <h4>Create</h4>
 
-- Create a new favorite address
+:material-arrow-right: Create a new favorite address
 
 ```kotlin
 fun saveAddress(address: SharedData.AddressBookmark)
@@ -134,7 +141,7 @@ fun saveAddress(address: SharedData.AddressBookmark)
 | --- | --- | --- |
 | `address` | [`SharedData.AddressBookmark`](#addressbookmark) | Favorite address to create |
 
-- Create a new favorite journey
+:material-arrow-right: Create a new favorite journey
 
 ```kotlin
 fun saveJourney(journey: SharedData.JourneyBookmark)
@@ -144,7 +151,7 @@ fun saveJourney(journey: SharedData.JourneyBookmark)
 | --- | --- | --- |
 | `journey` | [`SharedData.JourneyBookmark`](#journeybookmark) | Favorite journey to create |
 
-- Create a new favorite POI
+:material-arrow-right: Create a new favorite POI
 
 ```kotlin
 fun savePoi(poi: SharedData.PoiBookmark)
@@ -154,7 +161,7 @@ fun savePoi(poi: SharedData.PoiBookmark)
 | --- | --- | --- |
 | `poi` | [`SharedData.PoiBookmark`](#poibookmark) | Favorite POI to create |
 
-- Create a new favorite station
+:material-arrow-right: Create a new favorite station
 
 ```kotlin
 fun saveStation(station: SharedData.StationBookmark)
@@ -166,7 +173,7 @@ fun saveStation(station: SharedData.StationBookmark)
 
 <h4>Read</h4>
 
-- Fetch a favorite address data. Returns [`SharedData.AddressBookmark`](#addressbookmark) or `null` if not found.
+:material-arrow-right: Fetch a favorite address data. Returns [`SharedData.AddressBookmark`](#addressbookmark) or `null` if not found.
 
 ```kotlin
 fun fetchAddress(id: String): SharedData.AddressBookmark?
@@ -176,13 +183,13 @@ fun fetchAddress(id: String): SharedData.AddressBookmark?
 | --- | --- | --- |
 | `id` | `String` | Id of the favorite address to fetch |
 
-- Fetch all favorite addresses. Returns a list of [`SharedData.AddressBookmark`](#addressbookmark) or an empty list if there is no data.
+:material-arrow-right: Fetch all favorite addresses. Returns a list of [`SharedData.AddressBookmark`](#addressbookmark) or an empty list if there is no data.
 
 ```kotlin
 fun fetchAddresses(): List<SharedData.AddressBookmark>
 ```
 
-- Fetch a favorite journey data. Returns [`SharedData.JourneyBookmark`](#journeybookmark) or `null` if not found.
+:material-arrow-right: Fetch a favorite journey data. Returns [`SharedData.JourneyBookmark`](#journeybookmark) or `null` if not found.
 
 ```kotlin
 fun fetchJourney(travelId: String): SharedData.JourneyBookmark?
@@ -192,13 +199,13 @@ fun fetchJourney(travelId: String): SharedData.JourneyBookmark?
 | --- | --- | --- |
 | `travelId` | `String` | Travel id of the favorite journey to fetch |
 
-- Fetch all favorite journeys. Returns a list of [`SharedData.JourneyBookmark`](#journeybookmark) or an empty list if there is no data.
+:material-arrow-right: Fetch all favorite journeys. Returns a list of [`SharedData.JourneyBookmark`](#journeybookmark) or an empty list if there is no data.
 
 ```kotlin
 fun fetchJourneys(): List<SharedData.JourneyBookmark>
 ```
 
-- Fetch a favorite POI data. Returns [`SharedData.PoiBookmark`](#poibookmark) or `null` if not found.
+:material-arrow-right: Fetch a favorite POI data. Returns [`SharedData.PoiBookmark`](#poibookmark) or `null` if not found.
 
 ```kotlin
 fun fetchPoi(id: String): SharedData.PoiBookmark?
@@ -208,13 +215,13 @@ fun fetchPoi(id: String): SharedData.PoiBookmark?
 | --- | --- | --- |
 | `id` | `String` | Id of the favorite POI to fetch |
 
-- Fetch all favorite POIs. Returns a list of [`SharedData.PoiBookmark`](#poibookmark) or an empty list if there is no data.
+:material-arrow-right: Fetch all favorite POIs. Returns a list of [`SharedData.PoiBookmark`](#poibookmark) or an empty list if there is no data.
 
 ```kotlin
 fun fetchPois(): List<SharedData.PoiBookmark>
 ```
 
-- Fetch a favorite station data. Returns [`SharedData.StationBookmark`](#stationbookmark) or `null` if not found.
+:material-arrow-right: Fetch a favorite station data. Returns [`SharedData.StationBookmark`](#stationbookmark) or `null` if not found.
 
 ```kotlin
 fun fetchStation(stopAreaId: String, lineId: String): SharedData.StationBookmark?
@@ -225,7 +232,7 @@ fun fetchStation(stopAreaId: String, lineId: String): SharedData.StationBookmark
 | `stopAreaId` | `String` | Navitia stop area id of the favorite station to fetch |
 | `lineId` | `String` | Navitia line id of the favorite station to fetch |
 
-- Fetch all favorite stations. Returns a list of [`SharedData.StationBookmark`](#stationbookmark) or an empty list if there is no data.
+:material-arrow-right: Fetch all favorite stations. Returns a list of [`SharedData.StationBookmark`](#stationbookmark) or an empty list if there is no data.
 
 ```kotlin
 fun fetchStations(): List<SharedData.StationBookmark>
@@ -233,7 +240,7 @@ fun fetchStations(): List<SharedData.StationBookmark>
 
 <h4>Update</h4>
 
-- Update an existing favorite address
+:material-arrow-right: Update an existing favorite address
 
 ```kotlin
 fun updateAddress(address: SharedData.AddressBookmark)
@@ -243,7 +250,7 @@ fun updateAddress(address: SharedData.AddressBookmark)
 | --- | --- | --- |
 | `address` | `SharedData.AddressBookmark` | Favorite address to update |
 
-- Update an existing favorite journey
+:material-arrow-right: Update an existing favorite journey
 
 ```kotlin
 fun updateJourney(travelId: String, additionalInformation: String)
@@ -254,7 +261,7 @@ fun updateJourney(travelId: String, additionalInformation: String)
 | `travelId` | `String` | Travel id of the favorite journey to update |
 | `additionalInformation` | `String` | Extra data to update |
 
-- Update an existing favorite POI
+:material-arrow-right: Update an existing favorite POI
 
 ```kotlin
 fun updatePoi(id: String, additionalInformation: String)
@@ -265,7 +272,7 @@ fun updatePoi(id: String, additionalInformation: String)
 | `id` | `String` | Id of the favorite POI to update |
 | `additionalInformation` | `String` | Extra data to update |
 
-- Update an existing favorite station
+:material-arrow-right: Update an existing favorite station
 
 ```kotlin
 fun updateStation(id: String, additionalInformation: String)
@@ -278,7 +285,7 @@ fun updateStation(id: String, additionalInformation: String)
 
 <h4>Delete</h4>
 
-- Delete an existing favorite address
+:material-arrow-right: Delete an existing favorite address
 
 ```kotlin
 fun deleteAddress(id: String)
@@ -288,7 +295,7 @@ fun deleteAddress(id: String)
 | --- | --- | --- |
 | `id` | `String` | Id of the favorite address to delete |
 
-- Delete an existing favorite journey
+:material-arrow-right: Delete an existing favorite journey
 
 ```kotlin
 fun deleteJourney(travelId: String)
@@ -298,7 +305,7 @@ fun deleteJourney(travelId: String)
 | --- | --- | --- |
 | `travelId` | `String` | Travel id of the favorite journey to delete |
 
-- Delete an existing favorite POI
+:material-arrow-right: Delete an existing favorite POI
 
 ```kotlin
 fun deletePoi(id: String)
@@ -308,7 +315,7 @@ fun deletePoi(id: String)
 | --- | --- | --- |
 | `id` | `String` | Id of the favorite POI to delete |
 
-- Delete an existing favorite station
+:material-arrow-right: Delete an existing favorite station
 
 ```kotlin
 fun deleteStation(stopAreaId: String, lineId: String)
@@ -321,7 +328,7 @@ fun deleteStation(stopAreaId: String, lineId: String)
 
 ### Data
 
-<h4>AddressBookmark</h4>
+<h4 markdown>:fontawesome-solid-file-code: `AddressBookmark`</h4>
 
 | Name | Required | Description | Type |
 | --- |:---:| --- | :---: |
@@ -334,7 +341,7 @@ fun deleteStation(stopAreaId: String, lineId: String)
 | `type` | :material-check: | Address type `home`, `work` or `custom` | `String` |
 | `additionalInformation` | :material-check: | Free field to save extra data | `String` |
 
-<h4>JourneyBookmark</h4>
+<h4 markdown>:fontawesome-solid-file-code: `JourneyBookmark`</h4>
 
 | Name | Required | Description | Type |
 | --- |:---:| --- | :---: |
@@ -347,7 +354,7 @@ fun deleteStation(stopAreaId: String, lineId: String)
 | `isBikeSpecific` | :material-check: | Array of connection modes. For example: `["bike", "walking"]` | `Boolean` |
 | `additionalInformation` | :material-check: | Free field to save extra data | `String` |
 
-<h4>LineBookmark</h4>
+<h4 markdown>:fontawesome-solid-file-code: `LineBookmark`</h4>
 
 | Name | Required | Description | Type |
 | --- |:---:| --- | :---: |
@@ -361,7 +368,7 @@ fun deleteStation(stopAreaId: String, lineId: String)
 | `networkId` | :material-check: | Navitia public transport network id. Example: `network:xxx:Operator_21` | `String` |
 | `networkName` | :material-check: | Navitia public transport network name. Example: `Operator 21` | `String` |
 
-<h4>SectionBookmark</h4>
+<h4 markdown>:fontawesome-solid-file-code: `SectionBookmark`</h4>
 
 | Name | Required | Description | Type |
 | --- |:---:| --- | :---: |
@@ -375,7 +382,7 @@ fun deleteStation(stopAreaId: String, lineId: String)
 | `physicalMode` | :material-check: | Navitia public transport physical mode. Example: `physical_mode:Bus` | `String` |
 | `duration` | :material-check: | Section duration in seconds | `Int` |
 
-<h4>PoiBookmark</h4>
+<h4 markdown>:fontawesome-solid-file-code: `PoiBookmark`</h4>
 
 | Name | Required | Description | Type |
 | --- |:---:| --- | :---: |
@@ -388,7 +395,7 @@ fun deleteStation(stopAreaId: String, lineId: String)
 | `providerId` | :material-check: | Navitia POI provider id | `String` |
 | `additionalInformation` | :material-check: | Free field to save extra data | `String` |
 
-<h4>StationBookmark</h4>
+<h4 markdown>:fontawesome-solid-file-code: `StationBookmark`</h4>
 
 | Name | Required | Description | Type |
 | --- |:---:| --- | :---: |

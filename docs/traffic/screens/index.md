@@ -11,7 +11,7 @@ Refer to the following schema to learn more about different interactions and how
 <div style="text-align: center">
 ``` mermaid
 graph TB
-    DisruptedLines(Disrupted lines) --> LineNetworkDisruption(Line / Network disruption)
+    DisruptedLines(Disrupted lines) --> LineNetworkDisruptions(Line / Network disruptions)
     DisruptedLines(Disrupted lines) --> SubscribedLines(Subscribed lines)
     DisruptedLines(Disrupted lines) --> LineSelection(Line selection)
     SubscribedLines(Subscribed lines) --> LineSelection(Line selection)
@@ -22,7 +22,7 @@ graph TB
 ## All disruptions
 
 The all disruptions screen allows the user to view all the line and network disruptions sorted by transport category.<br>
-When clicking on a disrupted line, the message and the application period of the disruption shows up along with an **All disruptions** button. This button redirects the user to the [line disruptions](#linenetwork-disruptions) screen.
+When clicking on a disrupted line, the message and the application period of the disruption shows up along with an _All disruptions_ button. This button redirects the user to the [line disruptions](#linenetwork-disruptions) screen.
 
 === "Android"
 
@@ -35,7 +35,7 @@ When clicking on a disrupted line, the message and the application period of the
 ### Filters
 
 The all disruptions screen integrated a menu accessible through the header right button. This menu shows the different transport categories with a default selection.<br>
-If the user hits the **Apply** button after changing the selection state, the all disruptions screen will refresh and will show the disruptions according to the updated filters.
+If the user hits the _Apply_ button after changing the selection state, the all disruptions screen will refresh and will show the disruptions according to the updated filters.
 
 === "Android"
 

@@ -41,7 +41,7 @@ This method takes the following parameters:
 | Name | Required | Description | Type | Default |
 | --- |:---:| --- | :---: | :---: |
 | `context` | :material-check: | Context in which the module is launched | `Context` | :material-close: |
-| `token` | :material-check: | <a href="https://navitia.io/inscription/" target="_blank">Get your token</a> | `String` | :material-close: |
+| `token` | :material-check: | <a href="https://navitia.io/inscription/" style="text-decoration: underline">Get your token</a> | `String` | :material-close: |
 | `configuration` | :material-close: | Module configuration object | [`AroundMeConfiguration`](../../getting_started/#modules-configuration) | `null` |
 | `configurationJsonFile` | :material-close: | Module configuration JSON file name | `String` | `null` |
 
@@ -84,33 +84,40 @@ This method takes the following parameters:
 Since the module launches its own fragments, you may want your application to be aware of navigation events.
 For that, you have to set a navigation listener by calling this method before `init()`.
 
-| Method | Description |
-| --- | --- |
-| `.setNavigationListener(aroundMeNavigationListenerImpl)` | Set the class instance implementing `AroundMeNavigationListener` interface |
+``` kotlin
+AroundMeUI.getInstance()
+    .setNavigationListener(aroundMeNavigationListenerImpl) // (1)
+```
+
+1.  `aroundMeNavigationListenerImpl` should be the class instance implementing `AroundMeNavigationListener` interface.
 
 This interface gives you the method `onBack()` for any back event between two fragments and the method `onNavigate` for the reverse.
 Each method has a `AroundMeNavigationListener.Event` parameter you can rely on.
 
-| Event |
-| --- |
-| `MAP_TO_FAVORITES` |
-| `MAP_TO_JOURNEY` |
-| `MAP_TO_TRAFFIC` |
-| `MAP_TO_ROADMAP` |
-| `MAP_TO_FILTER` |
-| `MAP_TO_SEARCH` |
-| `MAP_BACK_TO_EXTERNAL` |
-| `SEARCH_BACK_TO_MAP` |
-| `FILTER_BACK_TO_MAP` |
+``` kotlin
+// Navigation events
+MAP_TO_FAVORITES
+MAP_TO_JOURNEY
+MAP_TO_TRAFFIC
+MAP_TO_ROADMAP
+MAP_TO_FILTER
+MAP_TO_SEARCH
+MAP_BACK_TO_EXTERNAL
+SEARCH_BACK_TO_MAP
+FILTER_BACK_TO_MAP
+```
 
 ### Events tracking
 
-In order to receive the list of generated events within Around me module, you have to attach the tracker to the module instance.<br>
+In order to receive the list of generated events within Around Me module, you have to attach the tracker to the module instance.<br>
 You can call this method before or after `init()`.
 
-| Method | Description |
-| --- | --- |
-| `.attachTracker(aroundMeTrackerImpl)` | Attach the class instance implementing `AroundMeTracker` interface |
+``` kotlin
+AroundMeUI.getInstance()
+    .attachTracker(aroundMeTrackerImpl) // (1)
+```
+
+1.  `aroundMeTrackerImpl` should be the class instance implementing `AroundMeTracker` interface.
 
 ## :rocket: Launching
 
