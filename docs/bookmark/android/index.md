@@ -455,7 +455,7 @@ override fun onUpdateFavoriteStations(id: String) {
 
 :octicons-arrow-right-24: Enabling<br>
 
-This module communicates with [Journey](../../journey/) module in order to get directions for a chosen itinerary. You should enable the `go_from_go_to` parameter in the [features configuration](../../getting_started/#bookmark-features).<br>
+This module communicates with [Journey](../../journey/android) module in order to get directions for a chosen itinerary. You should enable the `go_from_go_to` parameter in the [features configuration](../../getting_started/#bookmark-features).<br>
 
 :octicons-arrow-right-24: Method<br>
 

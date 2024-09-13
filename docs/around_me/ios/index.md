@@ -62,9 +62,15 @@ You can also call the `initialize()` method with the global JSON configuration f
 
     ```swift
     do {
-        try AroundMe.shared.initialize(token: "your_token", configurationJsonFile: "aroundme_configuration.json")                                                               
+        try AroundMe.shared.initialize(
+            token: "your_token", 
+            configurationJsonFile: "aroundme_configuration.json"
+        )                                                               
     } catch {
-        Logger.error("%@", String(format: "Around Me SDK cannot be initialized! %@", error.localizedDescription))
+        Logger.error("%@", String(
+            format: "Around Me SDK cannot be initialized! %@", 
+            error.localizedDescription)
+        )
     }                                   
     ```
 
@@ -72,23 +78,41 @@ You can also call the `initialize()` method with the global JSON configuration f
 
     ```swift
     do {
-        let transportCategories = [TransportCategory(modules: ["aroundme"],
-                                                     iconRes: "ic_section_mode_metro",
-                                                     nameRes: "metro",
-                                                     selected: true,
-                                                     modes: [TransportCategoryMode(physical: TransportPhysicalMode(id: "physical_mode:Metro", nameRes: "metro"),
-                                                     commercial: TransportCommercialMode(id: "commercial_mode:Metro", name: "Metro"))],
-                                                     firstSectionModes: ["walking"],
-                                                     lastSectionModes: ["walking"])]
-        let aroundmeColorsConfiguration = AroundMeColorsConfiguration(primaryColor: "#88819f", secondaryColor: "#8faa96")
+        let transportCategories = [TransportCategory(
+            modules: ["aroundme"],
+            iconRes: "ic_section_mode_metro",
+            nameRes: "metro",
+            selected: true,
+            modes: [TransportCategoryMode(
+                physical: TransportPhysicalMode(
+                    id: "physical_mode:Metro", 
+                    nameRes: "metro"
+                ),
+                commercial: TransportCommercialMode(
+                    id: "commercial_mode:Metro", 
+                    name: "Metro"
+                )
+            )],
+            firstSectionModes: ["walking"],
+            lastSectionModes: ["walking"]
+        )]
+        let aroundmeColorsConfiguration = AroundMeColorsConfiguration(
+            primaryColor: "#88819f", 
+            secondaryColor: "#8faa96"
+        )
                                                                           
-        try AroundMe.shared.initialize(coverage: "fr-idf",
-                                      token: "your_token",
-                                      env: "PROD",
-                                      colors: aroundmeColorsConfiguration,
-                                      transportCategories: transportCategories)                                                                  
+        try AroundMe.shared.initialize(
+            coverage: "fr-idf",
+            token: "your_token",
+            env: "PROD",
+            colors: aroundmeColorsConfiguration,
+            transportCategories: transportCategories
+        )                                                                  
     } catch {
-        Logger.error("%@", String(format: "Around Me SDK cannot be initialized! %@", error.localizedDescription))
+        Logger.error("%@", String(
+            format: "Around Me SDK cannot be initialized! %@", 
+            error.localizedDescription
+        ))
     }                                   
     ```
 
@@ -116,13 +140,18 @@ If you want to use the `rootViewController` as a `ChildViewController` of your `
 === "Using a `NavigationController`"
 
     ```swift
-    navigationController?.pushViewController(trafficViewController, animated: false)
+    navigationController?.pushViewController(
+        trafficViewController,
+        animated: false
+    )
     ```
 
 === "Using a `ChildViewController`"
 
     ```swift
-    yourViewController.addChild(UINavigationController(rootViewController: trafficViewController))
+    yourViewController.addChild(UINavigationController(
+        rootViewController: trafficViewController
+    ))
     ```
 
 ### Filters
@@ -137,17 +166,10 @@ To do this, the host application must initialize `Router`. This singleton will e
 
 ``` swift
 try Router.shared
+          .register(aroundMe: AroundMe.shared.aroundMeRouter)
           ... // Register modules and/or app
           .initialize()
 ```
-
-### Application
-
-!!! failure "404"
-
-    This section is not written yet
-
-<!-- TODO: To write -->
 
 ### Modules
 
@@ -155,7 +177,7 @@ try Router.shared
 
 :octicons-arrow-right-24: Enabling<br>
 
-This module communicates with [Bookmark](../../bookmark/) module in order to vizualize favorite stations and POIs. You should enable the `bookmark_mode` parameter in the [features configuration](../../getting_started/#around-me-features).<br>
+`Around Me` module communicates with [Bookmark](../../bookmark/ios) module in order to vizualize favorite stations, POIs and journeys. You should enable the `bookmark_mode` parameter in the [features configuration](../../getting_started/#around-me-features).<br>
 
 Bookmark module must be registered in the `Router` to build the connection between these modules:
 
@@ -165,8 +187,9 @@ Router.shared.register(bookmark: Bookmark.shared.bookmarkRouter)
 
 :octicons-arrow-right-24: Methods<br>
 
-The following methods from the `CustomAroundMeBookmarkDelegate` interface should be implemented by the host application to enable navigation to the Bookmark module or any other custom screen. Note that the parameters of these methods can be omitted as needed.
+The following methods from the `CustomAroundMeBookmarkDelegate` interface should be implemented by the host application to enable navigation to the Bookmark module or any other custom screen. Note that the parameters of these methods can be omitted as needed. If you don't implement this protocol, the Bookmark module will be shown.
 
+This method is called after click on the favorite home shortcut button, in case it is empty.
 ``` swift
 func onHomeAddressCompletionRequested(module: Router.BookmarkLinkedModule) {
     // launch the bookmark module screen or your custom screen
@@ -177,9 +200,11 @@ func onHomeAddressCompletionRequested(module: Router.BookmarkLinkedModule) {
 | --- | --- | --- | --- |
 | `module` | `Router.BookmarkLinkedModule` | Module triggering the method call | `Router.BookmarkLinkedModule.aroundMe` or `Router.BookmarkLinkedModule.journey` |
 
+This method is called after click on the favorite work shortcut button, in case it is empty.
+
 ``` swift
 func onWorkAddressCompletionRequested(module: Router.BookmarkLinkedModule) {
-    // launch the bookmark module screen or your custom screen
+    // launch the bookmark module screen or your custom screen if the favorite work address is empty
 }
 ```
 
@@ -197,7 +222,7 @@ func onSeeAllFavoritesClicked() {
 
 :octicons-arrow-right-24: Enabling<br>
 
-This module communicates with [Journey](../../journey/) module in order to get directions for a chosen itinerary. You should enable the `journey_mode` and the `go_from_go_to` parameter in the [features configuration](../../getting_started/#around-me-features).<br>
+`Around me` module communicates with [Journey](../../journey/ios) module in order to get directions for a chosen itinerary. You should enable the `journey_mode` and the `go_from_go_to` parameter in the [features configuration](../../getting_started/#around-me-features).<br>
 Another way to communicate with is through the [Map](../screens/#map) screen and precisely the _Where are we going?_ button, this feature should also be enabled by setting the `where_shall_we_go` in the [features configuration](../../getting_started/#around-me-features) to `true`.<br>
 
 Journey module must also be registered in the `Router` to build the connection between these modules:
@@ -205,30 +230,14 @@ Journey module must also be registered in the `Router` to build the connection b
 Router.shared.register(journey: JourneySdk.shared.journeyRouter)
 ```
 
-:octicons-arrow-right-24: Methods<br>
-
-!!! failure "404"
-
-    This section is not written yet
-
-<!-- TODO: To write -->
-
 #### Traffic
 
 :octicons-arrow-right-24: Enabling<br>
 
-This module communicates with [Traffic](../../traffic/) module in order to easily access traffic information. You should enable the `traffic_mode` parameter in the [features configuration](../../getting_started/#around-me-features).<br>
+`Around me` module communicates with [Traffic](../../traffic/ios) module in order to easily access traffic information. You should enable the `traffic_mode` parameter in the [features configuration](../../getting_started/#around-me-features).<br>
 
 Traffic module must also be registered in the `Router` to build the connection between these modules:
 
 ``` swift
 Router.shared.register(traffic: Traffic.shared.trafficRouter)
 ```
-
-:octicons-arrow-right-24: Methods<br>
-
-!!! failure "404"
-
-    This section is not written yet
-
-<!-- TODO: To write -->
