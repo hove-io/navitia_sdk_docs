@@ -60,15 +60,15 @@ You can also call the `initialize()` method with the global JSON configuration f
 
     ```swift
     do {
-        try Bookmark.shared.initialize(
-            token: "your_token", 
-            configurationJsonFile: "aroundme_configuration.json"
-        )                                                               
+      try Bookmark.shared.initialize(
+        token: "your_token", 
+        configurationJsonFile: "aroundme_configuration.json"
+      )                                                               
     } catch {
-        Logger.error("%@", String(
-            format: "Bookmark SDK cannot be initialized! %@", 
-            error.localizedDescription
-        ))
+      Logger.error("%@", String(
+        format: "Bookmark SDK cannot be initialized! %@", 
+        error.localizedDescription
+      ))
     }                                   
     ```
 
@@ -76,41 +76,42 @@ You can also call the `initialize()` method with the global JSON configuration f
 
     ```swift
     do {
-        let transportCategories = [TransportCategory(
-            modules: ["aroundme"],
-            iconRes: "ic_section_mode_metro",
-            nameRes: "metro",
-            selected: true, 
-            modes: [TransportCategoryMode(
-                physical: TransportPhysicalMode(
-                  id: "physical_mode:Metro", 
-                  nameRes: "metro"
-                ),
-                commercial: TransportCommercialMode(
-                    id: "commercial_mode:Metro", 
-                    name: "Metro"
-                )
-            )],
-            firstSectionModes: ["walking"],
-            lastSectionModes: ["walking"]
-        )]
-        let bookmarkColorsConfiguration = AroundMeColorsConfiguration(
-            primaryColor: "#88819f", 
-            secondaryColor: "#8faa96"
-        )
+      let transportCategories = [TransportCategory(
+        modules: ["aroundme"],
+        iconRes: "ic_section_mode_metro",
+        nameRes: "metro",
+        selected: true, 
+        modes: [TransportCategoryMode(
+          physical: TransportPhysicalMode(
+            id: "physical_mode:Metro", 
+            nameRes: "metro"
+          ),
+          commercial: TransportCommercialMode(
+            id: "commercial_mode:Metro", 
+            name: "Metro"
+          )
+        )],
+        firstSectionModes: ["walking"],
+        lastSectionModes: ["walking"]
+      )]
+        
+      let bookmarkColorsConfiguration = AroundMeColorsConfiguration(
+        primaryColor: "#88819f", 
+        secondaryColor: "#8faa96"
+      )
                                                                           
-        try Bookmark.shared.initialize(
-            coverage: "fr-idf",
-            token: "your_token",
-            env: "PROD",
-            colors: bookmarkColorsConfiguration,
-            transportCategories: transportCategories
-        )                                                                  
+      try Bookmark.shared.initialize(
+        coverage: "fr-idf",
+        token: "your_token",
+        env: "PROD",
+        colors: bookmarkColorsConfiguration,
+        transportCategories: transportCategories
+      )                                                                  
     } catch {
-        Logger.error("%@", String(
-            format: "Bookmark SDK cannot be initialized! %@", 
-            error.localizedDescription
-        ))
+      Logger.error("%@", String(
+        format: "Bookmark SDK cannot be initialized! %@", 
+        error.localizedDescription
+      ))
     }                                   
     ```
 
@@ -139,8 +140,8 @@ If you want to use the `rootViewController` as a `ChildViewController` of your `
 
     ```swift
     navigationController?.pushViewController(
-        bookmarkViewController, 
-        animated: false
+      bookmarkViewController, 
+      animated: false
     )
     ```
 
@@ -148,7 +149,7 @@ If you want to use the `rootViewController` as a `ChildViewController` of your `
 
     ```swift
     yourViewController.addChild(UINavigationController(
-        rootViewController: bookmarkViewController
+      rootViewController: bookmarkViewController
     ))
     ```
 
@@ -404,9 +405,9 @@ To do this, the host application must initialize `Router`. This singleton will e
 
 ``` swift
 try Router.shared
-          .register(aroundMe: Bookmark.shared.bookmarkRouter)
-          ... // Register modules and/or app
-          .initialize()
+  .register(aroundMe: Bookmark.shared.bookmarkRouter)
+  ... // Register modules and/or app
+  .initialize()
 ```
 ### Modules
 

@@ -61,15 +61,15 @@ You can also call the `initialize()` method with the global JSON configuration f
 
     ```swift
     do {
-        try JourneySdk.shared.initialize(
-            token: "your_token", 
-            configurationJsonFile: "journey_configuration.json"
-        )                                                               
+      try JourneySdk.shared.initialize(
+        token: "your_token", 
+        configurationJsonFile: "journey_configuration.json"
+      )                                                               
     } catch {
-        Logger.error("%@", String(
-            format: "Journey SDK cannot be initialized! %@", 
-            error.localizedDescription
-        ))
+      Logger.error("%@", String(
+        format: "Journey SDK cannot be initialized! %@", 
+          error.localizedDescription
+      ))
     }                                   
     ```
 
@@ -77,41 +77,41 @@ You can also call the `initialize()` method with the global JSON configuration f
 
     ```swift
     do {
-        let transportCategories = [TransportCategory(
-            modules: ["journey"],
-            iconRes: "ic_section_mode_metro",
-            nameRes: "metro",
-            selected: true,
-            modes: [TransportCategoryMode(
-                physical: TransportPhysicalMode(id "physical_mode:Metro"),
-                commercial: TransportCommercialMode(
-                    id: "commercial_mode:Metro", 
-                    name: "Metro"
-                )
-            )],
-            networks: [],
-            firstSectionModes: ["walking"],
-            lastSectionModes: ["walking"],
-            directPathModes: ["walking"],
-            addPoiInfos: []
-        )]
-        let journeyColorsConfiguration = JourneyColorsConfiguration(
-            primary: "#88819f", 
-            secondary: "#8faa96"
-        )
+      let transportCategories = [TransportCategory(
+        modules: ["journey"],
+        iconRes: "ic_section_mode_metro",
+        nameRes: "metro",
+        selected: true,
+        modes: [TransportCategoryMode(
+          physical: TransportPhysicalMode(id "physical_mode:Metro"),
+            commercial: TransportCommercialMode(
+              id: "commercial_mode:Metro", 
+              name: "Metro"
+            )
+        )],
+        networks: [],
+        firstSectionModes: ["walking"],
+        lastSectionModes: ["walking"],
+        directPathModes: ["walking"],
+        addPoiInfos: []
+      )]
+      let journeyColorsConfiguration = JourneyColorsConfiguration(
+        primary: "#88819f", 
+        secondary: "#8faa96"
+      )
                                                                           
-        try JourneySdk.shared.initialize(
-            coverage: "fr-idf",
-            token: "your_token",
-            env: "PROD",
-            colors: journeyColorsConfiguration,
-            transportCategories: transportCategories
-        )                                                                  
+      try JourneySdk.shared.initialize(
+        coverage: "fr-idf",
+        token: "your_token",
+        env: "PROD",
+        colors: journeyColorsConfiguration,
+        transportCategories: transportCategories
+      )                                                                  
     } catch {
-        Logger.error("%@", String(
-            format: "Journey SDK cannot be initialized! %@", 
-            error.localizedDescription
-        ))
+      Logger.error("%@", String(
+        format: "Journey SDK cannot be initialized! %@", 
+        error.localizedDescription
+      ))
     }                                   
     ```
 
@@ -246,9 +246,9 @@ To do this, the host application must initialize `Router`. This singleton will e
 
 ``` swift
 try Router.shared
-    .register(journey: JourneySdk.shared.journeyRouter)
-    ... // Register modules and/or app
-    .initialize()
+  .register(journey: JourneySdk.shared.journeyRouter)
+  ... // Register modules and/or app
+  .initialize()
 ```
 
 ### Application

@@ -13,7 +13,7 @@ python -m venv sdk-docs-env
 Then activate your environment:
 
 ```shell
-source my_env/bin/activate
+source sdk-docs-env/bin/activate
 ```
 
 Finally install the following dependencies by running this command:
