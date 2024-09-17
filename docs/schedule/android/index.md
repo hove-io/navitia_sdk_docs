@@ -168,11 +168,11 @@ Router.getInstance()
 
 #### Bookmark
 
-This module communicates with [Bookmark](../../bookmark/) module in order to display favorite stations and POIs. You should enable the `bookmark_mode` parameter in the [features configuration](../../getting_started/#schedule-features).
+This module communicates with [Bookmark](../../bookmark/android) module in order to display favorite stations. You should enable the `bookmark_mode` parameter in the [features configuration](../../getting_started/#schedule-features).
 
 #### Journey
 
-This module communicates with [Journey](../../journey/) module in order to get directions for a chosen itinerary. You should enable the `go_from_go_to` parameter in the [features configuration](../../getting_started/#schedule-features).<br>
+This module communicates with [Journey](../../journey/android) module in order to get directions for a chosen itinerary. You should enable the `go_from_go_to` parameter in the [features configuration](../../getting_started/#schedule-features).<br>
 
 The following method from the `AppRouter.UI` interface should be implemented by the host application to enable navigation to the Journey module or any other custom screens. Note that the parameters of these methods can be ignored as needed.
 
