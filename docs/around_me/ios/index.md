@@ -187,7 +187,12 @@ Router.shared.register(bookmark: Bookmark.shared.bookmarkRouter)
 
 :octicons-arrow-right-24: Methods<br>
 
-The following methods from the `CustomAroundMeBookmarkDelegate` interface should be implemented by the host application to enable navigation to the Bookmark module or any other custom screen. Note that the parameters of these methods can be omitted as needed. If you don't implement this protocol, the Bookmark module will be shown.
+The following methods from the `CustomAroundMeBookmarkDelegate` interface should be implemented by the host application to enable navigation to the Bookmark module or any other custom screen. Note that the parameters of these methods can be omitted as needed. 
+
+!!! warning "Warning"
+
+    If you don't implement this protocol, the Bookmark module will be shown.
+
 
 This method is called after click on the favorite home shortcut button, in case it is empty.
 ``` swift
