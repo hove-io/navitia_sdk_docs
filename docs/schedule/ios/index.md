@@ -60,15 +60,15 @@ You can also call the `initialize()` method with the global JSON configuration f
 
     ```swift
     do {
-      try Schedule.shared.initialize(
-        token: "your_token", 
-        configurationJsonFile: "schedule_configuration.json"
-      )                                                               
+        try Schedule.shared.initialize(
+            token: "your_token", 
+            configurationJsonFile: "schedule_configuration.json"
+        )                                                               
     } catch {
-      Logger.error("%@", String(
-        format: "Schedule SDK cannot be initialized! %@", 
-        error.localizedDescription
-      ))
+        Logger.error("%@", String(
+            format: "Schedule SDK cannot be initialized! %@", 
+            error.localizedDescription
+        ))
     }                                   
     ```
 
@@ -76,42 +76,40 @@ You can also call the `initialize()` method with the global JSON configuration f
 
     ```swift
     do {
-      let transportCategories = [TransportCategory(
-        modules: ["schedule"],
-        iconRes: "ic_section_mode_metro",
-        nameRes: "metro",
-        selected: true,
-        modes: [TransportCategoryMode(
-          physical: TransportPhysicalMode(
-            id: "physical_mode:Metro", 
-            nameRes: "metro"
-          ),
-          commercial: TransportCommercialMode(
-            id: "commercial_mode:Metro", 
-            name: "Metro"
-          )
-        )],
-        firstSectionModes: ["walking"],
-        lastSectionModes: ["walking"]
-      )]
-
-      let scheduleColorsConfiguration = ScheduleColorsConfiguration(
-        primaryColor: "#88819f", 
-        secondaryColor: "#8faa96"
-      )
+        let transportCategories = [TransportCategory(
+            modules: ["schedule"],
+            iconRes: "ic_section_mode_metro",
+            nameRes: "metro",
+            selected: true,
+            modes: [TransportCategoryMode(
+                physical: TransportPhysicalMode(
+                    id: "physical_mode:Metro", 
+                    nameRes: "metro"
+                ),
+                commercial: TransportCommercialMode(
+                    id: "commercial_mode:Metro", 
+                    name: "Metro"
+                )
+            )],
+            firstSectionModes: ["walking"],
+            lastSectionModes: ["walking"])]
+        let scheduleColorsConfiguration = ScheduleColorsConfiguration(
+            primaryColor: "#88819f", 
+            secondaryColor: "#8faa96"
+        )
                                                                           
-      try Schedule.shared.initialize(
-        coverage: "fr-idf",
-        token: "your_token",
-        env: "PROD",
-        colors: scheduleColorsConfiguration,
-        transportCategories: transportCategories
-      )                                                                  
+        try Schedule.shared.initialize(
+            coverage: "fr-idf",
+            token: "your_token",
+            env: "PROD",
+            colors: scheduleColorsConfiguration,
+            transportCategories: transportCategories
+        )                                                                  
     } catch {
-      Logger.error("%@", String(
-        format: "Schedule SDK cannot be initialized! %@", 
-        error.localizedDescription
-      ))
+        Logger.error("%@", String(
+            format: "Schedule SDK cannot be initialized! %@", 
+            error.localizedDescription
+        ))
     }                                   
     ```
 
@@ -157,9 +155,9 @@ To do this, the host application must initialize `Router`. This singleton will e
 
 ``` swift
 try Router.shared
-  .register(schedule: Schedule.shared.scheduleRouter)
-  ... // Register modules and/or app
-  .initialize()
+    .register(schedule: Schedule.shared.scheduleRouter)
+    ... // Register modules and/or app
+    .initialize()
 ```
 
 ### Modules
