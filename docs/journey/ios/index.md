@@ -146,7 +146,7 @@ If you want to use the `rootViewController` as a `ChildViewController` of your `
 
     ```swift
     yourViewController.addChild(UINavigationController(
-      rootViewController: journeyViewController
+    	rootViewController: journeyViewController
     ))
     ```
 

@@ -96,16 +96,16 @@ You can also call the `initialize()` method with the global JSON configuration f
             lastSectionModes: ["walking"]
         )]
         let trafficColorsConfiguration = TrafficColorsConfiguration(
-              primaryColor: "#88819f", 
-              secondaryColor: "#8faa96"
+            primaryColor: "#88819f", 
+            secondaryColor: "#8faa96"
         )
                                                                           
         try Traffic.shared.initialize(
-              coverage: "fr-idf",
-              token: "your_token",
-              env: "PROD",
-              colors: trafficColorsConfiguration,
-              transportCategories: transportCategories
+         	coverage: "fr-idf",
+            token: "your_token",
+            env: "PROD",
+            colors: trafficColorsConfiguration,
+            transportCategories: transportCategories
         )                                                                  
     } catch {
         Logger.error("%@", String(
@@ -144,7 +144,7 @@ This module has a single entry point. The parameter `showBack` handles the back 
 
 ```swift
 guard let trafficViewController = Traffic.shared.rootViewController else {
-  return nil
+	return nil
 }
 trafficViewController.showBack = false // Hide back button embedded in the first screen
 ```
@@ -161,6 +161,6 @@ If you want to use the `rootViewController` as a `ChildViewController` of your `
 
     ```swift
     yourViewController.addChild(UINavigationController(
-      rootViewController: trafficViewController
+    	rootViewController: trafficViewController
     ))
     ```
