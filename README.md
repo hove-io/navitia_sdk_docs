@@ -4,16 +4,30 @@ The documentation about Navitia SDK modules for iOS and Android is accessible th
 
 ## Setup
 
-Install the following dependencies by running these commands:
+First set up a virtual environment by the following commands:
 
-- `pip3 install mkdocs`
-- `pip3 install mkdocs-material`
-- `pip3 install mkdocs-exclude`
+```shell
+python -m venv sdk-docs-env
+```
+
+Then activate your environment:
+
+```shell
+source sdk-docs-env/bin/activate
+```
+
+Finally install the following dependencies by running this command:
+
+```shell
+pip install -r requirements.txt
+```
 
 ## Run
 
 To run the website on your machine, execute the following command:
 
-- `mkdocs serve`
+```shell
+mkdocs serve
+```
 
 Run this URL `http://127.0.0.1:8000/navitia_sdk_docs/` in your browser.

@@ -61,9 +61,15 @@ You can also call the `initialize()` method with the global JSON configuration f
 
     ```swift
     do {
-        try JourneySdk.shared.initialize(token: "your_token", configurationJsonFile: "journey_configuration.json")                                                               
+        try JourneySdk.shared.initialize(
+            token: "your_token", 
+            configurationJsonFile: "journey_configuration.json"
+        )                                                               
     } catch {
-        Logger.error("%@", String(format: "Journey SDK cannot be initialized! %@", error.localizedDescription))
+        Logger.error("%@", String(
+            format: "Journey SDK cannot be initialized! %@", 
+            error.localizedDescription
+        ))
     }                                   
     ```
 
@@ -71,26 +77,41 @@ You can also call the `initialize()` method with the global JSON configuration f
 
     ```swift
     do {
-        let transportCategories = [TransportCategory(modules: ["journey"],
-                                                     iconRes: "ic_section_mode_metro",
-                                                     nameRes: "metro",
-                                                     selected: true,
-                                                     modes: [TransportCategoryMode(physical: TransportPhysicalMode(id "physical_mode:Metro"),
-                                                                                   commercial: TransportCommercialMode(id: "commercial_mode:Metro", name: "Metro"))],
-                                                     networks: [],
-                                                     firstSectionModes: ["walking"],
-                                                     lastSectionModes: ["walking"],
-                                                     directPathModes: ["walking"],
-                                                     addPoiInfos: [])]
-        let journeyColorsConfiguration = JourneyColorsConfiguration(primary: "#88819f", secondary: "#8faa96")
+        let transportCategories = [TransportCategory(
+            modules: ["journey"],
+            iconRes: "ic_section_mode_metro",
+            nameRes: "metro",
+            selected: true,
+            modes: [TransportCategoryMode(
+                physical: TransportPhysicalMode(id "physical_mode:Metro"),
+                commercial: TransportCommercialMode(
+                    id: "commercial_mode:Metro", 
+                    name: "Metro"
+                )
+            )],
+            networks: [],
+            firstSectionModes: ["walking"],
+            lastSectionModes: ["walking"],
+            directPathModes: ["walking"],
+            addPoiInfos: []
+        )]
+        let journeyColorsConfiguration = JourneyColorsConfiguration(
+            primary: "#88819f", 
+            secondary: "#8faa96"
+        )
                                                                           
-        try JourneySdk.shared.initialize(coverage: "fr-idf",
-                                        token: "your_token",
-                                        env: "PROD",
-                                        colors: journeyColorsConfiguration,
-                                        transportCategories: transportCategories)                                                                  
+        try JourneySdk.shared.initialize(
+            coverage: "fr-idf",
+            token: "your_token",
+            env: "PROD",
+            colors: journeyColorsConfiguration,
+            transportCategories: transportCategories
+        )                                                                  
     } catch {
-        Logger.error("%@", String(format: "Journey SDK cannot be initialized! %@", error.localizedDescription))
+        Logger.error("%@", String(
+            format: "Journey SDK cannot be initialized! %@", 
+            error.localizedDescription
+        ))
     }                                   
     ```
 
@@ -124,7 +145,9 @@ If you want to use the `rootViewController` as a `ChildViewController` of your `
 === "Using a `ChildViewController`"
 
     ```swift
-    yourViewController.addChild(UINavigationController(rootViewController: journeyViewController))
+    yourViewController.addChild(UINavigationController(
+    	rootViewController: journeyViewController
+    ))
     ```
 
 ### :fontawesome-solid-file-code: `JourneysRequest`
@@ -223,8 +246,9 @@ To do this, the host application must initialize `Router`. This singleton will e
 
 ``` swift
 try Router.shared
-          ... // Register modules and/or app
-          .initialize()
+    .register(journey: JourneySdk.shared.journeyRouter)
+    ... // Register modules and/or app
+    .initialize()
 ```
 
 ### Application
@@ -241,13 +265,13 @@ The protocol provides the following methods:
 
 ``` swift
 func allowExternalViewInjectionFor(screen: InjectableScreen, inputData: Any?) -> ExternalViewInjectionState {
-  // Allow or not the external view injection
+  	// Allow or not the external view injection
 }
 ```
 
 ``` swift
 func buildExternalViewFor(screen: InjectableScreen, inputData: Any?) -> UIView? {
-  // Put the view that needs to be injected in the injectable screen
+  	// Put the view that needs to be injected in the injectable screen
 }
 ```
 
@@ -360,11 +384,18 @@ func onLaunchExternalNavigationApp(from: CLLocationCoordinate2D, to: CLLocationC
 
 :octicons-arrow-right-24: Enabling<br>
 
-This module communicates with [Bookmark](../../bookmark/) module in order to display favorite stations and POIs. You should enable the `bookmark_mode` parameter in the [features configuration](../../getting_started/#journey-features).<br>
+Journey module communicates with [Bookmark](../../bookmark/ios) module in order to display favorite stations, journeys and POIs. You should enable the `bookmark_mode` parameter in the [features configuration](../../getting_started/#journey-features).<br>
 
 :octicons-arrow-right-24: Methods<br>
 
 The following methods from the `CustomJourneyBookmarkDelegate` interface should be implemented by the host application to enable navigation to the Bookmark module or any other custom screen. Note that the parameters of these methods can be omitted as needed.
+
+!!! warning "Warning"
+
+    If you don't implement this protocol, the Bookmark module will be shown.
+
+
+This method is called after click on the favorite home shortcut button, in case it is empty.
 
 ``` swift
 func onHomeAddressCompletionRequested(module: Router.BookmarkLinkedModule) {
@@ -375,6 +406,8 @@ func onHomeAddressCompletionRequested(module: Router.BookmarkLinkedModule) {
 | Param | Type | Description | Value |
 | --- | --- | --- | --- |
 | `module` | `Router.BookmarkLinkedModule` | Module triggering the method call | `Router.BookmarkLinkedModule.aroundMe` or `Router.BookmarkLinkedModule.journey` |
+
+This method is called after click on the favorite work shortcut button, in case it is empty.
 
 ``` swift
 func onWorkAddressCompletionRequested(module: Router.BookmarkLinkedModule) {

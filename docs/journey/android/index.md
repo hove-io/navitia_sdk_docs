@@ -403,7 +403,7 @@ override fun openExternalNavigation(
 
 :octicons-arrow-right-24: Enabling<br>
 
-This module communicates with [Bookmark](../../bookmark/) module in order to display favorite stations and POIs. You should enable the `bookmark_mode` parameter in the [features configuration](../../getting_started/#journey-features).<br>
+This module communicates with [Bookmark](../../bookmark/android) module in order to display favorite stations, journeys and POIs. You should enable the `bookmark_mode` parameter in the [features configuration](../../getting_started/#journey-features).<br>
 
 :octicons-arrow-right-24: Methods<br>
 

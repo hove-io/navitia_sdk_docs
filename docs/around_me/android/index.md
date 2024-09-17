@@ -204,7 +204,7 @@ override fun openAccountViaHost() {
 
 :octicons-arrow-right-24: Enabling<br>
 
-This module communicates with [Bookmark](../../bookmark/) module in order to display favorite stations and POIs. You should enable the `bookmark_mode` parameter in the [features configuration](../../getting_started/#around-me-features).<br>
+This module communicates with [Bookmark](../../bookmark/android) module in order to display favorite stations, journeys and POIs. You should enable the `bookmark_mode` parameter in the [features configuration](../../getting_started/#around-me-features).<br>
 
 :octicons-arrow-right-24: Methods<br>
 
@@ -245,7 +245,7 @@ override fun openFavoriteWorkAddViaHost(linkedModule: LinkedModule) {
 
 :octicons-arrow-right-24: Enabling<br>
 
-This module communicates with [Journey](../../journey/) module in order to get directions for a chosen itinerary. You should enable the `journey_mode` and the `go_from_go_to` parameter in the [features configuration](../../getting_started/#around-me-features).<br>
+This module communicates with [Journey](../../journey/android) module in order to get directions for a chosen itinerary. You should enable the `journey_mode` and the `go_from_go_to` parameter in the [features configuration](../../getting_started/#around-me-features).<br>
 Another way to communicate with is through the [Map](../screens/#map) screen and precisely the _Where are we going?_ button, this feature should also be enabled by setting the `where_shall_we_go` in the [features configuration](../../getting_started/#around-me-features) to `true`.<br>
 
 :octicons-arrow-right-24: Methods<br>
@@ -274,7 +274,7 @@ override fun openJourneysViaHost(
 
 :octicons-arrow-right-24: Enabling<br>
 
-This module communicates with [Schedule](../../traffic/) module in order to show line and station search. You should enable the `schedule_mode` parameter in the [features configuration](../../getting_started/#around-me-features).
+This module communicates with [Schedule](../../traffic/android) module in order to show line and station search. You should enable the `schedule_mode` parameter in the [features configuration](../../getting_started/#around-me-features).
 
 :octicons-arrow-right-24: Method<br>
 
@@ -290,7 +290,7 @@ override fun openScheduleSearchViaHost() {
 
 :octicons-arrow-right-24: Enabling<br>
 
-This module communicates with [Traffic](../../traffic/) module in order to easily access traffic information. You should enable the `traffic_mode` parameter in the [features configuration](../../getting_started/#around-me-features).<br>
+This module communicates with [Traffic](../../traffic/android) module in order to easily access traffic information. You should enable the `traffic_mode` parameter in the [features configuration](../../getting_started/#around-me-features).<br>
 
 :octicons-arrow-right-24: Method<br>
 
