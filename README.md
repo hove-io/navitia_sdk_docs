@@ -30,4 +30,4 @@ To run the website on your machine, execute the following command:
 mkdocs serve
 ```
 
-Run this URL ``http://127.0.0.1:8000/navitia_sdk_docs`/` in your browser.
+Run this URL `http://127.0.0.1:8000/navitia_sdk_docs/` in your browser.
