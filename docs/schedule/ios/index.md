@@ -92,7 +92,9 @@ You can also call the `initialize()` method with the global JSON configuration f
                 )
             )],
             firstSectionModes: ["walking"],
-            lastSectionModes: ["walking"])]
+            lastSectionModes: ["walking"]
+		)]
+
         let scheduleColorsConfiguration = ScheduleColorsConfiguration(
             primaryColor: "#88819f", 
             secondaryColor: "#8faa96"
@@ -127,7 +129,7 @@ This module has a single entry point. The parameter `showBack` handles the back 
 
 ```swift
 guard let scheduleViewController = Schedule.shared.rootViewController else {
-  return nil
+	return nil
 }
 scheduleViewController.showBack = false // Hide back button embedded in the first screen
 ```

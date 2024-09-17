@@ -130,7 +130,7 @@ This module has a single entry point. The parameter `showBack` handles the back 
 
 ``` swift
 guard let aroundMeViewController = AroundMe.shared.rootViewController else {
-  return nil
+    return nil
 }
 aroundMeViewController.showBack = false // Hide back button embedded in the first screen
 ```

@@ -60,15 +60,15 @@ You can also call the `initialize()` method with the global JSON configuration f
 
     ```swift
     do {
-      try Bookmark.shared.initialize(
-        token: "your_token", 
-        configurationJsonFile: "aroundme_configuration.json"
-      )                                                               
+    	try Bookmark.shared.initialize(
+        	token: "your_token", 
+        	configurationJsonFile: "aroundme_configuration.json"
+      	)                                                               
     } catch {
-      Logger.error("%@", String(
-        format: "Bookmark SDK cannot be initialized! %@", 
-        error.localizedDescription
-      ))
+      	Logger.error("%@", String(
+        	format: "Bookmark SDK cannot be initialized! %@", 
+        	error.localizedDescription
+      	))
     }                                   
     ```
 
@@ -76,43 +76,43 @@ You can also call the `initialize()` method with the global JSON configuration f
 
     ```swift
     do {
-      let transportCategories = [TransportCategory(
-        modules: ["aroundme"],
-        iconRes: "ic_section_mode_metro",
-        nameRes: "metro",
-        selected: true, 
-        modes: [TransportCategoryMode(
-          physical: TransportPhysicalMode(
-            id: "physical_mode:Metro", 
-            nameRes: "metro"
-          ),
-          commercial: TransportCommercialMode(
-            id: "commercial_mode:Metro", 
-            name: "Metro"
-          )
-        )],
-        firstSectionModes: ["walking"],
-        lastSectionModes: ["walking"]
-      )]
-	  
-      let bookmarkColorsConfiguration = AroundMeColorsConfiguration(
-        primaryColor: "#88819f", 
-        secondaryColor: "#8faa96"
-      )
+      	let transportCategories = [TransportCategory(
+        	modules: ["aroundme"],
+        	iconRes: "ic_section_mode_metro",
+        	nameRes: "metro",
+        	selected: true, 
+        	modes: [TransportCategoryMode(
+          		physical: TransportPhysicalMode(
+            		id: "physical_mode:Metro", 
+            		nameRes: "metro"
+          		),
+          		commercial: TransportCommercialMode(
+            		id: "commercial_mode:Metro", 
+            		name: "Metro"
+          		)
+        	)],
+        	firstSectionModes: ["walking"],
+        	lastSectionModes: ["walking"]
+   		)]
+
+    	let bookmarkColorsConfiguration = AroundMeColorsConfiguration(
+        	primaryColor: "#88819f", 
+        	secondaryColor: "#8faa96"
+    	)
                                                                           
-      try Bookmark.shared.initialize(
-        coverage: "fr-idf",
-        token: "your_token",
-        env: "PROD",
-        colors: bookmarkColorsConfiguration,
-        transportCategories: transportCategories
-      )                                                                  
-    } catch {
-      Logger.error("%@", String(
-        format: "Bookmark SDK cannot be initialized! %@", 
-        error.localizedDescription
-      ))
-    }                                   
+    	try Bookmark.shared.initialize(
+        	coverage: "fr-idf",
+        	token: "your_token",
+        	env: "PROD",
+        	colors: bookmarkColorsConfiguration,
+        	transportCategories: transportCategories
+    	)                                                                  
+	} catch {
+    	Logger.error("%@", String(
+        	format: "Bookmark SDK cannot be initialized! %@", 
+        	error.localizedDescription
+      	))
+	}                                   
     ```
 
 ### Events tracking
@@ -129,7 +129,7 @@ This module has a single entry point. The parameter `showBack` handles the back 
 
 ``` swift
 guard let bookmarkViewController = Bookmark.shared.rootViewController else {
-  return nil
+	return nil
 }
 bookmarkViewController.showBack = false // Hide back button embedded in the first screen
 ```

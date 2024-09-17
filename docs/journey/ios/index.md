@@ -265,13 +265,13 @@ The protocol provides the following methods:
 
 ``` swift
 func allowExternalViewInjectionFor(screen: InjectableScreen, inputData: Any?) -> ExternalViewInjectionState {
-  // Allow or not the external view injection
+  	// Allow or not the external view injection
 }
 ```
 
 ``` swift
 func buildExternalViewFor(screen: InjectableScreen, inputData: Any?) -> UIView? {
-  // Put the view that needs to be injected in the injectable screen
+  	// Put the view that needs to be injected in the injectable screen
 }
 ```
 
