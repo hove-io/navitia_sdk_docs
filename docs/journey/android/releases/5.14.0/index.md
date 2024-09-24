@@ -13,7 +13,7 @@ title: Journey Android 5.14.0 - Changelog - Navitia SDK Docs
 - Displays a shimmer effect while loading next departures
 
 #### Fixes
-- Remove the systematic use of the default `dataFreshness` value in `JourneysRequest`.
+- Remove the systematic use of the default `dataFreshness` value in `JourneysRequest`
 - Show a dialog feedback after removing a journey from favorites
 - Put a journey with a car and an on demand transport in the correct section
 - Put a journey with a bike sharing service and a public transport in the correct section
