@@ -373,6 +373,7 @@ The following are the possible configuration parameters:
 | --- |:---:| --- | :---: | :---: |
 | `go_from_go_to` | :material-close: | Show/hide the go from/go to buttons | `Boolean` | `true` |
 | `next_departures` | :material-close: | Show/hide the next departures | [`Next departures`](#next-departures) | - |
+| `see_all_schedules` | :material-close: | Show/hide the "See all schedules" b | `Boolean` | `true` |
 | `tabs` | :material-close: | Enable/disable tabs | [`Bookmark tabs`](#bookmark-tabs) | - |
 
 <h4>Bookmark tabs</h4>
