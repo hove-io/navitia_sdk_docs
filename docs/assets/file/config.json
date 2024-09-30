@@ -705,6 +705,7 @@
                 "frequency": 30
             },
             "station_map": true,
+            "traffic_mode": true,
             "transport_networks": true,
             "vehicle_positions": {
                 "frequency": 30
