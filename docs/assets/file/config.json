@@ -653,6 +653,7 @@
             "next_departures": {
                 "frequency": 30
             },
+            "see_all_schedules": true,
             "tabs": {
                 "transports": true,
                 "journeys": true,

@@ -244,14 +244,14 @@ The following are the possible configuration parameters:
 | `types` | :material-check: | Subcategory POI types | [`[POI Subcategory Type]`](#poi-subcategory-type) | - |
 | `booking` | :material-close: | POI booking resources | [POI booking resources](#poi-booking-resources) | - |
 
-<h4>POI subcategory type</h4>
+##### POI subcategory type
 
 | Name | Required | Description | Type | Example |
 | --- |:---:| --- | :---: | :---: |
 | `name_res` | :material-check: | Localized POI subcategory type name id | `String` | `"scooter"` |
 | `poi_type_id` | :material-check: | Navitia POI subcategory type id | `String` | `"poi_type:amenity:bicycle_rental"` |
 
-<h4>POI booking resources</h4>
+##### POI booking resources
 
 | Name | Required | Description | Type | Example |
 | --- |:---:| --- | :---: | :---: |
@@ -335,32 +335,32 @@ The following are the possible configuration parameters:
 | `account_mode` | :material-close: | Enable/disable the account feature | `Boolean` | 
 -->
 
-<h4>Default location</h4>
+##### Default location
 
 | Name | Required | Description | Type | Example |
 | --- |:---:| --- | :---: | :---: |
 | `lat` | :material-check: | The latitude of the default location | `String` | `"48.846790"` |
 | `lon` | :material-check: | The longitude of the default location | `String` | `"2.377090"` |
 
-<h4>Next departures</h4>
+##### Next departures
 
 | Name | Required | Description | Type | Example |
 | --- |:---:| --- | :---: | :---: |
 | `frequency`| :material-check: | frequency of the next departures request in seconds | `Int` | `30` |
 
-<h4>Park availability</h4>
+##### Park availability
 
 | Name | Required | Description | Type | Example |
 | --- |:---:| --- | :---: | :---: |
 | `frequency`| :material-check: | frequency of the park availability requests in seconds | `Int` | `30` |
 
-<h4>Vehicle positions</h4>
+##### Vehicle positions
 
 | Name | Required | Description | Type | Example |
 | --- |:---:| --- | :---: | :---: |
 | `frequency` | :material-check: | frequency of the vehicle positions request in seconds | `String` | 30 |
 
-<h4>Bookmark options</h4>
+##### Bookmark options
 
 | Name | Required | Description | Type | Example |
 | --- |:---:| --- | :---: | :---: |
@@ -373,9 +373,10 @@ The following are the possible configuration parameters:
 | --- |:---:| --- | :---: | :---: |
 | `go_from_go_to` | :material-close: | Show/hide the go from/go to buttons | `Boolean` | `true` |
 | `next_departures` | :material-close: | Show/hide the next departures | [`Next departures`](#next-departures) | - |
+| `see_all_schedules` | :material-close: | Show/hide the "See all schedules" b | `Boolean` | `true` |
 | `tabs` | :material-close: | Enable/disable tabs | [`Bookmark tabs`](#bookmark-tabs) | - |
 
-<h4>Bookmark tabs</h4>
+##### Bookmark tabs
 
 | Name | Required | Description | Type | Example |
 | --- |:---:| --- | :---: | :---: |
@@ -408,7 +409,7 @@ The following are the possible configuration parameters:
 | `transport_networks` | :material-close: | Show/hide the public transport network | `Boolean` | `false` |
 | `vehicle_positions`| :material-close: | Show bus vehicle positions on roadmap | [`Vehicle positions`](#vehicle-positions) | - |
 
-<h4>Traffic options (Journey)</h4>
+##### Traffic options (Journey)
 
 | Name | Required | Description | Type | Example |
 | --- |:---:| --- | :---: | :---: |
@@ -435,7 +436,7 @@ The following are the possible configuration parameters:
 | `networks_filter` | :material-close: | Show/hide the networks selector | `Boolean` |
 | `transport_networks` | :material-close: | Enable/disable showing network on lines | `Boolean` | - |
 
-<h4>Alert subscription</h4>
+##### Alert subscription
 
 | Name | Required | Description | Type | Example |
 | --- |:---:| --- | :---: | :---: |
@@ -462,7 +463,7 @@ The following are the possible configuration parameters:
 | `numeric` | :material-close: | Custom numeric font | [`Font category`](#font-category) |
 | `alphanumeric` | :material-close: | Custom alphanumeric font | [`Font category`](#font-category) |
 
-<h4>Font category</h4>
+##### Font category
 
 | Name | Required | Description | Type |
 | --- |:---:| --- | :---: |
@@ -475,7 +476,7 @@ The following are the possible configuration parameters:
 | `light` | :material-close: | Custom numeric font for light typeface | [`Font Typeface`](#font-typeface) |
 | `light_italic` | :material-close: | Custom numeric font for light italic typeface | [`Font Typeface`](#font-typeface) |
 
-<h4>Font Typeface</h4>
+##### Font Typeface
 
 | Name | Required | Description | Type | Platform | Example |
 | --- |:---:| --- | :---: | :---: | :---: |
