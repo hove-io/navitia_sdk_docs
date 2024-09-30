@@ -240,7 +240,7 @@ The following are the possible configuration parameters:
 | `name_res` | :material-check: | Localized POI subcategory name id | `String` | `"bike_stations"` |
 | `icon_res` | :material-check: | POI subcategory icon id | `String` | `"ic_bike_stations"` |
 | `selected` | :material-close: | Whether the subcategory is selected by default or not | `Boolean` | `true` |
-| `group` | :material-check: | Subcategory POI group | `String` | `STANDARD`, `TRANSPORT_MODE`, `FREE_FLOATING` |
+| `group` | :material-check: | Subcategory POI group | `String` | `STANDARD`, `QUICK_FILTER_FREE_FLOATING`,  `QUICK_FILTER_POI` |
 | `types` | :material-check: | Subcategory POI types | [`[POI Subcategory Type]`](#poi-subcategory-type) | - |
 | `booking` | :material-close: | POI booking resources | [POI booking resources](#poi-booking-resources) | - |
 
