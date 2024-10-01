@@ -573,7 +573,6 @@
                 {
                     "icon_res": "",
                     "name_res": "",
-                    "zoom_level": 16.5,
                     "selected": true,
                     "group": "STANDARD",
                     "types": [
@@ -705,6 +704,7 @@
                 "frequency": 30
             },
             "station_map": true,
+            "traffic_mode": true,
             "transport_networks": true,
             "vehicle_positions": {
                 "frequency": 30

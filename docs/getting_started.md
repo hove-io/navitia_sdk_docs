@@ -424,6 +424,7 @@ The following are the possible configuration parameters:
 | `max_history` | :material-close: | Define the max history items | `Int` |
 | `networks_filter` | :material-close: | Show/hide the networks selector | `Boolean` |
 | `next_departures` | :material-close: | Show/hide the next departures | [`Next departures`](#next-departures) |
+| `traffic_mode` | :material-close: | Enable/disable the traffic feature | `Boolean` |
 | `transport_networks` | :material-close: | Enable/disable grouping lines by network | `Boolean` |
 | `vehicle_positions`| :material-close: | Show bus vehicle positions on map | [`Vehicle positions`](#vehicle-positions) |
 
