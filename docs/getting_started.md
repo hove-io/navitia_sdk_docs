@@ -67,14 +67,14 @@ The following are the possible configuration parameters:
 | `timezone` | :material-check: | Timezone | `String` | `Europe/Paris` | All |
 | `env` | :material-check: | Navitia environment | `String` | `PROD`, `CUSTOMER` | All |
 | `colors` | :material-check: | Colors configuration | [`Colors`](#colors) | - | UI modules |
-| `transport_categories` | :material-check: | List of supported transport modes | [`[Transport category]`](#transport-category) | - | UI modules |
-| `poi_categories` | :material-close: | List of supported POIs | [`[Poi category]`](#poi-category) | - | Around Me, Bookmark |
+| `transport_categories` | :material-check: | List of supported transport modes | [`Transport category[]`](#transport-category) | - | UI modules |
+| `poi_categories` | :material-close: | List of supported POIs | [`Poi category[]`](#poi-category) | - | Around Me, Bookmark |
 | `features_configuration` | :material-close: | Enable/disable different module features | [`Features`](#features) | - | All |
 | `fonts` | :material-close: | Override the fonts used in UI modules | [`Fonts`](#fonts) | - | UI modules |
-| `lines_resources` | :material-close: | Resources ids for transport lines | [`[Line resource]`](#line-resource) | - | UI modules |
-| `modes_resources` | :material-close: | Resources ids for transport modes | [`[Mode resource]`](#mode-resource) | - | UI modules |
-| `providers_resources` | :material-close: | Resources ids for data providers | [`[Provider resource]`](#provider-resource) | - | UI modules |
-| `networks_resources` | :material-close: | Resources ids for data networks | [`[Network resource]`](#network-resource) | - | UI modules |
+| `lines_resources` | :material-close: | Resources ids for transport lines | [`Line resource[]`](#line-resource) | - | UI modules |
+| `modes_resources` | :material-close: | Resources ids for transport modes | [`Mode resource[]`](#mode-resource) | - | UI modules |
+| `providers_resources` | :material-close: | Resources ids for data providers | [`Provider resource[]`](#provider-resource) | - | UI modules |
+| `networks_resources` | :material-close: | Resources ids for data networks | [`Network resource[]`](#network-resource) | - | UI modules |
 | `icons_resources` | :material-close: | Resources ids for some specific icons | [`Icon resource`](#icon-resource) | - | UI modules |
 | `titles_resources` | :material-close: | Resources ids for screen titles | [`Title resource`](#title-resource) | - | UI modules |
 
@@ -194,16 +194,16 @@ The following are the possible configuration parameters:
 
 | Name | Required | Description | Type | Example | Target modules |
 | --- |:---:| --- | :---: | :---: | :---: |
-| `modules` | :material-check: | To set the target modules | `[String]` | `["aroundme","journey"]` | `ALL` |
+| `modules` | :material-check: | To set the target modules | `String[]` | `["aroundme","journey"]` | `ALL` |
 | `name_res` | :material-check: | To set the localized resource id | `String` | `transport_name_res` | `ALL` |
 | `icon_res` | :material-check: | To set the icon resource id | `String` | `ic_metro` | `ALL` |
 | `selected` | :material-close: | Whether the transport mode is selected by default or not | `Boolean` | `true` | `ALL` |
 | `modes` | :material-close: | List of supported transport modes | [`Transport Mode`](#transport-mode) | - | `ALL` |
-| `networks` | :material-close: | List of supported networks | `[String]` | `["network:BIL:27"]` | `Schedule` |
-| `first_section_modes` | :material-close: | List of first section modes | `[String]` | `["bike", "car"]` | `Journey` |
-| `last_section_modes` | :material-close: | List of last section modes | `[String]` | `["ridesharing", "bss"]` | `Journey` |
-| `direct_path_modes` | :material-close: | List of direct path modes | `[String]` | `["taxi", "car_no_park"]` | `Journey` |
-| `add_poi_infos` | :material-close: | List of requested extra POI data | `[String]` | `["bss_stands", "car_park"]` | `Journey` |
+| `networks` | :material-close: | List of supported networks | `String[]` | `["network:BIL:27"]` | `Schedule` |
+| `first_section_modes` | :material-close: | List of first section modes | `String[]` | `["bike", "car"]` | `Journey` |
+| `last_section_modes` | :material-close: | List of last section modes | `String[]` | `["ridesharing", "bss"]` | `Journey` |
+| `direct_path_modes` | :material-close: | List of direct path modes | `String[]` | `["taxi", "car_no_park"]` | `Journey` |
+| `add_poi_infos` | :material-close: | List of requested extra POI data | `String[]` | `["bss_stands", "car_park"]` | `Journey` |
 
 #### Transport mode
 
@@ -231,7 +231,7 @@ The following are the possible configuration parameters:
 | Name | Required | Description | Type | Example |
 | --- |:---:| --- | :---: | :---: |
 | `name_res` | :material-check: | Localized POI category name id | `String` | `"stations"` |
-| `subcategories` | :material-check: | List of POI subcategories | [`[POI subcategory]`](#poi-subcategory) | - |
+| `subcategories` | :material-check: | List of POI subcategories | [`POI subcategory[]`](#poi-subcategory) | - |
 
 #### POI subcategory
 
@@ -241,10 +241,10 @@ The following are the possible configuration parameters:
 | `icon_res` | :material-check: | POI subcategory icon id | `String` | `"ic_bike_stations"` |
 | `selected` | :material-close: | Whether the subcategory is selected by default or not | `Boolean` | `true` |
 | `group` | :material-check: | Subcategory POI group | `String` | `STANDARD`, `QUICK_FILTER_FREE_FLOATING`,  `QUICK_FILTER_POI` |
-| `types` | :material-check: | Subcategory POI types | [`[POI Subcategory Type]`](#poi-subcategory-type) | - |
+| `types` | :material-check: | Subcategory POI types. Can be a [POI type id](https://playground.navitia.io/play.html?request=https://api.navitia.io/v1/poi_types?) or a free floating type | `String[]`| `"poi_type:amenity:bicycle_rental"` or [one of those values](#poi-subcategory-free-floating-types) |
 | `booking` | :material-close: | POI booking resources | [POI booking resources](#poi-booking-resources) | - |
 
-##### POI subcategory type
+##### POI subcategory free floating types
 
 | Name | Required | Description | Type | Example |
 | --- |:---:| --- | :---: | :---: |
@@ -373,7 +373,7 @@ The following are the possible configuration parameters:
 | --- |:---:| --- | :---: | :---: |
 | `go_from_go_to` | :material-close: | Show/hide the go from/go to buttons | `Boolean` | `true` |
 | `next_departures` | :material-close: | Show/hide the next departures | [`Next departures`](#next-departures) | - |
-| `see_all_schedules` | :material-close: | Show/hide the "See all schedules" b | `Boolean` | `true` |
+| `see_all_schedules` | :material-close: | Show/hide the "See all schedules" | `Boolean` | `true` |
 | `tabs` | :material-close: | Enable/disable tabs | [`Bookmark tabs`](#bookmark-tabs) | - |
 
 ##### Bookmark tabs
@@ -393,7 +393,7 @@ The following are the possible configuration parameters:
 | `carbon` | :material-close: | Show/hide the itinerary carbon summary | `Boolean` | `true` |
 | `car_parking_highlight` | :material-close: | Show/hide the car parking in the journey solution | `Boolean` | `true` |
 | `car_traffic_jam` | :material-close: | Show/hide the car traffic jam in the journey solution and the roadmap | `Boolean` | `true` |
-| `disruption_contributors` | :material-close: | Define the list of disruption contributors id | `[String]` | `["shortterm.tr_idfm"]` |
+| `disruption_contributors` | :material-close: | Define the list of disruption contributors id | `String[]` | `["shortterm.tr_idfm"]` |
 | `external_navigation` | :material-close: | Enable/disable the navigation using external applications | `Boolean` | `true` |
 | `max_favorite_addresses` | :material-close: | Define the max favorite addresses | `Int` | `10` |
 | `max_favorite_pois` | :material-close: | Define the max favorite POIs | `Int` | `10` |
@@ -433,7 +433,7 @@ The following are the possible configuration parameters:
 | Name | Required | Description | Type | Example |
 | --- |:---:| --- | :---: | :---: |
 | `alert_subscription` | :material-close: | Alert subscription environment configuration | [`Alert subscription`](#alert-subscription) | - |
-| `disruption_contributors` | :material-close: | Define the list of disruption contributors id | `[String]` | `["shortterm.tr_idfm"]` |
+| `disruption_contributors` | :material-close: | Define the list of disruption contributors id | `String[]` | `["shortterm.tr_idfm"]` |
 | `networks_filter` | :material-close: | Show/hide the networks selector | `Boolean` |
 | `transport_networks` | :material-close: | Enable/disable showing network on lines | `Boolean` | - |
 
