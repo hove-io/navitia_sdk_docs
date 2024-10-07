@@ -576,10 +576,7 @@
                     "selected": true,
                     "group": "STANDARD",
                     "types": [
-                        {
-                            "name_res": "",
-                            "poi_type_id": ""
-                        }
+                        ""
                     ],
                     "booking": {
                         "title_res": ""
