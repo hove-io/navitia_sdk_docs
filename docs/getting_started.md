@@ -433,6 +433,7 @@ The following are the possible configuration parameters:
 | Name | Required | Description | Type | Example |
 | --- |:---:| --- | :---: | :---: |
 | `alert_subscription` | :material-close: | Alert subscription environment configuration | [`Alert subscription`](#alert-subscription) | - |
+| `application_periods` | :material-close: | Show/hide the disruption application date | `Boolean` |
 | `disruption_contributors` | :material-close: | Define the list of disruption contributors id | `String[]` | `["shortterm.tr_idfm"]` |
 | `networks_filter` | :material-close: | Show/hide the networks selector | `Boolean` |
 | `transport_networks` | :material-close: | Enable/disable showing network on lines | `Boolean` | - |
