@@ -712,6 +712,7 @@
                 "env": "",
                 "timezone": ""
             },
+            "application_periods": false,
             "disruption_contributors": [
                 ""
             ],
