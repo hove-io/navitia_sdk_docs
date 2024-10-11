@@ -573,14 +573,10 @@
                 {
                     "icon_res": "",
                     "name_res": "",
-                    "zoom_level": 16.5,
                     "selected": true,
                     "group": "STANDARD",
                     "types": [
-                        {
-                            "name_res": "",
-                            "poi_type_id": ""
-                        }
+                        ""
                     ],
                     "booking": {
                         "title_res": ""
@@ -653,6 +649,7 @@
             "next_departures": {
                 "frequency": 30
             },
+            "see_all_schedules": true,
             "tabs": {
                 "transports": true,
                 "journeys": true,
@@ -704,6 +701,7 @@
                 "frequency": 30
             },
             "station_map": true,
+            "traffic_mode": true,
             "transport_networks": true,
             "vehicle_positions": {
                 "frequency": 30
@@ -714,6 +712,7 @@
                 "env": "",
                 "timezone": ""
             },
+            "application_periods": false,
             "disruption_contributors": [
                 ""
             ],
