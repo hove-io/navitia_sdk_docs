@@ -398,7 +398,7 @@ The following are the possible configuration parameters:
 | `max_favorite_addresses` | :material-close: | Define the max favorite addresses | `Int` | `10` |
 | `max_favorite_pois` | :material-close: | Define the max favorite POIs | `Int` | `10` |
 | `max_history` | :material-close: | Define the max history items | `Int` | `10` |
-| `next_departures` | :material-close: | Show/hide the next departures | [`Next departures`](#next-departures) | - |
+| `next_departures` | :material-close: | Show/hide the next departures | [`Journey next departures`](#journey-next-departures) | - |
 | `price` | :material-close: | Show/hide the itinerary price | `Boolean` | `true` |
 | `ridesharing_price` | :material-close: | Show/hide the itinerary ridesharing price | `Boolean` | `true` |
 | `park_availability`| :material-close: | Configure bss and car parking availability requests | [`Park Availability`](#park-availability) |
@@ -408,6 +408,13 @@ The following are the possible configuration parameters:
 | `traffic` | :material-close: | Define Traffic module options | [`Traffic options`](#traffic-options-journey) | - |
 | `transport_networks` | :material-close: | Show/hide the public transport network | `Boolean` | `false` |
 | `vehicle_positions`| :material-close: | Show bus vehicle positions on roadmap | [`Vehicle positions`](#vehicle-positions) | - |
+
+##### Journey next departures
+
+| Name | Required | Description | Type | Example |
+| --- |:---:| --- | :---: | :---: |
+| `default` | :material-close: | Show/hide next departures in the list of journeys or in the guidance | [`Next departures`](#next-departures) | - |
+| `roadmap` | :material-close: | Show/hide next departures in the roadmap | [`Next departures`](#next-departures) | - |
 
 ##### Traffic options (Journey)
 

@@ -674,7 +674,12 @@
             "max_favorite_pois": 10,
             "max_history": 10,
             "next_departures": {
-                "frequency": 30
+                "default": {
+                    "frequency": 30
+                },
+                "roadmap": {
+                    "frequency": 30
+                }
             },
             "park_availability": {
                 "frequency": 30
