@@ -664,6 +664,7 @@
             "calories": true,
             "carbon": true,
             "car_parking_highlight": true,
+            "car_traffic_jam": true,
             "departure_time_shift": {
                 "earlier_minutes": 10,
                 "later_minutes": 50
