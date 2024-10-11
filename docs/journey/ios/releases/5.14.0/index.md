@@ -7,7 +7,7 @@ title: Journey iOS 5.14.0 - Changelog - Navitia SDK Docs
 <h2>🗓 25 Sept 2024</h2>
 
 #### Features
-- Add Traffic jam
+- Add configurable display of congestion for journeys including a car section
 
 #### Tasks
 - Improve accessibility
