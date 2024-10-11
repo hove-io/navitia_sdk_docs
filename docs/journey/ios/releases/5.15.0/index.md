@@ -6,10 +6,8 @@ title: Journey iOS 5.15.0 - Changelog - Navitia SDK Docs
 
 <h2>🗓 09 Oct 2024</h2>
 
-#### Features
-- Remove travel duration from tabs 
-
 #### Tasks
+- Remove travel duration from tabs 
 - Improve accessibility
 
 #### Fixes
