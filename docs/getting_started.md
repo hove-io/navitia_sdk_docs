@@ -391,6 +391,7 @@ The following are the possible configuration parameters:
 | `calories` | :material-close: | Show/hide the itinerary calories summary | `Boolean` | `false` |
 | `carbon` | :material-close: | Show/hide the itinerary carbon summary | `Boolean` | `true` |
 | `car_parking_highlight` | :material-close: | Show/hide the car parking in the journey solution | `Boolean` | `true` |
+| `car_traffic_jam` | :material-close: | Show/hide the car traffic in the journey solution | `Boolean` | `true` |
 | `disruption_contributors` | :material-close: | Define the list of disruption contributors id | `[String]` | `["shortterm.tr_idfm"]` |
 | `external_navigation` | :material-close: | Enable/disable the navigation using external applications | `Boolean` | `true` |
 | `max_favorite_addresses` | :material-close: | Define the max favorite addresses | `Int` | `10` |
