@@ -5,7 +5,7 @@ title: Journey iOS - Changelogs - Navitia SDK Docs
 # Journey iOS Changelogs
 
 * [v5.15.0](releases/5.15.0/index.md) (_09 Oct 2024_)
-* [v5.14.0](releases/5.14.0/index.md) (_24 Sept 2024_)
+* [v5.14.0](releases/5.14.0/index.md) (_24 Sep 2024_)
 * [v5.13.0](releases/5.13.0/index.md) (_24 Jul 2024_)
 * [v5.12.1](releases/5.12.1/index.md) (_24 Jun 2024_)
 * [v5.12.0](releases/5.12.0/index.md) (_13 Jun 2024_)
