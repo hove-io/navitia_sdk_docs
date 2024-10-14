@@ -38,11 +38,11 @@ In the details bottom sheet of a station or a POI, there is a star button in ord
 
 === "Android"
 
-    <img class="img-overview" src="/navitia_sdk_docs/assets/img/around_me/android/bookmark_saving_node.png" alt="Bookmark node">
+    <img class="img-overview" src="/navitia_sdk_docs/assets/img/around_me/android/go_fromto.png" alt="Bookmark node">
 
 === "iOS"
 
-    <img class="img-overview" src="/navitia_sdk_docs/assets/img/around_me/ios/bookmark_saving_node.png" alt="Bookmark node">
+    <img class="img-overview" src="/navitia_sdk_docs/assets/img/around_me/ios/go_fromto.png" alt="Bookmark node">
 
 ## Map dragged
 
