@@ -4,7 +4,7 @@ title: Bookmark Android 1.7.0 - Changelog - Navitia SDK Docs
 
 # Bookmark Android 1.7.0 Changelog
 
-<h2>🗓 09 Sept 2024</h2>
+<h2>🗓 09 Sep 2024</h2>
 
 #### Features
 - Add _See all schedules_ in the contextual menu with the `scheduleMode` feature enabled when clicking on a favorite station
