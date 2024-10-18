@@ -87,6 +87,7 @@ The following are the possible configuration parameters:
 | `journey` | :material-check: | [`Journey color`](#journey-color) | Journey |
 | `schedule` | :material-check: | [`Schedule color`](#schedule-color) | Schedule |
 | `traffic` | :material-check: | [`Traffic color`](#traffic-color) | Traffic |
+| `disruptions` | :material-check: | [`Disruption color`](#disruption-color) | All |
 <!-- 
 | `account` | :material-check: | [`Account color`](#account-color) | Account |
 | `crowdsourcing` | :material-check: | [`Crowdsourcing color`](#crowdsourcing-color) | Crowdsourcing | 
@@ -110,7 +111,7 @@ The following are the possible configuration parameters:
 | `tertiary` | :material-close: | To set the color of more UI components | `String` | `#efa59f` |
 | `map` | :material-close: | To set colors of the markers on map | [`Map color`](#around-me-map-color) | - |
 
-<h4>Around Me map color</h4>
+##### Around Me map color
 
 | Name | Required | Description | Type | Example |
 | --- |:---:| --- | :---: | :---: |
@@ -143,33 +144,33 @@ The following are the possible configuration parameters:
 | `map` | :material-close: | To set colors of the map elements | [`Journey map color`](#journey-map-color) | - |
 | `nav_bar_background` | :material-close: | To set the color of the navigation bar. iOS only.  | `String` | `#efa59f` |
 
-<h4>Journey origin color</h4>
+##### Journey origin color
 
 | Name | Required | Description | Type | Example |
 | --- |:---:| --- | :---: | :---: |
 | `icon` | :material-check: | To set the icon color of the itinerary origin | `String` | `#88819f` |
 
-<h4>Journey destination color</h4>
+##### Journey destination color
 
 | Name | Required | Description | Type | Example |
 | --- |:---:| --- | :---: | :---: |
 | `primary` | :material-check: | To set the color of the arrival block | `String` | `#8faa96` |
 | `icon` | :material-close: | To set the icon color of the itinerary destination | `String` | `#88819f` |
 
-<h4>Journey map color</h4>
+##### Journey map color
 
 | Name | Required | Description | Type | Example |
 | --- |:---:| --- | :---: | :---: |
 | `path` | :material-check: | To set the color of the paths drawn on the map | [`Journey map path color`](#journey-map-path-color) | - |
 
-<h4>Journey map path color</h4>
+##### Journey map path color
 
 | Name | Required | Description | Type | Example |
 | --- |:---:| --- | :---: | :---: |
 | `bike` | :material-close: | To set colors of the specific bike journey | [`Journey bike color`](#journey-bike-color) | - |
 | `car` | :material-close: | To set the color of the car path | `String` | `#88819f |
 
-<h4>Journey bike color</h4>
+##### Journey bike color
 
 | Name | Required | Description | Type | Example |
 | --- |:---:| --- | :---: | :---: |
@@ -189,6 +190,14 @@ The following are the possible configuration parameters:
 | --- |:---:| --- | :---: | :---: |
 | `primary` | :material-check: | To set the main color of the screens | `String` | `#88819f` |
 | `secondary` | :material-check: | To set the color of some UI components | `String` | `#8faa96` |
+
+#### Disruption color
+
+| Name | Required | Description | Type | Default |
+| --- |:---:| --- | :---: | :---: |
+| `information` | :material-check: | To set the color for informative disruptions | `String` | `#3FA26D` |
+| `non_blocking` | :material-check: | To set the color for non blocking disruptions | `String` | `#EF662F` |
+| `blocking` | :material-check: | To set the color for blocking disruptions | `String` | `#FF0000` |
 
 ### Transport category
 
@@ -212,14 +221,14 @@ The following are the possible configuration parameters:
 | `physical` | :material-check: | To set the transport physical mode | [`Transport Physical Mode`](#transport-physical-mode) | `["aroundme","journey"]` |
 | `commercial` | :material-check: | To set the transport commercial mode | [`Transport Commercial Mode`](#transport-commercial-mode) | - |
 
-<h4>Transport physical mode</h4>
+##### Transport physical mode
 
 | Name | Required | Description | Type | Example |
 | --- |:---:| --- | :---: | :---: |
 | `id` | :material-check: | Navitia physical mode id | `String` | `"physical_mode:Bus"` |
 | `name_res` | :material-check: | Localized name resource id | `String` | `"transport_bus"` |
 
-<h4>Transport commercial mode</h4>
+##### Transport commercial mode
 
 | Name | Required | Description | Type | Example |
 | --- |:---:| --- | :---: | :---: |
@@ -292,14 +301,14 @@ The following are the possible configuration parameters:
 | `signup_form_fields` | :material-check: | To set Sign up screen form fields | [`Account form field`](#account-form-field) |
 | `edit_form_fields` | :material-check: | To set Edit screen form fields | [`Account form field`](#account-form-field) |
 
-<h4>My account menu item</h4>
+##### My account menu item
 
 | Name | Required | Description | Type | Example |
 | --- |:---:| --- | :---: | :---: |
 | `name_res` | :material-check: | Localized menu item title id | `String` | `"bookmarks"` |
 | `icon_res` | :material-check: | Menu item icon resource id | `String` | `"ic_bookmarks"` |
 
-<h4>Account form field</h4>
+##### Account form field
 
 | Name | Required | Description | Type | Example |
 | --- |:---:| --- | :---: | :---: |
