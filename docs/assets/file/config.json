@@ -637,6 +637,9 @@
             "next_departures": {
                 "frequency": 30
             },
+            "park_availability": {
+                "frequency": 30
+            },
             "schedule_mode": true,
             "stop_point_search": true,
             "traffic_mode": true,
@@ -647,6 +650,9 @@
         "bookmark": {
             "go_from_go_to": true,
             "next_departures": {
+                "frequency": 30
+            },
+            "park_availability": {
                 "frequency": 30
             },
             "see_all_schedules": true,

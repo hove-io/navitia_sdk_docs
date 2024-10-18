@@ -335,7 +335,7 @@ The following are the possible configuration parameters:
 | `max_history` | :material-close: | Define the max history items | `Int` |
 | `min_zoom_level` | :material-close: | Define the min zoom level of map. Android only | `Int` |
 | `next_departures` | :material-close: | Show/hide the next departures | [`Next departures`](#next-departures) |
-| `park_availability`| :material-close: | Configure bss and car parking availability requests | [`Park Availability`](#park-availability) |
+| `park_availability`| :material-close: | Show/hide the bss and car parking availability | [`Park Availability`](#park-availability) |
 | `schedule_mode` | :material-close: | Enable/disable redirection to schedule autocompletion screen | `Boolean` |
 | `stop_point_search` | :material-close: | Enable/disable search by stop point instead of stop area | `Boolean` |
 | `traffic_mode` | :material-close: | Show/hide the traffic button | `Boolean` |
@@ -351,24 +351,6 @@ The following are the possible configuration parameters:
 | `lat` | :material-check: | The latitude of the default location | `String` | `"48.846790"` |
 | `lon` | :material-check: | The longitude of the default location | `String` | `"2.377090"` |
 
-##### Next departures
-
-| Name | Required | Description | Type | Example |
-| --- |:---:| --- | :---: | :---: |
-| `frequency`| :material-check: | frequency of the next departures request in seconds | `Int` | `30` |
-
-##### Park availability
-
-| Name | Required | Description | Type | Example |
-| --- |:---:| --- | :---: | :---: |
-| `frequency`| :material-check: | frequency of the park availability requests in seconds | `Int` | `30` |
-
-##### Vehicle positions
-
-| Name | Required | Description | Type | Example |
-| --- |:---:| --- | :---: | :---: |
-| `frequency` | :material-check: | frequency of the vehicle positions request in seconds | `String` | 30 |
-
 ##### Bookmark options
 
 | Name | Required | Description | Type | Example |
@@ -382,6 +364,7 @@ The following are the possible configuration parameters:
 | --- |:---:| --- | :---: | :---: |
 | `go_from_go_to` | :material-close: | Show/hide the go from/go to buttons | `Boolean` | `true` |
 | `next_departures` | :material-close: | Show/hide the next departures | [`Next departures`](#next-departures) | - |
+| `park_availability`| :material-close: | Show/hide the bss and car parking availability | [`Park Availability`](#park-availability) |
 | `see_all_schedules` | :material-close: | Show/hide the "See all schedules" | `Boolean` | `true` |
 | `tabs` | :material-close: | Enable/disable tabs | [`Bookmark tabs`](#bookmark-tabs) | - |
 
@@ -408,9 +391,9 @@ The following are the possible configuration parameters:
 | `max_favorite_pois` | :material-close: | Define the max favorite POIs | `Int` | `10` |
 | `max_history` | :material-close: | Define the max history items | `Int` | `10` |
 | `next_departures` | :material-close: | Show/hide the next departures | [`Next departures`](#next-departures) | - |
+| `park_availability`| :material-close: | Show/hide the bss and car parking availability | [`Park Availability`](#park-availability) |
 | `price` | :material-close: | Show/hide the itinerary price | `Boolean` | `true` |
 | `ridesharing_price` | :material-close: | Show/hide the itinerary ridesharing price | `Boolean` | `true` |
-| `park_availability`| :material-close: | Configure bss and car parking availability requests | [`Park Availability`](#park-availability) |
 | `search_only` | :material-close: | Enable/disable a direct search without input from user | `Boolean` | `false` |
 | `step_by_step_guidance` | :material-close: | Enable/disable the step by step guidance | `Boolean` |
 | `stop_point_search_mode` | :material-close: | Enable/disable search by stop point instead of stop area | `Boolean` | `false` |
@@ -453,6 +436,26 @@ The following are the possible configuration parameters:
 | --- |:---:| --- | :---: | :---: |
 | `env` | :material-check: | Kronos environment | `String` | `PROD` |
 | `timezone` | :material-check: | Subscriptions timezone | `String` | `Europe/Paris` |
+
+#### Common features
+
+##### Next departures
+
+| Name | Required | Description | Type | Example |
+| --- |:---:| --- | :---: | :---: |
+| `frequency`| :material-check: | frequency of the next departures request in seconds | `Int` | `30` |
+
+##### Park availability
+
+| Name | Required | Description | Type | Example |
+| --- |:---:| --- | :---: | :---: |
+| `frequency`| :material-check: | frequency of the bss and park availability request in seconds | `Int` | `30` |
+
+##### Vehicle positions
+
+| Name | Required | Description | Type | Example |
+| --- |:---:| --- | :---: | :---: |
+| `frequency` | :material-check: | frequency of the vehicle positions request in seconds | `String` | `30` |
 
 ### Fonts
 
