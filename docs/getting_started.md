@@ -393,6 +393,7 @@ The following are the possible configuration parameters:
 | `next_departures` | :material-close: | Show/hide the next departures | [`Next departures`](#next-departures) | - |
 | `park_availability`| :material-close: | Show/hide the bss and car parking availability | [`Park Availability`](#park-availability) |
 | `price` | :material-close: | Show/hide the itinerary price | `Boolean` | `true` |
+| `realtime_delays` | :material-close: | Show/hide the itinerary realtime delays | `Boolean` | `true` |
 | `ridesharing_price` | :material-close: | Show/hide the itinerary ridesharing price | `Boolean` | `true` |
 | `search_only` | :material-close: | Enable/disable a direct search without input from user | `Boolean` | `false` |
 | `step_by_step_guidance` | :material-close: | Enable/disable the step by step guidance | `Boolean` |
