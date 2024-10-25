@@ -624,9 +624,11 @@
         "aroundme": {
             "booking": true,
             "bookmark_mode": {
-                "journeys": true,
-                "bss": true,
-                "display_home": true
+                "enabled": true,
+                "display" : {
+                  "bss": true,
+                  "journeys" : true
+                }
             },
             "default_location": {
                 "lat": "48.846790",
@@ -708,7 +710,9 @@
         "schedule": {
             "bookmark_mode": {
                 "enabled": true,
-                "display_home": true
+                "display" : {
+                  "home": true
+                }
             },
             "go_from_go_to": true,
             "max_history": 10,
