@@ -328,7 +328,7 @@ The following are the possible configuration parameters:
 
 | Name | Required | Description | Type |
 | --- |:---:| --- | :---: |
-| `bookmark_mode` | :material-close: | Enable/disable the bookmarks feature | [`Bookmark mode`](#bookmark-mode) |
+| `bookmark_mode` | :material-close: | Enable/disable the bookmarks feature | [`Bookmark mode`](#bookmark-mode-around-me) |
 | `default_location` | :material-close: | The default location on first launch | [`Default location`](#default-location) |
 | `go_from_go_to` | :material-close: | Show/hide the go from/go to buttons | `Boolean` |
 | `journey_mode` | :material-close: | Enable/disable the journey search mode | `Boolean` |
@@ -344,39 +344,26 @@ The following are the possible configuration parameters:
 | `account_mode` | :material-close: | Enable/disable the account feature | `Boolean` | 
 -->
 
-##### Default location
-
-| Name | Required | Description | Type | Example |
-| --- |:---:| --- | :---: | :---: |
-| `lat` | :material-check: | The latitude of the default location | `String` | `"48.846790"` |
-| `lon` | :material-check: | The longitude of the default location | `String` | `"2.377090"` |
-
-##### Bookmark Mode
+##### Bookmark Mode (Around Me)
 
 | Name | Required | Description | Type | Example |
 | --- |:---:| --- | :---: | :---: |
 | `enabled` | :material-close: | Enable/disable to add and remove an item as favorite  | `Boolean` | `true` |
-| `display` | :material-close: | Display options of favorite items on screen | [`AroundMe Display Options`](#display-options) | - |
+| `display` | :material-close: | Display options of favorite items on screen | [`Bookmark mode display options (Around Me)`](#bookmark-mode-display-options-around-me) | - |
 
-##### AroundMe Display Options
+##### Bookmark mode display options (Around Me)
 
 | Name | Required | Description | Type | Example |
 | --- |:---:| --- | :---: | :---: |
 | `bss` | :material-close: | Display/hide favorite bss on bottomSheet tabs | `Boolean` | `true` |
 | `journeys` | :material-close: | Display/hide favorite journeys on BottomSheet tabs  | `Boolean` | `true` |
 
-##### Journey Display Options
+##### Default location
 
 | Name | Required | Description | Type | Example |
 | --- |:---:| --- | :---: | :---: |
-| `home` | :material-close: | Display/hide favorite items on home screen | `Boolean` | `true` |
-| `autocompletion` | :material-close: | Display/hide favorite items on autocompletion screen  | `Boolean` | `true` |
-
-##### Schedule Display Options
-
-| Name | Required | Description | Type | Example |
-| --- |:---:| --- | :---: | :---: |
-| `home` | :material-close: | Display/hide favorite items on home screen | `Boolean` | `true` |
+| `lat` | :material-check: | The latitude of the default location | `String` | `"48.846790"` |
+| `lon` | :material-check: | The longitude of the default location | `String` | `"2.377090"` |
 
 #### Bookmark features
 
@@ -400,7 +387,7 @@ The following are the possible configuration parameters:
 
 | Name | Required | Description | Type | Example |
 | --- |:---:| --- | :---: | :---: |
-| `bookmark_mode` | :material-close: | Enable/disable and handle the display screens of the bookmarks feature | [`Bookmark mode`](#bookmark-mode) |
+| `bookmark_mode` | :material-close: | Enable/disable and handle the display screens of the bookmarks feature | [`Bookmark mode`](#bookmark-mode-journey) |
 | `calories` | :material-close: | Show/hide the itinerary calories summary | `Boolean` | `false` |
 | `carbon` | :material-close: | Show/hide the itinerary carbon summary | `Boolean` | `true` |
 | `car_parking_highlight` | :material-close: | Show/hide the car parking in the journey solution | `Boolean` | `true` |
@@ -422,6 +409,20 @@ The following are the possible configuration parameters:
 | `transport_networks` | :material-close: | Show/hide the public transport network | `Boolean` | `false` |
 | `vehicle_positions`| :material-close: | Show bus vehicle positions on roadmap | [`Vehicle positions`](#vehicle-positions) | - |
 
+##### Bookmark Mode (Journey)
+
+| Name | Required | Description | Type | Example |
+| --- |:---:| --- | :---: | :---: |
+| `enabled` | :material-close: | Enable/disable to add and remove an item as favorite  | `Boolean` | `true` |
+| `display` | :material-close: | Display options of favorite items on screen | [`Bookmark mode display options (Journey)`](#bookmark-mode-display-options-journey) | - |
+
+##### Bookmark mode display options (Journey)
+
+| Name | Required | Description | Type | Example |
+| --- |:---:| --- | :---: | :---: |
+| `home` | :material-close: | Display/hide favorite items on home screen | `Boolean` | `true` |
+| `autocompletion` | :material-close: | Display/hide favorite items on autocompletion screen  | `Boolean` | `true` |
+
 ##### Traffic options (Journey)
 
 | Name | Required | Description | Type | Example |
@@ -432,7 +433,7 @@ The following are the possible configuration parameters:
 
 | Name | Required | Description | Type |
 | --- |:---:| --- | :---: |
-| `bookmark_mode` | :material-close: | Enable/disable the bookmarks feature | [`Bookmark mode`](#bookmark-mode) |
+| `bookmark_mode` | :material-close: | Enable/disable the bookmarks feature | [`Bookmark mode`](#bookmark-mode-schedule) |
 | `go_from_go_to` | :material-close: | Show/hide the go from/go to buttons | `Boolean` | `true` |
 | `max_history` | :material-close: | Define the max history items | `Int` |
 | `networks_filter` | :material-close: | Show/hide the networks selector | `Boolean` |
@@ -440,6 +441,19 @@ The following are the possible configuration parameters:
 | `traffic_mode` | :material-close: | Enable/disable the traffic feature | `Boolean` |
 | `transport_networks` | :material-close: | Enable/disable grouping lines by network | `Boolean` |
 | `vehicle_positions`| :material-close: | Show bus vehicle positions on map | [`Vehicle positions`](#vehicle-positions) |
+
+##### Bookmark Mode (Schedule)
+
+| Name | Required | Description | Type | Example |
+| --- |:---:| --- | :---: | :---: |
+| `enabled` | :material-close: | Enable/disable to add and remove an item as favorite  | `Boolean` | `true` |
+| `display` | :material-close: | Display options of favorite items on screen | [`Bookmark mode display options (Schedule)`](#bookmark-mode-display-options-schedule) | - |
+
+##### Bookmark mode display options (Schedule)
+
+| Name | Required | Description | Type | Example |
+| --- |:---:| --- | :---: | :---: |
+| `home` | :material-close: | Display/hide favorite items on home screen | `Boolean` | `true` |
 
 #### Traffic features
 
