@@ -397,7 +397,7 @@ The following are the possible configuration parameters:
 | `max_favorite_addresses` | :material-close: | Define the max favorite addresses along with home and work addresses | `Int` | `10` |
 | `max_favorite_pois` | :material-close: | Define the max favorite POIs | `Int` | `10` |
 | `max_history` | :material-close: | Define the max history items | `Int` | `10` |
-| `next_departures` | :material-close: | Show/hide the next departures | [`Next departures`](#next-departures) | - |
+| `next_departures` | :material-close: | Show/hide the next departures | [`Next departures (Journey)`](#next-departures-journey) | - |
 | `park_availability`| :material-close: | Show/hide the bss and car parking availability | [`Park Availability`](#park-availability) |
 | `price` | :material-close: | Show/hide the itinerary price | `Boolean` | `true` |
 | `realtime_delays` | :material-close: | Show/hide the itinerary realtime delays | `Boolean` | `true` |
@@ -422,6 +422,15 @@ The following are the possible configuration parameters:
 | --- |:---:| --- | :---: | :---: |
 | `home` | :material-close: | Display/hide favorite items on home screen | `Boolean` | `true` |
 | `autocompletion` | :material-close: | Display/hide favorite items on autocompletion screen  | `Boolean` | `true` |
+
+##### Next departures (Journey)
+
+| Name | Required | Description | Type | Example |
+| --- |:---:| --- | :---: | :---: |
+| `guidance`| :material-check: | Show/hide the next departures in the guidance screen | [`Next departures`](#next-departures) | - |
+| `journeys`| :material-check: | Show/hide the next departures in the journeys screen | [`Next departures`](#next-departures) | - |
+| `roadmap`| :material-check: | Show/hide the next departures in the roadmap screen | [`Next departures`](#next-departures) | - |
+
 
 ##### Traffic options (Journey)
 
