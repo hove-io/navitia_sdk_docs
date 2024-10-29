@@ -738,17 +738,6 @@
                 ""
             ],
             "networks_filter": true,
-            "severity": [
-                {
-                    "icon_res": "",
-                    "name_res": "",
-                    "color": "",
-                    "effects": [
-                        ""
-                    ],
-                    "selected": true
-                }
-            ],
             "transport_networks": true
         }
     }
