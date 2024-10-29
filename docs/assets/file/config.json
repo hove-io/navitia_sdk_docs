@@ -624,8 +624,11 @@
         "aroundme": {
             "booking": true,
             "bookmark_mode": {
-                "journeys": true,
-                "bss": true
+                "enabled": true,
+                "display" : {
+                  "bss": true,
+                  "journeys" : true
+                }
             },
             "default_location": {
                 "lat": "48.846790",
@@ -663,7 +666,13 @@
             }
         },
         "journey": {
-            "bookmark_mode": true,
+            "bookmark_mode": {
+                "enabled": true,
+                "display" : {
+                  "home": true,
+                  "autocompletion" : true
+                }
+            },
             "calories": true,
             "carbon": true,
             "car_parking_highlight": true,
@@ -700,7 +709,12 @@
             }
         },
         "schedule": {
-            "bookmark_mode": true,
+            "bookmark_mode": {
+                "enabled": true,
+                "display" : {
+                  "home": true
+                }
+            },
             "go_from_go_to": true,
             "max_history": 10,
             "networks_filter": true,
