@@ -689,7 +689,15 @@
             "max_favorite_pois": 10,
             "max_history": 10,
             "next_departures": {
-                "frequency": 30
+                "journeys": {
+                    "frequency": 30
+                },
+                "roadmap": {
+                    "frequency": 30
+                },
+                "guidance": {
+                    "frequency": 30
+                }
             },
             "park_availability": {
                 "frequency": 30
@@ -738,17 +746,6 @@
                 ""
             ],
             "networks_filter": true,
-            "severity": [
-                {
-                    "icon_res": "",
-                    "name_res": "",
-                    "color": "",
-                    "effects": [
-                        ""
-                    ],
-                    "selected": true
-                }
-            ],
             "transport_networks": true
         }
     }
