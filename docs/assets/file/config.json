@@ -589,7 +589,8 @@
         {
             "type_id": "",
             "provider_id": "",
-            "icon_res": ""
+            "icon_res": "",
+            "name_res": ""
         }
     ],
     "networks_resources": [
@@ -625,9 +626,10 @@
             "booking": true,
             "bookmark_mode": {
                 "enabled": true,
-                "display" : {
-                  "bss": true,
-                  "journeys" : true
+                "display": {
+                    "bss": true,
+                    "journeys": true,
+                    "stations": true
                 }
             },
             "default_location": {
@@ -658,7 +660,7 @@
             "park_availability": {
                 "frequency": 30
             },
-            "see_all_schedules": true,
+            "schedule_mode": true,
             "tabs": {
                 "transports": true,
                 "journeys": true,
