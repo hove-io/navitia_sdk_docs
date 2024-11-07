@@ -15,8 +15,8 @@ title: Journey iOS 5.16.0 - Changelog - Navitia SDK Docs
 - Improve accessibility
 
 #### Dependencies
- - RouterEngine `v1.5.2`
- - DesignEngine `v2.17.0`
+- RouterEngine `v1.5.2`
+- DesignEngine `v2.17.0`
 
 #### Compiler
 -  Swift  `6.0`

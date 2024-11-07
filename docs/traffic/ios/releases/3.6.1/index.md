@@ -10,8 +10,8 @@ title: Traffic iOS 3.6.1 - Changelog - Navitia SDK Docs
 - Update dependencies
 
 #### Dependencies
- - RouterEngine `v1.5.2`
- - DesignEngine `v2.17.0`
+- RouterEngine `v1.5.2`
+- DesignEngine `v2.17.0`
 
 #### Compiler
 -  Swift  `6.0`

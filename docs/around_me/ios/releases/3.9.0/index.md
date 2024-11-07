@@ -11,8 +11,8 @@ title: AroundMe iOS 3.9.0 - Changelog - Navitia SDK Docs
 - Ability to add POIs to the quick filters
 
 #### Dependencies
- - RouterEngine `v1.5.2`
- - DesignEngine `v2.17.0`
+- RouterEngine `v1.5.2`
+- DesignEngine `v2.17.0`
 
 #### Compiler
 -  Swift  `6.0`

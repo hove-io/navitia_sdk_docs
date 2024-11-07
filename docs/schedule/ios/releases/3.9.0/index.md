@@ -11,8 +11,8 @@ title: Schedule iOS 3.9.0 - Changelog - Navitia SDK Docs
 - Update the bookmark feature with more possibilities of displaying
 
 #### Dependencies
- - RouterEngine `v1.5.2`
- - DesignEngine `v2.17.0`
+- RouterEngine `v1.5.2`
+- DesignEngine `v2.17.0`
 
 #### Compiler
 -  Swift  `6.0`
