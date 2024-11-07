@@ -6,9 +6,13 @@ title: Schedule iOS 3.9.0 - Changelog - Navitia SDK Docs
 
 <h2>🗓 30 Oct 2024</h2>
 
-#### Feature
-- Configurable display of a line's disruption level 
-- Update the bookmark feature with more possibilities of displaying
+#### Features
+- Configurable display of a line's disruption level
+- Hide upcoming departures if there is unavailable data in the timetable screen
+
+#### Tasks
+- Enhance bookmark mode configuration
+- Enhance calendar theme overlaying
 
 #### Dependencies
 - RouterEngine `v1.5.2`

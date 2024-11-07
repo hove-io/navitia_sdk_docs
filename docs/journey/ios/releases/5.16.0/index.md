@@ -6,12 +6,12 @@ title: Journey iOS 5.16.0 - Changelog - Navitia SDK Docs
 
 <h2>🗓 30 Oct 2024</h2>
 
-#### Features
-- Show the 3 next departure schedules of public transport in roadmap
-- Show the delays schedules in roadmap
-- Update the bookmark feature with more possibilities of displaying 
+#### Features 
+- Show upcoming public transport departures in the roadmap
+- Show public transport delays and updated times in the roadmap
 
 #### Tasks
+- Enhance bookmark mode configuration
 - Improve accessibility
 
 #### Dependencies

@@ -8,7 +8,7 @@ title: Bookmark iOS 1.8.0 - Changelog - Navitia SDK Docs
 
 #### Tasks
 - Add park availability configuration
-- Update next departures configuration
+- Enhance next departures timers
 
 #### Dependencies
 - RouterEngine `v1.5.2`
