@@ -215,7 +215,29 @@ If you want to theme the date picker, you can only add the following in your sty
 
 ```xml
 <style name="Schedule.MaterialCalendar" parent="ThemeOverlay.Material3.MaterialCalendar">
-    <item name="colorPrimary">#251942</item>
-    <item name="colorOnPrimary">#FFFFFF</item>
+    <item name="colorPrimary"><!-- your color --></item>
+    <item name="colorOnPrimary"><!-- your contrasted color --></item>
+
+    <item name="materialCalendarStyle">@style/Schedule.MaterialCalendar.Style</item>
+    <item name="materialCalendarHeaderLayout">@style/Schedule.MaterialCalendar.HeaderLayout</item>
+    <item name="materialCalendarHeaderTitle">@style/Schedule.MaterialCalendar.HeaderTitle</item>
+    <item name="materialCalendarHeaderSelection">@style/Schedule.MaterialCalendar.HeaderSelection</item>
+    <item name="materialCalendarHeaderToggleButton">@style/Schedule.MaterialCalendar.HeaderToggleButton</item>
+</style>
+
+<style name="Schedule.MaterialCalendar.Style" parent="Widget.Material3.MaterialCalendar">
+    <item name="backgroundTint"><!-- your contrasted color --></item>
+</style>
+<style name="Schedule.MaterialCalendar.HeaderLayout" parent="Widget.Material3.MaterialCalendar.HeaderLayout">
+    <item name="android:background"><!-- your color --></item>
+</style>
+<style name="Schedule.MaterialCalendar.HeaderTitle" parent="Widget.MaterialComponents.MaterialCalendar.HeaderTitle">
+    <item name="android:textColor"><!-- your contrasted color --></item>
+</style>
+<style name="Schedule.MaterialCalendar.HeaderSelection" parent="Widget.MaterialComponents.MaterialCalendar.HeaderSelection">
+    <item name="android:textColor"><!-- your contrasted color --></item>
+</style>
+<style name="Schedule.MaterialCalendar.HeaderToggleButton" parent="Widget.MaterialComponents.MaterialCalendar.HeaderToggleButton">
+    <item name="android:tint"><!-- your contrasted color --></item>
 </style>
 ```
