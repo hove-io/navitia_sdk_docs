@@ -12,7 +12,6 @@ title: Schedule iOS 3.9.0 - Changelog - Navitia SDK Docs
 
 #### Tasks
 - Enhance bookmark mode configuration
-- Enhance calendar theme overlaying
 
 #### Dependencies
 - RouterEngine `v1.5.2`

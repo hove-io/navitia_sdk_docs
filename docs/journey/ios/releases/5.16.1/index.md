@@ -7,4 +7,4 @@ title: Journey iOS 5.16.1 - Changelog - Navitia SDK Docs
 <h2>🗓 07 Nov 2024</h2>
 
 #### Fix
-- Fix the activation and deactivation of thebookmark feature
+- Fix the activation and deactivation of the bookmark feature
