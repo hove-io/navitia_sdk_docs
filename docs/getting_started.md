@@ -394,7 +394,7 @@ The following are the possible configuration parameters:
 | `car_traffic_jam` | :material-close: | Show/hide the car traffic jam in the journey solution and the roadmap | `Boolean` | `true` |
 | `disruption_contributors` | :material-close: | Define the list of disruption contributors id | `String[]` | `["shortterm.tr_idfm"]` |
 | `external_navigation` | :material-close: | Enable/disable the navigation using external applications | `Boolean` | `true` |
-| `max_favorite_addresses` | :material-close: | Define the max favorite addresses along with home and work addresses | `Int` | `10` |
+| `max_favorite_addresses` | :material-close: | Define the max favorite addresses alongside with home and work addresses | `Int` | `10` |
 | `max_favorite_pois` | :material-close: | Define the max favorite POIs | `Int` | `10` |
 | `max_history` | :material-close: | Define the max history items | `Int` | `10` |
 | `next_departures` | :material-close: | Show/hide the next departures | [`Next departures (Journey)`](#next-departures-journey) | - |
