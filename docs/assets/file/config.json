@@ -573,14 +573,10 @@
                 {
                     "icon_res": "",
                     "name_res": "",
-                    "zoom_level": 16.5,
                     "selected": true,
                     "group": "STANDARD",
                     "types": [
-                        {
-                            "name_res": "",
-                            "poi_type_id": ""
-                        }
+                        ""
                     ],
                     "booking": {
                         "title_res": ""
@@ -628,8 +624,11 @@
         "aroundme": {
             "booking": true,
             "bookmark_mode": {
-                "journeys": true,
-                "bss": true
+                "enabled": true,
+                "display" : {
+                  "bss": true,
+                  "journeys" : true
+                }
             },
             "default_location": {
                 "lat": "48.846790",
@@ -639,6 +638,9 @@
             "journey_mode": true,
             "max_history": 10,
             "next_departures": {
+                "frequency": 30
+            },
+            "park_availability": {
                 "frequency": 30
             },
             "schedule_mode": true,
@@ -653,6 +655,10 @@
             "next_departures": {
                 "frequency": 30
             },
+            "park_availability": {
+                "frequency": 30
+            },
+            "see_all_schedules": true,
             "tabs": {
                 "transports": true,
                 "journeys": true,
@@ -660,7 +666,13 @@
             }
         },
         "journey": {
-            "bookmark_mode": true,
+            "bookmark_mode": {
+                "enabled": true,
+                "display" : {
+                  "home": true,
+                  "autocompletion" : true
+                }
+            },
             "calories": true,
             "carbon": true,
             "car_parking_highlight": true,
@@ -677,12 +689,21 @@
             "max_favorite_pois": 10,
             "max_history": 10,
             "next_departures": {
-                "frequency": 30
+                "journeys": {
+                    "frequency": 30
+                },
+                "roadmap": {
+                    "frequency": 30
+                },
+                "guidance": {
+                    "frequency": 30
+                }
             },
             "park_availability": {
                 "frequency": 30
             },
             "price": true,
+            "realtime_delays": true,
             "ridesharing_price": true,
             "search_only": false,
             "step_by_step_guidance": true,
@@ -696,7 +717,12 @@
             }
         },
         "schedule": {
-            "bookmark_mode": true,
+            "bookmark_mode": {
+                "enabled": true,
+                "display" : {
+                  "home": true
+                }
+            },
             "go_from_go_to": true,
             "max_history": 10,
             "networks_filter": true,
@@ -704,6 +730,7 @@
                 "frequency": 30
             },
             "station_map": true,
+            "traffic_mode": true,
             "transport_networks": true,
             "vehicle_positions": {
                 "frequency": 30
@@ -714,21 +741,11 @@
                 "env": "",
                 "timezone": ""
             },
+            "application_periods": false,
             "disruption_contributors": [
                 ""
             ],
             "networks_filter": true,
-            "severity": [
-                {
-                    "icon_res": "",
-                    "name_res": "",
-                    "color": "",
-                    "effects": [
-                        ""
-                    ],
-                    "selected": true
-                }
-            ],
             "transport_networks": true
         }
     }

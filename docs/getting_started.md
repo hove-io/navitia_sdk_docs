@@ -67,14 +67,14 @@ The following are the possible configuration parameters:
 | `timezone` | :material-check: | Timezone | `String` | `Europe/Paris` | All |
 | `env` | :material-check: | Navitia environment | `String` | `PROD`, `CUSTOMER` | All |
 | `colors` | :material-check: | Colors configuration | [`Colors`](#colors) | - | UI modules |
-| `transport_categories` | :material-check: | List of supported transport modes | [`[Transport category]`](#transport-category) | - | UI modules |
-| `poi_categories` | :material-close: | List of supported POIs | [`[Poi category]`](#poi-category) | - | Around Me, Bookmark |
+| `transport_categories` | :material-check: | List of supported transport modes | [`Transport category[]`](#transport-category) | - | UI modules |
+| `poi_categories` | :material-close: | List of supported POIs | [`Poi category[]`](#poi-category) | - | Around Me, Bookmark |
 | `features_configuration` | :material-close: | Enable/disable different module features | [`Features`](#features) | - | All |
 | `fonts` | :material-close: | Override the fonts used in UI modules | [`Fonts`](#fonts) | - | UI modules |
-| `lines_resources` | :material-close: | Resources ids for transport lines | [`[Line resource]`](#line-resource) | - | UI modules |
-| `modes_resources` | :material-close: | Resources ids for transport modes | [`[Mode resource]`](#mode-resource) | - | UI modules |
-| `providers_resources` | :material-close: | Resources ids for data providers | [`[Provider resource]`](#provider-resource) | - | UI modules |
-| `networks_resources` | :material-close: | Resources ids for data networks | [`[Network resource]`](#network-resource) | - | UI modules |
+| `lines_resources` | :material-close: | Resources ids for transport lines | [`Line resource[]`](#line-resource) | - | UI modules |
+| `modes_resources` | :material-close: | Resources ids for transport modes | [`Mode resource[]`](#mode-resource) | - | UI modules |
+| `providers_resources` | :material-close: | Resources ids for data providers | [`Provider resource[]`](#provider-resource) | - | UI modules |
+| `networks_resources` | :material-close: | Resources ids for data networks | [`Network resource[]`](#network-resource) | - | UI modules |
 | `icons_resources` | :material-close: | Resources ids for some specific icons | [`Icon resource`](#icon-resource) | - | UI modules |
 | `titles_resources` | :material-close: | Resources ids for screen titles | [`Title resource`](#title-resource) | - | UI modules |
 
@@ -203,16 +203,16 @@ The following are the possible configuration parameters:
 
 | Name | Required | Description | Type | Example | Target modules |
 | --- |:---:| --- | :---: | :---: | :---: |
-| `modules` | :material-check: | To set the target modules | `[String]` | `["aroundme","journey"]` | `ALL` |
+| `modules` | :material-check: | To set the target modules | `String[]` | `["aroundme","journey"]` | `ALL` |
 | `name_res` | :material-check: | To set the localized resource id | `String` | `transport_name_res` | `ALL` |
 | `icon_res` | :material-check: | To set the icon resource id | `String` | `ic_metro` | `ALL` |
 | `selected` | :material-close: | Whether the transport mode is selected by default or not | `Boolean` | `true` | `ALL` |
 | `modes` | :material-close: | List of supported transport modes | [`Transport Mode`](#transport-mode) | - | `ALL` |
-| `networks` | :material-close: | List of supported networks | `[String]` | `["network:BIL:27"]` | `Schedule` |
-| `first_section_modes` | :material-close: | List of first section modes | `[String]` | `["bike", "car"]` | `Journey` |
-| `last_section_modes` | :material-close: | List of last section modes | `[String]` | `["ridesharing", "bss"]` | `Journey` |
-| `direct_path_modes` | :material-close: | List of direct path modes | `[String]` | `["taxi", "car_no_park"]` | `Journey` |
-| `add_poi_infos` | :material-close: | List of requested extra POI data | `[String]` | `["bss_stands", "car_park"]` | `Journey` |
+| `networks` | :material-close: | List of supported networks | `String[]` | `["network:BIL:27"]` | `Schedule` |
+| `first_section_modes` | :material-close: | List of first section modes | `String[]` | `["bike", "car"]` | `Journey` |
+| `last_section_modes` | :material-close: | List of last section modes | `String[]` | `["ridesharing", "bss"]` | `Journey` |
+| `direct_path_modes` | :material-close: | List of direct path modes | `String[]` | `["taxi", "car_no_park"]` | `Journey` |
+| `add_poi_infos` | :material-close: | List of requested extra POI data | `String[]` | `["bss_stands", "car_park"]` | `Journey` |
 
 #### Transport mode
 
@@ -240,7 +240,7 @@ The following are the possible configuration parameters:
 | Name | Required | Description | Type | Example |
 | --- |:---:| --- | :---: | :---: |
 | `name_res` | :material-check: | Localized POI category name id | `String` | `"stations"` |
-| `subcategories` | :material-check: | List of POI subcategories | [`[POI subcategory]`](#poi-subcategory) | - |
+| `subcategories` | :material-check: | List of POI subcategories | [`POI subcategory[]`](#poi-subcategory) | - |
 
 #### POI subcategory
 
@@ -249,11 +249,11 @@ The following are the possible configuration parameters:
 | `name_res` | :material-check: | Localized POI subcategory name id | `String` | `"bike_stations"` |
 | `icon_res` | :material-check: | POI subcategory icon id | `String` | `"ic_bike_stations"` |
 | `selected` | :material-close: | Whether the subcategory is selected by default or not | `Boolean` | `true` |
-| `group` | :material-check: | Subcategory POI group | `String` | `STANDARD`, `TRANSPORT_MODE`, `FREE_FLOATING` |
-| `types` | :material-check: | Subcategory POI types | [`[POI Subcategory Type]`](#poi-subcategory-type) | - |
+| `group` | :material-check: | Subcategory POI group | `String` | `STANDARD`, `QUICK_FILTER_FREE_FLOATING`,  `QUICK_FILTER_POI` |
+| `types` | :material-check: | Subcategory POI types. Can be a [POI type id](https://playground.navitia.io/play.html?request=https://api.navitia.io/v1/poi_types?) or a free floating type | `String[]`| `"poi_type:amenity:bicycle_rental"` or [one of those values](#poi-subcategory-free-floating-types) |
 | `booking` | :material-close: | POI booking resources | [POI booking resources](#poi-booking-resources) | - |
 
-##### POI subcategory type
+##### POI subcategory free floating types
 
 | Name | Required | Description | Type | Example |
 | --- |:---:| --- | :---: | :---: |
@@ -328,14 +328,14 @@ The following are the possible configuration parameters:
 
 | Name | Required | Description | Type |
 | --- |:---:| --- | :---: |
-| `bookmark_mode` | :material-close: | Enable/disable the bookmarks feature | [`Bookmark options`](#bookmark-options) |
+| `bookmark_mode` | :material-close: | Enable/disable the bookmarks feature | [`Bookmark mode`](#bookmark-mode-around-me) |
 | `default_location` | :material-close: | The default location on first launch | [`Default location`](#default-location) |
 | `go_from_go_to` | :material-close: | Show/hide the go from/go to buttons | `Boolean` |
 | `journey_mode` | :material-close: | Enable/disable the journey search mode | `Boolean` |
 | `max_history` | :material-close: | Define the max history items | `Int` |
 | `min_zoom_level` | :material-close: | Define the min zoom level of map. Android only | `Int` |
 | `next_departures` | :material-close: | Show/hide the next departures | [`Next departures`](#next-departures) |
-| `park_availability`| :material-close: | Configure bss and car parking availability requests | [`Park Availability`](#park-availability) |
+| `park_availability`| :material-close: | Show/hide the bss and car parking availability | [`Park Availability`](#park-availability) |
 | `schedule_mode` | :material-close: | Enable/disable redirection to schedule autocompletion screen | `Boolean` |
 | `stop_point_search` | :material-close: | Enable/disable search by stop point instead of stop area | `Boolean` |
 | `traffic_mode` | :material-close: | Show/hide the traffic button | `Boolean` |
@@ -344,6 +344,20 @@ The following are the possible configuration parameters:
 | `account_mode` | :material-close: | Enable/disable the account feature | `Boolean` | 
 -->
 
+##### Bookmark Mode (Around Me)
+
+| Name | Required | Description | Type | Example |
+| --- |:---:| --- | :---: | :---: |
+| `enabled` | :material-close: | Enable/disable to add and remove an item as favorite  | `Boolean` | `true` |
+| `display` | :material-close: | Display options of favorite items on screen | [`Bookmark mode display options (Around Me)`](#bookmark-mode-display-options-around-me) | - |
+
+##### Bookmark mode display options (Around Me)
+
+| Name | Required | Description | Type | Example |
+| --- |:---:| --- | :---: | :---: |
+| `bss` | :material-close: | Display/hide favorite bss on bottomSheet tabs | `Boolean` | `true` |
+| `journeys` | :material-close: | Display/hide favorite journeys on BottomSheet tabs  | `Boolean` | `true` |
+
 ##### Default location
 
 | Name | Required | Description | Type | Example |
@@ -351,37 +365,14 @@ The following are the possible configuration parameters:
 | `lat` | :material-check: | The latitude of the default location | `String` | `"48.846790"` |
 | `lon` | :material-check: | The longitude of the default location | `String` | `"2.377090"` |
 
-##### Next departures
-
-| Name | Required | Description | Type | Example |
-| --- |:---:| --- | :---: | :---: |
-| `frequency`| :material-check: | frequency of the next departures request in seconds | `Int` | `30` |
-
-##### Park availability
-
-| Name | Required | Description | Type | Example |
-| --- |:---:| --- | :---: | :---: |
-| `frequency`| :material-check: | frequency of the park availability requests in seconds | `Int` | `30` |
-
-##### Vehicle positions
-
-| Name | Required | Description | Type | Example |
-| --- |:---:| --- | :---: | :---: |
-| `frequency` | :material-check: | frequency of the vehicle positions request in seconds | `String` | 30 |
-
-##### Bookmark options
-
-| Name | Required | Description | Type | Example |
-| --- |:---:| --- | :---: | :---: |
-| `bss` | :material-close: | Enable/disable favorite bss stations tab | `Boolean` | `true` |
-| `journeys` | :material-close: | Enable/disable favorite journeys tab | `Boolean` | `false` |
-
 #### Bookmark features
 
 | Name | Required | Description | Type | Example |
 | --- |:---:| --- | :---: | :---: |
 | `go_from_go_to` | :material-close: | Show/hide the go from/go to buttons | `Boolean` | `true` |
 | `next_departures` | :material-close: | Show/hide the next departures | [`Next departures`](#next-departures) | - |
+| `park_availability`| :material-close: | Show/hide the bss and car parking availability | [`Park Availability`](#park-availability) |
+| `see_all_schedules` | :material-close: | Show/hide the "See all schedules" | `Boolean` | `true` |
 | `tabs` | :material-close: | Enable/disable tabs | [`Bookmark tabs`](#bookmark-tabs) | - |
 
 ##### Bookmark tabs
@@ -396,26 +387,49 @@ The following are the possible configuration parameters:
 
 | Name | Required | Description | Type | Example |
 | --- |:---:| --- | :---: | :---: |
-| `bookmark_mode` | :material-close: | Enable/disable the bookmark feature | `Boolean` | - |
+| `bookmark_mode` | :material-close: | Enable/disable and handle the display screens of the bookmarks feature | [`Bookmark mode`](#bookmark-mode-journey) |
 | `calories` | :material-close: | Show/hide the itinerary calories summary | `Boolean` | `false` |
 | `carbon` | :material-close: | Show/hide the itinerary carbon summary | `Boolean` | `true` |
 | `car_parking_highlight` | :material-close: | Show/hide the car parking in the journey solution | `Boolean` | `true` |
-| `car_traffic_jam` | :material-close: | Show/hide the car traffic in the journey solution | `Boolean` | `true` |
-| `disruption_contributors` | :material-close: | Define the list of disruption contributors id | `[String]` | `["shortterm.tr_idfm"]` |
+| `car_traffic_jam` | :material-close: | Show/hide the car traffic jam in the journey solution and the roadmap | `Boolean` | `true` |
+| `disruption_contributors` | :material-close: | Define the list of disruption contributors id | `String[]` | `["shortterm.tr_idfm"]` |
 | `external_navigation` | :material-close: | Enable/disable the navigation using external applications | `Boolean` | `true` |
-| `max_favorite_addresses` | :material-close: | Define the max favorite addresses along with home and work addresses | `Int` | `10` |
+| `max_favorite_addresses` | :material-close: | Define the max favorite addresses alongside with home and work addresses | `Int` | `10` |
 | `max_favorite_pois` | :material-close: | Define the max favorite POIs | `Int` | `10` |
 | `max_history` | :material-close: | Define the max history items | `Int` | `10` |
-| `next_departures` | :material-close: | Show/hide the next departures | [`Next departures`](#next-departures) | - |
+| `next_departures` | :material-close: | Show/hide the next departures | [`Next departures (Journey)`](#next-departures-journey) | - |
+| `park_availability`| :material-close: | Show/hide the bss and car parking availability | [`Park Availability`](#park-availability) |
 | `price` | :material-close: | Show/hide the itinerary price | `Boolean` | `true` |
+| `realtime_delays` | :material-close: | Show/hide the itinerary realtime delays | `Boolean` | `true` |
 | `ridesharing_price` | :material-close: | Show/hide the itinerary ridesharing price | `Boolean` | `true` |
-| `park_availability`| :material-close: | Configure bss and car parking availability requests | [`Park Availability`](#park-availability) |
 | `search_only` | :material-close: | Enable/disable a direct search without input from user | `Boolean` | `false` |
 | `step_by_step_guidance` | :material-close: | Enable/disable the step by step guidance | `Boolean` |
 | `stop_point_search_mode` | :material-close: | Enable/disable search by stop point instead of stop area | `Boolean` | `false` |
 | `traffic` | :material-close: | Define Traffic module options | [`Traffic options`](#traffic-options-journey) | - |
 | `transport_networks` | :material-close: | Show/hide the public transport network | `Boolean` | `false` |
 | `vehicle_positions`| :material-close: | Show bus vehicle positions on roadmap | [`Vehicle positions`](#vehicle-positions) | - |
+
+##### Bookmark Mode (Journey)
+
+| Name | Required | Description | Type | Example |
+| --- |:---:| --- | :---: | :---: |
+| `enabled` | :material-close: | Enable/disable to add and remove an item as favorite  | `Boolean` | `true` |
+| `display` | :material-close: | Display options of favorite items on screen | [`Bookmark mode display options (Journey)`](#bookmark-mode-display-options-journey) | - |
+
+##### Bookmark mode display options (Journey)
+
+| Name | Required | Description | Type | Example |
+| --- |:---:| --- | :---: | :---: |
+| `home` | :material-close: | Display/hide favorite items on home screen | `Boolean` | `true` |
+| `autocompletion` | :material-close: | Display/hide favorite items on autocompletion screen  | `Boolean` | `true` |
+
+##### Next departures (Journey)
+
+| Name | Required | Description | Type | Example |
+| --- |:---:| --- | :---: | :---: |
+| `guidance`| :material-check: | Show/hide the next departures in the guidance screen | [`Next departures`](#next-departures) | - |
+| `journeys`| :material-check: | Show/hide the next departures in the journeys screen | [`Next departures`](#next-departures) | - |
+| `roadmap`| :material-check: | Show/hide the next departures in the roadmap screen | [`Next departures`](#next-departures) | - |
 
 ##### Traffic options (Journey)
 
@@ -427,20 +441,35 @@ The following are the possible configuration parameters:
 
 | Name | Required | Description | Type |
 | --- |:---:| --- | :---: |
-| `bookmark_mode` | :material-close: | Enable/disable the bookmarks feature | `Boolean` |
+| `bookmark_mode` | :material-close: | Enable/disable the bookmarks feature | [`Bookmark mode`](#bookmark-mode-schedule) |
 | `go_from_go_to` | :material-close: | Show/hide the go from/go to buttons | `Boolean` | `true` |
 | `max_history` | :material-close: | Define the max history items | `Int` |
 | `networks_filter` | :material-close: | Show/hide the networks selector | `Boolean` |
 | `next_departures` | :material-close: | Show/hide the next departures | [`Next departures`](#next-departures) |
+| `traffic_mode` | :material-close: | Enable/disable the traffic feature | `Boolean` |
 | `transport_networks` | :material-close: | Enable/disable grouping lines by network | `Boolean` |
 | `vehicle_positions`| :material-close: | Show bus vehicle positions on map | [`Vehicle positions`](#vehicle-positions) |
+
+##### Bookmark Mode (Schedule)
+
+| Name | Required | Description | Type | Example |
+| --- |:---:| --- | :---: | :---: |
+| `enabled` | :material-close: | Enable/disable to add and remove an item as favorite  | `Boolean` | `true` |
+| `display` | :material-close: | Display options of favorite items on screen | [`Bookmark mode display options (Schedule)`](#bookmark-mode-display-options-schedule) | - |
+
+##### Bookmark mode display options (Schedule)
+
+| Name | Required | Description | Type | Example |
+| --- |:---:| --- | :---: | :---: |
+| `home` | :material-close: | Display/hide favorite items on home screen | `Boolean` | `true` |
 
 #### Traffic features
 
 | Name | Required | Description | Type | Example |
 | --- |:---:| --- | :---: | :---: |
 | `alert_subscription` | :material-close: | Alert subscription environment configuration | [`Alert subscription`](#alert-subscription) | - |
-| `disruption_contributors` | :material-close: | Define the list of disruption contributors id | `[String]` | `["shortterm.tr_idfm"]` |
+| `application_periods` | :material-close: | Show/hide the disruption application date | `Boolean` |
+| `disruption_contributors` | :material-close: | Define the list of disruption contributors id | `String[]` | `["shortterm.tr_idfm"]` |
 | `networks_filter` | :material-close: | Show/hide the networks selector | `Boolean` |
 | `transport_networks` | :material-close: | Enable/disable showing network on lines | `Boolean` | - |
 
@@ -450,6 +479,26 @@ The following are the possible configuration parameters:
 | --- |:---:| --- | :---: | :---: |
 | `env` | :material-check: | Kronos environment | `String` | `PROD` |
 | `timezone` | :material-check: | Subscriptions timezone | `String` | `Europe/Paris` |
+
+#### Common features
+
+##### Next departures
+
+| Name | Required | Description | Type | Example |
+| --- |:---:| --- | :---: | :---: |
+| `frequency`| :material-check: | frequency of the next departures request in seconds | `Int` | `30` |
+
+##### Park availability
+
+| Name | Required | Description | Type | Example |
+| --- |:---:| --- | :---: | :---: |
+| `frequency`| :material-check: | frequency of the bss and park availability request in seconds | `Int` | `30` |
+
+##### Vehicle positions
+
+| Name | Required | Description | Type | Example |
+| --- |:---:| --- | :---: | :---: |
+| `frequency` | :material-check: | frequency of the vehicle positions request in seconds | `String` | `30` |
 
 ### Fonts
 
