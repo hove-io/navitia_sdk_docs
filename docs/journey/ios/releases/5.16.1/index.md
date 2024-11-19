@@ -2,7 +2,7 @@
 title: Journey iOS 5.16.1 - Changelog - Navitia SDK Docs
 ---
 
-# Journey iOS 5.16.0 Changelog
+# Journey iOS 5.16.1 Changelog
 
 <h2>🗓 07 Nov 2024</h2>
 
