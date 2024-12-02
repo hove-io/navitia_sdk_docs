@@ -355,8 +355,9 @@ The following are the possible configuration parameters:
 
 | Name | Required | Description | Type | Example |
 | --- |:---:| --- | :---: | :---: |
-| `bss` | :material-close: | Display/hide favorite bss on bottomSheet tabs | `Boolean` | `true` |
-| `journeys` | :material-close: | Display/hide favorite journeys on BottomSheet tabs  | `Boolean` | `true` |
+| `bss` | :material-close: | Display/hide favorite bss tab | `Boolean` | `true` |
+| `journeys` | :material-close: | Display/hide favorite journeys tab  | `Boolean` | `true` |
+| `stations` | :material-close: | Display/hide favorite stations tab  | `Boolean` | `true` |
 
 ##### Default location
 
@@ -372,7 +373,7 @@ The following are the possible configuration parameters:
 | `go_from_go_to` | :material-close: | Show/hide the go from/go to buttons | `Boolean` | `true` |
 | `next_departures` | :material-close: | Show/hide the next departures | [`Next departures`](#next-departures) | - |
 | `park_availability`| :material-close: | Show/hide the bss and car parking availability | [`Park Availability`](#park-availability) |
-| `see_all_schedules` | :material-close: | Show/hide the "See all schedules" | `Boolean` | `true` |
+| `schedule_mode` | :material-close: | Show/hide the "See all schedules" button | `Boolean` | `true` |
 | `tabs` | :material-close: | Enable/disable tabs | [`Bookmark tabs`](#bookmark-tabs) | - |
 
 ##### Bookmark tabs
@@ -560,9 +561,10 @@ The following are the possible configuration parameters:
 
 | Name | Required | Description | Type | Example |
 | --- |:---:| --- | :---: | :---: |
-| `type_id` | :material-check: | Navitia provider type id | `String` | `SCOOTER` |
+| `type_id` | :material-check: | Navitia provider type id | `String` | `provider:ridesharing:lime` |
 | `provider_id` | :material-check: | Navitia provider id | `String` | `ridesharing_provider` |
 | `icon_res` | :material-check: | Provider icon resource id | `String` | `ic_lime` |
+| `name_res` | :material-check: | Localized network name resource id | `String` | `lime` |
 
 ### Network resource
 
