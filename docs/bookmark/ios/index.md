@@ -163,7 +163,7 @@ The various CRD methods are accessed through `BookmarkUI.shared`.
 
 <h4>Create</h4>
 
-:material-arrow-right: Create a new favorite address. Returns a boolean if the creation has succeed or not.
+:material-arrow-right: Create a new favorite address. Returns a boolean if the creation has succeeded or not.
 
 ``` swift
 func addFavoriteAddress(_ address: SharedData.FavoriteAddress) -> Bool
@@ -173,7 +173,7 @@ func addFavoriteAddress(_ address: SharedData.FavoriteAddress) -> Bool
 | --- | --- | --- |
 | `address` | [`SharedData.FavoriteAddress`](#favorite-address) | Favorite address to create |
 
-:material-arrow-right: Create a new favorite journey. Returns a boolean if the creation has succeed or not.
+:material-arrow-right: Create a new favorite journey. Returns a boolean if the creation has succeeded or not.
 
 ``` swift
 func addFavoriteJourney(_ journey: SharedData.FavoriteJourney) -> Bool
@@ -183,7 +183,7 @@ func addFavoriteJourney(_ journey: SharedData.FavoriteJourney) -> Bool
 | --- | --- | --- |
 | `journey` | [`SharedData.FavoriteJourney`](#favorite-journey) | Favorite journey to create |
 
-:material-arrow-right: Create a new favorite POI. Returns a boolean if the creation has succeed or not.
+:material-arrow-right: Create a new favorite POI. Returns a boolean if the creation has succeeded or not.
 
 ``` swift
 func addFavoritePoi(_ poi: SharedData.FavoritePoi) -> Bool
@@ -193,7 +193,7 @@ func addFavoritePoi(_ poi: SharedData.FavoritePoi) -> Bool
 | --- | --- | --- |
 | `poi` | [`SharedData.FavoritePoi`](#favorite-poi)| Favorite POI to create |
 
-:material-arrow-right: Create a new favorite station. Returns a boolean if the creation has succeed or not.
+:material-arrow-right: Create a new favorite station. Returns a boolean if the creation has succeeded or not.
 
 ``` swift
 func addFavoriteStation(_ station: SharedData.FavoriteStation) -> Bool
@@ -235,7 +235,7 @@ func fetchFavoriteJourneys(max: Int) -> [SharedData.FavoriteJourney]
 | --- | --- | --- |
 | `max` | `Int` | Limit the result count. `0` for all data |
 
-:material-arrow-right: Get if a journey is added to favorites. Returns a boolean if the creation has succeed or not.
+:material-arrow-right: Get if a journey is added to favorites. Returns a boolean if the creation has succeeded or not.
 
 ``` swift
 func isJourneyInBookmark(journeyId: String) -> Bool
@@ -286,9 +286,35 @@ func fetchFavoriteStations(max: Int) -> [SharedData.FavoriteStation]
 | --- | --- | --- |
 | `max` | `Int` | Limit the result count. `0` for all data |
 
+<h4>Update</h4>
+
+:material-arrow-right:v Update an existing favorite address. Returns a boolean if the update has succeeded or not.
+
+``` swift
+func updateFavoriteAddress(updatedAddress: SharedData.FavoriteAddress) -> Bool
+```
+
+:material-arrow-right:v Update an existing favorite POI. Returns a boolean if the creation has succeeded or not.
+
+``` swift
+func updateFavoritePoi(updatedPoi: SharedData.FavoritePoi) -> Bool
+```
+
+:material-arrow-right:v Update an existing favorite station. Returns a boolean if the update has succeeded or not.
+
+``` swift
+func updateFavoriteStation(updatedStation: SharedData.FavoriteStation) -> Bool
+```
+
+:material-arrow-right:v Update an existing favorite journey. Returns a boolean if the update has succeeded or not.
+
+``` swift
+func updateFavoriteJourney(updatedJourney: SharedData.FavoriteJourney) -> Bool
+```
+
 <h4>Delete</h4>
 
-:material-arrow-right:v Delete an existing favorite address. Returns a boolean if the creation has succeed or not.
+:material-arrow-right:v Delete an existing favorite address. Returns a boolean if the creation has succeeded or not.
 
 ``` swift
 func deleteFavoriteAddress(id: String) -> Bool
@@ -298,7 +324,7 @@ func deleteFavoriteAddress(id: String) -> Bool
 | --- | --- | --- |
 | `id` | `String` | Id of the favorite address to delete |
 
-:material-arrow-right: Delete an existing favorite journey. Returns a boolean if the creation has succeed or not.
+:material-arrow-right: Delete an existing favorite journey. Returns a boolean if the creation has succeeded or not.
 
 ``` swift
 func deleteFavoriteJourney(id: String) -> Bool
@@ -308,7 +334,7 @@ func deleteFavoriteJourney(id: String) -> Bool
 | --- | --- | --- |
 | `id` | `String` | Id of the favorite journey to delete |
 
-:material-arrow-right: Delete an existing favorite POI. Returns a boolean if the creation has succeed or not.
+:material-arrow-right: Delete an existing favorite POI. Returns a boolean if the creation has succeeded or not.
 
 ``` swift
 func deleteFavoritePoi(id: String) -> Bool
@@ -318,7 +344,7 @@ func deleteFavoritePoi(id: String) -> Bool
 | --- | --- | --- |
 | `id` | `String` | Id of the favorite POI to delete |
 
-:material-arrow-right: Delete an existing favorite station. Returns a boolean if the creation has succeed or not.
+:material-arrow-right: Delete an existing favorite station. Returns a boolean if the creation has succeeded or not.
 
 ``` swift
 func deleteFavoriteStation(id: String) -> Bool
