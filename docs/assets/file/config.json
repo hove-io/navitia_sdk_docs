@@ -313,177 +313,177 @@
                     "ttf_file": "",
                     "font_name": ""
                 }
-            },
-            "schedule": {
-                "alphanumeric": {
-                    "regular": {
-                        "font_res": "",
-                        "ttf_file": "",
-                        "font_name": ""
-                    },
-                    "italic": {
-                        "font_res": "",
-                        "ttf_file": "",
-                        "font_name": ""
-                    },
-                    "bold": {
-                        "font_res": "",
-                        "ttf_file": "",
-                        "font_name": ""
-                    },
-                    "bold_italic": {
-                        "font_res": "",
-                        "ttf_file": "",
-                        "font_name": ""
-                    },
-                    "semi_bold": {
-                        "font_res": "",
-                        "ttf_file": "",
-                        "font_name": ""
-                    },
-                    "semi_bold_italic": {
-                        "font_res": "",
-                        "ttf_file": "",
-                        "font_name": ""
-                    },
-                    "light": {
-                        "font_res": "",
-                        "ttf_file": "",
-                        "font_name": ""
-                    },
-                    "light_italic": {
-                        "font_res": "",
-                        "ttf_file": "",
-                        "font_name": ""
-                    }
+            }
+        },
+        "schedule": {
+            "alphanumeric": {
+                "regular": {
+                    "font_res": "",
+                    "ttf_file": "",
+                    "font_name": ""
                 },
-                "numeric": {
-                    "regular": {
-                        "font_res": "",
-                        "ttf_file": "",
-                        "font_name": ""
-                    },
-                    "italic": {
-                        "font_res": "",
-                        "ttf_file": "",
-                        "font_name": ""
-                    },
-                    "bold": {
-                        "font_res": "",
-                        "ttf_file": "",
-                        "font_name": ""
-                    },
-                    "bold_italic": {
-                        "font_res": "",
-                        "ttf_file": "",
-                        "font_name": ""
-                    },
-                    "semi_bold": {
-                        "font_res": "",
-                        "ttf_file": "",
-                        "font_name": ""
-                    },
-                    "semi_bold_italic": {
-                        "font_res": "",
-                        "ttf_file": "",
-                        "font_name": ""
-                    },
-                    "light": {
-                        "font_res": "",
-                        "ttf_file": "",
-                        "font_name": ""
-                    },
-                    "light_italic": {
-                        "font_res": "",
-                        "ttf_file": "",
-                        "font_name": ""
-                    }
+                "italic": {
+                    "font_res": "",
+                    "ttf_file": "",
+                    "font_name": ""
+                },
+                "bold": {
+                    "font_res": "",
+                    "ttf_file": "",
+                    "font_name": ""
+                },
+                "bold_italic": {
+                    "font_res": "",
+                    "ttf_file": "",
+                    "font_name": ""
+                },
+                "semi_bold": {
+                    "font_res": "",
+                    "ttf_file": "",
+                    "font_name": ""
+                },
+                "semi_bold_italic": {
+                    "font_res": "",
+                    "ttf_file": "",
+                    "font_name": ""
+                },
+                "light": {
+                    "font_res": "",
+                    "ttf_file": "",
+                    "font_name": ""
+                },
+                "light_italic": {
+                    "font_res": "",
+                    "ttf_file": "",
+                    "font_name": ""
                 }
             },
-            "traffic": {
-                "alphanumeric": {
-                    "regular": {
-                        "font_res": "",
-                        "ttf_file": "",
-                        "font_name": ""
-                    },
-                    "italic": {
-                        "font_res": "",
-                        "ttf_file": "",
-                        "font_name": ""
-                    },
-                    "bold": {
-                        "font_res": "",
-                        "ttf_file": "",
-                        "font_name": ""
-                    },
-                    "bold_italic": {
-                        "font_res": "",
-                        "ttf_file": "",
-                        "font_name": ""
-                    },
-                    "semi_bold": {
-                        "font_res": "",
-                        "ttf_file": "",
-                        "font_name": ""
-                    },
-                    "semi_bold_italic": {
-                        "font_res": "",
-                        "ttf_file": "",
-                        "font_name": ""
-                    },
-                    "light": {
-                        "font_res": "",
-                        "ttf_file": "",
-                        "font_name": ""
-                    },
-                    "light_italic": {
-                        "font_res": "",
-                        "ttf_file": "",
-                        "font_name": ""
-                    }
+            "numeric": {
+                "regular": {
+                    "font_res": "",
+                    "ttf_file": "",
+                    "font_name": ""
                 },
-                "numeric": {
-                    "regular": {
-                        "font_res": "",
-                        "ttf_file": "",
-                        "font_name": ""
-                    },
-                    "italic": {
-                        "font_res": "",
-                        "ttf_file": "",
-                        "font_name": ""
-                    },
-                    "bold": {
-                        "font_res": "",
-                        "ttf_file": "",
-                        "font_name": ""
-                    },
-                    "bold_italic": {
-                        "font_res": "",
-                        "ttf_file": "",
-                        "font_name": ""
-                    },
-                    "semi_bold": {
-                        "font_res": "",
-                        "ttf_file": "",
-                        "font_name": ""
-                    },
-                    "semi_bold_italic": {
-                        "font_res": "",
-                        "ttf_file": "",
-                        "font_name": ""
-                    },
-                    "light": {
-                        "font_res": "",
-                        "ttf_file": "",
-                        "font_name": ""
-                    },
-                    "light_italic": {
-                        "font_res": "",
-                        "ttf_file": "",
-                        "font_name": ""
-                    }
+                "italic": {
+                    "font_res": "",
+                    "ttf_file": "",
+                    "font_name": ""
+                },
+                "bold": {
+                    "font_res": "",
+                    "ttf_file": "",
+                    "font_name": ""
+                },
+                "bold_italic": {
+                    "font_res": "",
+                    "ttf_file": "",
+                    "font_name": ""
+                },
+                "semi_bold": {
+                    "font_res": "",
+                    "ttf_file": "",
+                    "font_name": ""
+                },
+                "semi_bold_italic": {
+                    "font_res": "",
+                    "ttf_file": "",
+                    "font_name": ""
+                },
+                "light": {
+                    "font_res": "",
+                    "ttf_file": "",
+                    "font_name": ""
+                },
+                "light_italic": {
+                    "font_res": "",
+                    "ttf_file": "",
+                    "font_name": ""
+                }
+            }
+        },
+        "traffic": {
+            "alphanumeric": {
+                "regular": {
+                    "font_res": "",
+                    "ttf_file": "",
+                    "font_name": ""
+                },
+                "italic": {
+                    "font_res": "",
+                    "ttf_file": "",
+                    "font_name": ""
+                },
+                "bold": {
+                    "font_res": "",
+                    "ttf_file": "",
+                    "font_name": ""
+                },
+                "bold_italic": {
+                    "font_res": "",
+                    "ttf_file": "",
+                    "font_name": ""
+                },
+                "semi_bold": {
+                    "font_res": "",
+                    "ttf_file": "",
+                    "font_name": ""
+                },
+                "semi_bold_italic": {
+                    "font_res": "",
+                    "ttf_file": "",
+                    "font_name": ""
+                },
+                "light": {
+                    "font_res": "",
+                    "ttf_file": "",
+                    "font_name": ""
+                },
+                "light_italic": {
+                    "font_res": "",
+                    "ttf_file": "",
+                    "font_name": ""
+                }
+            },
+            "numeric": {
+                "regular": {
+                    "font_res": "",
+                    "ttf_file": "",
+                    "font_name": ""
+                },
+                "italic": {
+                    "font_res": "",
+                    "ttf_file": "",
+                    "font_name": ""
+                },
+                "bold": {
+                    "font_res": "",
+                    "ttf_file": "",
+                    "font_name": ""
+                },
+                "bold_italic": {
+                    "font_res": "",
+                    "ttf_file": "",
+                    "font_name": ""
+                },
+                "semi_bold": {
+                    "font_res": "",
+                    "ttf_file": "",
+                    "font_name": ""
+                },
+                "semi_bold_italic": {
+                    "font_res": "",
+                    "ttf_file": "",
+                    "font_name": ""
+                },
+                "light": {
+                    "font_res": "",
+                    "ttf_file": "",
+                    "font_name": ""
+                },
+                "light_italic": {
+                    "font_res": "",
+                    "ttf_file": "",
+                    "font_name": ""
                 }
             }
         }

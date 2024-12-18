@@ -266,19 +266,6 @@ The following are the possible configuration parameters:
 | --- |:---:| --- | :---: | :---: |
 | `title_res` | :material-check: | Localized POI booking button title id | `String` | `"book_a_bike"` |
 
-### Fonts
-
-| Name | Required  | Type | Target module |
-| --- | :-: | :--: | :---: |
-| `aroundme` | :material-close: | [`Around Me fonts`](#around-me-fonts) | Around Me |
-| `bookmark` | :material-close: | [`Bookmark fonts`](#bookmark-fonts) | Bookmark |
-| `journey` | :material-close: | [`Journey fonts`](#journey-fonts) | Journey |
-| `schedule` | :material-close: | [`Schedule fonts`](#schedule-fonts) | Schedule |
-| `traffic` | :material-close: | [`Traffic fonts`](#traffic-fonts) | Traffic |
-<!-- [Not yet]
-| `account` | :material-close: | [`Account fonts`](#account-fonts) | Account | 
--->
-
 ### Features
 
 | Name | Required  | Type | Target module |
