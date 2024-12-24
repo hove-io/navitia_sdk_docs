@@ -10,7 +10,7 @@ Add the following dependencies in the `build.gradle` file of your application:
 
 ```kotlin
 dependencies {
-    implementation("com.kisio.navitia.sdk.ui:schedule:2.9.1")
+    implementation("com.kisio.navitia.sdk.ui:schedule:2.9.2")
 }
 ```
 
