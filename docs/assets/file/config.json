@@ -643,7 +643,10 @@
                 "frequency": 30
             },
             "park_availability": {
-                "frequency": 30
+                "frequency": 30,
+                "display": {
+                    "prm": true
+                }
             },
             "schedule_mode": true,
             "stop_point_search": true,
@@ -658,7 +661,10 @@
                 "frequency": 30
             },
             "park_availability": {
-                "frequency": 30
+                "frequency": 30,
+                "display": {
+                    "prm": true
+                }
             },
             "schedule_mode": true,
             "tabs": {
@@ -702,7 +708,10 @@
                 }
             },
             "park_availability": {
-                "frequency": 30
+                "frequency": 30,
+                "display": {
+                    "prm": true
+                }
             },
             "price": true,
             "realtime_delays": true,
