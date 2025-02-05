@@ -360,7 +360,8 @@ func deleteFavoriteStation(id: String) -> Bool
 
 | Name | Required | Description | Type |
 | --- |:---:| --- | :---: |
-| `id` | :material-check: | Unique address id | `String` |
+| `uuid` | :material-check: | Unique database address id | `String` |
+| `navitiaId` | :material-check: | Unique navitia id | `String` |
 | `name` | :material-check: | Address name | `String` |
 | `houseNumber` | :material-check: | House number | `Int` |
 | `address` | :material-check: | Address label | `String` |
@@ -373,7 +374,8 @@ func deleteFavoriteStation(id: String) -> Bool
 
 | Name | Required | Description | Type |
 | --- |:---:| --- | :---: |
-| `id` | :material-check: | Unique journey id | `String` |
+| `uuid` | :material-check: | Unique database journey id | `String` |
+| `journeyId` | :material-check: | Unique journey id | `String` |
 | `fromName` | :material-check: | Departure name | `String` |
 | `fromId` | :material-check: | Departure Navitia id | `String` |
 | `toName` | :material-check: | Arrival name | `String` |
@@ -400,7 +402,8 @@ func deleteFavoriteStation(id: String) -> Bool
 
 | Name | Required | Description | Type |
 | --- |:---:| --- | :---: |
-| `id` | :material-check: | Unique POI id | `String` |
+| `uuid` | :material-check: | Unique database POI id | `String` |
+| `navitiaId` | :material-check: | Unique POI id | `String` |
 | `coords` | :material-check: | POI coordinates | `CLLocationCoordinate2D` |
 | `name` | :material-check: | POI name | `String` |
 | `address` | :material-check: | POI address | `String` |
@@ -413,6 +416,7 @@ func deleteFavoriteStation(id: String) -> Bool
 
 | Name | Required | Description | Type |
 | --- |:---:| --- | :---: |
+| `uuid` | :material-check: | Unique database station id | `String` |
 | `stopAreaId` | :material-check: | Navitia stop area id | `String` |
 | `coords` | :material-check: | Station coordinates | `CLLocationCoordinate2D` |
 | `name` | :material-check: | Station name | `String` |
