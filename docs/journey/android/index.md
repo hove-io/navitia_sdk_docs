@@ -10,7 +10,7 @@ Add the following dependencies in the `build.gradle` file of your application:
 
 ```kotlin
 dependencies {
-    implementation("com.kisio.navitia.sdk.ui:journey:5.17.2")
+    implementation("com.kisio.navitia.sdk.ui:journey:5.17.3")
 }
 ```
 

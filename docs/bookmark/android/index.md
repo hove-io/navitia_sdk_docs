@@ -10,7 +10,7 @@ Add the following dependencies in the `build.gradle` file of your application:
 
 ```kotlin
 dependencies {
-    implementation("com.kisio.navitia.sdk.ui:bookmark:1.9.3")
+    implementation("com.kisio.navitia.sdk.ui:bookmark:1.9.4")
 }
 ```
 
@@ -253,35 +253,32 @@ fun updateAddress(address: SharedData.AddressBookmark)
 :material-arrow-right: Update an existing favorite journey
 
 ```kotlin
-fun updateJourney(travelId: String, additionalInformation: String)
+fun updateJourney(journey: SharedData.JourneyBookmark)
 ```
 
 | Param | Type | Description |
 | --- | --- | --- |
-| `travelId` | `String` | Travel id of the favorite journey to update |
-| `additionalInformation` | `String` | Extra data to update |
+| `journey` | `SharedData.JourneyBookmark` | Favorite journey to update |
 
 :material-arrow-right: Update an existing favorite POI
 
 ```kotlin
-fun updatePoi(id: String, additionalInformation: String)
+fun updatePoi(poi: SharedData.PoiBookmark)
 ```
 
 | Param | Type | Description |
 | --- | --- | --- |
-| `id` | `String` | Id of the favorite POI to update |
-| `additionalInformation` | `String` | Extra data to update |
+| `poi` | `SharedData.PoiBookmark` | Favorite poi to update |
 
 :material-arrow-right: Update an existing favorite station
 
 ```kotlin
-fun updateStation(id: String, additionalInformation: String)
+fun updateStation(station: SharedData.StationBookmark)
 ```
 
 | Param | Type | Description |
 | --- | --- | --- |
-| `is` | `String` | Id of the favorite station to update |
-| `additionalInformation` | `String` | Extra data to update |
+| `station` | `SharedData.StationBookmark` | Favorite station to update |
 
 <h4>Delete</h4>
 
@@ -332,6 +329,7 @@ fun deleteStation(stopAreaId: String, lineId: String)
 
 | Name | Required | Description | Type |
 | --- |:---:| --- | :---: |
+| `databaseId` | :material-check: | Unique database id | `Long?` |
 | `id` | :material-check: | Unique address id | `String` |
 | `name` | :material-check: | Address name | `String` |
 | `houseNumber` | :material-check: | House number | `Int` |
@@ -345,6 +343,7 @@ fun deleteStation(stopAreaId: String, lineId: String)
 
 | Name | Required | Description | Type |
 | --- |:---:| --- | :---: |
+| `databaseId` | :material-check: | Unique database id | `Long?` |
 | `travelId` | :material-check: | Unique journey id | `String` |
 | `from` | :material-check: | Departure name | `String` |
 | `fromId` | :material-check: | Departure Navitia id | `String` |
@@ -386,6 +385,7 @@ fun deleteStation(stopAreaId: String, lineId: String)
 
 | Name | Required | Description | Type |
 | --- |:---:| --- | :---: |
+| `databaseId` | :material-check: | Unique database id | `Long?` |
 | `id` | :material-check: | Unique POI id | `String` |
 | `coords` | :material-check: | POI coordinates | `LatLng` |
 | `name` | :material-check: | POI name | `String` |
@@ -399,6 +399,7 @@ fun deleteStation(stopAreaId: String, lineId: String)
 
 | Name | Required | Description | Type |
 | --- |:---:| --- | :---: |
+| `databaseId` | :material-check: | Unique database id | `Long?` |
 | `stopAreaId` | :material-check: | Navitia stop area id | `String` |
 | `coords` | :material-check: | Station coordinates | `LatLng` |
 | `name` | :material-check: | Station name | `String` |
