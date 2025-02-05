@@ -4,6 +4,7 @@ title: Journey Android - Changelogs - Navitia SDK Docs
 
 # Journey Android Changelogs
 
+* [v5.17.3](releases/5.17.3/index.md) (_03 Feb 2025_)
 * [v5.17.2](releases/5.17.2/index.md) (_08 Jan 2024_)
 * [v5.17.1](releases/5.17.1/index.md) (_24 Dec 2024_)
 * [v5.17.0](releases/5.17.0/index.md) (_02 Dec 2024_)
