@@ -4,6 +4,6 @@
 
 Name | Type | Note
 ---- | ---- | ----
-**currency** | **String** | [optional] 
 **value** | **String** | 
+**currency** | **String** | [optional] 
 

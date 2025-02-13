@@ -4,6 +4,6 @@
 
 Name | Type | Note
 ---- | ---- | ----
-**headers** | [**List<Header>**](Header.md) | 
 **rows** | [**List<Row>**](Row.md) | 
+**headers** | [**List<Header>**](Header.md) | 
 

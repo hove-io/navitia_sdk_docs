@@ -15,8 +15,8 @@ Method | HTTP request
 
 Name | Type | Note
 ---- | ---- | ----
-**lat** | **Double** | The latitude of where the coord you want to query 
 **lon** | **Double** | The longitude of where the coord you want to query 
+**lat** | **Double** | The latitude of where the coord you want to query 
 **depth** | **Int** | The depth of your object [optional] [default to 1] 
 **count** | **Int** | Number of calendars per page [optional] [default to 10] 
 **startPage** | **Int** | The current page [optional] 
@@ -32,8 +32,8 @@ Name | Type | Note
 <h3>Example</h3>
 ```kotlin
 ExpertSdk.getInstance().calendarsApi.getCoverageLonLatCalendars(
-    lat = 0.0,
     lon = 0.0,
+    lat = 0.0,
     depth = 123,
     count = 123,
     startPage = 123,
@@ -58,8 +58,8 @@ if (response.isSuccessful && response.body() != null) {
 
 Name | Type | Note
 ---- | ---- | ----
-**lat** | **Double** | The latitude of where the coord you want to query 
 **lon** | **Double** | The longitude of where the coord you want to query 
+**lat** | **Double** | The latitude of where the coord you want to query 
 **id** | **String** | Id of the object you want to query 
 **depth** | **Int** | The depth of your object [optional] [default to 1] 
 **count** | **Int** | Number of calendars per page [optional] [default to 10] 
@@ -76,8 +76,8 @@ Name | Type | Note
 <h3>Example</h3>
 ```kotlin
 ExpertSdk.getInstance().calendarsApi.getCoverageLonLatCalendarsId(
-    lat = 0.0,
     lon = 0.0,
+    lat = 0.0,
     id = "id_example",
     depth = 123,
     count = 123,
@@ -103,8 +103,8 @@ if (response.isSuccessful && response.body() != null) {
 
 Name | Type | Note
 ---- | ---- | ----
-**lat** | **Double** | The latitude of where the coord you want to query 
 **lon** | **Double** | The longitude of where the coord you want to query 
+**lat** | **Double** | The latitude of where the coord you want to query 
 **uri** | **String** | First part of the uri 
 **depth** | **Int** | The depth of your object [optional] [default to 1] 
 **count** | **Int** | Number of calendars per page [optional] [default to 10] 
@@ -121,8 +121,8 @@ Name | Type | Note
 <h3>Example</h3>
 ```kotlin
 ExpertSdk.getInstance().calendarsApi.getCoverageLonLatUriCalendars(
-    lat = 0.0,
     lon = 0.0,
+    lat = 0.0,
     uri = "uri_example",
     depth = 123,
     count = 123,

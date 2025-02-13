@@ -4,14 +4,14 @@
 
 Name | Type | Note
 ---- | ---- | ----
-**stopPoint** | [**StopPoint**](StopPoint.md) | [optional] 
+**arrivalTime** | **String** | [optional] 
 **utcArrivalTime** | **String** | [optional] 
+**departureTime** | **String** | [optional] 
 **utcDepartureTime** | **String** | [optional] 
 **headsign** | **String** | [optional] 
-**skippedStop** | **Boolean** | [optional] 
-**arrivalTime** | **String** | [optional] 
 **journeyPatternPoint** | [**JourneyPatternPoint**](JourneyPatternPoint.md) | [optional] 
-**dropOffAllowed** | **Boolean** | [optional] 
+**stopPoint** | [**StopPoint**](StopPoint.md) | [optional] 
 **pickupAllowed** | **Boolean** | [optional] 
-**departureTime** | **String** | [optional] 
+**dropOffAllowed** | **Boolean** | [optional] 
+**skippedStop** | **Boolean** | [optional] 
 

@@ -12,11 +12,11 @@ Method | HTTP request
 
 Name | Type | Note
 ---- | ---- | ----
-**lat** | **Double** | The latitude of where the coord you want to query 
 **lon** | **Double** | The longitude of where the coord you want to query 
+**lat** | **Double** | The latitude of where the coord you want to query 
 **id** | **String** | Id of the object you want to query 
 **bssStands** | **Boolean** | DEPRECATED, Use add_poi_infos[]=bss_stands [optional] 
-**addPoiInfos** | [**List<String>**](String.md) | Show more information about the poi if it's available, for instance, show BSS/car park availability in the pois(BSS/car park) of the response [optional] [default to [u&#39;bss_stands&#39;, u&#39;car_park&#39;]] [enum: bss_stands, car_park, , none] 
+**addPoiInfos** | [**List<String>**](String.md) | Show more information about the poi if it's available, for instance, show BSS/car park availability in the pois(BSS/car park) of the response [optional] [default to [&#39;bss_stands&#39;, &#39;car_park&#39;]] [enum: bss_stands, car_park, , none] 
 **disableGeojson** | **Boolean** | remove geojson from the response [optional] 
 **disableDisruption** | **Boolean** | remove disruptions from the response [optional] 
 
@@ -26,8 +26,8 @@ Name | Type | Note
 <h3>Example</h3>
 ```kotlin
 ExpertSdk.getInstance().placeUriApi.getCoverageLonLatPlacesId(
-    lat = 0.0,
     lon = 0.0,
+    lat = 0.0,
     id = "id_example",
     bssStands = true,
     addPoiInfos = listOf(),
@@ -52,7 +52,7 @@ Name | Type | Note
 **region** | **String** | The region you want to query 
 **id** | **String** | Id of the object you want to query 
 **bssStands** | **Boolean** | DEPRECATED, Use add_poi_infos[]=bss_stands [optional] 
-**addPoiInfos** | [**List<String>**](String.md) | Show more information about the poi if it's available, for instance, show BSS/car park availability in the pois(BSS/car park) of the response [optional] [default to [u&#39;bss_stands&#39;, u&#39;car_park&#39;]] [enum: bss_stands, car_park, , none] 
+**addPoiInfos** | [**List<String>**](String.md) | Show more information about the poi if it's available, for instance, show BSS/car park availability in the pois(BSS/car park) of the response [optional] [default to [&#39;bss_stands&#39;, &#39;car_park&#39;]] [enum: bss_stands, car_park, , none] 
 **disableGeojson** | **Boolean** | remove geojson from the response [optional] 
 **disableDisruption** | **Boolean** | remove disruptions from the response [optional] 
 
@@ -86,7 +86,7 @@ Name | Type | Note
 ---- | ---- | ----
 **id** | **String** | Id of the object you want to query 
 **bssStands** | **Boolean** | DEPRECATED, Use add_poi_infos[]=bss_stands [optional] 
-**addPoiInfos** | [**List<String>**](String.md) | Show more information about the poi if it's available, for instance, show BSS/car park availability in the pois(BSS/car park) of the response [optional] [default to [u&#39;bss_stands&#39;, u&#39;car_park&#39;]] [enum: bss_stands, car_park, , none] 
+**addPoiInfos** | [**List<String>**](String.md) | Show more information about the poi if it's available, for instance, show BSS/car park availability in the pois(BSS/car park) of the response [optional] [default to [&#39;bss_stands&#39;, &#39;car_park&#39;]] [enum: bss_stands, car_park, , none] 
 **disableGeojson** | **Boolean** | remove geojson from the response [optional] 
 **disableDisruption** | **Boolean** | remove disruptions from the response [optional] 
 

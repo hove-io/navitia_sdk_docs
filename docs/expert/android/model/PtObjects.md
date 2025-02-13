@@ -4,10 +4,10 @@
 
 Name | Type | Note
 ---- | ---- | ----
-**links** | [**List<LinkSchema>**](LinkSchema.md) | [optional] 
-**disruptions** | [**List<Disruption>**](Disruption.md) | 
-**feedPublishers** | [**List<FeedPublisher>**](FeedPublisher.md) | 
-**context** | [**Context**](Context.md) | [optional] 
 **error** | [**Error**](Error.md) | [optional] 
+**feedPublishers** | [**List<FeedPublisher>**](FeedPublisher.md) | 
+**disruptions** | [**List<Disruption>**](Disruption.md) | 
 **ptObjects** | [**List<PtObject>**](PtObject.md) | [optional] 
+**links** | [**List<LinkSchema>**](LinkSchema.md) | [optional] 
+**context** | [**Context**](Context.md) | [optional] 
 

@@ -4,17 +4,18 @@
 
 Name | Type | Note
 ---- | ---- | ----
-**embeddedType** | [**EmbeddedType**](#EmbeddedType) | 
-**stopPoint** | [**StopPoint**](StopPoint.md) | [optional] 
-**name** | **String** | Name of the object 
-**route** | [**Route**](Route.md) | [optional] 
-**stopArea** | [**StopArea**](StopArea.md) | [optional] 
-**commercialMode** | [**CommercialMode**](CommercialMode.md) | [optional] 
 **id** | **String** | Identifier of the object 
-**line** | [**Line**](Line.md) | [optional] 
+**name** | **String** | Name of the object 
 **quality** | **Int** | [optional] 
-**trip** | [**Trip**](Trip.md) | [optional] 
+**stopArea** | [**StopArea**](StopArea.md) | [optional] 
+**stopPoint** | [**StopPoint**](StopPoint.md) | [optional] 
+**poi** | [**Poi**](Poi.md) | [optional] 
+**line** | [**Line**](Line.md) | [optional] 
 **network** | [**Network**](Network.md) | [optional] 
+**route** | [**Route**](Route.md) | [optional] 
+**commercialMode** | [**CommercialMode**](CommercialMode.md) | [optional] 
+**trip** | [**Trip**](Trip.md) | [optional] 
+**embeddedType** | [**EmbeddedType**](#EmbeddedType) | 
 
 ## EmbeddedType
 

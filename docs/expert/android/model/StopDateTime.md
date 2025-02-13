@@ -4,14 +4,15 @@
 
 Name | Type | Note
 ---- | ---- | ----
-**stopPoint** | [**StopPoint**](StopPoint.md) | [optional] 
-**links** | [**List<LinkSchema>**](LinkSchema.md) | 
-**arrivalDateTime** | **String** | [optional] 
-**additionalInformations** | [**List<AdditionalInformations>**](#AdditionalInformations) | 
 **departureDateTime** | **String** | [optional] 
-**baseArrivalDateTime** | **String** | [optional] 
 **baseDepartureDateTime** | **String** | [optional] 
+**arrivalDateTime** | **String** | [optional] 
+**baseArrivalDateTime** | **String** | [optional] 
+**stopPoint** | [**StopPoint**](StopPoint.md) | [optional] 
+**additionalInformations** | [**List<AdditionalInformations>**](#AdditionalInformations) | 
+**links** | [**List<LinkSchema>**](LinkSchema.md) | 
 **dataFreshness** | [**DataFreshness**](#DataFreshness) | [optional] 
+**departureOccupancy** | [**DepartureOccupancy**](#DepartureOccupancy) | [optional] 
 
 ## AdditionalInformations
 
@@ -30,4 +31,16 @@ Name | Value
 BASE_SCHEDULE | "base_schedule"
 ADAPTED_SCHEDULE | "adapted_schedule"
 REALTIME | "realtime"
+
+## DepartureOccupancy
+
+Name | Value
+---- | -----
+EMPTY | "empty"
+MANY_SEATS_AVAILABLE | "many_seats_available"
+FEW_SEATS_AVAILABLE | "few_seats_available"
+STANDING_ROOM_ONLY | "standing_room_only"
+CRUSHED_STANDING_ROOM_ONLY | "crushed_standing_room_only"
+FULL | "full"
+NOT_ACCEPTING_PASSENGERS | "not_accepting_passengers"
 

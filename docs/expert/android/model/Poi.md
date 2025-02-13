@@ -4,14 +4,15 @@
 
 Name | Type | Note
 ---- | ---- | ----
-**poiType** | [**PoiType**](PoiType.md) | [optional] 
+**id** | **String** | Identifier of the object 
 **name** | **String** | Name of the object 
-**carPark** | [**CarPark**](CarPark.md) | [optional] 
 **coord** | [**Coord**](Coord.md) | [optional] 
+**links** | [**List<LinkSchema>**](LinkSchema.md) | [optional] 
 **label** | **String** | [optional] 
 **administrativeRegions** | [**List<Admin>**](Admin.md) | [optional] 
-**address** | [**Address**](Address.md) | [optional] 
-**id** | **String** | Identifier of the object 
+**poiType** | [**PoiType**](PoiType.md) | [optional] 
 **properties** | **Map<String, String>** | [optional] 
+**address** | [**Address**](Address.md) | [optional] 
 **stands** | [**Stands**](Stands.md) | [optional] 
+**carPark** | [**CarPark**](CarPark.md) | [optional] 
 

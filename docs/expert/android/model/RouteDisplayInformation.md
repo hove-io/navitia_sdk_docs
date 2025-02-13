@@ -4,13 +4,15 @@
 
 Name | Type | Note
 ---- | ---- | ----
-**direction** | **String** | 
-**code** | **String** | [optional] 
-**network** | **String** | [optional] 
-**links** | [**List<LinkSchema>**](LinkSchema.md) | 
-**color** | **String** | [optional] 
-**label** | **String** | [optional] 
 **commercialMode** | **String** | [optional] 
-**textColor** | **String** | [optional] 
+**network** | **String** | [optional] 
+**direction** | **String** | 
+**label** | **String** | [optional] 
+**color** | **String** | [optional] 
+**code** | **String** | [optional] 
+**headsign** | **String** | 
 **name** | **String** | [optional] 
+**links** | [**List<LinkSchema>**](LinkSchema.md) | 
+**textColor** | **String** | [optional] 
+**tripShortName** | **String** | 
 

@@ -15,8 +15,8 @@ Method | HTTP request
 
 Name | Type | Note
 ---- | ---- | ----
-**lat** | **Double** | The latitude of where the coord you want to query 
 **lon** | **Double** | The longitude of where the coord you want to query 
+**lat** | **Double** | The latitude of where the coord you want to query 
 **depth** | **Int** | The depth of your object [optional] [default to 1] 
 **count** | **Int** | Number of objects per page [optional] [default to 25] 
 **filter** | **String** | Filter your objects [optional] 
@@ -29,8 +29,8 @@ Name | Type | Note
 <h3>Example</h3>
 ```kotlin
 ExpertSdk.getInstance().vehiclePositionsApi.getCoordLonLatVehiclePositions(
-    lat = 0.0,
     lon = 0.0,
+    lat = 0.0,
     depth = 123,
     count = 123,
     filter = "filter_example",
@@ -52,8 +52,8 @@ if (response.isSuccessful && response.body() != null) {
 
 Name | Type | Note
 ---- | ---- | ----
-**lat** | **Double** | The latitude of where the coord you want to query 
 **lon** | **Double** | The longitude of where the coord you want to query 
+**lat** | **Double** | The latitude of where the coord you want to query 
 **depth** | **Int** | The depth of your object [optional] [default to 1] 
 **count** | **Int** | Number of objects per page [optional] [default to 25] 
 **filter** | **String** | Filter your objects [optional] 
@@ -66,8 +66,8 @@ Name | Type | Note
 <h3>Example</h3>
 ```kotlin
 ExpertSdk.getInstance().vehiclePositionsApi.getCoordsLonLatVehiclePositions(
-    lat = 0.0,
     lon = 0.0,
+    lat = 0.0,
     depth = 123,
     count = 123,
     filter = "filter_example",
@@ -89,8 +89,8 @@ if (response.isSuccessful && response.body() != null) {
 
 Name | Type | Note
 ---- | ---- | ----
-**lat** | **Double** | The latitude of where the coord you want to query 
 **lon** | **Double** | The longitude of where the coord you want to query 
+**lat** | **Double** | The latitude of where the coord you want to query 
 **uri** | **String** | First part of the uri 
 **depth** | **Int** | The depth of your object [optional] [default to 1] 
 **count** | **Int** | Number of objects per page [optional] [default to 25] 
@@ -104,8 +104,8 @@ Name | Type | Note
 <h3>Example</h3>
 ```kotlin
 ExpertSdk.getInstance().vehiclePositionsApi.getCoverageLonLatUriVehiclePositions(
-    lat = 0.0,
     lon = 0.0,
+    lat = 0.0,
     uri = "uri_example",
     depth = 123,
     count = 123,
@@ -128,8 +128,8 @@ if (response.isSuccessful && response.body() != null) {
 
 Name | Type | Note
 ---- | ---- | ----
-**lat** | **Double** | The latitude of where the coord you want to query 
 **lon** | **Double** | The longitude of where the coord you want to query 
+**lat** | **Double** | The latitude of where the coord you want to query 
 **depth** | **Int** | The depth of your object [optional] [default to 1] 
 **count** | **Int** | Number of objects per page [optional] [default to 25] 
 **filter** | **String** | Filter your objects [optional] 
@@ -142,8 +142,8 @@ Name | Type | Note
 <h3>Example</h3>
 ```kotlin
 ExpertSdk.getInstance().vehiclePositionsApi.getCoverageLonLatVehiclePositions(
-    lat = 0.0,
     lon = 0.0,
+    lat = 0.0,
     depth = 123,
     count = 123,
     filter = "filter_example",

@@ -4,22 +4,22 @@
 
 Name | Type | Note
 ---- | ---- | ----
-**status** | [**Status**](#Status) | [optional] 
-**category** | **String** | [optional] 
-**cause** | **String** | 
-**severity** | [**Severity**](Severity.md) | [optional] 
-**tags** | **List<String>** | [optional] 
-**messages** | [**List<Message>**](Message.md) | [optional] 
-**applicationPeriods** | [**List<Period>**](Period.md) | [optional] 
-**impactId** | **String** | [optional] 
-**disruptionId** | **String** | [optional] 
-**updatedAt** | **String** | [optional] 
-**uri** | **String** | [optional] 
-**impactedObjects** | [**List<Impacted>**](Impacted.md) | [optional] 
 **id** | **String** | 
+**disruptionId** | **String** | [optional] 
+**impactId** | **String** | [optional] 
+**applicationPeriods** | [**List<Period>**](Period.md) | [optional] 
+**applicationPatterns** | [**List<ApplicationPattern>**](ApplicationPattern.md) | [optional] 
+**status** | [**Status**](#Status) | [optional] 
+**updatedAt** | **String** | [optional] 
+**tags** | **List<String>** | [optional] 
+**cause** | **String** | 
+**category** | **String** | [optional] 
+**severity** | [**Severity**](Severity.md) | [optional] 
+**messages** | [**List<Message>**](Message.md) | [optional] 
+**impactedObjects** | [**List<Impacted>**](Impacted.md) | [optional] 
+**uri** | **String** | [optional] 
 **disruptionUri** | **String** | [optional] 
 **contributor** | **String** | 
-**applicationPatterns** | [**List<ApplicationPattern>**](ApplicationPattern.md) | [optional] 
 **properties** | [**List<DisruptionProperty>**](DisruptionProperty.md) | [optional] 
 
 ## Status

@@ -5,6 +5,6 @@
 Name | Type | Note
 ---- | ---- | ----
 **distanceFromStart** | **Int** | 
-**geojsonOffset** | **Int** | [optional] 
 **elevation** | **Int** | 
+**geojsonOffset** | **Int** | [optional] 
 

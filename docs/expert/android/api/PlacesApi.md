@@ -13,9 +13,9 @@ Method | HTTP request
 Name | Type | Note
 ---- | ---- | ----
 **q** | **String** | The data to search 
-**lat** | **Double** | The latitude of where the coord you want to query 
 **lon** | **Double** | The longitude of where the coord you want to query 
-**type** | [**List<String>**](String.md) | The type of data to search [optional] [default to [u&#39;stop_area&#39;, u&#39;address&#39;, u&#39;poi&#39;, u&#39;administrative_region&#39;]] [enum: stop_point, poi, administrative_region, stop_area, address] 
+**lat** | **Double** | The latitude of where the coord you want to query 
+**type** | [**List<String>**](String.md) | The type of data to search [optional] [default to [&#39;stop_area&#39;, &#39;address&#39;, &#39;poi&#39;, &#39;administrative_region&#39;]] [enum: stop_area, stop_point, address, poi, administrative_region] 
 **count** | **Int** | The maximum number of places returned [optional] [default to 10] 
 **adminUri** | [**List<String>**](String.md) | If filled, will restrain the search within the given admin uris [optional] 
 **depth** | **Int** | The depth of objects [optional] [default to 1] 
@@ -32,8 +32,8 @@ Name | Type | Note
 ```kotlin
 ExpertSdk.getInstance().placesApi.getCoverageLonLatPlaces(
     q = "q_example",
-    lat = 0.0,
     lon = 0.0,
+    lat = 0.0,
     type = listOf(),
     count = 123,
     adminUri = listOf(),
@@ -61,7 +61,7 @@ Name | Type | Note
 ---- | ---- | ----
 **q** | **String** | The data to search 
 **region** | **String** | The region you want to query 
-**type** | [**List<String>**](String.md) | The type of data to search [optional] [default to [u&#39;stop_area&#39;, u&#39;address&#39;, u&#39;poi&#39;, u&#39;administrative_region&#39;]] [enum: stop_point, poi, administrative_region, stop_area, address] 
+**type** | [**List<String>**](String.md) | The type of data to search [optional] [default to [&#39;stop_area&#39;, &#39;address&#39;, &#39;poi&#39;, &#39;administrative_region&#39;]] [enum: stop_area, stop_point, address, poi, administrative_region] 
 **count** | **Int** | The maximum number of places returned [optional] [default to 10] 
 **adminUri** | [**List<String>**](String.md) | If filled, will restrain the search within the given admin uris [optional] 
 **depth** | **Int** | The depth of objects [optional] [default to 1] 
@@ -105,7 +105,7 @@ if (response.isSuccessful && response.body() != null) {
 Name | Type | Note
 ---- | ---- | ----
 **q** | **String** | The data to search 
-**type** | [**List<String>**](String.md) | The type of data to search [optional] [default to [u&#39;stop_area&#39;, u&#39;address&#39;, u&#39;poi&#39;, u&#39;administrative_region&#39;]] [enum: stop_point, poi, administrative_region, stop_area, address] 
+**type** | [**List<String>**](String.md) | The type of data to search [optional] [default to [&#39;stop_area&#39;, &#39;address&#39;, &#39;poi&#39;, &#39;administrative_region&#39;]] [enum: stop_area, stop_point, address, poi, administrative_region] 
 **count** | **Int** | The maximum number of places returned [optional] [default to 10] 
 **adminUri** | [**List<String>**](String.md) | If filled, will restrain the search within the given admin uris [optional] 
 **depth** | **Int** | The depth of objects [optional] [default to 1] 

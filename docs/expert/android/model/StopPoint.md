@@ -4,24 +4,24 @@
 
 Name | Type | Note
 ---- | ---- | ----
-**comment** | **String** | [optional] 
-**commercialModes** | [**List<CommercialMode>**](CommercialMode.md) | [optional] 
-**stopArea** | [**StopArea**](StopArea.md) | [optional] 
-**links** | [**List<LinkSchema>**](LinkSchema.md) | 
-**accessPoints** | [**List<PathWay>**](PathWay.md) | [optional] 
-**physicalModes** | [**List<PhysicalMode>**](PhysicalMode.md) | [optional] 
-**lines** | [**List<Line>**](Line.md) | [optional] 
-**comments** | [**List<Comment>**](Comment.md) | [optional] 
-**label** | **String** | [optional] 
-**equipments** | [**List<Equipments>**](#Equipments) | 
-**codes** | [**List<Code>**](Code.md) | [optional] 
-**coord** | [**Coord**](Coord.md) | [optional] 
-**equipmentDetails** | [**List<EquipmentDetails>**](EquipmentDetails.md) | [optional] 
-**address** | [**Address**](Address.md) | [optional] 
-**fareZone** | [**FareZone**](FareZone.md) | [optional] 
-**administrativeRegions** | [**List<Admin>**](Admin.md) | [optional] 
 **id** | **String** | Identifier of the object 
 **name** | **String** | Name of the object 
+**comments** | [**List<Comment>**](Comment.md) | [optional] 
+**comment** | **String** | [optional] 
+**codes** | [**List<Code>**](Code.md) | [optional] 
+**label** | **String** | [optional] 
+**coord** | [**Coord**](Coord.md) | [optional] 
+**links** | [**List<LinkSchema>**](LinkSchema.md) | 
+**commercialModes** | [**List<CommercialMode>**](CommercialMode.md) | [optional] 
+**physicalModes** | [**List<PhysicalMode>**](PhysicalMode.md) | [optional] 
+**administrativeRegions** | [**List<Admin>**](Admin.md) | [optional] 
+**stopArea** | [**StopArea**](StopArea.md) | [optional] 
+**equipments** | [**List<Equipments>**](#Equipments) | 
+**address** | [**Address**](Address.md) | [optional] 
+**fareZone** | [**FareZone**](FareZone.md) | [optional] 
+**equipmentDetails** | [**List<EquipmentDetails>**](EquipmentDetails.md) | [optional] 
+**lines** | [**List<Line>**](Line.md) | [optional] 
+**accessPoints** | [**List<PathWay>**](PathWay.md) | [optional] 
 
 ## Equipments
 

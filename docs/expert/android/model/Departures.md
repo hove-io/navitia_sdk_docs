@@ -5,12 +5,12 @@
 Name | Type | Note
 ---- | ---- | ----
 **pagination** | [**Pagination**](Pagination.md) | 
-**links** | [**List<LinkSchema>**](LinkSchema.md) | [optional] 
+**error** | [**Error**](Error.md) | [optional] 
+**feedPublishers** | [**List<FeedPublisher>**](FeedPublisher.md) | 
 **disruptions** | [**List<Disruption>**](Disruption.md) | 
 **notes** | [**List<Note>**](Note.md) | [optional] 
-**feedPublishers** | [**List<FeedPublisher>**](FeedPublisher.md) | 
-**departures** | [**List<Passage>**](Passage.md) | 
+**links** | [**List<LinkSchema>**](LinkSchema.md) | [optional] 
 **context** | [**Context**](Context.md) | [optional] 
-**error** | [**Error**](Error.md) | [optional] 
 **exceptions** | [**List<Exception>**](Exception.md) | [optional] 
+**departures** | [**List<Passage>**](Passage.md) | 
 

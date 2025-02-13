@@ -4,6 +4,6 @@
 
 Name | Type | Note
 ---- | ---- | ----
-**lat** | **String** | 
 **lon** | **String** | 
+**lat** | **String** | 
 

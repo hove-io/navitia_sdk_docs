@@ -4,7 +4,7 @@
 
 Name | Type | Note
 ---- | ---- | ----
-**displayInformations** | [**VJDisplayInformation**](VJDisplayInformation.md) | [optional] 
 **additionalInformations** | **List<String>** | 
+**displayInformations** | [**VJDisplayInformation**](VJDisplayInformation.md) | [optional] 
 **links** | [**List<LinkSchema>**](LinkSchema.md) | [optional] 
 
