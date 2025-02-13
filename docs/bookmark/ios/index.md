@@ -13,7 +13,7 @@ source 'https://github.com/CocoaPods/Specs.git' # Default Cocoapods URL
 source 'https://github.com/hove-io/Podspecs.git' # Bookmark podspec URL
 
 target 'YOUR_PROJECT_SCHEME' do
-  pod 'BookmarkSDK', '1.9.2' # Bookmark Pod definition
+  pod 'BookmarkSDK', '1.9.3' # Bookmark Pod definition
 end
 
 # Required for XCFramework
