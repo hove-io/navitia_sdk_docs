@@ -90,7 +90,6 @@ The following are the possible configuration parameters:
 | `disruptions` | :material-check: | [`Disruption color`](#disruption-color) | All |
 <!-- 
 | `account` | :material-check: | [`Account color`](#account-color) | Account |
-| `crowdsourcing` | :material-check: | [`Crowdsourcing color`](#crowdsourcing-color) | Crowdsourcing | 
 -->
 
 <!-- [Not yet]
@@ -203,7 +202,7 @@ The following are the possible configuration parameters:
 
 | Name | Required | Description | Type | Example | Target modules |
 | --- |:---:| --- | :---: | :---: | :---: |
-| `modules` | :material-check: | To set the target modules | `String[]` | `["aroundme","journey"]` | `ALL` |
+| `modules` | :material-check: | To set the target modules | `String[]` | `["aroundme", "journey"]` | `ALL` |
 | `name_res` | :material-check: | To set the localized resource id | `String` | `transport_name_res` | `ALL` |
 | `icon_res` | :material-check: | To set the icon resource id | `String` | `ic_metro` | `ALL` |
 | `selected` | :material-close: | Whether the transport mode is selected by default or not | `Boolean` | `true` | `ALL` |
@@ -474,19 +473,26 @@ The following are the possible configuration parameters:
 
 | Name | Required | Description | Type | Example |
 | --- |:---:| --- | :---: | :---: |
-| `frequency`| :material-check: | frequency of the next departures request in seconds | `Int` | `30` |
+| `frequency` | :material-check: | Frequency of the next departures request in seconds | `Int` | `30` |
 
 ##### Park availability
 
 | Name | Required | Description | Type | Example |
 | --- |:---:| --- | :---: | :---: |
-| `frequency`| :material-check: | frequency of the bss and park availability request in seconds | `Int` | `30` |
+| `frequency` | :material-check: | Frequency of the bss and park availability request in seconds | `Int` | `30` |
+| `display` | :material-close: | Display options of park availability on screen | [`Park availability display options`](#park-availability-display-options) | - |
+
+##### Park availability display options
+
+| Name | Required | Description | Type | Example |
+| --- |:---:| --- | :---: | :---: |
+| `prm` | :material-close: | Display/hide reduced mobility park availability on screen | `Boolean` | `true` |
 
 ##### Vehicle positions
 
 | Name | Required | Description | Type | Example |
 | --- |:---:| --- | :---: | :---: |
-| `frequency` | :material-check: | frequency of the vehicle positions request in seconds | `String` | `30` |
+| `frequency` | :material-check: | Frequency of the vehicle positions request in seconds | `String` | `30` |
 
 ### Fonts
 
