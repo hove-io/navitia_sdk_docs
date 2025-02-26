@@ -735,11 +735,6 @@
                 }
             },
             "go_from_go_to": true,
-            "line_name": {
-                "allowed_commerical_modes": [
-                    ""
-                ]
-            },
             "max_history": 10,
             "networks_filter": true,
             "next_departures": {
