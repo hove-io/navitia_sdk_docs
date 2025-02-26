@@ -431,6 +431,7 @@ The following are the possible configuration parameters:
 | --- |:---:| --- | :---: |
 | `bookmark_mode` | :material-close: | Enable/disable the bookmarks feature | [`Bookmark mode`](#bookmark-mode-schedule) |
 | `go_from_go_to` | :material-close: | Show/hide the go from/go to buttons | `Boolean` | `true` |
+| `line_name` | :material-close: | Show the name of the line | [`Line name`](#line-name-schedule) |
 | `max_history` | :material-close: | Define the max history items | `Int` |
 | `networks_filter` | :material-close: | Show/hide the networks selector | `Boolean` |
 | `next_departures` | :material-close: | Show/hide the next departures | [`Next departures`](#next-departures) |
@@ -450,6 +451,12 @@ The following are the possible configuration parameters:
 | Name | Required | Description | Type | Example |
 | --- |:---:| --- | :---: | :---: |
 | `home` | :material-close: | Display/hide favorite items on home screen | `Boolean` | `true` |
+
+##### Line Name (Schedule)
+
+| Name | Required | Description | Type | Example |
+| --- |:---:| --- | :---: | :---: |
+| `allowed_commerical_modes` | :material-close: | Define the list of commercial mode id allowed to show their name  | `String[]` | `["commercial_mode:Train"]` |
 
 #### Traffic features
 
