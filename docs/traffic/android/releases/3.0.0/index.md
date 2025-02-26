@@ -4,7 +4,7 @@ title: Traffic Android 3.0.0 - Changelog - Navitia SDK Docs
 
 # Traffic Android 3.0.0 Changelog
 
-<h2>🗓 13 Feb 2025</h2>
+<h2>🗓 25 Feb 2025</h2>
 
 #### Features
 - New UI for all disruptions and custom alerts

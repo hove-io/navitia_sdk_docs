@@ -4,7 +4,14 @@ title: Schedule Android 2.9.4 - Changelog - Navitia SDK Docs
 
 # Schedule Android 2.9.4 Changelog
 
-<h2>🗓 13 Feb 2025</h2>
+<h2>🗓 25 Feb 2025</h2>
+
+#### Fixes 
+- Fix the issue where lines were not updating when a network was selected
+- Fix the preselection of the date in the timetable
+- Directly show the direction when it is unique in the timetable
+- Fix the display of the direction selector when there is no data to show
+- Fix the action of the external navigation buttons when the roadmap is opened for a favorite journey from another module
 
 #### Dependencies
 - `gradle` > `8.10.2`

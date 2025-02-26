@@ -4,10 +4,13 @@ title: AroundMe Android 2.14.0 - Changelog - Navitia SDK Docs
 
 # Around Me Android 2.14.0 Changelog
 
-<h2>🗓 13 Feb 2025</h2>
+<h2>🗓 25 Feb 2025</h2>
 
 #### Features
 - Display of reduce mobility parking places for a parking POI is now configurable
+
+#### Fixes
+- No longer show POIs when selecting a transport category in the quick filters
 
 #### Dependencies
 - `gradle` > `8.10.2`
