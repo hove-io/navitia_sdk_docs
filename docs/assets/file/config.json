@@ -681,7 +681,7 @@
                     "enabled": true,
                     "sections": {
                         "stations_title_res": "",
-                        "bss_title_res": "",
+                        "bss_stations_title_res": "",
                         "car_parking_title_res": ""
                     }
                 },
