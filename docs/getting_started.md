@@ -335,16 +335,23 @@ The following are the possible configuration parameters:
 
 | Name | Required | Description | Type | Example |
 | --- |:---:| --- | :---: | :---: |
-| `enabled` | :material-close: | Enable/disable to add and remove an item as favorite  | `Boolean` | `true` |
-| `display` | :material-close: | Display options of favorite items on screen | [`Bookmark mode display options (Around Me)`](#bookmark-mode-display-options-around-me) | - |
+| `enabled` | :material-check: | Enable/disable to add and remove an item as favorite  | `Boolean` | `true` |
+| `tabs` | :material-close: |  | [`Bookmark mode tabs (Around me)`](#bookmark-mode-tabs-around-me) | - |
 
-##### Bookmark mode display options (Around Me)
+##### Bookmark mode tabs (Around me)
 
 | Name | Required | Description | Type | Example |
 | --- |:---:| --- | :---: | :---: |
-| `bss` | :material-close: | Display/hide favorite bss tab | `Boolean` | `true` |
-| `journeys` | :material-close: | Display/hide favorite journeys tab  | `Boolean` | `true` |
-| `stations` | :material-close: | Display/hide favorite stations tab  | `Boolean` | `true` |
+| `bss` | :material-close: | Favorite bss tab configuration | [`Bookmark mode tab (Around me)`](#bookmark-mode-tab-around-me) | - |
+| `journeys` | :material-close: | Favorite journeys tab configuration | [`Bookmark mode tab (Around me)`](#bookmark-mode-tab-around-me) | - |
+| `stations` | :material-close: | Favorite stations tab configuration | [`Bookmark mode tab (Around me)`](#bookmark-mode-tab-around-me) | - |
+
+##### Bookmark mode tab (Around me)
+
+| Name | Required | Description | Type | Example |
+| --- |:---:| --- | :---: | :---: |
+| `display` | :material-check: | Display/hide favorite tab | `Boolean` | `true` |
+| `title_res` | :material-close: | Title resource name | `String` | `"tab_title"` |
 
 ##### Default location
 
@@ -368,7 +375,7 @@ The following are the possible configuration parameters:
 | Name | Required | Description | Type | Example |
 | --- |:---:| --- | :---: | :---: |
 | `transports` | :material-close: | Transport tab configuration | [`Bookmark transports tab`](#bookmark-transports-tab) | - |
-| `journeys` | :material-close: | Enable/disable journeys tab  | `Boolean` | `true` |
+| `journeys` | :material-close: | Enable/disable journeys tab | `Boolean` | `true` |
 | `addresses` | :material-close: | Addresses tab configuration | [`Bookmark addresses tab`](#bookmark-addresses-tab) | - |
 
 ##### Bookmark transports tab

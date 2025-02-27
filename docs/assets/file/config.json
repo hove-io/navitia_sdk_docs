@@ -626,10 +626,19 @@
             "booking": true,
             "bookmark_mode": {
                 "enabled": true,
-                "display": {
-                    "bss": true,
-                    "journeys": true,
-                    "stations": true
+                "tabs": {
+                    "bss": {
+                        "display": true,
+                        "title_res": ""
+                    },
+                    "journeys": {
+                        "display": true,
+                        "title_res": ""
+                    },
+                    "stations": {
+                        "display": true,
+                        "title_res": ""
+                    }
                 }
             },
             "default_location": {
