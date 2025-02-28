@@ -13,7 +13,7 @@ source 'https://github.com/CocoaPods/Specs.git' # Default Cocoapods URL
 source 'https://github.com/hove-io/Podspecs.git' # Bookmark podspec URL
 
 target 'YOUR_PROJECT_SCHEME' do
-  pod 'BookmarkSDK', '1.9.3' # Bookmark Pod definition
+  pod 'BookmarkSDK', '2.0.0' # Bookmark Pod definition
 end
 
 # Required for XCFramework
@@ -40,12 +40,15 @@ This module is set up by calling `Bookmark.shared.initialize()` method which tak
 | --- |:---:| --- | :---: | :---: |
 | `coverage` | :material-check: | Navitia coverage | `String` | `fr-idf` |
 | `token` | :material-check: | <a href="https://navitia.io/inscription/" target="_blank">Get your token</a> | `String` | :material-close: |
+| `timeZone` | :material-check: | Time zone | `String` | `Europe/Paris` |
 | `env` | :material-check: | Navitia environment | `String` | `PROD` |
-| `colors` | :material-check: | Define the custom colors | [`AroundMeColorsConfiguration`](../../getting_started/#around-me-color) | - |
-| `fonts` | :material-close: | Use custom fonts | [`AroundMeFontsConfiguration`](../../getting_started/#custom-font) | - |
+| `colors` | :material-check: | Define the custom colors | [`BookmarkColorsConfiguration`](../../getting_started/#bookmark-color) | - |
+| `unifiedColors` | :material-close: | Define the custom colors | [`UnifiedColorsConfiguration`](../../getting_started/#unified_colors) | - |
+| `fonts` | :material-close: | Use custom fonts | [`BookmarkFontsConfiguration`](../../getting_started/#custom-font) | - |
 | `lineResources` | :material-close: | List of transport lines resource IDs | [`[LineResource]`](../../getting_started/#line-resource) | - | 
 | `modeResources` | :material-close: | List of transport modes resource IDs | [`[ModeResource]`](../../getting_started/#mode-resource) | - | 
-| `transportCategories` | :material-check: | List of supported transport modes | [`[TransportCategory]`](../../getting_started/#transport-category) | - |
+| `poiCategories` | :material-close: | List of available POIs | [`[PoiCategory]`](../../getting_started/#poi-category) | - |
+| `features` | :material-close: | Enable/disable some features  | [`BookmarkFeaturesConfiguration`](../../getting_started/#bookmark-features) | - |
 
 You can also call the `initialize()` method with the global JSON configuration file added to your application bundle:
 
@@ -76,36 +79,26 @@ You can also call the `initialize()` method with the global JSON configuration f
 
     ```swift
     do {
-      	let transportCategories = [TransportCategory(
-        	modules: ["aroundme"],
-        	iconRes: "ic_section_mode_metro",
-        	nameRes: "metro",
-        	selected: true, 
-        	modes: [TransportCategoryMode(
-          		physical: TransportPhysicalMode(
-            		id: "physical_mode:Metro", 
-            		nameRes: "metro"
-          		),
-          		commercial: TransportCommercialMode(
-            		id: "commercial_mode:Metro", 
-            		name: "Metro"
-          		)
-        	)],
-        	firstSectionModes: ["walking"],
-        	lastSectionModes: ["walking"]
-   		)]
-
     	let bookmarkColorsConfiguration = AroundMeColorsConfiguration(
         	primaryColor: "#88819f", 
         	secondaryColor: "#8faa96"
     	)
+        let disruptionsColorsConfiguration = DisruptionsColorsConfiguration(
+            information: "#22a824",
+            nonBlocking: "#faa12d",
+            blocking: "#e62c29"
+        )
+        let unifiedColorsConfiguration = UnifiedColorsConfiguration(
+            disruptions: disruptionsColorsConfiguration
+        )
                                                                           
     	try Bookmark.shared.initialize(
         	coverage: "fr-idf",
         	token: "your_token",
+            timeZone: "your_contry",
         	env: "PROD",
         	colors: bookmarkColorsConfiguration,
-        	transportCategories: transportCategories
+            unifiedColors: unifiedColorsConfiguration
     	)                                                                  
 	} catch {
     	Logger.error("%@", String(

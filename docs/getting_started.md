@@ -23,7 +23,7 @@ title: Getting started - Navitia SDK Docs
 
     Install <span style="text-decoration:underline">[Cocoapods](https://cocoapods.org)</span> and add the following in the `Podfile` of your project:
     ``` ruby
-    platform :ios, '14.0'
+    platform :ios, '16.0'
     use_frameworks!
     ```
 
@@ -194,9 +194,15 @@ The following are the possible configuration parameters:
 
 | Name | Required | Description | Type | Default |
 | --- |:---:| --- | :---: | :---: |
-| `information` | :material-check: | To set the color for informative disruptions | `String` | `#3FA26D` |
-| `non_blocking` | :material-check: | To set the color for non blocking disruptions | `String` | `#EF662F` |
-| `blocking` | :material-check: | To set the color for blocking disruptions | `String` | `#FF0000` |
+| `information` | :material-close: | To set the color for informative disruptions | `String` | `#3FA26D` |
+| `non_blocking` | :material-close: | To set the color for non blocking disruptions | `String` | `#EF662F` |
+| `blocking` | :material-close: | To set the color for blocking disruptions | `String` | `#FF0000` |
+
+#### Unified colors
+
+| Name | Required | Description | Type | Default |
+| --- |:---:| --- | :---: | :---: |
+| `disruptions` | :material-close: | define the several colors of disruptions | [`Disruption color`](#disruption-color) | - |
 
 ### Transport category
 
@@ -602,6 +608,13 @@ The following are the possible configuration parameters:
 | `journeys` | :material-close: | Localized journeys screen title resource id | `String` | `journeys_screen_title` |
 | `roadmap` | :material-close: | Localized roadmap screen title resource id | `String` | `roadmap_screen_title` |
 | `ridesharing` | :material-close: | Localized ridesharing screen title resource id | `String` | `ridesharing_screen_title` |
+
+#### OSM Region
+
+| Name | Required | Description | Type | Example |
+| --- |:---:| --- | :---: | :---: |
+| `id` | :material-close: | id of the region | `String` | `azerty` |
+| `name` | :material-close: | name of the region | `String` | `île de France` |
 
 ### Configuration JSON file
 

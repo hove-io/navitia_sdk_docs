@@ -13,7 +13,7 @@ source 'https://github.com/CocoaPods/Specs.git' # Default Cocoapods URL
 source 'https://github.com/hove-io/Podspecs.git' # Around Me podspec URL
 
 target 'YOUR_PROJECT_SCHEME' do
-  pod 'AroundMeSDK', '3.10.2' # Around Me Pod definition
+  pod 'AroundMeSDK', '4.0.0' # Around Me Pod definition
 end
 
 # Required for XCFramework
@@ -39,15 +39,19 @@ This module is set up by calling `AroundMe.shared.initialize()` method which tak
 | Name | Required | Description | Type | Example
 | --- |:---:| --- | :---: | :---: |
 | `coverage` | :material-check: | Navitia coverage | `String` | `fr-idf` |
+| `token` | :material-check: | Navitia token | `String` | `ABCD-1234-...` |
+| `timeZone` | :material-check: | Time zone | `String` | `Europe/Paris` |
 | `env` | :material-check: | Navitia environment | `String` | `PROD` |
 | `colors` | :material-check: | Define the custom colors | [`AroundMeColorsConfiguration`](../../getting_started/#around-me-color) | - |
+| `unifiedColors` | :material-close: | Define the custom colors | [`UnifiedColorsConfiguration`](../../getting_started/#unified-colors) | - |
 | `fonts` | :material-close: | Use custom fonts | [`AroundMeFontsConfiguration`](../../getting_started/#custom-font) | - |
 | `lineResources` | :material-close: | List of transport lines resource IDs | [`[LineResource]`](../../getting_started/#line-resource) | - | 
 | `modeResources` | :material-close: | List of transport modes resource IDs | [`[ModeResource]`](../../getting_started/#mode-resource) | - | 
-| `transportCategories` | :material-check: | List of supported transport modes | [`[TransportCategory]`](../../getting_started/#transport-category) | - |
 | `poiCategories` | :material-close: | List of available POIs | [`[PoiCategory]`](../../getting_started/#poi-category) | - |
 | `providerResources` | :material-close: | Transport providers configuration | [`[ProviderResource]`](../../getting_started/#provider-resource) | - |
 | `titleResources` | :material-close: | Screens titles customization | [`AroundMeTitlesResources`](../../getting_started/#around-me-title-resource) | - |
+| `iconsResources` | :material-close: | List of icon resource names | [`AroundMeIconsResources`](../../getting_started/#icon-resource) | - |
+| `transportCategories` | :material-close: | List of supported transport modes | [`[TransportCategory]`](../../getting_started/#transport-category) | - |
 | `features` | :material-close: | Enable/disable some features  | [`AroundMeFeaturesConfiguration`](../../getting_started/#around-me-features) | - |
 
 You can also call the `initialize()` method with the global JSON configuration file added to your application bundle:
@@ -100,14 +104,24 @@ You can also call the `initialize()` method with the global JSON configuration f
             primaryColor: "#88819f", 
             secondaryColor: "#8faa96"
         )
-                                                                          
+        let disruptionsColorsConfiguration = DisruptionsColorsConfiguration(
+            information: "#22a824",
+            nonBlocking: "#faa12d",
+            blocking: "#e62c29"
+        )
+        let unifiedColorsConfiguration = UnifiedColorsConfiguration(
+            disruptions: disruptionsColorsConfiguration
+        )
+                                                        
         try AroundMe.shared.initialize(
             coverage: "fr-idf",
             token: "your_token",
+            timeZone: "your_contry",
             env: "PROD",
             colors: aroundmeColorsConfiguration,
-            transportCategories: transportCategories
-        )                                                                  
+            unifiedColors: unifiedColorsConfiguration,
+            transportCategories: transportCategories,
+        )                                                         
     } catch {
         Logger.error("%@", String(
             format: "Around Me SDK cannot be initialized! %@", 
@@ -141,7 +155,7 @@ If you want to use the `rootViewController` as a `ChildViewController` of your `
 
     ```swift
     navigationController?.pushViewController(
-        trafficViewController,
+        aroundMeViewController,
         animated: false
     )
     ```
@@ -150,7 +164,7 @@ If you want to use the `rootViewController` as a `ChildViewController` of your `
 
     ```swift
     yourViewController.addChild(UINavigationController(
-        rootViewController: trafficViewController
+        rootViewController: aroundMeViewController
     ))
     ```
 

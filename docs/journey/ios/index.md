@@ -13,7 +13,7 @@ source 'https://github.com/CocoaPods/Specs.git' # Default Cocoapods URL
 source 'https://github.com/hove-io/Podspecs.git' # Journey podspec URL
 
 target 'YOUR_PROJECT_SCHEME' do
-  pod 'JourneySDK', '5.17.4' # Journey Pod definition
+  pod 'JourneySDK', '6.0.0' # Journey Pod definition
 end
 
 # Required for XCFramework
@@ -39,14 +39,20 @@ This module is set up by calling `JourneySdk.shared.initialize()` method which t
 | Name | Required | Description | Type | Example
 | --- |:---:| --- | :---: | :---: |
 | `coverage` | :material-check: | Navitia coverage | `String` | `fr-idf` |
+| `token` | :material-check: | Navitia token | `String` | `ABCD-1234-...` |
+| `timeZone` | :material-check: | Time zone | `String` | `Europe/Paris` |
 | `env` | :material-check: | Navitia environment | `String` | `PROD` |
 | `colors` | :material-check: | Define the custom colors | [`JourneyColorsConfiguration`](../../getting_started/#journey-color) | - |
+| `unifiedColors` | :material-close: | Define the custom colors | [`UnifiedColorsConfiguration`](../../getting_started/#unified_colors) | - |
 | `fonts` | :material-close: | Use custom fonts | [`JourneyFontsConfiguration`](../../getting_started/#custom-font) | - |
 | `lineResources` | :material-close: | List of transport lines resource IDs | [`[LineResource]`](../../getting_started/#line-resource) | - | 
 | `modeResources` | :material-close: | List of transport modes resource IDs | [`[ModeResource]`](../../getting_started/#mode-resource) | - | 
-| `transportCategories` | :material-check: | List of supported transport modes | [`[TransportCategory]`](../../getting_started/#transport-category) | - |
+| `transportCategories` | :material-close: | List of supported transport modes | [`[TransportCategory]`](../../getting_started/#transport-category) | - |
+| `osmRegion` | :material-close: | Define the region | [`[OSMRegion]`](../../getting_started/#osm-region) | - |
 | `providerResources` | :material-close: | Transport providers configuration | [`[ProviderResource]`](../../getting_started/#provider-resource) | - |
 | `titleResources` | :material-close: | Screens titles customization | [`JourneyTitlesResources`](../../getting_started/#journey-title-resource) | - |
+| `iconsResources` | :material-close: | List of icon resource names | [`JourneyIconsResources`](../../getting_started/#icon-resource) | - |
+| `transportCategories` | :material-close: | List of supported transport modes | [`[TransportCategory]`](../../getting_started/#transport-category) | - |
 | `features` | :material-close: | Enable/disable some features  | [`JourneyFeaturesConfiguration`](../../getting_started/#journey-features) | - |
 
 You can also call the `initialize()` method with the global JSON configuration file added to your application bundle:
@@ -99,10 +105,11 @@ You can also call the `initialize()` method with the global JSON configuration f
             primary: "#88819f", 
             secondary: "#8faa96"
         )
-                                                                          
+                
         try JourneySdk.shared.initialize(
             coverage: "fr-idf",
             token: "your_token",
+            timeZone: "your_country",
             env: "PROD",
             colors: journeyColorsConfiguration,
             transportCategories: transportCategories
