@@ -707,6 +707,7 @@
                     "frequency": 30
                 }
             },
+            "occupancy": true,
             "park_availability": {
                 "frequency": 30,
                 "display": {
