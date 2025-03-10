@@ -335,16 +335,23 @@ The following are the possible configuration parameters:
 
 | Name | Required | Description | Type | Example |
 | --- |:---:| --- | :---: | :---: |
-| `enabled` | :material-close: | Enable/disable to add and remove an item as favorite  | `Boolean` | `true` |
-| `display` | :material-close: | Display options of favorite items on screen | [`Bookmark mode display options (Around Me)`](#bookmark-mode-display-options-around-me) | - |
+| `enabled` | :material-check: | Enable/disable to add and remove an item as favorite  | `Boolean` | `true` |
+| `tabs` | :material-close: |  | [`Bookmark mode tabs (Around me)`](#bookmark-mode-tabs-around-me) | - |
 
-##### Bookmark mode display options (Around Me)
+##### Bookmark mode tabs (Around me)
 
 | Name | Required | Description | Type | Example |
 | --- |:---:| --- | :---: | :---: |
-| `bss` | :material-close: | Display/hide favorite bss tab | `Boolean` | `true` |
-| `journeys` | :material-close: | Display/hide favorite journeys tab  | `Boolean` | `true` |
-| `stations` | :material-close: | Display/hide favorite stations tab  | `Boolean` | `true` |
+| `bss` | :material-close: | Favorite bss tab configuration | [`Bookmark mode tab (Around me)`](#bookmark-mode-tab-around-me) | - |
+| `journeys` | :material-close: | Favorite journeys tab configuration | [`Bookmark mode tab (Around me)`](#bookmark-mode-tab-around-me) | - |
+| `stations` | :material-close: | Favorite stations tab configuration | [`Bookmark mode tab (Around me)`](#bookmark-mode-tab-around-me) | - |
+
+##### Bookmark mode tab (Around me)
+
+| Name | Required | Description | Type | Example |
+| --- |:---:| --- | :---: | :---: |
+| `display` | :material-check: | Display/hide favorite tab | `Boolean` | `true` |
+| `title_res` | :material-close: | Title resource name | `String` | `"tab_title"` |
 
 ##### Default location
 
@@ -359,7 +366,7 @@ The following are the possible configuration parameters:
 | --- |:---:| --- | :---: | :---: |
 | `go_from_go_to` | :material-close: | Show/hide the go from/go to buttons | `Boolean` | `true` |
 | `next_departures` | :material-close: | Show/hide the next departures | [`Next departures`](#next-departures) | - |
-| `park_availability`| :material-close: | Show/hide the bss and car parking availability | [`Park Availability`](#park-availability) |
+| `park_availability`| :material-close: | Show/hide the bss and car parking availability | [`Park Availability`](#park-availability) | - |
 | `schedule_mode` | :material-close: | Show/hide the "See all schedules" button | `Boolean` | `true` |
 | `tabs` | :material-close: | Enable/disable tabs | [`Bookmark tabs`](#bookmark-tabs) | - |
 
@@ -367,9 +374,37 @@ The following are the possible configuration parameters:
 
 | Name | Required | Description | Type | Example |
 | --- |:---:| --- | :---: | :---: |
-| `transports` | :material-check: | Enable/disable transport tab | `Boolean` | `true` |
-| `journeys` | :material-check: | Enable/disable journeys tab  | `Boolean` | `true` |
-| `addresses` | :material-check: | Enable/disable addresses tab  | `Boolean` | `true` |
+| `transports` | :material-close: | Transport tab configuration | [`Bookmark transports tab`](#bookmark-transports-tab) | - |
+| `journeys` | :material-close: | Enable/disable journeys tab | `Boolean` | `true` |
+| `addresses` | :material-close: | Addresses tab configuration | [`Bookmark addresses tab`](#bookmark-addresses-tab) | - |
+
+##### Bookmark transports tab
+
+| Name | Required | Description | Type | Example |
+| --- |:---:| --- | :---: | :---: |
+| `enabled` | :material-check: | Enable/disable transport tab | `Boolean` | `true` |
+| `sections` | :material-close: | Custom titles for the sections of this tab | [`Bookmark transports tab sections`](#bookmark-transports-tab-sections) | - |
+
+##### Bookmark transports tab sections
+
+| Name | Required | Description | Type | Example |
+| --- |:---:| --- | :---: | :---: |
+| `stations_title_res` | :material-close: | 'Stations' title resource name | `String` | `"stops"` |
+| `bss_title_res` | :material-close: | 'Bike sharing service stations' title resource name | `String` | `"bike_rental"` |
+| `car_parking_title_res` | :material-close: | 'P+R parkings' title resource name | `String` | `"relay_parkings"` |
+
+##### Bookmark addresses tab
+
+| Name | Required | Description | Type | Example |
+| --- |:---:| --- | :---: | :---: |
+| `enabled` | :material-check: | Enable/disable addresses tab | `Boolean` | `true` |
+| `sections` | :material-close: | Custom titles for the sections of this tab  | [`Bookmark addresses tab sections`](#bookmark-addresses-tab-sections) | - |
+
+##### Bookmark addresses tab sections
+
+| Name | Required | Description | Type | Example |
+| --- |:---:| --- | :---: | :---: |
+| `places_title_res` | :material-close: | 'Places' title resource name | `String` | `"convenient_places"` |
 
 #### Journey features
 
@@ -532,9 +567,9 @@ The following are the possible configuration parameters:
 
 | Name | Required | Description | Type | Platform | Example |
 | --- |:---:| --- | :---: | :---: | :---: |
-| `font_res` | :material-check: | The font resource name | `String` | Android | `source_sans_pro_semi_bold` |
-| `ttf_file` | :material-check: | The TTF file name | `String` | iOS | `"SourceSansPro"` |
-| `font_name` | :material-check: | The font name | `String` | iOS | `"SourceSansPro-Bold"` |
+| `font_res` | :material-check: | Font resource name | `String` | Android | `source_sans_pro_semi_bold` |
+| `ttf_file` | :material-check: | TTF file name | `String` | iOS | `"SourceSansPro"` |
+| `font_name` | :material-check: | Font name | `String` | iOS | `"SourceSansPro-Bold"` |
 
 ### Line resource
 
