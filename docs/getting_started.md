@@ -213,6 +213,7 @@ The following are the possible configuration parameters:
 | `last_section_modes` | :material-close: | List of last section modes | `String[]` | `["ridesharing", "bss"]` | `Journey` |
 | `direct_path_modes` | :material-close: | List of direct path modes | `String[]` | `["taxi", "car_no_park"]` | `Journey` |
 | `add_poi_infos` | :material-close: | List of requested extra POI data | `String[]` | `["bss_stands", "car_park"]` | `Journey` |
+| `park_mode` | :material-close: | Shows the user where to park his bike | `String` | `"on_street"` | `Journey` |
 
 #### Transport mode
 
