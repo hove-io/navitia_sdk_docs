@@ -563,7 +563,8 @@
             "add_poi_infos": [
                 "bss_stands",
                 "car_park"
-            ]
+            ],
+            "park_mode": ""
         }
     ],
     "poi_categories": [
