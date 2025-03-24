@@ -782,8 +782,11 @@
             "disruption_contributors": [
                 ""
             ],
-            "networks_filter": true,
-            "transport_networks": true
+            "filters": true,
+            "transport_networks": true,
+            "forbidden_networks": [
+                ""
+            ]
         }
     }
 }
