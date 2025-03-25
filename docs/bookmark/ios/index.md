@@ -62,7 +62,7 @@ You can also call the `initialize()` method with the global JSON configuration f
     do {
     	try Bookmark.shared.initialize(
         	token: "your_token", 
-        	configurationJsonFile: "aroundme_configuration.json"
+        	configurationJsonFile: "bookmark_configuration.json"
       	)                                                               
     } catch {
       	Logger.error("%@", String(

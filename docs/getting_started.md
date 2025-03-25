@@ -350,8 +350,9 @@ The following are the possible configuration parameters:
 
 | Name | Required | Description | Type | Example |
 | --- |:---:| --- | :---: | :---: |
-| `display` | :material-check: | Display/hide favorite tab | `Boolean` | `true` |
-| `title_res` | :material-close: | Title resource name | `String` | `"tab_title"` |
+| `bss` | :material-close: |Title resource name for bss | `Boolean` | `String` |`"bss_tab_title"` |
+| `journeys` | :material-close: | Title resource name for journeys | `String` | `"journeys_tab_title"` |
+| `stations` | :material-close: | Title resource name for stations | `String` | `"stations_tab_title"` |
 
 ##### Default location
 
@@ -382,15 +383,8 @@ The following are the possible configuration parameters:
 
 | Name | Required | Description | Type | Example |
 | --- |:---:| --- | :---: | :---: |
-| `enabled` | :material-check: | Enable/disable transport tab | `Boolean` | `true` |
-| `sections` | :material-close: | Custom titles for the sections of this tab | [`Bookmark transports tab sections`](#bookmark-transports-tab-sections) | - |
-
-##### Bookmark transports tab sections
-
-| Name | Required | Description | Type | Example |
-| --- |:---:| --- | :---: | :---: |
 | `stations_title_res` | :material-close: | 'Stations' title resource name | `String` | `"stops"` |
-| `bss_title_res` | :material-close: | 'Bike sharing service stations' title resource name | `String` | `"bike_rental"` |
+| `bss_stations_title_res` | :material-close: | 'Bike sharing service stations' title resource name | `String` | `"bike_rental"` |
 | `car_parking_title_res` | :material-close: | 'P+R parkings' title resource name | `String` | `"relay_parkings"` |
 
 ##### Bookmark addresses tab
