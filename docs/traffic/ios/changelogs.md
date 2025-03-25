@@ -4,6 +4,7 @@ title: Traffic iOS - Changelogs - Navitia SDK Docs
 
 # Traffic iOS Changelogs
 
+* [v4.1.0](releases/4.1.0/index.md) (_24 Mar 2025_)
 * [v4.0.0](releases/4.0.0/index.md) (_24 Feb 2025_)
 * [v3.7.2](releases/3.7.2/index.md) (_12 Feb 2025_)
 * [v3.7.1](releases/3.7.1/index.md) (_04 Feb 2025_)
