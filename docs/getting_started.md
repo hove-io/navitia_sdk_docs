@@ -355,9 +355,8 @@ The following are the possible configuration parameters:
 
 | Name | Required | Description | Type | Example |
 | --- |:---:| --- | :---: | :---: |
-| `bss` | :material-close: |Title resource name for bss | `Boolean` | `String` |`"bss_tab_title"` |
-| `journeys` | :material-close: | Title resource name for journeys | `String` | `"journeys_tab_title"` |
-| `stations` | :material-close: | Title resource name for stations | `String` | `"stations_tab_title"` |
+| `display` | :material-check: | Display/hide favorite tab | `Boolean` | `true` |
+| `title_res` | :material-close: | Title resource name | `String` | `"tab_title"` |
 
 ##### Default location
 
@@ -500,8 +499,8 @@ The following are the possible configuration parameters:
 | `application_periods` | :material-close: | Show/hide the disruption application date | `Boolean` |
 | `disruption_contributors` | :material-close: | Define the list of disruption contributors id | `String[]` | `["shortterm.tr_idfm"]` |
 | `filters` | :material-close: | Show/hide the filters selector | `Boolean` |
-| `transport_networks` | :material-close: | Enable/disable showing network on lines | `Boolean` | - |
 | `forbidden_networks` | :material-close: | Define the list of forbidden networkds | `String[]` | `["network:ABCD"]` |
+| `transport_networks` | :material-close: | Enable/disable showing network on lines | `Boolean` | - |
 
 ##### Alert subscription
 
