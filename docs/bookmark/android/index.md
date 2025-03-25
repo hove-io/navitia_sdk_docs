@@ -10,7 +10,7 @@ Add the following dependencies in the `build.gradle` file of your application:
 
 ```kotlin
 dependencies {
-    implementation("com.kisio.navitia.sdk.ui:bookmark:1.9.4")
+    implementation("com.kisio.navitia.sdk.ui:bookmark:1.10.0")
 }
 ```
 

@@ -4,12 +4,12 @@
 
 Name | Type | Note
 ---- | ---- | ----
-**direction** | **Int** | 
-**name** | **String** | 
-**instructionStartCoordinate** | [**Coord**](Coord.md) | [optional] 
-**instruction** | **String** | [optional] 
-**viaUri** | **String** | [optional] 
-**length** | **Int** | 
-**duration** | **Int** | 
 **id** | **Int** | [optional] 
+**length** | **Int** | 
+**name** | **String** | 
+**duration** | **Int** | 
+**direction** | **Int** | 
+**instruction** | **String** | [optional] 
+**instructionStartCoordinate** | [**Coord**](Coord.md) | [optional] 
+**viaUri** | **String** | [optional] 
 

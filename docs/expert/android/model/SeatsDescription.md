@@ -4,6 +4,6 @@
 
 Name | Type | Note
 ---- | ---- | ----
-**available** | **Int** | [optional] 
 **total** | **Int** | [optional] 
+**available** | **Int** | [optional] 
 

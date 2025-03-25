@@ -4,6 +4,7 @@ title: Expert iOS - Changelogs - Navitia SDK Docs
 
 # Expert iOS Changelogs
 
+* [v2.8.0](releases/2.8.0/index.md) (_24 Feb 2025_)
 * [v2.7.3](releases/2.7.3/index.md) (_12 Feb 2025_)
 * [v2.7.2](releases/2.7.2/index.md) (_25 Jun 2024_)
 * [v2.7.1](releases/2.7.1/index.md) (_27 Mar 2024_)

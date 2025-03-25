@@ -13,7 +13,7 @@ source 'https://github.com/CocoaPods/Specs.git' # Default Cocoapods URL
 source 'https://github.com/hove-io/Podspecs.git' # Schedule podspec URL
 
 target 'YOUR_PROJECT_SCHEME' do
-  pod 'ScheduleSDK', '3.10.2' # Schedule Pod definition
+  pod 'ScheduleSDK', '4.0.0' # Schedule Pod definition
 end
 
 # Required for XCFramework
@@ -39,13 +39,17 @@ This module is set up by calling `Schedule.shared.initialize()` method which tak
 | Name | Required | Description | Type | Example
 | --- |:---:| --- | :---: | :---: |
 | `coverage` | :material-check: | Navitia coverage | `String` | `fr-idf` |
+| `token` | :material-check: | Navitia token | `String` | `ABCD-1234-...` |
+| `timeZone` | :material-check: | Time zone | `String` | `Europe/Paris` |
 | `env` | :material-check: | Navitia environment | `String` | `PROD` |
 | `colors` | :material-check: | Define the custom colors | [`ScheduleColorsConfiguration`](../../getting_started/#schedule-color) | - |
+| `unifiedColors` | :material-close: | Define the custom colors | [`UnifiedColorsConfiguration`](../../getting_started/#unified_colors) | - |
 | `fonts` | :material-close: | Use custom fonts | [`ScheduleFontsConfiguration`](../../getting_started/#custom-font) | - |
 | `lineResources` | :material-close: | List of transport lines resource IDs | [`[LineResource]`](../../getting_started/#line-resource) | - | 
 | `modeResources` | :material-close: | List of transport modes resource IDs | [`[ModeResource]`](../../getting_started/#mode-resource) | - | 
-| `transportCategories` | :material-check: | List of supported transport modes | [`[TransportCategory]`](../../getting_started/#transport-category) | - |
+| `transportCategories` | :material-close: | List of supported transport modes | [`[TransportCategory]`](../../getting_started/#transport-category) | - |
 | `networkResources` | :material-close: | List of network resource IDs | [`[NetworkResource]`](../../getting_started/#network-resource) | - |
+| `providerResources` | :material-close: | Transport providers configuration | [`[ProviderResource]`](../../getting_started/#provider-resource) | - |
 | `features` | :material-close: | Enable/disable some features  | [`ScheduleFeaturesConfiguration`](../../getting_started/#schedule-features) | - |
 
 You can also call the `initialize()` method with the global JSON configuration file added to your application bundle:
@@ -103,6 +107,7 @@ You can also call the `initialize()` method with the global JSON configuration f
         try Schedule.shared.initialize(
             coverage: "fr-idf",
             token: "your_token",
+            timeZone: "your_country",
             env: "PROD",
             colors: scheduleColorsConfiguration,
             transportCategories: transportCategories

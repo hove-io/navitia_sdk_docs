@@ -4,32 +4,43 @@
 
 Name | Type | Note
 ---- | ---- | ----
-**links** | [**List<LinkSchema>**](LinkSchema.md) | 
-**departureDateTime** | **String** | Departure date and time of the section [optional] 
-**baseDepartureDateTime** | **String** | Base-schedule departure date and time of the section [optional] 
-**dataFreshness** | [**DataFreshness**](#DataFreshness) | [optional] 
-**duration** | **Int** | Duration of the section (seconds) 
 **id** | **String** | 
-**from** | [**Place**](Place.md) | [optional] 
+**duration** | **Int** | Duration of the section (seconds) 
+**co2Emission** | [**Amount**](Amount.md) | 
+**airPollutants** | [**AirPollutants**](AirPollutants.md) | [optional] 
+**lowEmissionZone** | [**LowEmissionZone**](LowEmissionZone.md) | [optional] 
+**transferType** | [**TransferType**](#TransferType) | [optional] 
+**departureDateTime** | **String** | Departure date and time of the section [optional] 
 **arrivalDateTime** | **String** | Arrival date and time of the section [optional] 
+**baseDepartureDateTime** | **String** | Base-schedule departure date and time of the section [optional] 
+**baseArrivalDateTime** | **String** | Base-schedule arrival date and time of the section [optional] 
+**dataFreshness** | [**DataFreshness**](#DataFreshness) | [optional] 
+**to** | [**Place**](Place.md) | [optional] 
+**from** | [**Place**](Place.md) | [optional] 
 **additionalInformations** | [**List<AdditionalInformations>**](#AdditionalInformations) | [optional] 
 **geojson** | [**SectionGeoJsonSchema**](SectionGeoJsonSchema.md) | GeoJSON of the shape of the section [optional] 
-**ridesharingInformations** | [**RidesharingInformation**](RidesharingInformation.md) | [optional] 
-**to** | [**Place**](Place.md) | [optional] 
-**baseArrivalDateTime** | **String** | Base-schedule arrival date and time of the section [optional] 
-**transferType** | [**TransferType**](#TransferType) | [optional] 
+**mode** | [**Mode**](#Mode) | [optional] 
 **type** | [**Type**](#Type) | [optional] 
-**streetInformations** | [**List<StreetInformation>**](StreetInformation.md) | [optional] 
-**dynamicSpeeds** | [**List<DynamicSpeed>**](DynamicSpeed.md) | [optional] 
-**co2Emission** | [**Amount**](Amount.md) | 
+**displayInformations** | [**VJDisplayInformation**](VJDisplayInformation.md) | [optional] 
+**links** | [**List<LinkSchema>**](LinkSchema.md) | 
+**stopDateTimes** | [**List<StopDateTime>**](StopDateTime.md) | [optional] 
 **path** | [**List<Path>**](Path.md) | [optional] 
+**ridesharingInformations** | [**RidesharingInformation**](RidesharingInformation.md) | [optional] 
+**ridesharingJourneys** | [**List<Journey>**](Journey.md) | [optional] 
+**bestBoardingPositions** | [**List<BestBoardingPositions>**](#BestBoardingPositions) | [optional] 
 **cycleLaneLength** | **Int** | [optional] 
 **elevations** | [**List<Elevation>**](Elevation.md) | [optional] 
-**displayInformations** | [**VJDisplayInformation**](VJDisplayInformation.md) | [optional] 
-**mode** | [**Mode**](#Mode) | [optional] 
-**ridesharingJourneys** | [**List<Journey>**](Journey.md) | [optional] 
+**dynamicSpeeds** | [**List<DynamicSpeed>**](DynamicSpeed.md) | [optional] 
 **vias** | [**List<PathWay>**](PathWay.md) | [optional] 
-**stopDateTimes** | [**List<StopDateTime>**](StopDateTime.md) | [optional] 
+**streetInformations** | [**List<StreetInformation>**](StreetInformation.md) | [optional] 
+**bookingRule** | [**BookingRule**](BookingRule.md) | [optional] 
+
+## TransferType
+
+Name | Value
+---- | -----
+WALKING | "walking"
+STAY_IN | "stay_in"
 
 ## DataFreshness
 
@@ -50,12 +61,17 @@ HAS_DATETIME_ESTIMATED | "has_datetime_estimated"
 REGULAR | "regular"
 STAY_IN | "stay_in"
 
-## TransferType
+## Mode
 
 Name | Value
 ---- | -----
 WALKING | "walking"
-STAY_IN | "stay_in"
+BIKE | "bike"
+CAR | "car"
+BSS | "bss"
+RIDESHARING | "ridesharing"
+CARNOPARK | "carnopark"
+TAXI | "taxi"
 
 ## Type
 
@@ -76,15 +92,11 @@ ALIGHTING | "alighting"
 RIDESHARING | "ridesharing"
 ON_DEMAND_TRANSPORT | "on_demand_transport"
 
-## Mode
+## BestBoardingPositions
 
 Name | Value
 ---- | -----
-WALKING | "walking"
-BIKE | "bike"
-CAR | "car"
-BSS | "bss"
-RIDESHARING | "ridesharing"
-CARNOPARK | "carnopark"
-TAXI | "taxi"
+FRONT | "front"
+MIDDLE | "middle"
+BACK | "back"
 

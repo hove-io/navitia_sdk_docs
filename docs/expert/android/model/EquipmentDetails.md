@@ -4,9 +4,9 @@
 
 Name | Type | Note
 ---- | ---- | ----
-**embeddedType** | [**EmbeddedType**](#EmbeddedType) | [optional] 
 **id** | **String** | [optional] 
 **name** | **String** | [optional] 
+**embeddedType** | [**EmbeddedType**](#EmbeddedType) | [optional] 
 **currentAvailability** | [**CurrentAvailability**](CurrentAvailability.md) | [optional] 
 
 ## EmbeddedType

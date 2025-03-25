@@ -13,7 +13,7 @@ source 'https://github.com/CocoaPods/Specs.git' # Default Cocoapods URL
 source 'https://github.com/hove-io/Podspecs.git' # Traffic podspec URL
 
 target 'YOUR_PROJECT_SCHEME' do
-  pod 'TrafficSDK', '3.7.2' # Traffic Pod definition
+  pod 'TrafficSDK', '4.0.0' # Traffic Pod definition
 end
 
 # Required for XCFramework
@@ -39,13 +39,17 @@ This module is set up by calling `Traffic.shared.initialize()` method which take
 | Name | Required | Description | Type | Example
 | --- |:---:| --- | :---: | :---: |
 | `coverage` | :material-check: | Navitia coverage | `String` | `fr-idf` |
+| `token` | :material-check: | Navitia token | `String` | `ABCD-1234-...` |
+| `timeZone` | :material-check: | Time zone | `String` | `Europe/Paris` |
 | `env` | :material-check: | Navitia environment | `String` | `PROD` |
 | `alertCredentials` | :material-close: | Kronos alert subscription credentials| [`TrafficAlertSubscriptionCredentials`](#traffic-alert-subscription-credentials) | - |
 | `colors` | :material-check: | Define the custom colors | [`TrafficColorsConfiguration`](../../getting_started/#traffic-color) | - |
+| `unifiedColors` | :material-close: | Define the custom colors | [`UnifiedColorsConfiguration`](../../getting_started/#unified_colors) | - |
 | `fonts` | :material-close: | Use custom fonts | [`TrafficFontsConfiguration`](../../getting_started/#custom-font) | - |
 | `lineResources` | :material-close: | List of transport lines resource IDs | [`[LineResource]`](../../getting_started/#line-resource) | - | 
 | `modeResources` | :material-close: | List of transport modes resource IDs | [`[ModeResource]`](../../getting_started/#mode-resource) | - | 
-| `transportCategories` | :material-check: | List of supported transport modes | [`[TransportCategory]`](../../getting_started/#transport-category) | - |
+| `providerResources` | :material-close: | Transport providers configuration | [`[ProviderResource]`](../../getting_started/#provider-resource) | - |
+| `transportCategories` | :material-close: | List of supported transport modes | [`[TransportCategory]`](../../getting_started/#transport-category) | - |
 | `networkResources` | :material-close: | List of network resource IDs | [`[NetworkResource]`](../../getting_started/#network-resource) | - |
 | `features` | :material-close: | Enable/disable some features  | [`TrafficFeaturesConfiguration`](../../getting_started/#traffic-features) | - |
 
@@ -103,6 +107,7 @@ You can also call the `initialize()` method with the global JSON configuration f
         try Traffic.shared.initialize(
          	coverage: "fr-idf",
             token: "your_token",
+            timeZone: "your_country",
             env: "PROD",
             colors: trafficColorsConfiguration,
             transportCategories: transportCategories

@@ -15,16 +15,16 @@ Method | HTTP request
 
 Name | Type | Note
 ---- | ---- | ----
-**lat** | **Double** | The latitude of where the coord you want to query 
 **lon** | **Double** | The longitude of where the coord you want to query 
-**type** | [**List<String>**](String.md) | Type of the objects to return [optional] [default to [u&#39;stop_area&#39;, u&#39;stop_point&#39;, u&#39;poi&#39;]] [enum: stop_point, poi, administrative_region, stop_area, address] 
+**lat** | **Double** | The latitude of where the coord you want to query 
+**type** | [**List<String>**](String.md) | Type of the objects to return [optional] [default to [&#39;stop_area&#39;, &#39;stop_point&#39;, &#39;poi&#39;]] [enum: stop_area, stop_point, address, poi, administrative_region] 
 **filter** | **String** | Filter your objects [optional] 
 **distance** | **Int** | Distance range of the query in meters [optional] [default to 500] 
 **count** | **Int** | Elements per page [optional] [default to 10] 
 **depth** | **Int** | Maximum depth on objects [optional] [default to 1] 
 **startPage** | **Int** | The page number of the ptref result [optional] 
 **bssStands** | **Boolean** | DEPRECATED, Use add_poi_infos[]=bss_stands [optional] 
-**addPoiInfos** | [**List<String>**](String.md) | Show more information about the poi if it's available, for instance, show BSS/car park availability in the pois(BSS/car park) of the response [optional] [default to [u&#39;bss_stands&#39;, u&#39;car_park&#39;]] [enum: bss_stands, car_park, , none] 
+**addPoiInfos** | [**List<String>**](String.md) | Show more information about the poi if it's available, for instance, show BSS/car park availability in the pois(BSS/car park) of the response [optional] [default to [&#39;bss_stands&#39;, &#39;car_park&#39;]] [enum: bss_stands, car_park, , none] 
 **disableGeojson** | **Boolean** | remove geojson from the response [optional] 
 **disableDisruption** | **Boolean** | remove disruptions from the response [optional] 
 
@@ -34,8 +34,8 @@ Name | Type | Note
 <h3>Example</h3>
 ```kotlin
 ExpertSdk.getInstance().placesNearbyApi.getCoordLonLatPlacesNearby(
-    lat = 0.0,
     lon = 0.0,
+    lat = 0.0,
     type = listOf(),
     filter = "filter_example",
     distance = 123,
@@ -62,16 +62,16 @@ if (response.isSuccessful && response.body() != null) {
 
 Name | Type | Note
 ---- | ---- | ----
-**lat** | **Double** | The latitude of where the coord you want to query 
 **lon** | **Double** | The longitude of where the coord you want to query 
-**type** | [**List<String>**](String.md) | Type of the objects to return [optional] [default to [u&#39;stop_area&#39;, u&#39;stop_point&#39;, u&#39;poi&#39;]] [enum: stop_point, poi, administrative_region, stop_area, address] 
+**lat** | **Double** | The latitude of where the coord you want to query 
+**type** | [**List<String>**](String.md) | Type of the objects to return [optional] [default to [&#39;stop_area&#39;, &#39;stop_point&#39;, &#39;poi&#39;]] [enum: stop_area, stop_point, address, poi, administrative_region] 
 **filter** | **String** | Filter your objects [optional] 
 **distance** | **Int** | Distance range of the query in meters [optional] [default to 500] 
 **count** | **Int** | Elements per page [optional] [default to 10] 
 **depth** | **Int** | Maximum depth on objects [optional] [default to 1] 
 **startPage** | **Int** | The page number of the ptref result [optional] 
 **bssStands** | **Boolean** | DEPRECATED, Use add_poi_infos[]=bss_stands [optional] 
-**addPoiInfos** | [**List<String>**](String.md) | Show more information about the poi if it's available, for instance, show BSS/car park availability in the pois(BSS/car park) of the response [optional] [default to [u&#39;bss_stands&#39;, u&#39;car_park&#39;]] [enum: bss_stands, car_park, , none] 
+**addPoiInfos** | [**List<String>**](String.md) | Show more information about the poi if it's available, for instance, show BSS/car park availability in the pois(BSS/car park) of the response [optional] [default to [&#39;bss_stands&#39;, &#39;car_park&#39;]] [enum: bss_stands, car_park, , none] 
 **disableGeojson** | **Boolean** | remove geojson from the response [optional] 
 **disableDisruption** | **Boolean** | remove disruptions from the response [optional] 
 
@@ -81,8 +81,8 @@ Name | Type | Note
 <h3>Example</h3>
 ```kotlin
 ExpertSdk.getInstance().placesNearbyApi.getCoordsLonLatPlacesNearby(
-    lat = 0.0,
     lon = 0.0,
+    lat = 0.0,
     type = listOf(),
     filter = "filter_example",
     distance = 123,
@@ -109,16 +109,16 @@ if (response.isSuccessful && response.body() != null) {
 
 Name | Type | Note
 ---- | ---- | ----
-**lat** | **Double** | The latitude of where the coord you want to query 
 **lon** | **Double** | The longitude of where the coord you want to query 
-**type** | [**List<String>**](String.md) | Type of the objects to return [optional] [default to [u&#39;stop_area&#39;, u&#39;stop_point&#39;, u&#39;poi&#39;]] [enum: stop_point, poi, administrative_region, stop_area, address] 
+**lat** | **Double** | The latitude of where the coord you want to query 
+**type** | [**List<String>**](String.md) | Type of the objects to return [optional] [default to [&#39;stop_area&#39;, &#39;stop_point&#39;, &#39;poi&#39;]] [enum: stop_area, stop_point, address, poi, administrative_region] 
 **filter** | **String** | Filter your objects [optional] 
 **distance** | **Int** | Distance range of the query in meters [optional] [default to 500] 
 **count** | **Int** | Elements per page [optional] [default to 10] 
 **depth** | **Int** | Maximum depth on objects [optional] [default to 1] 
 **startPage** | **Int** | The page number of the ptref result [optional] 
 **bssStands** | **Boolean** | DEPRECATED, Use add_poi_infos[]=bss_stands [optional] 
-**addPoiInfos** | [**List<String>**](String.md) | Show more information about the poi if it's available, for instance, show BSS/car park availability in the pois(BSS/car park) of the response [optional] [default to [u&#39;bss_stands&#39;, u&#39;car_park&#39;]] [enum: bss_stands, car_park, , none] 
+**addPoiInfos** | [**List<String>**](String.md) | Show more information about the poi if it's available, for instance, show BSS/car park availability in the pois(BSS/car park) of the response [optional] [default to [&#39;bss_stands&#39;, &#39;car_park&#39;]] [enum: bss_stands, car_park, , none] 
 **disableGeojson** | **Boolean** | remove geojson from the response [optional] 
 **disableDisruption** | **Boolean** | remove disruptions from the response [optional] 
 
@@ -128,8 +128,8 @@ Name | Type | Note
 <h3>Example</h3>
 ```kotlin
 ExpertSdk.getInstance().placesNearbyApi.getCoverageLonLatPlacesNearby(
-    lat = 0.0,
     lon = 0.0,
+    lat = 0.0,
     type = listOf(),
     filter = "filter_example",
     distance = 123,
@@ -156,17 +156,17 @@ if (response.isSuccessful && response.body() != null) {
 
 Name | Type | Note
 ---- | ---- | ----
-**lat** | **Double** | The latitude of where the coord you want to query 
 **lon** | **Double** | The longitude of where the coord you want to query 
+**lat** | **Double** | The latitude of where the coord you want to query 
 **uri** | **String** | First part of the uri 
-**type** | [**List<String>**](String.md) | Type of the objects to return [optional] [default to [u&#39;stop_area&#39;, u&#39;stop_point&#39;, u&#39;poi&#39;]] [enum: stop_point, poi, administrative_region, stop_area, address] 
+**type** | [**List<String>**](String.md) | Type of the objects to return [optional] [default to [&#39;stop_area&#39;, &#39;stop_point&#39;, &#39;poi&#39;]] [enum: stop_area, stop_point, address, poi, administrative_region] 
 **filter** | **String** | Filter your objects [optional] 
 **distance** | **Int** | Distance range of the query in meters [optional] [default to 500] 
 **count** | **Int** | Elements per page [optional] [default to 10] 
 **depth** | **Int** | Maximum depth on objects [optional] [default to 1] 
 **startPage** | **Int** | The page number of the ptref result [optional] 
 **bssStands** | **Boolean** | DEPRECATED, Use add_poi_infos[]=bss_stands [optional] 
-**addPoiInfos** | [**List<String>**](String.md) | Show more information about the poi if it's available, for instance, show BSS/car park availability in the pois(BSS/car park) of the response [optional] [default to [u&#39;bss_stands&#39;, u&#39;car_park&#39;]] [enum: bss_stands, car_park, , none] 
+**addPoiInfos** | [**List<String>**](String.md) | Show more information about the poi if it's available, for instance, show BSS/car park availability in the pois(BSS/car park) of the response [optional] [default to [&#39;bss_stands&#39;, &#39;car_park&#39;]] [enum: bss_stands, car_park, , none] 
 **disableGeojson** | **Boolean** | remove geojson from the response [optional] 
 **disableDisruption** | **Boolean** | remove disruptions from the response [optional] 
 
@@ -176,8 +176,8 @@ Name | Type | Note
 <h3>Example</h3>
 ```kotlin
 ExpertSdk.getInstance().placesNearbyApi.getCoverageLonLatUriPlacesNearby(
-    lat = 0.0,
     lon = 0.0,
+    lat = 0.0,
     uri = "uri_example",
     type = listOf(),
     filter = "filter_example",
@@ -206,14 +206,14 @@ if (response.isSuccessful && response.body() != null) {
 Name | Type | Note
 ---- | ---- | ----
 **region** | **String** | The region you want to query 
-**type** | [**List<String>**](String.md) | Type of the objects to return [optional] [default to [u&#39;stop_area&#39;, u&#39;stop_point&#39;, u&#39;poi&#39;]] [enum: stop_point, poi, administrative_region, stop_area, address] 
+**type** | [**List<String>**](String.md) | Type of the objects to return [optional] [default to [&#39;stop_area&#39;, &#39;stop_point&#39;, &#39;poi&#39;]] [enum: stop_area, stop_point, address, poi, administrative_region] 
 **filter** | **String** | Filter your objects [optional] 
 **distance** | **Int** | Distance range of the query in meters [optional] [default to 500] 
 **count** | **Int** | Elements per page [optional] [default to 10] 
 **depth** | **Int** | Maximum depth on objects [optional] [default to 1] 
 **startPage** | **Int** | The page number of the ptref result [optional] 
 **bssStands** | **Boolean** | DEPRECATED, Use add_poi_infos[]=bss_stands [optional] 
-**addPoiInfos** | [**List<String>**](String.md) | Show more information about the poi if it's available, for instance, show BSS/car park availability in the pois(BSS/car park) of the response [optional] [default to [u&#39;bss_stands&#39;, u&#39;car_park&#39;]] [enum: bss_stands, car_park, , none] 
+**addPoiInfos** | [**List<String>**](String.md) | Show more information about the poi if it's available, for instance, show BSS/car park availability in the pois(BSS/car park) of the response [optional] [default to [&#39;bss_stands&#39;, &#39;car_park&#39;]] [enum: bss_stands, car_park, , none] 
 **disableGeojson** | **Boolean** | remove geojson from the response [optional] 
 **disableDisruption** | **Boolean** | remove disruptions from the response [optional] 
 
@@ -252,14 +252,14 @@ Name | Type | Note
 ---- | ---- | ----
 **region** | **String** | The region you want to query 
 **uri** | **String** | First part of the uri 
-**type** | [**List<String>**](String.md) | Type of the objects to return [optional] [default to [u&#39;stop_area&#39;, u&#39;stop_point&#39;, u&#39;poi&#39;]] [enum: stop_point, poi, administrative_region, stop_area, address] 
+**type** | [**List<String>**](String.md) | Type of the objects to return [optional] [default to [&#39;stop_area&#39;, &#39;stop_point&#39;, &#39;poi&#39;]] [enum: stop_area, stop_point, address, poi, administrative_region] 
 **filter** | **String** | Filter your objects [optional] 
 **distance** | **Int** | Distance range of the query in meters [optional] [default to 500] 
 **count** | **Int** | Elements per page [optional] [default to 10] 
 **depth** | **Int** | Maximum depth on objects [optional] [default to 1] 
 **startPage** | **Int** | The page number of the ptref result [optional] 
 **bssStands** | **Boolean** | DEPRECATED, Use add_poi_infos[]=bss_stands [optional] 
-**addPoiInfos** | [**List<String>**](String.md) | Show more information about the poi if it's available, for instance, show BSS/car park availability in the pois(BSS/car park) of the response [optional] [default to [u&#39;bss_stands&#39;, u&#39;car_park&#39;]] [enum: bss_stands, car_park, , none] 
+**addPoiInfos** | [**List<String>**](String.md) | Show more information about the poi if it's available, for instance, show BSS/car park availability in the pois(BSS/car park) of the response [optional] [default to [&#39;bss_stands&#39;, &#39;car_park&#39;]] [enum: bss_stands, car_park, , none] 
 **disableGeojson** | **Boolean** | remove geojson from the response [optional] 
 **disableDisruption** | **Boolean** | remove disruptions from the response [optional] 
 

@@ -4,9 +4,9 @@
 
 Name | Type | Note
 ---- | ---- | ----
-**displayInformations** | [**RouteDisplayInformation**](RouteDisplayInformation.md) | [optional] 
 **table** | [**Table**](Table.md) | [optional] 
-**additionalInformations** | **String** | 
+**displayInformations** | [**RouteDisplayInformation**](RouteDisplayInformation.md) | [optional] 
 **geojson** | [**MultiLineStringSchema**](MultiLineStringSchema.md) | [optional] 
+**additionalInformations** | **String** | 
 **links** | [**List<LinkSchema>**](LinkSchema.md) | [optional] 
 

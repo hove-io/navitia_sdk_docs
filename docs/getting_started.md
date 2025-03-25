@@ -23,7 +23,7 @@ title: Getting started - Navitia SDK Docs
 
     Install <span style="text-decoration:underline">[Cocoapods](https://cocoapods.org)</span> and add the following in the `Podfile` of your project:
     ``` ruby
-    platform :ios, '14.0'
+    platform :ios, '16.0'
     use_frameworks!
     ```
 
@@ -90,7 +90,6 @@ The following are the possible configuration parameters:
 | `disruptions` | :material-check: | [`Disruption color`](#disruption-color) | All |
 <!-- 
 | `account` | :material-check: | [`Account color`](#account-color) | Account |
-| `crowdsourcing` | :material-check: | [`Crowdsourcing color`](#crowdsourcing-color) | Crowdsourcing | 
 -->
 
 <!-- [Not yet]
@@ -195,15 +194,21 @@ The following are the possible configuration parameters:
 
 | Name | Required | Description | Type | Default |
 | --- |:---:| --- | :---: | :---: |
-| `information` | :material-check: | To set the color for informative disruptions | `String` | `#3FA26D` |
-| `non_blocking` | :material-check: | To set the color for non blocking disruptions | `String` | `#EF662F` |
-| `blocking` | :material-check: | To set the color for blocking disruptions | `String` | `#FF0000` |
+| `information` | :material-close: | To set the color for informative disruptions | `String` | `#3FA26D` |
+| `non_blocking` | :material-close: | To set the color for non blocking disruptions | `String` | `#EF662F` |
+| `blocking` | :material-close: | To set the color for blocking disruptions | `String` | `#FF0000` |
+
+#### Unified colors
+
+| Name | Required | Description | Type | Default |
+| --- |:---:| --- | :---: | :---: |
+| `disruptions` | :material-close: | define the several colors of disruptions | [`Disruption color`](#disruption-color) | - |
 
 ### Transport category
 
 | Name | Required | Description | Type | Example | Target modules |
 | --- |:---:| --- | :---: | :---: | :---: |
-| `modules` | :material-check: | To set the target modules | `String[]` | `["aroundme","journey"]` | `ALL` |
+| `modules` | :material-check: | To set the target modules | `String[]` | `["aroundme", "journey"]` | `ALL` |
 | `name_res` | :material-check: | To set the localized resource id | `String` | `transport_name_res` | `ALL` |
 | `icon_res` | :material-check: | To set the icon resource id | `String` | `ic_metro` | `ALL` |
 | `selected` | :material-close: | Whether the transport mode is selected by default or not | `Boolean` | `true` | `ALL` |
@@ -511,19 +516,26 @@ The following are the possible configuration parameters:
 
 | Name | Required | Description | Type | Example |
 | --- |:---:| --- | :---: | :---: |
-| `frequency`| :material-check: | frequency of the next departures request in seconds | `Int` | `30` |
+| `frequency` | :material-check: | Frequency of the next departures request in seconds | `Int` | `30` |
 
 ##### Park availability
 
 | Name | Required | Description | Type | Example |
 | --- |:---:| --- | :---: | :---: |
-| `frequency`| :material-check: | frequency of the bss and park availability request in seconds | `Int` | `30` |
+| `frequency` | :material-check: | Frequency of the bss and park availability request in seconds | `Int` | `30` |
+| `display` | :material-close: | Display options of park availability on screen | [`Park availability display options`](#park-availability-display-options) | - |
+
+##### Park availability display options
+
+| Name | Required | Description | Type | Example |
+| --- |:---:| --- | :---: | :---: |
+| `prm` | :material-close: | Display/hide reduced mobility park availability on screen | `Boolean` | `true` |
 
 ##### Vehicle positions
 
 | Name | Required | Description | Type | Example |
 | --- |:---:| --- | :---: | :---: |
-| `frequency` | :material-check: | frequency of the vehicle positions request in seconds | `String` | `30` |
+| `frequency` | :material-check: | Frequency of the vehicle positions request in seconds | `String` | `30` |
 
 ### Fonts
 
@@ -633,6 +645,13 @@ The following are the possible configuration parameters:
 | `journeys` | :material-close: | Localized journeys screen title resource id | `String` | `journeys_screen_title` |
 | `roadmap` | :material-close: | Localized roadmap screen title resource id | `String` | `roadmap_screen_title` |
 | `ridesharing` | :material-close: | Localized ridesharing screen title resource id | `String` | `ridesharing_screen_title` |
+
+#### OSM Region
+
+| Name | Required | Description | Type | Example |
+| --- |:---:| --- | :---: | :---: |
+| `id` | :material-close: | id of the region | `String` | `azerty` |
+| `name` | :material-close: | name of the region | `String` | `île de France` |
 
 ### Configuration JSON file
 

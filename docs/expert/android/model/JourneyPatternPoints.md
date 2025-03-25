@@ -5,11 +5,11 @@
 Name | Type | Note
 ---- | ---- | ----
 **pagination** | [**Pagination**](Pagination.md) | 
-**journeyPatternPoints** | [**List<JourneyPatternPoint>**](JourneyPatternPoint.md) | [optional] 
-**links** | [**List<LinkSchema>**](LinkSchema.md) | [optional] 
+**error** | [**Error**](Error.md) | [optional] 
+**feedPublishers** | [**List<FeedPublisher>**](FeedPublisher.md) | 
 **disruptions** | [**List<Disruption>**](Disruption.md) | 
 **notes** | [**List<Note>**](Note.md) | [optional] 
-**feedPublishers** | [**List<FeedPublisher>**](FeedPublisher.md) | 
+**links** | [**List<LinkSchema>**](LinkSchema.md) | [optional] 
 **context** | [**Context**](Context.md) | [optional] 
-**error** | [**Error**](Error.md) | [optional] 
+**journeyPatternPoints** | [**List<JourneyPatternPoint>**](JourneyPatternPoint.md) | [optional] 
 

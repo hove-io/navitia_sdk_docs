@@ -10,7 +10,7 @@ Add the following dependency in the `build.gradle` file of your application:
 
 ```kotlin
 dependencies {
-    implementation("com.kisio.navitia.sdk.data:expert:3.5.2")
+    implementation("com.kisio.navitia.sdk.data:expert:3.6.0")
 }
 ```
 
