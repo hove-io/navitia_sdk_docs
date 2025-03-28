@@ -13,8 +13,8 @@ Method | HTTP request
 
 Name | Type | Note
 ---- | ---- | ----
-**lat** | **Double** | The latitude of where the coord you want to query 
 **lon** | **Double** | The longitude of where the coord you want to query 
+**lat** | **Double** | The latitude of where the coord you want to query 
 
 ### Return
 [**DictAddresses**](../model/DictAddresses.md)
@@ -22,8 +22,8 @@ Name | Type | Note
 <h3>Example</h3>
 ```kotlin
 ExpertSdk.getInstance().coordApi.getCoordLonLat(
-    lat = 0.0,
-    lon = 0.0
+    lon = 0.0,
+    lat = 0.0
 )
 
 if (response.isSuccessful && response.body() != null) {  
@@ -40,8 +40,8 @@ if (response.isSuccessful && response.body() != null) {
 
 Name | Type | Note
 ---- | ---- | ----
-**lat** | **Double** | The latitude of where the coord you want to query 
 **lon** | **Double** | The longitude of where the coord you want to query 
+**lat** | **Double** | The latitude of where the coord you want to query 
 
 ### Return
 [**DictAddresses**](../model/DictAddresses.md)
@@ -49,8 +49,8 @@ Name | Type | Note
 <h3>Example</h3>
 ```kotlin
 ExpertSdk.getInstance().coordApi.getCoordsLonLat(
-    lat = 0.0,
-    lon = 0.0
+    lon = 0.0,
+    lat = 0.0
 )
 
 if (response.isSuccessful && response.body() != null) {  
@@ -67,9 +67,9 @@ if (response.isSuccessful && response.body() != null) {
 
 Name | Type | Note
 ---- | ---- | ----
-**lat** | **Double** | The latitude of where the coord you want to query 
 **region** | **String** | The region you want to query 
 **lon** | **Double** | The longitude of where the coord you want to query 
+**lat** | **Double** | The latitude of where the coord you want to query 
 
 ### Return
 [**DictAddresses**](../model/DictAddresses.md)
@@ -77,9 +77,9 @@ Name | Type | Note
 <h3>Example</h3>
 ```kotlin
 ExpertSdk.getInstance().coordApi.getCoverageRegionCoordLonLatAddresses(
-    lat = 0.0,
     region = "region_example",
-    lon = 0.0
+    lon = 0.0,
+    lat = 0.0
 )
 
 if (response.isSuccessful && response.body() != null) {  
@@ -96,9 +96,9 @@ if (response.isSuccessful && response.body() != null) {
 
 Name | Type | Note
 ---- | ---- | ----
-**lat** | **Double** | The latitude of where the coord you want to query 
 **region** | **String** | The region you want to query 
 **lon** | **Double** | The longitude of where the coord you want to query 
+**lat** | **Double** | The latitude of where the coord you want to query 
 
 ### Return
 [**DictAddresses**](../model/DictAddresses.md)
@@ -106,9 +106,9 @@ Name | Type | Note
 <h3>Example</h3>
 ```kotlin
 ExpertSdk.getInstance().coordApi.getCoverageRegionCoordsLonLatAddresses(
-    lat = 0.0,
     region = "region_example",
-    lon = 0.0
+    lon = 0.0,
+    lat = 0.0
 )
 
 if (response.isSuccessful && response.body() != null) {  

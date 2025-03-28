@@ -4,11 +4,11 @@
 
 Name | Type | Note
 ---- | ---- | ----
-**nbAdminsFromCities** | **Int** | [optional] 
-**streetNetworkSources** | **List<String>** | 
-**poiSources** | **List<String>** | 
 **nbAddresses** | **Int** | [optional] 
 **nbAdmins** | **Int** | [optional] 
+**nbAdminsFromCities** | **Int** | [optional] 
 **nbPois** | **Int** | [optional] 
 **nbWays** | **Int** | [optional] 
+**poiSources** | **List<String>** | 
+**streetNetworkSources** | **List<String>** | 
 

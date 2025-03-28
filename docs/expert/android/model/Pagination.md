@@ -4,8 +4,8 @@
 
 Name | Type | Note
 ---- | ---- | ----
-**startPage** | **Int** | 
-**itemsOnPage** | **Int** | 
-**itemsPerPage** | **Int** | 
 **totalResult** | **Int** | 
+**startPage** | **Int** | 
+**itemsPerPage** | **Int** | 
+**itemsOnPage** | **Int** | 
 

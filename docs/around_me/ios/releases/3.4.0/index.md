@@ -19,7 +19,7 @@ title: AroundMe iOS 3.4.0 - Changelog - Navitia SDK Docs
 #### Fixes 
 - Do not display `Favorite stations` if no station is added to favorites
 - Fix stations sort in the bottom sheet
-- Fix bicycle parking displayed as P+R
+- Fix bike parking displayed as P+R
 - Fix sections order in autocompletion
 - Fix home and work bookmark buttons not clickable
 - Fix Line icon position in the bottom sheet 

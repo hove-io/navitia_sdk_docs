@@ -4,11 +4,11 @@
 
 Name | Type | Note
 ---- | ---- | ----
-**category** | [**Category**](#Category) | [optional] 
 **type** | **String** | [optional] 
-**value** | **String** | [optional] 
-**commentType** | **String** | [optional] 
 **id** | **String** | 
+**value** | **String** | [optional] 
+**category** | [**Category**](#Category) | [optional] 
+**commentType** | **String** | [optional] 
 
 ## Category
 

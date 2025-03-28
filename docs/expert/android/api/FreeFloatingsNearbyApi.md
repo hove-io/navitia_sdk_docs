@@ -15,8 +15,8 @@ Method | HTTP request
 
 Name | Type | Note
 ---- | ---- | ----
-**lat** | **Double** | The latitude of where the coord you want to query 
 **lon** | **Double** | The longitude of where the coord you want to query 
+**lat** | **Double** | The latitude of where the coord you want to query 
 **type** | [**List<String>**](String.md) | Type of free-floating objects to return [optional] [enum: BIKE, SCOOTER, MOTORSCOOTER, STATION, CAR, OTHER] 
 **distance** | **Int** | Distance range of the query in meters [optional] [default to 500] 
 **count** | **Int** | Elements per page [optional] [default to 10] 
@@ -29,8 +29,8 @@ Name | Type | Note
 <h3>Example</h3>
 ```kotlin
 ExpertSdk.getInstance().freeFloatingsNearbyApi.getCoordLonLatFreefloatingsNearby(
-    lat = 0.0,
     lon = 0.0,
+    lat = 0.0,
     type = listOf(),
     distance = 123,
     count = 123,
@@ -52,8 +52,8 @@ if (response.isSuccessful && response.body() != null) {
 
 Name | Type | Note
 ---- | ---- | ----
-**lat** | **Double** | The latitude of where the coord you want to query 
 **lon** | **Double** | The longitude of where the coord you want to query 
+**lat** | **Double** | The latitude of where the coord you want to query 
 **type** | [**List<String>**](String.md) | Type of free-floating objects to return [optional] [enum: BIKE, SCOOTER, MOTORSCOOTER, STATION, CAR, OTHER] 
 **distance** | **Int** | Distance range of the query in meters [optional] [default to 500] 
 **count** | **Int** | Elements per page [optional] [default to 10] 
@@ -66,8 +66,8 @@ Name | Type | Note
 <h3>Example</h3>
 ```kotlin
 ExpertSdk.getInstance().freeFloatingsNearbyApi.getCoordsLonLatFreefloatingsNearby(
-    lat = 0.0,
     lon = 0.0,
+    lat = 0.0,
     type = listOf(),
     distance = 123,
     count = 123,
@@ -89,8 +89,8 @@ if (response.isSuccessful && response.body() != null) {
 
 Name | Type | Note
 ---- | ---- | ----
-**lat** | **Double** | The latitude of where the coord you want to query 
 **lon** | **Double** | The longitude of where the coord you want to query 
+**lat** | **Double** | The latitude of where the coord you want to query 
 **type** | [**List<String>**](String.md) | Type of free-floating objects to return [optional] [enum: BIKE, SCOOTER, MOTORSCOOTER, STATION, CAR, OTHER] 
 **distance** | **Int** | Distance range of the query in meters [optional] [default to 500] 
 **count** | **Int** | Elements per page [optional] [default to 10] 
@@ -103,8 +103,8 @@ Name | Type | Note
 <h3>Example</h3>
 ```kotlin
 ExpertSdk.getInstance().freeFloatingsNearbyApi.getCoverageLonLatFreefloatingsNearby(
-    lat = 0.0,
     lon = 0.0,
+    lat = 0.0,
     type = listOf(),
     distance = 123,
     count = 123,
@@ -126,8 +126,8 @@ if (response.isSuccessful && response.body() != null) {
 
 Name | Type | Note
 ---- | ---- | ----
-**lat** | **Double** | The latitude of where the coord you want to query 
 **lon** | **Double** | The longitude of where the coord you want to query 
+**lat** | **Double** | The latitude of where the coord you want to query 
 **uri** | **String** | First part of the uri 
 **type** | [**List<String>**](String.md) | Type of free-floating objects to return [optional] [enum: BIKE, SCOOTER, MOTORSCOOTER, STATION, CAR, OTHER] 
 **distance** | **Int** | Distance range of the query in meters [optional] [default to 500] 
@@ -141,8 +141,8 @@ Name | Type | Note
 <h3>Example</h3>
 ```kotlin
 ExpertSdk.getInstance().freeFloatingsNearbyApi.getCoverageLonLatUriFreefloatingsNearby(
-    lat = 0.0,
     lon = 0.0,
+    lat = 0.0,
     uri = "uri_example",
     type = listOf(),
     distance = 123,

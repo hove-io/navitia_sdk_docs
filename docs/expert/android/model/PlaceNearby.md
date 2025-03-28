@@ -4,17 +4,17 @@
 
 Name | Type | Note
 ---- | ---- | ----
-**embeddedType** | [**EmbeddedType**](#EmbeddedType) | 
-**stopPoint** | [**StopPoint**](StopPoint.md) | [optional] 
-**administrativeRegion** | [**Admin**](Admin.md) | [optional] 
-**stopArea** | [**StopArea**](StopArea.md) | [optional] 
-**distance** | **String** | Distance to the object in meters [optional] 
-**accessPoint** | [**PathWay**](PathWay.md) | [optional] 
-**address** | [**Address**](Address.md) | [optional] 
-**poi** | [**Poi**](Poi.md) | [optional] 
-**quality** | **Int** | [optional] 
 **id** | **String** | Identifier of the object 
 **name** | **String** | Name of the object 
+**quality** | **Int** | [optional] 
+**stopArea** | [**StopArea**](StopArea.md) | [optional] 
+**stopPoint** | [**StopPoint**](StopPoint.md) | [optional] 
+**administrativeRegion** | [**Admin**](Admin.md) | [optional] 
+**embeddedType** | [**EmbeddedType**](#EmbeddedType) | 
+**address** | [**Address**](Address.md) | [optional] 
+**poi** | [**Poi**](Poi.md) | [optional] 
+**accessPoint** | [**PathWay**](PathWay.md) | [optional] 
+**distance** | **String** | Distance to the object in meters [optional] 
 
 ## EmbeddedType
 

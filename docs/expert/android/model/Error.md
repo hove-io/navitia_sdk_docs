@@ -4,6 +4,6 @@
 
 Name | Type | Note
 ---- | ---- | ----
-**message** | **String** | [optional] 
 **id** | **String** | 
+**message** | **String** | [optional] 
 

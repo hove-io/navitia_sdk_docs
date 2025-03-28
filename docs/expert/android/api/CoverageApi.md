@@ -37,8 +37,8 @@ if (response.isSuccessful && response.body() != null) {
 
 Name | Type | Note
 ---- | ---- | ----
-**lat** | **Double** | The latitude of where the coord you want to query 
 **lon** | **Double** | The longitude of where the coord you want to query 
+**lat** | **Double** | The latitude of where the coord you want to query 
 **disableGeojson** | **Boolean** | hide the coverage geojson to reduce response size [optional] 
 
 ### Return
@@ -47,8 +47,8 @@ Name | Type | Note
 <h3>Example</h3>
 ```kotlin
 ExpertSdk.getInstance().coverageApi.getCoverageLonLat(
-    lat = 0.0,
     lon = 0.0,
+    lat = 0.0,
     disableGeojson = true
 )
 

@@ -4,21 +4,21 @@
 
 Name | Type | Note
 ---- | ---- | ----
-**direction** | **String** | 
-**code** | **String** | [optional] 
+**commercialMode** | **String** | [optional] 
 **network** | **String** | [optional] 
-**links** | [**List<LinkSchema>**](LinkSchema.md) | 
-**color** | **String** | [optional] 
-**name** | **String** | [optional] 
-**physicalMode** | **String** | [optional] 
-**headsign** | **String** | 
+**direction** | **String** | 
 **label** | **String** | [optional] 
-**equipments** | [**List<Equipments>**](#Equipments) | 
+**color** | **String** | [optional] 
+**code** | **String** | [optional] 
+**headsign** | **String** | 
+**name** | **String** | [optional] 
+**links** | [**List<LinkSchema>**](LinkSchema.md) | 
 **textColor** | **String** | [optional] 
 **tripShortName** | **String** | [optional] 
-**headsigns** | **List<String>** | [optional] 
-**commercialMode** | **String** | [optional] 
 **description** | **String** | [optional] 
+**physicalMode** | **String** | [optional] 
+**equipments** | [**List<Equipments>**](#Equipments) | 
+**headsigns** | **List<String>** | [optional] 
 
 ## Equipments
 

@@ -14,6 +14,7 @@ title: Available APIs - Expert Android - Navitia SDK Docs
 |[**ContributorsApi**](api/ContributorsApi.md) |  
 |[**CoordApi**](api/CoordApi.md) |  
 |[**CoordsApi**](api/CoordsApi.md) |  
+|[**CoverageApi**](api/CoverageApi.md) |  
 |[**DatasetsApi**](api/DatasetsApi.md) |  
 |[**DisruptionsApi**](api/DisruptionsApi.md) |  
 |[**EquipmentReportsApi**](api/EquipmentReportsApi.md) |  
@@ -30,6 +31,7 @@ title: Available APIs - Expert Android - Navitia SDK Docs
 |[**NetworksApi**](api/NetworksApi.md) |  
 |[**NextArrivalsApi**](api/NextArrivalsApi.md) |  
 |[**NextDeparturesApi**](api/NextDeparturesApi.md) |  
+|[**ObstaclesNearbyApi**](api/ObstaclesNearbyApi.md) |  
 |[**PhysicalModesApi**](api/PhysicalModesApi.md) |  
 |[**PlaceUriApi**](api/PlaceUriApi.md) |  
 |[**PlacesApi**](api/PlacesApi.md) |  
