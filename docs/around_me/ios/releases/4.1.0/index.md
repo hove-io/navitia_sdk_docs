@@ -7,16 +7,17 @@ title: AroundMe iOS 4.1.0 - Changelog - Navitia SDK Docs
 <h2>🗓 24 Mar 2025</h2>
 
 #### Tasks
-- Handle favorite journeys with park mode sections to hide it on the freeze
-- Handle autocompletion behavior to be the same than the Android version
+- Hide parking section that was displayed inside favorite journey freeze
+- Show searched places addresses
+- Make searched poi icons customizable
 - Add config params to override favorite tabs title
 - Display POI icons if available
-- Display line details for every level of zoom
+- Display line details for every zoom level
 
 #### Fixes
 - Fix transport line text color icon in map annotation
-- Fix back button action: previous state is shown when show back
-- Fix geojson's mapping to build polylines
+- Fix back button not returning the view back to its previous state
+- Fix line path not properly displayed on the map
 
 #### Dependencies
 - `NavitiaSDK` -> `2.9.0`

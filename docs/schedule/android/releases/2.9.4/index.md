@@ -7,7 +7,7 @@ title: Schedule Android 2.9.4 - Changelog - Navitia SDK Docs
 <h2>🗓 25 Feb 2025</h2>
 
 #### Fixes 
-- Fix the issue where lines were not updating when a network was selected
+- Fix lines list not updated when a network is selected
 - Fix the preselection of the date in the timetable
 - Directly show the direction when it is unique in the timetable
 - Fix the display of the direction selector when there is no data to show

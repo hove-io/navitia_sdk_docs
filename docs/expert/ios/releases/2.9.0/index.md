@@ -6,5 +6,5 @@ title: Expert iOS 2.9.0 - Changelog - Navitia SDK Docs
 
 <h2>🗓 24 Mar 2025</h2>
 
-#### Features
-- Add park mode in journey API
+#### Based on Navitia
+https://github.com/hove-io/navitia/releases/tag/v15.82.1

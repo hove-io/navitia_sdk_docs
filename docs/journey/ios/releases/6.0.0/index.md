@@ -8,11 +8,12 @@ title: Journey iOS 6.0.0 - Changelog - Navitia SDK Docs
 
 #### Features
 - Enable next departure selection in the roadmap screen
-- Show/hide PMR availability based on configuration
+- Show/hide PRM availability based on configuration
 - Change bike journeys section order
 
 #### Tasks
-- Change configuration
+- Extract module configuration from unified configuration
+- Add unified colors configuration
 - Update minimum iOS deployment to 16
 
 #### Fixes

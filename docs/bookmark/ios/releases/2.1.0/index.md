@@ -10,7 +10,7 @@ title: Bookmark iOS 2.1.0 - Changelog - Navitia SDK Docs
 - Add config params to override section's title in tabs
 
 #### Tasks
-- Handle favorite journeys with park mode sections to hide it on the freeze 
+- Hide parking section that was displayed inside favorite journey freeze
 - Display POI icon if available
 
 #### Dependencies

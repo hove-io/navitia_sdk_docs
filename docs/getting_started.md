@@ -490,7 +490,7 @@ The following are the possible configuration parameters:
 
 | Name | Required | Description | Type | Example |
 | --- |:---:| --- | :---: | :---: |
-| `allowed_commerical_modes` | :material-close: | Define the list of commercial mode id allowed to show their name  | `String[]` | `["commercial_mode:Train"]` |
+| `allowed_commercial_modes` | :material-close: | Define the list of commercial mode id allowed to show their name  | `String[]` | `["commercial_mode:Train"]` |
 
 #### Traffic features
 
@@ -500,7 +500,7 @@ The following are the possible configuration parameters:
 | `application_periods` | :material-close: | Show/hide the disruption application date | `Boolean` |
 | `disruption_contributors` | :material-close: | Define the list of disruption contributors id | `String[]` | `["shortterm.tr_idfm"]` |
 | `filters` | :material-close: | Show/hide the filters selector | `Boolean` |
-| `forbidden_networks` | :material-close: | Define the list of forbidden networkds | `String[]` | `["network:ABCD"]` |
+| `forbidden_networks` | :material-close: | Define the list of forbidden network ids | `String[]` | `["network:ABCD"]` |
 | `transport_networks` | :material-close: | Enable/disable showing network on lines | `Boolean` | - |
 
 ##### Alert subscription

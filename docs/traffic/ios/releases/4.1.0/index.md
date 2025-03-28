@@ -10,7 +10,7 @@ title: Traffic iOS 4.1.0 - Changelog - Navitia SDK Docs
 - Add forbidden networks in configuration
 
 #### Tasks
-- Rename networks_filter to filters in configuration
+- Rename `networks_filter` to `filters` in configuration
 - Show alert when notification aren't activated for line subscription
 
 #### Dependencies

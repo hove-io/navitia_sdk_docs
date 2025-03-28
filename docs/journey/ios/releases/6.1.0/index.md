@@ -11,7 +11,7 @@ title: Journey iOS 6.1.0 - Changelog - Navitia SDK Docs
 
 #### Tasks
 - Route user to settings to activate notifications in case of traffic subscriptions
-- Replace bicycle journey type fast with shortest in roadmap
+- Replace bike journey type fast with shortest in roadmap
 - Display specific message for no RMP journey results
 - Round carbon value to the nearest Integer
 - Do not call autocompletion when query hasn't changed

@@ -9,7 +9,7 @@ title: Journey Android 5.18.0 - Changelog - Navitia SDK Docs
 #### Features
 - Bike journeys are now sorted into four possible categories: _Bike Rental_, _Bike Rental + Public Transport_, _Personal Bike + Public Transport_ and _Personal Bike_
 - Display of reduce mobility parking places for a parking POI is now configurable
-- Selection of an next departure for the first public transport section in the roadmap
+- Selection of a next departure for the first public transport section in the roadmap
 
 #### Fixes
 - Fix the order of lines for a station in autocomplete

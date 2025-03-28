@@ -95,7 +95,7 @@ You can also call the `initialize()` method with the global JSON configuration f
     	try Bookmark.shared.initialize(
         	coverage: "fr-idf",
         	token: "your_token",
-            timeZone: "your_contry",
+            timeZone: "your_country",
         	env: "PROD",
         	colors: bookmarkColorsConfiguration,
             unifiedColors: unifiedColorsConfiguration
