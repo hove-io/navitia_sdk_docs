@@ -563,7 +563,8 @@
             "add_poi_infos": [
                 "bss_stands",
                 "car_park"
-            ]
+            ],
+            "park_mode": ""
         }
     ],
     "poi_categories": [
@@ -626,10 +627,19 @@
             "booking": true,
             "bookmark_mode": {
                 "enabled": true,
-                "display": {
-                    "bss": true,
-                    "journeys": true,
-                    "stations": true
+                "tabs": {
+                    "bss": {
+                        "display": true,
+                        "title_res": ""
+                    },
+                    "journeys": {
+                        "display": true,
+                        "title_res": ""
+                    },
+                    "stations": {
+                        "display": true,
+                        "title_res": ""
+                    }
                 }
             },
             "default_location": {
@@ -643,7 +653,10 @@
                 "frequency": 30
             },
             "park_availability": {
-                "frequency": 30
+                "frequency": 30,
+                "display": {
+                    "prm": true
+                }
             },
             "schedule_mode": true,
             "stop_point_search": true,
@@ -658,13 +671,28 @@
                 "frequency": 30
             },
             "park_availability": {
-                "frequency": 30
+                "frequency": 30,
+                "display": {
+                    "prm": true
+                }
             },
             "schedule_mode": true,
             "tabs": {
-                "transports": true,
+                "transports": {
+                    "enabled": true,
+                    "sections": {
+                        "stations_title_res": "",
+                        "bss_stations_title_res": "",
+                        "car_parking_title_res": ""
+                    }
+                },
                 "journeys": true,
-                "addresses": true
+                "addresses": {
+                    "enabled": true,
+                    "sections": {
+                        "places_title_res": ""
+                    }
+                }
             }
         },
         "journey": {
@@ -702,7 +730,10 @@
                 }
             },
             "park_availability": {
-                "frequency": 30
+                "frequency": 30,
+                "display": {
+                    "prm": true
+                }
             },
             "price": true,
             "realtime_delays": true,
@@ -726,6 +757,11 @@
                 }
             },
             "go_from_go_to": true,
+            "line_name": {
+                "allowed_commercial_modes": [
+                    ""
+                ]
+            },
             "max_history": 10,
             "networks_filter": true,
             "next_departures": {
@@ -747,8 +783,11 @@
             "disruption_contributors": [
                 ""
             ],
-            "networks_filter": true,
-            "transport_networks": true
+            "filters": true,
+            "transport_networks": true,
+            "forbidden_networks": [
+                ""
+            ]
         }
     }
 }

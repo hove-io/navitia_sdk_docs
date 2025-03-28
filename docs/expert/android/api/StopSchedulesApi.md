@@ -12,12 +12,12 @@ Method | HTTP request
 
 Name | Type | Note
 ---- | ---- | ----
-**lat** | **Double** | The latitude of where the coord you want to query 
 **lon** | **Double** | The longitude of where the coord you want to query 
+**lat** | **Double** | The latitude of where the coord you want to query 
 **uri** | **String** | First part of the uri 
 **filter** | **String** | use to filter PT objects [optional] 
-**fromDatetime** | **DateTime** | The datetime from which you want the schedules [optional] 
-**untilDatetime** | **DateTime** | The datetime until which you want the schedules [optional] 
+**fromDatetime** | **LocalDateTime** | The datetime from which you want the schedules [optional] 
+**untilDatetime** | **LocalDateTime** | The datetime until which you want the schedules [optional] 
 **duration** | **Int** | Maximum duration between datetime and the retrieved stop time [optional] [default to 86399] 
 **depth** | **Int** | The depth of your object [optional] [default to 2] 
 **count** | **Int** | Number of schedules per page [optional] [default to 10] 
@@ -38,12 +38,12 @@ Name | Type | Note
 <h3>Example</h3>
 ```kotlin
 ExpertSdk.getInstance().stopSchedulesApi.getCoverageLonLatUriStopSchedules(
-    lat = 0.0,
     lon = 0.0,
+    lat = 0.0,
     uri = "uri_example",
     filter = "filter_example",
-    fromDatetime = DateTime.now(),
-    untilDatetime = DateTime.now(),
+    fromDatetime = LocalDateTime.now(),
+    untilDatetime = LocalDateTime.now(),
     duration = 123,
     depth = 123,
     count = 123,
@@ -76,8 +76,8 @@ Name | Type | Note
 **region** | **String** | The region you want to query 
 **uri** | **String** | First part of the uri 
 **filter** | **String** | use to filter PT objects [optional] 
-**fromDatetime** | **DateTime** | The datetime from which you want the schedules [optional] 
-**untilDatetime** | **DateTime** | The datetime until which you want the schedules [optional] 
+**fromDatetime** | **LocalDateTime** | The datetime from which you want the schedules [optional] 
+**untilDatetime** | **LocalDateTime** | The datetime until which you want the schedules [optional] 
 **duration** | **Int** | Maximum duration between datetime and the retrieved stop time [optional] [default to 86399] 
 **depth** | **Int** | The depth of your object [optional] [default to 2] 
 **count** | **Int** | Number of schedules per page [optional] [default to 10] 
@@ -101,8 +101,8 @@ ExpertSdk.getInstance().stopSchedulesApi.getCoverageRegionUriStopSchedules(
     region = "region_example",
     uri = "uri_example",
     filter = "filter_example",
-    fromDatetime = DateTime.now(),
-    untilDatetime = DateTime.now(),
+    fromDatetime = LocalDateTime.now(),
+    untilDatetime = LocalDateTime.now(),
     duration = 123,
     depth = 123,
     count = 123,
@@ -133,8 +133,8 @@ if (response.isSuccessful && response.body() != null) {
 Name | Type | Note
 ---- | ---- | ----
 **filter** | **String** | use to filter PT objects [optional] 
-**fromDatetime** | **DateTime** | The datetime from which you want the schedules [optional] 
-**untilDatetime** | **DateTime** | The datetime until which you want the schedules [optional] 
+**fromDatetime** | **LocalDateTime** | The datetime from which you want the schedules [optional] 
+**untilDatetime** | **LocalDateTime** | The datetime until which you want the schedules [optional] 
 **duration** | **Int** | Maximum duration between datetime and the retrieved stop time [optional] [default to 86399] 
 **depth** | **Int** | The depth of your object [optional] [default to 2] 
 **count** | **Int** | Number of schedules per page [optional] [default to 10] 
@@ -156,8 +156,8 @@ Name | Type | Note
 ```kotlin
 ExpertSdk.getInstance().stopSchedulesApi.getStopSchedules(
     filter = "filter_example",
-    fromDatetime = DateTime.now(),
-    untilDatetime = DateTime.now(),
+    fromDatetime = LocalDateTime.now(),
+    untilDatetime = LocalDateTime.now(),
     duration = 123,
     depth = 123,
     count = 123,

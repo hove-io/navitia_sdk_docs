@@ -4,10 +4,10 @@
 
 Name | Type | Note
 ---- | ---- | ----
-**status** | [**Status**](#Status) | [optional] 
 **availablePlaces** | **Int** | [optional] 
 **availableBikes** | **Int** | [optional] 
 **totalStands** | **Int** | [optional] 
+**status** | [**Status**](#Status) | [optional] 
 
 ## Status
 

@@ -4,10 +4,10 @@
 
 Name | Type | Note
 ---- | ---- | ----
-**color** | **String** | [optional] 
-**priority** | **Int** | [optional] 
 **name** | **String** | [optional] 
 **effect** | [**Effect**](#Effect) | [optional] 
+**color** | **String** | [optional] 
+**priority** | **Int** | [optional] 
 
 ## Effect
 

@@ -22,7 +22,7 @@ graph TB
 ## All disruptions
 
 The all disruptions screen allows the user to view all the line and network disruptions sorted by transport category.<br>
-When clicking on a disrupted line, the message and the application period of the disruption shows up along with an _All disruptions_ button. This button redirects the user to the [line disruptions](#linenetwork-disruptions) screen.
+When clicking on a disrupted line, it redirects the user to the [line disruptions](#linenetwork-disruptions) screen.
 
 === "Android"
 

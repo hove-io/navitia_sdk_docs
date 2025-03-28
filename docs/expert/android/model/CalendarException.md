@@ -4,6 +4,6 @@
 
 Name | Type | Note
 ---- | ---- | ----
-**type** | **String** | [optional] 
 **datetime** | **String** | [optional] 
+**type** | **String** | [optional] 
 

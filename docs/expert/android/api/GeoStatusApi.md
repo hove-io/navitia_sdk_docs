@@ -11,8 +11,8 @@ Method | HTTP request
 
 Name | Type | Note
 ---- | ---- | ----
-**lat** | **Double** | The latitude of where the coord you want to query 
 **lon** | **Double** | The longitude of where the coord you want to query 
+**lat** | **Double** | The latitude of where the coord you want to query 
 
 ### Return
 [**GeoStatus1**](../model/GeoStatus1.md)
@@ -20,8 +20,8 @@ Name | Type | Note
 <h3>Example</h3>
 ```kotlin
 ExpertSdk.getInstance().geoStatusApi.getCoverageLonLatGeoStatus(
-    lat = 0.0,
-    lon = 0.0
+    lon = 0.0,
+    lat = 0.0
 )
 
 if (response.isSuccessful && response.body() != null) {  

@@ -4,16 +4,16 @@
 
 Name | Type | Note
 ---- | ---- | ----
-**amendedArrivalTime** | **String** | [optional] 
 **stopPoint** | [**StopPoint**](StopPoint.md) | [optional] 
+**baseArrivalTime** | **String** | [optional] 
+**baseDepartureTime** | **String** | [optional] 
+**amendedArrivalTime** | **String** | [optional] 
+**amendedDepartureTime** | **String** | [optional] 
+**cause** | **String** | 
 **stopTimeEffect** | [**StopTimeEffect**](#StopTimeEffect) | [optional] 
 **departureStatus** | **String** | [optional] 
-**isDetour** | **Boolean** | 
-**amendedDepartureTime** | **String** | [optional] 
-**baseArrivalTime** | **String** | [optional] 
-**cause** | **String** | 
-**baseDepartureTime** | **String** | [optional] 
 **arrivalStatus** | **String** | [optional] 
+**isDetour** | **Boolean** | 
 
 ## StopTimeEffect
 

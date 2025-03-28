@@ -25,8 +25,8 @@ Method | HTTP request
 
 Name | Type | Note
 ---- | ---- | ----
-**lat** | **Double** | The latitude of where the coord you want to query 
 **lon** | **Double** | The longitude of where the coord you want to query 
+**lat** | **Double** | The latitude of where the coord you want to query 
 
 ### Return
 [**DictAddresses**](../model/DictAddresses.md)
@@ -34,8 +34,8 @@ Name | Type | Note
 <h3>Example</h3>
 ```kotlin
 ExpertSdk.getInstance().coordsApi.getCoverageLonLatCoord(
-    lat = 0.0,
-    lon = 0.0
+    lon = 0.0,
+    lat = 0.0
 )
 
 if (response.isSuccessful && response.body() != null) {  
@@ -52,8 +52,8 @@ if (response.isSuccessful && response.body() != null) {
 
 Name | Type | Note
 ---- | ---- | ----
-**lat** | **Double** | The latitude of where the coord you want to query 
 **lon** | **Double** | The longitude of where the coord you want to query 
+**lat** | **Double** | The latitude of where the coord you want to query 
 **id** | **String** | Id of the object you want to query 
 
 ### Return
@@ -62,8 +62,8 @@ Name | Type | Note
 <h3>Example</h3>
 ```kotlin
 ExpertSdk.getInstance().coordsApi.getCoverageLonLatCoordId(
-    lat = 0.0,
     lon = 0.0,
+    lat = 0.0,
     id = "id_example"
 )
 
@@ -81,8 +81,8 @@ if (response.isSuccessful && response.body() != null) {
 
 Name | Type | Note
 ---- | ---- | ----
-**lat** | **Double** | The latitude of where the coord you want to query 
 **lon** | **Double** | The longitude of where the coord you want to query 
+**lat** | **Double** | The latitude of where the coord you want to query 
 
 ### Return
 [**DictAddresses**](../model/DictAddresses.md)
@@ -90,8 +90,8 @@ Name | Type | Note
 <h3>Example</h3>
 ```kotlin
 ExpertSdk.getInstance().coordsApi.getCoverageLonLatCoords(
-    lat = 0.0,
-    lon = 0.0
+    lon = 0.0,
+    lat = 0.0
 )
 
 if (response.isSuccessful && response.body() != null) {  
@@ -108,8 +108,8 @@ if (response.isSuccessful && response.body() != null) {
 
 Name | Type | Note
 ---- | ---- | ----
-**lat** | **Double** | The latitude of where the coord you want to query 
 **lon** | **Double** | The longitude of where the coord you want to query 
+**lat** | **Double** | The latitude of where the coord you want to query 
 **id** | **String** | Id of the object you want to query 
 
 ### Return
@@ -118,8 +118,8 @@ Name | Type | Note
 <h3>Example</h3>
 ```kotlin
 ExpertSdk.getInstance().coordsApi.getCoverageLonLatCoordsId(
-    lat = 0.0,
     lon = 0.0,
+    lat = 0.0,
     id = "id_example"
 )
 
@@ -137,8 +137,8 @@ if (response.isSuccessful && response.body() != null) {
 
 Name | Type | Note
 ---- | ---- | ----
-**lat** | **Double** | The latitude of where the coord you want to query 
 **lon** | **Double** | The longitude of where the coord you want to query 
+**lat** | **Double** | The latitude of where the coord you want to query 
 **uri** | **String** | First part of the uri 
 
 ### Return
@@ -147,8 +147,8 @@ Name | Type | Note
 <h3>Example</h3>
 ```kotlin
 ExpertSdk.getInstance().coordsApi.getCoverageLonLatUriCoord(
-    lat = 0.0,
     lon = 0.0,
+    lat = 0.0,
     uri = "uri_example"
 )
 
@@ -166,8 +166,8 @@ if (response.isSuccessful && response.body() != null) {
 
 Name | Type | Note
 ---- | ---- | ----
-**lat** | **Double** | The latitude of where the coord you want to query 
 **lon** | **Double** | The longitude of where the coord you want to query 
+**lat** | **Double** | The latitude of where the coord you want to query 
 **uri** | **String** | First part of the uri 
 **id** | **String** | Id of the object you want to query 
 
@@ -177,8 +177,8 @@ Name | Type | Note
 <h3>Example</h3>
 ```kotlin
 ExpertSdk.getInstance().coordsApi.getCoverageLonLatUriCoordId(
-    lat = 0.0,
     lon = 0.0,
+    lat = 0.0,
     uri = "uri_example",
     id = "id_example"
 )
@@ -197,8 +197,8 @@ if (response.isSuccessful && response.body() != null) {
 
 Name | Type | Note
 ---- | ---- | ----
-**lat** | **Double** | The latitude of where the coord you want to query 
 **lon** | **Double** | The longitude of where the coord you want to query 
+**lat** | **Double** | The latitude of where the coord you want to query 
 **uri** | **String** | First part of the uri 
 
 ### Return
@@ -207,8 +207,8 @@ Name | Type | Note
 <h3>Example</h3>
 ```kotlin
 ExpertSdk.getInstance().coordsApi.getCoverageLonLatUriCoords(
-    lat = 0.0,
     lon = 0.0,
+    lat = 0.0,
     uri = "uri_example"
 )
 
@@ -226,8 +226,8 @@ if (response.isSuccessful && response.body() != null) {
 
 Name | Type | Note
 ---- | ---- | ----
-**lat** | **Double** | The latitude of where the coord you want to query 
 **lon** | **Double** | The longitude of where the coord you want to query 
+**lat** | **Double** | The latitude of where the coord you want to query 
 **uri** | **String** | First part of the uri 
 **id** | **String** | Id of the object you want to query 
 
@@ -237,8 +237,8 @@ Name | Type | Note
 <h3>Example</h3>
 ```kotlin
 ExpertSdk.getInstance().coordsApi.getCoverageLonLatUriCoordsId(
-    lat = 0.0,
     lon = 0.0,
+    lat = 0.0,
     uri = "uri_example",
     id = "id_example"
 )

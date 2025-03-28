@@ -13,8 +13,8 @@ Method | HTTP request
 
 Name | Type | Note
 ---- | ---- | ----
-**lat** | **Double** | The latitude of where the coord you want to query 
 **lon** | **Double** | The longitude of where the coord you want to query 
+**lat** | **Double** | The latitude of where the coord you want to query 
 **depth** | **Int** | The depth of your object [optional] [default to 1] 
 **count** | **Int** | Number of objects per page [optional] [default to 10] 
 **startPage** | **Int** | The current page [optional] 
@@ -22,8 +22,9 @@ Name | Type | Note
 **forbiddenUris** | [**List<String>**](String.md) | forbidden uris [optional] 
 **distance** | **Int** | Distance range of the query. Used only if a coord is in the query [optional] [default to 200] 
 **disableGeojson** | **Boolean** | remove geojson from the response [optional] 
-**since** | **DateTime** | use disruptions valid after this date [optional] 
-**until** | **DateTime** | use disruptions valid before this date [optional] 
+**language** | **String** | Here, select a specific language for disruption message [optional] [enum: nl-NL, en-US, en-GB, fr-FR, de-DE, hi-IN, it-IT, ja-JP, pt-PT, ru-RU, es-ES] 
+**since** | **LocalDateTime** | use disruptions valid after this date [optional] 
+**until** | **LocalDateTime** | use disruptions valid before this date [optional] 
 
 ### Return
 [**TrafficReports**](../model/TrafficReports.md)
@@ -31,8 +32,8 @@ Name | Type | Note
 <h3>Example</h3>
 ```kotlin
 ExpertSdk.getInstance().trafficReportApi.getCoverageLonLatTrafficReports(
-    lat = 0.0,
     lon = 0.0,
+    lat = 0.0,
     depth = 123,
     count = 123,
     startPage = 123,
@@ -40,8 +41,9 @@ ExpertSdk.getInstance().trafficReportApi.getCoverageLonLatTrafficReports(
     forbiddenUris = listOf(),
     distance = 123,
     disableGeojson = true,
-    since = DateTime.now(),
-    until = DateTime.now()
+    language = "language_example",
+    since = LocalDateTime.now(),
+    until = LocalDateTime.now()
 )
 
 if (response.isSuccessful && response.body() != null) {  
@@ -58,8 +60,8 @@ if (response.isSuccessful && response.body() != null) {
 
 Name | Type | Note
 ---- | ---- | ----
-**lat** | **Double** | The latitude of where the coord you want to query 
 **lon** | **Double** | The longitude of where the coord you want to query 
+**lat** | **Double** | The latitude of where the coord you want to query 
 **uri** | **String** | First part of the uri 
 **depth** | **Int** | The depth of your object [optional] [default to 1] 
 **count** | **Int** | Number of objects per page [optional] [default to 10] 
@@ -68,8 +70,9 @@ Name | Type | Note
 **forbiddenUris** | [**List<String>**](String.md) | forbidden uris [optional] 
 **distance** | **Int** | Distance range of the query. Used only if a coord is in the query [optional] [default to 200] 
 **disableGeojson** | **Boolean** | remove geojson from the response [optional] 
-**since** | **DateTime** | use disruptions valid after this date [optional] 
-**until** | **DateTime** | use disruptions valid before this date [optional] 
+**language** | **String** | Here, select a specific language for disruption message [optional] [enum: nl-NL, en-US, en-GB, fr-FR, de-DE, hi-IN, it-IT, ja-JP, pt-PT, ru-RU, es-ES] 
+**since** | **LocalDateTime** | use disruptions valid after this date [optional] 
+**until** | **LocalDateTime** | use disruptions valid before this date [optional] 
 
 ### Return
 [**TrafficReports**](../model/TrafficReports.md)
@@ -77,8 +80,8 @@ Name | Type | Note
 <h3>Example</h3>
 ```kotlin
 ExpertSdk.getInstance().trafficReportApi.getCoverageLonLatUriTrafficReports(
-    lat = 0.0,
     lon = 0.0,
+    lat = 0.0,
     uri = "uri_example",
     depth = 123,
     count = 123,
@@ -87,8 +90,9 @@ ExpertSdk.getInstance().trafficReportApi.getCoverageLonLatUriTrafficReports(
     forbiddenUris = listOf(),
     distance = 123,
     disableGeojson = true,
-    since = DateTime.now(),
-    until = DateTime.now()
+    language = "language_example",
+    since = LocalDateTime.now(),
+    until = LocalDateTime.now()
 )
 
 if (response.isSuccessful && response.body() != null) {  
@@ -113,8 +117,9 @@ Name | Type | Note
 **forbiddenUris** | [**List<String>**](String.md) | forbidden uris [optional] 
 **distance** | **Int** | Distance range of the query. Used only if a coord is in the query [optional] [default to 200] 
 **disableGeojson** | **Boolean** | remove geojson from the response [optional] 
-**since** | **DateTime** | use disruptions valid after this date [optional] 
-**until** | **DateTime** | use disruptions valid before this date [optional] 
+**language** | **String** | Here, select a specific language for disruption message [optional] [enum: nl-NL, en-US, en-GB, fr-FR, de-DE, hi-IN, it-IT, ja-JP, pt-PT, ru-RU, es-ES] 
+**since** | **LocalDateTime** | use disruptions valid after this date [optional] 
+**until** | **LocalDateTime** | use disruptions valid before this date [optional] 
 
 ### Return
 [**TrafficReports**](../model/TrafficReports.md)
@@ -130,8 +135,9 @@ ExpertSdk.getInstance().trafficReportApi.getCoverageRegionTrafficReports(
     forbiddenUris = listOf(),
     distance = 123,
     disableGeojson = true,
-    since = DateTime.now(),
-    until = DateTime.now()
+    language = "language_example",
+    since = LocalDateTime.now(),
+    until = LocalDateTime.now()
 )
 
 if (response.isSuccessful && response.body() != null) {  
@@ -157,8 +163,9 @@ Name | Type | Note
 **forbiddenUris** | [**List<String>**](String.md) | forbidden uris [optional] 
 **distance** | **Int** | Distance range of the query. Used only if a coord is in the query [optional] [default to 200] 
 **disableGeojson** | **Boolean** | remove geojson from the response [optional] 
-**since** | **DateTime** | use disruptions valid after this date [optional] 
-**until** | **DateTime** | use disruptions valid before this date [optional] 
+**language** | **String** | Here, select a specific language for disruption message [optional] [enum: nl-NL, en-US, en-GB, fr-FR, de-DE, hi-IN, it-IT, ja-JP, pt-PT, ru-RU, es-ES] 
+**since** | **LocalDateTime** | use disruptions valid after this date [optional] 
+**until** | **LocalDateTime** | use disruptions valid before this date [optional] 
 
 ### Return
 [**TrafficReports**](../model/TrafficReports.md)
@@ -175,8 +182,9 @@ ExpertSdk.getInstance().trafficReportApi.getCoverageRegionUriTrafficReports(
     forbiddenUris = listOf(),
     distance = 123,
     disableGeojson = true,
-    since = DateTime.now(),
-    until = DateTime.now()
+    language = "language_example",
+    since = LocalDateTime.now(),
+    until = LocalDateTime.now()
 )
 
 if (response.isSuccessful && response.body() != null) {  

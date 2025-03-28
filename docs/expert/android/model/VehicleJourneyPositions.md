@@ -4,11 +4,11 @@
 
 Name | Type | Note
 ---- | ---- | ----
-**feedCreatedAt** | **String** | [optional] 
-**bearing** | **Int** | [optional] 
 **vehicleJourney** | [**VehicleJourney**](VehicleJourney.md) | [optional] 
 **coord** | [**Coord**](Coord.md) | [optional] 
-**occupancy** | **String** | [optional] 
-**speed** | **Float** | [optional] 
+**bearing** | **Int** | [optional] 
+**speed** | **Int** | [optional] 
 **dataFreshness** | **String** | [optional] 
+**occupancy** | **String** | [optional] 
+**feedCreatedAt** | **String** | [optional] 
 

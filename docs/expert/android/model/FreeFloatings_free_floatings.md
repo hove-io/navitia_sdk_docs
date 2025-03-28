@@ -4,14 +4,14 @@
 
 Name | Type | Note
 ---- | ---- | ----
-**distance** | **Int** | [optional] 
 **publicId** | **String** | [optional] 
-**deeplink** | **String** | [optional] 
-**battery** | **Int** | [optional] 
-**propulsion** | **String** | [optional] 
 **providerName** | **String** | [optional] 
-**type** | [**Type**](#Type) | [optional] 
 **id** | **String** | [optional] 
+**type** | [**Type**](#Type) | [optional] 
+**propulsion** | **String** | [optional] 
+**battery** | **Int** | [optional] 
+**distance** | **Int** | [optional] 
+**deeplink** | **String** | [optional] 
 **coord** | [**FreeFloatingsCoord**](FreeFloatingsCoord.md) | [optional] 
 
 ## Type

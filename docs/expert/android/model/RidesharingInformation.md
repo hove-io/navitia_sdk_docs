@@ -5,7 +5,7 @@
 Name | Type | Note
 ---- | ---- | ----
 **&#x60;operator&#x60;** | **String** | 
-**driver** | [**IndividualInformation**](IndividualInformation.md) | [optional] 
 **network** | **String** | 
+**driver** | [**IndividualInformation**](IndividualInformation.md) | [optional] 
 **seats** | [**SeatsDescription**](SeatsDescription.md) | [optional] 
 
