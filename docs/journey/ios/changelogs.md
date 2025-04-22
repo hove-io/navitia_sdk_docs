@@ -4,6 +4,7 @@ title: Journey iOS - Changelogs - Navitia SDK Docs
 
 # Journey iOS Changelogs
 
+* [v6.2.0](releases/6.2.0/index.md) (_22 Apr 2025_)
 * [v6.1.0](releases/6.1.0/index.md) (_24 Mar 2025_)
 * [v6.0.0](releases/6.0.0/index.md) (_24 Feb 2025_)
 * [v5.17.4](releases/5.17.4/index.md) (_12 Feb 2025_)

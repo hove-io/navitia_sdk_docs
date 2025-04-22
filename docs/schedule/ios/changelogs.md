@@ -4,6 +4,7 @@ title: Schedule iOS - Changelogs - Navitia SDK Docs
 
 # Schedule iOS Changelogs
 
+* [v4.2.0](releases/4.2.0/index.md) (_22 Apr 2025_)
 * [v4.1.0](releases/4.1.0/index.md) (_24 Mar 2025_)
 * [v4.0.0](releases/4.0.0/index.md) (_24 Feb 2025_)
 * [v3.10.2](releases/3.10.2/index.md) (_12 Feb 2025_)
