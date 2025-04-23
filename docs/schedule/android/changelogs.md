@@ -4,6 +4,7 @@ title: Schedule Android - Changelogs - Navitia SDK Docs
 
 # Schedule Android Changelogs
 
+* [v2.9.7](releases/2.9.7/index.md) (_23 Apr 2025_)
 * [v2.9.6](releases/2.9.6/index.md) (_24 Mar 2025_)
 * [v2.9.5](releases/2.9.5/index.md) (_05 Mar 2025_)
 * [v2.9.4](releases/2.9.4/index.md) (_25 Feb 2025_)

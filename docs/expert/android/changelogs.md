@@ -4,6 +4,7 @@ title: Expert Android - Changelogs - Navitia SDK Docs
 
 # Expert Android Changelogs
 
+* [v3.7.1](releases/3.7.1/index.md) (_23 Apr 2024_)
 * [v3.7.0](releases/3.7.0/index.md) (_24 Mar 2024_)
 * [v3.6.0](releases/3.6.0/index.md) (_13 Feb 2024_)
 * [v3.5.2](releases/3.5.2/index.md) (_02 Dec 2024_)
