@@ -353,17 +353,17 @@ The following are the possible configuration parameters:
 | `next_departures` | :material-close: | Show/hide the next departures | [`Next departures`](#next-departures) | - |
 | `park_availability`| :material-close: | Show/hide the bss and car parking availability | [`Park Availability`](#park-availability) | - |
 | `schedule_mode` | :material-close: | Show/hide the "See all schedules" button | `Boolean` | `true` |
-| `tabs` | :material-close: | Enable/disable tabs | [`Bookmark tabs`](#bookmark-tabs) | - |
+| `tabs` | :material-close: | Enable/disable tabs | [`Bookmark tabs`](#tabs-bookmark) | - |
 
-##### Bookmark tabs
+##### Tabs (Bookmark)
 
 | Name | Required | Description | Type | Example |
 | --- |:---:| --- | :---: | :---: |
-| `transports` | :material-close: | Transport tab configuration | [`Bookmark transports tab`](#bookmark-transports-tab) | - |
+| `transports` | :material-close: | Transport tab configuration | [`Bookmark transports tab`](#transports-tab-bookmark) | - |
 | `journeys` | :material-close: | Enable/disable journeys tab | `Boolean` | `true` |
-| `addresses` | :material-close: | Addresses tab configuration | [`Bookmark addresses tab`](#bookmark-addresses-tab) | - |
+| `addresses` | :material-close: | Addresses tab configuration | [`Bookmark addresses tab`](#addresses-tab-bookmark) | - |
 
-##### Bookmark transports tab
+##### Transports tab (Bookmark)
 
 | Name | Required | Description | Type | Example |
 | --- |:---:| --- | :---: | :---: |
@@ -371,14 +371,14 @@ The following are the possible configuration parameters:
 | `bss_stations_title_res` | :material-close: | 'Bike sharing service stations' title resource name | `String` | `"bike_rental"` |
 | `car_parking_title_res` | :material-close: | 'P+R parkings' title resource name | `String` | `"relay_parkings"` |
 
-##### Bookmark addresses tab
+##### Addresses tab (Bookmark)
 
 | Name | Required | Description | Type | Example |
 | --- |:---:| --- | :---: | :---: |
 | `enabled` | :material-check: | Enable/disable addresses tab | `Boolean` | `true` |
-| `sections` | :material-close: | Custom titles for the sections of this tab  | [`Bookmark addresses tab sections`](#bookmark-addresses-tab-sections) | - |
+| `sections` | :material-close: | Custom titles for the sections of this tab  | [`Bookmark addresses tab sections`](#addresses-tab-sections-bookmark) | - |
 
-##### Bookmark addresses tab sections
+##### Addresses tab sections (Bookmark)
 
 | Name | Required | Description | Type | Example |
 | --- |:---:| --- | :---: | :---: |
