@@ -66,6 +66,7 @@ The following are the possible configuration parameters:
 | `coverage` | :material-check: | Navitia coverage | `String` | `fr-idf` | All |
 | `timezone` | :material-check: | Timezone | `String` | `Europe/Paris` | All |
 | `env` | :material-check: | Navitia environment | `String` | `PROD`, `CUSTOMER` | All |
+| `osm_region` | :material-close: | OSM region | [`OSM Region`](#osm-region) | - | All |
 | `colors` | :material-check: | Colors configuration | [`Colors`](#colors) | - | UI modules |
 | `transport_categories` | :material-check: | List of supported transport modes | [`Transport category[]`](#transport-category) | - | UI modules |
 | `poi_categories` | :material-close: | List of supported POIs | [`Poi category[]`](#poi-category) | - | Around Me, Bookmark |
@@ -87,7 +88,7 @@ The following are the possible configuration parameters:
 | `journey` | :material-check: | [`Journey color`](#journey-color) | Journey |
 | `schedule` | :material-check: | [`Schedule color`](#schedule-color) | Schedule |
 | `traffic` | :material-check: | [`Traffic color`](#traffic-color) | Traffic |
-| `disruptions` | :material-check: | [`Disruption color`](#disruption-color) | All |
+| `disruptions` | :material-check: | [`Disruptions color`](#disruptions-color) | All |
 <!-- 
 | `account` | :material-check: | [`Account color`](#account-color) | Account |
 -->
@@ -123,13 +124,6 @@ The following are the possible configuration parameters:
 | --- |:---:| --- | :---: | :---: |
 | `primary` | :material-check: | To set the main color of the screens | `String` | `#88819f` |
 | `secondary` | :material-check: | To set the color of some UI components | `String` | `#8faa96` |
-
-<!-- #### Crowdsourcing color
-
-| Name | Required | Description | Type | Example |
-| --- |:---:| --- | :---: | :---: |
-| `primary` | :material-check: | To set the main color of the screens | `String` | `#88819f` |
-| `secondary` | :material-check: | To set the color of some UI components | `String` | `#8faa96` | -->
 
 #### Journey color
 
@@ -173,7 +167,7 @@ The following are the possible configuration parameters:
 
 | Name | Required | Description | Type | Example |
 | --- |:---:| --- | :---: | :---: |
-| `primary` | :material-check: | To set the main color of the specific bike journey | `String` | `#8faa96` |
+| `cyclable` | :material-check: | To set the main color of the cyclable part for a specific bike journey | `String` | `#8faa96` |
 | `non_cyclable` | :material-close: | To set the color of the non cyclable part for a specific bike journey | `String` | `#88819f` |
 
 #### Schedule color
@@ -190,19 +184,13 @@ The following are the possible configuration parameters:
 | `primary` | :material-check: | To set the main color of the screens | `String` | `#88819f` |
 | `secondary` | :material-check: | To set the color of some UI components | `String` | `#8faa96` |
 
-#### Disruption color
+#### Disruptions color
 
 | Name | Required | Description | Type | Default |
 | --- |:---:| --- | :---: | :---: |
 | `information` | :material-close: | To set the color for informative disruptions | `String` | `#3FA26D` |
 | `non_blocking` | :material-close: | To set the color for non blocking disruptions | `String` | `#EF662F` |
 | `blocking` | :material-close: | To set the color for blocking disruptions | `String` | `#FF0000` |
-
-#### Unified colors
-
-| Name | Required | Description | Type | Default |
-| --- |:---:| --- | :---: | :---: |
-| `disruptions` | :material-close: | define the several colors of disruptions | [`Disruption color`](#disruption-color) | - |
 
 ### Transport category
 
@@ -256,15 +244,8 @@ The following are the possible configuration parameters:
 | `icon_res` | :material-check: | POI subcategory icon id | `String` | `"ic_bike_stations"` |
 | `selected` | :material-close: | Whether the subcategory is selected by default or not | `Boolean` | `true` |
 | `group` | :material-check: | Subcategory POI group | `String` | `STANDARD`, `QUICK_FILTER_FREE_FLOATING`,  `QUICK_FILTER_POI` |
-| `types` | :material-check: | Subcategory POI types. Can be a [POI type id](https://playground.navitia.io/play.html?request=https://api.navitia.io/v1/poi_types?) or a free floating type | `String[]`| `"poi_type:amenity:bicycle_rental"` or [one of those values](#poi-subcategory-free-floating-types) |
+| `types` | :material-check: | Subcategory POI types. Can be a [POI type id](https://playground.navitia.io/play.html?request=https://api.navitia.io/v1/poi_types?) or a free floating type | `String[]`| `[]"poi_type:amenity:bicycle_rental"]` |
 | `booking` | :material-close: | POI booking resources | [POI booking resources](#poi-booking-resources) | - |
-
-##### POI subcategory free floating types
-
-| Name | Required | Description | Type | Example |
-| --- |:---:| --- | :---: | :---: |
-| `name_res` | :material-check: | Localized POI subcategory type name id | `String` | `"scooter"` |
-| `poi_type_id` | :material-check: | Navitia POI subcategory type id | `String` | `"poi_type:amenity:bicycle_rental"` |
 
 ##### POI booking resources
 
@@ -319,23 +300,21 @@ The following are the possible configuration parameters:
 
 #### Around Me features
 
-| Name | Required | Description | Type |
-| --- |:---:| --- | :---: |
-| `bookmark_mode` | :material-close: | Enable/disable the bookmarks feature | [`Bookmark mode`](#bookmark-mode-around-me) |
-| `default_location` | :material-close: | The default location on first launch | [`Default location`](#default-location) |
-| `go_from_go_to` | :material-close: | Show/hide the go from/go to buttons | `Boolean` |
+| Name | Required | Description | Type | Example |
+| --- |:---:| --- | :---: | :---: |
+| `account_mode` | :material-close: | Enable/disable the account button | `Boolean` | `false` |
+| `bookmark_mode` | :material-close: | Enable/disable the bookmarks feature | [`Bookmark mode`](#bookmark-mode-around-me) | - |
+| `default_location` | :material-close: | The default location on first launch | [`Default location`](#default-location) | - |
+| `default_zoom_level` | :material-close: | Define the default zoom level of map by selecting the corresponding type | `String` | `TRANSPORTS`, `BUS`, `POI`, `FREE_FLOATING` |
+| `go_from_go_to` | :material-close: | Show/hide the go from/go to buttons | `Boolean` | `true` |
 | `journey_mode` | :material-close: | Enable/disable the journey search mode | `Boolean` |
-| `max_history` | :material-close: | Define the max history items | `Int` |
-| `min_zoom_level` | :material-close: | Define the min zoom level of map. Android only | `Int` |
-| `next_departures` | :material-close: | Show/hide the next departures | [`Next departures`](#next-departures) |
-| `park_availability`| :material-close: | Show/hide the bss and car parking availability | [`Park Availability`](#park-availability) |
-| `schedule_mode` | :material-close: | Enable/disable redirection to schedule autocompletion screen | `Boolean` |
-| `stop_point_search` | :material-close: | Enable/disable search by stop point instead of stop area | `Boolean` |
-| `traffic_mode` | :material-close: | Show/hide the traffic button | `Boolean` |
-| `vehicle_positions`| :material-close: | Show bus vehicle positions on map | [`Vehicle positions`](#vehicle-positions) |
-<!-- [Not yet]
-| `account_mode` | :material-close: | Enable/disable the account feature | `Boolean` | 
--->
+| `max_history` | :material-close: | Define the max history items | `Int` | `10` |
+| `next_departures` | :material-close: | Show/hide the next departures | [`Next departures`](#next-departures) | - |
+| `park_availability`| :material-close: | Show/hide the bss and car parking availability | [`Park Availability`](#park-availability) | - |
+| `schedule_mode` | :material-close: | Enable/disable redirection to schedule autocompletion screen | `Boolean` | `true` |
+| `stop_point_search` | :material-close: | Enable/disable search by stop point instead of stop area | `Boolean` | `false` |
+| `traffic_mode` | :material-close: | Show/hide the traffic button | `Boolean` | `false` |
+| `vehicle_positions`| :material-close: | Show bus vehicle positions on map | [`Vehicle positions`](#vehicle-positions) | - |
 
 ##### Bookmark Mode (Around Me)
 
@@ -414,20 +393,22 @@ The following are the possible configuration parameters:
 | `carbon` | :material-close: | Show/hide the itinerary carbon summary | `Boolean` | `true` |
 | `car_parking_highlight` | :material-close: | Show/hide the car parking in the journey solution | `Boolean` | `true` |
 | `car_traffic_jam` | :material-close: | Show/hide the car traffic jam in the journey solution and the roadmap | `Boolean` | `true` |
+| `departure_time_shift` | :material-close: | Configure the times of earlier/later shifts | [`Departure time shift`](#departure-time-shift-journey) | - |
 | `disruption_contributors` | :material-close: | Define the list of disruption contributors id | `String[]` | `["shortterm.tr_idfm"]` |
 | `external_navigation` | :material-close: | Enable/disable the navigation using external applications | `Boolean` | `true` |
 | `max_favorite_addresses` | :material-close: | Define the max favorite addresses alongside with home and work addresses | `Int` | `10` |
 | `max_favorite_pois` | :material-close: | Define the max favorite POIs | `Int` | `10` |
 | `max_history` | :material-close: | Define the max history items | `Int` | `10` |
+| `min_walking_duration_display` | :material-close: | Define the minimum numbers of minutes shown for a walking section | [`Minimum walking duration display`](#minimum-walking-duration-display-journey) | - |
 | `next_departures` | :material-close: | Show/hide the next departures | [`Next departures (Journey)`](#next-departures-journey) | - |
-| `park_availability`| :material-close: | Show/hide the bss and car parking availability | [`Park Availability`](#park-availability) |
+| `park_availability`| :material-close: | Show/hide the bss and car parking availability | [`Park availability`](#park-availability) |
 | `price` | :material-close: | Show/hide the itinerary price | `Boolean` | `true` |
 | `realtime_delays` | :material-close: | Show/hide the itinerary realtime delays | `Boolean` | `true` |
 | `ridesharing_price` | :material-close: | Show/hide the itinerary ridesharing price | `Boolean` | `true` |
 | `search_only` | :material-close: | Enable/disable a direct search without input from user | `Boolean` | `false` |
 | `step_by_step_guidance` | :material-close: | Enable/disable the step by step guidance | `Boolean` |
 | `stop_point_search_mode` | :material-close: | Enable/disable search by stop point instead of stop area | `Boolean` | `false` |
-| `traffic` | :material-close: | Define Traffic module options | [`Traffic options`](#traffic-options-journey) | - |
+| `traffic_mode` | :material-close: | Define Traffic module options | [`Traffic options`](#traffic-options-journey) | - |
 | `transport_networks` | :material-close: | Show/hide the public transport network | `Boolean` | `false` |
 | `vehicle_positions`| :material-close: | Show bus vehicle positions on roadmap | [`Vehicle positions`](#vehicle-positions) | - |
 
@@ -443,7 +424,20 @@ The following are the possible configuration parameters:
 | Name | Required | Description | Type | Example |
 | --- |:---:| --- | :---: | :---: |
 | `home` | :material-close: | Display/hide favorite items on home screen | `Boolean` | `true` |
-| `autocompletion` | :material-close: | Display/hide favorite items on autocompletion screen  | `Boolean` | `true` |
+| `autocompletion` | :material-close: | Display/hide favorite items on autocompletion screen | `Boolean` | `true` |
+
+##### Departure time shift (Journey)
+
+| Name | Required | Description | Type | Example |
+| --- |:---:| --- | :---: | :---: |
+| `earlier_minutes` | :material-check: | Minutes of the earlier shift | `Int` | `10` |
+| `later_minutes` | :material-check: | Minutes of the later shift | `Int` | `5` |
+
+##### Minimum walking duration display (Journey)
+
+| Name | Required | Description | Type | Example |
+| --- |:---:| --- | :---: | :---: |
+| `journey_summary` | :material-check: | Minimum number of minutes shown in a journey summary for a walking section | `Int` | `180` |
 
 ##### Next departures (Journey)
 
@@ -453,7 +447,7 @@ The following are the possible configuration parameters:
 | `journeys`| :material-check: | Show/hide the next departures in the journeys screen | [`Next departures`](#next-departures) | - |
 | `roadmap`| :material-check: | Show/hide the next departures in the roadmap screen | [`Next departures`](#next-departures) | - |
 
-##### Traffic options (Journey)
+##### Traffic mode (Journey)
 
 | Name | Required | Description | Type | Example |
 | --- |:---:| --- | :---: | :---: |
@@ -469,6 +463,7 @@ The following are the possible configuration parameters:
 | `max_history` | :material-close: | Define the max history items | `Int` |
 | `networks_filter` | :material-close: | Show/hide the networks selector | `Boolean` |
 | `next_departures` | :material-close: | Show/hide the next departures | [`Next departures`](#next-departures) |
+| `station_map` | :material-close: | Show/hide stations on the map | `Boolean` |
 | `traffic_mode` | :material-close: | Enable/disable the traffic feature | `Boolean` |
 | `transport_networks` | :material-close: | Enable/disable grouping lines by network | `Boolean` |
 | `vehicle_positions`| :material-close: | Show bus vehicle positions on map | [`Vehicle positions`](#vehicle-positions) |
