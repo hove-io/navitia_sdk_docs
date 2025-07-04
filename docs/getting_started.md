@@ -447,7 +447,7 @@ The following are the possible configuration parameters:
 | `journeys`| :material-check: | Show/hide the next departures in the journeys screen | [`Next departures`](#next-departures) | - |
 | `roadmap`| :material-check: | Show/hide the next departures in the roadmap screen | [`Next departures`](#next-departures) | - |
 
-##### Traffic mode (Journey)
+##### Traffic options (Journey)
 
 | Name | Required | Description | Type | Example |
 | --- |:---:| --- | :---: | :---: |
