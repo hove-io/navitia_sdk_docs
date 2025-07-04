@@ -603,6 +603,7 @@
     ],
     "icons_resources": {
         "aroundme": {
+            "account_button": "",
             "traffic_button": ""
         },
         "journey": {
@@ -624,7 +625,7 @@
     },
     "features_configuration": {
         "aroundme": {
-            "booking": true,
+            "account_mode": true,
             "bookmark_mode": {
                 "enabled": true,
                 "tabs": {
@@ -646,6 +647,7 @@
                 "lat": "48.846790",
                 "lon": "2.377090"
             },
+            "default_zoom_level": "TRANSPORTS",
             "go_from_go_to": true,
             "journey_mode": true,
             "max_history": 10,
@@ -709,7 +711,7 @@
             "car_traffic_jam": true,
             "departure_time_shift": {
                 "earlier_minutes": 10,
-                "later_minutes": 50
+                "later_minutes": 5
             },
             "disruption_contributors": [
                 ""
@@ -718,6 +720,9 @@
             "max_favorite_addresses": 10,
             "max_favorite_pois": 10,
             "max_history": 10,
+            "min_walking_duration_display": {
+                "journey_summary": 180
+            },
             "next_departures": {
                 "journeys": {
                     "frequency": 30
@@ -741,7 +746,7 @@
             "search_only": false,
             "step_by_step_guidance": true,
             "stop_point_search_mode": false,
-            "traffic": {
+            "traffic_mode": {
                 "alert_subscription": true
             },
             "transport_networks": true,
