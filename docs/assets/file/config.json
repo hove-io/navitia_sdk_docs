@@ -749,6 +749,19 @@
             "realtime_delays": true,
             "ridesharing_price": true,
             "search_only": false,
+            "speed": {
+                "cycling": {
+                    "enabled": true,
+                    "bike": {
+                        "slow": 1.2,
+                        "fast": 3.4
+                    },
+                    "bss": {
+                        "slow": 5.6,
+                        "fast": 7.8
+                    }
+                }
+            },
             "step_by_step_guidance": {
                 "enabled": true,
                 "launch_button_res": ""
