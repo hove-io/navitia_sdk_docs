@@ -404,7 +404,6 @@ The following are the possible configuration parameters:
 | `park_availability`| :material-close: | Show/hide the bss and car parking availability | [`Park availability`](#park-availability) |
 | `price` | :material-close: | Show/hide the itinerary price | `Boolean` | `true` |
 | `realtime_delays` | :material-close: | Show/hide the itinerary realtime delays | `Boolean` | `true` |
-| `result_tabs` | :material-close: | Define tab icons of results | [`Result tabs`](#result-tabs-journey) | - |
 | `ridesharing_price` | :material-close: | Show/hide the itinerary ridesharing price | `Boolean` | `true` |
 | `search_only` | :material-close: | Enable/disable a direct search without input from user | `Boolean` | `false` |
 | `step_by_step_guidance` | :material-close: | Configure the step by step guidance | [`Step-by-step guidance`](#step-by-step-guidance-journey) | - |
@@ -447,16 +446,6 @@ The following are the possible configuration parameters:
 | `guidance` | :material-check: | Show/hide the next departures in the guidance screen | [`Next departures`](#next-departures) | - |
 | `journeys` | :material-check: | Show/hide the next departures in the journeys screen | [`Next departures`](#next-departures) | - |
 | `roadmap` | :material-check: | Show/hide the next departures in the roadmap screen | [`Next departures`](#next-departures) | - |
-
-##### Result tabs (Journey)
-
-| Name | Required | Description | Type | Example |
-| --- |:---:| --- | :---: | :---: |
-| `transports_icon_res` | :material-close: | Transports icon resource id | `String` | `"ic_transports"` |
-| `walking_icon_res` | :material-close: | Walking icon resource id | `String` | `"ic_walk"` |
-| `bike_icon_res` | :material-close: | Bike icon resource id | `String` | `"ic_bike"` |
-| `car_icon_res` | :material-close: | Car icon resource id | `String` | `"ic_car"` |
-| `ridesharing_icon_res` | :material-close: | Ridesharing icon resource id | `String` | `"ic_ridesharing"` |
 
 ##### Step-by-step guidance (Journey)
 
@@ -637,6 +626,11 @@ The following are the possible configuration parameters:
 | `arrival` | :material-close: | Arrival icon resource id  | `String` | `ic_departure` |
 | `indoor_parking` | :material-close: | Indoor parking icon resource id  | `String` | `ic_indoor_parking` |
 | `outdoor_parking` | :material-close: | Outdoor parking icon resource id  | `String` | `ic_outdoor_parking` |
+| `transports_icon_res` | :material-close: | Transports icon resource id | `String` | `"ic_transports"` |
+| `walking_icon_res` | :material-close: | Walking icon resource id | `String` | `"ic_walk"` |
+| `bike_icon_res` | :material-close: | Bike icon resource id | `String` | `"ic_bike"` |
+| `car_icon_res` | :material-close: | Car icon resource id | `String` | `"ic_car"` |
+| `ridesharing_icon_res` | :material-close: | Ridesharing icon resource id | `String` | `"ic_ridesharing"` |
 
 ### Title resource
 
