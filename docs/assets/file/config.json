@@ -764,7 +764,7 @@
             },
             "step_by_step_guidance": {
                 "enabled": true,
-                "launch_button_res": ""
+                "launch_button_label_res": ""
             },
             "stop_point_search_mode": false,
             "traffic_mode": {
