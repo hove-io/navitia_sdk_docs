@@ -404,9 +404,10 @@ The following are the possible configuration parameters:
 | `park_availability`| :material-close: | Show/hide the bss and car parking availability | [`Park availability`](#park-availability) |
 | `price` | :material-close: | Show/hide the itinerary price | `Boolean` | `true` |
 | `realtime_delays` | :material-close: | Show/hide the itinerary realtime delays | `Boolean` | `true` |
+| `result_tabs` | :material-close: | Define tab icons of results | [`Result tabs`](#result-tabs-journey) | - |
 | `ridesharing_price` | :material-close: | Show/hide the itinerary ridesharing price | `Boolean` | `true` |
 | `search_only` | :material-close: | Enable/disable a direct search without input from user | `Boolean` | `false` |
-| `step_by_step_guidance` | :material-close: | Enable/disable the step by step guidance | `Boolean` |
+| `step_by_step_guidance` | :material-close: | Configure the step by step guidance | [`Step-by-step guidance`](#step-by-step-guidance-journey) | - |
 | `stop_point_search_mode` | :material-close: | Enable/disable search by stop point instead of stop area | `Boolean` | `false` |
 | `traffic_mode` | :material-close: | Define Traffic module options | [`Traffic options`](#traffic-options-journey) | - |
 | `transport_networks` | :material-close: | Show/hide the public transport network | `Boolean` | `false` |
@@ -443,9 +444,26 @@ The following are the possible configuration parameters:
 
 | Name | Required | Description | Type | Example |
 | --- |:---:| --- | :---: | :---: |
-| `guidance`| :material-check: | Show/hide the next departures in the guidance screen | [`Next departures`](#next-departures) | - |
-| `journeys`| :material-check: | Show/hide the next departures in the journeys screen | [`Next departures`](#next-departures) | - |
-| `roadmap`| :material-check: | Show/hide the next departures in the roadmap screen | [`Next departures`](#next-departures) | - |
+| `guidance` | :material-check: | Show/hide the next departures in the guidance screen | [`Next departures`](#next-departures) | - |
+| `journeys` | :material-check: | Show/hide the next departures in the journeys screen | [`Next departures`](#next-departures) | - |
+| `roadmap` | :material-check: | Show/hide the next departures in the roadmap screen | [`Next departures`](#next-departures) | - |
+
+##### Result tabs (Journey)
+
+| Name | Required | Description | Type | Example |
+| --- |:---:| --- | :---: | :---: |
+| `transports_icon_res` | :material-close: | Transports icon resource id | `String` | `"ic_transports"` |
+| `walking_icon_res` | :material-close: | Walking icon resource id | `String` | `"ic_walk"` |
+| `bike_icon_res` | :material-close: | Bike icon resource id | `String` | `"ic_bike"` |
+| `car_icon_res` | :material-close: | Car icon resource id | `String` | `"ic_car"` |
+| `ridesharing_icon_res` | :material-close: | Ridesharing icon resource id | `String` | `"ic_ridesharing"` |
+
+##### Step-by-step guidance (Journey)
+
+| Name | Required | Description | Type | Example |
+| --- |:---:| --- | :---: | :---: |
+| `enabled` | :material-check: | Enable/disable the step by step guidance  | `Boolean` | `true` |
+| `launch_button_res` | :material-close: | Resource name of the launch button label | `String` | `"lets_go"` |
 
 ##### Traffic options (Journey)
 
