@@ -406,7 +406,7 @@ The following are the possible configuration parameters:
 | `realtime_delays` | :material-close: | Show/hide the itinerary realtime delays | `Boolean` | `true` |
 | `ridesharing_price` | :material-close: | Show/hide the itinerary ridesharing price | `Boolean` | `true` |
 | `search_only` | :material-close: | Enable/disable a direct search without input from user | `Boolean` | `false` |
-| `speed`| :material-close: | Define speeds | [`Speed`](#speed-journey) | - |
+| `speed` | :material-close: | Define speeds | [`Speed`](#speed-journey) | - |
 | `step_by_step_guidance` | :material-close: | Configure the step by step guidance | [`Step-by-step guidance`](#step-by-step-guidance-journey) | - |
 | `stop_point_search_mode` | :material-close: | Enable/disable search by stop point instead of stop area | `Boolean` | `false` |
 | `traffic_mode` | :material-close: | Define Traffic module options | [`Traffic options`](#traffic-options-journey) | - |
