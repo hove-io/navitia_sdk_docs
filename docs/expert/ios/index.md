@@ -12,7 +12,7 @@ In your project, add the following lines to your podfile:
 source 'https://github.com/CanalTP/Podspecs.git' # Expert podspec URL
 
 target 'YOUR_PROJECT_SCHEME' do
-  pod 'NavitiaSDK', '2.9.0' # Expert Pod definition
+  pod 'NavitiaSDK', '2.9.1' # Expert Pod definition
 end
 ```
 
