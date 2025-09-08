@@ -10,7 +10,7 @@ Add the following dependencies in the `build.gradle` file of your application:
 
 ```kotlin
 dependencies {
-    implementation("com.kisio.navitia.sdk.ui:traffic:3.1.1")
+    implementation("com.kisio.navitia.sdk.ui:traffic:3.1.3")
 }
 ```
 
