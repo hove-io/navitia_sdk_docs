@@ -4,6 +4,8 @@ title: Traffic Android - Changelogs - Navitia SDK Docs
 
 # Traffic Android Changelogs
 
+* [v3.1.3](releases/3.1.3/index.md) (_11 Jun 2025_)
+* [v3.1.2](releases/3.1.2/index.md) (_05 Jun 2025_)
 * [v3.1.1](releases/3.1.1/index.md) (_23 Apr 2025_)
 * [v3.1.0](releases/3.1.0/index.md) (_24 Feb 2025_)
 * [v3.0.0](releases/3.0.0/index.md) (_25 Feb 2025_)
