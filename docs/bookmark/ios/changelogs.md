@@ -4,6 +4,8 @@ title: Bookmark iOS - Changelogs - Navitia SDK Docs
 
 # Bookmark iOS Changelogs
 
+* [v2.3.0](releases/2.3.0/index.md) (_11 Sep 2025_)
+* [v2.2.1](releases/2.2.1/index.md) (_09 May 2025_)
 * [v2.2.0](releases/2.2.0/index.md) (_22 Apr 2025_)
 * [v2.1.0](releases/2.1.0/index.md) (_24 Mar 2025_)
 * [v2.0.0](releases/2.0.0/index.md) (_24 Feb 2025_)

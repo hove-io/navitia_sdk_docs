@@ -4,6 +4,8 @@ title: Around Me iOS - Changelogs - Navitia SDK Docs
 
 # Around Me iOS Changelogs
 
+* [v4.3.1](releases/4.3.1/index.md) (_15 Oct 2025_)
+* [v4.3.0](releases/4.3.0/index.md) (_11 Sep 2025_)
 * [v4.2.3](releases/4.2.3/index.md) (_12 Aug 2025_)
 * [v4.2.2](releases/4.2.2/index.md) (_18 Jun 2025_)
 * [v4.2.1](releases/4.2.1/index.md) (_07 May 2025_)

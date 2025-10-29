@@ -4,7 +4,7 @@ title: Bookmark iOS 2.2.1 - Changelog - Navitia SDK Docs
 
 # Bookmark iOS 2.2.1 Changelog
 
-<h2>🗓 06 May 2025</h2>
+<h2>🗓 09 May 2025</h2>
 
 #### Tasks
 - Enabled dSYM generation to support crash report symbolication
