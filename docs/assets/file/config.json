@@ -603,28 +603,34 @@
     ],
     "icons_resources": {
         "aroundme": {
+            "account_button": "",
             "traffic_button": ""
         },
         "journey": {
-            "departure": "ic_departure",
-            "arrival": "ic_arrival",
-            "indoor_parking": "ic_custom_indoor_parking",
-            "outdoor_parking": "ic_custom_outdoor_parking"
+            "departure": "",
+            "arrival": "",
+            "indoor_parking": "",
+            "outdoor_parking": "",
+            "transports_tab": "",
+            "walking_tab": "",
+            "bike_tab": "",
+            "car_tab": "",
+            "ridesharing_tab": ""
         }
     },
     "titles_resources": {
+        "aroundme": {
+            "filters": "filters_screen_title"
+        },
         "journey": {
             "journeys": "journeys_screen_title",
             "roadmap": "roadmap_screen_title",
             "ridesharing": "ridesharing_screen_title"
-        },
-        "aroundme": {
-            "filters": "filters_screen_title"
         }
     },
     "features_configuration": {
         "aroundme": {
-            "booking": true,
+            "account_mode": true,
             "bookmark_mode": {
                 "enabled": true,
                 "tabs": {
@@ -646,6 +652,7 @@
                 "lat": "48.846790",
                 "lon": "2.377090"
             },
+            "default_zoom_level": "TRANSPORTS",
             "go_from_go_to": true,
             "journey_mode": true,
             "max_history": 10,
@@ -709,7 +716,7 @@
             "car_traffic_jam": true,
             "departure_time_shift": {
                 "earlier_minutes": 10,
-                "later_minutes": 50
+                "later_minutes": 5
             },
             "disruption_contributors": [
                 ""
@@ -718,6 +725,9 @@
             "max_favorite_addresses": 10,
             "max_favorite_pois": 10,
             "max_history": 10,
+            "min_walking_duration_display": {
+                "journey_summary": 180
+            },
             "next_departures": {
                 "journeys": {
                     "frequency": 30
@@ -739,9 +749,25 @@
             "realtime_delays": true,
             "ridesharing_price": true,
             "search_only": false,
-            "step_by_step_guidance": true,
+            "speed": {
+                "cycling": {
+                    "enabled": true,
+                    "bike": {
+                        "slow": 1.2,
+                        "fast": 3.4
+                    },
+                    "bss": {
+                        "slow": 5.6,
+                        "fast": 7.8
+                    }
+                }
+            },
+            "step_by_step_guidance": {
+                "enabled": true,
+                "launch_button_label_res": ""
+            },
             "stop_point_search_mode": false,
-            "traffic": {
+            "traffic_mode": {
                 "alert_subscription": true
             },
             "transport_networks": true,
