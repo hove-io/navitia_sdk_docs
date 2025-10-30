@@ -47,8 +47,14 @@
             "secondary": ""
         },
         "traffic": {
-            "primary": "",
-            "secondary": ""
+            "primary": {
+                "dark": "",
+                "light": ""
+            },
+            "secondary": {
+                "dark": "",
+                "light": ""
+            }
         },
         "disruptions": {
             "information": "",
