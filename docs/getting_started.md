@@ -102,6 +102,13 @@ The following are the possible configuration parameters:
 | `secondary` | :material-check: | To set the color of some UI components | `String` | `#8faa96` | 
 -->
 
+#### Appearance color
+
+| Name | Required | Description | Type | Example |
+| --- |:---:| --- | :---: | :---: |
+| `dark` | :material-check: | To set the color for dark mode | `String` | `#88819f` |
+| `light` | :material-check: | To set the color for light mode | `String` | `#8faa96` |
+
 #### Around Me color
 
 | Name | Required | Description | Type | Example |
@@ -179,10 +186,10 @@ The following are the possible configuration parameters:
 
 #### Traffic color
 
-| Name | Required | Description | Type | Example |
+| Name | Required | Description | Type |
 | --- |:---:| --- | :---: | :---: |
-| `primary` | :material-check: | To set the main color of the screens | `String` | `#88819f` |
-| `secondary` | :material-check: | To set the color of some UI components | `String` | `#8faa96` |
+| `primary` | :material-check: | To set the main color of the screens | [`Appearance color`](#appearance-color) |
+| `secondary` | :material-check: | To set the color of some UI components | [`Appearance color`](#appearance-color) |
 
 #### Disruptions color
 
@@ -244,7 +251,7 @@ The following are the possible configuration parameters:
 | `icon_res` | :material-check: | POI subcategory icon id | `String` | `"ic_bike_stations"` |
 | `selected` | :material-close: | Whether the subcategory is selected by default or not | `Boolean` | `true` |
 | `group` | :material-check: | Subcategory POI group | `String` | `STANDARD`, `QUICK_FILTER_FREE_FLOATING`,  `QUICK_FILTER_POI` |
-| `types` | :material-check: | Subcategory POI types. Can be a [POI type id](https://playground.navitia.io/play.html?request=https://api.navitia.io/v1/poi_types?) or a free floating type | `String[]`| `[]"poi_type:amenity:bicycle_rental"]` |
+| `types` | :material-check: | Subcategory POI types. Can be a [POI type id](https://playground.navitia.io/play.html?request=https://api.navitia.io/v1/poi_types?) or a free floating type | `String[]`| `["poi_type:amenity:bicycle_rental"]` |
 | `booking` | :material-close: | POI booking resources | [POI booking resources](#poi-booking-resources) | - |
 
 ##### POI booking resources
@@ -308,13 +315,14 @@ The following are the possible configuration parameters:
 | `default_zoom_level` | :material-close: | Define the default zoom level of map by selecting the corresponding type | `String` | `TRANSPORTS`, `BUS`, `POI`, `FREE_FLOATING` |
 | `go_from_go_to` | :material-close: | Show/hide the go from/go to buttons | `Boolean` | `true` |
 | `journey_mode` | :material-close: | Enable/disable the journey search mode | `Boolean` |
-| `max_history` | :material-close: | Define the max history items | `Int` | `10` |
-| `next_departures` | :material-close: | Show/hide the next departures | [`Next departures`](#next-departures) | - |
-| `park_availability`| :material-close: | Show/hide the bss and car parking availability | [`Park Availability`](#park-availability) | - |
-| `schedule_mode` | :material-close: | Enable/disable redirection to schedule autocompletion screen | `Boolean` | `true` |
-| `stop_point_search` | :material-close: | Enable/disable search by stop point instead of stop area | `Boolean` | `false` |
-| `traffic_mode` | :material-close: | Show/hide the traffic button | `Boolean` | `false` |
-| `vehicle_positions`| :material-close: | Show bus vehicle positions on map | [`Vehicle positions`](#vehicle-positions) | - |
+| `max_history` | :material-close: | Define the max history items | `Int` |
+| `default_zoom_level` | :material-close: | Define the default zoom level of map. | `('BUS' or 'FREE_FLOATING' or 'POI' or 'TRANSPORTS')` |
+| `next_departures` | :material-close: | Show/hide the next departures | [`Next departures`](#next-departures) |
+| `park_availability`| :material-close: | Show/hide the bss and car parking availability | [`Park Availability`](#park-availability) |
+| `schedule_mode` | :material-close: | Enable/disable redirection to schedule autocompletion screen | `Boolean` |
+| `stop_point_search` | :material-close: | Enable/disable search by stop point instead of stop area | `Boolean` |
+| `traffic_mode` | :material-close: | Show/hide the traffic button | `Boolean` |
+| `vehicle_positions`| :material-close: | Show bus vehicle positions on map | [`Vehicle positions`](#vehicle-positions) |
 
 ##### Bookmark Mode (Around Me)
 
@@ -337,6 +345,7 @@ The following are the possible configuration parameters:
 | --- |:---:| --- | :---: | :---: |
 | `display` | :material-check: | Display/hide favorite tab | `Boolean` | `true` |
 | `title_res` | :material-close: | Title resource name | `String` | `"tab_title"` |
+| `empty_state_text_res` | :material-close: | Title resource name | `String` | `"stations_empty_state_text"` |
 
 ##### Default location
 
@@ -399,7 +408,7 @@ The following are the possible configuration parameters:
 | `max_favorite_addresses` | :material-close: | Define the max favorite addresses alongside with home and work addresses | `Int` | `10` |
 | `max_favorite_pois` | :material-close: | Define the max favorite POIs | `Int` | `10` |
 | `max_history` | :material-close: | Define the max history items | `Int` | `10` |
-| `min_walking_duration_display` | :material-close: | Define the minimum numbers of minutes shown for a walking section | [`Minimum walking duration display`](#minimum-walking-duration-display-journey) | - |
+| `min_walking_duration_display` | :material-close: | Define the minimum walking duration to be displayed in a walking section (in seconds) | [`Min walking duration display`](#min-walking-duration-display-journey) | - |
 | `next_departures` | :material-close: | Show/hide the next departures | [`Next departures (Journey)`](#next-departures-journey) | - |
 | `park_availability`| :material-close: | Show/hide the bss and car parking availability | [`Park availability`](#park-availability) |
 | `price` | :material-close: | Show/hide the itinerary price | `Boolean` | `true` |
@@ -440,6 +449,12 @@ The following are the possible configuration parameters:
 | --- |:---:| --- | :---: | :---: |
 | `journey_summary` | :material-check: | Minimum number of minutes shown in a journey summary for a walking section | `Int` | `180` |
 
+##### Min walking duration display (Journey)
+
+| Name | Required | Description | Type | Example |
+| --- |:---:| --- | :---: | :---: |
+| `journey_summary`| :material-check: | Define the min walking duration to be displayed in journey summary view in secondes | `Int` | `180` |
+
 ##### Next departures (Journey)
 
 | Name | Required | Description | Type | Example |
@@ -470,11 +485,25 @@ The following are the possible configuration parameters:
 | `enabled` | :material-check: | Enable/disable the step by step guidance  | `Boolean` | `true` |
 | `launch_button_res` | :material-close: | Resource name of the launch button label | `String` | `"lets_go"` |
 
+##### Step by step guidance (Journey)
+
+| Name | Required | Description | Type | Example |
+| --- |:---:| --- | :---: | :---: |
+| `enabled` | :material-check: | Enable step by step guidance screen | `Boolean` | `false` |
+| `launch_button_label_res` | :material-check: | The guidance screen launch string resource | `String` | `go_guidance_button_text` |
+
 ##### Traffic options (Journey)
 
 | Name | Required | Description | Type | Example |
 | --- |:---:| --- | :---: | :---: |
-| `alert_subscription` | :material-close: | Enable Traffic alert subscriptions | `Boolean` | `false` |
+| `alert_subscription` | :material-close: | Enable Traffic alert subscriptions | `Boolean` | [`Traffic alert subscription`](#traffic-alert-subscription-journey) |
+
+##### Traffic alert subscription (Journey)
+
+| Name | Required | Description | Type | Example |
+| --- |:---:| --- | :---: | :---: |
+| `enabled` | :material-check: | Enable Traffic alert subscriptions | `Boolean` | `false` |
+| `excluded_physical_modes` | :material-close: | List of excluded physical modes | `[String]` | `[physical_mode:Bus]` |
 
 #### Schedule features
 
@@ -642,11 +671,12 @@ The following are the possible configuration parameters:
 | `arrival` | :material-close: | Arrival icon resource id  | `String` | `ic_departure` |
 | `indoor_parking` | :material-close: | Indoor parking icon resource id  | `String` | `ic_indoor_parking` |
 | `outdoor_parking` | :material-close: | Outdoor parking icon resource id  | `String` | `ic_outdoor_parking` |
-| `transports_icon_res` | :material-close: | Transports icon resource id | `String` | `"ic_transports"` |
-| `walking_icon_res` | :material-close: | Walking icon resource id | `String` | `"ic_walk"` |
-| `bike_icon_res` | :material-close: | Bike icon resource id | `String` | `"ic_bike"` |
-| `car_icon_res` | :material-close: | Car icon resource id | `String` | `"ic_car"` |
-| `ridesharing_icon_res` | :material-close: | Ridesharing icon resource id | `String` | `"ic_ridesharing"` |
+| `parking_relay` | :material-close: | Parking relay icon resource id  | `String` | `ic_parking_relay` |
+| `transports_tab` | :material-close: | Transports tab icon resource id  | `String` | `ic_transports_tab` |
+| `walking_tab` | :material-close: | Walking tab icon resource id  | `String` | `ic_walking_tab` |
+| `bike_tab` | :material-close: | Bike tab icon resource id  | `String` | `ic_bike_tab` |
+| `car_tab` | :material-close: | Car tab icon resource id  | `String` | `ic_car_tab` |
+| `ridesharing_tab` | :material-close: | Ridesharing tab icon resource id  | `String` | `ic_ridesharing_tab` |
 
 ### Title resource
 

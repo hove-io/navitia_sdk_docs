@@ -1,10 +1,10 @@
 ---
-title: AroundMe iOS 4.2.2 - Changelog - Navitia SDK Docs
+title: AroundMe iOS 4.2.3 - Changelog - Navitia SDK Docs
 ---
 
-# AroundMe iOS 4.2.2 Changelog
+# AroundMe iOS 4.2.3 Changelog
 
-<h2>🗓 18 Jun 2025</h2>
+<h2>🗓 12 Aug 2025</h2>
 
 #### Fixes
 - Remove annotation if it's not compatible with quick filter

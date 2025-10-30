@@ -13,7 +13,7 @@ source 'https://github.com/CocoaPods/Specs.git' # Default Cocoapods URL
 source 'https://github.com/hove-io/Podspecs.git' # Traffic podspec URL
 
 target 'YOUR_PROJECT_SCHEME' do
-  pod 'TrafficSDK', '4.2.2' # Traffic Pod definition
+  pod 'TrafficSDK', '4.3.0' # Traffic Pod definition
 end
 
 # Required for XCFramework
