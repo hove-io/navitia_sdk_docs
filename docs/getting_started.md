@@ -187,7 +187,7 @@ The following are the possible configuration parameters:
 #### Traffic color
 
 | Name | Required | Description | Type |
-| --- |:---:| --- | :---: | :---: |
+| --- |:---:| --- | :---: |
 | `primary` | :material-check: | To set the main color of the screens | [`Appearance color`](#appearance-color) |
 | `secondary` | :material-check: | To set the color of some UI components | [`Appearance color`](#appearance-color) |
 
@@ -314,22 +314,22 @@ The following are the possible configuration parameters:
 | `default_location` | :material-close: | The default location on first launch | [`Default location`](#default-location) | - |
 | `default_zoom_level` | :material-close: | Define the default zoom level of map by selecting the corresponding type | `String` | `TRANSPORTS`, `BUS`, `POI`, `FREE_FLOATING` |
 | `go_from_go_to` | :material-close: | Show/hide the go from/go to buttons | `Boolean` | `true` |
-| `journey_mode` | :material-close: | Enable/disable the journey search mode | `Boolean` |
-| `max_history` | :material-close: | Define the max history items | `Int` |
-| `default_zoom_level` | :material-close: | Define the default zoom level of map. | `('BUS' or 'FREE_FLOATING' or 'POI' or 'TRANSPORTS')` |
-| `next_departures` | :material-close: | Show/hide the next departures | [`Next departures`](#next-departures) |
-| `park_availability`| :material-close: | Show/hide the bss and car parking availability | [`Park Availability`](#park-availability) |
-| `schedule_mode` | :material-close: | Enable/disable redirection to schedule autocompletion screen | `Boolean` |
-| `stop_point_search` | :material-close: | Enable/disable search by stop point instead of stop area | `Boolean` |
-| `traffic_mode` | :material-close: | Show/hide the traffic button | `Boolean` |
-| `vehicle_positions`| :material-close: | Show bus vehicle positions on map | [`Vehicle positions`](#vehicle-positions) |
+| `journey_mode` | :material-close: | Enable/disable the journey search mode | `Boolean` | `true` |
+| `max_history` | :material-close: | Define the max history items | `Int` | 10 |
+| `default_zoom_level` | :material-close: | Define the default zoom level of map. | `('BUS' or 'FREE_FLOATING' or 'POI' or 'TRANSPORTS')` | `TRANSPORTS` |
+| `next_departures` | :material-close: | Show/hide the next departures | [`Next departures`](#next-departures) | - |
+| `park_availability`| :material-close: | Show/hide the bss and car parking availability | [`Park Availability`](#park-availability) | - |
+| `schedule_mode` | :material-close: | Enable/disable redirection to schedule autocompletion screen | `Boolean` | `true` |
+| `stop_point_search` | :material-close: | Enable/disable search by stop point instead of stop area | `Boolean` | `true` |
+| `traffic_mode` | :material-close: | Show/hide the traffic button | `Boolean` | `true` |
+| `vehicle_positions`| :material-close: | Show bus vehicle positions on map | [`Vehicle positions`](#vehicle-positions) | - |
 
 ##### Bookmark Mode (Around Me)
 
 | Name | Required | Description | Type | Example |
 | --- |:---:| --- | :---: | :---: |
 | `enabled` | :material-check: | Enable/disable to add and remove an item as favorite  | `Boolean` | `true` |
-| `tabs` | :material-close: |  | [`Bookmark mode tabs (Around me)`](#bookmark-mode-tabs-around-me) | - |
+| `tabs` | :material-close: | Set the configuration for bookmark tabs | [`Bookmark mode tabs (Around me)`](#bookmark-mode-tabs-around-me) | - |
 
 ##### Bookmark mode tabs (Around me)
 
@@ -410,7 +410,7 @@ The following are the possible configuration parameters:
 | `max_history` | :material-close: | Define the max history items | `Int` | `10` |
 | `min_walking_duration_display` | :material-close: | Define the minimum walking duration to be displayed in a walking section (in seconds) | [`Min walking duration display`](#min-walking-duration-display-journey) | - |
 | `next_departures` | :material-close: | Show/hide the next departures | [`Next departures (Journey)`](#next-departures-journey) | - |
-| `park_availability`| :material-close: | Show/hide the bss and car parking availability | [`Park availability`](#park-availability) |
+| `park_availability`| :material-close: | Show/hide the bss and car parking availability | [`Park availability`](#park-availability) | - |
 | `price` | :material-close: | Show/hide the itinerary price | `Boolean` | `true` |
 | `realtime_delays` | :material-close: | Show/hide the itinerary realtime delays | `Boolean` | `true` |
 | `ridesharing_price` | :material-close: | Show/hide the itinerary ridesharing price | `Boolean` | `true` |
@@ -544,7 +544,7 @@ The following are the possible configuration parameters:
 | Name | Required | Description | Type | Example |
 | --- |:---:| --- | :---: | :---: |
 | `alert_subscription` | :material-close: | Alert subscription environment configuration | [`Alert subscription`](#alert-subscription) | - |
-| `application_periods` | :material-close: | Show/hide the disruption application date | `Boolean` |
+| `application_periods` | :material-close: | Show/hide the disruption application date | `Boolean` | - |
 | `disruption_contributors` | :material-close: | Define the list of disruption contributors id | `String[]` | `["shortterm.tr_idfm"]` |
 | `filters` | :material-close: | Show/hide the filters selector | `Boolean` |
 | `forbidden_networks` | :material-close: | Define the list of forbidden network ids | `String[]` | `["network:ABCD"]` |

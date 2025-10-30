@@ -1,5 +1,5 @@
 ---
-title: Schedule iOS 4.2.0 - Changelog - Navitia SDK Docs
+title: Schedule iOS 4.2.1 - Changelog - Navitia SDK Docs
 ---
 
 # Schedule iOS 4.2.1 Changelog
