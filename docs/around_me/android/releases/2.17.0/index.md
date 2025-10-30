@@ -7,7 +7,6 @@ title: AroundMe Android 2.17.0 - Changelog - Navitia SDK Docs
 <h2>🗓 11 Sep 2025</h2>
 
 #### Features
-- Minimal walking duration display can now be configured
 - Default zoom level can now be configured
 - Added new zoom level for stop points
 - Empty states can now be configured
