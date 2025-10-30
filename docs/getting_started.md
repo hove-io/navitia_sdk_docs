@@ -187,7 +187,7 @@ The following are the possible configuration parameters:
 #### Traffic color
 
 | Name | Required | Description | Type |
-| --- |:---:| --- | :---: | :---: |
+| --- |:---:| --- | :---: |
 | `primary` | :material-check: | To set the main color of the screens | [`Appearance color`](#appearance-color) |
 | `secondary` | :material-check: | To set the color of some UI components | [`Appearance color`](#appearance-color) |
 
@@ -329,7 +329,7 @@ The following are the possible configuration parameters:
 | Name | Required | Description | Type | Example |
 | --- |:---:| --- | :---: | :---: |
 | `enabled` | :material-check: | Enable/disable to add and remove an item as favorite  | `Boolean` | `true` |
-| `tabs` | :material-close: |  | [`Bookmark mode tabs (Around me)`](#bookmark-mode-tabs-around-me) | - |
+| `tabs` | :material-close: | Set the configuration for bookmark tabs | [`Bookmark mode tabs (Around me)`](#bookmark-mode-tabs-around-me) | - |
 
 ##### Bookmark mode tabs (Around me)
 
