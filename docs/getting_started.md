@@ -101,6 +101,13 @@ The following are the possible configuration parameters:
 | `secondary` | :material-check: | To set the color of some UI components | `String` | `#8faa96` | 
 -->
 
+#### Appearance color
+
+| Name | Required | Description | Type | Example |
+| --- |:---:| --- | :---: | :---: |
+| `dark` | :material-check: | To set the color for dark mode | `String` | `#88819f` |
+| `light` | :material-check: | To set the color for light mode | `String` | `#8faa96` |
+
 #### Around Me color
 
 | Name | Required | Description | Type | Example |
@@ -185,10 +192,10 @@ The following are the possible configuration parameters:
 
 #### Traffic color
 
-| Name | Required | Description | Type | Example |
+| Name | Required | Description | Type |
 | --- |:---:| --- | :---: | :---: |
-| `primary` | :material-check: | To set the main color of the screens | `String` | `#88819f` |
-| `secondary` | :material-check: | To set the color of some UI components | `String` | `#8faa96` |
+| `primary` | :material-check: | To set the main color of the screens | [`Appearance color`](#appearance-color) |
+| `secondary` | :material-check: | To set the color of some UI components | [`Appearance color`](#appearance-color) |
 
 #### Disruption color
 
@@ -327,6 +334,7 @@ The following are the possible configuration parameters:
 | `journey_mode` | :material-close: | Enable/disable the journey search mode | `Boolean` |
 | `max_history` | :material-close: | Define the max history items | `Int` |
 | `min_zoom_level` | :material-close: | Define the min zoom level of map. Android only | `Int` |
+| `default_zoom_level` | :material-close: | Define the default zoom level of map. | `('BUS' or 'FREE_FLOATING' or 'POI' or 'TRANSPORTS')` |
 | `next_departures` | :material-close: | Show/hide the next departures | [`Next departures`](#next-departures) |
 | `park_availability`| :material-close: | Show/hide the bss and car parking availability | [`Park Availability`](#park-availability) |
 | `schedule_mode` | :material-close: | Enable/disable redirection to schedule autocompletion screen | `Boolean` |
@@ -358,6 +366,7 @@ The following are the possible configuration parameters:
 | --- |:---:| --- | :---: | :---: |
 | `display` | :material-check: | Display/hide favorite tab | `Boolean` | `true` |
 | `title_res` | :material-close: | Title resource name | `String` | `"tab_title"` |
+| `empty_state_text_res` | :material-close: | Title resource name | `String` | `"stations_empty_state_text"` |
 
 ##### Default location
 
@@ -419,13 +428,14 @@ The following are the possible configuration parameters:
 | `max_favorite_addresses` | :material-close: | Define the max favorite addresses alongside with home and work addresses | `Int` | `10` |
 | `max_favorite_pois` | :material-close: | Define the max favorite POIs | `Int` | `10` |
 | `max_history` | :material-close: | Define the max history items | `Int` | `10` |
+| `min_walking_duration_display` | :material-close: | Define the minimum walking duration to be displayed | [`Min walking duration display`](#min-walking-duration-display-journey) | - |
 | `next_departures` | :material-close: | Show/hide the next departures | [`Next departures (Journey)`](#next-departures-journey) | - |
 | `park_availability`| :material-close: | Show/hide the bss and car parking availability | [`Park Availability`](#park-availability) |
 | `price` | :material-close: | Show/hide the itinerary price | `Boolean` | `true` |
 | `realtime_delays` | :material-close: | Show/hide the itinerary realtime delays | `Boolean` | `true` |
 | `ridesharing_price` | :material-close: | Show/hide the itinerary ridesharing price | `Boolean` | `true` |
 | `search_only` | :material-close: | Enable/disable a direct search without input from user | `Boolean` | `false` |
-| `step_by_step_guidance` | :material-close: | Enable/disable the step by step guidance | `Boolean` |
+| `step_by_step_guidance` | :material-close: | Guidance screen feature configuration | [`Step by step guidance`](#step-by-step-guidance-journey) |
 | `stop_point_search_mode` | :material-close: | Enable/disable search by stop point instead of stop area | `Boolean` | `false` |
 | `traffic` | :material-close: | Define Traffic module options | [`Traffic options`](#traffic-options-journey) | - |
 | `transport_networks` | :material-close: | Show/hide the public transport network | `Boolean` | `false` |
@@ -445,6 +455,12 @@ The following are the possible configuration parameters:
 | `home` | :material-close: | Display/hide favorite items on home screen | `Boolean` | `true` |
 | `autocompletion` | :material-close: | Display/hide favorite items on autocompletion screen  | `Boolean` | `true` |
 
+##### Min walking duration display (Journey)
+
+| Name | Required | Description | Type | Example |
+| --- |:---:| --- | :---: | :---: |
+| `journey_summary`| :material-check: | Define the min walking duration to be displayed in journey summary view in secondes | `Int` | `180` |
+
 ##### Next departures (Journey)
 
 | Name | Required | Description | Type | Example |
@@ -453,11 +469,25 @@ The following are the possible configuration parameters:
 | `journeys`| :material-check: | Show/hide the next departures in the journeys screen | [`Next departures`](#next-departures) | - |
 | `roadmap`| :material-check: | Show/hide the next departures in the roadmap screen | [`Next departures`](#next-departures) | - |
 
+##### Step by step guidance (Journey)
+
+| Name | Required | Description | Type | Example |
+| --- |:---:| --- | :---: | :---: |
+| `enabled` | :material-check: | Enable step by step guidance screen | `Boolean` | `false` |
+| `launch_button_label_res` | :material-check: | The guidance screen launch string resource | `String` | `go_guidance_button_text` |
+
 ##### Traffic options (Journey)
 
 | Name | Required | Description | Type | Example |
 | --- |:---:| --- | :---: | :---: |
-| `alert_subscription` | :material-close: | Enable Traffic alert subscriptions | `Boolean` | `false` |
+| `alert_subscription` | :material-close: | Enable Traffic alert subscriptions | `Boolean` | [`Traffic alert subscription`](#traffic-alert-subscription-journey) |
+
+##### Traffic alert subscription (Journey)
+
+| Name | Required | Description | Type | Example |
+| --- |:---:| --- | :---: | :---: |
+| `enabled` | :material-check: | Enable Traffic alert subscriptions | `Boolean` | `false` |
+| `excluded_physical_modes` | :material-close: | List of excluded physical modes | `[String]` | `[physical_mode:Bus]` |
 
 #### Schedule features
 
@@ -624,6 +654,12 @@ The following are the possible configuration parameters:
 | `arrival` | :material-close: | Arrival icon resource id  | `String` | `ic_departure` |
 | `indoor_parking` | :material-close: | Indoor parking icon resource id  | `String` | `ic_indoor_parking` |
 | `outdoor_parking` | :material-close: | Outdoor parking icon resource id  | `String` | `ic_outdoor_parking` |
+| `parking_relay` | :material-close: | Parking relay icon resource id  | `String` | `ic_parking_relay` |
+| `transports_tab` | :material-close: | Transports tab icon resource id  | `String` | `ic_transports_tab` |
+| `walking_tab` | :material-close: | Walking tab icon resource id  | `String` | `ic_walking_tab` |
+| `bike_tab` | :material-close: | Bike tab icon resource id  | `String` | `ic_bike_tab` |
+| `car_tab` | :material-close: | Car tab icon resource id  | `String` | `ic_car_tab` |
+| `ridesharing_tab` | :material-close: | Ridesharing tab icon resource id  | `String` | `ic_ridesharing_tab` |
 
 ### Title resource
 
