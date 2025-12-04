@@ -13,7 +13,7 @@ source 'https://github.com/CocoaPods/Specs.git' # Default Cocoapods URL
 source 'https://github.com/hove-io/Podspecs.git' # Schedule podspec URL
 
 target 'YOUR_PROJECT_SCHEME' do
-  pod 'ScheduleSDK', '4.2.1' # Schedule Pod definition
+  pod 'ScheduleSDK', '4.3.0' # Schedule Pod definition
 end
 
 # Required for XCFramework
