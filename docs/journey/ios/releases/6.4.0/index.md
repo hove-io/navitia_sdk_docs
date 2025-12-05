@@ -9,16 +9,14 @@ title: Journey iOS 6.4.0 - Changelog - Navitia SDK Docs
 #### Tasks
 - Display address instead of label when using favorite address
 - Show my position in autocompletion even if location is disabled 
-- Use same journey schedule API instead of terminus schedule API for fetching next departures in journey list 
-- Use same journey schedule API instead of terminus schedule API for fetching next departures in step by step screen
+- Use journeys API for next departures calls in journeys list and step-by-step guidance screens
 - Make parking relay icon configurable
-- Replace old next departure view with the new one from design
-- Add next departure view
+- Update next departures view
 
 ### Fix
 - Fix routing method to schedule
 - Fix my position in journey list
-- Fix triangle color in annotation
+- Fix background color for next departures annotation in step by step screen
 
 #### Dependencies
 - Design `3.4.0`

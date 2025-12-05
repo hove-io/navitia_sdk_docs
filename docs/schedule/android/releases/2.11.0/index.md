@@ -8,8 +8,8 @@ title: Schedule Android 2.11.0 - Changelog - Navitia SDK Docs
 
 #### Tasks
 - Added dark mode support
-- Updated the design of the line list
-- Updated the design of next departures
+- Updated lines list design
+- Updated next departures view design
 - Display only passage times in the hour tabs of the timetable grid
 
 #### Dependencies

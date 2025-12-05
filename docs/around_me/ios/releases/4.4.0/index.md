@@ -7,12 +7,10 @@ title: AroundMe iOS 4.4.0 - Changelog - Navitia SDK Docs
 <h2>🗓 03 Dec 2025</h2>
 
 ### Features
-- Fetch poi availability on poi details sheet for cars and bike sharing services
+- Requesting poi availability for car parking and bike sharing services on poi details sheet
 
 ### Tasks
-- Change release workflow
-- Replace old next departure view with the new one from design
-- Add next departure view
+- Update next departure view
 
 ### Fix
 - Fix routing method to schedule

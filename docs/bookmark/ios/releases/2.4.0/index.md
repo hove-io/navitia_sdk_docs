@@ -7,9 +7,7 @@ title: Bookmark iOS 2.4.0 - Changelog - Navitia SDK Docs
 <h2>🗓 03 Dec 2025</h2>
 
 ### Tasks
-- Replace old next departure view with the new one from design
-- Add next departure view
-- Change release workflow
+- Update next departures view
 
 ### Fix
 - Fix routing method to schedule

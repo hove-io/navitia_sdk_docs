@@ -12,7 +12,7 @@ title: Traffic Android 3.3.0 - Changelog - Navitia SDK Docs
 #### Tasks
 - Added dark mode support
 - Updated the design of line search, my alerts, and alert period editing
-- Displayed an error message when two alert periods are identical for a line
+- Displayed an error message when two alert periods are identical for a line alerts subscription
 
 #### Dependencies
 - `com.android.tools.build:gradle` > `8.13.1`

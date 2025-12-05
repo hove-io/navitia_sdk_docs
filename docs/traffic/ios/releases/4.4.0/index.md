@@ -10,8 +10,7 @@ title: Traffic iOS 4.4.0 - Changelog - Navitia SDK Docs
 - Redesign my subscriptions screen 
 - Redesign search lines screen
 - Add empty state for my subscriptions screen 
-- Make sure from time period is always before to time period
-- Show error message when a subscription has duplicated periods
+- Display an error message when two alert periods are identical for a line alerts subscription
 
 ### Fixes
 - Only request lines that belongs to one of the physical modes specified in the configuration in search line screen 
