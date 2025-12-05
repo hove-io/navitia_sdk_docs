@@ -7,7 +7,7 @@ title: Journey Android 5.22.0 - Changelog - Navitia SDK Docs
 <h2>🗓 03 Dec 2025</h2>
 
 #### Tasks
-- Harmonized next departures between the list of journeys and step-by-step guidance
+- Use journeys API for next departures calls in journeys list and step-by-step guidance screens
 - Updated the design of next departures
 
 #### Dependencies
