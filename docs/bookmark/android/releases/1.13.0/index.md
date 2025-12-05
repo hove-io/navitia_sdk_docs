@@ -7,7 +7,8 @@ title: Bookmark Android 1.13.0 - Changelog - Navitia SDK Docs
 <h2>🗓 03 Dec 2025</h2>
 
 #### Tasks
-- Minor changes
+- Update dependencies
+- Rename `SharedData.StationBookmark` entity to `SharedData.Station`
 
 #### Dependencies
 - `com.android.tools.build:gradle` > `8.13.1`
