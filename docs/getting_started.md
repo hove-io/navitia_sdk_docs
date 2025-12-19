@@ -414,6 +414,7 @@ The following are the possible configuration parameters:
 | `price` | :material-close: | Show/hide the itinerary price | `Boolean` | `true` |
 | `realtime_delays` | :material-close: | Show/hide the itinerary realtime delays | `Boolean` | `true` |
 | `ridesharing_price` | :material-close: | Show/hide the itinerary ridesharing price | `Boolean` | `true` |
+| `schedule_mode` | :material-close: | Enable/disable redirection to all schedules screen (Schedule module) | [`Schedule mode`](#schedule-mode-journey) | - |
 | `search_only` | :material-close: | Enable/disable a direct search without input from user | `Boolean` | `false` |
 | `speed` | :material-close: | Define speeds | [`Speed`](#speed-journey) | - |
 | `step_by_step_guidance` | :material-close: | Configure the step by step guidance | [`Step-by-step guidance`](#step-by-step-guidance-journey) | - |
@@ -477,6 +478,12 @@ The following are the possible configuration parameters:
 | --- |:---:| --- | :---: | :---: |
 | `slow` | :material-close: | custom speed value for slow bikes | `Float` | `1.2` |
 | `fast` | :material-close: | custom speed value for fast bikes | `Float` | `3.4` |
+
+##### Schedule Mode (Journey)
+
+| Name | Required | Description | Type | Example |
+| --- |:---:| --- | :---: | :---: |
+| `enabled` | :material-close: | Enable/disable redirection to all schedules screen from roadmap screen | `Boolean` | `true` |
 
 ##### Step-by-step guidance (Journey)
 
