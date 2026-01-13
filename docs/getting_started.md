@@ -65,7 +65,7 @@ The following are the possible configuration parameters:
 | --- | :-: | --- | :--: | :---: | :---: |
 | `coverage` | :material-check: | Navitia coverage | `String` | `fr-idf` | All |
 | `timezone` | :material-check: | Timezone | `String` | `Europe/Paris` | All |
-| `env` | :material-check: | Navitia environment | `String` | `PROD`, `CUSTOMER` | All |
+| `env` | :material-check: | Navitia environment | `String` | `PROD`, `CUS` | All |
 | `osm_region` | :material-close: | OSM region | [`OSM Region`](#osm-region) | - | All |
 | `colors` | :material-check: | Colors configuration | [`Colors`](#colors) | - | UI modules |
 | `transport_categories` | :material-check: | List of supported transport modes | [`Transport category[]`](#transport-category) | - | UI modules |
