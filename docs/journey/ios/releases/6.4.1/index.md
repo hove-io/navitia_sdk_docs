@@ -10,4 +10,4 @@ title: Journey iOS 6.4.1 - Changelog - Navitia SDK Docs
 - Fix segmented control colors
 
 #### Compiler
--  Swift  `6.1.2`
+-  Swift  `6.2.3`
