@@ -1,10 +1,10 @@
 ---
-title: Journey Android 5.20.2 - Changelog - Navitia SDK Docs
+title: Journey Android 5.20.3 - Changelog - Navitia SDK Docs
 ---
 
-# Journey Android 5.20.2 Changelog
+# Journey Android 5.20.3 Changelog
 
-<h2>🗓 14 May 2025</h2>
+<h2>🗓 05 Jun 2025</h2>
 
 #### Fixes
 - Fixed binding instance not properly destroyed
