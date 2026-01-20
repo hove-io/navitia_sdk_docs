@@ -1,0 +1,54 @@
+[data-md-color-scheme="navitia-light"] {
+    --md-primary-fg-color:        #002830;
+    --md-primary-fg-color--light: #002830;
+    --md-primary-fg-color--dark:  #004650;
+}
+
+:root {
+    --md-primary-fg-color:        #004650;
+    --md-primary-fg-color--light: #004650;
+    --md-primary-fg-color--dark:  #004650;
+}
+
+.img-overview {
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+.img-navigating {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+.md-source {
+    display: none;
+}
+
+.android {
+    color: #32de84;
+}
+
+.ios {
+    color: #000000;
+}
+
+.home-module-title-block {
+    display: inline-flex;
+    margin-bottom: .3em;
+}
+
+.home-module-title-text {
+    font-size: 1.25em;
+    font-weight: 400;
+    letter-spacing: -.01em;
+    line-height: 1.5;
+}
+.home-module-title-block img {
+    align-self: flex-end;
+    margin-inline-start: .5em;
+    margin-bottom: .35em;
+}
