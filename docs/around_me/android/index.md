@@ -6,7 +6,7 @@ title: Around Me Android - Navitia SDK Docs
 
 ## :computer: Setup
 
-Add the following dependencies in the `build.gradle` file of your application:
+Add the  following dependencies in the `build.gradle` file of your application:
 
 ```kotlin
 dependencies {
