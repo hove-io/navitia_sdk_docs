@@ -637,6 +637,7 @@
     "features_configuration": {
         "aroundme": {
             "account_mode": true,
+            "behavior_tracking": false,
             "bookmark_mode": {
                 "enabled": true,
                 "tabs": {
@@ -679,6 +680,7 @@
             }
         },
         "bookmark": {
+            "behavior_tracking": false,
             "go_from_go_to": true,
             "next_departures": {
                 "frequency": 30
@@ -709,6 +711,7 @@
             }
         },
         "journey": {
+            "behavior_tracking": false,
             "bookmark_mode": {
                 "enabled": true,
                 "display" : {
