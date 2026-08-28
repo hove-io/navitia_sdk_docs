@@ -310,6 +310,7 @@ The following are the possible configuration parameters:
 | Name | Required | Description | Type | Example |
 | --- |:---:| --- | :---: | :---: |
 | `account_mode` | :material-close: | Enable/disable the account button | `Boolean` | `false` |
+| `behavior_tracking` | :material-close: | Enable/disable behavior tracking feature | `Boolean` | `false` |
 | `bookmark_mode` | :material-close: | Enable/disable the bookmarks feature | [`Bookmark mode`](#bookmark-mode-around-me) | - |
 | `default_location` | :material-close: | The default location on first launch | [`Default location`](#default-location) | - |
 | `default_zoom_level` | :material-close: | Define the default zoom level of map by selecting the corresponding type | `String` | `TRANSPORTS`, `BUS`, `POI`, `FREE_FLOATING` |
@@ -358,6 +359,7 @@ The following are the possible configuration parameters:
 
 | Name | Required | Description | Type | Example |
 | --- |:---:| --- | :---: | :---: |
+| `behavior_tracking` | :material-close: | Enable/disable behavior tracking feature | `Boolean` | `false` |
 | `go_from_go_to` | :material-close: | Show/hide the go from/go to buttons | `Boolean` | `true` |
 | `next_departures` | :material-close: | Show/hide the next departures | [`Next departures`](#next-departures) | - |
 | `park_availability`| :material-close: | Show/hide the bss and car parking availability | [`Park Availability`](#park-availability) | - |
@@ -397,6 +399,7 @@ The following are the possible configuration parameters:
 
 | Name | Required | Description | Type | Example |
 | --- |:---:| --- | :---: | :---: |
+| `behavior_tracking` | :material-close: | Enable/disable behavior tracking feature | `Boolean` | `false` |
 | `bookmark_mode` | :material-close: | Enable/disable and handle the display screens of the bookmarks feature | [`Bookmark mode`](#bookmark-mode-journey) |
 | `calories` | :material-close: | Show/hide the itinerary calories summary | `Boolean` | `false` |
 | `carbon` | :material-close: | Show/hide the itinerary carbon summary | `Boolean` | `true` |
